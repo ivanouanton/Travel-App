@@ -25,9 +25,15 @@ class AppTabBarController: UITabBarController {
         search.tabBarItem = UITabBarItem(title: "Search",
                                          image: UIImage(named: "mapTabBar")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
                                          selectedImage: UIImage(named: "mapTabBarSelected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
+        
+        let home = ViewFactory.createHomeVC()
+        home.tabBarItem = UITabBarItem(title: "Search",
+                                         image: UIImage(named: "home")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
+                                         selectedImage: UIImage(named: "homeSelected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
 
         
-        let viewControllerList = [ search]
+        
+        let viewControllerList = [search, home]
         
         viewControllers = viewControllerList
     }

@@ -14,5 +14,12 @@ class ViewFactory{
         vc.presenter = presenter
         return vc
     }
+    
+    static func createHomeVC() -> HomeViewController{
+        let vc = HomeViewController()
+        let presenter = HomePresenter(view: vc)
+        vc.presenter = presenter
+        return vc
+    }
 }
 
