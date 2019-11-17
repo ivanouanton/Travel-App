@@ -7,16 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F761DFF22381CF7400D9DBBD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF12381CF7400D9DBBD /* SettingsViewController.swift */; };
+		F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */; };
+		F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */; };
+		F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF72381CFAD00D9DBBD /* SettingsPresenterProtocol.swift */; };
+		F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883592381AE5E00F01F3A /* ViewFactory.swift */; };
+		F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835C2381AEF800F01F3A /* SearchViewController.swift */; };
+		F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */; };
+		F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883602381AF1900F01F3A /* SearchPresenter.swift */; };
+		F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883622381AF5000F01F3A /* SearchPresenterProtocol.swift */; };
+		F79883682381B8F000F01F3A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883672381B8F000F01F3A /* HomeViewController.swift */; };
+		F798836A2381C4FA00F01F3A /* HomeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883692381C4FA00F01F3A /* HomeViewProtocol.swift */; };
+		F79883742381C6CB00F01F3A /* HomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883722381C6CB00F01F3A /* HomePresenterProtocol.swift */; };
+		F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883732381C6CB00F01F3A /* HomePresenter.swift */; };
+		F79883772381C92900F01F3A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883762381C92900F01F3A /* ProfileViewController.swift */; };
+		F79883792381C93E00F01F3A /* ProfileViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883782381C93E00F01F3A /* ProfileViewProtocol.swift */; };
+		F798837B2381C94C00F01F3A /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798837A2381C94C00F01F3A /* ProfilePresenter.swift */; };
+		F798837D2381C95B00F01F3A /* ProfilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798837C2381C95B00F01F3A /* ProfilePresenterProtocol.swift */; };
 		F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */; };
-		F7ADB091237F3A9700DA4E89 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB090237F3A9700DA4E89 /* ViewController.swift */; };
+		F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */; };
 		F7ADB096237F3A9E00DA4E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */; };
 		F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F761DFF12381CF7400D9DBBD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewProtocol.swift; sourceTree = "<group>"; };
+		F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		F761DFF72381CFAD00D9DBBD /* SettingsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterProtocol.swift; sourceTree = "<group>"; };
+		F79883592381AE5E00F01F3A /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewFactory.swift; path = ../ViewFactory.swift; sourceTree = "<group>"; };
+		F798835C2381AEF800F01F3A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewProtocol.swift; sourceTree = "<group>"; };
+		F79883602381AF1900F01F3A /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		F79883622381AF5000F01F3A /* SearchPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterProtocol.swift; sourceTree = "<group>"; };
+		F79883672381B8F000F01F3A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F79883692381C4FA00F01F3A /* HomeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewProtocol.swift; sourceTree = "<group>"; };
+		F79883722381C6CB00F01F3A /* HomePresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenterProtocol.swift; sourceTree = "<group>"; };
+		F79883732381C6CB00F01F3A /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		F79883762381C92900F01F3A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F79883782381C93E00F01F3A /* ProfileViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewProtocol.swift; path = ../ProfileViewProtocol.swift; sourceTree = "<group>"; };
+		F798837A2381C94C00F01F3A /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		F798837C2381C95B00F01F3A /* ProfilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterProtocol.swift; sourceTree = "<group>"; };
 		F7ADB08B237F3A9700DA4E89 /* Travel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F7ADB090237F3A9700DA4E89 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
 		F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7ADB098237F3A9E00DA4E89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7ADB09A237F3A9E00DA4E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +67,128 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F761DFF92381D02800D9DBBD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */,
+				F761DFF72381CFAD00D9DBBD /* SettingsPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F761DFFA2381D04300D9DBBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F761DFF12381CF7400D9DBBD /* SettingsViewController.swift */,
+				F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F761DFFB2381D04E00D9DBBD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F761DFFA2381D04300D9DBBD /* View */,
+				F761DFF92381D02800D9DBBD /* Presenter */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F798835B2381AEAE00F01F3A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F79883592381AE5E00F01F3A /* ViewFactory.swift */,
+				F761DFFB2381D04E00D9DBBD /* Settings */,
+				F79883802381CA1500F01F3A /* Profile */,
+				F79883712381C60A00F01F3A /* Home */,
+				F79883662381AF9600F01F3A /* Search */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F79883642381AF8100F01F3A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F79883602381AF1900F01F3A /* SearchPresenter.swift */,
+				F79883622381AF5000F01F3A /* SearchPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F79883652381AF8B00F01F3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F798835C2381AEF800F01F3A /* SearchViewController.swift */,
+				F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F79883662381AF9600F01F3A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F79883652381AF8B00F01F3A /* View */,
+				F79883642381AF8100F01F3A /* Presenter */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F798836F2381C5EF00F01F3A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F79883732381C6CB00F01F3A /* HomePresenter.swift */,
+				F79883722381C6CB00F01F3A /* HomePresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F79883702381C5FA00F01F3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F79883672381B8F000F01F3A /* HomeViewController.swift */,
+				F79883692381C4FA00F01F3A /* HomeViewProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F79883712381C60A00F01F3A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F79883702381C5FA00F01F3A /* View */,
+				F798836F2381C5EF00F01F3A /* Presenter */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F798837E2381C9A500F01F3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F79883762381C92900F01F3A /* ProfileViewController.swift */,
+				F79883782381C93E00F01F3A /* ProfileViewProtocol.swift */,
+			);
+			name = View;
+			path = ../View;
+			sourceTree = "<group>";
+		};
+		F798837F2381CA0A00F01F3A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F798837A2381C94C00F01F3A /* ProfilePresenter.swift */,
+				F798837C2381C95B00F01F3A /* ProfilePresenterProtocol.swift */,
+			);
+			name = Presenter;
+			path = ../Presenter;
+			sourceTree = "<group>";
+		};
+		F79883802381CA1500F01F3A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F798837E2381C9A500F01F3A /* View */,
+				F798837F2381CA0A00F01F3A /* Presenter */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		F7ADB082237F3A9700DA4E89 = {
 			isa = PBXGroup;
 			children = (
@@ -53,8 +209,9 @@
 			isa = PBXGroup;
 			children = (
 				F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */,
-				F7ADB090237F3A9700DA4E89 /* ViewController.swift */,
+				F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */,
 				F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */,
+				F798835B2381AEAE00F01F3A /* Scenes */,
 				F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */,
 				F7ADB09A237F3A9E00DA4E89 /* Info.plist */,
 			);
@@ -131,8 +288,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7ADB091237F3A9700DA4E89 /* ViewController.swift in Sources */,
+				F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */,
+				F79883792381C93E00F01F3A /* ProfileViewProtocol.swift in Sources */,
+				F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */,
+				F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */,
+				F798837D2381C95B00F01F3A /* ProfilePresenterProtocol.swift in Sources */,
+				F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */,
+				F79883682381B8F000F01F3A /* HomeViewController.swift in Sources */,
+				F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */,
+				F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */,
+				F761DFF22381CF7400D9DBBD /* SettingsViewController.swift in Sources */,
+				F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */,
+				F79883772381C92900F01F3A /* ProfileViewController.swift in Sources */,
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
+				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
+				F798836A2381C4FA00F01F3A /* HomeViewProtocol.swift in Sources */,
+				F798837B2381C94C00F01F3A /* ProfilePresenter.swift in Sources */,
+				F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */,
+				F79883742381C6CB00F01F3A /* HomePresenterProtocol.swift in Sources */,
+				F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KHN7WQWRV9;
 				INFOPLIST_FILE = "Travel-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -288,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KHN7WQWRV9;
 				INFOPLIST_FILE = "Travel-App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
