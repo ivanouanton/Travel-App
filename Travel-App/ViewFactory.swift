@@ -28,5 +28,12 @@ class ViewFactory{
         vc.presenter = presenter
         return vc
     }
+    
+    static func createSettingsVC() -> SettingsViewController{
+        let vc = SettingsViewController()
+        let presenter = SettingsPresenter(view: vc)
+        vc.presenter = presenter
+        return vc
+    }
 }
 

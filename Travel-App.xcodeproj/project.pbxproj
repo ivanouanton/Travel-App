@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F761DFF22381CF7400D9DBBD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF12381CF7400D9DBBD /* SettingsViewController.swift */; };
+		F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */; };
+		F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */; };
+		F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF72381CFAD00D9DBBD /* SettingsPresenterProtocol.swift */; };
 		F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883592381AE5E00F01F3A /* ViewFactory.swift */; };
 		F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835C2381AEF800F01F3A /* SearchViewController.swift */; };
 		F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */; };
@@ -27,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F761DFF12381CF7400D9DBBD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewProtocol.swift; sourceTree = "<group>"; };
+		F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		F761DFF72381CFAD00D9DBBD /* SettingsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterProtocol.swift; sourceTree = "<group>"; };
 		F79883592381AE5E00F01F3A /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewFactory.swift; path = ../ViewFactory.swift; sourceTree = "<group>"; };
 		F798835C2381AEF800F01F3A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewProtocol.swift; sourceTree = "<group>"; };
@@ -59,10 +67,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F761DFF92381D02800D9DBBD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */,
+				F761DFF72381CFAD00D9DBBD /* SettingsPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F761DFFA2381D04300D9DBBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F761DFF12381CF7400D9DBBD /* SettingsViewController.swift */,
+				F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F761DFFB2381D04E00D9DBBD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F761DFFA2381D04300D9DBBD /* View */,
+				F761DFF92381D02800D9DBBD /* Presenter */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		F798835B2381AEAE00F01F3A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				F79883592381AE5E00F01F3A /* ViewFactory.swift */,
+				F761DFFB2381D04E00D9DBBD /* Settings */,
 				F79883802381CA1500F01F3A /* Profile */,
 				F79883712381C60A00F01F3A /* Home */,
 				F79883662381AF9600F01F3A /* Search */,
@@ -257,11 +293,15 @@
 				F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */,
 				F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */,
 				F798837D2381C95B00F01F3A /* ProfilePresenterProtocol.swift in Sources */,
+				F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */,
 				F79883682381B8F000F01F3A /* HomeViewController.swift in Sources */,
+				F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */,
 				F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */,
+				F761DFF22381CF7400D9DBBD /* SettingsViewController.swift in Sources */,
 				F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */,
 				F79883772381C92900F01F3A /* ProfileViewController.swift in Sources */,
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
+				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
 				F798836A2381C4FA00F01F3A /* HomeViewProtocol.swift in Sources */,
 				F798837B2381C94C00F01F3A /* ProfilePresenter.swift in Sources */,
 				F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */,

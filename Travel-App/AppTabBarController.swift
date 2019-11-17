@@ -36,9 +36,12 @@ class AppTabBarController: UITabBarController {
                                        image: UIImage(named: "profile")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
                                        selectedImage: UIImage(named: "profileSelected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
 
+        let settings = ViewFactory.createHomeVC()
+        settings.tabBarItem = UITabBarItem(title: "Settings",
+                                          image: UIImage(named: "tools")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
+                                          selectedImage: UIImage(named: "toolsSected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
         
-        
-        let viewControllerList = [search, home, profile]
+        let viewControllerList = [search, home, profile, settings]
         
         viewControllers = viewControllerList
     }
