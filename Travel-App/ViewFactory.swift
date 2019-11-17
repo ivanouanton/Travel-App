@@ -21,5 +21,12 @@ class ViewFactory{
         vc.presenter = presenter
         return vc
     }
+    
+    static func createProfileVC() -> ProfileViewController{
+        let vc = ProfileViewController()
+        let presenter = ProfilePresenter(view: vc)
+        vc.presenter = presenter
+        return vc
+    }
 }
 

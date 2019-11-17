@@ -16,6 +16,10 @@
 		F798836A2381C4FA00F01F3A /* HomeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883692381C4FA00F01F3A /* HomeViewProtocol.swift */; };
 		F79883742381C6CB00F01F3A /* HomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883722381C6CB00F01F3A /* HomePresenterProtocol.swift */; };
 		F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883732381C6CB00F01F3A /* HomePresenter.swift */; };
+		F79883772381C92900F01F3A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883762381C92900F01F3A /* ProfileViewController.swift */; };
+		F79883792381C93E00F01F3A /* ProfileViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883782381C93E00F01F3A /* ProfileViewProtocol.swift */; };
+		F798837B2381C94C00F01F3A /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798837A2381C94C00F01F3A /* ProfilePresenter.swift */; };
+		F798837D2381C95B00F01F3A /* ProfilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798837C2381C95B00F01F3A /* ProfilePresenterProtocol.swift */; };
 		F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */; };
 		F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */; };
 		F7ADB096237F3A9E00DA4E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */; };
@@ -32,6 +36,10 @@
 		F79883692381C4FA00F01F3A /* HomeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewProtocol.swift; sourceTree = "<group>"; };
 		F79883722381C6CB00F01F3A /* HomePresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenterProtocol.swift; sourceTree = "<group>"; };
 		F79883732381C6CB00F01F3A /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		F79883762381C92900F01F3A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F79883782381C93E00F01F3A /* ProfileViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewProtocol.swift; path = ../ProfileViewProtocol.swift; sourceTree = "<group>"; };
+		F798837A2381C94C00F01F3A /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		F798837C2381C95B00F01F3A /* ProfilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterProtocol.swift; sourceTree = "<group>"; };
 		F7ADB08B237F3A9700DA4E89 /* Travel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
@@ -55,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				F79883592381AE5E00F01F3A /* ViewFactory.swift */,
+				F79883802381CA1500F01F3A /* Profile */,
 				F79883712381C60A00F01F3A /* Home */,
 				F79883662381AF9600F01F3A /* Search */,
 			);
@@ -113,6 +122,35 @@
 				F798836F2381C5EF00F01F3A /* Presenter */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		F798837E2381C9A500F01F3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F79883762381C92900F01F3A /* ProfileViewController.swift */,
+				F79883782381C93E00F01F3A /* ProfileViewProtocol.swift */,
+			);
+			name = View;
+			path = ../View;
+			sourceTree = "<group>";
+		};
+		F798837F2381CA0A00F01F3A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F798837A2381C94C00F01F3A /* ProfilePresenter.swift */,
+				F798837C2381C95B00F01F3A /* ProfilePresenterProtocol.swift */,
+			);
+			name = Presenter;
+			path = ../Presenter;
+			sourceTree = "<group>";
+		};
+		F79883802381CA1500F01F3A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F798837E2381C9A500F01F3A /* View */,
+				F798837F2381CA0A00F01F3A /* Presenter */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		F7ADB082237F3A9700DA4E89 = {
@@ -215,13 +253,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */,
+				F79883792381C93E00F01F3A /* ProfileViewProtocol.swift in Sources */,
 				F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */,
 				F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */,
+				F798837D2381C95B00F01F3A /* ProfilePresenterProtocol.swift in Sources */,
 				F79883682381B8F000F01F3A /* HomeViewController.swift in Sources */,
 				F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */,
 				F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */,
+				F79883772381C92900F01F3A /* ProfileViewController.swift in Sources */,
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
 				F798836A2381C4FA00F01F3A /* HomeViewProtocol.swift in Sources */,
+				F798837B2381C94C00F01F3A /* ProfilePresenter.swift in Sources */,
 				F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */,
 				F79883742381C6CB00F01F3A /* HomePresenterProtocol.swift in Sources */,
 				F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */,
