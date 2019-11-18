@@ -21,22 +21,22 @@ class AppTabBarController: UITabBarController {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:
             UIColor(named: "smokyTopaz")!], for: .selected)
         
-        let search = ViewFactory.createSearchVC()
+        let search = UINavigationController(rootViewController: ViewFactory.createSearchVC())
         search.tabBarItem = UITabBarItem(title: "Search",
                                          image: UIImage(named: "mapTabBar")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
                                          selectedImage: UIImage(named: "mapTabBarSelected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
         
-        let home = ViewFactory.createHomeVC()
+        let home = UINavigationController(rootViewController: ViewFactory.createHomeVC())
         home.tabBarItem = UITabBarItem(title: "Home",
                                          image: UIImage(named: "home")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
                                          selectedImage: UIImage(named: "homeSelected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
         
-        let profile = ViewFactory.createHomeVC()
+        let profile = UINavigationController(rootViewController: ViewFactory.createHomeVC())
         profile.tabBarItem = UITabBarItem(title: "Profile",
                                        image: UIImage(named: "profile")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
                                        selectedImage: UIImage(named: "profileSelected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
 
-        let settings = ViewFactory.createHomeVC()
+        let settings = UINavigationController(rootViewController: ViewFactory.createHomeVC())
         settings.tabBarItem = UITabBarItem(title: "Settings",
                                           image: UIImage(named: "tools")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
                                           selectedImage: UIImage(named: "toolsSected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))

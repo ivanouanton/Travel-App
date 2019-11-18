@@ -20,12 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyAy_-zQEPSyXXBwNHkc6oruERF8AeeMMCY")
         GMSPlacesClient.provideAPIKey("AIzaSyAy_-zQEPSyXXBwNHkc6oruERF8AeeMMCY")
         
-        let navigationController = UINavigationController()
         let vc = AppTabBarController()
         
-        navigationController.setViewControllers([vc], animated: false)
         window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = navigationController
+        self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
         
         return true

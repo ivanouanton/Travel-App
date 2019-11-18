@@ -31,17 +31,31 @@ final class SearchViewController: UIViewController{
         self.setupUI()
         self.setupConstraints()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationItem.title = "New York"
+    }
+
 }
 
 extension SearchViewController{
     func setupUI(){
         self.view.backgroundColor = .white
-        
-        
     }
     
     func setupConstraints(){
+    }
+    
+    // MARK: - Methods
+    
+    @objc func doAction(){
+        let blackView = UIView()
+        blackView.backgroundColor = .red
+        view.addSubview(blackView)
         
+        blackView.frame = view.frame
+
     }
 }
 
