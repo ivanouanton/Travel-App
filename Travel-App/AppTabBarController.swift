@@ -23,23 +23,23 @@ class AppTabBarController: UITabBarController {
         
         let search = UINavigationController(rootViewController: ViewFactory.createSearchVC())
         search.tabBarItem = UITabBarItem(title: "Search",
-                                         image: UIImage(named: "mapTabBar")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
-                                         selectedImage: UIImage(named: "mapTabBarSelected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
+                                         image: UIImage(named: "map-location-def")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
+                                         selectedImage: UIImage(named: "map-location")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
         
         let home = UINavigationController(rootViewController: ViewFactory.createHomeVC())
         home.tabBarItem = UITabBarItem(title: "Home",
-                                         image: UIImage(named: "home")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
-                                         selectedImage: UIImage(named: "homeSelected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
+                                         image: UIImage(named: "home-def")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
+                                         selectedImage: UIImage(named: "home")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
         
         let profile = UINavigationController(rootViewController: ViewFactory.createHomeVC())
         profile.tabBarItem = UITabBarItem(title: "Profile",
-                                       image: UIImage(named: "profile")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
-                                       selectedImage: UIImage(named: "profileSelected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
+                                       image: UIImage(named: "avatar-def")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
+                                       selectedImage: UIImage(named: "avatar")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
 
         let settings = UINavigationController(rootViewController: ViewFactory.createHomeVC())
         settings.tabBarItem = UITabBarItem(title: "Settings",
-                                          image: UIImage(named: "tools")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
-                                          selectedImage: UIImage(named: "toolsSected")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
+                                          image: UIImage(named: "tools-def")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
+                                          selectedImage: UIImage(named: "tools")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
         
         let viewControllerList = [search, home, profile, settings]
         

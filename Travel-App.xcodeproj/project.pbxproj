@@ -25,10 +25,15 @@
 		F79883792381C93E00F01F3A /* ProfileViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883782381C93E00F01F3A /* ProfileViewProtocol.swift */; };
 		F798837B2381C94C00F01F3A /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798837A2381C94C00F01F3A /* ProfilePresenter.swift */; };
 		F798837D2381C95B00F01F3A /* ProfilePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798837C2381C95B00F01F3A /* ProfilePresenterProtocol.swift */; };
+		F79FCA2123847D4E009F1693 /* AvenirNextLTPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2023847D4E009F1693 /* AvenirNextLTPro-Bold.otf */; };
+		F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2223847ED2009F1693 /* AvenirNextLTPro-Regular.otf */; };
+		F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */; };
+		F79FCA2823847ED2009F1693 /* AvenirNextLTPro-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2423847ED2009F1693 /* AvenirNextLTPro-Demi.otf */; };
+		F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */; };
 		F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */; };
 		F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */; };
-		F7ADB096237F3A9E00DA4E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */; };
 		F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */; };
+		F7CCB5C6238488D7004C4A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */; };
 		F7E9DDE2238344CB000DE6F4 /* PlacePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +58,11 @@
 		F79883782381C93E00F01F3A /* ProfileViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewProtocol.swift; path = ../ProfileViewProtocol.swift; sourceTree = "<group>"; };
 		F798837A2381C94C00F01F3A /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
 		F798837C2381C95B00F01F3A /* ProfilePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenterProtocol.swift; sourceTree = "<group>"; };
+		F79FCA2023847D4E009F1693 /* AvenirNextLTPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Bold.otf"; sourceTree = "<group>"; };
+		F79FCA2223847ED2009F1693 /* AvenirNextLTPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Regular.otf"; sourceTree = "<group>"; };
+		F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-HeavyCn.otf"; sourceTree = "<group>"; };
+		F79FCA2423847ED2009F1693 /* AvenirNextLTPro-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Demi.otf"; sourceTree = "<group>"; };
+		F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-UltLtCn.otf"; sourceTree = "<group>"; };
 		F7ADB08B237F3A9700DA4E89 /* Travel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
@@ -214,6 +224,18 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		F79FCA1E23846F69009F1693 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F79FCA2023847D4E009F1693 /* AvenirNextLTPro-Bold.otf */,
+				F79FCA2423847ED2009F1693 /* AvenirNextLTPro-Demi.otf */,
+				F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */,
+				F79FCA2223847ED2009F1693 /* AvenirNextLTPro-Regular.otf */,
+				F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		F7ADB082237F3A9700DA4E89 = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +263,7 @@
 				F798835B2381AEAE00F01F3A /* Scenes */,
 				F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */,
 				F7ADB09A237F3A9E00DA4E89 /* Info.plist */,
+				F79FCA1E23846F69009F1693 /* Resources */,
 			);
 			path = "Travel-App";
 			sourceTree = "<group>";
@@ -305,8 +328,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7CCB5C6238488D7004C4A35 /* Assets.xcassets in Resources */,
 				F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */,
-				F7ADB096237F3A9E00DA4E89 /* Assets.xcassets in Resources */,
+				F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
+				F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */,
+				F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
+				F79FCA2823847ED2009F1693 /* AvenirNextLTPro-Demi.otf in Resources */,
+				F79FCA2123847D4E009F1693 /* AvenirNextLTPro-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -502,7 +530,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -527,7 +555,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Company-name.Travel-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -546,7 +574,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Company-name.Travel-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
