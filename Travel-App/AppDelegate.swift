@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,13 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        GMSServices.provideAPIKey("AIzaSyAy_-zQEPSyXXBwNHkc6oruERF8AeeMMCY")
+        GMSPlacesClient.provideAPIKey("AIzaSyAy_-zQEPSyXXBwNHkc6oruERF8AeeMMCY")
         
-        let navigationController = UINavigationController()
         let vc = AppTabBarController()
         
-        navigationController.setViewControllers([vc], animated: false)
         window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = navigationController
+        self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
         
         return true
