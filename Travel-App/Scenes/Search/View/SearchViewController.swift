@@ -69,7 +69,7 @@ extension SearchViewController{
             self.placePreview.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
             self.placePreview.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.placePreviewBottom,
-            self.placePreview.heightAnchor.constraint(equalTo: self.placePreview.widthAnchor, multiplier: 0.5)
+//            self.placePreview.heightAnchor.constraint(equalTo: self.placePreview.widthAnchor, multiplier: 0.5)
             ])
     }
     

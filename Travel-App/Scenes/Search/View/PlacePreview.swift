@@ -137,19 +137,19 @@ class PlacePreview: UIView {
             self.placeImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             self.placeImage.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.35),
             
-            self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
+            self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 24),
             self.titleLabel.leftAnchor.constraint(equalTo: self.placeImage.rightAnchor, constant: 8),
             self.titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
             
-            self.placeMarks.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 5),
+            self.placeMarks.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 7),
             self.placeMarks.leftAnchor.constraint(equalTo: self.placeImage.rightAnchor, constant: 8),
 
-            self.directionsButton.bottomAnchor.constraint(equalTo: self.placeImage.bottomAnchor),
+            self.directionsButton.bottomAnchor.constraint(equalTo: self.placeImage.bottomAnchor, constant: -3),
             self.directionsButton.leftAnchor.constraint(equalTo: self.placeImage.rightAnchor, constant: 8),
             self.directionsButton.heightAnchor.constraint(equalToConstant: 35),
             self.directionsButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.33),
             
-            self.infoButton.bottomAnchor.constraint(equalTo: self.placeImage.bottomAnchor),
+            self.infoButton.bottomAnchor.constraint(equalTo: self.placeImage.bottomAnchor, constant: -3),
             self.infoButton.leftAnchor.constraint(equalTo: self.directionsButton.rightAnchor, constant: 12),
             self.infoButton.heightAnchor.constraint(equalToConstant: 35),
             self.infoButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
@@ -157,7 +157,6 @@ class PlacePreview: UIView {
             self.userLocationLabel.bottomAnchor.constraint(equalTo: self.infoButton.topAnchor, constant: -8),
             self.userLocationLabel.leftAnchor.constraint(equalTo: self.placeImage.rightAnchor, constant: 8),
             self.userLocationLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
-            
             ])
     }
 }
