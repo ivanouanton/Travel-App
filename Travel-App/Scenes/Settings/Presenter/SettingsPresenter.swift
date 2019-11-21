@@ -7,6 +7,14 @@
 //
 
 class SettingsPresenter: SettingsPresenterProtocol{
+    func getSettingsProperty() {
+        var properties = [
+            ("Preferences", ["Notifications", "Distance Units", "Currency"]),
+            ("Help & Information", ["FAQs", "About Us", "Terms and Conditions", "Privacy Statement"])
+        ]
+        self.view.updateTable(with: properties)
+    }
+    
     weak var view: SettingsViewProtocol!
     
     required init(view: SettingsViewProtocol) {

@@ -36,7 +36,7 @@ class AppTabBarController: UITabBarController {
                                        image: UIImage(named: "avatar-def")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
                                        selectedImage: UIImage(named: "avatar")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
 
-        let settings = UINavigationController(rootViewController: ViewFactory.createHomeVC())
+        let settings = UINavigationController(rootViewController: ViewFactory.createSettingsVC())
         settings.tabBarItem = UITabBarItem(title: "Settings",
                                           image: UIImage(named: "tools-def")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
                                           selectedImage: UIImage(named: "tools")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))

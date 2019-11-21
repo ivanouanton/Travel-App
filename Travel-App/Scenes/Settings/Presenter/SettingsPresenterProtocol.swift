@@ -8,4 +8,5 @@
 
 protocol SettingsPresenterProtocol: class {
     init(view: SettingsViewProtocol)
+    func getSettingsProperty()
 }
