@@ -7,5 +7,5 @@
 //
 
 protocol SettingsViewProtocol: class{
-    
+    func updateTable(with options: [(title: String, options: [String])])
 }
