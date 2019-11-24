@@ -8,6 +8,7 @@ target 'Travel-App' do
 
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'MSPeekCollectionViewDelegateImplementation'
   
 # Pods for Travel-App
 

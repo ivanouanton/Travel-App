@@ -33,6 +33,8 @@
 		F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */; };
 		F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */; };
 		F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */; };
+		F7B45FFF2389103F005CBEE4 /* PreferenceBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B45FFE2389103F005CBEE4 /* PreferenceBoardViewController.swift */; };
+		F7B46001238919B6005CBEE4 /* PreferencesTour.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B46000238919B5005CBEE4 /* PreferencesTour.storyboard */; };
 		F7CCB5C6238488D7004C4A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */; };
 		F7E9DDE2238344CB000DE6F4 /* PlacePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */; };
 		F7F90D4623873FA600722F90 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F90D4523873FA600722F90 /* SettingTableViewCell.swift */; };
@@ -70,6 +72,8 @@
 		F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7ADB098237F3A9E00DA4E89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7ADB09A237F3A9E00DA4E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7B45FFE2389103F005CBEE4 /* PreferenceBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBoardViewController.swift; sourceTree = "<group>"; };
+		F7B46000238919B5005CBEE4 /* PreferencesTour.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreferencesTour.storyboard; sourceTree = "<group>"; };
 		F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePreview.swift; sourceTree = "<group>"; };
 		F7F90D4523873FA600722F90 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,8 +129,7 @@
 		F761DFFB2381D04E00D9DBBD /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				F761DFFA2381D04300D9DBBD /* View */,
-				F761DFF92381D02800D9DBBD /* Presenter */,
+				F7B45FFD23890F22005CBEE4 /* Base */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -165,6 +168,8 @@
 		F79883662381AF9600F01F3A /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				F7B45FFE2389103F005CBEE4 /* PreferenceBoardViewController.swift */,
+				F7B46000238919B5005CBEE4 /* PreferencesTour.storyboard */,
 				F79883652381AF8B00F01F3A /* View */,
 				F79883642381AF8100F01F3A /* Presenter */,
 			);
@@ -271,6 +276,15 @@
 			path = "Travel-App";
 			sourceTree = "<group>";
 		};
+		F7B45FFD23890F22005CBEE4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F761DFFA2381D04300D9DBBD /* View */,
+				F761DFF92381D02800D9DBBD /* Presenter */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -283,6 +297,7 @@
 				F7ADB088237F3A9700DA4E89 /* Frameworks */,
 				F7ADB089237F3A9700DA4E89 /* Resources */,
 				A142FAFBC91AFE2469910C78 /* [CP] Copy Pods Resources */,
+				E34BFE180396EC625AF4AD5B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -336,6 +351,7 @@
 				F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
 				F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */,
 				F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
+				F7B46001238919B6005CBEE4 /* PreferencesTour.storyboard in Resources */,
 				F79FCA2823847ED2009F1693 /* AvenirNextLTPro-Demi.otf in Resources */,
 				F79FCA2123847D4E009F1693 /* AvenirNextLTPro-Bold.otf in Resources */,
 			);
@@ -359,6 +375,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E34BFE180396EC625AF4AD5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E5B197197B7A56C2CC531A0B /* [CP] Check Pods Manifest.lock */ = {
@@ -398,6 +431,7 @@
 				F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */,
 				F79883682381B8F000F01F3A /* HomeViewController.swift in Sources */,
 				F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */,
+				F7B45FFF2389103F005CBEE4 /* PreferenceBoardViewController.swift in Sources */,
 				F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */,
 				F7F90D4623873FA600722F90 /* SettingTableViewCell.swift in Sources */,
 				F761DFF22381CF7400D9DBBD /* SettingsViewController.swift in Sources */,

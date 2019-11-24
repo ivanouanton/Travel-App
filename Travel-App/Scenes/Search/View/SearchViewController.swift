@@ -25,8 +25,15 @@ final class SearchViewController: UIViewController{
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "create-tour"), for: .normal)
+        button.addTarget(self, action: #selector(setupPreferences), for: .touchUpInside)
         return button
     }()
+    
+    @objc func setupPreferences(){
+        let storyboard = UIStoryboard(name: "PreferencesTour", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "PreferenceBoardViewController")
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
     override func loadView() {
         super.loadView()
