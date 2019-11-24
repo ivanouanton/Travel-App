@@ -13,14 +13,16 @@ final class SearchViewController: UIViewController{
     var presenter: SearchPresenterProtocol!
     
     private var placePreviewBottom: NSLayoutConstraint!
-//    let locationManager:CLLocationManager = CLLocationManager()
+    private var placePreviewTop: NSLayoutConstraint!
 
-    
     private lazy var mapView: GMSMapView = {
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 15.0)
-        let place = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        place.translatesAutoresizingMaskIntoConstraints = false
-        return place
+        let camera = GMSCameraPosition.camera(withLatitude: Defaults.location.latitude,
+                                              longitude: Defaults.location.longitude,
+                                              zoom: 15.0)
+        let view = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.delegate = self
+        return view
     }()
     
     private lazy var placePreview: PlacePreview = {
@@ -48,9 +50,6 @@ final class SearchViewController: UIViewController{
     override func loadView() {
         super.loadView()
         
-//        self.locationManager.delegate = self
-//        self.locationManager.requestWhenInUseAuthorization()
-        
         self.setupUI()
         self.setupConstraints()
     }
@@ -58,23 +57,22 @@ final class SearchViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "New York"
-
+        // Creates a marker in the center of the map.
+        
+        let position = CLLocationCoordinate2D(latitude: 54.09, longitude: 28.31)
+        let london = GMSMarker(position: position)
+        london.title = "London"
+        london.icon = UIImage(named: "marker1")
+        london.map = mapView
+        london.title = "hello"
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         self.presenter.fetchUserLocation()
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        let window = UIApplication.shared.keyWindow
-        let safeAria = window?.safeAreaInsets.bottom
-        let heightTabBar: CGFloat = (safeAria ?? 0.0) + 49
-        self.placePreviewBottom.constant = -(heightTabBar + 20)
-    }
-
 }
 
 extension SearchViewController{
@@ -86,7 +84,9 @@ extension SearchViewController{
     }
     
     func setupConstraints(){
-        self.placePreviewBottom = self.placePreview.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -80 )
+        self.placePreviewBottom = self.placePreview.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+        self.placePreviewTop = self.placePreview.topAnchor.constraint(equalTo: self.view.bottomAnchor)
+        
         NSLayoutConstraint.activate([
             
             self.mapView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
@@ -96,7 +96,7 @@ extension SearchViewController{
 
             self.placePreview.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
             self.placePreview.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.placePreviewBottom,
+            self.placePreviewTop,
             
             self.createTourButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16),
             self.createTourButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16)
@@ -105,12 +105,27 @@ extension SearchViewController{
     
     // MARK: - Methods
     
-    @objc func doAction(){
-        let blackView = UIView()
-        blackView.backgroundColor = .red
-        view.addSubview(blackView)
+    private func showModalDescription() {
         
-        blackView.frame = view.frame
+        UIView.animate(withDuration: 0.25) {
+            self.placePreviewBottom.isActive = true
+            self.placePreviewTop.isActive = false
+            self.view.layoutIfNeeded()
+        }
+        
+        let closeBarButtonItem = UIBarButtonItem(image: UIImage(named: "close"), style: .plain, target: self, action:#selector(hideModalDescription))
+        closeBarButtonItem.tintColor = UIColor(named: "silver")
+        self.navigationItem.leftBarButtonItem  = closeBarButtonItem
+    }
+    
+    @objc private func hideModalDescription() {
+        UIView.animate(withDuration: 0.25) {
+            self.placePreviewBottom.isActive = false
+            self.placePreviewTop.isActive = true
+            self.view.layoutIfNeeded()
+        }
+        
+        self.navigationItem.leftBarButtonItem = nil
     }
 }
 
@@ -121,26 +136,13 @@ extension SearchViewController: SearchViewProtocol{
         mapView.camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: 15, bearing: 0, viewingAngle: 0)
     }
 }
-//
-//// MARK: - CLLocationManagerDelegate
-//
-//extension SearchViewController: CLLocationManagerDelegate {
-//
-//    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-//        if status == .authorizedWhenInUse {
-//    
-//          locationManager.startUpdatingLocation()
-//    
-//          mapView.isMyLocationEnabled = true
-//          mapView.settings.myLocationButton = true
-//        }
-//    }
-//    
-//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        if let location = locations.first {
-//        
-//             mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-//             locationManager.stopUpdatingLocation()
-//        }
-//    }
-//}
+
+extension SearchViewController: GMSMapViewDelegate {
+    
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        
+        self.showModalDescription()
+
+        return true
+    }
+}

@@ -181,10 +181,19 @@
 		F7958CCC238B09DB007688F8 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				F7958CCD238B0CD8007688F8 /* CustomView */,
 				F79883652381AF8B00F01F3A /* View */,
 				F79883642381AF8100F01F3A /* Presenter */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		F7958CCD238B0CD8007688F8 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		F798835B2381AEAE00F01F3A /* Scenes */ = {
@@ -213,7 +222,6 @@
 			children = (
 				F798835C2381AEF800F01F3A /* SearchViewController.swift */,
 				F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */,
-				F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

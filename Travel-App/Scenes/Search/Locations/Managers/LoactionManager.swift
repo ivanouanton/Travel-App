@@ -14,8 +14,6 @@ class LocationManager: NSObject, LocationService {
     // MARK: - Properties
     
     private var didFetchLocation: FetchLocationCompletion?
-
-    // MARK: -
     
     private lazy var locationManager: CLLocationManager = {
         // Initialize Location Manager
