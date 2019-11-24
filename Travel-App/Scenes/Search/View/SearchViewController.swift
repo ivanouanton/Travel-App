@@ -21,6 +21,20 @@ final class SearchViewController: UIViewController{
         return place
     }()
     
+    private lazy var createTourButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "create-tour"), for: .normal)
+        button.addTarget(self, action: #selector(setupPreferences), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func setupPreferences(){
+        let storyboard = UIStoryboard(name: "PreferencesTour", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "PreferenceBoardViewController")
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
     override func loadView() {
         super.loadView()
         
@@ -61,6 +75,7 @@ extension SearchViewController{
     func setupUI(){
         self.view.backgroundColor = .white
         self.view.addSubview(self.placePreview)
+        self.view.addSubview(self.createTourButton)
     }
     
     func setupConstraints(){
@@ -69,7 +84,9 @@ extension SearchViewController{
             self.placePreview.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
             self.placePreview.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.placePreviewBottom,
-//            self.placePreview.heightAnchor.constraint(equalTo: self.placePreview.widthAnchor, multiplier: 0.5)
+            
+            self.createTourButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            self.createTourButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16)
             ])
     }
     
