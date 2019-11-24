@@ -8,4 +8,6 @@
 
 protocol SearchPresenterProtocol: class {
     init(view: SearchViewProtocol)
+    
+    func fetchUserLocation()
 }

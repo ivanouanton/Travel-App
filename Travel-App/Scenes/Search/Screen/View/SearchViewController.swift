@@ -11,7 +11,17 @@ import GoogleMaps
 
 final class SearchViewController: UIViewController{
     var presenter: SearchPresenterProtocol!
+    
     private var placePreviewBottom: NSLayoutConstraint!
+//    let locationManager:CLLocationManager = CLLocationManager()
+
+    
+    private lazy var mapView: GMSMapView = {
+        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 15.0)
+        let place = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        place.translatesAutoresizingMaskIntoConstraints = false
+        return place
+    }()
     
     private lazy var placePreview: PlacePreview = {
         let place = PlacePreview()
@@ -38,18 +48,8 @@ final class SearchViewController: UIViewController{
     override func loadView() {
         super.loadView()
         
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 15.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        view = mapView
-        
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+//        self.locationManager.delegate = self
+//        self.locationManager.requestWhenInUseAuthorization()
         
         self.setupUI()
         self.setupConstraints()
@@ -58,6 +58,12 @@ final class SearchViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "New York"
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.presenter.fetchUserLocation()
     }
     
     override func viewDidLayoutSubviews() {
@@ -74,6 +80,7 @@ final class SearchViewController: UIViewController{
 extension SearchViewController{
     func setupUI(){
         self.view.backgroundColor = .white
+        self.view.addSubview(self.mapView)
         self.view.addSubview(self.placePreview)
         self.view.addSubview(self.createTourButton)
     }
@@ -81,6 +88,12 @@ extension SearchViewController{
     func setupConstraints(){
         self.placePreviewBottom = self.placePreview.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -80 )
         NSLayoutConstraint.activate([
+            
+            self.mapView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.mapView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
+            self.mapView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+            self.mapView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+
             self.placePreview.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
             self.placePreview.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.placePreviewBottom,
@@ -98,10 +111,36 @@ extension SearchViewController{
         view.addSubview(blackView)
         
         blackView.frame = view.frame
-
     }
 }
 
 extension SearchViewController: SearchViewProtocol{
-    
+    func didChangeMyLocation(_ location: Location) {
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+        mapView.camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: 15, bearing: 0, viewingAngle: 0)
+    }
 }
+//
+//// MARK: - CLLocationManagerDelegate
+//
+//extension SearchViewController: CLLocationManagerDelegate {
+//
+//    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+//        if status == .authorizedWhenInUse {
+//    
+//          locationManager.startUpdatingLocation()
+//    
+//          mapView.isMyLocationEnabled = true
+//          mapView.settings.myLocationButton = true
+//        }
+//    }
+//    
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        if let location = locations.first {
+//        
+//             mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+//             locationManager.stopUpdatingLocation()
+//        }
+//    }
+//}

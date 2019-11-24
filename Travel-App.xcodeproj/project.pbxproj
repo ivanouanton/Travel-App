@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CAC2AFC9CE146BFE50DF962A /* Pods_Travel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */; };
+		F7570AA0238AE8F300621E4F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570A9F238AE8F300621E4F /* Configuration.swift */; };
+		F7570AA3238AEAA200621E4F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570AA2238AEAA200621E4F /* Location.swift */; };
+		F7570AA8238AEC9C00621E4F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570AA7238AEC9C00621E4F /* LocationService.swift */; };
+		F7570AAA238AECBA00621E4F /* LoactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570AA9238AECBA00621E4F /* LoactionManager.swift */; };
 		F761DFF22381CF7400D9DBBD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF12381CF7400D9DBBD /* SettingsViewController.swift */; };
 		F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */; };
 		F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */; };
@@ -44,6 +48,10 @@
 		02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travel_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		666AAB4DC0E5FE91DDA1E761 /* Pods-Travel-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.release.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.release.xcconfig"; sourceTree = "<group>"; };
 		C61D44D03DA574807B86294F /* Pods-Travel-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.debug.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.debug.xcconfig"; sourceTree = "<group>"; };
+		F7570A9F238AE8F300621E4F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = "Travel-App/Scenes/Search/Locations/Configuration/Configuration.swift"; sourceTree = SOURCE_ROOT; };
+		F7570AA2238AEAA200621E4F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		F7570AA7238AEC9C00621E4F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationService.swift; path = "Travel-App/Scenes/Search/Locations/Protocols/LocationService.swift"; sourceTree = SOURCE_ROOT; };
+		F7570AA9238AECBA00621E4F /* LoactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoactionManager.swift; sourceTree = "<group>"; };
 		F761DFF12381CF7400D9DBBD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewProtocol.swift; sourceTree = "<group>"; };
 		F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
@@ -107,6 +115,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F7570A9C238A943D00621E4F /* TourPreferensesView */ = {
+			isa = PBXGroup;
+			children = (
+				F7B45FFE2389103F005CBEE4 /* PreferenceBoardViewController.swift */,
+				F7B46000238919B5005CBEE4 /* PreferencesTour.storyboard */,
+			);
+			path = TourPreferensesView;
+			sourceTree = "<group>";
+		};
+		F7570AA1238AEA7000621E4F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F7570AA2238AEAA200621E4F /* Location.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F7570AA6238AEBFE00621E4F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F7570AA7238AEC9C00621E4F /* LocationService.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		F761DFF92381D02800D9DBBD /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +165,26 @@
 				F7B45FFD23890F22005CBEE4 /* Base */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		F7958CCB238B09C1007688F8 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				F7F0C9C7238AED1A007EF5B4 /* Managers */,
+				F7570AA6238AEBFE00621E4F /* Protocols */,
+				F7570AA1238AEA7000621E4F /* Models */,
+				F7F0C9C8238AED97007EF5B4 /* Configuration */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
+		F7958CCC238B09DB007688F8 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				F79883652381AF8B00F01F3A /* View */,
+				F79883642381AF8100F01F3A /* Presenter */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		F798835B2381AEAE00F01F3A /* Scenes */ = {
@@ -168,10 +221,9 @@
 		F79883662381AF9600F01F3A /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				F7B45FFE2389103F005CBEE4 /* PreferenceBoardViewController.swift */,
-				F7B46000238919B5005CBEE4 /* PreferencesTour.storyboard */,
-				F79883652381AF8B00F01F3A /* View */,
-				F79883642381AF8100F01F3A /* Presenter */,
+				F7958CCB238B09C1007688F8 /* Locations */,
+				F7570A9C238A943D00621E4F /* TourPreferensesView */,
+				F7958CCC238B09DB007688F8 /* Screen */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -283,6 +335,22 @@
 				F761DFF92381D02800D9DBBD /* Presenter */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		F7F0C9C7238AED1A007EF5B4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F7570AA9238AECBA00621E4F /* LoactionManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F7F0C9C8238AED97007EF5B4 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				F7570A9F238AE8F300621E4F /* Configuration.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +497,8 @@
 				F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */,
 				F798837D2381C95B00F01F3A /* ProfilePresenterProtocol.swift in Sources */,
 				F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */,
+				F7570AA0238AE8F300621E4F /* Configuration.swift in Sources */,
+				F7570AA3238AEAA200621E4F /* Location.swift in Sources */,
 				F79883682381B8F000F01F3A /* HomeViewController.swift in Sources */,
 				F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */,
 				F7B45FFF2389103F005CBEE4 /* PreferenceBoardViewController.swift in Sources */,
@@ -440,8 +510,10 @@
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
 				F798836A2381C4FA00F01F3A /* HomeViewProtocol.swift in Sources */,
+				F7570AAA238AECBA00621E4F /* LoactionManager.swift in Sources */,
 				F798837B2381C94C00F01F3A /* ProfilePresenter.swift in Sources */,
 				F7E9DDE2238344CB000DE6F4 /* PlacePreview.swift in Sources */,
+				F7570AA8238AEC9C00621E4F /* LocationService.swift in Sources */,
 				F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */,
 				F79883742381C6CB00F01F3A /* HomePresenterProtocol.swift in Sources */,
 				F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */,
