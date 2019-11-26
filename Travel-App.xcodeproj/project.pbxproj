@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CAC2AFC9CE146BFE50DF962A /* Pods_Travel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */; };
+		F71ACDEB238B41E60092279F /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71ACDEA238B41E60092279F /* Place.swift */; };
+		F745760E238B480C00C5A1DE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F745760D238B480C00C5A1DE /* Category.swift */; };
 		F7570AA0238AE8F300621E4F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570A9F238AE8F300621E4F /* Configuration.swift */; };
 		F7570AA3238AEAA200621E4F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570AA2238AEAA200621E4F /* Location.swift */; };
 		F7570AA8238AEC9C00621E4F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570AA7238AEC9C00621E4F /* LocationService.swift */; };
@@ -39,6 +41,8 @@
 		F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */; };
 		F7B45FFF2389103F005CBEE4 /* PreferenceBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B45FFE2389103F005CBEE4 /* PreferenceBoardViewController.swift */; };
 		F7B46001238919B6005CBEE4 /* PreferencesTour.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B46000238919B5005CBEE4 /* PreferencesTour.storyboard */; };
+		F7C7A1AA238B30CD00C33FE4 /* GoogleApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7A1A9238B30CD00C33FE4 /* GoogleApiService.swift */; };
+		F7C7A1AC238B369A00C33FE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7C7A1AB238B369A00C33FE4 /* GoogleService-Info.plist */; };
 		F7CCB5C6238488D7004C4A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */; };
 		F7E9DDE2238344CB000DE6F4 /* PlacePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */; };
 		F7F90D4623873FA600722F90 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F90D4523873FA600722F90 /* SettingTableViewCell.swift */; };
@@ -48,6 +52,8 @@
 		02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travel_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		666AAB4DC0E5FE91DDA1E761 /* Pods-Travel-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.release.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.release.xcconfig"; sourceTree = "<group>"; };
 		C61D44D03DA574807B86294F /* Pods-Travel-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.debug.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.debug.xcconfig"; sourceTree = "<group>"; };
+		F71ACDEA238B41E60092279F /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		F745760D238B480C00C5A1DE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F7570A9F238AE8F300621E4F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = "Travel-App/Scenes/Search/Locations/Configuration/Configuration.swift"; sourceTree = SOURCE_ROOT; };
 		F7570AA2238AEAA200621E4F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F7570AA7238AEC9C00621E4F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationService.swift; path = "Travel-App/Scenes/Search/Locations/Protocols/LocationService.swift"; sourceTree = SOURCE_ROOT; };
@@ -82,6 +88,8 @@
 		F7ADB09A237F3A9E00DA4E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7B45FFE2389103F005CBEE4 /* PreferenceBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBoardViewController.swift; sourceTree = "<group>"; };
 		F7B46000238919B5005CBEE4 /* PreferencesTour.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreferencesTour.storyboard; sourceTree = "<group>"; };
+		F7C7A1A9238B30CD00C33FE4 /* GoogleApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoogleApiService.swift; path = "Travel-App/Network/Handler/GoogleApiService.swift"; sourceTree = SOURCE_ROOT; };
+		F7C7A1AB238B369A00C33FE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePreview.swift; sourceTree = "<group>"; };
 		F7F90D4523873FA600722F90 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +121,15 @@
 				02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F71ACDE9238B41B60092279F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F7E180E1238DD69500406EFC /* Handler */,
+				F7E180E0238DD68B00406EFC /* Models */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		F7570A9C238A943D00621E4F /* TourPreferensesView */ = {
@@ -331,7 +348,9 @@
 				F798835B2381AEAE00F01F3A /* Scenes */,
 				F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */,
 				F7ADB09A237F3A9E00DA4E89 /* Info.plist */,
+				F7C7A1AB238B369A00C33FE4 /* GoogleService-Info.plist */,
 				F79FCA1E23846F69009F1693 /* Resources */,
+				F71ACDE9238B41B60092279F /* Network */,
 			);
 			path = "Travel-App";
 			sourceTree = "<group>";
@@ -343,6 +362,23 @@
 				F761DFF92381D02800D9DBBD /* Presenter */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		F7E180E0238DD68B00406EFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F71ACDEA238B41E60092279F /* Place.swift */,
+				F745760D238B480C00C5A1DE /* Category.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F7E180E1238DD69500406EFC /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				F7C7A1A9238B30CD00C33FE4 /* GoogleApiService.swift */,
+			);
+			path = Handler;
 			sourceTree = "<group>";
 		};
 		F7F0C9C7238AED1A007EF5B4 /* Managers */ = {
@@ -424,6 +460,7 @@
 			files = (
 				F7CCB5C6238488D7004C4A35 /* Assets.xcassets in Resources */,
 				F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */,
+				F7C7A1AC238B369A00C33FE4 /* GoogleService-Info.plist in Resources */,
 				F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
 				F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */,
 				F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
@@ -499,6 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C7A1AA238B30CD00C33FE4 /* GoogleApiService.swift in Sources */,
 				F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */,
 				F79883792381C93E00F01F3A /* ProfileViewProtocol.swift in Sources */,
 				F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */,
@@ -517,11 +555,13 @@
 				F79883772381C92900F01F3A /* ProfileViewController.swift in Sources */,
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
+				F71ACDEB238B41E60092279F /* Place.swift in Sources */,
 				F798836A2381C4FA00F01F3A /* HomeViewProtocol.swift in Sources */,
 				F7570AAA238AECBA00621E4F /* LoactionManager.swift in Sources */,
 				F798837B2381C94C00F01F3A /* ProfilePresenter.swift in Sources */,
 				F7E9DDE2238344CB000DE6F4 /* PlacePreview.swift in Sources */,
 				F7570AA8238AEC9C00621E4F /* LocationService.swift in Sources */,
+				F745760E238B480C00C5A1DE /* Category.swift in Sources */,
 				F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */,
 				F79883742381C6CB00F01F3A /* HomePresenterProtocol.swift in Sources */,
 				F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */,

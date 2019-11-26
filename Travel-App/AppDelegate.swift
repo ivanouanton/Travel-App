@@ -9,6 +9,9 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import Firebase
+import FirebaseFirestore
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,12 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        GMSServices.provideAPIKey("AIzaSyAy_-zQEPSyXXBwNHkc6oruERF8AeeMMCY")
-        GMSPlacesClient.provideAPIKey("AIzaSyAy_-zQEPSyXXBwNHkc6oruERF8AeeMMCY")
-        
-        let vc = AppTabBarController()
+        GMSServices.provideAPIKey("AIzaSyDsWUb4qF5MuVhNOUDmm2YTQvuEPBmEiQc")
+        GMSPlacesClient.provideAPIKey("AIzaSyDsWUb4qF5MuVhNOUDmm2YTQvuEPBmEiQc")
+        //        AIzaSyAy_-zQEPSyXXBwNHkc6oruERF8AeeMMCY
+
+        FirebaseApp.configure()
         
         window = UIWindow(frame: UIScreen.main.bounds)
+
+        
+        let vc = AppTabBarController()
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
         

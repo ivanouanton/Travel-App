@@ -57,21 +57,14 @@ final class SearchViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "New York"
-        // Creates a marker in the center of the map.
-        
-        let position = CLLocationCoordinate2D(latitude: 54.09, longitude: 28.31)
-        let london = GMSMarker(position: position)
-        london.title = "London"
-        london.icon = UIImage(named: "marker1")
-        london.map = mapView
-        london.title = "hello"
-        
+ 
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.presenter.fetchUserLocation()
+        self.presenter.getPlaces()
     }
 }
 
@@ -130,6 +123,19 @@ extension SearchViewController{
 }
 
 extension SearchViewController: SearchViewProtocol{
+    func showModal(with data: PlaceData) {
+        
+    }
+    
+    func addPlace(_ id: String, place: PlaceData) {
+        let position = CLLocationCoordinate2D(latitude: place.locationPlace.latitude,
+                                              longitude: place.locationPlace.longitude)
+        let marker = GMSMarker(position: position)
+        marker.icon = UIImage(named: "marker1")
+        marker.map = mapView
+        marker.title = id
+    }
+    
     func didChangeMyLocation(_ location: Location) {
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true

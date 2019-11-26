@@ -10,4 +10,6 @@ import CoreLocation
 
 protocol SearchViewProtocol: class{
     func didChangeMyLocation(_ location: Location)
+    func addPlace(_ id: String, place: PlaceData)
+    func showModal(with data: PlaceData)
 }

@@ -10,6 +10,13 @@ import UIKit
 
 class PlacePreview: UIView {
     
+    var place: PlaceData? {
+        didSet{
+            guard let place = place else {return}
+            self.titleLabel.text = place.name
+        }
+    }
+    
     private lazy var placeImage: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "preview-target-place")
