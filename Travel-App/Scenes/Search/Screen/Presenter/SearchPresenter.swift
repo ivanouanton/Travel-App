@@ -8,11 +8,13 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseStorage
 
 
 class SearchPresenter{
     
     var places = [String:PlaceData]()
+    private let imagesCache = NSCache<NSString, UIImage>()
     
     weak var view: SearchViewProtocol!
     let locationManager: LocationManager
@@ -49,9 +51,33 @@ extension SearchPresenter: SearchPresenterProtocol{
                     let data = PlaceData(document.data())
 
                     self.places[document.documentID] = data
+                    
                     self.view.addPlace(document.documentID, place: data)
                 }
             }
         }
     }
+    
+    private func getImage(with link: DocumentReference?,
+                          completionHandler: @escaping (_ image: UIImage?, _ error: Error?) -> Void){
+        guard let islandRef = link else{return}
+        let db = Storage.storage().reference().child(islandRef.parent.collectionID).child(islandRef.documentID)
+        let collectionRef = db.child(islandRef.parent.collectionID)
+        let imageRef = collectionRef.child(islandRef.documentID)
+        
+        if let cachedImage = imagesCache.object(forKey: islandRef.path as NSString) {
+            completionHandler(cachedImage, nil)
+        }else{
+            imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                if let error = error {
+                    completionHandler(nil, error)
+                } else {
+                    let image = UIImage(data: data!)
+                    self.imagesCache.setObject(image!, forKey: islandRef.path as NSString)
+                    completionHandler(image, nil)
+                }
+            }
+        }
+    }
+    
 }
