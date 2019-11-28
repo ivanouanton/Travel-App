@@ -28,7 +28,24 @@ class SearchPresenter{
 extension SearchPresenter: SearchPresenterProtocol{
     func showModalView(with id: String) {
         guard let data = places[id] else {return}
-        self.view.showModal(with: data)
+        var placeImage: UIImage?
+        
+        let aGroup = DispatchGroup()
+        
+        if let imageRef = data.image {
+            aGroup.enter()
+            self.getImage(with: imageRef.parent.collectionID,
+                          documentID: imageRef.documentID) { (image, error) in
+                            placeImage = image
+                            aGroup.leave()
+                            self.view.showModal(with: data, image: image)
+            }
+        }
+        
+        aGroup.notify(queue: DispatchQueue.main){
+            self.view.showModal(with: data, image: placeImage)
+        }
+         
     }
     
     func fetchUserLocation() {
@@ -58,14 +75,15 @@ extension SearchPresenter: SearchPresenterProtocol{
         }
     }
     
-    private func getImage(with link: DocumentReference?,
-                          completionHandler: @escaping (_ image: UIImage?, _ error: Error?) -> Void){
-        guard let islandRef = link else{return}
-        let db = Storage.storage().reference().child(islandRef.parent.collectionID).child(islandRef.documentID)
-        let collectionRef = db.child(islandRef.parent.collectionID)
-        let imageRef = collectionRef.child(islandRef.documentID)
+    private func getImage(with collectionID: String,
+                          documentID: String,
+                          completionHandler: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
+                
+        let db = Storage.storage().reference()
+        let collectionRef = db.child(collectionID)
+        let imageRef = collectionRef.child(documentID)
         
-        if let cachedImage = imagesCache.object(forKey: islandRef.path as NSString) {
+        if let cachedImage = imagesCache.object(forKey: documentID as NSString) {
             completionHandler(cachedImage, nil)
         }else{
             imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
@@ -73,7 +91,7 @@ extension SearchPresenter: SearchPresenterProtocol{
                     completionHandler(nil, error)
                 } else {
                     let image = UIImage(data: data!)
-                    self.imagesCache.setObject(image!, forKey: islandRef.path as NSString)
+                    self.imagesCache.setObject(image!, forKey: documentID as NSString)
                     completionHandler(image, nil)
                 }
             }

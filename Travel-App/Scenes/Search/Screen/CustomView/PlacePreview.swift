@@ -14,6 +14,13 @@ class PlacePreview: UIView {
         didSet{
             guard let place = place else {return}
             self.titleLabel.text = place.name
+            self.placeTitle.text = place.categoryId
+        }
+    }
+    
+    var image: UIImage = UIImage(named: "preview-target-place")!{
+        didSet{
+            self.placeImage.image = image
         }
     }
     
@@ -142,8 +149,9 @@ class PlacePreview: UIView {
             self.placeImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
             self.placeImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 16),
             self.placeImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            self.placeImage.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.35),
-            
+            self.placeImage.widthAnchor.constraint(equalToConstant: 120),
+            self.placeImage.heightAnchor.constraint(equalToConstant: 128),
+
             self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 24),
             self.titleLabel.leftAnchor.constraint(equalTo: self.placeImage.rightAnchor, constant: 8),
             self.titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),

@@ -7,9 +7,10 @@
 //
 
 import CoreLocation
+import UIKit
 
 protocol SearchViewProtocol: class{
     func didChangeMyLocation(_ location: Location)
     func addPlace(_ id: String, place: PlaceData)
-    func showModal(with data: PlaceData)
+    func showModal(with data: PlaceData, image: UIImage?)
 }

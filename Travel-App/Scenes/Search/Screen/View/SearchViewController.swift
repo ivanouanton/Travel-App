@@ -98,8 +98,15 @@ extension SearchViewController{
     
     // MARK: - Methods
     
-    private func showModalDescription() {
+    private func showModalDescription(with id: String) {
+        if self.placePreviewTop.isActive{
+            showModalView()
+        }
         
+        self.presenter.showModalView(with: id)
+    }
+    
+    private func showModalView(){
         UIView.animate(withDuration: 0.25) {
             self.placePreviewBottom.isActive = true
             self.placePreviewTop.isActive = false
@@ -123,8 +130,10 @@ extension SearchViewController{
 }
 
 extension SearchViewController: SearchViewProtocol{
-    func showModal(with data: PlaceData) {
-        
+    func showModal(with data: PlaceData, image: UIImage?) {
+        self.placePreview.place = data
+        guard let image = image else {return}
+        self.placePreview.image = image
     }
     
     func addPlace(_ id: String, place: PlaceData) {
@@ -147,7 +156,7 @@ extension SearchViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         
-        self.showModalDescription()
+        self.showModalDescription(with: marker.title ?? "")
 
         return true
     }
