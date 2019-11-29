@@ -11,13 +11,13 @@ import Firebase
 
 struct Category{
     
-    let id: Int
+    let transport: [String: String]
     let title: String
     let img: DocumentReference
     
     init(_ dictionary: [String: Any]){
-        self.id = dictionary["id_category"] as! Int
-        self.title = dictionary["name_category"] as! String
-        self.img = dictionary["img_categoty"] as! DocumentReference
+        self.transport = dictionary["transport"] as! [String: String]
+        self.title = dictionary["title"] as! String
+        self.img = dictionary["img_marker"] as! DocumentReference
     }
 }

@@ -130,17 +130,19 @@ extension SearchViewController{
 }
 
 extension SearchViewController: SearchViewProtocol{
-    func showModal(with data: PlaceData, image: UIImage?) {
+    func showModal(with data: PlaceData, image: UIImage?, category: String) {
         self.placePreview.place = data
+        self.placePreview.category = category
+
         guard let image = image else {return}
         self.placePreview.image = image
     }
     
-    func addPlace(_ id: String, place: PlaceData) {
+    func addPlace(_ id: String, place: PlaceData, markerImg: UIImage?) {
         let position = CLLocationCoordinate2D(latitude: place.locationPlace.latitude,
                                               longitude: place.locationPlace.longitude)
         let marker = GMSMarker(position: position)
-        marker.icon = UIImage(named: "marker1")
+        marker.icon = markerImg
         marker.map = mapView
         marker.title = id
     }

@@ -18,6 +18,12 @@ class PlacePreview: UIView {
         }
     }
     
+    var category: String = "" {
+        didSet{
+            self.placeTitle.text = category
+        }
+    }
+    
     var image: UIImage = UIImage(named: "preview-target-place")!{
         didSet{
             self.placeImage.image = image
@@ -31,6 +37,7 @@ class PlacePreview: UIView {
         image.backgroundColor = .red
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
+        image.layer.cornerRadius = 5
         return image
     }()
     
