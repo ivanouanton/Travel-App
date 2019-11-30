@@ -14,6 +14,19 @@ final class SearchViewController: UIViewController{
     
     private var placePreviewBottom: NSLayoutConstraint!
     private var placePreviewTop: NSLayoutConstraint!
+    
+    private var categories = [String: Category]()
+    private var categoriesArray = [String]()
+    
+
+
+    private lazy var categoryView: CategoryFilter = {
+        let collection = CategoryFilter()
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        collection.backgroundColor = UIColor(named: "white")
+
+        return collection
+     }()
 
     private lazy var mapView: GMSMapView = {
         let camera = GMSCameraPosition.camera(withLatitude: Defaults.location.latitude,
@@ -47,6 +60,10 @@ final class SearchViewController: UIViewController{
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
+    
+    // MARK: - Life Cycle
+
+    
     override func loadView() {
         super.loadView()
         
@@ -57,7 +74,7 @@ final class SearchViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "New York"
- 
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,6 +88,11 @@ final class SearchViewController: UIViewController{
 extension SearchViewController{
     func setupUI(){
         self.view.backgroundColor = .white
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "white")
+        self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
+
+        
+        self.view.addSubview(self.categoryView)
         self.view.addSubview(self.mapView)
         self.view.addSubview(self.placePreview)
         self.view.addSubview(self.createTourButton)
@@ -82,7 +104,12 @@ extension SearchViewController{
         
         NSLayoutConstraint.activate([
             
-            self.mapView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.categoryView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.categoryView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
+            self.categoryView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+            self.categoryView.heightAnchor.constraint(equalToConstant: 32),
+
+            self.mapView.topAnchor.constraint(equalTo: self.categoryView.safeAreaLayoutGuide.bottomAnchor),
             self.mapView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
             self.mapView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
             self.mapView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
@@ -91,7 +118,7 @@ extension SearchViewController{
             self.placePreview.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.placePreviewTop,
             
-            self.createTourButton.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            self.createTourButton.topAnchor.constraint(equalTo: self.categoryView.bottomAnchor, constant: 16),
             self.createTourButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16)
             ])
     }
@@ -130,6 +157,11 @@ extension SearchViewController{
 }
 
 extension SearchViewController: SearchViewProtocol{
+    func setFilter(with categories: [String : Category]) {
+        categoriesArray = Array(categories.keys)
+        self.categoryView.categories = categoriesArray
+    }
+    
     func showModal(with data: PlaceData, image: UIImage?, category: String) {
         self.placePreview.place = data
         self.placePreview.category = category
@@ -157,9 +189,7 @@ extension SearchViewController: SearchViewProtocol{
 extension SearchViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        
         self.showModalDescription(with: marker.title ?? "")
-
         return true
     }
 }

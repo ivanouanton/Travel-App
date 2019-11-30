@@ -14,8 +14,7 @@ struct PlaceData{
     let name: String
     let categoryId: String
     let description: String
-    let isVisit: Bool
-    let audio: DocumentReference
+    let audio: DocumentReference?
     let image: DocumentReference?
     let locationPlace: GeoPoint
     let price: String
@@ -24,8 +23,7 @@ struct PlaceData{
         self.name = dictionary["name"] as! String
         self.categoryId = dictionary["category"] as! String
         self.description = dictionary["description"] as! String
-        self.isVisit = dictionary["isVisit"] as! Bool
-        self.audio = dictionary["audio"] as! DocumentReference
+        self.audio = dictionary["audio"] as? DocumentReference
         self.image = dictionary["image"] as? DocumentReference
         self.locationPlace = dictionary["location"] as! GeoPoint
         self.price = dictionary["price"] as! String

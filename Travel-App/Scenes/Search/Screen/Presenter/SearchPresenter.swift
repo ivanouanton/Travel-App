@@ -107,6 +107,7 @@ extension SearchPresenter: SearchPresenterProtocol{
                         }
                     }
                 }
+                self.view.setFilter(with: self.categories)
             }
             aGroup.leave()
         }
