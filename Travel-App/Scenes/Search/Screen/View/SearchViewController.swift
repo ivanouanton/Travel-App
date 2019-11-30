@@ -15,10 +15,7 @@ final class SearchViewController: UIViewController{
     private var placePreviewBottom: NSLayoutConstraint!
     private var placePreviewTop: NSLayoutConstraint!
     
-    private var categories = [String: Category]()
-    private var categoriesArray = [String]()
-    
-
+    private var categoriesName: [String] = ["All"]
 
     private lazy var categoryView: CategoryFilter = {
         let collection = CategoryFilter()
@@ -157,9 +154,8 @@ extension SearchViewController{
 }
 
 extension SearchViewController: SearchViewProtocol{
-    func setFilter(with categories: [String : Category]) {
-        categoriesArray = Array(categories.keys)
-        self.categoryView.categories = categoriesArray
+    func setFilter(with categories: [String]) {
+        self.categoryView.categories = categories
     }
     
     func showModal(with data: PlaceData, image: UIImage?, category: String) {

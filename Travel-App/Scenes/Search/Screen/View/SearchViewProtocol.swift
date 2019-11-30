@@ -13,5 +13,5 @@ protocol SearchViewProtocol: class{
     func didChangeMyLocation(_ location: Location)
     func addPlace(_ id: String, place: PlaceData, markerImg: UIImage?)
     func showModal(with data: PlaceData, image: UIImage?, category: String)
-    func setFilter(with categories: [String: Category])
+    func setFilter(with categories: [String])
 }

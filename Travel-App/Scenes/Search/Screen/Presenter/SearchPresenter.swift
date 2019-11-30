@@ -15,6 +15,9 @@ class SearchPresenter{
     
     var places = [String:PlaceData]()
     var categories = [String:Category]()
+    private var categoriesName = ["All"]
+    private var categoriesId = ["All"]
+
     private let imagesCache = NSCache<NSString, UIImage>()
     private let categoriesCache = NSCache<NSString, NSString>()
     private let categoryImagesCache = NSCache<NSString, UIImage>()
@@ -54,7 +57,6 @@ extension SearchPresenter: SearchPresenterProtocol{
         aGroup.notify(queue: DispatchQueue.main){
             self.view.showModal(with: data, image: placeImage, category: self.categories[data.categoryId]?.title ?? "")
         }
-         
     }
     
     func fetchUserLocation() {
@@ -95,6 +97,9 @@ extension SearchPresenter: SearchPresenterProtocol{
                     let data = Category(document.data())
                     self.categories[document.documentID] = data
                     
+                    self.categoriesName.append(data.title)
+                    self.categoriesId.append(document.documentID)
+                    
                     if let _ = self.categoryImagesCache.object(forKey: data.img.documentID as NSString) {
                     }else{
                         aGroup.enter()
@@ -107,7 +112,7 @@ extension SearchPresenter: SearchPresenterProtocol{
                         }
                     }
                 }
-                self.view.setFilter(with: self.categories)
+                self.view.setFilter(with: self.categoriesName)
             }
             aGroup.leave()
         }
