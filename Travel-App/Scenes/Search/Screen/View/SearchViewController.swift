@@ -9,6 +9,8 @@
 import UIKit
 import GoogleMaps
 
+
+
 final class SearchViewController: UIViewController{
     var presenter: SearchPresenterProtocol!
     
@@ -21,7 +23,7 @@ final class SearchViewController: UIViewController{
         let collection = CategoryFilter()
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.backgroundColor = UIColor(named: "white")
-
+        collection.delegate = self
         return collection
      }()
 
@@ -30,6 +32,7 @@ final class SearchViewController: UIViewController{
                                               longitude: Defaults.location.longitude,
                                               zoom: 15.0)
         let view = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        view.mapStyle = try? GMSMapStyle(jsonString: Defaults.kMapStyle)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.delegate = self
         return view
@@ -71,7 +74,6 @@ final class SearchViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "New York"
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -126,7 +128,6 @@ extension SearchViewController{
         if self.placePreviewTop.isActive{
             showModalView()
         }
-        
         self.presenter.showModalView(with: id)
     }
     
@@ -154,6 +155,10 @@ extension SearchViewController{
 }
 
 extension SearchViewController: SearchViewProtocol{
+    func clearMarkers() {
+        mapView.clear()
+    }
+    
     func setFilter(with categories: [String]) {
         self.categoryView.categories = categories
     }
@@ -166,11 +171,12 @@ extension SearchViewController: SearchViewProtocol{
         self.placePreview.image = image
     }
     
-    func addPlace(_ id: String, place: PlaceData, markerImg: UIImage?) {
+    func addMarker(_ id: String, place: PlaceData, markerImg: UIImage?, isActive: Bool) {
         let position = CLLocationCoordinate2D(latitude: place.locationPlace.latitude,
                                               longitude: place.locationPlace.longitude)
         let marker = GMSMarker(position: position)
         marker.icon = markerImg
+        marker.opacity = isActive ? 1 : 0.2
         marker.map = mapView
         marker.title = id
     }
@@ -189,3 +195,10 @@ extension SearchViewController: GMSMapViewDelegate {
         return true
     }
 }
+
+extension SearchViewController: CategoryFilterDelegate{
+    func categoryFilter(didSelectedItemAt index: Int) {
+        self.presenter.filterPlaces(with: index)
+    }
+}
+

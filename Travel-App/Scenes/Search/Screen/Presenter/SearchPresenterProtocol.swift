@@ -12,4 +12,5 @@ protocol SearchPresenterProtocol: class {
     func fetchUserLocation()
     func getPlaces()
     func showModalView(with id: String)
+    func filterPlaces(with index: Int)
 }

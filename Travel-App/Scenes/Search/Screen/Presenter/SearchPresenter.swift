@@ -30,9 +30,34 @@ class SearchPresenter{
         self.view = view
         self.locationManager = LocationManager()
     }
+    
+    private func showAllMarkers(){
+        for (id, place) in self.places {
+            let cachedImage = self.categoryImagesCache.object(forKey: place.categoryId as NSString)
+            self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: true)
+        }
+    }
 }
 
 extension SearchPresenter: SearchPresenterProtocol{
+    func filterPlaces(with index: Int) {
+        
+        if index == 0{
+            self.showAllMarkers()
+            return
+        }
+        self.view.clearMarkers()
+        
+        for (id, place) in self.places {
+            let cachedImage = self.categoryImagesCache.object(forKey: place.categoryId as NSString)
+            if place.categoryId == categoriesId[index] {
+                self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: true)
+            }else{
+                self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: false)
+            }
+        }
+    }
+    
     func showModalView(with id: String) {
         guard let data = places[id] else {return}
         var placeImage: UIImage?
@@ -118,10 +143,7 @@ extension SearchPresenter: SearchPresenterProtocol{
         }
         
         aGroup.notify(queue: DispatchQueue.main){
-            for (id, place) in self.places {
-                let cachedImage = self.categoryImagesCache.object(forKey: place.categoryId as NSString)
-                self.view.addPlace(id, place: place, markerImg: cachedImage)
-            }
+            self.showAllMarkers()
         }
     }
     

@@ -11,6 +11,7 @@ import UIKit
 class CategoryFilter: UIView {
     
     // MARK: - Property
+    var delegate: CategoryFilterDelegate?
     
     var categories = [String](){
         didSet{
@@ -24,7 +25,6 @@ class CategoryFilter: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
@@ -36,6 +36,9 @@ class CategoryFilter: UIView {
                                                left: 10,
                                                bottom: 0,
                                                right: 0)
+        collection.showsHorizontalScrollIndicator = false
+        collection.allowsMultipleSelection = false
+
         return collection
     }()
     
@@ -48,6 +51,14 @@ class CategoryFilter: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
+    func selectItem(at index: Int){
+        self.categoryView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)
     }
     
     // MARK: - Setup UI
@@ -81,6 +92,7 @@ extension CategoryFilter: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? CategoryFilterCell
+        self.delegate?.categoryFilter(didSelectedItemAt: indexPath.item)
         cell?.showIndicator()
     }
     

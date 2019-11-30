@@ -15,6 +15,7 @@
 		F7570AA3238AEAA200621E4F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570AA2238AEAA200621E4F /* Location.swift */; };
 		F7570AA8238AEC9C00621E4F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570AA7238AEC9C00621E4F /* LocationService.swift */; };
 		F7570AAA238AECBA00621E4F /* LoactionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570AA9238AECBA00621E4F /* LoactionManager.swift */; };
+		F75EAD3A2392FED80001C457 /* CategoryFilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75EAD392392FED80001C457 /* CategoryFilterDelegate.swift */; };
 		F761DFF22381CF7400D9DBBD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF12381CF7400D9DBBD /* SettingsViewController.swift */; };
 		F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */; };
 		F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */; };
@@ -65,6 +66,7 @@
 		F7570AA2238AEAA200621E4F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F7570AA7238AEC9C00621E4F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationService.swift; path = "Travel-App/Scenes/Search/Locations/Protocols/LocationService.swift"; sourceTree = SOURCE_ROOT; };
 		F7570AA9238AECBA00621E4F /* LoactionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoactionManager.swift; sourceTree = "<group>"; };
+		F75EAD392392FED80001C457 /* CategoryFilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryFilterDelegate.swift; path = "Travel-App/Scenes/Search/CategoryFilterDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		F761DFF12381CF7400D9DBBD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewProtocol.swift; sourceTree = "<group>"; };
 		F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */,
 				F7CA366623925B84005F7C57 /* CategoryFilter.swift */,
 				F7CA366823925DC9005F7C57 /* CategoryFilterCell.swift */,
+				F75EAD392392FED80001C457 /* CategoryFilterDelegate.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */,
 				F77F22422392DB3C004610CE /* Extension+UIViewController.swift in Sources */,
 				F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */,
+				F75EAD3A2392FED80001C457 /* CategoryFilterDelegate.swift in Sources */,
 				F798837D2381C95B00F01F3A /* ProfilePresenterProtocol.swift in Sources */,
 				F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */,
 				F7CA366923925DC9005F7C57 /* CategoryFilterCell.swift in Sources */,
