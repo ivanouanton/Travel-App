@@ -20,14 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        GMSServices.provideAPIKey("AIzaSyDsWUb4qF5MuVhNOUDmm2YTQvuEPBmEiQc")
-        GMSPlacesClient.provideAPIKey("AIzaSyDsWUb4qF5MuVhNOUDmm2YTQvuEPBmEiQc")
-        //        AIzaSyAy_-zQEPSyXXBwNHkc6oruERF8AeeMMCY
+        GMSServices.provideAPIKey(Defaults.apiKey)
+        GMSPlacesClient.provideAPIKey(Defaults.apiKey)
 
         FirebaseApp.configure()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-
         
         let vc = AppTabBarController()
         self.window?.rootViewController = vc

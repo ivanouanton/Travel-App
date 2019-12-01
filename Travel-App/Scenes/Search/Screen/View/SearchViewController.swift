@@ -171,6 +171,40 @@ extension SearchViewController: SearchViewProtocol{
         self.placePreview.image = image
     }
     
+//    func drawPath()
+//    {
+//        let origin = "\(43.1561681),\(-75.8449946)"
+//        let destination = "\(38.8950712),\(-77.0362758)"
+//
+//        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(Defaults.apiKey)"
+//
+//        Alamofire.request(url).responseJSON { response in
+//            print(response.request!)  // original URL request
+//            print(response.response!) // HTTP URL response
+//            print(response.data!)     // server data
+//            print(response.result)   // result of response serialization
+//
+//            do {
+//                let json = try JSON(data: response.data!)
+//                let routes = json["routes"].arrayValue
+//
+//                for route in routes
+//                {
+//                    let routeOverviewPolyline = route["overview_polyline"].dictionary
+//                    let points = routeOverviewPolyline?["points"]?.stringValue
+//                    let path = GMSPath.init(fromEncodedPath: points!)
+//                    let polyline = GMSPolyline.init(path: path)
+//                    polyline.map = self.MapView
+//                }
+//            }
+//            catch {
+//                print("ERROR: not working")
+//            }
+//        }
+//
+//    }
+    
+
     func addMarker(_ id: String, place: PlaceData, markerImg: UIImage?, isActive: Bool) {
         let position = CLLocationCoordinate2D(latitude: place.locationPlace.latitude,
                                               longitude: place.locationPlace.longitude)

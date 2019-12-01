@@ -22,5 +22,6 @@ enum Defaults {
       }
     ]
     """
+    static let apiKey = "AIzaSyDsWUb4qF5MuVhNOUDmm2YTQvuEPBmEiQc"
 
 }
