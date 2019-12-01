@@ -43,6 +43,7 @@ final class SearchViewController: UIViewController{
         place.translatesAutoresizingMaskIntoConstraints = false
         place.backgroundColor = UIColor.white
         place.contentMode = .scaleAspectFill
+        place.delegate = self
         return place
     }()
     
@@ -74,6 +75,8 @@ final class SearchViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "New York"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -236,3 +239,20 @@ extension SearchViewController: CategoryFilterDelegate{
     }
 }
 
+extension SearchViewController: PlacePreviewDelegate {
+    func getInfoPlace(with data: PlaceData, image: UIImage?, category: String) {
+        
+        let storyboard = UIStoryboard(name: "InfoStoryboard", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "InfoPlaceViewController") as? PlaceInfoViewController
+        controller?.place = data
+        if let image = image{
+            controller?.image = image
+        }
+        controller?.category = category
+        
+        self.navigationController?.pushViewController(controller!, animated: true)
+    }
+    
+    func createRoute() {
+    }
+}

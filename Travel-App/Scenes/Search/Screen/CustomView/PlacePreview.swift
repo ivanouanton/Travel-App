@@ -10,6 +10,8 @@ import UIKit
 
 class PlacePreview: UIView {
     
+    weak var delegate: PlacePreviewDelegate?
+    
     var place: PlaceData? {
         didSet{
             guard let place = place else {return}
@@ -59,6 +61,7 @@ class PlacePreview: UIView {
         button.setTitleColor(UIColor(named: "pantone"), for: .normal)
         button.layer.cornerRadius = 5
         button.layer.backgroundColor = UIColor(named: "pantone")?.withAlphaComponent(0.2).cgColor
+        button.addTarget(self, action: #selector(createRoute), for: .touchUpInside)
         return button
     }()
     
@@ -70,6 +73,7 @@ class PlacePreview: UIView {
         button.setTitleColor(UIColor(named: "pantone"), for: .normal)
         button.layer.cornerRadius = 5
         button.layer.backgroundColor = UIColor(named: "pantone")?.withAlphaComponent(0.2).cgColor
+        button.addTarget(self, action: #selector(getInfoPlace), for: .touchUpInside)
         return button
     }()
     
@@ -129,6 +133,20 @@ class PlacePreview: UIView {
         return stack
     }()
     
+    
+    // MARK: - Methods
+    
+    @objc func getInfoPlace(){
+        guard let place = self.place else { return }
+        self.delegate?.getInfoPlace(with: place, image: self.image, category: self.category)
+    }
+    
+    @objc func createRoute(){
+        self.delegate?.createRoute()
+    }
+    
+    // MARK: - Life Cicle
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupUI()

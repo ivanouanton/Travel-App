@@ -6,9 +6,6 @@
 //  Copyright © 2019 companyName. All rights reserved.
 //
 
-let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(Defaults.apiKey)"
-
-
 import Moya
 
 enum RestService{
