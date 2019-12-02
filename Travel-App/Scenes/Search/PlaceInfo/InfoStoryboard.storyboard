@@ -38,25 +38,25 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants &amp; Cafes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoA-2Q-Cb6">
-                                                <rect key="frame" x="15.999999999999993" y="198" width="126.33333333333331" height="14"/>
+                                                <rect key="frame" x="16" y="198" width="128.33333333333334" height="16.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="14"/>
                                                 <color key="textColor" name="onyx"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.1 (358) ££" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95v-sw-T5O">
-                                                <rect key="frame" x="16" y="218" width="76" height="14"/>
+                                                <rect key="frame" x="16" y="220.33333333333334" width="73.666666666666671" height="16.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="14"/>
                                                 <color key="textColor" name="silver"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choosing The Right Boutique Hotel For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-2D-9VV">
-                                                <rect key="frame" x="16" y="305" width="343" height="16"/>
+                                                <rect key="frame" x="16" y="314.33333333333331" width="343" height="18.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="16"/>
                                                 <color key="textColor" name="heavy"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQZ-PF-ROW">
-                                                <rect key="frame" x="16" y="250" width="150" height="28"/>
+                                                <rect key="frame" x="16" y="254.66666666666666" width="150" height="32.666666666666657"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="nMu-Jp-dOE"/>
                                                 </constraints>
@@ -67,7 +67,7 @@ Brooklyn, NY 11249</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Diego Vacation Rental" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBM-lD-6ES">
-                                                <rect key="frame" x="16" y="331" width="171" height="14"/>
+                                                <rect key="frame" x="16" y="343" width="166.33333333333334" height="16.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
                                                 <color key="textColor" name="silver"/>
                                                 <nil key="highlightedColor"/>
@@ -91,7 +91,7 @@ Brooklyn, NY 11249</string>
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-2u-tWP">
-                                                <rect key="frame" x="16" y="356" width="343" height="240.66666666666663"/>
+                                                <rect key="frame" x="16" y="370.33333333333331" width="343" height="240.66666666666669"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <mutableString key="content">Stu Unger is one of the biggest superstars to have immerged from the professional poker world. Besides being a true poker genius and a three time World Series of Poker champion, Stu Unger had a fascinating life story. It was not surprising that after his death Stu was the subject of a biography and a biopic. Stu Unger lived the life of a rock star including the quick rise to fame, the drugs, the comeback and the unavoidable death at an early age. Here you can read about the life story of the legendary poker player Stu Unger.</mutableString>

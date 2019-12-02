@@ -25,6 +25,10 @@
 		F7932B652393A0E4006E6496 /* PlacePreviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B642393A0E4006E6496 /* PlacePreviewDelegate.swift */; };
 		F7932B672393A65C006E6496 /* InfoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */; };
 		F7932B692393A687006E6496 /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B682393A687006E6496 /* PlaceInfoViewController.swift */; };
+		F7932B7523946D4B006E6496 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B7423946D4B006E6496 /* RadioButton.swift */; };
+		F7932B7923947D3D006E6496 /* PVRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B7723947D3D006E6496 /* PVRadioButton.swift */; };
+		F7932B7A23947D3D006E6496 /* PVRadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B7823947D3D006E6496 /* PVRadioButtonGroup.swift */; };
+		F7932B7C23947D43006E6496 /* PVRadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B7B23947D43006E6496 /* PVRadioButtonView.swift */; };
 		F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883592381AE5E00F01F3A /* ViewFactory.swift */; };
 		F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835C2381AEF800F01F3A /* SearchViewController.swift */; };
 		F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */; };
@@ -80,6 +84,10 @@
 		F7932B642393A0E4006E6496 /* PlacePreviewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlacePreviewDelegate.swift; path = "Travel-App/Scenes/Search/Screen/PlacePreviewDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = InfoStoryboard.storyboard; path = "Travel-App/Scenes/Search/PlaceInfo/InfoStoryboard.storyboard"; sourceTree = SOURCE_ROOT; };
 		F7932B682393A687006E6496 /* PlaceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoViewController.swift; sourceTree = "<group>"; };
+		F7932B7423946D4B006E6496 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		F7932B7723947D3D006E6496 /* PVRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVRadioButton.swift; sourceTree = "<group>"; };
+		F7932B7823947D3D006E6496 /* PVRadioButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVRadioButtonGroup.swift; sourceTree = "<group>"; };
+		F7932B7B23947D43006E6496 /* PVRadioButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PVRadioButtonView.swift; sourceTree = "<group>"; };
 		F79883592381AE5E00F01F3A /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewFactory.swift; path = ../ViewFactory.swift; sourceTree = "<group>"; };
 		F798835C2381AEF800F01F3A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewProtocol.swift; sourceTree = "<group>"; };
@@ -224,6 +232,16 @@
 			path = PlaceInfo;
 			sourceTree = "<group>";
 		};
+		F7932B7623947D31006E6496 /* radio */ = {
+			isa = PBXGroup;
+			children = (
+				F7932B7723947D3D006E6496 /* PVRadioButton.swift */,
+				F7932B7823947D3D006E6496 /* PVRadioButtonGroup.swift */,
+				F7932B7B23947D43006E6496 /* PVRadioButtonView.swift */,
+			);
+			path = radio;
+			sourceTree = "<group>";
+		};
 		F7958CCB238B09C1007688F8 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,11 +266,13 @@
 		F7958CCD238B0CD8007688F8 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				F7932B7623947D31006E6496 /* radio */,
 				F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */,
 				F7932B642393A0E4006E6496 /* PlacePreviewDelegate.swift */,
 				F7CA366623925B84005F7C57 /* CategoryFilter.swift */,
 				F7CA366823925DC9005F7C57 /* CategoryFilterCell.swift */,
 				F75EAD392392FED80001C457 /* CategoryFilterDelegate.swift */,
+				F7932B7423946D4B006E6496 /* RadioButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -480,6 +500,7 @@
 				TargetAttributes = {
 					F7ADB08A237F3A9700DA4E89 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -592,8 +613,10 @@
 				F7932B692393A687006E6496 /* PlaceInfoViewController.swift in Sources */,
 				F77F22422392DB3C004610CE /* Extension+UIViewController.swift in Sources */,
 				F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */,
+				F7932B7523946D4B006E6496 /* RadioButton.swift in Sources */,
 				F75EAD3A2392FED80001C457 /* CategoryFilterDelegate.swift in Sources */,
 				F7932B652393A0E4006E6496 /* PlacePreviewDelegate.swift in Sources */,
+				F7932B7A23947D3D006E6496 /* PVRadioButtonGroup.swift in Sources */,
 				F798837D2381C95B00F01F3A /* ProfilePresenterProtocol.swift in Sources */,
 				F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */,
 				F7CA366923925DC9005F7C57 /* CategoryFilterCell.swift in Sources */,
@@ -613,6 +636,7 @@
 				F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */,
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
 				F71ACDEB238B41E60092279F /* Place.swift in Sources */,
+				F7932B7C23947D43006E6496 /* PVRadioButtonView.swift in Sources */,
 				F798836A2381C4FA00F01F3A /* HomeViewProtocol.swift in Sources */,
 				F7570AAA238AECBA00621E4F /* LoactionManager.swift in Sources */,
 				F798837B2381C94C00F01F3A /* ProfilePresenter.swift in Sources */,
@@ -623,6 +647,7 @@
 				F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */,
 				F79883742381C6CB00F01F3A /* HomePresenterProtocol.swift in Sources */,
 				F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */,
+				F7932B7923947D3D006E6496 /* PVRadioButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,6 +786,7 @@
 			baseConfigurationReference = C61D44D03DA574807B86294F /* Pods-Travel-App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KHN7WQWRV9;
 				INFOPLIST_FILE = "Travel-App/Info.plist";
@@ -770,6 +796,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Company-name.Travel-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -780,6 +807,7 @@
 			baseConfigurationReference = 666AAB4DC0E5FE91DDA1E761 /* Pods-Travel-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KHN7WQWRV9;
 				INFOPLIST_FILE = "Travel-App/Info.plist";
