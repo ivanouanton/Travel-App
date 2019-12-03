@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNextLTPro-Demi.otf">
+            <string>AvenirNextLTPro-Demi</string>
+        </array>
+        <array key="AvenirNextLTPro-Regular.otf">
+            <string>AvenirNextLTPro-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--InfoPlaceViewController-->
+        <scene sceneID="9xb-z4-l6j">
+            <objects>
+                <viewController storyboardIdentifier="InfoPlaceViewController" title="InfoPlaceViewController" id="UhC-Oq-jYi" customClass="PlaceInfoViewController" customModule="Travel_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TNT-wx-OaS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xnn-3q-Dyt">
+                                <rect key="frame" x="0.0" y="20" width="375" height="772"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VvZ-hM-Bhr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="804"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starbucks" translatesAutoresizingMaskIntoConstraints="NO" id="bjQ-kM-VKo">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="170" id="cNu-9b-Kmj"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants &amp; Cafes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoA-2Q-Cb6">
+                                                <rect key="frame" x="16" y="198" width="128.33333333333334" height="16.333333333333343"/>
+                                                <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="14"/>
+                                                <color key="textColor" name="onyx"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.1 (358) ££" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95v-sw-T5O">
+                                                <rect key="frame" x="16" y="220.33333333333334" width="73.666666666666671" height="16.333333333333343"/>
+                                                <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="14"/>
+                                                <color key="textColor" name="silver"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choosing The Right Boutique Hotel For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-2D-9VV">
+                                                <rect key="frame" x="16" y="314.33333333333331" width="343" height="18.666666666666686"/>
+                                                <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="16"/>
+                                                <color key="textColor" name="heavy"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQZ-PF-ROW">
+                                                <rect key="frame" x="16" y="254.66666666666666" width="150" height="32.666666666666657"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="nMu-Jp-dOE"/>
+                                                </constraints>
+                                                <string key="text">81 Broadway
+Brooklyn, NY 11249</string>
+                                                <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="14"/>
+                                                <color key="textColor" name="silver"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Diego Vacation Rental" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBM-lD-6ES">
+                                                <rect key="frame" x="16" y="343" width="166.33333333333334" height="16.333333333333314"/>
+                                                <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
+                                                <color key="textColor" name="silver"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myh-tt-CbA">
+                                                <rect key="frame" x="234" y="240" width="125" height="36"/>
+                                                <color key="backgroundColor" red="0.078431372549019607" green="0.29411764705882354" blue="0.43137254901960786" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="125" id="s4y-eI-yeN"/>
+                                                    <constraint firstAttribute="height" constant="36" id="waO-Kf-UC9"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="110" minY="0.0" maxX="30" maxY="0.0"/>
+                                                <state key="normal" title="Play Audio" image="play-icon">
+                                                    <color key="titleColor" name="pantone"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-2u-tWP">
+                                                <rect key="frame" x="16" y="370.33333333333331" width="343" height="240.66666666666669"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment>
+                                                        <mutableString key="content">Stu Unger is one of the biggest superstars to have immerged from the professional poker world. Besides being a true poker genius and a three time World Series of Poker champion, Stu Unger had a fascinating life story. It was not surprising that after his death Stu was the subject of a biography and a biopic. Stu Unger lived the life of a rock star including the quick rise to fame, the drugs, the comeback and the unavoidable death at an early age. Here you can read about the life story of the legendary poker player Stu Unger.</mutableString>
+                                                        <attributes>
+                                                            <color key="NSColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                            <font key="NSFont" size="14" name="AvenirNext-Regular"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="AQZ-PF-ROW" firstAttribute="top" secondItem="95v-sw-T5O" secondAttribute="bottom" constant="18" id="1gu-jK-egl"/>
+                                            <constraint firstItem="AQZ-PF-ROW" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="6Gb-pA-Hfk"/>
+                                            <constraint firstItem="Myh-tt-CbA" firstAttribute="top" secondItem="bjQ-kM-VKo" secondAttribute="bottom" constant="70" id="9Ii-xZ-grj"/>
+                                            <constraint firstItem="FcV-2u-tWP" firstAttribute="centerX" secondItem="VvZ-hM-Bhr" secondAttribute="centerX" id="Jfl-gS-mAm"/>
+                                            <constraint firstItem="gxn-2D-9VV" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="KVH-O9-fRj"/>
+                                            <constraint firstItem="bjQ-kM-VKo" firstAttribute="top" secondItem="VvZ-hM-Bhr" secondAttribute="top" id="Mux-06-hn9"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FcV-2u-tWP" secondAttribute="bottom" constant="45" id="XB4-7k-HAZ"/>
+                                            <constraint firstItem="gxn-2D-9VV" firstAttribute="top" secondItem="AQZ-PF-ROW" secondAttribute="bottom" constant="27" id="XNS-w0-pqZ"/>
+                                            <constraint firstItem="bjQ-kM-VKo" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" id="aLZ-eG-dNV"/>
+                                            <constraint firstAttribute="trailing" secondItem="bjQ-kM-VKo" secondAttribute="trailing" id="c5z-OJ-gKm"/>
+                                            <constraint firstItem="95v-sw-T5O" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="hbo-Sb-YVZ"/>
+                                            <constraint firstItem="hBM-lD-6ES" firstAttribute="top" secondItem="gxn-2D-9VV" secondAttribute="bottom" constant="10" id="iPy-1a-R5x"/>
+                                            <constraint firstAttribute="trailing" secondItem="Myh-tt-CbA" secondAttribute="trailing" constant="16" id="kbQ-jx-rRg"/>
+                                            <constraint firstItem="FcV-2u-tWP" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="kse-nq-BxF"/>
+                                            <constraint firstItem="FcV-2u-tWP" firstAttribute="top" secondItem="hBM-lD-6ES" secondAttribute="bottom" constant="11" id="p2G-fv-lLH"/>
+                                            <constraint firstItem="hBM-lD-6ES" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="rip-Kf-2Ti"/>
+                                            <constraint firstItem="DoA-2Q-Cb6" firstAttribute="top" secondItem="bjQ-kM-VKo" secondAttribute="bottom" constant="28" id="tVJ-9h-AvX"/>
+                                            <constraint firstItem="DoA-2Q-Cb6" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="urs-uk-8HH"/>
+                                            <constraint firstItem="gxn-2D-9VV" firstAttribute="centerX" secondItem="VvZ-hM-Bhr" secondAttribute="centerX" id="vLa-Zp-QWq"/>
+                                            <constraint firstItem="95v-sw-T5O" firstAttribute="top" secondItem="DoA-2Q-Cb6" secondAttribute="bottom" constant="6" id="ysD-qH-efp"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="VvZ-hM-Bhr" secondAttribute="trailing" id="1ij-tG-McG"/>
+                                    <constraint firstItem="VvZ-hM-Bhr" firstAttribute="top" secondItem="Xnn-3q-Dyt" secondAttribute="top" id="PE2-sF-HV1"/>
+                                    <constraint firstAttribute="bottom" secondItem="VvZ-hM-Bhr" secondAttribute="bottom" id="nWr-MZ-Pbh"/>
+                                    <constraint firstItem="VvZ-hM-Bhr" firstAttribute="leading" secondItem="Xnn-3q-Dyt" secondAttribute="leading" id="tBi-U2-hds"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="1iI-4b-PS8"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="1pv-Om-hil"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" name="white"/>
+                        <constraints>
+                            <constraint firstItem="VvZ-hM-Bhr" firstAttribute="width" secondItem="Iv9-W0-pU7" secondAttribute="width" id="2Io-a8-VEr"/>
+                            <constraint firstItem="Xnn-3q-Dyt" firstAttribute="leading" secondItem="Iv9-W0-pU7" secondAttribute="leading" id="Gdd-9W-ehr"/>
+                            <constraint firstItem="Xnn-3q-Dyt" firstAttribute="leading" secondItem="Iv9-W0-pU7" secondAttribute="leading" id="Hal-Wb-bdY"/>
+                            <constraint firstItem="Xnn-3q-Dyt" firstAttribute="trailing" secondItem="Iv9-W0-pU7" secondAttribute="trailing" id="U2K-6K-097"/>
+                            <constraint firstItem="VvZ-hM-Bhr" firstAttribute="height" secondItem="Iv9-W0-pU7" secondAttribute="height" multiplier="1.09535" priority="250" id="wZi-xi-OPk"/>
+                            <constraint firstAttribute="bottom" secondItem="Xnn-3q-Dyt" secondAttribute="bottom" constant="20" symbolic="YES" id="xhd-2X-du1"/>
+                            <constraint firstItem="Xnn-3q-Dyt" firstAttribute="top" secondItem="TNT-wx-OaS" secondAttribute="top" constant="20" symbolic="YES" id="xky-g1-D15"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Iv9-W0-pU7"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="AQZ-PF-ROW" id="xpx-Nh-Wwt"/>
+                        <outlet property="categoryLabel" destination="DoA-2Q-Cb6" id="AsJ-ch-hUw"/>
+                        <outlet property="descriptionLabel" destination="FcV-2u-tWP" id="SZH-ET-rss"/>
+                        <outlet property="placeImage" destination="bjQ-kM-VKo" id="Fag-Wf-HAQ"/>
+                        <outlet property="priceLabel" destination="95v-sw-T5O" id="Ht0-d4-8JM"/>
+                        <outlet property="subTitleDescriptionLabel" destination="hBM-lD-6ES" id="Qhc-4w-akP"/>
+                        <outlet property="titleDescriptionLabel" destination="gxn-2D-9VV" id="Gdb-i6-pQN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CbG-rv-hSO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66.400000000000006" y="64.285714285714292"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="play-icon" width="13" height="14"/>
+        <image name="starbucks" width="246.66667175292969" height="186.66667175292969"/>
+        <namedColor name="heavy">
+            <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="onyx">
+            <color red="0.21176470588235294" green="0.21568627450980393" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pantone">
+            <color red="0.078431372549019607" green="0.29411764705882354" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="silver">
+            <color red="0.76078431372549016" green="0.75294117647058822" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

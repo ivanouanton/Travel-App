@@ -8,7 +8,7 @@
 
 class SettingsPresenter: SettingsPresenterProtocol{
     func getSettingsProperty() {
-        var properties = [
+        let properties = [
             ("Preferences", ["Notifications", "Distance Units", "Currency"]),
             ("Help & Information", ["FAQs", "About Us", "Terms and Conditions", "Privacy Statement"])
         ]

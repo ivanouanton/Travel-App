@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We are creating route frome your location to your destination</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We are creating route frome your location to your destination</string>
+	<key>NSLocationUsageDescription</key>
+	<string>We are creating route frome your location to your destination</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We are creating route frome your location to your destination</string>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
 	<key>CFBundleDevelopmentRegion</key>

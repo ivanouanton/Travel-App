@@ -8,4 +8,9 @@
 
 protocol SearchPresenterProtocol: class {
     init(view: SearchViewProtocol)
+    
+    func fetchUserLocation()
+    func getPlaces()
+    func showModalView(with id: String)
+    func filterPlaces(with index: Int)
 }

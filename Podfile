@@ -9,6 +9,13 @@ target 'Travel-App' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'MSPeekCollectionViewDelegateImplementation'
+  pod 'Moya'
+  
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/Storage'
   
 # Pods for Travel-App
 
