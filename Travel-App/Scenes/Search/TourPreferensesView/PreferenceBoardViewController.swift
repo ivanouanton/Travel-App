@@ -7,61 +7,51 @@
 //
 
 import UIKit
-import MSPeekCollectionViewDelegateImplementation
 
 class PreferenceBoardViewController: UIViewController {
 
-    var peekImplementation: MSPeekCollectionViewDelegateImplementation!
-
     @IBOutlet weak var interestsCollection: UICollectionView!
-    
+    var names = ["Anders", "Kristian", "Sofia", "John", "Jenny", "Lina"]
+    var colors = [UIColor(named: "heavy")!,
+                  UIColor(named: "onyx")!,
+                  UIColor(named: "pantone")!,
+                  UIColor(named: "silver")!,
+                  UIColor(named: "smokyTopaz")!,
+                  UIColor(named: "heavy")!]
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        peekImplementation = MSPeekCollectionViewDelegateImplementation()
-        peekImplementation.delegate = self
-        interestsCollection.configureForPeekingDelegate()
-        interestsCollection.delegate = peekImplementation
-        interestsCollection.dataSource = self
-        
-          initSliderValues()
+        self.registerNib()
     }
-        
-    func initSliderValues() {
-        peekImplementation = MSPeekCollectionViewDelegateImplementation(cellSpacing: 24,
-                                                                        cellPeekWidth: 140,
-                                                                        scrollThreshold: 50,
-                                                                        maximumItemsToScroll: 1,
-                                                                        numberOfItemsToShow: 2)
-        interestsCollection.delegate = peekImplementation
-        peekImplementation.delegate = self
-        interestsCollection.reloadData()
+    
+    
+    func registerNib() {
+        let nib = UINib(nibName: InterestsCollectionViewCell.nibName, bundle: nil)
+        interestsCollection?.register(nib, forCellWithReuseIdentifier: InterestsCollectionViewCell.reuseIdentifier)
     }
 }
 
 extension PreferenceBoardViewController: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return names.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InterestCell", for: indexPath) as UICollectionViewCell
-        let value =  (180 + CGFloat(indexPath.row)*20) / 255
-        cell.contentView.backgroundColor = UIColor(red: value, green: value, blue: value, alpha: 1)
+      
+        let cell = self.interestsCollection.dequeueReusableCell(withReuseIdentifier: InterestsCollectionViewCell.reuseIdentifier,
+                                                      for: indexPath) as! InterestsCollectionViewCell
+        let name = names[indexPath.row]
+        cell.configureCell(name: name, image: UIImage(named: "create-tour")!, color: colors[indexPath.row])
         return cell
+
     }
 }
 
-extension PreferenceBoardViewController: MSPeekImplementationDelegate {
-    func peekImplementation(_ peekImplementation: MSPeekCollectionViewDelegateImplementation, didChangeActiveIndexTo activeIndex: Int) {
-        print("Changed active index to \(activeIndex)")
-    }
-    
-    func peekImplementation(_ peekImplementation: MSPeekCollectionViewDelegateImplementation, didSelectItemAt indexPath: IndexPath) {
-        print("Selected item at \(indexPath)")
+extension PreferenceBoardViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) as? InterestsCollectionViewCell{
+            
+        }
+
     }
 }
