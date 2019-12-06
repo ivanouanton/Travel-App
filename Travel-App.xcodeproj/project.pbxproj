@@ -59,6 +59,8 @@
 		F7CCB5C6238488D7004C4A35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */; };
 		F7CF8D312396FF2100119B60 /* InterestsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF8D2F2396FF2100119B60 /* InterestsCollectionViewCell.swift */; };
 		F7CF8D322396FF2100119B60 /* InterestsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CF8D302396FF2100119B60 /* InterestsCollectionViewCell.xib */; };
+		F7CF8D352399A46300119B60 /* SettingOptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF8D332399A46300119B60 /* SettingOptionCollectionViewCell.swift */; };
+		F7CF8D362399A46300119B60 /* SettingOptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CF8D342399A46300119B60 /* SettingOptionCollectionViewCell.xib */; };
 		F7E9DDE2238344CB000DE6F4 /* PlacePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */; };
 		F7F90D4623873FA600722F90 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F90D4523873FA600722F90 /* SettingTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -121,6 +123,8 @@
 		F7CA366C23926116005F7C57 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		F7CF8D2F2396FF2100119B60 /* InterestsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7CF8D302396FF2100119B60 /* InterestsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterestsCollectionViewCell.xib; sourceTree = "<group>"; };
+		F7CF8D332399A46300119B60 /* SettingOptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		F7CF8D342399A46300119B60 /* SettingOptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingOptionCollectionViewCell.xib; sourceTree = "<group>"; };
 		F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePreview.swift; sourceTree = "<group>"; };
 		F7F90D4523873FA600722F90 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +174,8 @@
 				F7B46000238919B5005CBEE4 /* PreferencesTour.storyboard */,
 				F7CF8D2F2396FF2100119B60 /* InterestsCollectionViewCell.swift */,
 				F7CF8D302396FF2100119B60 /* InterestsCollectionViewCell.xib */,
+				F7CF8D332399A46300119B60 /* SettingOptionCollectionViewCell.swift */,
+				F7CF8D342399A46300119B60 /* SettingOptionCollectionViewCell.xib */,
 			);
 			path = TourPreferensesView;
 			sourceTree = "<group>";
@@ -532,6 +538,7 @@
 			files = (
 				F7CCB5C6238488D7004C4A35 /* Assets.xcassets in Resources */,
 				F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */,
+				F7CF8D362399A46300119B60 /* SettingOptionCollectionViewCell.xib in Resources */,
 				F7C7A1AC238B369A00C33FE4 /* GoogleService-Info.plist in Resources */,
 				F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
 				F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */,
@@ -651,6 +658,7 @@
 				F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */,
 				F79883742381C6CB00F01F3A /* HomePresenterProtocol.swift in Sources */,
 				F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */,
+				F7CF8D352399A46300119B60 /* SettingOptionCollectionViewCell.swift in Sources */,
 				F7932B7923947D3D006E6496 /* PVRadioButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
