@@ -14,7 +14,7 @@ class InterestsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     private var mainBackColor: UIColor?{
         didSet{
-            self.contentView.backgroundColor = mainBackColor
+            self.contentView.backgroundColor = mainBackColor?.withAlphaComponent(0.4)
         }
     }
 
@@ -38,7 +38,7 @@ class InterestsCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            self.contentView.backgroundColor = isSelected ? self.mainBackColor?.withAlphaComponent(0.7) : self.mainBackColor
+            self.contentView.backgroundColor = isSelected ? self.mainBackColor : self.mainBackColor?.withAlphaComponent(0.4)
         }
     }
     

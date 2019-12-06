@@ -42,7 +42,8 @@ class PreferenceBoardViewController: UIViewController {
     private lazy var settingTable: UITableView = {
         let table = UITableView.init(frame: .zero, style: UITableView.Style.grouped)
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.register(InterestsTableCell.self, forCellReuseIdentifier: "SettingTableViewCell")
+        let interestCell = UINib(nibName: "InterestsTableCell", bundle: nil)
+        table.register(interestCell, forCellReuseIdentifier: "InterestsTableCell")
         table.dataSource = self
         table.delegate = self
         return table
@@ -80,36 +81,48 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.settingTable.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! InterestsTableCell
-        cell.backgroundColor = .red
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InterestsTableCell", for: indexPath) as! InterestsTableCell
+        cell.categories = settingsData["Interests"] as! [CategoryPreference]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 82;
+        return 82
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let view = UIView(frame: .zero)
+        let view = UIView()
         
         if section == self.sectionTitles.count - 1{
-            view.frame = CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40)
+            let button = AppButton()
+            view.addSubview(button)
+            button.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                button.topAnchor.constraint(equalTo: view.topAnchor, constant: 24),
+                button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+                button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                button.heightAnchor.constraint(equalToConstant: 44),
+                button.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+            button.layer.cornerRadius = 5
+            button.setTitle("Done", for: .normal)
+            button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-Demi", size: 12)
+            button.setTitleColor(UIColor(named: "pantone"), for: .normal)
+            button.setTitleColor(UIColor(named: "white"), for: .highlighted)
+            button.setTitleShadowColor(.red, for: .normal)
+            button.setTitleShadowColor(.blue, for: .highlighted)
+            button.addTarget(self, action: #selector(dosmth), for: .touchUpInside)
+            button.mainColor = UIColor(named: "pantone")!.withAlphaComponent(0.2)
+            button.highlitedColor = UIColor(named: "pantone")!
         }
-      let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 40))
-      footerView.backgroundColor = UIColor.blue
 
       return view
     }
+    
+    @objc func dosmth(){
+        print("horse")
+    }
 
-//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
-//        footerView.backgroundColor = .blue
-//        return footerView
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 50
-//    }
 }
 
 

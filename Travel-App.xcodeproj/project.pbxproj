@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3A3A3814239A74B9001FE150 /* CategoryPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A3813239A74B9001FE150 /* CategoryPreference.swift */; };
-		3A3A3816239A787E001FE150 /* InterestsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A3815239A787E001FE150 /* InterestsTableCell.swift */; };
 		3A3D2E64238EE4B500DD9876 /* PlaceDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */; };
 		CAC2AFC9CE146BFE50DF962A /* Pods_Travel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */; };
+		F70DB814239AFB7500D48EC6 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70DB813239AFB7500D48EC6 /* AppButton.swift */; };
 		F71ACDEB238B41E60092279F /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71ACDEA238B41E60092279F /* Place.swift */; };
 		F745760E238B480C00C5A1DE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F745760D238B480C00C5A1DE /* Category.swift */; };
 		F7570AA0238AE8F300621E4F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570A9F238AE8F300621E4F /* Configuration.swift */; };
@@ -52,7 +52,6 @@
 		F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */; };
 		F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */; };
 		F7B45FFF2389103F005CBEE4 /* PreferenceBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B45FFE2389103F005CBEE4 /* PreferenceBoardViewController.swift */; };
-		F7B46001238919B6005CBEE4 /* PreferencesTour.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B46000238919B5005CBEE4 /* PreferencesTour.storyboard */; };
 		F7C7A1AA238B30CD00C33FE4 /* GoogleApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7A1A9238B30CD00C33FE4 /* GoogleApiService.swift */; };
 		F7C7A1AC238B369A00C33FE4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7C7A1AB238B369A00C33FE4 /* GoogleService-Info.plist */; };
 		F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CA366623925B84005F7C57 /* CategoryFilter.swift */; };
@@ -63,6 +62,8 @@
 		F7CF8D322396FF2100119B60 /* InterestsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CF8D302396FF2100119B60 /* InterestsCollectionViewCell.xib */; };
 		F7CF8D352399A46300119B60 /* SettingOptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF8D332399A46300119B60 /* SettingOptionCollectionViewCell.swift */; };
 		F7CF8D362399A46300119B60 /* SettingOptionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CF8D342399A46300119B60 /* SettingOptionCollectionViewCell.xib */; };
+		F7CF8D39239AE39600119B60 /* InterestsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF8D37239AE39600119B60 /* InterestsTableCell.swift */; };
+		F7CF8D3A239AE39600119B60 /* InterestsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CF8D38239AE39600119B60 /* InterestsTableCell.xib */; };
 		F7E9DDE2238344CB000DE6F4 /* PlacePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */; };
 		F7F90D4623873FA600722F90 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F90D4523873FA600722F90 /* SettingTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -70,10 +71,10 @@
 /* Begin PBXFileReference section */
 		02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travel_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3A3813239A74B9001FE150 /* CategoryPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPreference.swift; sourceTree = "<group>"; };
-		3A3A3815239A787E001FE150 /* InterestsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsTableCell.swift; sourceTree = "<group>"; };
 		3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDataHolder.swift; sourceTree = "<group>"; };
 		666AAB4DC0E5FE91DDA1E761 /* Pods-Travel-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.release.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.release.xcconfig"; sourceTree = "<group>"; };
 		C61D44D03DA574807B86294F /* Pods-Travel-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.debug.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.debug.xcconfig"; sourceTree = "<group>"; };
+		F70DB813239AFB7500D48EC6 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = SOURCE_ROOT; };
 		F71ACDEA238B41E60092279F /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		F745760D238B480C00C5A1DE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F7570A9F238AE8F300621E4F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = "Travel-App/Scenes/Search/Locations/Configuration/Configuration.swift"; sourceTree = SOURCE_ROOT; };
@@ -119,7 +120,6 @@
 		F7ADB098237F3A9E00DA4E89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7ADB09A237F3A9E00DA4E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7B45FFE2389103F005CBEE4 /* PreferenceBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBoardViewController.swift; sourceTree = "<group>"; };
-		F7B46000238919B5005CBEE4 /* PreferencesTour.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreferencesTour.storyboard; sourceTree = "<group>"; };
 		F7C7A1A9238B30CD00C33FE4 /* GoogleApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GoogleApiService.swift; path = "Travel-App/Network/Handler/GoogleApiService.swift"; sourceTree = SOURCE_ROOT; };
 		F7C7A1AB238B369A00C33FE4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7CA366623925B84005F7C57 /* CategoryFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilter.swift; sourceTree = "<group>"; };
@@ -129,6 +129,8 @@
 		F7CF8D302396FF2100119B60 /* InterestsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterestsCollectionViewCell.xib; sourceTree = "<group>"; };
 		F7CF8D332399A46300119B60 /* SettingOptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		F7CF8D342399A46300119B60 /* SettingOptionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingOptionCollectionViewCell.xib; sourceTree = "<group>"; };
+		F7CF8D37239AE39600119B60 /* InterestsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsTableCell.swift; sourceTree = "<group>"; };
+		F7CF8D38239AE39600119B60 /* InterestsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterestsTableCell.xib; sourceTree = "<group>"; };
 		F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePreview.swift; sourceTree = "<group>"; };
 		F7F90D4523873FA600722F90 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,8 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				F7B45FFE2389103F005CBEE4 /* PreferenceBoardViewController.swift */,
-				3A3A3815239A787E001FE150 /* InterestsTableCell.swift */,
-				F7B46000238919B5005CBEE4 /* PreferencesTour.storyboard */,
+				F7CF8D37239AE39600119B60 /* InterestsTableCell.swift */,
+				F7CF8D38239AE39600119B60 /* InterestsTableCell.xib */,
 				F7CF8D2F2396FF2100119B60 /* InterestsCollectionViewCell.swift */,
 				F7CF8D302396FF2100119B60 /* InterestsCollectionViewCell.xib */,
 				F7CF8D332399A46300119B60 /* SettingOptionCollectionViewCell.swift */,
@@ -235,6 +237,7 @@
 				F7CA366C23926116005F7C57 /* Label.swift */,
 				F77F22442392DB6A004610CE /* Extension+UIViewController.swift */,
 				F77F22452392E816004610CE /* Extension+CALayer.swift */,
+				F70DB813239AFB7500D48EC6 /* AppButton.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7CF8D3A239AE39600119B60 /* InterestsTableCell.xib in Resources */,
 				F7CCB5C6238488D7004C4A35 /* Assets.xcassets in Resources */,
 				F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */,
 				F7CF8D362399A46300119B60 /* SettingOptionCollectionViewCell.xib in Resources */,
@@ -549,7 +553,6 @@
 				F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
 				F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */,
 				F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
-				F7B46001238919B6005CBEE4 /* PreferencesTour.storyboard in Resources */,
 				F7932B672393A65C006E6496 /* InfoStoryboard.storyboard in Resources */,
 				F79FCA2823847ED2009F1693 /* AvenirNextLTPro-Demi.otf in Resources */,
 				F7CF8D322396FF2100119B60 /* InterestsCollectionViewCell.xib in Resources */,
@@ -650,12 +653,13 @@
 				F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */,
 				F79883772381C92900F01F3A /* ProfileViewController.swift in Sources */,
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
+				F70DB814239AFB7500D48EC6 /* AppButton.swift in Sources */,
 				F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */,
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
 				F71ACDEB238B41E60092279F /* Place.swift in Sources */,
 				F7932B7C23947D43006E6496 /* PVRadioButtonView.swift in Sources */,
 				F798836A2381C4FA00F01F3A /* HomeViewProtocol.swift in Sources */,
-				3A3A3816239A787E001FE150 /* InterestsTableCell.swift in Sources */,
+				F7CF8D39239AE39600119B60 /* InterestsTableCell.swift in Sources */,
 				F7570AAA238AECBA00621E4F /* LoactionManager.swift in Sources */,
 				F798837B2381C94C00F01F3A /* ProfilePresenter.swift in Sources */,
 				F7E9DDE2238344CB000DE6F4 /* PlacePreview.swift in Sources */,
