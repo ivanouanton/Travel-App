@@ -36,6 +36,12 @@ class InterestsCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        print(self.frame)
+    }
+    
     override var isSelected: Bool {
         didSet {
             self.contentView.backgroundColor = isSelected ? self.mainBackColor : self.mainBackColor?.withAlphaComponent(0.4)

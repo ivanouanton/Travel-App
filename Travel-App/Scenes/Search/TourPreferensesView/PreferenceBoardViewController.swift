@@ -44,6 +44,8 @@ class PreferenceBoardViewController: UIViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         let interestCell = UINib(nibName: "InterestsTableCell", bundle: nil)
         table.register(interestCell, forCellReuseIdentifier: "InterestsTableCell")
+        table.backgroundColor = UIColor(named: "white")
+        table.separatorStyle = .none
         table.dataSource = self
         table.delegate = self
         return table
@@ -52,6 +54,10 @@ class PreferenceBoardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = "Select Preferences"
+        self.navigationController?.navigationBar.titleTextAttributes =
+        [NSAttributedString.Key.foregroundColor: UIColor(named: "pantone")!,
+         NSAttributedString.Key.font: UIFont(name: "AvenirNextLTPro-Demi", size: 16)!]
         self.view.addSubview(self.settingTable)
         self.setupConstrainnts()
     }
@@ -72,8 +78,24 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
         return self.sectionTitles.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.sectionTitles[section]
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+      let view = UIView()
+        view.backgroundColor = .white
+        
+            let title = UILabel()
+            view.addSubview(title)
+            title.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                title.topAnchor.constraint(equalTo: view.topAnchor, constant: 24),
+                title.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+                title.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                title.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8)
+            ])
+        title.textColor = UIColor(named: "pantone")
+        title.textAlignment = .left
+        title.font = UIFont(name: "AvenirNextLTPro-Demi", size: 16)
+        title.text = self.sectionTitles[section]
+      return view
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,6 +114,7 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
+        view.backgroundColor = .white
         
         if section == self.sectionTitles.count - 1{
             let button = AppButton()
@@ -102,11 +125,11 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
                 button.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
                 button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 button.heightAnchor.constraint(equalToConstant: 44),
-                button.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+                button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -35)
             ])
             button.layer.cornerRadius = 5
             button.setTitle("Done", for: .normal)
-            button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-Demi", size: 12)
+            button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-Demi", size: 14)
             button.setTitleColor(UIColor(named: "pantone"), for: .normal)
             button.setTitleColor(UIColor(named: "white"), for: .highlighted)
             button.setTitleShadowColor(.red, for: .normal)
