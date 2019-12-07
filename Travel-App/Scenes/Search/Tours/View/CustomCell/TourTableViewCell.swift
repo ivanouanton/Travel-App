@@ -10,6 +10,20 @@ import UIKit
 
 class TourTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var tourImageView: UIImageView!
+    @IBOutlet weak var placesLeftLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    var tour: Tour?{
+        didSet{
+            guard let tour = tour else { return }
+            self.placesLeftLabel.text = String(tour.place.count)
+            self.descriptionLabel.text = tour.description
+            self.tourImageView.image = tour.image
+        }
+    }
+    
     class var reuseIdentifier: String {
         return "reusableTourCell"
     }
@@ -20,11 +34,25 @@ class TourTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.tourImageView.roundCorners(corners: [.topLeft, .topRight], radius: 10)
+        
+        self.layer.cornerRadius = 10
+        self.layer.shadowOffset = CGSize(width: 0, height: 3)
+        self.layer.shadowOpacity = 0.1
+        self.layer.shadowRadius = 3.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
     }
-    
+}
+
+extension UIView {
+func roundCorners(corners:UIRectCorner, radius: CGFloat) {
+    let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+    let mask = CAShapeLayer()
+    mask.path = path.cgPath
+    self.layer.mask = mask
+}
 }

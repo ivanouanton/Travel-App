@@ -4,21 +4,108 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNextLTPro-Bold.otf">
+            <string>AvenirNextLTPro-Bold</string>
+        </array>
+        <array key="AvenirNextLTPro-Demi.otf">
+            <string>AvenirNextLTPro-Demi</string>
+        </array>
+        <array key="AvenirNextLTPro-Regular.otf">
+            <string>AvenirNextLTPro-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reusableTourCell" id="KGk-i7-Jjw" customClass="TourTableViewCell" customModule="Travel_App" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="271"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reusableTourCell" rowHeight="323" id="KGk-i7-Jjw" customClass="TourTableViewCell" customModule="Travel_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="271"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="271"/>
+                <rect key="frame" x="0.0" y="0.0" width="343" height="271"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="moq-af-PcK">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="141"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="141" id="waP-FV-yhT"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaX-Vt-xqj">
+                        <rect key="frame" x="16" y="156" width="23.5" height="16.5"/>
+                        <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45H-tE-h9Q">
+                        <rect key="frame" x="311" y="156" width="16" height="16.5"/>
+                        <fontDescription key="fontDescription" name="AvenirNextLTPro-Bold" family="Avenir Next LT Pro" pointSize="14"/>
+                        <color key="textColor" name="pantone"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rN-by-iWb">
+                        <rect key="frame" x="16" y="180.5" width="311" height="59.5"/>
+                        <attributedString key="attributedText">
+                            <fragment content="Namaskar, welcome to Incredible India, where culture echoes, tradition speaks, beauty enthralls and diversity delights.">
+                                <attributes>
+                                    <color key="NSColor" name="onyx"/>
+                                    <font key="NSFont" size="14" name="AvenirNext-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="1" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Places left:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULW-VF-Gyu">
+                        <rect key="frame" x="220" y="156" width="83" height="20"/>
+                        <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="17"/>
+                        <color key="textColor" name="silver"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ULW-VF-Gyu" firstAttribute="top" secondItem="moq-af-PcK" secondAttribute="bottom" constant="15" id="0bv-AS-W6L"/>
+                    <constraint firstAttribute="trailing" secondItem="moq-af-PcK" secondAttribute="trailing" id="3K0-zc-RtA"/>
+                    <constraint firstItem="uaX-Vt-xqj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="4Wn-kW-Kri"/>
+                    <constraint firstItem="moq-af-PcK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="6VM-GH-Wjj"/>
+                    <constraint firstItem="45H-tE-h9Q" firstAttribute="leading" secondItem="ULW-VF-Gyu" secondAttribute="trailing" constant="8" id="AHR-c1-1l2"/>
+                    <constraint firstAttribute="trailing" secondItem="4rN-by-iWb" secondAttribute="trailing" constant="16" id="BGh-u4-sb8"/>
+                    <constraint firstItem="4rN-by-iWb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="BZ9-uW-H29"/>
+                    <constraint firstItem="uaX-Vt-xqj" firstAttribute="top" secondItem="moq-af-PcK" secondAttribute="bottom" constant="15" id="bBp-e6-n7j"/>
+                    <constraint firstAttribute="trailing" secondItem="45H-tE-h9Q" secondAttribute="trailing" constant="16" id="jaC-Ya-s5z"/>
+                    <constraint firstItem="4rN-by-iWb" firstAttribute="top" secondItem="uaX-Vt-xqj" secondAttribute="bottom" constant="8" id="m4x-Fe-wcq"/>
+                    <constraint firstItem="moq-af-PcK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="r7b-zA-7XW"/>
+                    <constraint firstItem="45H-tE-h9Q" firstAttribute="top" secondItem="moq-af-PcK" secondAttribute="bottom" constant="15" id="xob-ZN-24f"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="139" y="113"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="descriptionLabel" destination="4rN-by-iWb" id="VUx-LS-T4S"/>
+                <outlet property="placesLeftLabel" destination="45H-tE-h9Q" id="K5Y-jc-DnS"/>
+                <outlet property="priceLabel" destination="uaX-Vt-xqj" id="C2h-ax-mZq"/>
+                <outlet property="tourImageView" destination="moq-af-PcK" id="dXB-5G-k4S"/>
+            </connections>
+            <point key="canvasLocation" x="271.73913043478262" y="130.24553571428572"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="onyx">
+            <color red="0.21176470588235294" green="0.21568627450980393" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pantone">
+            <color red="0.078431372549019607" green="0.29411764705882354" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="silver">
+            <color red="0.76078431372549016" green="0.75294117647058822" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

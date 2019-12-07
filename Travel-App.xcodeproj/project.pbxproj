@@ -40,6 +40,7 @@
 		F798836A2381C4FA00F01F3A /* HomeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883692381C4FA00F01F3A /* HomeViewProtocol.swift */; };
 		F79883742381C6CB00F01F3A /* HomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883722381C6CB00F01F3A /* HomePresenterProtocol.swift */; };
 		F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883732381C6CB00F01F3A /* HomePresenter.swift */; };
+		F79B3873239C13630032F598 /* ToursManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79B3872239C13620032F598 /* ToursManager.swift */; };
 		F79FCA2123847D4E009F1693 /* AvenirNextLTPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2023847D4E009F1693 /* AvenirNextLTPro-Bold.otf */; };
 		F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2223847ED2009F1693 /* AvenirNextLTPro-Regular.otf */; };
 		F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */; };
@@ -116,6 +117,7 @@
 		F79883692381C4FA00F01F3A /* HomeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewProtocol.swift; sourceTree = "<group>"; };
 		F79883722381C6CB00F01F3A /* HomePresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenterProtocol.swift; sourceTree = "<group>"; };
 		F79883732381C6CB00F01F3A /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		F79B3872239C13620032F598 /* ToursManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursManager.swift; sourceTree = "<group>"; };
 		F79FCA2023847D4E009F1693 /* AvenirNextLTPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Bold.otf"; sourceTree = "<group>"; };
 		F79FCA2223847ED2009F1693 /* AvenirNextLTPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Regular.otf"; sourceTree = "<group>"; };
 		F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-HeavyCn.otf"; sourceTree = "<group>"; };
@@ -431,6 +433,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		F79B3874239C136B0032F598 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				F79B3872239C13620032F598 /* ToursManager.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		F79FCA1E23846F69009F1693 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +477,7 @@
 				F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */,
 				F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */,
 				F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */,
+				F79B3874239C136B0032F598 /* Storage */,
 				F798835B2381AEAE00F01F3A /* Scenes */,
 				F77F22432392DB6A004610CE /* Utility */,
 				F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */,
@@ -725,6 +736,7 @@
 				F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */,
 				F7B45FFF2389103F005CBEE4 /* PreferenceBoardViewController.swift in Sources */,
 				F7CFD013239BCC8800983631 /* ProfileViewProtocol.swift in Sources */,
+				F79B3873239C13630032F598 /* ToursManager.swift in Sources */,
 				F7EF691F239BC1230004EF4E /* ToursPresenter.swift in Sources */,
 				F77F22462392E816004610CE /* Extension+CALayer.swift in Sources */,
 				F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */,

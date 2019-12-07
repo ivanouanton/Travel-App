@@ -8,10 +8,10 @@
 
 import FirebaseStorage
 import FirebaseFirestore
+import UIKit
 
 class ToursPresenter{
     weak var view: ToursViewProtocol!
-    var tours = [String:Tour]()
     
     required init(view: ToursViewProtocol) {
         self.view = view
@@ -20,18 +20,9 @@ class ToursPresenter{
 
 extension ToursPresenter: ToursPresenterProtocol{
     func getTours(){
-        let db = Firestore.firestore()
-
-        let docRef = db.collection("Tour")
-        docRef.getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let tour = Tour(document.data())
-                    self.tours[document.documentID] = tour
-                }
-                print(self.tours)
+        ToursManager.shared.getTours { (tours, error) in
+            if let tours = tours{
+                self.view.updateContent(with: tours)
             }
         }
     }
