@@ -38,7 +38,13 @@ class ToursViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.presenter.getTours()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationItem.title = "Select Tour"
     }
 }
 

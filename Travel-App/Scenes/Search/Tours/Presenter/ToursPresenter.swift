@@ -11,7 +11,7 @@ import FirebaseFirestore
 import UIKit
 
 class ToursPresenter{
-    weak var view: ToursViewProtocol!
+    weak var view: ToursViewProtocol?
     
     required init(view: ToursViewProtocol) {
         self.view = view
@@ -22,7 +22,7 @@ extension ToursPresenter: ToursPresenterProtocol{
     func getTours(){
         ToursManager.shared.getTours { (tours, error) in
             if let tours = tours{
-                self.view.updateContent(with: tours)
+                self.view?.updateContent(with: tours)
             }
         }
     }

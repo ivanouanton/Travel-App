@@ -46,9 +46,7 @@ class PreferenceBoardViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = "Select Preferences"
-        self.navigationController?.navigationBar.titleTextAttributes =
-        [NSAttributedString.Key.foregroundColor: UIColor(named: "pantone")!,
-         NSAttributedString.Key.font: UIFont(name: "AvenirNextLTPro-Demi", size: 16)!]
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.view.addSubview(self.settingTable)
         self.setupConstrainnts()
     }

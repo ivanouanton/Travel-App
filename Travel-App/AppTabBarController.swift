@@ -21,7 +21,7 @@ class AppTabBarController: UITabBarController {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:
             UIColor(named: "smokyTopaz")!], for: .selected)
         
-        let search = UINavigationController(rootViewController: ViewFactory.createSearchVC())
+        let search = NavigationController(rootViewController: ViewFactory.createSearchVC())
         search.tabBarItem = UITabBarItem(title: "Search",
                                          image: UIImage(named: "map-location-def")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
                                          selectedImage: UIImage(named: "map-location")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
