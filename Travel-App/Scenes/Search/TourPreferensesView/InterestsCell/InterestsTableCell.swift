@@ -28,9 +28,7 @@ class InterestsTableCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
-        
     }
     
     private func registerNib() {
@@ -55,23 +53,4 @@ extension InterestsTableCell: UICollectionViewDataSource {
     }
 }
 
-extension PreferenceBoardViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if let cell = collectionView.cellForItem(at: indexPath) as? InterestsCollectionViewCell{
-//
-//        }
-
-    }
-
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if collectionView == durationCollection{
-//            let width = self.durationCollection.frame.height
-//            let cellWidth = (width - 92)/3
-//            return CGSize(width: cellWidth, height: self.durationCollection.frame.height)
-//
-//        }
-//
-//        return CGSize(width: 10, height: 10)
-//    }
-}
 

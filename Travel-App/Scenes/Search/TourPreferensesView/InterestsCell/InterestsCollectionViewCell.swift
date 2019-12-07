@@ -12,6 +12,7 @@ class InterestsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var title: UILabel!
+    
     private var mainBackColor: UIColor?{
         didSet{
             self.contentView.backgroundColor = mainBackColor?.withAlphaComponent(0.4)
@@ -29,17 +30,17 @@ class InterestsCollectionViewCell: UICollectionViewCell {
         self.title.text = name
         self.imageView.image = image
         self.mainBackColor = color
+        self.contentView.backgroundColor = isSelected ? self.mainBackColor : self.mainBackColor?.withAlphaComponent(0.4)
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    override func prepareForReuse() {
+        super.prepareForReuse()
         
-        print(self.frame)
+        self.isSelected = false
     }
     
     override var isSelected: Bool {

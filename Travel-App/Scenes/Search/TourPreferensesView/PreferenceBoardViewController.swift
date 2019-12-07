@@ -10,20 +10,14 @@ import UIKit
 
 class PreferenceBoardViewController: UIViewController {
     
-    
-
-//    @IBOutlet weak var interestsCollection: UICollectionView!
-//    @IBOutlet weak var durationCollection: UICollectionView!
-
-    
     var settingsData = [
         "Interests": [
-            CategoryPreference(title: "Anders", icon: UIImage(named: "avatar-def")!),
-            CategoryPreference(title: "Kristian", icon: UIImage(named: "avatar")!),
-            CategoryPreference(title: "Sofia", icon: UIImage(named: "avatar-def")!),
-            CategoryPreference(title: "John", icon: UIImage(named: "avatar")!),
-            CategoryPreference(title: "Jenny", icon: UIImage(named: "avatar-def")!),
-            CategoryPreference(title: "Lina", icon: UIImage(named: "avatar")!)
+            CategoryPreference(title: "Anders", icon: UIImage(named: "landmark")!),
+            CategoryPreference(title: "Kristian", icon: UIImage(named: "trees")!),
+            CategoryPreference(title: "Sofia", icon: UIImage(named: "landmark")!),
+            CategoryPreference(title: "John", icon: UIImage(named: "trees")!),
+            CategoryPreference(title: "Jenny", icon: UIImage(named: "landmark")!),
+            CategoryPreference(title: "Lina", icon: UIImage(named: "trees")!)
         ],
         "Duration": ["A Few Hours", "Half Day",  "Full Day"],
         "Price": ["free", "$", "$$"],
@@ -31,13 +25,6 @@ class PreferenceBoardViewController: UIViewController {
     ]
     
     var sectionTitles = ["Interests", "Duration", "Price", "Transport"]
-    
-    var colors = [UIColor(named: "heavy")!,
-                  UIColor(named: "onyx")!,
-                  UIColor(named: "pantone")!,
-                  UIColor(named: "silver")!,
-                  UIColor(named: "smokyTopaz")!,
-                  UIColor(named: "heavy")!]
     
     private lazy var settingTable: UITableView = {
         let table = UITableView.init(frame: .zero, style: UITableView.Style.grouped)
