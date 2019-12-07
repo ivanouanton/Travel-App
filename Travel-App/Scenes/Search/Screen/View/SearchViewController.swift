@@ -116,19 +116,6 @@ final class SearchViewController: UIViewController{
         return button
     }()
     
-    // MARK: - Methods
-    
-    @objc func setupPreferences(){
-        let storyboard = UIStoryboard(name: "PreferencesTour", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "PreferenceBoardViewController")
-        self.navigationController?.pushViewController(controller, animated: true)
-    }
-    
-    @objc func selectFilter(){
-        self.isShowing = !self.isShowing
-    }
-    
-    
     // MARK: - Life Cycle
 
     
@@ -227,6 +214,16 @@ extension SearchViewController{
     }
     
     // MARK: - Methods
+        
+    @objc func setupPreferences(){
+//        let storyboard = UIStoryboard(name: "PreferencesTour", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "PreferenceBoardViewController")
+        self.navigationController?.pushViewController(PreferenceBoardViewController(), animated: true)
+    }
+    
+    @objc func selectFilter(){
+        self.isShowing = !self.isShowing
+    }
     
     private func showModalDescription(with id: String) {
         if self.placePreviewTop.isActive{

@@ -6,6 +6,8 @@
 //  Copyright © 2019 companyName. All rights reserved.
 //
 
+import UIKit
+
 extension UIViewController {
 
     /**
@@ -13,7 +15,7 @@ extension UIViewController {
      */
 
     var topbarHeight: CGFloat {
-        return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
+        return UIApplication.shared.statusBarFrame.size.height +
             (self.navigationController?.navigationBar.frame.height ?? 0.0)
     }
 }
