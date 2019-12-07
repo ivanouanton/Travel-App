@@ -20,9 +20,11 @@ class PreferenceBoardViewController: UIViewController {
             CategoryPreference(title: "Lina", icon: UIImage(named: "trees")!)
         ],
         "Duration": ["A Few Hours", "Half Day",  "Full Day"],
-        "Price": ["free", "$", "$$"],
+        "Price": ["free", "$", "$$", "$$$"],
         "Transport": ["train", "car", "walk"]
     ]
+    
+    var answers = [Int:Int]()
     
     var sectionTitles = ["Interests", "Duration", "Price", "Transport"]
     
@@ -97,10 +99,14 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingOptionTableViewCell.reuseIdentifier, for: indexPath) as! SettingOptionTableViewCell
             let key: String = self.sectionTitles[indexPath.section]
             cell.titles = settingsData[key] as! [String]
+            cell.delegate = self
+            cell.cellIndex = indexPath.section
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "InterestsTableCell", for: indexPath) as! InterestsTableCell
             cell.categories = settingsData["Interests"] as! [CategoryPreference]
+            cell.delegate = self
+            cell.cellIndex = indexPath.section
             return cell
         }
     }
@@ -140,8 +146,14 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     @objc func dosmth(){
-        print("horse")
+        print(self.answers)
     }
+}
 
+extension PreferenceBoardViewController: PreferenceOptionDelegate{
+    func didSelectItemAt(_ index: Int, tableCell: Int?) {
+        guard let tableCellIndex = tableCell else { return }
+        self.answers[tableCellIndex] = index
+    }
 }
 

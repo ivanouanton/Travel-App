@@ -67,6 +67,7 @@
 		F7CF8D39239AE39600119B60 /* InterestsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CF8D37239AE39600119B60 /* InterestsTableCell.swift */; };
 		F7CF8D3A239AE39600119B60 /* InterestsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CF8D38239AE39600119B60 /* InterestsTableCell.xib */; };
 		F7E9DDE2238344CB000DE6F4 /* PlacePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */; };
+		F7EF6918239BA4AA0004EF4E /* PreferenceOptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF6917239BA4AA0004EF4E /* PreferenceOptionDelegate.swift */; };
 		F7F90D4623873FA600722F90 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F90D4523873FA600722F90 /* SettingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +137,7 @@
 		F7CF8D37239AE39600119B60 /* InterestsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsTableCell.swift; sourceTree = "<group>"; };
 		F7CF8D38239AE39600119B60 /* InterestsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InterestsTableCell.xib; sourceTree = "<group>"; };
 		F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePreview.swift; sourceTree = "<group>"; };
+		F7EF6917239BA4AA0004EF4E /* PreferenceOptionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceOptionDelegate.swift; sourceTree = "<group>"; };
 		F7F90D4523873FA600722F90 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +208,7 @@
 				F7B45FFE2389103F005CBEE4 /* PreferenceBoardViewController.swift */,
 				F70DB815239B149A00D48EC6 /* InterestsCell */,
 				F70DB81A239B235F00D48EC6 /* SettingOptionsCell */,
+				F7EF6917239BA4AA0004EF4E /* PreferenceOptionDelegate.swift */,
 			);
 			path = TourPreferensesView;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
 				F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */,
 				F71ACDEB238B41E60092279F /* Place.swift in Sources */,
+				F7EF6918239BA4AA0004EF4E /* PreferenceOptionDelegate.swift in Sources */,
 				F7932B7C23947D43006E6496 /* PVRadioButtonView.swift in Sources */,
 				F798836A2381C4FA00F01F3A /* HomeViewProtocol.swift in Sources */,
 				F7CF8D39239AE39600119B60 /* InterestsTableCell.swift in Sources */,

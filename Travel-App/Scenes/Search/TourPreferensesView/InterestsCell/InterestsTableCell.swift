@@ -12,7 +12,9 @@ class InterestsTableCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     var categories = [CategoryPreference]()
-    
+    weak var delegate: PreferenceOptionDelegate?
+    var cellIndex: Int?
+
     var colors = [UIColor(named: "blue")!,
                   UIColor(named: "yellow")!,
                   UIColor(named: "green")!,
@@ -37,7 +39,7 @@ class InterestsTableCell: UITableViewCell {
     }
 }
 
-extension InterestsTableCell: UICollectionViewDataSource {
+extension InterestsTableCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return self.categories.count
@@ -51,6 +53,8 @@ extension InterestsTableCell: UICollectionViewDataSource {
         cell.configureCell(name: name.title, image: name.icon, color: colors[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.delegate?.didSelectItemAt(indexPath.row, tableCell: self.cellIndex)
+    }
 }
-
-

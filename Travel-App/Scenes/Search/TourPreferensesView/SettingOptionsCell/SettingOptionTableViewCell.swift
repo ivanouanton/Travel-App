@@ -11,6 +11,8 @@ import UIKit
 class SettingOptionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    weak var delegate: PreferenceOptionDelegate?
+    var cellIndex: Int?
 
     var titles = [String]()
     
@@ -25,6 +27,7 @@ class SettingOptionTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.registerNib()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -57,9 +60,7 @@ extension SettingOptionTableViewCell: UICollectionViewDataSource {
 
 extension SettingOptionTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if let cell = collectionView.cellForItem(at: indexPath) as? InterestsCollectionViewCell{
-//
-//        }
+        self.delegate?.didSelectItemAt(indexPath.row, tableCell: self.cellIndex)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
