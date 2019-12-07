@@ -35,5 +35,12 @@ class ViewFactory{
         vc.presenter = presenter
         return vc
     }
+    
+    static func createToursVC() -> ToursViewController{
+        let vc = ToursViewController()
+        let presenter = ToursPresenter(view: vc)
+        vc.presenter = presenter
+        return vc
+    }
 }
 

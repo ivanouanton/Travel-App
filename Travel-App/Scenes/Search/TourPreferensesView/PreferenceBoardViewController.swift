@@ -147,6 +147,8 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
     
     @objc func dosmth(){
         print(self.answers)
+        let vc = ViewFactory.createToursVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

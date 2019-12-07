@@ -1,5 +1,5 @@
 //
-//  Place.swift
+//  PlaceData.swift
 //  Travel-App
 //
 //  Created by Антон Иванов on 11/25/19.
