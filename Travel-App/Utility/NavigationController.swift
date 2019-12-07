@@ -21,5 +21,11 @@ class NavigationController: UINavigationController {
         self.navigationBar.titleTextAttributes =
         [NSAttributedString.Key.foregroundColor: UIColor(named: "pantone")!,
          NSAttributedString.Key.font: UIFont(name: "AvenirNextLTPro-Demi", size: 16)!]
+        
+        self.navigationBar.layer.shadowColor = UIColor.gray.cgColor
+        self.navigationBar.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        self.navigationBar.layer.shadowRadius = 4.0
+        self.navigationBar.layer.shadowOpacity = 0.3
+        self.navigationBar.layer.masksToBounds = false
     }
 }

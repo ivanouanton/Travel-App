@@ -29,6 +29,17 @@ class ToursViewController: UIViewController {
         return table
     }()
     
+    private lazy var shadowView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .gray
+        view.layer.shadowColor = UIColor.gray.cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 0)
+        view.layer.shadowOpacity = 0.9
+        view.layer.shadowRadius = 2.0
+        return view
+    }()
+    
     override func loadView() {
         super.loadView()
         
@@ -38,7 +49,6 @@ class ToursViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.presenter.getTours()
     }
     
@@ -53,6 +63,7 @@ extension ToursViewController{
         self.view.backgroundColor = .white
         
         self.view.addSubview(self.toursTable)
+//        self.view.addSubview(self.shadowView)
     }
     
     func setupConstraints(){
@@ -61,7 +72,11 @@ extension ToursViewController{
             self.toursTable.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             self.toursTable.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
             self.toursTable.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 16),
-            self.toursTable.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -16)
+            self.toursTable.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -16),
+            
+//            self.shadowView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+//            self.shadowView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+//            self.shadowView.heightAnchor.constraint(equalToConstant: 0.5),
         ])
     }
 }
