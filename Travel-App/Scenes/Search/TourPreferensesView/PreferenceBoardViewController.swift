@@ -24,6 +24,7 @@ class PreferenceBoardViewController: UIViewController {
         "Transport": ["train", "car", "walk"]
     ]
     
+    
     var answers = [Int:Int]()
     
     var sectionTitles = ["Interests", "Duration", "Price", "Transport"]
