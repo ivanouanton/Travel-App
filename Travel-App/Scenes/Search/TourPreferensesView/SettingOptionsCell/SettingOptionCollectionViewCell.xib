@@ -23,13 +23,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="96" height="82"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJp-XS-PMh">
-                        <rect key="frame" x="31" y="55" width="34.5" height="16.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJp-XS-PMh">
+                        <rect key="frame" x="48" y="63" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
-                        <color key="textColor" name="heavy"/>
+                        <color key="textColor" name="pantone"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home-def" translatesAutoresizingMaskIntoConstraints="NO" id="GNB-Ak-ha0">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GNB-Ak-ha0">
                         <rect key="frame" x="30" y="45" width="36" height="36"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="36" id="BOo-1h-eZz"/>
@@ -58,9 +58,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="home-def" width="21" height="24"/>
-        <namedColor name="heavy">
-            <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="pantone">
+            <color red="0.078431372549019607" green="0.29411764705882354" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -44,6 +44,8 @@ class PreferenceBoardViewController: UIViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         let interestCell = UINib(nibName: "InterestsTableCell", bundle: nil)
         table.register(interestCell, forCellReuseIdentifier: "InterestsTableCell")
+        let settingsCell = UINib(nibName: SettingOptionTableViewCell.nibName, bundle: nil)
+        table.register(settingsCell, forCellReuseIdentifier: SettingOptionTableViewCell.reuseIdentifier)
         table.backgroundColor = UIColor(named: "white")
         table.separatorStyle = .none
         table.dataSource = self
@@ -86,7 +88,7 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
             view.addSubview(title)
             title.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
-                title.topAnchor.constraint(equalTo: view.topAnchor, constant: 24),
+                title.topAnchor.constraint(equalTo: view.topAnchor, constant: 16),
                 title.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
                 title.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 title.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8)
@@ -103,9 +105,17 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InterestsTableCell", for: indexPath) as! InterestsTableCell
-        cell.categories = settingsData["Interests"] as! [CategoryPreference]
-        return cell
+        
+        if indexPath.section != 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: SettingOptionTableViewCell.reuseIdentifier, for: indexPath) as! SettingOptionTableViewCell
+            let key: String = self.sectionTitles[indexPath.section]
+            cell.titles = settingsData[key] as! [String]
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "InterestsTableCell", for: indexPath) as! InterestsTableCell
+            cell.categories = settingsData["Interests"] as! [CategoryPreference]
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -148,66 +158,3 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
 
 }
 
-
-//    func registerNib() {
-//        let nib = UINib(nibName: InterestsCollectionViewCell.nibName, bundle: nil)
-//        interestsCollection?.register(nib, forCellWithReuseIdentifier: InterestsCollectionViewCell.reuseIdentifier)
-//
-//        let nibDuration = UINib(nibName: SettingOptionCollectionViewCell.nibName, bundle: nil)
-//        durationCollection?.register(nibDuration, forCellWithReuseIdentifier: SettingOptionCollectionViewCell.reuseIdentifier)
-//    }
-
-
-//extension PreferenceBoardViewController: UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//
-//        switch collectionView {
-//        case self.interestsCollection:
-//            return names.count
-//        case self.durationCollection:
-//            return durations.count
-//        default:
-//            return 0
-//        }
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//        switch collectionView {
-//        case self.interestsCollection:
-//            let cell = self.interestsCollection.dequeueReusableCell(withReuseIdentifier: InterestsCollectionViewCell.reuseIdentifier,
-//                                                          for: indexPath) as! InterestsCollectionViewCell
-//            let name = names[indexPath.row]
-//            cell.configureCell(name: name, image: UIImage(named: "create-tour")!, color: colors[indexPath.row])
-//            return cell
-//        case self.durationCollection:
-//            let cell = self.durationCollection.dequeueReusableCell(withReuseIdentifier: SettingOptionCollectionViewCell.reuseIdentifier,
-//                                                          for: indexPath) as! SettingOptionCollectionViewCell
-//            let name = durations[indexPath.row]
-//            cell.configureCell(text: name, actImage: nil, defImage: nil)
-//            return cell
-//        default:
-//            return UICollectionViewCell()
-//        }
-//    }
-//}
-//
-//extension PreferenceBoardViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-////        if let cell = collectionView.cellForItem(at: indexPath) as? InterestsCollectionViewCell{
-////
-////        }
-//
-//    }
-//
-////    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-////        if collectionView == durationCollection{
-////            let width = self.durationCollection.frame.height
-////            let cellWidth = (width - 92)/3
-////            return CGSize(width: cellWidth, height: self.durationCollection.frame.height)
-////
-////        }
-////
-////        return CGSize(width: 10, height: 10)
-////    }
-//}

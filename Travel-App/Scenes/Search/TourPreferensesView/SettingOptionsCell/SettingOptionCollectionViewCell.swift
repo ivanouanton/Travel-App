@@ -12,7 +12,7 @@ class SettingOptionCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var title: UILabel!
-    private var mainBackColor: UIColor = UIColor(named: "heavy")!
+    private var mainBackColor: UIColor = UIColor(named: "pantone")!
     private var activeImage: UIImage?{
         didSet{
             guard let image = activeImage else {return}
@@ -41,8 +41,15 @@ class SettingOptionCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            self.contentView.backgroundColor = isSelected ? self.mainBackColor.withAlphaComponent(0.2) : self.mainBackColor
-            self.title.textColor = isSelected ? UIColor(named: "white")! : self.mainBackColor
+            if isSelected {
+                self.contentView.backgroundColor = self.mainBackColor
+                self.title.textColor = UIColor(named: "white")!
+            }else{
+                self.contentView.backgroundColor = self.mainBackColor.withAlphaComponent(0.2)
+                self.title.textColor = self.mainBackColor
+            }
+//            self.contentView.backgroundColor = isSelected ? self.mainBackColor.withAlphaComponent(0.2) : self.mainBackColor
+//            self.title.textColor = isSelected ? UIColor(named: "white")! : self.mainBackColor
         }
     }
 
