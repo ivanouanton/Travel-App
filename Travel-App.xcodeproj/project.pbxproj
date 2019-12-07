@@ -42,6 +42,7 @@
 		F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883732381C6CB00F01F3A /* HomePresenter.swift */; };
 		F79B3873239C13630032F598 /* ToursManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79B3872239C13620032F598 /* ToursManager.swift */; };
 		F79B3878239C60400032F598 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79B3877239C60400032F598 /* NavigationController.swift */; };
+		F79B387A239C6A3C0032F598 /* TourHederView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79B3879239C6A3C0032F598 /* TourHederView.swift */; };
 		F79FCA2123847D4E009F1693 /* AvenirNextLTPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2023847D4E009F1693 /* AvenirNextLTPro-Bold.otf */; };
 		F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2223847ED2009F1693 /* AvenirNextLTPro-Regular.otf */; };
 		F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */; };
@@ -120,6 +121,7 @@
 		F79883732381C6CB00F01F3A /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		F79B3872239C13620032F598 /* ToursManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursManager.swift; sourceTree = "<group>"; };
 		F79B3877239C60400032F598 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		F79B3879239C6A3C0032F598 /* TourHederView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourHederView.swift; sourceTree = "<group>"; };
 		F79FCA2023847D4E009F1693 /* AvenirNextLTPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Bold.otf"; sourceTree = "<group>"; };
 		F79FCA2223847ED2009F1693 /* AvenirNextLTPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Regular.otf"; sourceTree = "<group>"; };
 		F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-HeavyCn.otf"; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 				F7EF6919239BBE930004EF4E /* ToursViewController.swift */,
 				F7EF691C239BC0CA0004EF4E /* ToursViewProtocol.swift */,
 				F7CFD01E239BD3CC00983631 /* CustomCell */,
+				F79B3879239C6A3C0032F598 /* TourHederView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				F7EF6921239BC1310004EF4E /* ToursPresenterProtocol.swift in Sources */,
 				F7CF8D312396FF2100119B60 /* InterestsCollectionViewCell.swift in Sources */,
 				F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */,
+				F79B387A239C6A3C0032F598 /* TourHederView.swift in Sources */,
 				F7932B692393A687006E6496 /* PlaceInfoViewController.swift in Sources */,
 				F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */,
 				F7932B7523946D4B006E6496 /* RadioButton.swift in Sources */,

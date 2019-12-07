@@ -83,24 +83,10 @@ extension ToursViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-      let view = UIView()
-        view.backgroundColor = .white
-
-            let title = UILabel()
-            view.addSubview(title)
-            title.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-                title.topAnchor.constraint(equalTo: view.topAnchor, constant: 16),
-                title.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
-                title.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                title.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8)
-            ])
-        title.textColor = UIColor(named: "pantone")
-        title.textAlignment = .left
-        title.font = UIFont(name: "AvenirNextLTPro-Demi", size: 16)
-//        title.text = self.sectionTitles[section]
-      title.text = "Hello world"
-      return view
+        let view = TourHederView()
+        let tour = tours[section]
+        view.setupView(with: tour.name, duration: tour.duration)
+        return view
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
