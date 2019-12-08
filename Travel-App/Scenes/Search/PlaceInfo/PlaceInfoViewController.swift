@@ -25,7 +25,6 @@ class PlaceInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let place = place else {return}
-        self.navigationItem.title = place.name
         self.titleDescriptionLabel.text = place.name
         self.descriptionLabel.text = place.description
         self.placeImage.image = image
@@ -35,10 +34,7 @@ class PlaceInfoViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationItem.title = "Marlow & Sons"
-
-        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "left-arrow")
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "left-arrow")
-        self.navigationController?.navigationBar.tintColor = UIColor(named: "pantone")
+        guard let place = place else {return}
+        self.navigationItem.title = place.name
     }
 }

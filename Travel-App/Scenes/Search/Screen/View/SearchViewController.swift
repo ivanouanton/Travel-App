@@ -9,8 +9,6 @@
 import UIKit
 import GoogleMaps
 
-
-
 final class SearchViewController: UIViewController{
     var presenter: SearchPresenterProtocol!
     
@@ -216,8 +214,6 @@ extension SearchViewController{
     // MARK: - Methods
         
     @objc func setupPreferences(){
-//        let storyboard = UIStoryboard(name: "PreferencesTour", bundle: nil)
-//        let controller = storyboard.instantiateViewController(withIdentifier: "PreferenceBoardViewController")
         self.navigationController?.pushViewController(PreferenceBoardViewController(), animated: true)
     }
     
