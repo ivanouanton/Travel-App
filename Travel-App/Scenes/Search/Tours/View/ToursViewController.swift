@@ -26,18 +26,9 @@ class ToursViewController: UIViewController {
         table.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
         table.layer.masksToBounds = false
         table.showsVerticalScrollIndicator = false
+        table.estimatedRowHeight = 272
+
         return table
-    }()
-    
-    private lazy var shadowView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .gray
-        view.layer.shadowColor = UIColor.gray.cgColor
-        view.layer.shadowOffset = CGSize(width: 0, height: 0)
-        view.layer.shadowOpacity = 0.9
-        view.layer.shadowRadius = 2.0
-        return view
     }()
     
     override func loadView() {
@@ -60,10 +51,9 @@ class ToursViewController: UIViewController {
 
 extension ToursViewController{
     func setupUI(){
-        self.view.backgroundColor = .white
         
+        self.view.backgroundColor = .white
         self.view.addSubview(self.toursTable)
-//        self.view.addSubview(self.shadowView)
     }
     
     func setupConstraints(){
@@ -73,10 +63,6 @@ extension ToursViewController{
             self.toursTable.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
             self.toursTable.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 16),
             self.toursTable.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor, constant: -16),
-            
-//            self.shadowView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-//            self.shadowView.widthAnchor.constraint(equalTo: self.view.widthAnchor),
-//            self.shadowView.heightAnchor.constraint(equalToConstant: 0.5),
         ])
     }
 }
@@ -105,7 +91,12 @@ extension ToursViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 272
+        return UITableView.automaticDimension 
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
     }
  
 }

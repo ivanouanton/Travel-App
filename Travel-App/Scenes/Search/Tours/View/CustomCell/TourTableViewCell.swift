@@ -34,6 +34,8 @@ class TourTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.descriptionLabel.sizeToFit()
+        
         self.tourImageView.roundCorners(corners: [.topLeft, .topRight], radius: 10)
         
         self.layer.cornerRadius = 10
@@ -44,7 +46,11 @@ class TourTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        let selectedView = UIView()
+        selectedView.layer.cornerRadius = 10
+        selectedView.layer.backgroundColor = UIColor(named: "silver")?.withAlphaComponent(0.2).cgColor
+        selectedBackgroundView = selectedView
+        
     }
 }
 

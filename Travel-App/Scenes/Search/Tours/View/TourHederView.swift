@@ -45,6 +45,7 @@ class TourHederView: UIView {
         
         NSLayoutConstraint.activate([
             self.titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
+            self.titleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 24),
             
             self.durationLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 8),
