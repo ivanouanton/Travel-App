@@ -6,6 +6,8 @@
 //  Copyright © 2019 companyName. All rights reserved.
 //
 
+import Firebase
+
 protocol SearchPresenterProtocol: class {
     init(view: SearchViewProtocol)
     
@@ -13,4 +15,5 @@ protocol SearchPresenterProtocol: class {
     func getPlaces()
     func showModalView(with id: String)
     func filterPlaces(with index: Int)
+    func getRoute(with location: GeoPoint)
 }

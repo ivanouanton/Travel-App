@@ -13,6 +13,8 @@ import FirebaseStorage
 
 class SearchPresenter{
     
+    var userLocation = GeoPoint(latitude: Defaults.location.latitude,
+                            longitude: Defaults.location.longitude)
     var places = [String:PlaceData]()
     var categories = [String:Category]()
     private var categoriesName = ["All"]
@@ -40,6 +42,15 @@ class SearchPresenter{
 }
 
 extension SearchPresenter: SearchPresenterProtocol{
+    func getRoute(with location: GeoPoint) {
+        PlaceManager.shared.getRoute(with: self.userLocation,
+                                     destination: location) { (routes, error) in
+                                        if let routes = routes{
+                                            self.view.drawPath(with: routes as [AnyObject])
+                                        }
+        }
+    }
+    
     func filterPlaces(with index: Int) {
         
         if index == 0{

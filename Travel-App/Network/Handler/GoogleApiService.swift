@@ -8,19 +8,19 @@
 
 import Moya
 
-enum RestService{
-    case getRout(origin: String, destination: String)
+enum GoogleApiService{
+    case getRout(origin: String, destination: String, mode: String = "driving")
 }
 
-extension RestService: TargetType{
+extension GoogleApiService: TargetType{
     var baseURL: URL {
         return URL(string: "https://maps.googleapis.com/maps/api")!
     }
     
     var path: String {
         switch self {
-        case .getRout(let origin, let destination):
-            return "/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(Defaults.apiKey)"
+        case .getRout:
+            return "/directions/json"
         }
     }
     
@@ -38,8 +38,13 @@ extension RestService: TargetType{
     var task: Task {
         switch self {
 
-        case .getRout:
-            return .requestPlain
+        case .getRout(let origin, let destination, let mode):
+            var parameters = [String: String]()
+            parameters["origin"] = origin
+            parameters["destination"] = destination
+            parameters["mode"] = mode
+            parameters["key"] = Defaults.apiKey
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
     }
     

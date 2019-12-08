@@ -43,6 +43,8 @@
 		F79B3873239C13630032F598 /* ToursManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79B3872239C13620032F598 /* ToursManager.swift */; };
 		F79B3878239C60400032F598 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79B3877239C60400032F598 /* NavigationController.swift */; };
 		F79B387A239C6A3C0032F598 /* TourHederView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79B3879239C6A3C0032F598 /* TourHederView.swift */; };
+		F79B387C239D1E4B0032F598 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79B387B239D1E4B0032F598 /* NetworkProvider.swift */; };
+		F79B3880239D22370032F598 /* PlaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79B387F239D22370032F598 /* PlaceManager.swift */; };
 		F79FCA2123847D4E009F1693 /* AvenirNextLTPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2023847D4E009F1693 /* AvenirNextLTPro-Bold.otf */; };
 		F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2223847ED2009F1693 /* AvenirNextLTPro-Regular.otf */; };
 		F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */; };
@@ -122,6 +124,8 @@
 		F79B3872239C13620032F598 /* ToursManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursManager.swift; sourceTree = "<group>"; };
 		F79B3877239C60400032F598 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		F79B3879239C6A3C0032F598 /* TourHederView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourHederView.swift; sourceTree = "<group>"; };
+		F79B387B239D1E4B0032F598 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkProvider.swift; path = "Travel-App/NetworkProvider.swift"; sourceTree = SOURCE_ROOT; };
+		F79B387F239D22370032F598 /* PlaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceManager.swift; sourceTree = SOURCE_ROOT; };
 		F79FCA2023847D4E009F1693 /* AvenirNextLTPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Bold.otf"; sourceTree = "<group>"; };
 		F79FCA2223847ED2009F1693 /* AvenirNextLTPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Regular.otf"; sourceTree = "<group>"; };
 		F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-HeavyCn.otf"; sourceTree = "<group>"; };
@@ -442,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				F79B3872239C13620032F598 /* ToursManager.swift */,
+				F79B387F239D22370032F598 /* PlaceManager.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -482,6 +487,7 @@
 				F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */,
 				F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */,
 				F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */,
+				F71ACDE9238B41B60092279F /* Network */,
 				F79B3874239C136B0032F598 /* Storage */,
 				F798835B2381AEAE00F01F3A /* Scenes */,
 				F77F22432392DB6A004610CE /* Utility */,
@@ -489,7 +495,6 @@
 				F7ADB09A237F3A9E00DA4E89 /* Info.plist */,
 				F7C7A1AB238B369A00C33FE4 /* GoogleService-Info.plist */,
 				F79FCA1E23846F69009F1693 /* Resources */,
-				F71ACDE9238B41B60092279F /* Network */,
 			);
 			path = "Travel-App";
 			sourceTree = "<group>";
@@ -547,6 +552,7 @@
 			isa = PBXGroup;
 			children = (
 				F7C7A1A9238B30CD00C33FE4 /* GoogleApiService.swift */,
+				F79B387B239D1E4B0032F598 /* NetworkProvider.swift */,
 			);
 			path = Handler;
 			sourceTree = "<group>";
@@ -752,8 +758,10 @@
 				F7CFD011239BCC5600983631 /* ProfilePresenterProtocol.swift in Sources */,
 				F7CFD01C239BD3BB00983631 /* TourTableViewCell.swift in Sources */,
 				F7F90D4623873FA600722F90 /* SettingTableViewCell.swift in Sources */,
+				F79B387C239D1E4B0032F598 /* NetworkProvider.swift in Sources */,
 				F79B3878239C60400032F598 /* NavigationController.swift in Sources */,
 				F761DFF22381CF7400D9DBBD /* SettingsViewController.swift in Sources */,
+				F79B3880239D22370032F598 /* PlaceManager.swift in Sources */,
 				F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */,
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
 				F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */,
