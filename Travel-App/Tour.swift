@@ -15,7 +15,7 @@ struct Tour{
     let duration: String
     let imageRef: DocumentReference?
     let name: String
-    let place: [String: String]
+    let place: [String]
     let transport: [String: String]
     var image: UIImage?
     
@@ -24,7 +24,7 @@ struct Tour{
         self.duration = dictionary["duration"] as! String
         self.imageRef = dictionary["image"] as? DocumentReference
         self.name = dictionary["name"] as! String
-        self.place = dictionary["place"] as! [String: String]
+        self.place = dictionary["place"] as! [String]
         self.transport = dictionary["transport"] as! [String: String]
         self.image = nil
     }

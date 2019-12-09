@@ -96,7 +96,11 @@ extension ToursViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
-        self.navigationController!.popToViewController(viewControllers[viewControllers.count - 3], animated: true)
+        let vc = viewControllers[viewControllers.count - 3] as? SearchViewController
+        vc?.tour = self.tours[indexPath.section]
+        
+        guard let viewController = vc else {return}
+        self.navigationController!.popToViewController(viewController, animated: true)
     }
  
 }

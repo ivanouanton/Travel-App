@@ -53,6 +53,23 @@ class PlaceManager {
                 completionHandler(nil, error)
             }
         }
+    }
     
+    func getPlace(with id: String, completion: @escaping (_ place: PlaceData?, _ error: Error?) -> Void){
+        let db = Firestore.firestore()
+        
+        let docRef = db.collection("Place").document(id)
+        docRef.getDocument { (document, err) in
+            
+            if let place = document.flatMap({
+              $0.data().flatMap({ (data) in
+                return PlaceData(data)
+              })
+            }) {
+                completion(place, nil)
+            } else {
+                completion(nil, err)
+            }
+        }
     }
 }
