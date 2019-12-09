@@ -8,6 +8,8 @@
 
 import UIKit
 import GoogleMaps
+import Firebase
+import Alamofire
 
 final class SearchViewController: UIViewController{
     var presenter: SearchPresenterProtocol!
@@ -16,10 +18,18 @@ final class SearchViewController: UIViewController{
     private var placePreviewTop: NSLayoutConstraint!
     
     private var filterViewTop: NSLayoutConstraint?
+    private var polyline: GMSPolyline?
 
     private var isShowing = false{
         didSet{
             self.filterViewTop?.constant = isShowing ? 0 : -48
+        }
+    }
+    
+    var tour: Tour? {
+        didSet{
+            guard let tour = tour else {return}
+            self.presenter.getTourRoute(with: tour)
         }
     }
     
@@ -128,7 +138,6 @@ final class SearchViewController: UIViewController{
         super.viewDidLoad()
         self.navigationItem.title = "New York"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -268,39 +277,15 @@ extension SearchViewController: SearchViewProtocol{
         self.placePreview.image = image
     }
     
-//    func drawPath()
-//    {
-//        let origin = "\(43.1561681),\(-75.8449946)"
-//        let destination = "\(38.8950712),\(-77.0362758)"
-//
-//        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=\(Defaults.apiKey)"
-//
-//        Alamofire.request(url).responseJSON { response in
-//            print(response.request!)  // original URL request
-//            print(response.response!) // HTTP URL response
-//            print(response.data!)     // server data
-//            print(response.result)   // result of response serialization
-//
-//            do {
-//                let json = try JSON(data: response.data!)
-//                let routes = json["routes"].arrayValue
-//
-//                for route in routes
-//                {
-//                    let routeOverviewPolyline = route["overview_polyline"].dictionary
-//                    let points = routeOverviewPolyline?["points"]?.stringValue
-//                    let path = GMSPath.init(fromEncodedPath: points!)
-//                    let polyline = GMSPolyline.init(path: path)
-//                    polyline.map = self.MapView
-//                }
-//            }
-//            catch {
-//                print("ERROR: not working")
-//            }
-//        }
-//
-//    }
-    
+    func drawPath(with routes: String?) {
+        
+        let path = GMSPath.init(fromEncodedPath: routes ?? "")
+        self.polyline?.map = nil
+        self.polyline = GMSPolyline(path: path)
+        self.polyline?.strokeWidth = 2
+        self.polyline?.strokeColor = UIColor(named: "smokyTopaz")!
+        self.polyline?.map = self.mapView
+    }
 
     func addMarker(_ id: String, place: PlaceData, markerImg: UIImage?, isActive: Bool) {
         let position = CLLocationCoordinate2D(latitude: place.locationPlace.latitude,
@@ -333,6 +318,8 @@ extension SearchViewController: CategoryFilterDelegate{
     }
 }
 
+// MARK: - Place Preview Delegate
+
 extension SearchViewController: PlacePreviewDelegate {
     func getInfoPlace(with data: PlaceData, image: UIImage?, category: String) {
         
@@ -347,7 +334,8 @@ extension SearchViewController: PlacePreviewDelegate {
         self.navigationController?.pushViewController(controller!, animated: true)
     }
     
-    func createRoute() {
+    func createRoute(with location: GeoPoint) {
+        self.presenter.getRoute(with: [location])
     }
 }
 

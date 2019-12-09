@@ -142,7 +142,8 @@ class PlacePreview: UIView {
     }
     
     @objc func createRoute(){
-        self.delegate?.createRoute()
+        guard let loacation = self.place?.locationPlace else {return}
+        self.delegate?.createRoute(with: loacation)
     }
     
     // MARK: - Life Cicle

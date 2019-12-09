@@ -13,6 +13,8 @@ import FirebaseStorage
 
 class SearchPresenter{
     
+    var userLocation = GeoPoint(latitude: Defaults.location.latitude,
+                            longitude: Defaults.location.longitude)
     var places = [String:PlaceData]()
     var categories = [String:Category]()
     private var categoriesName = ["All"]
@@ -40,6 +42,35 @@ class SearchPresenter{
 }
 
 extension SearchPresenter: SearchPresenterProtocol{
+    func getTourRoute(with tour: Tour) {
+        let placesId = tour.place
+        var places = [GeoPoint]()
+        let aGroup = DispatchGroup()
+        
+        for placeId in placesId{
+            aGroup.enter()
+            PlaceManager.shared.getPlace(with: placeId) { (place, error) in
+                if let place = place {
+                    places.append(place.locationPlace)
+                    aGroup.leave()
+                }
+            }
+        }
+        
+        aGroup.notify(queue: DispatchQueue.main){
+            self.getRoute(with: places)
+        }
+    }
+    
+    func getRoute(with locations: [GeoPoint]) {
+        let places = [self.userLocation] + locations
+        PlaceManager.shared.getRoute(with: places, completionHandler: { (routes, error) in
+            if let routes = routes{
+                self.view.drawPath(with: routes)
+            }
+        })
+    }
+    
     func filterPlaces(with index: Int) {
         
         if index == 0{
