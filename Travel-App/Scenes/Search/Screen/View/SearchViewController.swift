@@ -17,6 +17,9 @@ final class SearchViewController: UIViewController{
     private var placePreviewBottom: NSLayoutConstraint!
     private var placePreviewTop: NSLayoutConstraint!
     
+    private var tourViewBottom: NSLayoutConstraint!
+    private var tourViewTop: NSLayoutConstraint!
+    
     private var filterViewTop: NSLayoutConstraint?
     private var polyline: GMSPolyline?
 
@@ -30,6 +33,15 @@ final class SearchViewController: UIViewController{
         didSet{
             guard let tour = tour else {return}
             self.presenter.getTourRoute(with: tour)
+            
+//            let storyboard = UIStoryboard(name: "TourInfo", bundle: nil)
+//            let myModalViewController = storyboard.instantiateViewController(withIdentifier: "secondVC")
+//            let controller = storyboard.instantiateViewController(withIdentifier: "someViewController")
+//                   myModalViewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+//                   myModalViewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+//                   self.present(myModalViewController, animated: true, completion: nil)
+            
+            showTourInfo()
         }
     }
     
@@ -124,6 +136,12 @@ final class SearchViewController: UIViewController{
         return button
     }()
     
+    private lazy var tourInfoView: TourInfoView = {
+        let view = TourInfoView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     // MARK: - Life Cycle
 
     
@@ -146,6 +164,11 @@ final class SearchViewController: UIViewController{
         //self.presenter.fetchUserLocation()
         self.presenter.getPlaces()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print(self.tourInfoView.frame)
+    }
 }
 
 extension SearchViewController{
@@ -164,6 +187,7 @@ extension SearchViewController{
         self.view.addSubview(self.createTourButton)
         self.view.addSubview(self.filterView)
         self.view.addSubview(self.filterByButton)
+        self.view.addSubview(self.tourInfoView)
         self.filterView.addSubview(self.radioButton)
         self.filterView.addSubview(self.radioButton1)
         self.filterView.addSubview(self.radioButton2)
@@ -172,6 +196,9 @@ extension SearchViewController{
     func setupConstraints(){
         self.placePreviewBottom = self.placePreview.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         self.placePreviewTop = self.placePreview.topAnchor.constraint(equalTo: self.view.bottomAnchor)
+        
+        self.tourViewBottom = self.tourInfoView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+        self.tourViewTop = self.tourInfoView.topAnchor.constraint(equalTo: self.view.topAnchor)
         
         self.filterViewTop = self.filterView.topAnchor.constraint(equalTo: self.filterByButton.bottomAnchor, constant: -48)
         
@@ -215,6 +242,11 @@ extension SearchViewController{
             self.placePreview.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.placePreviewTop,
             
+            self.tourInfoView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
+            self.tourInfoView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.tourInfoView.heightAnchor.constraint(equalToConstant: 188),
+            self.tourViewTop,
+            
             self.createTourButton.topAnchor.constraint(equalTo: self.filterView.bottomAnchor, constant: 16),
             self.createTourButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16)
             ])
@@ -235,6 +267,20 @@ extension SearchViewController{
             showModalView()
         }
         self.presenter.showModalView(with: id)
+    }
+    
+    private func showTourInfo() {
+        if self.tourViewTop.isActive{
+            showModalTourView()
+        }
+    }
+    
+    private func showModalTourView(){
+        UIView.animate(withDuration: 0.25) {
+            self.tourViewBottom.isActive = true
+            self.tourViewTop.isActive = false
+            self.view.layoutIfNeeded()
+        }
     }
     
     private func showModalView(){
