@@ -15,5 +15,5 @@ protocol SearchViewProtocol: class{
     func showModal(with data: PlaceData, image: UIImage?, category: String)
     func setFilter(with categories: [String])
     func clearMarkers()
-    func drawPath(with routes: [AnyObject])
+    func drawPath(with routes: String?)
 }

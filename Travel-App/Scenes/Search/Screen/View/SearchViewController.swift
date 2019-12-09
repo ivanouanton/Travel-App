@@ -270,57 +270,14 @@ extension SearchViewController: SearchViewProtocol{
         self.placePreview.image = image
     }
     
-    func drawPath(with routes: [AnyObject]) {
+    func drawPath(with routes: String?) {
         
-//        let routes = (routes.first as? Dictionary<String, AnyObject>) ?? [:]
-//
-//        for route in routes {
-//            let routeOverviewPolyline = (route["overview_polyline"] as? Dictionary<String,AnyObject>) ?? [:]
-//            let points = routeOverviewPolyline?["points"]?.stringValue
-//            let path = GMSPath.init(fromEncodedPath: points!)
-//            let polyline = GMSPolyline.init(path: path)
-//            polyline.map = self.MapView
-//        }
-    }
-    
-        func drawpath(positions: [GeoPoint]) {
-
-        let origin = positions.first!
-        let destination = positions.last!
-        var wayPoints = ""
-        for point in positions {
-            wayPoints = wayPoints.count == 0 ? "\(point.latitude),\(point.longitude)" : "\(wayPoints)%7C\(point.latitude),\(point.longitude)"
-        }
-
-            let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin.latitude),\(origin.longitude)&destination=\(destination.latitude),\(destination.longitude)&mode=driving&waypoints=\(wayPoints)&key=\(Defaults.apiKey)"
-        Alamofire.request(url).responseJSON { response in
-
-            print(response.request as Any)  // original URL request
-            print(response.response as Any) // HTTP URL response
-            print(response.data as Any)     // server data
-            print(response.result as Any)   // result of response serialization
-            
-            if let json : [String:Any] = try? JSONSerialization.jsonObject(with: response.data!, options: .allowFragments) as? [String: Any]{
-                guard let routes = json["routes"] as? NSArray else {
-                    return
-                }
-                print(routes)
-                if (routes.count > 0) {
-                    let overview_polyline = routes[0] as? NSDictionary
-                    let dictPolyline = overview_polyline?["overview_polyline"] as? NSDictionary
-                    let routes = dictPolyline?.object(forKey: "points") as? String
-
-                    
-                    let path = GMSPath.init(fromEncodedPath: routes ?? "")
-                    self.polyline?.map = nil
-                    self.polyline = GMSPolyline(path: path)
-                    self.polyline?.strokeWidth = 2
-                    self.polyline?.strokeColor = UIColor(named: "smokyTopaz")!
-                    self.polyline?.map = self.mapView
-                }
-            }
-
-        }
+        let path = GMSPath.init(fromEncodedPath: routes ?? "")
+        self.polyline?.map = nil
+        self.polyline = GMSPolyline(path: path)
+        self.polyline?.strokeWidth = 2
+        self.polyline?.strokeColor = UIColor(named: "smokyTopaz")!
+        self.polyline?.map = self.mapView
     }
 
     func addMarker(_ id: String, place: PlaceData, markerImg: UIImage?, isActive: Bool) {
@@ -371,8 +328,7 @@ extension SearchViewController: PlacePreviewDelegate {
     }
     
     func createRoute(with location: GeoPoint) {
-        let loc = GeoPoint(latitude: Defaults.location.latitude, longitude: Defaults.location.longitude)
-        self.drawpath(positions: [loc,location])
+        self.presenter.getRoute(with: location)
     }
 }
 

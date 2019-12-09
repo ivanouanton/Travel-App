@@ -43,12 +43,11 @@ class SearchPresenter{
 
 extension SearchPresenter: SearchPresenterProtocol{
     func getRoute(with location: GeoPoint) {
-        PlaceManager.shared.getRoute(with: self.userLocation,
-                                     destination: location) { (routes, error) in
-                                        if let routes = routes{
-                                            self.view.drawPath(with: routes as [AnyObject])
-                                        }
-        }
+        PlaceManager.shared.getRoute(with: [self.userLocation, location], completionHandler: { (routes, error) in
+            if let routes = routes{
+                self.view.drawPath(with: routes)
+            }
+        })
     }
     
     func filterPlaces(with index: Int) {

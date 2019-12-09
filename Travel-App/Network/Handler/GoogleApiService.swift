@@ -9,7 +9,7 @@
 import Moya
 
 enum GoogleApiService{
-    case getRout(origin: String, destination: String, mode: String = "driving")
+    case getRout(origin: String, destination: String, mode: String = "driving", points: String = "")
 }
 
 extension GoogleApiService: TargetType{
@@ -38,11 +38,12 @@ extension GoogleApiService: TargetType{
     var task: Task {
         switch self {
 
-        case .getRout(let origin, let destination, let mode):
+        case .getRout(let origin, let destination, let mode, let points):
             var parameters = [String: String]()
             parameters["origin"] = origin
             parameters["destination"] = destination
             parameters["mode"] = mode
+            parameters["points"] = points
             parameters["key"] = Defaults.apiKey
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }
