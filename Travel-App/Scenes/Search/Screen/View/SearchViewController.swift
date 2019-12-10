@@ -33,7 +33,6 @@ final class SearchViewController: UIViewController{
         didSet{
             guard let tour = tour else {return}
             self.presenter.getTourRoute(with: tour)
-            self.tourInfoView.tour = tour
             showTourInfo()
         }
     }
@@ -296,6 +295,10 @@ extension SearchViewController{
 }
 
 extension SearchViewController: SearchViewProtocol{
+    func setupTourInfo(with places: [String], title: String) {
+        self.tourInfoView.setupTourInfo(with: places, title: title)
+    }
+    
     func clearMarkers() {
         mapView.clear()
     }

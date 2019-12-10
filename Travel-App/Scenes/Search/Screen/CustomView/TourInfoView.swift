@@ -10,14 +10,8 @@ import UIKit
 
 class TourInfoView: UIView {
     
-    var tour: Tour? {
-            didSet{
-                guard let tour = tour else {return}
-                self.setupPlacesScroll(tour)
-            }
-        }
-    
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var tourTitle: UILabel!
     
     private lazy var filterView: UIView = {
         let view = UIView()
@@ -32,38 +26,38 @@ class TourInfoView: UIView {
         super.awakeFromNib()
         
         self.setupUI()
-        self.setupConstraints()
     }
     
     private func setupUI(){
         self.contentView.addSubview(self.filterView)
-    }
-    
-    private func setupConstraints(){
+        
         self.widthScrollLine = self.filterView.widthAnchor.constraint(equalToConstant: 1500)
         NSLayoutConstraint.activate([
-            self.filterView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -16),
-            self.filterView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16),
-            self.filterView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16),
+            self.filterView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -8),
+            self.filterView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 24),
+            self.filterView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -56),
             self.filterView.heightAnchor.constraint(equalToConstant: 3),
             self.widthScrollLine!
         ])
     }
     
-    private func setupPlacesScroll(_ tour: Tour){
-        let count = tour.place.count
-        self.widthScrollLine?.constant = CGFloat((count) * 100)
+    func setupTourInfo(with places: [String], title: String){
+        self.contentView.subviews.forEach({ $0.removeFromSuperview() })
+        self.setupUI()
+        self.tourTitle.text = title
+        let count = places.count
+        self.widthScrollLine?.constant = CGFloat((count) * 150)
         
-        var currentX: CGFloat = 0
+        var currentX: CGFloat = 150
+        addPlaceMark(with: 0, placeTitle: "Home")
         
-        for place in tour.place{
-            addPlaceMark(with: currentX)
-            currentX += 100
+        for place in places{
+            addPlaceMark(with: currentX, placeTitle: place)
+            currentX += 150
         }
     }
     
-    
-    private func addPlaceMark(with centerX: CGFloat){
+    private func addPlaceMark(with centerX: CGFloat, placeTitle: String){
         
         let markImage = UIImageView()
         markImage.image = UIImage(named: "scroll-place-mark")
@@ -71,9 +65,10 @@ class TourInfoView: UIView {
         markImage.translatesAutoresizingMaskIntoConstraints = false
         
         let markLabel = UILabel()
-        markLabel.text = "Home & home"
+        markLabel.text = placeTitle
         markLabel.font = UIFont(name: "AvenirNextLTPro-Regular", size: 12)
-        markLabel.textColor = UIColor(named: "pantone")
+        markLabel.textColor = UIColor(named: "heavy")
+        markLabel.textAlignment = .center
         markLabel.translatesAutoresizingMaskIntoConstraints = false
 
         self.contentView.addSubview(markImage)
@@ -86,7 +81,7 @@ class TourInfoView: UIView {
             
             markLabel.bottomAnchor.constraint(equalTo: markImage.topAnchor, constant: -6),
             markLabel.centerXAnchor.constraint(equalTo: self.filterView.leadingAnchor, constant: centerX),
-            markLabel.widthAnchor.constraint(equalToConstant: 80),
+            markLabel.widthAnchor.constraint(equalToConstant: 130),
         ])
     }
 }

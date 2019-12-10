@@ -67,7 +67,7 @@
                     <color key="textColor" name="heavy"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uoW-Ow-kxO">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoW-Ow-kxO">
                     <rect key="frame" x="0.0" y="102" width="414" height="66"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sgt-uz-fAN">
@@ -111,8 +111,14 @@
                 <constraint firstAttribute="top" secondItem="hRa-tI-1mg" secondAttribute="top" constant="-24" id="zsb-oo-FxH"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="contentView" destination="Sgt-uz-fAN" id="Buc-ge-H6c"/>
+                <outlet property="tourTitle" destination="hRa-tI-1mg" id="zwi-BM-SDb"/>
             </connections>
             <point key="canvasLocation" x="-80" y="149"/>
         </view>
