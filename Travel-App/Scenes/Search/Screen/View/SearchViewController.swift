@@ -137,7 +137,8 @@ final class SearchViewController: UIViewController{
     }()
     
     private lazy var tourInfoView: TourInfoView = {
-        let view = TourInfoView()
+        let allViewsInXibArray = Bundle.main.loadNibNamed("TourInfoView", owner: self, options: nil)
+        let view = allViewsInXibArray?.first as! TourInfoView
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -198,7 +199,7 @@ extension SearchViewController{
         self.placePreviewTop = self.placePreview.topAnchor.constraint(equalTo: self.view.bottomAnchor)
         
         self.tourViewBottom = self.tourInfoView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
-        self.tourViewTop = self.tourInfoView.topAnchor.constraint(equalTo: self.view.topAnchor)
+        self.tourViewTop = self.tourInfoView.topAnchor.constraint(equalTo: self.view.bottomAnchor)
         
         self.filterViewTop = self.filterView.topAnchor.constraint(equalTo: self.filterByButton.bottomAnchor, constant: -48)
         
@@ -242,9 +243,9 @@ extension SearchViewController{
             self.placePreview.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.placePreviewTop,
             
-            self.tourInfoView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
+            self.tourInfoView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             self.tourInfoView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.tourInfoView.heightAnchor.constraint(equalToConstant: 188),
+//            self.tourInfoView.heightAnchor.constraint(equalToConstant: 188),
             self.tourViewTop,
             
             self.createTourButton.topAnchor.constraint(equalTo: self.filterView.bottomAnchor, constant: 16),

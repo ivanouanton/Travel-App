@@ -103,9 +103,11 @@ extension SearchPresenter: SearchPresenterProtocol{
             }else{
                 self.getImage(with: imageRef.parent.collectionID,
                               documentID: imageRef.documentID) { (image, error) in
-                                placeImage = image
+                                if let image = image{
+                                    placeImage = image
+                                    self.imagesCache.setObject(image, forKey: imageRef.documentID as NSString)
+                                }
                                 aGroup.leave()
-                                self.imagesCache.setObject(image!, forKey: imageRef.documentID as NSString)
                 }
             }
         }
