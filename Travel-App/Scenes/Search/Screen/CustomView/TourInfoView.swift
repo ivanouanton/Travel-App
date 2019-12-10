@@ -19,10 +19,19 @@ class TourInfoView: UIView {
     
     var closeHandler: ()->Void = {}
     
+    private lazy var gradientLayer: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor(named: "smokyTopaz")!.cgColor, UIColor(named: "pantone")!.cgColor]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
+        return gradient
+    }()
+    
     private lazy var filterView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor(named: "smokyTopaz")
+        view.layer.addSublayer(gradientLayer)
         return view
     }()
     
@@ -30,14 +39,20 @@ class TourInfoView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+     
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
-        self.setupUI()
+        self.gradientLayer.frame = filterView.bounds
+        
     }
     
     private func setupUI(){
         self.contentView.addSubview(self.filterView)
         
-        self.widthScrollLine = self.filterView.widthAnchor.constraint(equalToConstant: 1500)
+        self.widthScrollLine = self.filterView.widthAnchor.constraint(equalToConstant: 100)
         NSLayoutConstraint.activate([
             self.filterView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -8),
             self.filterView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 24),
@@ -53,6 +68,7 @@ class TourInfoView: UIView {
         self.tourTitle.text = title
         let count = places.count
         self.widthScrollLine?.constant = CGFloat((count) * 150)
+        self.gradientLayer.frame = filterView.bounds
         
         var currentX: CGFloat = 150
         self.addHomeMark()
