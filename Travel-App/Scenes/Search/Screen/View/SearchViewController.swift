@@ -132,11 +132,11 @@ final class SearchViewController: UIViewController{
         let allViewsInXibArray = Bundle.main.loadNibNamed("TourInfoView", owner: self, options: nil)
         let view = allViewsInXibArray?.first as! TourInfoView
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.closeHandler = self.hideTourView
         return view
     }()
     
     // MARK: - Life Cycle
-
     
     override func loadView() {
         super.loadView()
@@ -267,6 +267,14 @@ extension SearchViewController{
         UIView.animate(withDuration: 0.25) {
             self.tourViewBottom.isActive = true
             self.tourViewTop.isActive = false
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func hideTourView() {
+        UIView.animate(withDuration: 0.25) {
+            self.tourViewBottom.isActive = false
+            self.tourViewTop.isActive = true
             self.view.layoutIfNeeded()
         }
     }

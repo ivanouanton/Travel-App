@@ -13,6 +13,12 @@ class TourInfoView: UIView {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var tourTitle: UILabel!
     
+    @IBAction func closeView(_ sender: UIButton) {
+        self.closeHandler()
+    }
+    
+    var closeHandler: ()->Void = {}
+    
     private lazy var filterView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -49,7 +55,7 @@ class TourInfoView: UIView {
         self.widthScrollLine?.constant = CGFloat((count) * 150)
         
         var currentX: CGFloat = 150
-        addPlaceMark(with: 0, placeTitle: "Home")
+        self.addHomeMark()
         
         for place in places{
             addPlaceMark(with: currentX, placeTitle: place)
@@ -84,4 +90,35 @@ class TourInfoView: UIView {
             markLabel.widthAnchor.constraint(equalToConstant: 130),
         ])
     }
+    
+    private func addHomeMark(){
+        let radius: CGFloat = 6
+        
+        let markCircle = UIView()
+        markCircle.layer.cornerRadius = radius
+        markCircle.backgroundColor = UIColor(named: "smokyTopaz")
+        markCircle.translatesAutoresizingMaskIntoConstraints = false
+        
+        let markLabel = UILabel()
+        markLabel.text = "Home"
+        markLabel.font = UIFont(name: "AvenirNextLTPro-Regular", size: 12)
+        markLabel.textColor = UIColor(named: "heavy")
+        markLabel.textAlignment = .left
+        markLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        self.contentView.addSubview(markCircle)
+        self.contentView.addSubview(markLabel)
+
+        NSLayoutConstraint.activate([
+            markCircle.centerYAnchor.constraint(equalTo: self.filterView.centerYAnchor),
+            markCircle.centerXAnchor.constraint(equalTo: self.filterView.leadingAnchor),
+            markCircle.heightAnchor.constraint(equalToConstant: radius * 2),
+            markCircle.widthAnchor.constraint(equalToConstant: radius * 2),
+
+            markLabel.bottomAnchor.constraint(equalTo: markCircle.topAnchor, constant: -16),
+            markLabel.leadingAnchor.constraint(equalTo: markCircle.leadingAnchor),
+        ])
+    }
+    
+    
 }
