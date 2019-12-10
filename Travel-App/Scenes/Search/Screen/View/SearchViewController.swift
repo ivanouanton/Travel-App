@@ -33,14 +33,7 @@ final class SearchViewController: UIViewController{
         didSet{
             guard let tour = tour else {return}
             self.presenter.getTourRoute(with: tour)
-            
-//            let storyboard = UIStoryboard(name: "TourInfo", bundle: nil)
-//            let myModalViewController = storyboard.instantiateViewController(withIdentifier: "secondVC")
-//            let controller = storyboard.instantiateViewController(withIdentifier: "someViewController")
-//                   myModalViewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-//                   myModalViewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-//                   self.present(myModalViewController, animated: true, completion: nil)
-            
+            self.tourInfoView.tour = tour
             showTourInfo()
         }
     }
@@ -164,11 +157,6 @@ final class SearchViewController: UIViewController{
         
         //self.presenter.fetchUserLocation()
         self.presenter.getPlaces()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        print(self.tourInfoView.frame)
     }
 }
 
