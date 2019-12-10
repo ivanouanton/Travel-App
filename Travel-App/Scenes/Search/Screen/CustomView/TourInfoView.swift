@@ -12,7 +12,6 @@ class TourInfoView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = .systemYellow
         
     }
     

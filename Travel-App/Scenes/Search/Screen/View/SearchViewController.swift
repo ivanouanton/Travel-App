@@ -245,7 +245,7 @@ extension SearchViewController{
             
             self.tourInfoView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             self.tourInfoView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            self.tourInfoView.heightAnchor.constraint(equalToConstant: 188),
+            self.tourInfoView.heightAnchor.constraint(equalToConstant: 188),
             self.tourViewTop,
             
             self.createTourButton.topAnchor.constraint(equalTo: self.filterView.bottomAnchor, constant: 16),
