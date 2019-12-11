@@ -17,6 +17,10 @@ final class ProfileViewController: UIViewController{
         self.setupUI()
         self.setupConstraints()
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
 
 extension ProfileViewController{
