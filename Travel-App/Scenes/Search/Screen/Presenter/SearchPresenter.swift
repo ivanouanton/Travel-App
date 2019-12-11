@@ -45,6 +45,7 @@ extension SearchPresenter: SearchPresenterProtocol{
     func getTourRoute(with tour: Tour) {
         let placesId = tour.place
         var places = [GeoPoint]()
+        var placeNames = [String]()
         let aGroup = DispatchGroup()
         
         for placeId in placesId{
@@ -52,6 +53,7 @@ extension SearchPresenter: SearchPresenterProtocol{
             PlaceManager.shared.getPlace(with: placeId) { (place, error) in
                 if let place = place {
                     places.append(place.locationPlace)
+                    placeNames.append(place.name)
                     aGroup.leave()
                 }
             }
@@ -59,6 +61,7 @@ extension SearchPresenter: SearchPresenterProtocol{
         
         aGroup.notify(queue: DispatchQueue.main){
             self.getRoute(with: places)
+            self.view.setupTourInfo(with: placeNames, title: tour.name)
         }
     }
     
@@ -103,9 +106,11 @@ extension SearchPresenter: SearchPresenterProtocol{
             }else{
                 self.getImage(with: imageRef.parent.collectionID,
                               documentID: imageRef.documentID) { (image, error) in
-                                placeImage = image
+                                if let image = image{
+                                    placeImage = image
+                                    self.imagesCache.setObject(image, forKey: imageRef.documentID as NSString)
+                                }
                                 aGroup.leave()
-                                self.imagesCache.setObject(image!, forKey: imageRef.documentID as NSString)
                 }
             }
         }

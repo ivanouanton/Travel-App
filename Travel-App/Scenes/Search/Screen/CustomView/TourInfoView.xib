@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNextLTPro-Demi.otf">
+            <string>AvenirNextLTPro-Demi</string>
+        </array>
+        <array key="AvenirNextLTPro-Regular.otf">
+            <string>AvenirNextLTPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TourInfoView" customModule="Travel_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="188"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Tour :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHh-lC-hif">
+                    <rect key="frame" x="16" y="24" width="35" height="16.5"/>
+                    <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
+                    <color key="textColor" name="silver"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best of Rome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRa-tI-1mg">
+                    <rect key="frame" x="61" y="24" width="292" height="19"/>
+                    <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="16"/>
+                    <color key="textColor" name="heavy"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJP-tt-wON">
+                    <rect key="frame" x="383" y="16" width="15" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="15" id="Ndu-lq-nm5"/>
+                        <constraint firstAttribute="height" constant="15" id="xER-FC-2uD"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="close"/>
+                    <connections>
+                        <action selector="closeView:" destination="iN0-l3-epB" eventType="touchUpInside" id="LOQ-S6-QUG"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cao-rk-4hB">
+                    <rect key="frame" x="16" y="58.5" width="41" height="16.5"/>
+                    <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="14"/>
+                    <color key="textColor" name="silver"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4OC-Ej-0Nf">
+                    <rect key="frame" x="67" y="57" width="69.5" height="19"/>
+                    <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="16"/>
+                    <color key="textColor" name="heavy"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myPlace" translatesAutoresizingMaskIntoConstraints="NO" id="0h2-lr-uN1">
+                    <rect key="frame" x="16" y="83" width="11" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="Pe7-4G-WAl"/>
+                        <constraint firstAttribute="width" constant="11" id="cxP-3X-Egp"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8608 Pacific Drive Rego Park, NY 11374" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzs-Sg-eVc">
+                    <rect key="frame" x="46" y="84" width="307" height="19"/>
+                    <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="16"/>
+                    <color key="textColor" name="heavy"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoW-Ow-kxO">
+                    <rect key="frame" x="0.0" y="111" width="414" height="57"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sgt-uz-fAN">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Sgt-uz-fAN" secondAttribute="bottom" id="7lU-zc-bJI"/>
+                        <constraint firstItem="Sgt-uz-fAN" firstAttribute="leading" secondItem="uoW-Ow-kxO" secondAttribute="leading" id="Zee-pr-LEP"/>
+                        <constraint firstItem="Sgt-uz-fAN" firstAttribute="height" secondItem="uoW-Ow-kxO" secondAttribute="height" id="gfg-Is-t4L"/>
+                        <constraint firstItem="Sgt-uz-fAN" firstAttribute="top" secondItem="uoW-Ow-kxO" secondAttribute="top" id="sed-7g-LNI"/>
+                        <constraint firstAttribute="trailing" secondItem="Sgt-uz-fAN" secondAttribute="trailing" id="ufZ-60-kGZ"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="OII-SQ-mCt"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="kym-gq-IEW"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="uoW-Ow-kxO" firstAttribute="top" secondItem="Pzs-Sg-eVc" secondAttribute="bottom" constant="8" id="2g2-lh-eTC"/>
+                <constraint firstItem="cao-rk-4hB" firstAttribute="top" secondItem="VHh-lC-hif" secondAttribute="bottom" constant="18" id="62N-4H-0lI"/>
+                <constraint firstItem="Pzs-Sg-eVc" firstAttribute="top" secondItem="4OC-Ej-0Nf" secondAttribute="bottom" constant="8" id="8E1-KT-qc6"/>
+                <constraint firstItem="SJP-tt-wON" firstAttribute="leading" secondItem="Pzs-Sg-eVc" secondAttribute="trailing" constant="30" id="Gyc-ju-jEy"/>
+                <constraint firstItem="SJP-tt-wON" firstAttribute="leading" secondItem="hRa-tI-1mg" secondAttribute="trailing" constant="30" id="Hlp-JD-llR"/>
+                <constraint firstAttribute="trailing" secondItem="uoW-Ow-kxO" secondAttribute="trailing" id="IJ7-rk-dhk"/>
+                <constraint firstItem="uoW-Ow-kxO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="R65-9l-raT"/>
+                <constraint firstItem="0h2-lr-uN1" firstAttribute="top" secondItem="cao-rk-4hB" secondAttribute="bottom" constant="8" id="SBp-WK-RJk"/>
+                <constraint firstItem="0h2-lr-uN1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Td6-YD-mys"/>
+                <constraint firstItem="Sgt-uz-fAN" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" priority="250" id="Usj-hi-1KB"/>
+                <constraint firstItem="4OC-Ej-0Nf" firstAttribute="top" secondItem="hRa-tI-1mg" secondAttribute="bottom" constant="14" id="Vzu-Nb-TF2"/>
+                <constraint firstItem="cao-rk-4hB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Xmt-S3-dPz"/>
+                <constraint firstItem="4OC-Ej-0Nf" firstAttribute="leading" secondItem="cao-rk-4hB" secondAttribute="trailing" constant="10" id="YMf-7x-NPE"/>
+                <constraint firstItem="Pzs-Sg-eVc" firstAttribute="leading" secondItem="0h2-lr-uN1" secondAttribute="trailing" constant="19" id="Zlg-69-1eA"/>
+                <constraint firstAttribute="top" secondItem="VHh-lC-hif" secondAttribute="top" constant="-24" id="cmK-QZ-8LL"/>
+                <constraint firstItem="hRa-tI-1mg" firstAttribute="leading" secondItem="VHh-lC-hif" secondAttribute="trailing" constant="10" id="hfd-ZP-Icf"/>
+                <constraint firstAttribute="top" secondItem="SJP-tt-wON" secondAttribute="top" constant="-16" id="hpC-Rg-yzn"/>
+                <constraint firstAttribute="bottom" secondItem="uoW-Ow-kxO" secondAttribute="bottom" constant="20" id="jXP-hE-stL"/>
+                <constraint firstAttribute="trailing" secondItem="SJP-tt-wON" secondAttribute="trailing" constant="16" id="wkn-yo-4Lg"/>
+                <constraint firstItem="VHh-lC-hif" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="wvb-a0-9w1"/>
+                <constraint firstAttribute="top" secondItem="hRa-tI-1mg" secondAttribute="top" constant="-24" id="zsb-oo-FxH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="contentView" destination="Sgt-uz-fAN" id="Buc-ge-H6c"/>
+                <outlet property="tourTitle" destination="hRa-tI-1mg" id="zwi-BM-SDb"/>
+            </connections>
+            <point key="canvasLocation" x="-80" y="149"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close" width="15" height="14"/>
+        <image name="myPlace" width="11" height="16"/>
+        <namedColor name="heavy">
+            <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="silver">
+            <color red="0.76078431372549016" green="0.75294117647058822" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -13,6 +13,11 @@
 		F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70DB816239B169B00D48EC6 /* SettingOptionTableViewCell.swift */; };
 		F70DB819239B169B00D48EC6 /* SettingOptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70DB817239B169B00D48EC6 /* SettingOptionTableViewCell.xib */; };
 		F71ACDEB238B41E60092279F /* PlaceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71ACDEA238B41E60092279F /* PlaceData.swift */; };
+		F72EFE40239EF147008081E1 /* TourInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F72EFE3F239EF147008081E1 /* TourInfo.storyboard */; };
+		F72EFE42239EF16D008081E1 /* TourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72EFE41239EF16D008081E1 /* TourInfoViewController.swift */; };
+		F72EFE44239EF618008081E1 /* TourInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72EFE43239EF618008081E1 /* TourInfoView.swift */; };
+		F72EFE49239EF62C008081E1 /* TourInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72EFE45239EF62B008081E1 /* TourInfoView.xib */; };
+		F72EFE4A239EF62C008081E1 /* Extension+UINavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72EFE46239EF62B008081E1 /* Extension+UINavigationItem.swift */; };
 		F745760E238B480C00C5A1DE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F745760D238B480C00C5A1DE /* Category.swift */; };
 		F7570AA0238AE8F300621E4F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570A9F238AE8F300621E4F /* Configuration.swift */; };
 		F7570AA3238AEAA200621E4F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570AA2238AEAA200621E4F /* Location.swift */; };
@@ -93,6 +98,11 @@
 		F70DB816239B169B00D48EC6 /* SettingOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionTableViewCell.swift; sourceTree = "<group>"; };
 		F70DB817239B169B00D48EC6 /* SettingOptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingOptionTableViewCell.xib; sourceTree = "<group>"; };
 		F71ACDEA238B41E60092279F /* PlaceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceData.swift; sourceTree = "<group>"; };
+		F72EFE3F239EF147008081E1 /* TourInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TourInfo.storyboard; sourceTree = "<group>"; };
+		F72EFE41239EF16D008081E1 /* TourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourInfoViewController.swift; sourceTree = "<group>"; };
+		F72EFE43239EF618008081E1 /* TourInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourInfoView.swift; sourceTree = "<group>"; };
+		F72EFE45239EF62B008081E1 /* TourInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TourInfoView.xib; sourceTree = "<group>"; };
+		F72EFE46239EF62B008081E1 /* Extension+UINavigationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UINavigationItem.swift"; sourceTree = "<group>"; };
 		F745760D238B480C00C5A1DE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F7570A9F238AE8F300621E4F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = "Travel-App/Scenes/Search/Locations/Configuration/Configuration.swift"; sourceTree = SOURCE_ROOT; };
 		F7570AA2238AEAA200621E4F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -325,9 +335,9 @@
 		F7958CCC238B09DB007688F8 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				F7958CCD238B0CD8007688F8 /* CustomView */,
 				F79883652381AF8B00F01F3A /* View */,
 				F79883642381AF8100F01F3A /* Presenter */,
+				F7958CCD238B0CD8007688F8 /* CustomView */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -342,6 +352,11 @@
 				F7CA366823925DC9005F7C57 /* CategoryFilterCell.swift */,
 				F75EAD392392FED80001C457 /* CategoryFilterDelegate.swift */,
 				F7932B7423946D4B006E6496 /* RadioButton.swift */,
+				F72EFE3F239EF147008081E1 /* TourInfo.storyboard */,
+				F72EFE41239EF16D008081E1 /* TourInfoViewController.swift */,
+				F72EFE43239EF618008081E1 /* TourInfoView.swift */,
+				F72EFE46239EF62B008081E1 /* Extension+UINavigationItem.swift */,
+				F72EFE45239EF62B008081E1 /* TourInfoView.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -644,7 +659,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F72EFE40239EF147008081E1 /* TourInfo.storyboard in Resources */,
 				F70DB819239B169B00D48EC6 /* SettingOptionTableViewCell.xib in Resources */,
+				F72EFE49239EF62C008081E1 /* TourInfoView.xib in Resources */,
 				F7CF8D3A239AE39600119B60 /* InterestsTableCell.xib in Resources */,
 				F7CCB5C6238488D7004C4A35 /* Assets.xcassets in Resources */,
 				F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */,
@@ -732,6 +749,7 @@
 				F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */,
 				F7EF6921239BC1310004EF4E /* ToursPresenterProtocol.swift in Sources */,
 				F7CF8D312396FF2100119B60 /* InterestsCollectionViewCell.swift in Sources */,
+				F72EFE42239EF16D008081E1 /* TourInfoViewController.swift in Sources */,
 				F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */,
 				F79B387A239C6A3C0032F598 /* TourHederView.swift in Sources */,
 				F7932B692393A687006E6496 /* PlaceInfoViewController.swift in Sources */,
@@ -743,6 +761,7 @@
 				F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */,
 				F7CA366923925DC9005F7C57 /* CategoryFilterCell.swift in Sources */,
 				F7570AA0238AE8F300621E4F /* Configuration.swift in Sources */,
+				F72EFE44239EF618008081E1 /* TourInfoView.swift in Sources */,
 				F7570AA3238AEAA200621E4F /* Location.swift in Sources */,
 				F7EF691D239BC0CA0004EF4E /* ToursViewProtocol.swift in Sources */,
 				F79883682381B8F000F01F3A /* HomeViewController.swift in Sources */,
@@ -761,6 +780,7 @@
 				F79B387C239D1E4B0032F598 /* NetworkProvider.swift in Sources */,
 				F79B3878239C60400032F598 /* NavigationController.swift in Sources */,
 				F761DFF22381CF7400D9DBBD /* SettingsViewController.swift in Sources */,
+				F72EFE4A239EF62C008081E1 /* Extension+UINavigationItem.swift in Sources */,
 				F79B3880239D22370032F598 /* PlaceManager.swift in Sources */,
 				F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */,
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
