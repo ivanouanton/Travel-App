@@ -45,5 +45,11 @@ class ViewFactory{
         vc.presenter = presenter
         return vc
     }
+    
+    static func createAuthVC() -> AuthViewController{
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AuthViewController") as! AuthViewController
+        return vc
+    }
 }
 
