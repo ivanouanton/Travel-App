@@ -6,6 +6,8 @@
 //  Copyright © 2019 companyName. All rights reserved.
 //
 
+import UIKit
+
 class ViewFactory{
     
     static func createSearchVC() -> SearchViewController{
@@ -23,7 +25,8 @@ class ViewFactory{
     }
     
     static func createProfileVC() -> ProfileViewController{
-        let vc = ProfileViewController()
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         let presenter = ProfilePresenter(view: vc)
         vc.presenter = presenter
         return vc
@@ -40,6 +43,12 @@ class ViewFactory{
         let vc = ToursViewController()
         let presenter = ToursPresenter(view: vc)
         vc.presenter = presenter
+        return vc
+    }
+    
+    static func createAuthVC() -> AuthViewController{
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AuthViewController") as! AuthViewController
         return vc
     }
 }

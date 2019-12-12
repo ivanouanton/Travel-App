@@ -10,6 +10,8 @@
 		3A3A3814239A74B9001FE150 /* CategoryPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A3813239A74B9001FE150 /* CategoryPreference.swift */; };
 		3A3D2E64238EE4B500DD9876 /* PlaceDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */; };
 		CAC2AFC9CE146BFE50DF962A /* Pods_Travel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */; };
+		F700442923A17C9C00D7E59F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F700442823A17C9C00D7E59F /* Profile.storyboard */; };
+		F700442B23A194C300D7E59F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700442A23A194C300D7E59F /* AuthViewController.swift */; };
 		F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70DB816239B169B00D48EC6 /* SettingOptionTableViewCell.swift */; };
 		F70DB819239B169B00D48EC6 /* SettingOptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70DB817239B169B00D48EC6 /* SettingOptionTableViewCell.xib */; };
 		F71ACDEB238B41E60092279F /* PlaceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71ACDEA238B41E60092279F /* PlaceData.swift */; };
@@ -94,6 +96,8 @@
 		3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDataHolder.swift; sourceTree = "<group>"; };
 		666AAB4DC0E5FE91DDA1E761 /* Pods-Travel-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.release.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.release.xcconfig"; sourceTree = "<group>"; };
 		C61D44D03DA574807B86294F /* Pods-Travel-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.debug.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.debug.xcconfig"; sourceTree = "<group>"; };
+		F700442823A17C9C00D7E59F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = "Travel-App/Profile.storyboard"; sourceTree = SOURCE_ROOT; };
+		F700442A23A194C300D7E59F /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F70DB813239AFB7500D48EC6 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppButton.swift; path = "Travel-App/Utility/AppButton.swift"; sourceTree = SOURCE_ROOT; };
 		F70DB816239B169B00D48EC6 /* SettingOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionTableViewCell.swift; sourceTree = "<group>"; };
 		F70DB817239B169B00D48EC6 /* SettingOptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingOptionTableViewCell.xib; sourceTree = "<group>"; };
@@ -435,6 +439,7 @@
 			children = (
 				F7CFD012239BCC8800983631 /* ProfileViewProtocol.swift */,
 				F7CFD014239BCCD600983631 /* ProfileViewController.swift */,
+				F700442823A17C9C00D7E59F /* Profile.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 			children = (
 				F798837E2381C9A500F01F3A /* View */,
 				F798837F2381CA0A00F01F3A /* Presenter */,
+				F700442A23A194C300D7E59F /* AuthViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -672,6 +678,7 @@
 				F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
 				F7932B672393A65C006E6496 /* InfoStoryboard.storyboard in Resources */,
 				F79FCA2823847ED2009F1693 /* AvenirNextLTPro-Demi.otf in Resources */,
+				F700442923A17C9C00D7E59F /* Profile.storyboard in Resources */,
 				F7CFD01D239BD3BB00983631 /* TourTableViewCell.xib in Resources */,
 				F7CF8D322396FF2100119B60 /* InterestsCollectionViewCell.xib in Resources */,
 				F79FCA2123847D4E009F1693 /* AvenirNextLTPro-Bold.otf in Resources */,
@@ -758,6 +765,7 @@
 				F75EAD3A2392FED80001C457 /* CategoryFilterDelegate.swift in Sources */,
 				F7932B652393A0E4006E6496 /* PlacePreviewDelegate.swift in Sources */,
 				F7932B7A23947D3D006E6496 /* PVRadioButtonGroup.swift in Sources */,
+				F700442B23A194C300D7E59F /* AuthViewController.swift in Sources */,
 				F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */,
 				F7CA366923925DC9005F7C57 /* CategoryFilterCell.swift in Sources */,
 				F7570AA0238AE8F300621E4F /* Configuration.swift in Sources */,
@@ -948,6 +956,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KHN7WQWRV9;
 				INFOPLIST_FILE = "Travel-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -969,6 +978,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KHN7WQWRV9;
 				INFOPLIST_FILE = "Travel-App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

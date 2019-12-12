@@ -31,7 +31,7 @@ class AppTabBarController: UITabBarController {
                                          image: UIImage(named: "home-def")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
                                          selectedImage: UIImage(named: "home")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
         
-        let profile = UINavigationController(rootViewController: ViewFactory.createHomeVC())
+        let profile = UINavigationController(rootViewController: ViewFactory.createProfileVC())
         profile.tabBarItem = UITabBarItem(title: "Profile",
                                        image: UIImage(named: "avatar-def")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
                                        selectedImage: UIImage(named: "avatar")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
