@@ -35,6 +35,8 @@
 		F780CE6423A2F91200E8E248 /* ProfileOptionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F780CE6223A2F91200E8E248 /* ProfileOptionViewCell.xib */; };
 		F780CE6723A2FDAD00E8E248 /* RecentPlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780CE6523A2FDAC00E8E248 /* RecentPlacesTableViewCell.swift */; };
 		F780CE6823A2FDAD00E8E248 /* RecentPlacesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F780CE6623A2FDAC00E8E248 /* RecentPlacesTableViewCell.xib */; };
+		F780CE6B23A315F100E8E248 /* RecentPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780CE6923A315F100E8E248 /* RecentPlaceCollectionViewCell.swift */; };
+		F780CE6C23A315F200E8E248 /* RecentPlaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F780CE6A23A315F100E8E248 /* RecentPlaceCollectionViewCell.xib */; };
 		F7932B652393A0E4006E6496 /* PlacePreviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B642393A0E4006E6496 /* PlacePreviewDelegate.swift */; };
 		F7932B672393A65C006E6496 /* InfoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */; };
 		F7932B692393A687006E6496 /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B682393A687006E6496 /* PlaceInfoViewController.swift */; };
@@ -127,6 +129,8 @@
 		F780CE6223A2F91200E8E248 /* ProfileOptionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileOptionViewCell.xib; path = View/ProfileOptionViewCell.xib; sourceTree = "<group>"; };
 		F780CE6523A2FDAC00E8E248 /* RecentPlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecentPlacesTableViewCell.swift; path = View/RecentPlacesTableViewCell.swift; sourceTree = "<group>"; };
 		F780CE6623A2FDAC00E8E248 /* RecentPlacesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecentPlacesTableViewCell.xib; path = View/RecentPlacesTableViewCell.xib; sourceTree = "<group>"; };
+		F780CE6923A315F100E8E248 /* RecentPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecentPlaceCollectionViewCell.swift; path = View/RecentPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
+		F780CE6A23A315F100E8E248 /* RecentPlaceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecentPlaceCollectionViewCell.xib; path = View/RecentPlaceCollectionViewCell.xib; sourceTree = "<group>"; };
 		F7932B642393A0E4006E6496 /* PlacePreviewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlacePreviewDelegate.swift; path = "Travel-App/Scenes/Search/Screen/PlacePreviewDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = InfoStoryboard.storyboard; path = "Travel-App/Scenes/Search/PlaceInfo/InfoStoryboard.storyboard"; sourceTree = SOURCE_ROOT; };
 		F7932B682393A687006E6496 /* PlaceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoViewController.swift; sourceTree = "<group>"; };
@@ -452,6 +456,8 @@
 				F780CE6223A2F91200E8E248 /* ProfileOptionViewCell.xib */,
 				F780CE6523A2FDAC00E8E248 /* RecentPlacesTableViewCell.swift */,
 				F780CE6623A2FDAC00E8E248 /* RecentPlacesTableViewCell.xib */,
+				F780CE6923A315F100E8E248 /* RecentPlaceCollectionViewCell.swift */,
+				F780CE6A23A315F100E8E248 /* RecentPlaceCollectionViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -686,6 +692,7 @@
 				F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */,
 				F7CF8D362399A46300119B60 /* SettingOptionCollectionViewCell.xib in Resources */,
 				F780CE6423A2F91200E8E248 /* ProfileOptionViewCell.xib in Resources */,
+				F780CE6C23A315F200E8E248 /* RecentPlaceCollectionViewCell.xib in Resources */,
 				F7C7A1AC238B369A00C33FE4 /* GoogleService-Info.plist in Resources */,
 				F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
 				F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */,
@@ -776,6 +783,7 @@
 				F7932B692393A687006E6496 /* PlaceInfoViewController.swift in Sources */,
 				F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */,
 				F7932B7523946D4B006E6496 /* RadioButton.swift in Sources */,
+				F780CE6B23A315F100E8E248 /* RecentPlaceCollectionViewCell.swift in Sources */,
 				F75EAD3A2392FED80001C457 /* CategoryFilterDelegate.swift in Sources */,
 				F7932B652393A0E4006E6496 /* PlacePreviewDelegate.swift in Sources */,
 				F7932B7A23947D3D006E6496 /* PVRadioButtonGroup.swift in Sources */,

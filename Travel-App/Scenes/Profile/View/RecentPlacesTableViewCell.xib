@@ -17,10 +17,28 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="234"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uOo-Wa-fxR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="234"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tZV-bd-ayf">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
                 <color key="backgroundColor" name="green"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="uOo-Wa-fxR" secondAttribute="bottom" id="0Ln-z1-rXq"/>
+                    <constraint firstItem="uOo-Wa-fxR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="E6b-RD-SuV"/>
+                    <constraint firstItem="uOo-Wa-fxR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="h4o-jg-eLW"/>
+                    <constraint firstAttribute="trailing" secondItem="uOo-Wa-fxR" secondAttribute="trailing" id="iYp-fQ-FNd"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="132" y="154"/>
+            <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
         </tableViewCell>
     </objects>
     <resources>
