@@ -10,6 +10,8 @@ import UIKit
 
 class RecentPlacesTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var recentPlacesCollection: UICollectionView!
+    
     class var reuseIdentifier: String {
         return "RecentPlacesTableViewCell"
     }
@@ -20,12 +22,31 @@ class RecentPlacesTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.registerNib()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
+    private func registerNib() {
+        let nib = UINib(nibName: RecentPlaceCollectionViewCell.nibName, bundle: nil)
+        self.recentPlacesCollection?.register(nib, forCellWithReuseIdentifier: RecentPlaceCollectionViewCell.reuseIdentifier)
+    }
+    
+}
+
+extension RecentPlacesTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 5
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let cell = self.recentPlacesCollection.dequeueReusableCell(withReuseIdentifier: RecentPlaceCollectionViewCell.reuseIdentifier,
+                                                                 for: indexPath) as! RecentPlaceCollectionViewCell
+        return cell
+    }
 }

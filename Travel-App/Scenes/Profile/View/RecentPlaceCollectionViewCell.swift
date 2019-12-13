@@ -9,6 +9,13 @@
 import UIKit
 
 class RecentPlaceCollectionViewCell: UICollectionViewCell {
+    
+    class var reuseIdentifier: String {
+        return "RecentPlaceCollectionViewCell"
+    }
+    class var nibName: String {
+        return "RecentPlaceCollectionViewCell"
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -16,3 +23,6 @@ class RecentPlaceCollectionViewCell: UICollectionViewCell {
     }
 
 }
+
+
+
