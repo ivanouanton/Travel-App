@@ -22,12 +22,6 @@ final class SearchViewController: UIViewController{
     
     private var filterViewTop: NSLayoutConstraint?
     private var polyline: GMSPolyline?
-
-    private var isShowing = false{
-        didSet{
-            self.filterViewTop?.constant = isShowing ? 0 : -48
-        }
-    }
     
     var tour: Tour? {
         didSet{
@@ -36,61 +30,6 @@ final class SearchViewController: UIViewController{
             showTourInfo()
         }
     }
-    
-    private lazy var filterByButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = UIColor(named: "heavy")
-        button.setTitle("Filter by: Popular", for: .normal)
-        button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-Regular", size: 12)
-        button.addTarget(self, action: #selector(selectFilter), for: .touchUpInside)
-        return button
-    }()
-    
-    private lazy var filterView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
-        return view
-    }()
-    
-    var radioButtonGroup: PVRadioButtonGroup!
-
-    
-    private lazy var radioButton: PVRadioButton = {
-        let view = PVRadioButton()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.radioButtoncolor = UIColor(named: "heavy")!
-        view.buttonTitleColor = UIColor(named: "heavy")!
-        view.titleLabel?.font = UIFont(name: "AvenirNextLTPro-Regular", size: 14)
-        view.buttonTitleSize = 15
-        view.buttonTitle = "Must Visit"
-
-        return view
-    }()
-    
-    private lazy var radioButton1: PVRadioButton = {
-        let view = PVRadioButton()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.radioButtoncolor = UIColor(named: "heavy")!
-        view.buttonTitleColor = UIColor(named: "heavy")!
-        view.titleLabel?.font = UIFont(name: "AvenirNextLTPro-Regular", size: 14)
-        view.buttonTitleSize = 15
-        view.buttonTitle = "Visited"
-        return view
-    }()
-    
-    private lazy var radioButton2: PVRadioButton = {
-        let view = PVRadioButton()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.radioButtoncolor = UIColor(named: "heavy")!
-        view.buttonTitleColor = UIColor(named: "heavy")!
-        view.titleLabel?.font = UIFont(name: "AvenirNextLTPro-Regular", size: 14)
-        view.buttonTitleSize = 15
-        view.buttonTitle = "Price"
-
-        return view
-    }()
 
     private lazy var categoryView: CategoryFilter = {
         let collection = CategoryFilter()
@@ -164,21 +103,12 @@ extension SearchViewController{
         self.view.backgroundColor = .white
         self.navigationController?.navigationBar.barTintColor = UIColor(named: "white")
         self.navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
-
-        radioButtonGroup = PVRadioButtonGroup()
-        radioButtonGroup.delegate = self
-        radioButtonGroup.appendToRadioGroup(radioButtons: [radioButton, radioButton1, radioButton2])
         
         self.view.addSubview(self.categoryView)
         self.view.addSubview(self.mapView)
         self.view.addSubview(self.placePreview)
         self.view.addSubview(self.createTourButton)
-        self.view.addSubview(self.filterView)
-        self.view.addSubview(self.filterByButton)
         self.view.addSubview(self.tourInfoView)
-        self.filterView.addSubview(self.radioButton)
-        self.filterView.addSubview(self.radioButton1)
-        self.filterView.addSubview(self.radioButton2)
     }
     
     func setupConstraints(){
@@ -187,41 +117,15 @@ extension SearchViewController{
         
         self.tourViewBottom = self.tourInfoView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
         self.tourViewTop = self.tourInfoView.topAnchor.constraint(equalTo: self.view.bottomAnchor)
-        
-        self.filterViewTop = self.filterView.topAnchor.constraint(equalTo: self.filterByButton.bottomAnchor, constant: -48)
-        
+                
         NSLayoutConstraint.activate([
             
             self.categoryView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             self.categoryView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
             self.categoryView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
             self.categoryView.heightAnchor.constraint(equalToConstant: 32),
-            
-            self.filterByButton.topAnchor.constraint(equalTo: self.categoryView.bottomAnchor),
-            self.filterByButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.filterByButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.filterByButton.heightAnchor.constraint(equalToConstant: 48),
-            
-            self.filterViewTop!,
-            self.filterView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            self.filterView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            self.filterView.heightAnchor.constraint(equalToConstant: 48),
-            
-            self.radioButton.centerYAnchor.constraint(equalTo: self.filterView.centerYAnchor),
-            self.radioButton.widthAnchor.constraint(equalToConstant: 120),
-            self.radioButton.leftAnchor.constraint(equalTo: self.filterView.centerXAnchor, constant: -160),
-            
-            self.radioButton1.centerYAnchor.constraint(equalTo: self.filterView.centerYAnchor),
-            self.radioButton1.widthAnchor.constraint(equalToConstant: 100),
 
-            self.radioButton1.leftAnchor.constraint(equalTo: self.radioButton.rightAnchor, constant: 10),
-            
-            self.radioButton2.centerYAnchor.constraint(equalTo: self.filterView.centerYAnchor),
-            self.radioButton2.widthAnchor.constraint(equalToConstant: 100),
-
-            self.radioButton2.leftAnchor.constraint(equalTo: self.radioButton1.rightAnchor, constant: 10),
-
-            self.mapView.topAnchor.constraint(equalTo: self.filterByButton.bottomAnchor),
+            self.mapView.topAnchor.constraint(equalTo: self.categoryView.bottomAnchor),
             self.mapView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
             self.mapView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
             self.mapView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
@@ -235,7 +139,7 @@ extension SearchViewController{
             self.tourInfoView.heightAnchor.constraint(equalToConstant: 188),
             self.tourViewTop,
             
-            self.createTourButton.topAnchor.constraint(equalTo: self.filterView.bottomAnchor, constant: 16),
+            self.createTourButton.topAnchor.constraint(equalTo: self.categoryView.bottomAnchor, constant: 16),
             self.createTourButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16)
             ])
     }
@@ -244,10 +148,6 @@ extension SearchViewController{
         
     @objc func setupPreferences(){
         self.navigationController?.pushViewController(PreferenceBoardViewController(), animated: true)
-    }
-    
-    @objc func selectFilter(){
-        self.isShowing = !self.isShowing
     }
     
     private func showModalDescription(with id: String) {

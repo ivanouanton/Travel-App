@@ -26,22 +26,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4d-Gy-MAk">
-                                <rect key="frame" x="16" y="54" width="30" height="32"/>
+                                <rect key="frame" x="16" y="54" width="31" height="29"/>
                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="17"/>
                                 <state key="normal" title="Edit"/>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="UQm-8P-e9d">
-                                <rect key="frame" x="183" y="104" width="176" height="176"/>
+                                <rect key="frame" x="271" y="101" width="88" height="88"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtF-7k-Ask">
-                                <rect key="frame" x="0.0" y="306" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="215" width="375" height="1"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="pRG-Vz-pxt"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EE-Mv-FUw">
-                                <rect key="frame" x="323" y="54" width="36" height="32"/>
+                                <rect key="frame" x="321" y="54" width="38" height="29"/>
                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="17"/>
                                 <state key="normal" title="Auth"/>
                                 <connections>
@@ -51,13 +51,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emma Blair" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wb-wA-Ink">
-                                <rect key="frame" x="16" y="170" width="169.33333333333334" height="44"/>
+                                <rect key="frame" x="16" y="123" width="169.33333333333334" height="44"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="32"/>
                                 <color key="textColor" name="heavy"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="scrollableAxes" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="58" estimatedSectionHeaderHeight="10" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CYK-cq-OHv">
-                                <rect key="frame" x="0.0" y="306" width="375" height="472"/>
+                                <rect key="frame" x="0.0" y="216" width="375" height="562"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="24"/>
                                 <userDefinedRuntimeAttributes>
@@ -75,6 +75,7 @@
                         <constraints>
                             <constraint firstItem="wtF-7k-Ask" firstAttribute="leading" secondItem="d5u-7q-A6p" secondAttribute="leading" id="0nX-7r-Sqb"/>
                             <constraint firstItem="wtF-7k-Ask" firstAttribute="top" secondItem="UQm-8P-e9d" secondAttribute="bottom" constant="26" id="2GG-tL-5tN"/>
+                            <constraint firstItem="CYK-cq-OHv" firstAttribute="top" secondItem="wtF-7k-Ask" secondAttribute="bottom" id="APQ-Zg-Bcl"/>
                             <constraint firstItem="i4d-Gy-MAk" firstAttribute="top" secondItem="d5u-7q-A6p" secondAttribute="top" constant="10" id="BrO-Oo-Ems"/>
                             <constraint firstItem="d5u-7q-A6p" firstAttribute="bottom" secondItem="CYK-cq-OHv" secondAttribute="bottom" id="Ho1-De-ScB"/>
                             <constraint firstItem="5Wb-wA-Ink" firstAttribute="leading" secondItem="d5u-7q-A6p" secondAttribute="leading" constant="16" id="Qlk-xT-Avl"/>
@@ -83,7 +84,6 @@
                             <constraint firstItem="d5u-7q-A6p" firstAttribute="trailing" secondItem="3EE-Mv-FUw" secondAttribute="trailing" constant="16" id="g51-Vh-cQw"/>
                             <constraint firstItem="i4d-Gy-MAk" firstAttribute="leading" secondItem="d5u-7q-A6p" secondAttribute="leading" constant="16" id="kRS-K7-Tne"/>
                             <constraint firstItem="CYK-cq-OHv" firstAttribute="leading" secondItem="d5u-7q-A6p" secondAttribute="leading" id="lBK-Ym-LPh"/>
-                            <constraint firstItem="CYK-cq-OHv" firstAttribute="top" secondItem="wtF-7k-Ask" secondAttribute="bottom" constant="-1" id="rYK-Kt-Ws1"/>
                             <constraint firstItem="UQm-8P-e9d" firstAttribute="top" secondItem="i4d-Gy-MAk" secondAttribute="bottom" constant="18" id="ttW-eC-iSO"/>
                             <constraint firstItem="3EE-Mv-FUw" firstAttribute="top" secondItem="d5u-7q-A6p" secondAttribute="top" constant="10" id="uff-z5-FtV"/>
                             <constraint firstItem="d5u-7q-A6p" firstAttribute="trailing" secondItem="UQm-8P-e9d" secondAttribute="trailing" constant="16" id="yPR-Da-di8"/>
@@ -137,7 +137,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nu-CF-ZIb">
-                                <rect key="frame" x="234" y="370.33333333333331" width="125" height="26"/>
+                                <rect key="frame" x="231" y="371.33333333333331" width="128" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="12"/>
                                 <state key="normal" title="Forgot your password?"/>
                             </button>

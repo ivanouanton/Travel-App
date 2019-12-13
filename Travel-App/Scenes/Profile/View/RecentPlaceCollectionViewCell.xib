@@ -45,19 +45,19 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="39 Steps" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WE3-RA-a8e">
-                        <rect key="frame" x="0.0" y="176" width="152" height="16"/>
+                        <rect key="frame" x="0.0" y="176" width="152" height="19"/>
                         <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="16"/>
                         <color key="textColor" name="heavy"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants &amp; Cafes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4g-P2-46e">
-                        <rect key="frame" x="0.0" y="198" width="152" height="14"/>
+                        <rect key="frame" x="0.0" y="201" width="152" height="16.5"/>
                         <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="14"/>
                         <color key="textColor" name="onyx"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="€€" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVO-hd-bef">
-                        <rect key="frame" x="0.0" y="215" width="16" height="14"/>
+                        <rect key="frame" x="0.0" y="220.5" width="16" height="16.5"/>
                         <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="14"/>
                         <color key="textColor" name="silver"/>
                         <nil key="highlightedColor"/>
