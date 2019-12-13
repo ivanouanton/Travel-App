@@ -10,6 +10,15 @@ import UIKit
 
 class ProfileOptionViewCell: UITableViewCell {
     
+    @IBOutlet weak var keyInfo: UILabel!
+    @IBOutlet weak var valueInfo: UILabel!
+    
+    func setupOption(with key: String, value: String){
+        
+        self.keyInfo.text = key
+        self.valueInfo.text = value
+    }
+    
     class var reuseIdentifier: String {
         return "ProfileOptionViewCell"
     }

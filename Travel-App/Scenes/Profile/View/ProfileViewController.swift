@@ -104,6 +104,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
         switch indexPath.section{
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: ProfileOptionViewCell.reuseIdentifier, for: indexPath) as! ProfileOptionViewCell
+            let info = self.information[indexPath.row]
+            cell.setupOption(with: info.key , value: info.value)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: RecentPlacesTableViewCell.reuseIdentifier, for: indexPath) as! RecentPlacesTableViewCell
