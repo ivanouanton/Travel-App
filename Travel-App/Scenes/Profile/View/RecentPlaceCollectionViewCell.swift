@@ -10,11 +10,22 @@ import UIKit
 
 class RecentPlaceCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var placeImage: UIImageView!
+    
+    func setupRecentPlaceCell(with image: UIImage){
+        self.placeImage.image = image
+    }
+    
     class var reuseIdentifier: String {
         return "RecentPlaceCollectionViewCell"
     }
     class var nibName: String {
         return "RecentPlaceCollectionViewCell"
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+//        self.placeImage.image = nil
     }
 
     override func awakeFromNib() {

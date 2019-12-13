@@ -12,6 +12,15 @@ class RecentPlacesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var recentPlacesCollection: UICollectionView!
     
+    var images = [
+        UIImage(named: "preview-target-place"),
+        UIImage(named: "starbucks"),
+        UIImage(named: "images"),
+        UIImage(named: "images-2"),
+        UIImage(named: "images-3"),
+        UIImage(named: "images-4"),
+    ]
+    
     class var reuseIdentifier: String {
         return "RecentPlacesTableViewCell"
     }
@@ -40,13 +49,14 @@ class RecentPlacesTableViewCell: UITableViewCell {
 extension RecentPlacesTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 5
+        return 6
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = self.recentPlacesCollection.dequeueReusableCell(withReuseIdentifier: RecentPlaceCollectionViewCell.reuseIdentifier,
                                                                  for: indexPath) as! RecentPlaceCollectionViewCell
+        cell.setupRecentPlaceCell(with: images[indexPath.item]!)
         return cell
     }
 }
