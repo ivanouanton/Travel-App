@@ -15,6 +15,9 @@
 		F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70DB816239B169B00D48EC6 /* SettingOptionTableViewCell.swift */; };
 		F70DB819239B169B00D48EC6 /* SettingOptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70DB817239B169B00D48EC6 /* SettingOptionTableViewCell.xib */; };
 		F71ACDEB238B41E60092279F /* PlaceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71ACDEA238B41E60092279F /* PlaceData.swift */; };
+		F72B7C1223A6CCD9009155D4 /* OptionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72B7C1123A6CCD9009155D4 /* OptionFilter.swift */; };
+		F72B7C1423A6CD39009155D4 /* OptionFilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72B7C1323A6CD39009155D4 /* OptionFilterDelegate.swift */; };
+		F72B7C1623A6D6AE009155D4 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72B7C1523A6D6AE009155D4 /* UIButton+Extension.swift */; };
 		F72EFE42239EF16D008081E1 /* TourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72EFE41239EF16D008081E1 /* TourInfoViewController.swift */; };
 		F72EFE44239EF618008081E1 /* TourInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72EFE43239EF618008081E1 /* TourInfoView.swift */; };
 		F72EFE49239EF62C008081E1 /* TourInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72EFE45239EF62B008081E1 /* TourInfoView.xib */; };
@@ -102,6 +105,9 @@
 		F70DB816239B169B00D48EC6 /* SettingOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionTableViewCell.swift; sourceTree = "<group>"; };
 		F70DB817239B169B00D48EC6 /* SettingOptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingOptionTableViewCell.xib; sourceTree = "<group>"; };
 		F71ACDEA238B41E60092279F /* PlaceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceData.swift; sourceTree = "<group>"; };
+		F72B7C1123A6CCD9009155D4 /* OptionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OptionFilter.swift; path = "Travel-App/Scenes/Search/OptionFilter.swift"; sourceTree = SOURCE_ROOT; };
+		F72B7C1323A6CD39009155D4 /* OptionFilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionFilterDelegate.swift; sourceTree = "<group>"; };
+		F72B7C1523A6D6AE009155D4 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		F72EFE41239EF16D008081E1 /* TourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourInfoViewController.swift; sourceTree = "<group>"; };
 		F72EFE43239EF618008081E1 /* TourInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourInfoView.swift; sourceTree = "<group>"; };
 		F72EFE45239EF62B008081E1 /* TourInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TourInfoView.xib; sourceTree = "<group>"; };
@@ -331,6 +337,7 @@
 				F77F22452392E816004610CE /* Extension+CALayer.swift */,
 				F70DB813239AFB7500D48EC6 /* AppButton.swift */,
 				F79B3877239C60400032F598 /* NavigationController.swift */,
+				F72B7C1523A6D6AE009155D4 /* UIButton+Extension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -371,6 +378,8 @@
 				F72B7C0F23A6636C009155D4 /* CategoryFilter */,
 				F72B7C0E23A66307009155D4 /* PlaceInfo */,
 				F72B7C1023A66A00009155D4 /* TourInfo */,
+				F72B7C1123A6CCD9009155D4 /* OptionFilter.swift */,
+				F72B7C1323A6CD39009155D4 /* OptionFilterDelegate.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -822,6 +831,7 @@
 				F7570AAA238AECBA00621E4F /* LoactionManager.swift in Sources */,
 				F7E9DDE2238344CB000DE6F4 /* PlacePreview.swift in Sources */,
 				F7570AA8238AEC9C00621E4F /* LocationService.swift in Sources */,
+				F72B7C1623A6D6AE009155D4 /* UIButton+Extension.swift in Sources */,
 				3A3D2E64238EE4B500DD9876 /* PlaceDataHolder.swift in Sources */,
 				F745760E238B480C00C5A1DE /* Category.swift in Sources */,
 				F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */,
@@ -829,6 +839,8 @@
 				3A3A3814239A74B9001FE150 /* CategoryPreference.swift in Sources */,
 				F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */,
 				F7CFD020239BE3A800983631 /* Tour.swift in Sources */,
+				F72B7C1423A6CD39009155D4 /* OptionFilterDelegate.swift in Sources */,
+				F72B7C1223A6CCD9009155D4 /* OptionFilter.swift in Sources */,
 				F7CF8D352399A46300119B60 /* SettingOptionCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
