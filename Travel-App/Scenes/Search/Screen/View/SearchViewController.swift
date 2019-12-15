@@ -88,13 +88,14 @@ final class SearchViewController: UIViewController{
         super.viewDidLoad()
         self.navigationItem.title = "New York"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.presenter.getPlaces()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         //self.presenter.fetchUserLocation()
-        self.presenter.getPlaces()
+        
     }
 }
 
@@ -282,11 +283,5 @@ extension SearchViewController: PlacePreviewDelegate {
     
     func createRoute(with location: GeoPoint) {
         self.presenter.getRoute(with: [location])
-    }
-}
-
-extension SearchViewController: RadioButtonGroupDelegate{
-    func radioButtonClicked(button: PVRadioButton) {
-        print(button.titleLabel?.text ?? "")
     }
 }
