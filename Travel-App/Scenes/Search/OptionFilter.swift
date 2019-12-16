@@ -85,10 +85,18 @@ class OptionFilter: UIView {
     }()
     
     
+    private lazy var filterTable: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .blue
+        return view
+    }()
+    
+    
     // MARK: - Methods
     
     @objc func selectedPriceFilter(){
-        print("ikdfjh")
+        addfiterTable()
     }
     
     @objc func selectedVisetFilter(){
@@ -116,12 +124,24 @@ class OptionFilter: UIView {
             self.folterButtons.centerXAnchor.constraint(equalTo: self.filterView.centerXAnchor),
             self.folterButtons.centerXAnchor.constraint(equalTo: self.filterView.centerXAnchor),
             self.folterButtons.heightAnchor.constraint(equalToConstant: 44),
-
             ])
     }
     
     func removeFilterView(){
         self.filterView.removeFromSuperview()
+    }
+    
+    func addfiterTable(){
+        self.addSubview(self.filterTable)
+        
+        NSLayoutConstraint.activate([
+            
+            self.filterTable.leftAnchor.constraint(equalTo: priceFilterButton.leftAnchor),
+            self.filterTable.topAnchor.constraint(equalTo: self.priceFilterButton.topAnchor),
+            self.filterTable.widthAnchor.constraint(equalTo: self.priceFilterButton.widthAnchor),
+            self.filterTable.heightAnchor.constraint(equalToConstant: 92),
+
+        ])
     }
     
     // MARK: - Life Cicle
