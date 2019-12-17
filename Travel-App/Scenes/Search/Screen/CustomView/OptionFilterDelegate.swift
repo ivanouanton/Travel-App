@@ -10,4 +10,6 @@ import UIKit
 
 protocol OptionFilterDelegate: class {
     func didPressedFilterButton(with activeFilterHeight: CGFloat)
+    func didSelectedPice(with price: String)
+    func didSelectedVisit(with price: String)
 }

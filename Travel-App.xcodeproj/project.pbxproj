@@ -38,6 +38,8 @@
 		F780CE6823A2FDAD00E8E248 /* RecentPlacesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F780CE6623A2FDAC00E8E248 /* RecentPlacesTableViewCell.xib */; };
 		F780CE6B23A315F100E8E248 /* RecentPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780CE6923A315F100E8E248 /* RecentPlaceCollectionViewCell.swift */; };
 		F780CE6C23A315F200E8E248 /* RecentPlaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F780CE6A23A315F100E8E248 /* RecentPlaceCollectionViewCell.xib */; };
+		F790825123A83AB700056228 /* OptionFilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790824F23A83AB700056228 /* OptionFilterTableViewCell.swift */; };
+		F790825223A83AB700056228 /* OptionFilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F790825023A83AB700056228 /* OptionFilterTableViewCell.xib */; };
 		F7932B652393A0E4006E6496 /* PlacePreviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B642393A0E4006E6496 /* PlacePreviewDelegate.swift */; };
 		F7932B672393A65C006E6496 /* InfoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */; };
 		F7932B692393A687006E6496 /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B682393A687006E6496 /* PlaceInfoViewController.swift */; };
@@ -129,6 +131,8 @@
 		F780CE6623A2FDAC00E8E248 /* RecentPlacesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecentPlacesTableViewCell.xib; path = View/RecentPlacesTableViewCell.xib; sourceTree = "<group>"; };
 		F780CE6923A315F100E8E248 /* RecentPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecentPlaceCollectionViewCell.swift; path = View/RecentPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		F780CE6A23A315F100E8E248 /* RecentPlaceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecentPlaceCollectionViewCell.xib; path = View/RecentPlaceCollectionViewCell.xib; sourceTree = "<group>"; };
+		F790824F23A83AB700056228 /* OptionFilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionFilterTableViewCell.swift; sourceTree = "<group>"; };
+		F790825023A83AB700056228 /* OptionFilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionFilterTableViewCell.xib; sourceTree = "<group>"; };
 		F7932B642393A0E4006E6496 /* PlacePreviewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlacePreviewDelegate.swift; path = "Travel-App/Scenes/Search/Screen/CustomView/PlaceInfo/PlacePreviewDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = InfoStoryboard.storyboard; path = "Travel-App/Scenes/Search/PlaceInfo/InfoStoryboard.storyboard"; sourceTree = SOURCE_ROOT; };
 		F7932B682393A687006E6496 /* PlaceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoViewController.swift; sourceTree = "<group>"; };
@@ -380,6 +384,8 @@
 				F72B7C1023A66A00009155D4 /* TourInfo */,
 				F72B7C1123A6CCD9009155D4 /* OptionFilter.swift */,
 				F72B7C1323A6CD39009155D4 /* OptionFilterDelegate.swift */,
+				F790824F23A83AB700056228 /* OptionFilterTableViewCell.swift */,
+				F790825023A83AB700056228 /* OptionFilterTableViewCell.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -694,6 +700,7 @@
 				F72EFE49239EF62C008081E1 /* TourInfoView.xib in Resources */,
 				F780CE6823A2FDAD00E8E248 /* RecentPlacesTableViewCell.xib in Resources */,
 				F7CF8D3A239AE39600119B60 /* InterestsTableCell.xib in Resources */,
+				F790825223A83AB700056228 /* OptionFilterTableViewCell.xib in Resources */,
 				F7CCB5C6238488D7004C4A35 /* Assets.xcassets in Resources */,
 				F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */,
 				F7CF8D362399A46300119B60 /* SettingOptionCollectionViewCell.xib in Resources */,
@@ -791,6 +798,7 @@
 				F780CE6B23A315F100E8E248 /* RecentPlaceCollectionViewCell.swift in Sources */,
 				F75EAD3A2392FED80001C457 /* CategoryFilterDelegate.swift in Sources */,
 				F7932B652393A0E4006E6496 /* PlacePreviewDelegate.swift in Sources */,
+				F790825123A83AB700056228 /* OptionFilterTableViewCell.swift in Sources */,
 				F700442B23A194C300D7E59F /* AuthViewController.swift in Sources */,
 				F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */,
 				F7CA366923925DC9005F7C57 /* CategoryFilterCell.swift in Sources */,

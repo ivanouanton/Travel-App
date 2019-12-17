@@ -310,6 +310,14 @@ extension SearchViewController: PlacePreviewDelegate {
 
 
 extension SearchViewController: OptionFilterDelegate{
+    func didSelectedPice(with price: String) {
+        
+    }
+    
+    func didSelectedVisit(with price: String) {
+        
+    }
+    
     func didPressedFilterButton(with activeFilterHeight: CGFloat) {
         self.filterViewHeight?.constant = activeFilterHeight
     }
