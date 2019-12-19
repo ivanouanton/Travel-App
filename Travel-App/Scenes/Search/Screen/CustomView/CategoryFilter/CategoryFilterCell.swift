@@ -16,6 +16,12 @@ class CategoryFilterCell: UICollectionViewCell {
         }
     }
     
+    override var isSelected: Bool {
+        didSet {
+            self.bottomView.backgroundColor = isSelected ? UIColor(named: "smokyTopaz") : .clear
+        }
+    }
+    
     private lazy var titleLabel: Label = {
         let label = Label()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -25,11 +31,17 @@ class CategoryFilterCell: UICollectionViewCell {
         label.textColor = UIColor(named: "heavy")
         return label
     }()
+    
+    private lazy var bottomView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
         let autoLayoutAttributes = super.preferredLayoutAttributesFitting(layoutAttributes)
 
-        let targetSize = CGSize(width: 0, height: layoutAttributes.frame.width)
+        let targetSize = CGSize(width: 0, height: layoutAttributes.frame.height)
 
         let autoLayoutSize = contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .defaultLow, verticalFittingPriority: .required)
         let autoLayoutFrame = CGRect(origin: autoLayoutAttributes.frame.origin, size: autoLayoutSize)
@@ -42,6 +54,7 @@ class CategoryFilterCell: UICollectionViewCell {
         super.init(frame: frame)
         
         self.contentView.addSubview(self.titleLabel)
+        self.contentView.addSubview(self.bottomView)
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -56,18 +69,24 @@ class CategoryFilterCell: UICollectionViewCell {
             self.titleLabel.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             self.titleLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor),
             self.titleLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor),
+            
+            self.bottomView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            self.bottomView.heightAnchor.constraint(equalToConstant: 2),
+            self.bottomView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 0),
+            self.bottomView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
         ])
+    }
+    
+    func configureCell(){
+        self.bottomView.backgroundColor = isSelected ? UIColor(named: "smokyTopaz") : .clear
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.bottomView.backgroundColor = .clear
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-    }
-    
-    func showIndicator(){
-        self.titleLabel.layer.addBorder(edge: .bottom, color: UIColor(named: "smokyTopaz")!, thickness: 2)
-    }
-    
-    func removeIndicator(){
-        self.titleLabel.layer.sublayers?.removeAll()
     }
 }

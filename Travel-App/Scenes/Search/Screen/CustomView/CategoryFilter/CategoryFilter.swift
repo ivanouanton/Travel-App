@@ -16,6 +16,7 @@ class CategoryFilter: UIView {
     var categories = [String](){
         didSet{
             self.categoryView.reloadData()
+            self.categoryView.selectItem(at: IndexPath(item: 0, section: 0), animated: false, scrollPosition: .left)
         }
     }
     
@@ -80,6 +81,7 @@ extension CategoryFilter: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) as! CategoryFilterCell
         cell.title = self.categories[indexPath.item]
+        cell.configureCell()
         return cell
     }
     
@@ -91,15 +93,7 @@ extension CategoryFilter: UICollectionViewDataSource{
 extension CategoryFilter: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as? CategoryFilterCell
         self.delegate?.categoryFilter(didSelectedItemAt: indexPath.item)
-        cell?.showIndicator()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as? CategoryFilterCell
-        cell?.removeIndicator()
-
     }
 }
 

@@ -61,7 +61,7 @@ class PlacePreview: UIView {
         button.setTitleColor(UIColor(named: "pantone"), for: .normal)
         button.layer.cornerRadius = 5
         button.layer.backgroundColor = UIColor(named: "pantone")?.withAlphaComponent(0.2).cgColor
-        button.addTarget(self, action: #selector(createRoute), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(showFilter), for: .touchUpInside)
         return button
     }()
     

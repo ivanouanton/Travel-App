@@ -20,7 +20,8 @@ final class SearchViewController: UIViewController{
     private var tourViewBottom: NSLayoutConstraint!
     private var tourViewTop: NSLayoutConstraint!
     
-    private var filterViewTop: NSLayoutConstraint?
+    private var filterViewHeight: NSLayoutConstraint?
+    
     private var polyline: GMSPolyline?
     
     var tour: Tour? {
@@ -75,6 +76,14 @@ final class SearchViewController: UIViewController{
         return view
     }()
     
+    private lazy var filterView: OptionFilter = {
+        let view = OptionFilter()
+        view.delegate = self
+        view.translatesAutoresizingMaskIntoConstraints = false
+        self.filterViewHeight = view.heightAnchor.constraint(equalToConstant: view.filterButtonHeight)
+        return view
+    }()
+    
     // MARK: - Life Cycle
     
     override func loadView() {
@@ -88,13 +97,13 @@ final class SearchViewController: UIViewController{
         super.viewDidLoad()
         self.navigationItem.title = "New York"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.presenter.getPlaces()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         //self.presenter.fetchUserLocation()
-        self.presenter.getPlaces()
     }
 }
 
@@ -106,8 +115,9 @@ extension SearchViewController{
         
         self.view.addSubview(self.categoryView)
         self.view.addSubview(self.mapView)
-        self.view.addSubview(self.placePreview)
         self.view.addSubview(self.createTourButton)
+        self.view.addSubview(self.filterView)
+        self.view.addSubview(self.placePreview)
         self.view.addSubview(self.tourInfoView)
     }
     
@@ -129,6 +139,11 @@ extension SearchViewController{
             self.mapView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
             self.mapView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
             self.mapView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor),
+            
+            self.filterView.topAnchor.constraint(equalTo: self.categoryView.bottomAnchor),
+            self.filterView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            self.filterView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            (self.filterViewHeight ?? self.filterView.heightAnchor.constraint(equalToConstant: 0)),
 
             self.placePreview.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
             self.placePreview.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
@@ -139,7 +154,7 @@ extension SearchViewController{
             self.tourInfoView.heightAnchor.constraint(equalToConstant: 188),
             self.tourViewTop,
             
-            self.createTourButton.topAnchor.constraint(equalTo: self.categoryView.bottomAnchor, constant: 16),
+            self.createTourButton.topAnchor.constraint(equalTo: self.categoryView.bottomAnchor, constant: 72),
             self.createTourButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16)
             ])
     }
@@ -202,6 +217,8 @@ extension SearchViewController{
     }
 }
 
+// MARK: - Search View Protocol
+
 extension SearchViewController: SearchViewProtocol{
     func setupTourInfo(with places: [String], title: String) {
         self.tourInfoView.setupTourInfo(with: places, title: title)
@@ -250,6 +267,8 @@ extension SearchViewController: SearchViewProtocol{
     }
 }
 
+// MARK: - GMSMap Delegate
+
 extension SearchViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
@@ -257,6 +276,8 @@ extension SearchViewController: GMSMapViewDelegate {
         return true
     }
 }
+
+// MARK: - Category Filter Delegate
 
 extension SearchViewController: CategoryFilterDelegate{
     func categoryFilter(didSelectedItemAt index: Int) {
@@ -285,8 +306,19 @@ extension SearchViewController: PlacePreviewDelegate {
     }
 }
 
-extension SearchViewController: RadioButtonGroupDelegate{
-    func radioButtonClicked(button: PVRadioButton) {
-        print(button.titleLabel?.text ?? "")
+// MARK: - OptionFilter Delegate
+
+
+extension SearchViewController: OptionFilterDelegate{
+    func didSelectedPice(with price: String) {
+        
+    }
+    
+    func didSelectedVisit(with price: String) {
+        
+    }
+    
+    func didPressedFilterButton(with activeFilterHeight: CGFloat) {
+        self.filterViewHeight?.constant = activeFilterHeight
     }
 }
