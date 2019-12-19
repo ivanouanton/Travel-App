@@ -47,7 +47,7 @@ class ViewFactory{
     }
     
     static func createAuthVC() -> AuthViewController{
-        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let storyboard = UIStoryboard(name: "Authorisation", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "AuthViewController") as! AuthViewController
         return vc
     }
