@@ -24,8 +24,11 @@ class PlaceManager {
         let origin = positions.first!
         let destination = positions.last!
         var wayPoints = ""
-        for point in positions {
-            wayPoints = wayPoints.count == 0 ? "\(point.latitude),\(point.longitude)" : "\(wayPoints)%7C\(point.latitude),\(point.longitude)"
+        
+        for index in 1..<(positions.count - 1){
+            let point = positions[index]
+        
+            wayPoints = wayPoints.count == 0 ? "via:\(point.latitude),\(point.longitude)" : "\(wayPoints)|via:\(point.latitude),\(point.longitude)"
         }
         
         let strOrigin = "\(origin.latitude),\(origin.longitude)"

@@ -43,7 +43,7 @@ extension GoogleApiService: TargetType{
             parameters["origin"] = origin
             parameters["destination"] = destination
             parameters["mode"] = mode
-            parameters["points"] = points
+            parameters["waypoints"] = points
             parameters["key"] = Defaults.apiKey
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }

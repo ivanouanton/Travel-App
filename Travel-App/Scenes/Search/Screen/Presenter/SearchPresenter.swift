@@ -60,7 +60,8 @@ extension SearchPresenter: SearchPresenterProtocol{
         }
         
         aGroup.notify(queue: DispatchQueue.main){
-            self.getRoute(with: places)
+            
+            self.getRoute(with: places.reversed())
             self.view.setupTourInfo(with: placeNames, title: tour.name)
         }
     }
@@ -123,6 +124,7 @@ extension SearchPresenter: SearchPresenterProtocol{
     func fetchUserLocation() {
         self.locationManager.fetchLocation { (location, error) in
             if let location = location{
+                self.userLocation = GeoPoint(latitude: location.latitude, longitude: location.longitude)
                 self.view.didChangeMyLocation(location)
             }
         }
