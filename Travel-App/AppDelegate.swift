@@ -27,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        let vc = AppTabBarController()
-        self.window?.rootViewController = vc
+//        let vc = AppTabBarController()
+        self.window?.rootViewController = ViewFactory.createAuthVC()
         self.window?.makeKeyAndVisible()
         
         return true
