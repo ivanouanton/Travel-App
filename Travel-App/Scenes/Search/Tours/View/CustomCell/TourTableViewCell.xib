@@ -47,7 +47,7 @@
                         <color key="textColor" name="pantone"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rN-by-iWb">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rN-by-iWb">
                         <rect key="frame" x="16" y="187.5" width="311" height="59.5"/>
                         <attributedString key="attributedText">
                             <fragment content="Namaskar, welcome to Incredible India, where culture echoes, tradition speaks, beauty enthralls and diversity delights.">

@@ -44,7 +44,7 @@ class ToursManager {
         var queryError: Error? = nil
 
         aGroup.enter()
-        let docRef = db.collection("Tour")
+        let docRef = db.collection("Tour").whereField("duration", isEqualTo: "A Few Hours")
         docRef.getDocuments() { (querySnapshot, error) in
             if let response = querySnapshot {
                 for document in response.documents {
