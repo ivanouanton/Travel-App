@@ -25,7 +25,7 @@ class PreferenceBoardViewController: UIViewController {
     ]
     
     
-    var answers = [Int:Int]()
+    var preferences = [Int:Int]()
     
     var sectionTitles = ["Interests", "Duration", "Price", "Transport"]
     
@@ -140,13 +140,11 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
             button.mainColor = UIColor(named: "pantone")!.withAlphaComponent(0.2)
             button.highlitedColor = UIColor(named: "pantone")!
         }
-
       return view
     }
     
     @objc func dosmth(){
-        print(self.answers)
-        let vc = ViewFactory.createToursVC()
+        let vc = ViewFactory.createToursVC(with: self.preferences)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -154,7 +152,7 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
 extension PreferenceBoardViewController: PreferenceOptionDelegate{
     func didSelectItemAt(_ index: Int, tableCell: Int?) {
         guard let tableCellIndex = tableCell else { return }
-        self.answers[tableCellIndex] = index
+        self.preferences[tableCellIndex] = index
     }
 }
 

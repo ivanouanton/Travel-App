@@ -13,6 +13,8 @@ import UIKit
 class ToursPresenter{
     weak var view: ToursViewProtocol?
     
+    var filter: [Int:Int]?
+    
     required init(view: ToursViewProtocol) {
         self.view = view
     }
@@ -20,7 +22,7 @@ class ToursPresenter{
 
 extension ToursPresenter: ToursPresenterProtocol{
     func getTours(){
-        ToursManager.shared.getTours { (tours, error) in
+        ToursManager.shared.getTours(filter ?? [:]) { (tours, error) in
             if let tours = tours{
                 self.view?.updateContent(with: tours)
             }

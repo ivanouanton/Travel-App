@@ -12,6 +12,8 @@ import FirebaseStorage
 
 class ToursManager {
     static let shared = ToursManager()
+    private let duration = ["A Few Hours", "Half Day",  "Full Day"]
+    private let transport = ["subway", "taxi",  "bus"]
 
     private let imagesCache = NSCache<NSString, UIImage>()
 
@@ -37,18 +39,40 @@ class ToursManager {
             }
     }
     
-    func getTours(_ completionHandler: @escaping (_ tours: [Tour]?, _ error: Error?) -> Void){
+    func getTours(_ preferences: [Int:Int],
+                  completionHandler: @escaping (_ tours: [Tour]?, _ error: Error?) -> Void){
         let db = Firestore.firestore()
         var tours = [Tour]()
         let aGroup = DispatchGroup()
         var queryError: Error? = nil
 
+        let docRef = db.collection("Tour")
+        var query = docRef.order(by: "name")
+//        query = query.whereField("duration", isEqualTo: "A Few Hours")
+//        query = query.whereField("price", isEqualTo: 1)
+//        query = query.whereField("transport", arrayContains: "bus")
+
+        for (key, val) in preferences{
+            switch key {
+            case 0:
+                break
+            case 1:
+                query = query.whereField("duration", isEqualTo: self.duration[val])
+            case 2:
+                query = query.whereField("price", isEqualTo: val)
+            case 3:
+                query = query.whereField("transport", arrayContains: "taxi")
+            default:
+                break
+            }
+        }
+        
         aGroup.enter()
-        let docRef = db.collection("Tour").whereField("duration", isEqualTo: "A Few Hours")
-        docRef.getDocuments() { (querySnapshot, error) in
+        query.getDocuments() { (querySnapshot, error) in
             if let response = querySnapshot {
                 for document in response.documents {
                     var tour = Tour(document.data())
+                    print(tour.price)
                     if let ref = tour.imageRef{
                         aGroup.enter()
                         self.getImage(with: ref) { (image, error) in
