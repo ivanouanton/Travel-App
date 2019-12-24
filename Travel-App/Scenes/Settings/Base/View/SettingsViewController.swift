@@ -59,12 +59,10 @@ extension SettingsViewController: SettingsViewProtocol{
 extension SettingsViewController: UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        print(options.count)
         return options.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(self.options[section].options.count)
         return self.options[section].options.count
     }
     

@@ -20,8 +20,8 @@ class PreferenceBoardViewController: UIViewController {
             CategoryPreference(title: "Lina", icon: UIImage(named: "trees")!)
         ],
         "Duration": ["A Few Hours", "Half Day",  "Full Day"],
-        "Price": ["free", "$", "$$"],
-        "Transport": ["train", "car", "walk"]
+        "Price": ["free", "€", "€€"],
+        "Transport": ["walk", "bus", "train"]
     ]
     
     

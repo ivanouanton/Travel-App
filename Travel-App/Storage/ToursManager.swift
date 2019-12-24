@@ -48,9 +48,6 @@ class ToursManager {
 
         let docRef = db.collection("Tour")
         var query = docRef.order(by: "name")
-//        query = query.whereField("duration", isEqualTo: "A Few Hours")
-//        query = query.whereField("price", isEqualTo: 1)
-//        query = query.whereField("transport", arrayContains: "bus")
 
         for (key, val) in preferences{
             switch key {
@@ -72,7 +69,6 @@ class ToursManager {
             if let response = querySnapshot {
                 for document in response.documents {
                     var tour = Tour(document.data())
-                    print(tour.price)
                     if let ref = tour.imageRef{
                         aGroup.enter()
                         self.getImage(with: ref) { (image, error) in
