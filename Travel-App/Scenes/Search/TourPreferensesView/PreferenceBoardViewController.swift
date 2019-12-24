@@ -21,7 +21,7 @@ class PreferenceBoardViewController: UIViewController {
         ],
         "Duration": ["A Few Hours", "Half Day",  "Full Day"],
         "Price": ["free", "€", "€€"],
-        "Transport": ["walk", "bus", "train"]
+        "Transport": [UIImage(named: "walk")!, UIImage(named: "bus")!, UIImage(named: "subway")!]
     ]
     
     
@@ -93,8 +93,14 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.section != 0{
+        if indexPath.section == 3{
+            let cell = tableView.dequeueReusableCell(withIdentifier: SettingOptionTableViewCell.reuseIdentifier, for: indexPath) as! SettingOptionTableViewCell
+            let key: String = self.sectionTitles[indexPath.section]
+            cell.images = settingsData[key] as! [UIImage]
+            cell.delegate = self
+            cell.cellIndex = indexPath.section
+            return cell
+        }else if indexPath.section != 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingOptionTableViewCell.reuseIdentifier, for: indexPath) as! SettingOptionTableViewCell
             let key: String = self.sectionTitles[indexPath.section]
             cell.titles = settingsData[key] as! [String]
