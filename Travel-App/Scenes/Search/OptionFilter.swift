@@ -130,11 +130,13 @@ class OptionFilter: UIView {
     @objc func selectedVisetedFilter(){
         self.delegate?.didPressedFilterButton(with: 190)
         self.filterButton.setTitle("Filter by: Visited", for: .normal)
+         self.delegate?.didSelected(with: .visited)
     }
     
     @objc func selectedMustVisitFilter(){
         self.delegate?.didPressedFilterButton(with: 190)
         self.filterButton.setTitle("Filter by: Must visit", for: .normal)
+        self.delegate?.didSelected(with: .mustVisit)
     }
     
     @objc func showFilter(){
@@ -254,5 +256,6 @@ extension OptionFilter: UITableViewDelegate, UITableViewDataSource {
         self.filterTable.removeFromSuperview()
         self.priceFilterButton.titleLabel?.text = self.price[indexPath.row]
         self.delegate?.didPressedFilterButton(with: self.filterView.frame.height+self.filterButton.frame.height)
+        self.delegate?.didSelected(with: .price(indexPath.row))
     }
 }

@@ -16,7 +16,8 @@ struct Tour{
     let imageRef: DocumentReference?
     let name: String
     let place: [String]
-    let transport: [String: String]
+    let transport: [String]
+    let price: Int
     var image: UIImage?
     
     init(_ dictionary: [String: Any]){
@@ -25,7 +26,8 @@ struct Tour{
         self.imageRef = dictionary["image"] as? DocumentReference
         self.name = dictionary["name"] as! String
         self.place = dictionary["place"] as! [String]
-        self.transport = dictionary["transport"] as! [String: String]
+        self.transport = dictionary["transport"] as! [String]
+        self.price = dictionary["price"] as! Int
         self.image = nil
     }
 }

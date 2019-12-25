@@ -16,7 +16,16 @@ class SearchPresenter{
     var userLocation = GeoPoint(latitude: Defaults.location.latitude,
                             longitude: Defaults.location.longitude)
     var places = [String:PlaceData]()
-    var categories = [String:Category]()
+    var categories = [String:Category](){
+        didSet{
+            var categoriesNames = ["All"]
+            for (_, val) in categories {
+                categoriesNames.append(val.title)
+            }
+            self.view.setFilter(with: categoriesNames)
+        }
+    }
+    
     private var categoriesName = ["All"]
     private var categoriesId = ["All"]
 
@@ -34,14 +43,32 @@ class SearchPresenter{
     }
     
     private func showAllMarkers(){
+        self.view.clearMarkers()
         for (id, place) in self.places {
-            let cachedImage = self.categoryImagesCache.object(forKey: place.categoryId as NSString)
+            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.categoryId)
             self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: true)
         }
     }
 }
 
 extension SearchPresenter: SearchPresenterProtocol{
+    func viewDidLoad() {
+        PlaceManager.shared.getCategories { (categories, categoriesId, error) in
+            guard let categories = categories, let categoriesId = categoriesId else { return }
+            self.categoriesId = categoriesId
+            self.categories = categories
+            self.getPlaces(with: nil)
+        }
+    }
+    
+    func getPlaces(with option: OptionFilterSelection?) {
+        
+        PlaceManager.shared.getPlaces(with: option) { (places, error) in
+            self.places = places ?? [:]
+            self.showAllMarkers()
+        }
+    }
+    
     func getTourRoute(with tour: Tour) {
         let placesId = tour.place
         var places = [GeoPoint]()
@@ -60,7 +87,8 @@ extension SearchPresenter: SearchPresenterProtocol{
         }
         
         aGroup.notify(queue: DispatchQueue.main){
-            self.getRoute(with: places)
+            
+            self.getRoute(with: places.reversed())
             self.view.setupTourInfo(with: placeNames, title: tour.name)
         }
     }
@@ -75,7 +103,6 @@ extension SearchPresenter: SearchPresenterProtocol{
     }
     
     func filterPlaces(with index: Int) {
-        
         if index == 0{
             self.showAllMarkers()
             return
@@ -83,7 +110,7 @@ extension SearchPresenter: SearchPresenterProtocol{
         self.view.clearMarkers()
         
         for (id, place) in self.places {
-            let cachedImage = self.categoryImagesCache.object(forKey: place.categoryId as NSString)
+            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.categoryId)
             if place.categoryId == categoriesId[index] {
                 self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: true)
             }else{
@@ -123,66 +150,12 @@ extension SearchPresenter: SearchPresenterProtocol{
     func fetchUserLocation() {
         self.locationManager.fetchLocation { (location, error) in
             if let location = location{
+                self.userLocation = GeoPoint(latitude: location.latitude, longitude: location.longitude)
                 self.view.didChangeMyLocation(location)
             }
         }
     }
-    
-    func getPlaces(){
-        let db = Firestore.firestore()
-        let aGroup = DispatchGroup()
-
-        let docRef = db.collection("Place")
-        aGroup.enter()
-        docRef.getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let data = PlaceData(document.data())
-
-                    self.places[document.documentID] = data
-                }
-            }
-            aGroup.leave()
-        }
-        
-        
-        let categoryDocRef = db.collection("Category")
-        aGroup.enter()
-        categoryDocRef.getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let data = Category(document.data())
-                    self.categories[document.documentID] = data
-                    
-                    self.categoriesName.append(data.title)
-                    self.categoriesId.append(document.documentID)
-                    
-                    if let _ = self.categoryImagesCache.object(forKey: data.img.documentID as NSString) {
-                    }else{
-                        aGroup.enter()
-                        self.getImage(with: data.img.parent.collectionID,
-                                      documentID: data.img.documentID) { (image, error) in
-                                        if let image = image{
-                                            self.categoryImagesCache.setObject(image, forKey: document.documentID as NSString)
-                                        }
-                                        aGroup.leave()
-                        }
-                    }
-                }
-                self.view.setFilter(with: self.categoriesName)
-            }
-            aGroup.leave()
-        }
-        
-        aGroup.notify(queue: DispatchQueue.main){
-            self.showAllMarkers()
-        }
-    }
-    
+     
     private func getImage(with collectionID: String,
                           documentID: String,
                           completionHandler: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {

@@ -20,12 +20,12 @@ class PreferenceBoardViewController: UIViewController {
             CategoryPreference(title: "Lina", icon: UIImage(named: "trees")!)
         ],
         "Duration": ["A Few Hours", "Half Day",  "Full Day"],
-        "Price": ["free", "$", "$$", "$$$"],
-        "Transport": ["train", "car", "walk"]
+        "Price": ["free", "€", "€€"],
+        "Transport": [UIImage(named: "walk")!, UIImage(named: "bus")!, UIImage(named: "subway")!]
     ]
     
     
-    var answers = [Int:Int]()
+    var preferences = [Int:Int]()
     
     var sectionTitles = ["Interests", "Duration", "Price", "Transport"]
     
@@ -93,8 +93,14 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if indexPath.section != 0{
+        if indexPath.section == 3{
+            let cell = tableView.dequeueReusableCell(withIdentifier: SettingOptionTableViewCell.reuseIdentifier, for: indexPath) as! SettingOptionTableViewCell
+            let key: String = self.sectionTitles[indexPath.section]
+            cell.images = settingsData[key] as! [UIImage]
+            cell.delegate = self
+            cell.cellIndex = indexPath.section
+            return cell
+        }else if indexPath.section != 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingOptionTableViewCell.reuseIdentifier, for: indexPath) as! SettingOptionTableViewCell
             let key: String = self.sectionTitles[indexPath.section]
             cell.titles = settingsData[key] as! [String]
@@ -140,13 +146,11 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
             button.mainColor = UIColor(named: "pantone")!.withAlphaComponent(0.2)
             button.highlitedColor = UIColor(named: "pantone")!
         }
-
       return view
     }
     
     @objc func dosmth(){
-        print(self.answers)
-        let vc = ViewFactory.createToursVC()
+        let vc = ViewFactory.createToursVC(with: self.preferences)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -154,7 +158,7 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
 extension PreferenceBoardViewController: PreferenceOptionDelegate{
     func didSelectItemAt(_ index: Int, tableCell: Int?) {
         guard let tableCellIndex = tableCell else { return }
-        self.answers[tableCellIndex] = index
+        self.preferences[tableCellIndex] = index
     }
 }
 

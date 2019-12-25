@@ -17,7 +17,7 @@ struct PlaceData{
     let audio: DocumentReference?
     let image: DocumentReference?
     let locationPlace: GeoPoint
-    let price: String
+    let price: Int
     
     init(_ dictionary: [String: Any]){
         self.name = dictionary["name"] as! String
@@ -26,7 +26,7 @@ struct PlaceData{
         self.audio = dictionary["audio"] as? DocumentReference
         self.image = dictionary["image"] as? DocumentReference
         self.locationPlace = dictionary["location"] as! GeoPoint
-        self.price = dictionary["price"] as! String
+        self.price = dictionary["price"] as! Int
     }
 }
 

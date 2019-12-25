@@ -39,9 +39,10 @@ class ViewFactory{
         return vc
     }
     
-    static func createToursVC() -> ToursViewController{
+    static func createToursVC(with preferenses: [Int:Int]) -> ToursViewController{
         let vc = ToursViewController()
         let presenter = ToursPresenter(view: vc)
+        presenter.filter = preferenses
         vc.presenter = presenter
         return vc
     }

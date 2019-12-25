@@ -12,6 +12,8 @@ import FirebaseStorage
 
 class ToursManager {
     static let shared = ToursManager()
+    private let duration = ["A Few Hours", "Half Day",  "Full Day"]
+    private let transport = ["subway", "taxi",  "bus"]
 
     private let imagesCache = NSCache<NSString, UIImage>()
 
@@ -37,15 +39,33 @@ class ToursManager {
             }
     }
     
-    func getTours(_ completionHandler: @escaping (_ tours: [Tour]?, _ error: Error?) -> Void){
+    func getTours(_ preferences: [Int:Int],
+                  completionHandler: @escaping (_ tours: [Tour]?, _ error: Error?) -> Void){
         let db = Firestore.firestore()
         var tours = [Tour]()
         let aGroup = DispatchGroup()
         var queryError: Error? = nil
 
-        aGroup.enter()
         let docRef = db.collection("Tour")
-        docRef.getDocuments() { (querySnapshot, error) in
+        var query = docRef.order(by: "name")
+
+        for (key, val) in preferences{
+            switch key {
+            case 0:
+                break
+            case 1:
+                query = query.whereField("duration", isEqualTo: self.duration[val])
+            case 2:
+                query = query.whereField("price", isEqualTo: val)
+            case 3:
+                query = query.whereField("transport", arrayContains: self.transport[val])
+            default:
+                break
+            }
+        }
+        
+        aGroup.enter()
+        query.getDocuments() { (querySnapshot, error) in
             if let response = querySnapshot {
                 for document in response.documents {
                     var tour = Tour(document.data())

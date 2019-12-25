@@ -15,6 +15,7 @@ class SettingOptionTableViewCell: UITableViewCell {
     var cellIndex: Int?
 
     var titles = [String]()
+    var images = [UIImage]()
     
     class var reuseIdentifier: String {
         return "settingTableCell"
@@ -45,15 +46,24 @@ class SettingOptionTableViewCell: UITableViewCell {
 
 extension SettingOptionTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return self.titles.count
+        if self.titles.count != 0{
+            return self.titles.count
+        }else if self.images.count != 0{
+            return self.images.count
+        }
+
+        return 0
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: SettingOptionCollectionViewCell.reuseIdentifier,
                                                                  for: indexPath) as! SettingOptionCollectionViewCell
-        cell.configureCell(text: titles[indexPath.row], actImage: nil, defImage: nil)
+        if self.titles.count != 0{
+            cell.configureCell(text: titles[indexPath.row], actImage: nil, defImage: nil)
+        }else if self.images.count != 0{
+            cell.configureCell(text: nil, actImage: images[indexPath.row], defImage: nil)
+        }
         return cell
     }
 }

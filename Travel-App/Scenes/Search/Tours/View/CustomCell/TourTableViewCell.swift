@@ -21,6 +21,22 @@ class TourTableViewCell: UITableViewCell {
             self.placesLeftLabel.text = String(tour.place.count)
             self.descriptionLabel.text = tour.description
             self.tourImageView.image = tour.image
+            self.price = tour.price
+        }
+    }
+    
+    private var price: Int = 0{
+        didSet{
+            switch price{
+            case 0:
+                self.priceLabel.text = "Free"
+            case 1:
+                self.priceLabel.text = "€"
+            case 2:
+                self.priceLabel.text = "€€"
+            default:
+                break
+            }
         }
     }
     
