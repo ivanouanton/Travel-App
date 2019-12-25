@@ -43,6 +43,7 @@ class SearchPresenter{
     }
     
     private func showAllMarkers(){
+        self.view.clearMarkers()
         for (id, place) in self.places {
             let cachedImage = PlaceManager.shared.getCategoryImg(with: place.categoryId)
             self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: true)
@@ -51,6 +52,23 @@ class SearchPresenter{
 }
 
 extension SearchPresenter: SearchPresenterProtocol{
+    func viewDidLoad() {
+        PlaceManager.shared.getCategories { (categories, categoriesId, error) in
+            guard let categories = categories, let categoriesId = categoriesId else { return }
+            self.categoriesId = categoriesId
+            self.categories = categories
+            self.getPlaces(with: nil)
+        }
+    }
+    
+    func getPlaces(with option: OptionFilterSelection?) {
+        
+        PlaceManager.shared.getPlaces(with: option) { (places, error) in
+            self.places = places ?? [:]
+            self.showAllMarkers()
+        }
+    }
+    
     func getTourRoute(with tour: Tour) {
         let placesId = tour.place
         var places = [GeoPoint]()
@@ -135,28 +153,6 @@ extension SearchPresenter: SearchPresenterProtocol{
                 self.userLocation = GeoPoint(latitude: location.latitude, longitude: location.longitude)
                 self.view.didChangeMyLocation(location)
             }
-        }
-    }
-    
-    func getPlaces() {
-        let aGroup = DispatchGroup()
-        
-        aGroup.enter()
-        PlaceManager.shared.getPlaces { (places, error) in
-            self.places = places ?? [:]
-            aGroup.leave()
-        }
-        
-        aGroup.enter()
-        PlaceManager.shared.getCategories { (categories, categoriesId, error) in
-            guard let categories = categories, let categoriesId = categoriesId else { return }
-            self.categoriesId = categoriesId
-            self.categories = categories
-            aGroup.leave()
-        }
-        
-        aGroup.notify(queue: DispatchQueue.main){
-            self.showAllMarkers()
         }
     }
      

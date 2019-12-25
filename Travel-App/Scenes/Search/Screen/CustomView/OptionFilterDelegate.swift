@@ -1,5 +1,5 @@
 //
-//  c.swift
+//  OptionFilterDelegate.swift
 //  Travel-App
 //
 //  Created by Антон Иванов on 12/15/19.
@@ -10,6 +10,5 @@ import UIKit
 
 protocol OptionFilterDelegate: class {
     func didPressedFilterButton(with activeFilterHeight: CGFloat)
-    func didSelectedPice(with price: String)
-    func didSelectedVisit(with price: String)
+    func didSelected(with option: OptionFilterSelection)
 }

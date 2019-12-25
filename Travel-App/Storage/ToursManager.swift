@@ -58,7 +58,7 @@ class ToursManager {
             case 2:
                 query = query.whereField("price", isEqualTo: val)
             case 3:
-                query = query.whereField("transport", arrayContains: "taxi")
+                query = query.whereField("transport", arrayContains: self.transport[val])
             default:
                 break
             }

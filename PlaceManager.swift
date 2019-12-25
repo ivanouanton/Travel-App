@@ -82,28 +82,36 @@ class PlaceManager {
         }
     }
     
-    func getPlaces(completion: @escaping (_ places: [String:PlaceData]?, _ error: Error?) -> Void){
+    func getPlaces(with option: OptionFilterSelection? , completion: @escaping (_ places: [String:PlaceData]?, _ error: Error?) -> Void){
         let db = Firestore.firestore()
-        let aGroup = DispatchGroup()
         var places = [String:PlaceData]()
 
         let docRef = db.collection("Place")
-        aGroup.enter()
-        docRef.getDocuments() { (querySnapshot, err) in
+        var query = docRef.order(by: "name")
+        
+        switch option {
+        case .price(let price):
+            query = query.whereField("price", isEqualTo: price)
+        case .visited:
+            break
+        case .mustVisit:
+            query = query.whereField("isMustVisit", isEqualTo: true)
+        case .none:
+            break
+        }
+        
+        query.getDocuments() { (querySnapshot, err) in
             if let err = err {
                 completion(nil, err)
                 print("Error getting documents: \(err)")
             } else {
+                print(querySnapshot!.documents.count)
                 for document in querySnapshot!.documents {
                     let data = PlaceData(document.data())
 
                     places[document.documentID] = data
                 }
             }
-            aGroup.leave()
-        }
-        
-        aGroup.notify(queue: DispatchQueue.main){
             completion(places, nil)
         }
     }

@@ -97,7 +97,8 @@ final class SearchViewController: UIViewController{
         super.viewDidLoad()
         self.navigationItem.title = "New York"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        self.presenter.getPlaces()
+        
+        self.presenter.viewDidLoad()        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -310,12 +311,8 @@ extension SearchViewController: PlacePreviewDelegate {
 
 
 extension SearchViewController: OptionFilterDelegate{
-    func didSelectedPice(with price: String) {
-        
-    }
-    
-    func didSelectedVisit(with price: String) {
-        
+    func didSelected(with option: OptionFilterSelection) {
+        self.presenter.getPlaces(with: option)
     }
     
     func didPressedFilterButton(with activeFilterHeight: CGFloat) {
