@@ -15,8 +15,14 @@ class PlaceManager {
     static let shared = PlaceManager()
 
     private let imagesCache = NSCache<NSString, UIImage>()
+    private let categoryImagesCache = NSCache<NSString, UIImage>()
 
     init() {}
+    
+    func getCategoryImg(with id: String) -> UIImage?{
+        let cachedImage = self.categoryImagesCache.object(forKey: id as NSString)
+        return cachedImage
+    }
     
     func getRoute(with positions: [GeoPoint],
                   completionHandler: @escaping (_ routes: String?, _ error: Error?) -> Void){
@@ -75,4 +81,70 @@ class PlaceManager {
             }
         }
     }
+    
+    func getPlaces(completion: @escaping (_ places: [String:PlaceData]?, _ error: Error?) -> Void){
+        let db = Firestore.firestore()
+        let aGroup = DispatchGroup()
+        var places = [String:PlaceData]()
+
+        let docRef = db.collection("Place")
+        aGroup.enter()
+        docRef.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                completion(nil, err)
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = PlaceData(document.data())
+
+                    places[document.documentID] = data
+                }
+            }
+            aGroup.leave()
+        }
+        
+        aGroup.notify(queue: DispatchQueue.main){
+            completion(places, nil)
+        }
+    }
+
+    func getCategories(completion: @escaping (_ categories: [String:Category]?, _ categoriesId: [String]?, _ error: Error?) -> Void){
+        let db = Firestore.firestore()
+        let aGroup = DispatchGroup()
+        var categories = [String:Category]()
+        var categoriesId = ["All"]
+
+        
+        let categoryDocRef = db.collection("Category")
+        aGroup.enter()
+        categoryDocRef.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    let data = Category(document.data())
+                    categories[document.documentID] = data
+                    
+                    categoriesId.append(document.documentID)
+                    
+                    if let _ = self.categoryImagesCache.object(forKey: data.img.documentID as NSString) {
+                    }else{
+                        aGroup.enter()
+                        ToursManager.shared.getImage(with: data.img) { (image, error) in
+                            if let image = image{
+                                self.categoryImagesCache.setObject(image, forKey: document.documentID as NSString)
+                            }
+                            aGroup.leave()
+                        }
+                    }
+                }
+            }
+            aGroup.leave()
+        }
+        
+        aGroup.notify(queue: DispatchQueue.main){
+            completion(categories, categoriesId, nil)
+        }
+    }
+
 }

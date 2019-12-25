@@ -410,12 +410,12 @@
 		F798835B2381AEAE00F01F3A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F77C178C23AAC34E009D2D69 /* Authorisation */,
 				F79883592381AE5E00F01F3A /* ViewFactory.swift */,
 				F761DFFB2381D04E00D9DBBD /* Settings */,
 				F79883802381CA1500F01F3A /* Profile */,
 				F79883712381C60A00F01F3A /* Home */,
 				F79883662381AF9600F01F3A /* Search */,
+				F77C178C23AAC34E009D2D69 /* Authorisation */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
