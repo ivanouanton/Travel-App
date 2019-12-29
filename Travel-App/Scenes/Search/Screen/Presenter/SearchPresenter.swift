@@ -10,7 +10,6 @@ import Foundation
 import FirebaseFirestore
 import FirebaseStorage
 
-
 class SearchPresenter{
     
     var userLocation = GeoPoint(latitude: Defaults.location.latitude,
@@ -66,6 +65,32 @@ extension SearchPresenter: SearchPresenterProtocol{
         PlaceManager.shared.getPlaces(with: option) { (places, error) in
             self.places = places ?? [:]
             self.showAllMarkers()
+            self.createPlacesData()
+        }
+    }
+    
+    func createPlacesData(){
+        var placesModelData = Array<PlaceCardModel>()
+        let aGroup = DispatchGroup()
+        
+        for (id,place) in self.places {
+            if let imgId = place.image {
+                aGroup.enter()
+                ToursManager.shared.getImage(with: imgId ) { (image, error) in
+                    placesModelData.append(PlaceCardModel(id: id,
+                                                            name: place.name,
+                                                            category: self.categories[place.categoryId]?.title ?? "",
+                                                            price: place.price,
+                                                            image: image,
+                                                            location: nil,
+                                                            description: place.description))
+                    aGroup.leave()
+                }
+            }
+        }
+        
+        aGroup.notify(queue: DispatchQueue.main){
+            self.view.setPlacesCollection(with: placesModelData)
         }
     }
     

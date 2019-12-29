@@ -10,6 +10,6 @@ import UIKit
 import Firebase
 
 protocol PlacePreviewDelegate: class {
-    func getInfoPlace(with data: PlaceData, image: UIImage?, category: String)
+    func getInfoPlace(with data: PlaceCardModel, image: UIImage?, category: String)
     func createRoute(with location: GeoPoint)
 }

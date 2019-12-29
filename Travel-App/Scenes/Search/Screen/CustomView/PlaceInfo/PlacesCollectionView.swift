@@ -9,11 +9,14 @@
 import UIKit
 
 class PlacesCollectionView: UIView {
-    
-    var hh = [1,2,1,2,1,2,1,2]
-
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var places = Array<PlaceCardModel>(){
+        didSet{
+            self.collectionView.reloadData()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,26 +35,22 @@ class PlacesCollectionView: UIView {
 //        collectionView.delegate = self
         collectionView.dataSource = self
         collectionView?.register(PlacePreview.self, forCellWithReuseIdentifier: PlacePreview.reuseIdentifier)
-        
     }
 
 }
 
 extension PlacesCollectionView: UICollectionViewDataSource{
 
-    // MARK: - Card Collection Delegate & DataSource
-
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
+    // MARK: - Place Collection Delegate & DataSource
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return places.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PlacePreview.reuseIdentifier, for: indexPath) as! PlacePreview
-        
+        let place = self.places[indexPath.row]
+        cell.place = place
         return cell
     }
 }

@@ -45,6 +45,7 @@
 		F780CE6823A2FDAD00E8E248 /* RecentPlacesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F780CE6623A2FDAC00E8E248 /* RecentPlacesTableViewCell.xib */; };
 		F780CE6B23A315F100E8E248 /* RecentPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780CE6923A315F100E8E248 /* RecentPlaceCollectionViewCell.swift */; };
 		F780CE6C23A315F200E8E248 /* RecentPlaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F780CE6A23A315F100E8E248 /* RecentPlaceCollectionViewCell.xib */; };
+		F7842A4023B8C3CC009F692A /* PlaceCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7842A3F23B8C3CC009F692A /* PlaceCardModel.swift */; };
 		F790825123A83AB700056228 /* OptionFilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790824F23A83AB700056228 /* OptionFilterTableViewCell.swift */; };
 		F790825223A83AB700056228 /* OptionFilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F790825023A83AB700056228 /* OptionFilterTableViewCell.xib */; };
 		F7932B652393A0E4006E6496 /* PlacePreviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B642393A0E4006E6496 /* PlacePreviewDelegate.swift */; };
@@ -145,6 +146,7 @@
 		F780CE6623A2FDAC00E8E248 /* RecentPlacesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecentPlacesTableViewCell.xib; path = View/RecentPlacesTableViewCell.xib; sourceTree = "<group>"; };
 		F780CE6923A315F100E8E248 /* RecentPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecentPlaceCollectionViewCell.swift; path = View/RecentPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		F780CE6A23A315F100E8E248 /* RecentPlaceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecentPlaceCollectionViewCell.xib; path = View/RecentPlaceCollectionViewCell.xib; sourceTree = "<group>"; };
+		F7842A3F23B8C3CC009F692A /* PlaceCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCardModel.swift; sourceTree = "<group>"; };
 		F790824F23A83AB700056228 /* OptionFilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionFilterTableViewCell.swift; sourceTree = "<group>"; };
 		F790825023A83AB700056228 /* OptionFilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionFilterTableViewCell.xib; sourceTree = "<group>"; };
 		F7932B642393A0E4006E6496 /* PlacePreviewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlacePreviewDelegate.swift; path = "Travel-App/Scenes/Search/Screen/CustomView/PlaceInfo/PlacePreviewDelegate.swift"; sourceTree = SOURCE_ROOT; };
@@ -284,6 +286,7 @@
 				F704B3F723B7F4B00090DD6F /* PlacesCollectionView.swift */,
 				F704B3F923B7F7340090DD6F /* PlacesCollectionView.xib */,
 				F704B3FB23B889AF0090DD6F /* CarouselFlowLayout.swift */,
+				F7842A3F23B8C3CC009F692A /* PlaceCardModel.swift */,
 			);
 			path = PlaceInfo;
 			sourceTree = "<group>";
@@ -832,6 +835,7 @@
 				F72EFE42239EF16D008081E1 /* TourInfoViewController.swift in Sources */,
 				F705253423B4105300E05528 /* OptionFilterSelection.swift in Sources */,
 				F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */,
+				F7842A4023B8C3CC009F692A /* PlaceCardModel.swift in Sources */,
 				F79B387A239C6A3C0032F598 /* TourHederView.swift in Sources */,
 				F7932B692393A687006E6496 /* PlaceInfoViewController.swift in Sources */,
 				F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */,

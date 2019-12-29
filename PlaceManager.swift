@@ -14,7 +14,7 @@ import FirebaseStorage
 class PlaceManager {
     static let shared = PlaceManager()
 
-    private let imagesCache = NSCache<NSString, UIImage>()
+    private let placesImageCache = NSCache<NSString, UIImage>()
     private let categoryImagesCache = NSCache<NSString, UIImage>()
 
     init() {}

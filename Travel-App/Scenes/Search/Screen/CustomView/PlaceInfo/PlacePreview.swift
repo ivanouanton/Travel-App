@@ -16,11 +16,22 @@ class PlacePreview: UICollectionViewCell {
         return "placePreview"
     }
     
-    var place: PlaceData? {
+    var place: PlaceCardModel? {
         didSet{
             guard let place = place else {return}
             self.titleLabel.text = place.name
-            self.placeTitle.text = place.categoryId
+            self.placeTitle.text = place.category
+            switch place.price {
+            case 0:
+                self.placePrice.text = "Free"
+            case 1:
+                self.placePrice.text = "€"
+            case 2:
+                self.placePrice.text = "€€"
+            default:
+                break
+            }
+            self.image = place.image
         }
     }
     
@@ -30,9 +41,10 @@ class PlacePreview: UICollectionViewCell {
         }
     }
     
-    var image: UIImage = UIImage(named: "preview-target-place")!{
+    var image: UIImage? = UIImage(named: "preview-target-place")!{
         didSet{
-            self.placeImage.image = image
+            guard let newImage = image else {return}
+            self.placeImage.image = newImage
         }
     }
     
@@ -146,8 +158,8 @@ class PlacePreview: UICollectionViewCell {
     }
     
     @objc func createRoute(){
-        guard let loacation = self.place?.locationPlace else {return}
-        self.delegate?.createRoute(with: loacation)
+//        guard let loacation = self.place?.locationPlace else {return}
+//        self.delegate?.createRoute(with: loacation)
     }
     
     // MARK: - Life Cicle
