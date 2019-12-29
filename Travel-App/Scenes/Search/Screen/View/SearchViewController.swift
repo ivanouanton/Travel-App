@@ -51,14 +51,27 @@ final class SearchViewController: UIViewController{
         return view
     }()
     
-    private lazy var placePreview: PlacePreview = {
-        let place = PlacePreview()
-        place.translatesAutoresizingMaskIntoConstraints = false
-        place.backgroundColor = UIColor.white
-        place.contentMode = .scaleAspectFill
-        place.delegate = self
-        return place
+    private lazy var placePreview: PlacesCollectionView = {
+        let customView =  Bundle.main.loadNibNamed("PlacesCollectionView", owner: nil, options: nil)?.first as? PlacesCollectionView
+        customView?.translatesAutoresizingMaskIntoConstraints = false
+
+        return customView!
+
+//        let place = PlacePreview()
+//        place.translatesAutoresizingMaskIntoConstraints = false
+//        place.backgroundColor = UIColor.white
+//        place.contentMode = .scaleAspectFill
+//        place.delegate = self
+//        return place
     }()
+    
+//        private lazy var placePreview: UIView = {
+//            let place = UIView()
+//            place.translatesAutoresizingMaskIntoConstraints = false
+//            place.backgroundColor = UIColor.white
+//            place.delegate = self
+//            return place
+//        }()
     
     private lazy var createTourButton: UIButton = {
         let button = UIButton()
@@ -146,8 +159,9 @@ extension SearchViewController{
             self.filterView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             (self.filterViewHeight ?? self.filterView.heightAnchor.constraint(equalToConstant: 0)),
 
-            self.placePreview.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
+            self.placePreview.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
             self.placePreview.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.placePreview.heightAnchor.constraint(equalToConstant: 171),
             self.placePreviewTop,
             
             self.tourInfoView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
@@ -234,11 +248,11 @@ extension SearchViewController: SearchViewProtocol{
     }
     
     func showModal(with data: PlaceData, image: UIImage?, category: String) {
-        self.placePreview.place = data
-        self.placePreview.category = category
-
-        guard let image = image else {return}
-        self.placePreview.image = image
+//        self.placePreview.place = data
+//        self.placePreview.category = category
+//
+//        guard let image = image else {return}
+//        self.placePreview.image = image
     }
     
     func drawPath(with routes: String?) {
