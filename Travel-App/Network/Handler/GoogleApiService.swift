@@ -10,6 +10,7 @@ import Moya
 
 enum GoogleApiService{
     case getRout(origin: String, destination: String, mode: String = "driving", points: String = "")
+    case geocode(latitude: Double, longitude: Double)
 }
 
 extension GoogleApiService: TargetType{
@@ -21,12 +22,17 @@ extension GoogleApiService: TargetType{
         switch self {
         case .getRout:
             return "/directions/json"
+        case .geocode:
+            return "/geocode/json"
+            
         }
     }
     
     var method: Moya.Method {
         switch self {
         case .getRout:
+            return .post
+        case .geocode:
             return .post
         }
     }
@@ -37,13 +43,17 @@ extension GoogleApiService: TargetType{
     
     var task: Task {
         switch self {
-
         case .getRout(let origin, let destination, let mode, let points):
             var parameters = [String: String]()
             parameters["origin"] = origin
             parameters["destination"] = destination
             parameters["mode"] = mode
             parameters["waypoints"] = points
+            parameters["key"] = Defaults.apiKey
+            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+        case .geocode(let latitude, let longitude):
+            var parameters = [String: String]()
+            parameters["latlng"] = "\(latitude),\(longitude)"
             parameters["key"] = Defaults.apiKey
             return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
         }

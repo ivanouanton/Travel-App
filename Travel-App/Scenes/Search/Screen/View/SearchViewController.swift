@@ -94,7 +94,6 @@ final class SearchViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "New York"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         self.presenter.viewDidLoad()        
@@ -221,6 +220,10 @@ extension SearchViewController{
 // MARK: - Search View Protocol
 
 extension SearchViewController: SearchViewProtocol{
+    func showLocality(locality: String) {
+        self.navigationItem.title = locality
+    }
+    
     func showPlaceView(with index: Int) {
         self.placesCollection.scrollTo(itemIndex: index)
     }

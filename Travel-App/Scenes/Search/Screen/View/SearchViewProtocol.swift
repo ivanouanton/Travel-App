@@ -19,4 +19,5 @@ protocol SearchViewProtocol: class{
     func setupTourInfo(with places: [String], title: String)
     func setPlacesCollection(with places: [PlaceCardModel])
     func showPlaceView(with index: Int)
+    func showLocality(locality: String)
 }
