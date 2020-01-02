@@ -10,11 +10,12 @@ import Foundation
 import UIKit
 import FirebaseFirestore
 import FirebaseStorage
+import GoogleMaps
 
 class PlaceManager {
     static let shared = PlaceManager()
 
-    private let imagesCache = NSCache<NSString, UIImage>()
+    private let placesImageCache = NSCache<NSString, UIImage>()
     private let categoryImagesCache = NSCache<NSString, UIImage>()
 
     init() {}
@@ -154,5 +155,30 @@ class PlaceManager {
             completion(categories, categoriesId, nil)
         }
     }
+    
+    func geocodeLocation(with location: GeoPoint, completion: @escaping (_ name: String?, _ error: Error?) -> Void){
+        NetworkProvider.shared.getMoyaProvider().request(.geocode(latitude: location.latitude, longitude: location.longitude)) { result in
+            switch result{
+            case .success(let response):
+                if let json : [String:Any] = try? JSONSerialization.jsonObject(with: response.data, options: .allowFragments) as? [String: Any]{
+                    guard let results = json["results"] as? Array<Any>,
+                        !results.isEmpty,
+                        let result = results[0] as? [String: Any],
+                        let addressComponents = result["address_components"] as? Array<Any>,
+                        let component = addressComponents[2] as? [String: Any],
+                        let locality = component["short_name"] as? String else {
+                            completion(nil, nil)
+                            return
+                    }
+                    
+                    completion(locality, nil)
+                }else{
+                    completion(nil, nil)
+                }
 
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
 }

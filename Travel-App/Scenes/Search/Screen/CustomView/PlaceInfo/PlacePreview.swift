@@ -8,15 +8,30 @@
 
 import UIKit
 
-class PlacePreview: UIView {
+class PlacePreview: UICollectionViewCell {
     
     weak var delegate: PlacePreviewDelegate?
     
-    var place: PlaceData? {
+    class var reuseIdentifier: String {
+        return "placePreview"
+    }
+    
+    var place: PlaceCardModel? {
         didSet{
             guard let place = place else {return}
             self.titleLabel.text = place.name
-            self.placeTitle.text = place.categoryId
+            self.placeTitle.text = place.category
+            switch place.price {
+            case 0:
+                self.placePrice.text = "Free"
+            case 1:
+                self.placePrice.text = "€"
+            case 2:
+                self.placePrice.text = "€€"
+            default:
+                break
+            }
+            self.image = place.image
         }
     }
     
@@ -26,9 +41,10 @@ class PlacePreview: UIView {
         }
     }
     
-    var image: UIImage = UIImage(named: "preview-target-place")!{
+    var image: UIImage? = UIImage(named: "preview-target-place")!{
         didSet{
-            self.placeImage.image = image
+            guard let newImage = image else {return}
+            self.placeImage.image = newImage
         }
     }
     
@@ -61,7 +77,7 @@ class PlacePreview: UIView {
         button.setTitleColor(UIColor(named: "pantone"), for: .normal)
         button.layer.cornerRadius = 5
         button.layer.backgroundColor = UIColor(named: "pantone")?.withAlphaComponent(0.2).cgColor
-//        button.addTarget(self, action: #selector(showFilter), for: .touchUpInside)
+        button.addTarget(self, action: #selector(createRoute), for: .touchUpInside)
         return button
     }()
     
@@ -142,7 +158,7 @@ class PlacePreview: UIView {
     }
     
     @objc func createRoute(){
-        guard let loacation = self.place?.locationPlace else {return}
+        guard let loacation = self.place?.location else {return}
         self.delegate?.createRoute(with: loacation)
     }
     
@@ -160,8 +176,19 @@ class PlacePreview: UIView {
     }
     
     private func setupUI(){
-        self.layer.cornerRadius = 7
-        
+        self.contentView.layer.cornerRadius = 7.0
+        self.contentView.layer.borderWidth = 1.0
+        self.contentView.layer.borderColor = UIColor.clear.cgColor
+        self.contentView.layer.masksToBounds = true
+        self.contentView.layer.backgroundColor = UIColor.white.cgColor
+
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 0.25
+        self.layer.masksToBounds = false
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
+                
         self.addSubview(self.placeImage)
         self.addSubview(self.titleLabel)
         self.addSubview(self.directionsButton)

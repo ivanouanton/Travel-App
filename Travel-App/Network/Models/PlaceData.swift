@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 struct PlaceData{
-    
+    var id: String?
     let name: String
     let categoryId: String
     let description: String
@@ -20,6 +20,7 @@ struct PlaceData{
     let price: Int
     
     init(_ dictionary: [String: Any]){
+        self.id = nil
         self.name = dictionary["name"] as! String
         self.categoryId = dictionary["category"] as! String
         self.description = dictionary["description"] as! String

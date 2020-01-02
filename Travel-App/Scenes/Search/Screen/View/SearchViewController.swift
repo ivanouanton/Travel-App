@@ -51,13 +51,12 @@ final class SearchViewController: UIViewController{
         return view
     }()
     
-    private lazy var placePreview: PlacePreview = {
-        let place = PlacePreview()
-        place.translatesAutoresizingMaskIntoConstraints = false
-        place.backgroundColor = UIColor.white
-        place.contentMode = .scaleAspectFill
-        place.delegate = self
-        return place
+    private lazy var placesCollection: PlacesCollectionView = {
+        let placesView =  Bundle.main.loadNibNamed("PlacesCollectionView", owner: nil, options: nil)?.first as? PlacesCollectionView
+        placesView?.translatesAutoresizingMaskIntoConstraints = false
+        placesView?.delegate = self
+
+        return placesView!
     }()
     
     private lazy var createTourButton: UIButton = {
@@ -95,7 +94,6 @@ final class SearchViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "New York"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         self.presenter.viewDidLoad()        
@@ -118,13 +116,13 @@ extension SearchViewController{
         self.view.addSubview(self.mapView)
         self.view.addSubview(self.createTourButton)
         self.view.addSubview(self.filterView)
-        self.view.addSubview(self.placePreview)
+        self.view.addSubview(self.placesCollection)
         self.view.addSubview(self.tourInfoView)
     }
     
     func setupConstraints(){
-        self.placePreviewBottom = self.placePreview.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
-        self.placePreviewTop = self.placePreview.topAnchor.constraint(equalTo: self.view.bottomAnchor)
+        self.placePreviewBottom = self.placesCollection.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+        self.placePreviewTop = self.placesCollection.topAnchor.constraint(equalTo: self.view.bottomAnchor)
         
         self.tourViewBottom = self.tourInfoView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
         self.tourViewTop = self.tourInfoView.topAnchor.constraint(equalTo: self.view.bottomAnchor)
@@ -146,8 +144,9 @@ extension SearchViewController{
             self.filterView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             (self.filterViewHeight ?? self.filterView.heightAnchor.constraint(equalToConstant: 0)),
 
-            self.placePreview.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
-            self.placePreview.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.placesCollection.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0),
+            self.placesCollection.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.placesCollection.heightAnchor.constraint(equalToConstant: 171),
             self.placePreviewTop,
             
             self.tourInfoView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
@@ -221,6 +220,18 @@ extension SearchViewController{
 // MARK: - Search View Protocol
 
 extension SearchViewController: SearchViewProtocol{
+    func showLocality(locality: String) {
+        self.navigationItem.title = locality
+    }
+    
+    func showPlaceView(with index: Int) {
+        self.placesCollection.scrollTo(itemIndex: index)
+    }
+    
+    func setPlacesCollection(with places: [PlaceCardModel]) {
+        self.placesCollection.places = places
+    }
+    
     func setupTourInfo(with places: [String], title: String) {
         self.tourInfoView.setupTourInfo(with: places, title: title)
     }
@@ -234,11 +245,11 @@ extension SearchViewController: SearchViewProtocol{
     }
     
     func showModal(with data: PlaceData, image: UIImage?, category: String) {
-        self.placePreview.place = data
-        self.placePreview.category = category
-
-        guard let image = image else {return}
-        self.placePreview.image = image
+//        self.placePreview.place = data
+//        self.placePreview.category = category
+//
+//        guard let image = image else {return}
+//        self.placePreview.image = image
     }
     
     func drawPath(with routes: String?) {
@@ -289,7 +300,13 @@ extension SearchViewController: CategoryFilterDelegate{
 // MARK: - Place Preview Delegate
 
 extension SearchViewController: PlacePreviewDelegate {
-    func getInfoPlace(with data: PlaceData, image: UIImage?, category: String) {
+    func didSelect(with place: PlaceCardModel) {
+        guard let location = place.location else { return }
+        self.didChangeMyLocation(Location(latitude: location.latitude,
+                                          longitude: location.longitude))
+    }
+    
+    func getInfoPlace(with data: PlaceCardModel, image: UIImage?, category: String) {
         
         let storyboard = UIStoryboard(name: "InfoStoryboard", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "InfoPlaceViewController") as? PlaceInfoViewController
