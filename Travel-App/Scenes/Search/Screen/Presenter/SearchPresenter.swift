@@ -65,7 +65,6 @@ extension SearchPresenter: SearchPresenterProtocol{
         PlaceManager.shared.getPlaces(with: option) { (places, error) in
             self.places = places ?? [:]
             self.showAllMarkers()
-            self.createPlacesData()
         }
     }
     
@@ -82,7 +81,7 @@ extension SearchPresenter: SearchPresenterProtocol{
                                                             category: self.categories[place.categoryId]?.title ?? "",
                                                             price: place.price,
                                                             image: image,
-                                                            location: nil,
+                                                            location: place.locationPlace,
                                                             description: place.description))
                     aGroup.leave()
                 }

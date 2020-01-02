@@ -77,7 +77,7 @@ class PlacePreview: UICollectionViewCell {
         button.setTitleColor(UIColor(named: "pantone"), for: .normal)
         button.layer.cornerRadius = 5
         button.layer.backgroundColor = UIColor(named: "pantone")?.withAlphaComponent(0.2).cgColor
-//        button.addTarget(self, action: #selector(showFi	lter), for: .touchUpInside)
+        button.addTarget(self, action: #selector(createRoute), for: .touchUpInside)
         return button
     }()
     
@@ -158,8 +158,8 @@ class PlacePreview: UICollectionViewCell {
     }
     
     @objc func createRoute(){
-//        guard let loacation = self.place?.locationPlace else {return}
-//        self.delegate?.createRoute(with: loacation)
+        guard let loacation = self.place?.location else {return}
+        self.delegate?.createRoute(with: loacation)
     }
     
     // MARK: - Life Cicle

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 struct PlaceCardModel {
     var id: String
@@ -14,6 +15,6 @@ struct PlaceCardModel {
     var category: String
     var price: Int
     var image: UIImage?
-    var location: String?
+    var location: GeoPoint?
     var description: String
 }

@@ -54,6 +54,7 @@ final class SearchViewController: UIViewController{
     private lazy var placesCollection: PlacesCollectionView = {
         let placesView =  Bundle.main.loadNibNamed("PlacesCollectionView", owner: nil, options: nil)?.first as? PlacesCollectionView
         placesView?.translatesAutoresizingMaskIntoConstraints = false
+        placesView?.delegate = self
 
         return placesView!
     }()
@@ -169,7 +170,8 @@ extension SearchViewController{
         if self.placePreviewTop.isActive{
             showModalView()
         }
-        self.presenter.showModalView(with: id)
+        self.presenter.createPlacesData()
+//        self.presenter.showModalView(with: id)
     }
     
     private func showTourInfo() {
@@ -292,6 +294,12 @@ extension SearchViewController: CategoryFilterDelegate{
 // MARK: - Place Preview Delegate
 
 extension SearchViewController: PlacePreviewDelegate {
+    func didSelect(with place: PlaceCardModel) {
+        guard let location = place.location else { return }
+        self.didChangeMyLocation(Location(latitude: location.latitude,
+                                          longitude: location.longitude))
+    }
+    
     func getInfoPlace(with data: PlaceCardModel, image: UIImage?, category: String) {
         
         let storyboard = UIStoryboard(name: "InfoStoryboard", bundle: nil)
