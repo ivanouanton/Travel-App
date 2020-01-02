@@ -18,4 +18,5 @@ protocol SearchViewProtocol: class{
     func drawPath(with routes: String?)
     func setupTourInfo(with places: [String], title: String)
     func setPlacesCollection(with places: [PlaceCardModel])
+    func showPlaceView(with index: Int)
 }

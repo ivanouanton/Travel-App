@@ -54,9 +54,10 @@ class PlacesCollectionView: UIView {
     }
     
     func scrollTo(itemIndex index: Int){
-        
+        let indexPath = IndexPath(item: index, section: 0)
+        collectionView.reloadData()
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
-
 }
 
 extension PlacesCollectionView: UICollectionViewDataSource{

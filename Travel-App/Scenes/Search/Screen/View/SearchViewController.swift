@@ -170,8 +170,7 @@ extension SearchViewController{
         if self.placePreviewTop.isActive{
             showModalView()
         }
-        self.presenter.createPlacesData()
-//        self.presenter.showModalView(with: id)
+        self.presenter.showModalView(with: id)
     }
     
     private func showTourInfo() {
@@ -222,6 +221,10 @@ extension SearchViewController{
 // MARK: - Search View Protocol
 
 extension SearchViewController: SearchViewProtocol{
+    func showPlaceView(with index: Int) {
+        self.placesCollection.scrollTo(itemIndex: index)
+    }
+    
     func setPlacesCollection(with places: [PlaceCardModel]) {
         self.placesCollection.places = places
     }
