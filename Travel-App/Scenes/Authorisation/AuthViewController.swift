@@ -17,25 +17,26 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
 
-//        self.emailTextField.layer.addBorder(edge: .bottom, color: .lightGray, thickness: 1)
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func didPressedSignIn(_ sender: Any) {
-        let vc = AppTabBarController()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
-    }
-    
-    
-    /*
-    // MARK: - Navigation
+        
+        let loginManager = FirebaseAuthManager()
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        loginManager.signIn(email: email, pass: password) {[weak self] (success) in
+            guard let `self` = self else { return }
+            var message: String = ""
+            if (success) {
+                let vc = AppTabBarController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+            } else {
+                message = "There was an error."
+            }
+            let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
 }

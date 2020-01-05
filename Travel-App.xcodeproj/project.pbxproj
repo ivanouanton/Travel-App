@@ -38,6 +38,8 @@
 		F77C178E23AACAE1009D2D69 /* Authorisation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77C178D23AACAE1009D2D69 /* Authorisation.storyboard */; };
 		F77C179023AAD216009D2D69 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C178F23AAD216009D2D69 /* CustomTextField.swift */; };
 		F77C179223AAD3C4009D2D69 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C179123AAD3C4009D2D69 /* UIViewController+Extension.swift */; };
+		F77D500C23C102DE00E89E67 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D500B23C102DE00E89E67 /* FirebaseAuthManager.swift */; };
+		F77D500E23C139D000E89E67 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D500D23C139D000E89E67 /* RegistrationViewController.swift */; };
 		F77F22462392E816004610CE /* Extension+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77F22452392E816004610CE /* Extension+CALayer.swift */; };
 		F780CE6323A2F91200E8E248 /* ProfileOptionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780CE6123A2F91200E8E248 /* ProfileOptionViewCell.swift */; };
 		F780CE6423A2F91200E8E248 /* ProfileOptionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F780CE6223A2F91200E8E248 /* ProfileOptionViewCell.xib */; };
@@ -138,6 +140,8 @@
 		F77C178D23AACAE1009D2D69 /* Authorisation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Authorisation.storyboard; path = "Travel-App/Authorisation.storyboard"; sourceTree = SOURCE_ROOT; };
 		F77C178F23AAD216009D2D69 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F77C179123AAD3C4009D2D69 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		F77D500B23C102DE00E89E67 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = SOURCE_ROOT; };
+		F77D500D23C139D000E89E67 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = "Travel-App/RegistrationViewController.swift"; sourceTree = SOURCE_ROOT; };
 		F77F22442392DB6A004610CE /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		F77F22452392E816004610CE /* Extension+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+CALayer.swift"; path = "Travel-App/Utility/Extension+CALayer.swift"; sourceTree = SOURCE_ROOT; };
 		F780CE6123A2F91200E8E248 /* ProfileOptionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileOptionViewCell.swift; path = View/ProfileOptionViewCell.swift; sourceTree = "<group>"; };
@@ -371,6 +375,7 @@
 				F700442A23A194C300D7E59F /* AuthViewController.swift */,
 				F77C178D23AACAE1009D2D69 /* Authorisation.storyboard */,
 				F77C178F23AAD216009D2D69 /* CustomTextField.swift */,
+				F77D500D23C139D000E89E67 /* RegistrationViewController.swift */,
 			);
 			path = Authorisation;
 			sourceTree = "<group>";
@@ -539,6 +544,7 @@
 			children = (
 				F79B3872239C13620032F598 /* ToursManager.swift */,
 				F79B387F239D22370032F598 /* PlaceManager.swift */,
+				F77D500B23C102DE00E89E67 /* FirebaseAuthManager.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -887,12 +893,14 @@
 				F72B7C1623A6D6AE009155D4 /* UIButton+Extension.swift in Sources */,
 				F704B3FC23B889AF0090DD6F /* CarouselFlowLayout.swift in Sources */,
 				3A3D2E64238EE4B500DD9876 /* PlaceDataHolder.swift in Sources */,
+				F77D500E23C139D000E89E67 /* RegistrationViewController.swift in Sources */,
 				F77C179023AAD216009D2D69 /* CustomTextField.swift in Sources */,
 				F745760E238B480C00C5A1DE /* Category.swift in Sources */,
 				F704B3F823B7F4B00090DD6F /* PlacesCollectionView.swift in Sources */,
 				F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */,
 				F79883742381C6CB00F01F3A /* HomePresenterProtocol.swift in Sources */,
 				3A3A3814239A74B9001FE150 /* CategoryPreference.swift in Sources */,
+				F77D500C23C102DE00E89E67 /* FirebaseAuthManager.swift in Sources */,
 				F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */,
 				F7CFD020239BE3A800983631 /* Tour.swift in Sources */,
 				F72B7C1423A6CD39009155D4 /* OptionFilterDelegate.swift in Sources */,

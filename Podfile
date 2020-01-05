@@ -16,6 +16,7 @@ target 'Travel-App' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Storage'
+  pod 'Firebase/Auth'
   
 # Pods for Travel-App
 
