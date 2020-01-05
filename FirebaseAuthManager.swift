@@ -39,8 +39,6 @@ class FirebaseAuthManager {
                     }
                     print(error.localizedDescription)
                 }
-                
-                
                 completionBlock(true)
             } else {
                 completionBlock(false)

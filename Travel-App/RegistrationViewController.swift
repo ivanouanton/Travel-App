@@ -16,6 +16,7 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var homeAddressField: CustomTextField!
     @IBOutlet weak var emailField: CustomTextField!
     @IBOutlet weak var passwordField: CustomTextField!
+    @IBOutlet weak var avatarImage: UIImageView!
     
     @IBAction func didPressedSignUp(_ sender: Any) {
         
@@ -62,6 +63,20 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupHideKeyboardOnTap()
+        setupAvatar()
+    }
+    
+    func setupAvatar() {
+        avatarImage.clipsToBounds = true
+        avatarImage.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentPicker))
+        avatarImage.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func presentPicker() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        self.present(picker, animated: true, completion: nil)
     }
     
     func validateFields() -> String? {
