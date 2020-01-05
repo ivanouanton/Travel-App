@@ -7,18 +7,42 @@
 //
 
 import FirebaseAuth
+import Firebase
 import UIKit
 
 class FirebaseAuthManager {
+    
+    static let shared = FirebaseAuthManager()
+
+    private init() {}
+    
+    var uid: String?
+    
     func createUser(email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) {(authResult, error) in
             if let user = authResult?.user {
-                print(user)
+                self.uid = user.uid
                 completionBlock(true)
             } else {
                 completionBlock(false)
             }
         }
+    }
+    
+    func setUserData(name: String, surname: String, email: String, completionBlock: @escaping (_ success: Bool) -> Void) {
+        
+        let db = Firestore.firestore()
+        db.collection("users").addDocument(data: ["name":name,
+                                                  "surname":surname,
+                                                  "email":email,
+                                                  "uid":self.uid ?? ""]) { (error) in
+                                                    if let _ = error {
+                                                        completionBlock(false)
+                                                    }else {
+                                                        completionBlock(true)
+                                                    }
+        }
+        
     }
     
     func signIn(email: String, pass: String, completionBlock: @escaping (_ success: Bool) -> Void) {

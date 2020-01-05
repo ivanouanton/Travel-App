@@ -21,7 +21,7 @@ class AuthViewController: UIViewController {
 
     @IBAction func didPressedSignIn(_ sender: Any) {
         
-        let loginManager = FirebaseAuthManager()
+        let loginManager = FirebaseAuthManager.shared
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         loginManager.signIn(email: email, pass: password) {[weak self] (success) in
             guard let `self` = self else { return }

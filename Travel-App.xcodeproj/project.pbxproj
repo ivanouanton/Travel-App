@@ -40,6 +40,7 @@
 		F77C179223AAD3C4009D2D69 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C179123AAD3C4009D2D69 /* UIViewController+Extension.swift */; };
 		F77D500C23C102DE00E89E67 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D500B23C102DE00E89E67 /* FirebaseAuthManager.swift */; };
 		F77D500E23C139D000E89E67 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D500D23C139D000E89E67 /* RegistrationViewController.swift */; };
+		F77D501323C1F08100E89E67 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D501123C1F08100E89E67 /* Utilities.swift */; };
 		F77F22462392E816004610CE /* Extension+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77F22452392E816004610CE /* Extension+CALayer.swift */; };
 		F780CE6323A2F91200E8E248 /* ProfileOptionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780CE6123A2F91200E8E248 /* ProfileOptionViewCell.swift */; };
 		F780CE6423A2F91200E8E248 /* ProfileOptionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F780CE6223A2F91200E8E248 /* ProfileOptionViewCell.xib */; };
@@ -142,6 +143,7 @@
 		F77C179123AAD3C4009D2D69 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		F77D500B23C102DE00E89E67 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = SOURCE_ROOT; };
 		F77D500D23C139D000E89E67 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = "Travel-App/RegistrationViewController.swift"; sourceTree = SOURCE_ROOT; };
+		F77D501123C1F08100E89E67 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F77F22442392DB6A004610CE /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		F77F22452392E816004610CE /* Extension+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+CALayer.swift"; path = "Travel-App/Utility/Extension+CALayer.swift"; sourceTree = SOURCE_ROOT; };
 		F780CE6123A2F91200E8E248 /* ProfileOptionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileOptionViewCell.swift; path = View/ProfileOptionViewCell.swift; sourceTree = "<group>"; };
@@ -380,6 +382,14 @@
 			path = Authorisation;
 			sourceTree = "<group>";
 		};
+		F77D500F23C1F04F00E89E67 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F77D501123C1F08100E89E67 /* Utilities.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F77F22432392DB6A004610CE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +592,7 @@
 		F7ADB08D237F3A9700DA4E89 /* Travel-App */ = {
 			isa = PBXGroup;
 			children = (
+				F77D500F23C1F04F00E89E67 /* Helpers */,
 				F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */,
 				F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */,
 				F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */,
@@ -880,6 +891,7 @@
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
 				F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */,
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
+				F77D501323C1F08100E89E67 /* Utilities.swift in Sources */,
 				F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */,
 				F71ACDEB238B41E60092279F /* PlaceData.swift in Sources */,
 				F7EF6918239BA4AA0004EF4E /* PreferenceOptionDelegate.swift in Sources */,
