@@ -24,13 +24,15 @@ class RegistrationViewController: UIViewController {
         if error != nil {
             showError(error!)
         }else {
+            let name = self.nameField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+            
             let signUpManager = FirebaseAuthManager.shared
-            signUpManager.createUser(email: emailField.text!,
+            signUpManager.createUser(name: name!,
+                                     email: emailField.text!,
                                      password: passwordField.text!) { [weak self] (success) in
                 guard let `self` = self else { return }
                 var message: String = ""
                 if (success) {
-                    let name = self.nameField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                     let surname = self.surnameField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                     let email = self.emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                     signUpManager.setUserData(name: name!, surname: surname!, email: email!) { success in
