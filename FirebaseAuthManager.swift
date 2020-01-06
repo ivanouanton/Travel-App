@@ -77,7 +77,7 @@ class FirebaseAuthManager {
         
         guard let imageSelected = image else { return }
         guard let uid = uid else { return }
-        
+
         guard let imageData = imageSelected.jpegData(compressionQuality: 0.4) else { return }
         
         let storageRef = Storage.storage().reference(forURL: "gs://trello-2704d.appspot.com")
