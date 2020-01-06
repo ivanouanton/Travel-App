@@ -42,7 +42,10 @@
 		F77D500E23C139D000E89E67 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D500D23C139D000E89E67 /* RegistrationViewController.swift */; };
 		F77D501323C1F08100E89E67 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D501123C1F08100E89E67 /* Utilities.swift */; };
 		F77D501523C3D0C800E89E67 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D501423C3D0C700E89E67 /* UserDefaultsManager.swift */; };
+		F77D501823C3D1BE00E89E67 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D501623C3D1BE00E89E67 /* SplashScreenViewController.swift */; };
+		F77D501923C3D1BE00E89E67 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D501723C3D1BE00E89E67 /* SplashScreenViewController.xib */; };
 		F77F22462392E816004610CE /* Extension+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77F22452392E816004610CE /* Extension+CALayer.swift */; };
+		F780A4C523C3DBB300A9A375 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780A4C423C3DBB300A9A375 /* SplashScreenPresenter.swift */; };
 		F780CE6323A2F91200E8E248 /* ProfileOptionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780CE6123A2F91200E8E248 /* ProfileOptionViewCell.swift */; };
 		F780CE6423A2F91200E8E248 /* ProfileOptionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F780CE6223A2F91200E8E248 /* ProfileOptionViewCell.xib */; };
 		F780CE6723A2FDAD00E8E248 /* RecentPlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780CE6523A2FDAC00E8E248 /* RecentPlacesTableViewCell.swift */; };
@@ -146,8 +149,11 @@
 		F77D500D23C139D000E89E67 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = "Travel-App/RegistrationViewController.swift"; sourceTree = SOURCE_ROOT; };
 		F77D501123C1F08100E89E67 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F77D501423C3D0C700E89E67 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		F77D501623C3D1BE00E89E67 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplashScreenViewController.swift; path = "Travel-App/Scenes/Splash/SplashScreenViewController.swift"; sourceTree = SOURCE_ROOT; };
+		F77D501723C3D1BE00E89E67 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SplashScreenViewController.xib; path = "Travel-App/Scenes/Splash/SplashScreenViewController.xib"; sourceTree = SOURCE_ROOT; };
 		F77F22442392DB6A004610CE /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		F77F22452392E816004610CE /* Extension+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+CALayer.swift"; path = "Travel-App/Utility/Extension+CALayer.swift"; sourceTree = SOURCE_ROOT; };
+		F780A4C423C3DBB300A9A375 /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
 		F780CE6123A2F91200E8E248 /* ProfileOptionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileOptionViewCell.swift; path = View/ProfileOptionViewCell.swift; sourceTree = "<group>"; };
 		F780CE6223A2F91200E8E248 /* ProfileOptionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileOptionViewCell.xib; path = View/ProfileOptionViewCell.xib; sourceTree = "<group>"; };
 		F780CE6523A2FDAC00E8E248 /* RecentPlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecentPlacesTableViewCell.swift; path = View/RecentPlacesTableViewCell.swift; sourceTree = "<group>"; };
@@ -393,6 +399,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		F77D501A23C3D1CC00E89E67 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				F77D501623C3D1BE00E89E67 /* SplashScreenViewController.swift */,
+				F77D501723C3D1BE00E89E67 /* SplashScreenViewController.xib */,
+				F780A4C423C3DBB300A9A375 /* SplashScreenPresenter.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		F77F22432392DB6A004610CE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -457,6 +473,7 @@
 				F79883712381C60A00F01F3A /* Home */,
 				F79883662381AF9600F01F3A /* Search */,
 				F77C178C23AAC34E009D2D69 /* Authorisation */,
+				F77D501A23C3D1CC00E89E67 /* Splash */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -769,6 +786,7 @@
 				F780CE6C23A315F200E8E248 /* RecentPlaceCollectionViewCell.xib in Resources */,
 				F77C178E23AACAE1009D2D69 /* Authorisation.storyboard in Resources */,
 				F7C7A1AC238B369A00C33FE4 /* GoogleService-Info.plist in Resources */,
+				F77D501923C3D1BE00E89E67 /* SplashScreenViewController.xib in Resources */,
 				F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
 				F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */,
 				F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
@@ -848,6 +866,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7CFD009239BC76400983631 /* AppButton.swift in Sources */,
+				F780A4C523C3DBB300A9A375 /* SplashScreenPresenter.swift in Sources */,
 				F7C7A1AA238B30CD00C33FE4 /* GoogleApiService.swift in Sources */,
 				F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */,
 				F7EF6921239BC1310004EF4E /* ToursPresenterProtocol.swift in Sources */,
@@ -877,6 +896,7 @@
 				F7B45FFF2389103F005CBEE4 /* PreferenceBoardViewController.swift in Sources */,
 				F7CFD013239BCC8800983631 /* ProfileViewProtocol.swift in Sources */,
 				F79B3873239C13630032F598 /* ToursManager.swift in Sources */,
+				F77D501823C3D1BE00E89E67 /* SplashScreenViewController.swift in Sources */,
 				F7EF691F239BC1230004EF4E /* ToursPresenter.swift in Sources */,
 				F780CE6323A2F91200E8E248 /* ProfileOptionViewCell.swift in Sources */,
 				F77F22462392E816004610CE /* Extension+CALayer.swift in Sources */,

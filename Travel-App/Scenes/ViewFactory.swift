@@ -52,5 +52,10 @@ class ViewFactory{
         let vc = storyboard.instantiateViewController(withIdentifier: "AuthViewController") as! AuthViewController
         return vc
     }
+    
+    static func createSplashVC() -> SplashScreenViewController{
+        let vc = SplashScreenViewController(nibName: "SplashScreenViewController", bundle: nil)
+        return vc
+    }
 }
 
