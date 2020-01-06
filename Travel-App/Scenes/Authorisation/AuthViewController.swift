@@ -23,20 +23,20 @@ class AuthViewController: UIViewController {
         
         let loginManager = FirebaseAuthManager.shared
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-        loginManager.signIn(email: email, pass: password) {[weak self] (success) in
+        loginManager.signIn(email: email, pass: password) {[weak self] (state) in
+
             guard let `self` = self else { return }
-            var message: String = ""
-            if (success) {
+            
+            switch state{
+            case .error:
+                self.showAlert("There was an error.", completion: nil)
+            case .notVerified:
+                self.showAlert("Please, confirm your email", completion: nil)
+            case .verified:
                 let vc = AppTabBarController()
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)
-            } else {
-                message = "There was an error."
             }
-            let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            self.present(alertController, animated: true, completion: nil)
         }
-
     }
 }

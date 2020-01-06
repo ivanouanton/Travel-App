@@ -63,12 +63,18 @@ class FirebaseAuthManager {
         
     }
     
-    func signIn(email: String, pass: String, completionBlock: @escaping (_ success: Bool) -> Void) {
+    func signIn(email: String, pass: String, completionBlock: @escaping (_ success: AuthStatus) -> Void) {
         Auth.auth().signIn(withEmail: email, password: pass) { (result, error) in
             if let error = error, let _ = AuthErrorCode(rawValue: error._code) {
-                completionBlock(false)
+                completionBlock(.error)
             } else {
-                completionBlock(true)
+                guard let user = result?.user else {return}
+                if user.isEmailVerified {
+                    completionBlock(.verified)
+                    UserDefaultsService.shared.saveData(true, keyValue: .isLoggedIn)
+                }else {
+                    completionBlock(.notVerified)
+                }
             }
         }
     }

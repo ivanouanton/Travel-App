@@ -93,15 +93,6 @@ class RegistrationViewController: UIViewController {
         
         return nil
     }
-    
-    func showAlert(_ message: String, completion: (() -> ())? ) {
-        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "Ok", style: .cancel) { (alertAction) in
-            (completion ?? {})()
-        }
-        alertController.addAction(alertAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
 }
 
 import UIKit

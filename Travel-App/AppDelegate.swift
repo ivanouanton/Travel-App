@@ -33,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = ViewFactory.createAuthVC()
         }
         
-        self.window?.rootViewController = ViewFactory.createAuthVC()
         self.window?.makeKeyAndVisible()
         
         return true
