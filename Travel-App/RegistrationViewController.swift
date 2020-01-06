@@ -18,44 +18,39 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var passwordField: CustomTextField!
     @IBOutlet weak var avatarImage: UIImageView!
     
+    var image: UIImage? = nil
+    
     @IBAction func didPressedSignUp(_ sender: Any) {
         
         let error = validateFields()
         
-        if error != nil {
-            showError(error!)
-        }else {
-            let name = self.nameField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            let signUpManager = FirebaseAuthManager.shared
-            signUpManager.createUser(name: name!,
-                                     email: emailField.text!,
-                                     password: passwordField.text!) { [weak self] (success) in
-                guard let `self` = self else { return }
-                var message: String = ""
-                if (success) {
-                    let surname = self.surnameField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-                    let email = self.emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-                    signUpManager.setUserData(name: name!, surname: surname!, email: email!) { success in
-                        
-                        if success {
-                            let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-                            let alertAction = UIAlertAction(title: "Ok", style: .cancel) { (alertAction) in
-                                self.performSegue(withIdentifier: "signIn", sender: self)
-                            }
-                            alertController.addAction(alertAction)
-                                
-                            self.present(alertController, animated: true, completion: nil)
-                        }
-                    }
-                    message = "User was sucessfully created."
-                } else {
-                    message = "There was an error."
-                }
-                                        
-                let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-                let alertAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
-                alertController.addAction(alertAction)
+        guard error == nil else {
+            showAlert(error!, completion: nil)
+            return
+        }
+        
+        let name = self.nameField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        let signUpManager = FirebaseAuthManager.shared
+        signUpManager.createUser(name: name!,
+                                 email: emailField.text!,
+                                 password: passwordField.text!) { [weak self] (success) in
+            guard let `self` = self else { return }
+            var message: String = ""
+            if success {
+                let surname = self.surnameField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+                let email = self.emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+                
+                signUpManager.setUserData(name: name!, surname: surname!, email: email!) { success in }
+                signUpManager.saveProfileImage(self.image) { success in }
+                
+                message = "User was sucessfully created."
+            } else {
+                message = "There was an error."
+            }
+                                    
+            self.showAlert(message) {
+                self.performSegue(withIdentifier: "signIn", sender: self)
             }
         }
     }
@@ -99,8 +94,13 @@ class RegistrationViewController: UIViewController {
         return nil
     }
     
-    func showError(_ message: String) {
-        print(message)
+    func showAlert(_ message: String, completion: (() -> ())? ) {
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .cancel) { (alertAction) in
+            (completion ?? {})()
+        }
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -123,6 +123,7 @@ extension UIViewController {
 extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let imageSelected = info[.editedImage] as? UIImage {
+            image = imageSelected
             avatarImage.image = imageSelected
         }
         

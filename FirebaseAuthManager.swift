@@ -8,6 +8,7 @@
 
 import FirebaseAuth
 import Firebase
+import FirebaseStorage
 import UIKit
 
 class FirebaseAuthManager {
@@ -68,6 +69,26 @@ class FirebaseAuthManager {
                 completionBlock(false)
             } else {
                 completionBlock(true)
+            }
+        }
+    }
+    
+    func saveProfileImage(_ image: UIImage?, completion: @escaping (_ success: Bool) -> Void) {
+        
+        guard let imageSelected = image else { return }
+        guard let uid = uid else { return }
+        
+        guard let imageData = imageSelected.jpegData(compressionQuality: 0.4) else { return }
+        
+        let storageRef = Storage.storage().reference(forURL: "gs://trello-2704d.appspot.com")
+        let storageProfileRef = storageRef.child("profile").child(uid)
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpg"
+        
+        storageProfileRef.putData(imageData, metadata: metadata) { (storageMetadata, error) in
+            if let error = error {
+                print(error.localizedDescription)
             }
         }
     }
