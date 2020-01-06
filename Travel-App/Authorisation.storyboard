@@ -394,6 +394,7 @@
                         <outlet property="homeAddressField" destination="e6f-vV-K8M" id="1qn-m0-OmI"/>
                         <outlet property="nameField" destination="MVI-NF-rHE" id="y3W-v6-EKt"/>
                         <outlet property="passwordField" destination="JVF-Dk-tYR" id="cRU-u2-Wvl"/>
+                        <outlet property="scrollView" destination="yRL-Fd-bmn" id="zR3-Bl-ML8"/>
                         <outlet property="surnameField" destination="lsK-DY-6eY" id="aZi-6g-0fd"/>
                     </connections>
                 </viewController>
