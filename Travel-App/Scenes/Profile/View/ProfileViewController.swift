@@ -38,6 +38,8 @@ final class ProfileViewController: UIViewController{
         self.profileTableView.register(optionCell, forCellReuseIdentifier: ProfileOptionViewCell.reuseIdentifier)
         let recentPlacesCell = UINib(nibName: RecentPlacesTableViewCell.nibName, bundle: nil)
         self.profileTableView.register(recentPlacesCell, forCellReuseIdentifier: RecentPlacesTableViewCell.reuseIdentifier)
+        
+        self.presenter.getUserData()
     }
     
     override func viewWillAppear(_ animated: Bool) {

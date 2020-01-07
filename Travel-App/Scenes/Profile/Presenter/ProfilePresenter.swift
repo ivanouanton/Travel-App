@@ -16,7 +16,11 @@ class ProfilePresenter{
 
 extension ProfilePresenter: ProfilePresenterProtocol{
     func getUserData() {
+        let profileManager = FirebaseProfileManager.shared
         
+        profileManager.getAuthUserData { (user, image, error) in
+            print("Success")
+        }
     }
 }
 
