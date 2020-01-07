@@ -38,7 +38,15 @@
 		F77C178E23AACAE1009D2D69 /* Authorisation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77C178D23AACAE1009D2D69 /* Authorisation.storyboard */; };
 		F77C179023AAD216009D2D69 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C178F23AAD216009D2D69 /* CustomTextField.swift */; };
 		F77C179223AAD3C4009D2D69 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C179123AAD3C4009D2D69 /* UIViewController+Extension.swift */; };
+		F77D500C23C102DE00E89E67 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D500B23C102DE00E89E67 /* FirebaseAuthManager.swift */; };
+		F77D500E23C139D000E89E67 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D500D23C139D000E89E67 /* RegistrationViewController.swift */; };
+		F77D501323C1F08100E89E67 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D501123C1F08100E89E67 /* Utilities.swift */; };
+		F77D501523C3D0C800E89E67 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D501423C3D0C700E89E67 /* UserDefaultsManager.swift */; };
+		F77D501823C3D1BE00E89E67 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D501623C3D1BE00E89E67 /* SplashScreenViewController.swift */; };
+		F77D501923C3D1BE00E89E67 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D501723C3D1BE00E89E67 /* SplashScreenViewController.xib */; };
 		F77F22462392E816004610CE /* Extension+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77F22452392E816004610CE /* Extension+CALayer.swift */; };
+		F780A4C523C3DBB300A9A375 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780A4C423C3DBB300A9A375 /* SplashScreenPresenter.swift */; };
+		F780A4C723C3DFF600A9A375 /* AuthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780A4C623C3DFF600A9A375 /* AuthStatus.swift */; };
 		F780CE6323A2F91200E8E248 /* ProfileOptionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780CE6123A2F91200E8E248 /* ProfileOptionViewCell.swift */; };
 		F780CE6423A2F91200E8E248 /* ProfileOptionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F780CE6223A2F91200E8E248 /* ProfileOptionViewCell.xib */; };
 		F780CE6723A2FDAD00E8E248 /* RecentPlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780CE6523A2FDAC00E8E248 /* RecentPlacesTableViewCell.swift */; };
@@ -138,8 +146,16 @@
 		F77C178D23AACAE1009D2D69 /* Authorisation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Authorisation.storyboard; path = "Travel-App/Authorisation.storyboard"; sourceTree = SOURCE_ROOT; };
 		F77C178F23AAD216009D2D69 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F77C179123AAD3C4009D2D69 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		F77D500B23C102DE00E89E67 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = SOURCE_ROOT; };
+		F77D500D23C139D000E89E67 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = "Travel-App/RegistrationViewController.swift"; sourceTree = SOURCE_ROOT; };
+		F77D501123C1F08100E89E67 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		F77D501423C3D0C700E89E67 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		F77D501623C3D1BE00E89E67 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SplashScreenViewController.swift; path = "Travel-App/Scenes/Splash/SplashScreenViewController.swift"; sourceTree = SOURCE_ROOT; };
+		F77D501723C3D1BE00E89E67 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SplashScreenViewController.xib; path = "Travel-App/Scenes/Splash/SplashScreenViewController.xib"; sourceTree = SOURCE_ROOT; };
 		F77F22442392DB6A004610CE /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		F77F22452392E816004610CE /* Extension+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+CALayer.swift"; path = "Travel-App/Utility/Extension+CALayer.swift"; sourceTree = SOURCE_ROOT; };
+		F780A4C423C3DBB300A9A375 /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
+		F780A4C623C3DFF600A9A375 /* AuthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStatus.swift; sourceTree = SOURCE_ROOT; };
 		F780CE6123A2F91200E8E248 /* ProfileOptionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileOptionViewCell.swift; path = View/ProfileOptionViewCell.swift; sourceTree = "<group>"; };
 		F780CE6223A2F91200E8E248 /* ProfileOptionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileOptionViewCell.xib; path = View/ProfileOptionViewCell.xib; sourceTree = "<group>"; };
 		F780CE6523A2FDAC00E8E248 /* RecentPlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecentPlacesTableViewCell.swift; path = View/RecentPlacesTableViewCell.swift; sourceTree = "<group>"; };
@@ -371,8 +387,28 @@
 				F700442A23A194C300D7E59F /* AuthViewController.swift */,
 				F77C178D23AACAE1009D2D69 /* Authorisation.storyboard */,
 				F77C178F23AAD216009D2D69 /* CustomTextField.swift */,
+				F77D500D23C139D000E89E67 /* RegistrationViewController.swift */,
 			);
 			path = Authorisation;
+			sourceTree = "<group>";
+		};
+		F77D500F23C1F04F00E89E67 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F77D501123C1F08100E89E67 /* Utilities.swift */,
+				F77D501423C3D0C700E89E67 /* UserDefaultsManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F77D501A23C3D1CC00E89E67 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				F77D501623C3D1BE00E89E67 /* SplashScreenViewController.swift */,
+				F77D501723C3D1BE00E89E67 /* SplashScreenViewController.xib */,
+				F780A4C423C3DBB300A9A375 /* SplashScreenPresenter.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		F77F22432392DB6A004610CE /* Utility */ = {
@@ -439,6 +475,7 @@
 				F79883712381C60A00F01F3A /* Home */,
 				F79883662381AF9600F01F3A /* Search */,
 				F77C178C23AAC34E009D2D69 /* Authorisation */,
+				F77D501A23C3D1CC00E89E67 /* Splash */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -539,6 +576,8 @@
 			children = (
 				F79B3872239C13620032F598 /* ToursManager.swift */,
 				F79B387F239D22370032F598 /* PlaceManager.swift */,
+				F77D500B23C102DE00E89E67 /* FirebaseAuthManager.swift */,
+				F780A4C623C3DFF600A9A375 /* AuthStatus.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -576,6 +615,7 @@
 		F7ADB08D237F3A9700DA4E89 /* Travel-App */ = {
 			isa = PBXGroup;
 			children = (
+				F77D500F23C1F04F00E89E67 /* Helpers */,
 				F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */,
 				F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */,
 				F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */,
@@ -749,6 +789,7 @@
 				F780CE6C23A315F200E8E248 /* RecentPlaceCollectionViewCell.xib in Resources */,
 				F77C178E23AACAE1009D2D69 /* Authorisation.storyboard in Resources */,
 				F7C7A1AC238B369A00C33FE4 /* GoogleService-Info.plist in Resources */,
+				F77D501923C3D1BE00E89E67 /* SplashScreenViewController.xib in Resources */,
 				F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
 				F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */,
 				F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
@@ -828,6 +869,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7CFD009239BC76400983631 /* AppButton.swift in Sources */,
+				F780A4C523C3DBB300A9A375 /* SplashScreenPresenter.swift in Sources */,
 				F7C7A1AA238B30CD00C33FE4 /* GoogleApiService.swift in Sources */,
 				F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */,
 				F7EF6921239BC1310004EF4E /* ToursPresenterProtocol.swift in Sources */,
@@ -838,6 +880,8 @@
 				F7842A4023B8C3CC009F692A /* PlaceCardModel.swift in Sources */,
 				F79B387A239C6A3C0032F598 /* TourHederView.swift in Sources */,
 				F7932B692393A687006E6496 /* PlaceInfoViewController.swift in Sources */,
+				F77D501523C3D0C800E89E67 /* UserDefaultsManager.swift in Sources */,
+				F780A4C723C3DFF600A9A375 /* AuthStatus.swift in Sources */,
 				F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */,
 				F780CE6B23A315F100E8E248 /* RecentPlaceCollectionViewCell.swift in Sources */,
 				F75EAD3A2392FED80001C457 /* CategoryFilterDelegate.swift in Sources */,
@@ -856,6 +900,7 @@
 				F7B45FFF2389103F005CBEE4 /* PreferenceBoardViewController.swift in Sources */,
 				F7CFD013239BCC8800983631 /* ProfileViewProtocol.swift in Sources */,
 				F79B3873239C13630032F598 /* ToursManager.swift in Sources */,
+				F77D501823C3D1BE00E89E67 /* SplashScreenViewController.swift in Sources */,
 				F7EF691F239BC1230004EF4E /* ToursPresenter.swift in Sources */,
 				F780CE6323A2F91200E8E248 /* ProfileOptionViewCell.swift in Sources */,
 				F77F22462392E816004610CE /* Extension+CALayer.swift in Sources */,
@@ -874,6 +919,7 @@
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
 				F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */,
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
+				F77D501323C1F08100E89E67 /* Utilities.swift in Sources */,
 				F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */,
 				F71ACDEB238B41E60092279F /* PlaceData.swift in Sources */,
 				F7EF6918239BA4AA0004EF4E /* PreferenceOptionDelegate.swift in Sources */,
@@ -887,12 +933,14 @@
 				F72B7C1623A6D6AE009155D4 /* UIButton+Extension.swift in Sources */,
 				F704B3FC23B889AF0090DD6F /* CarouselFlowLayout.swift in Sources */,
 				3A3D2E64238EE4B500DD9876 /* PlaceDataHolder.swift in Sources */,
+				F77D500E23C139D000E89E67 /* RegistrationViewController.swift in Sources */,
 				F77C179023AAD216009D2D69 /* CustomTextField.swift in Sources */,
 				F745760E238B480C00C5A1DE /* Category.swift in Sources */,
 				F704B3F823B7F4B00090DD6F /* PlacesCollectionView.swift in Sources */,
 				F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */,
 				F79883742381C6CB00F01F3A /* HomePresenterProtocol.swift in Sources */,
 				3A3A3814239A74B9001FE150 /* CategoryPreference.swift in Sources */,
+				F77D500C23C102DE00E89E67 /* FirebaseAuthManager.swift in Sources */,
 				F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */,
 				F7CFD020239BE3A800983631 /* Tour.swift in Sources */,
 				F72B7C1423A6CD39009155D4 /* OptionFilterDelegate.swift in Sources */,

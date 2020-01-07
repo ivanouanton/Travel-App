@@ -16,26 +16,43 @@ class AuthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
 
-//        self.emailTextField.layer.addBorder(edge: .bottom, color: .lightGray, thickness: 1)
-        // Do any additional setup after loading the view.
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height/3
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
     }
 
     @IBAction func didPressedSignIn(_ sender: Any) {
-        let vc = AppTabBarController()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
-    }
-    
-    
-    /*
-    // MARK: - Navigation
+        
+        let loginManager = FirebaseAuthManager.shared
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        loginManager.signIn(email: email, pass: password) {[weak self] (state) in
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            guard let `self` = self else { return }
+            
+            switch state{
+            case .error:
+                self.showAlert("There was an error.", completion: nil)
+            case .notVerified:
+                self.showAlert("Please, confirm your email", completion: nil)
+            case .verified:
+                let vc = AppTabBarController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
     }
-    */
-
 }

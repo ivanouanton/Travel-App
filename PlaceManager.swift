@@ -18,7 +18,7 @@ class PlaceManager {
     private let placesImageCache = NSCache<NSString, UIImage>()
     private let categoryImagesCache = NSCache<NSString, UIImage>()
 
-    init() {}
+    private init() {}
     
     func getCategoryImg(with id: String) -> UIImage?{
         let cachedImage = self.categoryImagesCache.object(forKey: id as NSString)

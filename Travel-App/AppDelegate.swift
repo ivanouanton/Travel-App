@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey(Defaults.apiKey)
         GMSPlacesClient.provideAPIKey(Defaults.apiKey)
@@ -26,9 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         window = UIWindow(frame: UIScreen.main.bounds)
+                
+        if let isLoginIn =  UserDefaultsService.shared.getData(for: .isLoggedIn) as? Bool,
+            isLoginIn == true{
+            self.window?.rootViewController = AppTabBarController()
+        }else {
+            self.window?.rootViewController = ViewFactory.createAuthVC()
+        }
         
-//        let vc = AppTabBarController()
-        self.window?.rootViewController = ViewFactory.createAuthVC()
         self.window?.makeKeyAndVisible()
         
         return true
@@ -55,7 +59,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 
