@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 
 struct Tour{
-    
     let description: String
     let duration: String
     let imageRef: DocumentReference?

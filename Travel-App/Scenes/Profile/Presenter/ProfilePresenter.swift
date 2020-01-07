@@ -6,10 +6,17 @@
 //  Copyright © 2019 companyName. All rights reserved.
 //
 
-class ProfilePresenter: ProfilePresenterProtocol{
+class ProfilePresenter{
     weak var view: ProfileViewProtocol!
     
     required init(view: ProfileViewProtocol) {
         self.view = view
     }
 }
+
+extension ProfilePresenter: ProfilePresenterProtocol{
+    func getUserData() {
+        
+    }
+}
+

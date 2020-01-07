@@ -11,6 +11,8 @@ import UIKit
 final class ProfileViewController: UIViewController{
     var presenter: ProfilePresenterProtocol!
     
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
     @IBAction func didPressedAuth(_ sender: Any) {
         let vc = ViewFactory.createAuthVC()
         self.present(vc, animated: true, completion: nil)

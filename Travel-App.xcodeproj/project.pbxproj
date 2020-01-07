@@ -47,6 +47,7 @@
 		F77F22462392E816004610CE /* Extension+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77F22452392E816004610CE /* Extension+CALayer.swift */; };
 		F780A4C523C3DBB300A9A375 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780A4C423C3DBB300A9A375 /* SplashScreenPresenter.swift */; };
 		F780A4C723C3DFF600A9A375 /* AuthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780A4C623C3DFF600A9A375 /* AuthStatus.swift */; };
+		F780A4CB23C4F4EB00A9A375 /* FirebaseProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780A4CA23C4F4EB00A9A375 /* FirebaseProfileManager.swift */; };
 		F780CE6323A2F91200E8E248 /* ProfileOptionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780CE6123A2F91200E8E248 /* ProfileOptionViewCell.swift */; };
 		F780CE6423A2F91200E8E248 /* ProfileOptionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F780CE6223A2F91200E8E248 /* ProfileOptionViewCell.xib */; };
 		F780CE6723A2FDAD00E8E248 /* RecentPlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780CE6523A2FDAC00E8E248 /* RecentPlacesTableViewCell.swift */; };
@@ -156,6 +157,7 @@
 		F77F22452392E816004610CE /* Extension+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+CALayer.swift"; path = "Travel-App/Utility/Extension+CALayer.swift"; sourceTree = SOURCE_ROOT; };
 		F780A4C423C3DBB300A9A375 /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
 		F780A4C623C3DFF600A9A375 /* AuthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStatus.swift; sourceTree = SOURCE_ROOT; };
+		F780A4CA23C4F4EB00A9A375 /* FirebaseProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseProfileManager.swift; path = "Travel-App/FirebaseProfileManager.swift"; sourceTree = SOURCE_ROOT; };
 		F780CE6123A2F91200E8E248 /* ProfileOptionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileOptionViewCell.swift; path = View/ProfileOptionViewCell.swift; sourceTree = "<group>"; };
 		F780CE6223A2F91200E8E248 /* ProfileOptionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileOptionViewCell.xib; path = View/ProfileOptionViewCell.xib; sourceTree = "<group>"; };
 		F780CE6523A2FDAC00E8E248 /* RecentPlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecentPlacesTableViewCell.swift; path = View/RecentPlacesTableViewCell.swift; sourceTree = "<group>"; };
@@ -425,6 +427,20 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		F780A4C923C4F24F00A9A375 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				F700442823A17C9C00D7E59F /* Profile.storyboard */,
+				F780CE6123A2F91200E8E248 /* ProfileOptionViewCell.swift */,
+				F780CE6223A2F91200E8E248 /* ProfileOptionViewCell.xib */,
+				F780CE6523A2FDAC00E8E248 /* RecentPlacesTableViewCell.swift */,
+				F780CE6623A2FDAC00E8E248 /* RecentPlacesTableViewCell.xib */,
+				F780CE6923A315F100E8E248 /* RecentPlaceCollectionViewCell.swift */,
+				F780CE6A23A315F100E8E248 /* RecentPlaceCollectionViewCell.xib */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
 		F7932B6A23943956006E6496 /* PlaceInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -540,15 +556,9 @@
 		F798837E2381C9A500F01F3A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F7CFD012239BCC8800983631 /* ProfileViewProtocol.swift */,
 				F7CFD014239BCCD600983631 /* ProfileViewController.swift */,
-				F700442823A17C9C00D7E59F /* Profile.storyboard */,
-				F780CE6123A2F91200E8E248 /* ProfileOptionViewCell.swift */,
-				F780CE6223A2F91200E8E248 /* ProfileOptionViewCell.xib */,
-				F780CE6523A2FDAC00E8E248 /* RecentPlacesTableViewCell.swift */,
-				F780CE6623A2FDAC00E8E248 /* RecentPlacesTableViewCell.xib */,
-				F780CE6923A315F100E8E248 /* RecentPlaceCollectionViewCell.swift */,
-				F780CE6A23A315F100E8E248 /* RecentPlaceCollectionViewCell.xib */,
+				F7CFD012239BCC8800983631 /* ProfileViewProtocol.swift */,
+				F780A4C923C4F24F00A9A375 /* CustomViews */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -577,6 +587,7 @@
 				F79B3872239C13620032F598 /* ToursManager.swift */,
 				F79B387F239D22370032F598 /* PlaceManager.swift */,
 				F77D500B23C102DE00E89E67 /* FirebaseAuthManager.swift */,
+				F780A4CA23C4F4EB00A9A375 /* FirebaseProfileManager.swift */,
 				F780A4C623C3DFF600A9A375 /* AuthStatus.swift */,
 			);
 			path = Storage;
@@ -912,6 +923,7 @@
 				F7CFD01C239BD3BB00983631 /* TourTableViewCell.swift in Sources */,
 				F7F90D4623873FA600722F90 /* SettingTableViewCell.swift in Sources */,
 				F79B387C239D1E4B0032F598 /* NetworkProvider.swift in Sources */,
+				F780A4CB23C4F4EB00A9A375 /* FirebaseProfileManager.swift in Sources */,
 				F79B3878239C60400032F598 /* NavigationController.swift in Sources */,
 				F761DFF22381CF7400D9DBBD /* SettingsViewController.swift in Sources */,
 				F79B3880239D22370032F598 /* PlaceManager.swift in Sources */,

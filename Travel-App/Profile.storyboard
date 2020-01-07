@@ -93,6 +93,8 @@
                     </view>
                     <connections>
                         <outlet property="profileTableView" destination="CYK-cq-OHv" id="Cui-jy-oY9"/>
+                        <outlet property="userImage" destination="UQm-8P-e9d" id="A9s-Mv-a8s"/>
+                        <outlet property="userNameLabel" destination="5Wb-wA-Ink" id="BWn-uT-Fuo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azq-gf-G4F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
