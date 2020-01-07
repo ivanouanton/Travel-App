@@ -41,8 +41,9 @@ class RegistrationViewController: UIViewController {
             if success {
                 let surname = self.surnameField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                 let email = self.emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-                
-                signUpManager.setUserData(name: name!, surname: surname!, email: email!) { success in }
+                let address = self.homeAddressField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+
+                signUpManager.setUserData(name: name!, surname: surname!, email: email!, address: address! ) { success in }
                 signUpManager.saveProfileImage(self.image) { success in }
                 
                 message = "User was sucessfully created."

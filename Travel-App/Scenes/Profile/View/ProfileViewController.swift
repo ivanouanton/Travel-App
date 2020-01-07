@@ -11,6 +11,8 @@ import UIKit
 final class ProfileViewController: UIViewController{
     var presenter: ProfilePresenterProtocol!
     
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
     @IBAction func didPressedAuth(_ sender: Any) {
         let vc = ViewFactory.createAuthVC()
         self.present(vc, animated: true, completion: nil)
@@ -20,6 +22,7 @@ final class ProfileViewController: UIViewController{
     
     private var tableSection = ["Information", "Recent places"]
     private var information: [(key: String, value: String)] = [("Language", "English"), ("Home address", "352 Thiel Motorway Suite 421")]
+    private var places = Array<PlaceCardModel>()
     
     
     // MARK: - Life Cycle
@@ -36,6 +39,8 @@ final class ProfileViewController: UIViewController{
         self.profileTableView.register(optionCell, forCellReuseIdentifier: ProfileOptionViewCell.reuseIdentifier)
         let recentPlacesCell = UINib(nibName: RecentPlacesTableViewCell.nibName, bundle: nil)
         self.profileTableView.register(recentPlacesCell, forCellReuseIdentifier: RecentPlacesTableViewCell.reuseIdentifier)
+        
+        self.presenter.getUserData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +52,6 @@ final class ProfileViewController: UIViewController{
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         super.viewWillDisappear(animated)
     }
-    
 }
 
 extension ProfileViewController{
@@ -61,7 +65,23 @@ extension ProfileViewController{
 }
 
 extension ProfileViewController: ProfileViewProtocol{
+    func showRecentPlaces(with places: Array<PlaceCardModel>) {
+        self.places = places
+        self.profileTableView.reloadData()
+//        let cell = profileTableView.dequeueReusableCell(withIdentifier: RecentPlacesTableViewCell.reuseIdentifier, for: IndexPath(row: 0, section: 1)) as! RecentPlacesTableViewCell
+//        cell.places = places
+
+    }
     
+    func showUserData(with name: String, information: [(key: String, value: String)]) {
+        self.userNameLabel.text = name
+        self.information = information
+        self.profileTableView.reloadData()
+    }
+    
+    func showUserImage(_ image: UIImage) {
+        self.userImage.image = image
+    }
 }
 
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
@@ -109,6 +129,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: RecentPlacesTableViewCell.reuseIdentifier, for: indexPath) as! RecentPlacesTableViewCell
+            cell.places = places
+            
             return cell
         default:
             return UITableViewCell()
@@ -123,6 +145,5 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
             return tableView.rowHeight
         }
     }
-    
     
 }
