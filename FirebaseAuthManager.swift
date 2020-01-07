@@ -69,9 +69,11 @@ class FirebaseAuthManager {
                 completionBlock(.error)
             } else {
                 guard let user = result?.user else {return}
+                self.uid = user.uid
                 if user.isEmailVerified {
                     completionBlock(.verified)
                     UserDefaultsService.shared.saveData(true, keyValue: .isLoggedIn)
+                    UserDefaultsService.shared.saveData(self.uid, keyValue: .uid)
                 }else {
                     completionBlock(.notVerified)
                 }
