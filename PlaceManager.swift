@@ -83,6 +83,45 @@ class PlaceManager {
         }
     }
     
+    func getPlaceCardModel(with id: String, completion: @escaping (_ place: PlaceCardModel?, _ error: Error?) -> Void){
+        let db = Firestore.firestore()
+        var placeData: PlaceCardModel? = nil
+        var error: Error? = nil
+        let cardGroup = DispatchGroup()
+        
+        let docRef = db.collection("Place").document(id)
+        
+        cardGroup.enter()
+        docRef.getDocument { (document, err) in
+            error = err
+            if let data = document?.data() {
+                
+                let place = PlaceData(data)
+                if let imgId = place.image {
+                    
+                    cardGroup.enter()
+                    ToursManager.shared.getImage(with: imgId ) { (image, error) in
+                        placeData = PlaceCardModel(id: id,
+                                                       name: place.name,
+                                                       category: place.categoryId,
+                                                       price: place.price,
+                                                       image: image,
+                                                       location: place.locationPlace,
+                                                       description: place.description)
+                        cardGroup.leave()
+                    }
+                }
+            }
+            cardGroup.leave()
+        }
+        
+        cardGroup.notify(queue: .main) {
+            completion(placeData, error)
+        }
+    }
+    
+    
+    
     func getPlaces(with option: OptionFilterSelection? , completion: @escaping (_ places: [String:PlaceData]?, _ error: Error?) -> Void){
         let db = Firestore.firestore()
         var places = [String:PlaceData]()

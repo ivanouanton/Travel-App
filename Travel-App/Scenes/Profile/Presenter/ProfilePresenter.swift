@@ -6,6 +6,8 @@
 //  Copyright © 2019 companyName. All rights reserved.
 //
 
+import Foundation
+
 class ProfilePresenter{
     weak var view: ProfileViewProtocol!
     
@@ -16,8 +18,11 @@ class ProfilePresenter{
 
 extension ProfilePresenter: ProfilePresenterProtocol{
     func getUserData() {
+        let userGroup = DispatchGroup()
         let profileManager = FirebaseProfileManager.shared
-        
+        var placesModelData = Array<PlaceCardModel>()
+
+        userGroup.enter()
         profileManager.getAuthUserData { (user, image, error) in
             guard error == nil else {
                 print(error!.localizedDescription)
@@ -30,9 +35,27 @@ extension ProfilePresenter: ProfilePresenterProtocol{
             
             if let user = user {
                 let fullName = user.name + " " + user.surname
-                var information: [(key: String, value: String)] = [("Language", "English"), ("Home address", user.address ?? "")]
+                let information: [(key: String, value: String)] = [("Language", "English"), ("Home address", user.address ?? "")]
                 self.view.showUserData(with: fullName, information: information)
+                
+                guard let places = user.places else {return}
+                
+                for id in places {
+                    userGroup.enter()
+                    PlaceManager.shared.getPlaceCardModel(with: id) { (placeData, error) in
+                        if let place = placeData {
+                            placesModelData.append(place)
+                        }
+                        userGroup.leave()
+                    }
+                }
             }
+            
+            userGroup.leave()
+        }
+        
+        userGroup.notify(queue: .main) {
+            self.view.showRecentPlaces(with: placesModelData)
         }
     }
 }

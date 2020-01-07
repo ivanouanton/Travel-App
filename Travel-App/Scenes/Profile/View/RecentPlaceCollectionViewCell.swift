@@ -11,6 +11,29 @@ import UIKit
 class RecentPlaceCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var placeImage: UIImageView!
+    @IBOutlet weak var titlePlaceLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    var place: PlaceCardModel? {
+        didSet {
+            guard let place = place else {return}
+            placeImage.image = place.image
+            titlePlaceLabel.text = place.name
+            categoryLabel.text = place.category
+            switch place.price {
+            case 0:
+                self.priceLabel.text = "Free"
+            case 1:
+                self.priceLabel.text = "€"
+            case 2:
+                self.priceLabel.text = "€€"
+            default:
+                break
+            }
+        }
+    }
+    
     
     func setupRecentPlaceCell(with image: UIImage){
         self.placeImage.image = image
