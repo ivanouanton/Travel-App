@@ -10,5 +10,5 @@ import UIKit
 
 protocol ProfileViewProtocol: class{
     func showUserImage(_ image: UIImage)
-    func showUserData(with name: String)
+    func showUserData(with name: String, information: [(key: String, value: String)])
 }

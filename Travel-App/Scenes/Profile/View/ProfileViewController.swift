@@ -51,7 +51,6 @@ final class ProfileViewController: UIViewController{
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         super.viewWillDisappear(animated)
     }
-    
 }
 
 extension ProfileViewController{
@@ -65,8 +64,10 @@ extension ProfileViewController{
 }
 
 extension ProfileViewController: ProfileViewProtocol{
-    func showUserData(with name: String) {
+    func showUserData(with name: String, information: [(key: String, value: String)]) {
         self.userNameLabel.text = name
+        self.information = information
+        self.profileTableView.reloadData()
     }
     
     func showUserImage(_ image: UIImage) {
@@ -133,6 +134,5 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
             return tableView.rowHeight
         }
     }
-    
     
 }
