@@ -6,6 +6,9 @@
 //  Copyright © 2019 companyName. All rights reserved.
 //
 
+import UIKit
+
 protocol ProfileViewProtocol: class{
-    
+    func showUserImage(_ image: UIImage)
+    func showUserData(with name: String)
 }

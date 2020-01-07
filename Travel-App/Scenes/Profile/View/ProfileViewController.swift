@@ -65,7 +65,13 @@ extension ProfileViewController{
 }
 
 extension ProfileViewController: ProfileViewProtocol{
+    func showUserData(with name: String) {
+        self.userNameLabel.text = name
+    }
     
+    func showUserImage(_ image: UIImage) {
+        self.userImage.image = image
+    }
 }
 
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{

@@ -432,7 +432,6 @@
 		F780A4C923C4F24F00A9A375 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				F700442823A17C9C00D7E59F /* Profile.storyboard */,
 				F780CE6123A2F91200E8E248 /* ProfileOptionViewCell.swift */,
 				F780CE6223A2F91200E8E248 /* ProfileOptionViewCell.xib */,
 				F780CE6523A2FDAC00E8E248 /* RecentPlacesTableViewCell.swift */,
@@ -560,6 +559,7 @@
 			children = (
 				F7CFD014239BCCD600983631 /* ProfileViewController.swift */,
 				F7CFD012239BCC8800983631 /* ProfileViewProtocol.swift */,
+				F700442823A17C9C00D7E59F /* Profile.storyboard */,
 				F780A4C923C4F24F00A9A375 /* CustomViews */,
 			);
 			name = View;

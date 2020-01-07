@@ -19,7 +19,19 @@ extension ProfilePresenter: ProfilePresenterProtocol{
         let profileManager = FirebaseProfileManager.shared
         
         profileManager.getAuthUserData { (user, image, error) in
-            print("Success")
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return
+            }
+            
+            if let image = image {
+                self.view.showUserImage(image)
+            }
+            
+            if let user = user {
+                let fullName = user.name + " " + user.surname
+                self.view.showUserData(with: fullName)
+            }
         }
     }
 }
