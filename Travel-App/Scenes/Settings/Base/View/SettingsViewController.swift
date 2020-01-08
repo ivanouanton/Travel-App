@@ -10,13 +10,18 @@ import UIKit
 
 final class SettingsViewController: UIViewController{
     var presenter: SettingsPresenterProtocol!
-    var options = [(title: String, options: [String])]()
+    var options = [(title: String, options: [(subTitle: String, value: String?)])]()
     
     private lazy var settingTable: UITableView = {
         let table = UITableView.init(frame: .zero, style: UITableView.Style.grouped)
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.register(SettingTableViewCell.self, forCellReuseIdentifier: "SettingTableViewCell")
+        table.backgroundColor = .clear
+        let optionCell = UINib(nibName: SettingTableViewCell.nibName, bundle: nil)
+        table.register(optionCell, forCellReuseIdentifier: SettingTableViewCell.reuseIdentifier)
+        
         table.dataSource = self
+        table.delegate = self
+        table.separatorStyle = .none
         return table
     }()
     
@@ -30,6 +35,7 @@ final class SettingsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.getSettingsProperty()
+        title = "Settings"
     }
 }
 
@@ -50,13 +56,13 @@ extension SettingsViewController{
 }
 
 extension SettingsViewController: SettingsViewProtocol{
-    func updateTable(with options: [(title: String, options: [String])]) {
+    func updateTable(with options: [(title: String, options: [(subTitle: String, value: String?)])]) {
         self.options = options
         self.settingTable.reloadData()
     }
 }
 
-extension SettingsViewController: UITableViewDataSource{
+extension SettingsViewController: UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return options.count
@@ -66,13 +72,40 @@ extension SettingsViewController: UITableViewDataSource{
         return self.options[section].options.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.options[section].title
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
+
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = self.options[section].title.uppercased()
+        label.font = UIFont(name: "AvenirNextLTPro-Demi", size: 12)
+        label.textColor = UIColor(named: "silver")
+        
+        headerView.addSubview(label)
+
+        NSLayoutConstraint.activate([
+            label.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 32),
+            label.leftAnchor.constraint(equalTo: headerView.leftAnchor, constant: 16)
+        ])
+
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.settingTable.dequeueReusableCell(withIdentifier: "SettingTableViewCell", for: indexPath) as! SettingTableViewCell
-        cell.textLabel?.text = self.options[indexPath.section].options[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.reuseIdentifier, for: indexPath) as! SettingTableViewCell
+        let option = self.options[indexPath.section].options[indexPath.row]
+        cell.title = option.subTitle
+        cell.value = option.value
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 54
     }
 }

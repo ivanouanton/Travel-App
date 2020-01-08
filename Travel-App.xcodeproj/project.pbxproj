@@ -104,13 +104,14 @@
 		F7CFD01C239BD3BB00983631 /* TourTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFD01A239BD3BB00983631 /* TourTableViewCell.swift */; };
 		F7CFD01D239BD3BB00983631 /* TourTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CFD01B239BD3BB00983631 /* TourTableViewCell.xib */; };
 		F7CFD020239BE3A800983631 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CFD01F239BE3A800983631 /* Tour.swift */; };
+		F7DFCE3523C662B5002A95C7 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DFCE3323C662B5002A95C7 /* SettingTableViewCell.swift */; };
+		F7DFCE3623C662B5002A95C7 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7DFCE3423C662B5002A95C7 /* SettingTableViewCell.xib */; };
 		F7E9DDE2238344CB000DE6F4 /* PlacePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */; };
 		F7EF6918239BA4AA0004EF4E /* PreferenceOptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF6917239BA4AA0004EF4E /* PreferenceOptionDelegate.swift */; };
 		F7EF691A239BBE930004EF4E /* ToursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF6919239BBE930004EF4E /* ToursViewController.swift */; };
 		F7EF691D239BC0CA0004EF4E /* ToursViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF691C239BC0CA0004EF4E /* ToursViewProtocol.swift */; };
 		F7EF691F239BC1230004EF4E /* ToursPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF691E239BC1230004EF4E /* ToursPresenter.swift */; };
 		F7EF6921239BC1310004EF4E /* ToursPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF6920239BC1310004EF4E /* ToursPresenterProtocol.swift */; };
-		F7F90D4623873FA600722F90 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F90D4523873FA600722F90 /* SettingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -216,13 +217,14 @@
 		F7CFD01A239BD3BB00983631 /* TourTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourTableViewCell.swift; sourceTree = "<group>"; };
 		F7CFD01B239BD3BB00983631 /* TourTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TourTableViewCell.xib; sourceTree = "<group>"; };
 		F7CFD01F239BE3A800983631 /* Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Tour.swift; path = "Travel-App/Tour.swift"; sourceTree = SOURCE_ROOT; };
+		F7DFCE3323C662B5002A95C7 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingTableViewCell.swift; path = "Travel-App/Scenes/Settings/SettingTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		F7DFCE3423C662B5002A95C7 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingTableViewCell.xib; path = "Travel-App/Scenes/Settings/SettingTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
 		F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePreview.swift; sourceTree = "<group>"; };
 		F7EF6917239BA4AA0004EF4E /* PreferenceOptionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceOptionDelegate.swift; sourceTree = "<group>"; };
 		F7EF6919239BBE930004EF4E /* ToursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToursViewController.swift; path = "Travel-App/Scenes/Search/Tours/View/ToursViewController.swift"; sourceTree = SOURCE_ROOT; };
 		F7EF691C239BC0CA0004EF4E /* ToursViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursViewProtocol.swift; sourceTree = "<group>"; };
 		F7EF691E239BC1230004EF4E /* ToursPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursPresenter.swift; sourceTree = "<group>"; };
 		F7EF6920239BC1310004EF4E /* ToursPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursPresenterProtocol.swift; sourceTree = "<group>"; };
-		F7F90D4523873FA600722F90 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,7 +374,8 @@
 			children = (
 				F761DFF12381CF7400D9DBBD /* SettingsViewController.swift */,
 				F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */,
-				F7F90D4523873FA600722F90 /* SettingTableViewCell.swift */,
+				F7DFCE3323C662B5002A95C7 /* SettingTableViewCell.swift */,
+				F7DFCE3423C662B5002A95C7 /* SettingTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 			files = (
 				F70DB819239B169B00D48EC6 /* SettingOptionTableViewCell.xib in Resources */,
 				F72EFE49239EF62C008081E1 /* TourInfoView.xib in Resources */,
+				F7DFCE3623C662B5002A95C7 /* SettingTableViewCell.xib in Resources */,
 				F780CE6823A2FDAD00E8E248 /* RecentPlacesTableViewCell.xib in Resources */,
 				F7CF8D3A239AE39600119B60 /* InterestsTableCell.xib in Resources */,
 				F790825223A83AB700056228 /* OptionFilterTableViewCell.xib in Resources */,
@@ -888,6 +892,7 @@
 				F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */,
 				F7EF6921239BC1310004EF4E /* ToursPresenterProtocol.swift in Sources */,
 				F7CF8D312396FF2100119B60 /* InterestsCollectionViewCell.swift in Sources */,
+				F7DFCE3523C662B5002A95C7 /* SettingTableViewCell.swift in Sources */,
 				F72EFE42239EF16D008081E1 /* TourInfoViewController.swift in Sources */,
 				F705253423B4105300E05528 /* OptionFilterSelection.swift in Sources */,
 				F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */,
@@ -925,7 +930,6 @@
 				F7CA366D23926116005F7C57 /* Label.swift in Sources */,
 				F7CFD011239BCC5600983631 /* ProfilePresenterProtocol.swift in Sources */,
 				F7CFD01C239BD3BB00983631 /* TourTableViewCell.swift in Sources */,
-				F7F90D4623873FA600722F90 /* SettingTableViewCell.swift in Sources */,
 				F79B387C239D1E4B0032F598 /* NetworkProvider.swift in Sources */,
 				F780A4CB23C4F4EB00A9A375 /* FirebaseProfileManager.swift in Sources */,
 				F79B3878239C60400032F598 /* NavigationController.swift in Sources */,

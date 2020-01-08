@@ -9,8 +9,17 @@
 class SettingsPresenter: SettingsPresenterProtocol{
     func getSettingsProperty() {
         let properties = [
-            ("Preferences", ["Notifications", "Distance Units", "Currency"]),
-            ("Help & Information", ["FAQs", "About Us", "Terms and Conditions", "Privacy Statement"])
+            ("Preferences", [
+                ("Distance Units", "Metric, km"),
+                ("Currency", "€" ?? "")
+            ]),
+            ("Help & Information",
+             [
+                ("FAQs", nil),
+                ("About Us", nil),
+                ("Terms and Conditions", nil),
+                ("Privacy Statement", nil)
+            ])
         ]
         self.view.updateTable(with: properties)
     }
