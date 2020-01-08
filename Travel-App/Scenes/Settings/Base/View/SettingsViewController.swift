@@ -35,6 +35,7 @@ final class SettingsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.getSettingsProperty()
+        title = "Settings"
     }
 }
 
@@ -96,11 +97,12 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate{
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-            let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.reuseIdentifier, for: indexPath) as! SettingTableViewCell
-            let option = self.options[indexPath.section].options[indexPath.row]
-            cell.title = option.subTitle
-            cell.value = option.value
-            return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.reuseIdentifier, for: indexPath) as! SettingTableViewCell
+        let option = self.options[indexPath.section].options[indexPath.row]
+        cell.title = option.subTitle
+        cell.value = option.value
+        cell.selectionStyle = .none
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
