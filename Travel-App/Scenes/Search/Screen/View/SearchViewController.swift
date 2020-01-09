@@ -292,6 +292,14 @@ extension SearchViewController: CategoryFilterDelegate{
 // MARK: - Place Preview Delegate
 
 extension SearchViewController: PlacePreviewDelegate {
+    func addPlace(with id: String) {
+        
+    }
+    
+    func removePlace(with id: String) {
+        
+    }
+    
     func didSelect(with place: PlaceCardModel) {
         guard let location = place.location else { return }
         self.didChangeMyLocation(Location(latitude: location.latitude,

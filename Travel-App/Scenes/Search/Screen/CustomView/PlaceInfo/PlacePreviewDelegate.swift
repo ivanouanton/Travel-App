@@ -13,4 +13,6 @@ protocol PlacePreviewDelegate: class {
     func getInfoPlace(with data: PlaceCardModel, image: UIImage?, category: String)
     func createRoute(with location: GeoPoint)
     func didSelect(with place: PlaceCardModel)
+    func addPlace(with id: String)
+    func removePlace(with id: String)
 }

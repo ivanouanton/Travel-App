@@ -161,14 +161,27 @@ class PlacePreview: UICollectionViewCell {
         return button
     }()
     
+    private lazy var removeButton: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        button.setTitle("-", for: .normal)
+        button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-HeavyCn", size: 30)
+        button.setTitleColor(UIColor(named: "white"), for: .normal)
+        button.layer.cornerRadius = 22
+        button.backgroundColor =  UIColor(named: "heavy")
+        button.addTarget(self, action: #selector(didPressedRemovePlaceButton), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var tourSettingsButtons: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
-        stack.distribution = .fill
+        stack.distribution = .fillEqually
         stack.alignment = .center
         stack.spacing = 5
         stack.addArrangedSubview(self.addButton)
+        stack.addArrangedSubview(self.removeButton)
         return stack
     }()
     
@@ -176,7 +189,11 @@ class PlacePreview: UICollectionViewCell {
     // MARK: - Methods
     
     @objc func didPressedAddPlace() {
-        
+        self.delegate?.addPlace(with: self.place!.id)
+    }
+    
+    @objc func didPressedRemovePlaceButton() {
+        self.delegate?.removePlace(with: self.place!.id)
     }
     
     @objc func getInfoPlace(){

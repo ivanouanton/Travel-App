@@ -14,7 +14,7 @@ struct Tour{
     let duration: String
     let imageRef: DocumentReference?
     let name: String
-    let place: [String]
+    var place: [String]
     let transport: [String]
     let price: Int
     var image: UIImage?
