@@ -19,4 +19,5 @@ protocol SearchViewProtocol: class{
     func setPlacesCollection(with places: [PlaceCardModel])
     func showPlaceView(with index: Int)
     func showLocality(locality: String)
+    func showLoader(_ isNeededShowing: Bool)
 }

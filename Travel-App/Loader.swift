@@ -17,7 +17,7 @@ class Loader: UIView {
         super.init(frame: frame)
         
         self.backgroundColor = UIColor.white.withAlphaComponent(0.8)
-        self.animationView.animation = Animation.named("CentralCircleLoader")
+        self.animationView.animation = Animation.named("circleLoader")
         self.animationView.contentMode = .scaleAspectFit
         self.animationView.loopMode = .loop
         self.animationView.play()

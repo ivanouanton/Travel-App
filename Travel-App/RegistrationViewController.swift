@@ -31,7 +31,7 @@ class RegistrationViewController: UIViewController {
         }
         
         let name = self.nameField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        
+        self.addLoader()
         let signUpManager = FirebaseAuthManager.shared
         signUpManager.createUser(name: name!,
                                  email: emailField.text!,
@@ -52,6 +52,7 @@ class RegistrationViewController: UIViewController {
             }
                                     
             self.showAlert(message) {
+                self.removeLoader()
                 self.performSegue(withIdentifier: "signIn", sender: self)
             }
         }

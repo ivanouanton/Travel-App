@@ -168,6 +168,7 @@ extension SearchPresenter: SearchPresenterProtocol{
     }
     
     func fetchUserLocation() {
+        self.view.showLoader(true)
         self.locationManager.fetchLocation { (location, error) in
             if let location = location{
                 self.userLocation = GeoPoint(latitude: location.latitude, longitude: location.longitude)
@@ -175,6 +176,7 @@ extension SearchPresenter: SearchPresenterProtocol{
                 PlaceManager.shared.geocodeLocation(with: self.userLocation) { (locality, error) in
                     guard let locality = locality else {return}
                     self.view.showLocality(locality: locality)
+                    self.view.showLoader(false)
                 }
             }
         }
