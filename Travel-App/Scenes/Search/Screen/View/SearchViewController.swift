@@ -96,7 +96,7 @@ final class SearchViewController: UIViewController{
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-        self.presenter.viewDidLoad()        
+        self.presenter.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -244,14 +244,6 @@ extension SearchViewController: SearchViewProtocol{
         self.categoryView.categories = categories
     }
     
-    func showModal(with data: PlaceData, image: UIImage?, category: String) {
-//        self.placePreview.place = data
-//        self.placePreview.category = category
-//
-//        guard let image = image else {return}
-//        self.placePreview.image = image
-    }
-    
     func drawPath(with routes: String?) {
         
         let path = GMSPath.init(fromEncodedPath: routes ?? "")
@@ -325,7 +317,6 @@ extension SearchViewController: PlacePreviewDelegate {
 }
 
 // MARK: - OptionFilter Delegate
-
 
 extension SearchViewController: OptionFilterDelegate{
     func didSelected(with option: OptionFilterSelection) {
