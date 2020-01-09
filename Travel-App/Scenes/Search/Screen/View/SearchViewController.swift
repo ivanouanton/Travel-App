@@ -29,6 +29,7 @@ final class SearchViewController: UIViewController{
             guard let tour = tour else {return}
             self.presenter.getTourRoute(with: tour)
             showTourInfo()
+            self.placesCollection.isTourCreated = true
         }
     }
 
@@ -96,7 +97,7 @@ final class SearchViewController: UIViewController{
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-        self.presenter.viewDidLoad()        
+        self.presenter.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -244,14 +245,6 @@ extension SearchViewController: SearchViewProtocol{
         self.categoryView.categories = categories
     }
     
-    func showModal(with data: PlaceData, image: UIImage?, category: String) {
-//        self.placePreview.place = data
-//        self.placePreview.category = category
-//
-//        guard let image = image else {return}
-//        self.placePreview.image = image
-    }
-    
     func drawPath(with routes: String?) {
         
         let path = GMSPath.init(fromEncodedPath: routes ?? "")
@@ -300,6 +293,30 @@ extension SearchViewController: CategoryFilterDelegate{
 // MARK: - Place Preview Delegate
 
 extension SearchViewController: PlacePreviewDelegate {
+    func addPlace(with id: String) {
+        guard var newTour = self.tour else { return }
+        for currId in newTour.place {
+            if currId == id {
+                self.showAlert("This point is already on the route", completion: nil)
+                return
+            }
+        }
+        newTour.place.append(id)
+        self.tour = newTour
+    }
+    
+    func removePlace(with id: String) {
+        guard var newTour = self.tour else { return }
+        for (ind, currId) in newTour.place.enumerated() {
+            if currId == id {
+                newTour.place.remove(at: ind)
+                self.tour = newTour
+                return
+            }
+        }
+        self.showAlert("The tour doesn't contain this point", completion: nil)
+    }
+    
     func didSelect(with place: PlaceCardModel) {
         guard let location = place.location else { return }
         self.didChangeMyLocation(Location(latitude: location.latitude,
@@ -321,11 +338,12 @@ extension SearchViewController: PlacePreviewDelegate {
     
     func createRoute(with location: GeoPoint) {
         self.presenter.getRoute(with: [location])
+        self.tour = nil
+        self.placesCollection.isTourCreated = false
     }
 }
 
 // MARK: - OptionFilter Delegate
-
 
 extension SearchViewController: OptionFilterDelegate{
     func didSelected(with option: OptionFilterSelection) {

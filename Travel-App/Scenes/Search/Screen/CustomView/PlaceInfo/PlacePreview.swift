@@ -21,6 +21,7 @@ class PlacePreview: UICollectionViewCell {
             guard let place = place else {return}
             self.titleLabel.text = place.name
             self.placeTitle.text = place.category
+            self.userLocationLabel.text = place.placeName ?? ""
             switch place.price {
             case 0:
                 self.placePrice.text = "Free"
@@ -38,6 +39,12 @@ class PlacePreview: UICollectionViewCell {
     var category: String = "" {
         didSet{
             self.placeTitle.text = category
+        }
+    }
+    
+    var isTourCreated = false {
+        didSet {
+            self.tourSettingsButtons.isHidden = isTourCreated ? false : true
         }
     }
     
@@ -149,8 +156,60 @@ class PlacePreview: UICollectionViewCell {
         return stack
     }()
     
+    private lazy var addButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("+", for: .normal)
+        button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-HeavyCn", size: 30)
+        button.setTitleColor(UIColor(named: "white"), for: .normal)
+        button.layer.cornerRadius = 22
+        button.layer.backgroundColor = UIColor(named: "heavy")?.cgColor
+        button.addTarget(self, action: #selector(didPressedAddPlace), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var removeButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("-", for: .normal)
+        button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-HeavyCn", size: 30)
+        button.setTitleColor(UIColor(named: "white"), for: .normal)
+        button.layer.cornerRadius = 22
+        button.backgroundColor =  UIColor(named: "heavy")
+        button.addTarget(self, action: #selector(didPressedRemovePlaceButton), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var tourSettingsButtons: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.distribution = .fillProportionally
+        stack.alignment = .center
+        stack.spacing = 5
+        stack.isHidden = true
+        stack.addArrangedSubview(self.addButton)
+        stack.addArrangedSubview(self.removeButton)
+        
+        NSLayoutConstraint.activate([
+            self.addButton.heightAnchor.constraint(equalToConstant: 44),
+            self.addButton.widthAnchor.constraint(equalToConstant: 44),
+            self.removeButton.heightAnchor.constraint(equalToConstant: 44),
+            self.removeButton.widthAnchor.constraint(equalToConstant: 44),
+        ])
+        return stack
+    }()
+    
     
     // MARK: - Methods
+    
+    @objc func didPressedAddPlace() {
+        self.delegate?.addPlace(with: self.place!.id)
+    }
+    
+    @objc func didPressedRemovePlaceButton() {
+        self.delegate?.removePlace(with: self.place!.id)
+    }
     
     @objc func getInfoPlace(){
         guard let place = self.place else { return }
@@ -195,6 +254,8 @@ class PlacePreview: UICollectionViewCell {
         self.addSubview(self.infoButton)
         self.addSubview(self.userLocationLabel)
         self.addSubview(self.placeMarks)
+        self.addSubview(self.tourSettingsButtons)
+        
     }
     
     private func setupConstraints(){
@@ -204,6 +265,10 @@ class PlacePreview: UICollectionViewCell {
             self.placeImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             self.placeImage.widthAnchor.constraint(equalToConstant: 120),
             self.placeImage.heightAnchor.constraint(equalToConstant: 128),
+            
+            self.tourSettingsButtons.bottomAnchor.constraint(equalTo: self.placeImage.bottomAnchor, constant: -10),
+            self.tourSettingsButtons.leadingAnchor.constraint(equalTo: self.placeImage.leadingAnchor, constant: 10),
+            self.tourSettingsButtons.centerXAnchor.constraint(equalTo: self.placeImage.centerXAnchor),
 
             self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 24),
             self.titleLabel.leftAnchor.constraint(equalTo: self.placeImage.rightAnchor, constant: 8),

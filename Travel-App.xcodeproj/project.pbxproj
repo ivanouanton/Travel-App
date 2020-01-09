@@ -35,6 +35,7 @@
 		F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */; };
 		F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */; };
 		F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF72381CFAD00D9DBBD /* SettingsPresenterProtocol.swift */; };
+		F77879F023C79C2C002F2052 /* GeocodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77879EF23C79C2C002F2052 /* GeocodeType.swift */; };
 		F77C178E23AACAE1009D2D69 /* Authorisation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77C178D23AACAE1009D2D69 /* Authorisation.storyboard */; };
 		F77C179023AAD216009D2D69 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C178F23AAD216009D2D69 /* CustomTextField.swift */; };
 		F77C179223AAD3C4009D2D69 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C179123AAD3C4009D2D69 /* UIViewController+Extension.swift */; };
@@ -146,6 +147,7 @@
 		F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewProtocol.swift; sourceTree = "<group>"; };
 		F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		F761DFF72381CFAD00D9DBBD /* SettingsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterProtocol.swift; sourceTree = "<group>"; };
+		F77879EF23C79C2C002F2052 /* GeocodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeType.swift; sourceTree = SOURCE_ROOT; };
 		F77C178D23AACAE1009D2D69 /* Authorisation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Authorisation.storyboard; path = "Travel-App/Authorisation.storyboard"; sourceTree = SOURCE_ROOT; };
 		F77C178F23AAD216009D2D69 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F77C179123AAD3C4009D2D69 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = SOURCE_ROOT; };
@@ -594,6 +596,7 @@
 				F77D500B23C102DE00E89E67 /* FirebaseAuthManager.swift */,
 				F780A4CA23C4F4EB00A9A375 /* FirebaseProfileManager.swift */,
 				F780A4C623C3DFF600A9A375 /* AuthStatus.swift */,
+				F77879EF23C79C2C002F2052 /* GeocodeType.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -958,6 +961,7 @@
 				F745760E238B480C00C5A1DE /* Category.swift in Sources */,
 				F704B3F823B7F4B00090DD6F /* PlacesCollectionView.swift in Sources */,
 				F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */,
+				F77879F023C79C2C002F2052 /* GeocodeType.swift in Sources */,
 				F79883742381C6CB00F01F3A /* HomePresenterProtocol.swift in Sources */,
 				3A3A3814239A74B9001FE150 /* CategoryPreference.swift in Sources */,
 				F77D500C23C102DE00E89E67 /* FirebaseAuthManager.swift in Sources */,

@@ -12,6 +12,12 @@ class PlacesCollectionView: UIView {
 
     @IBOutlet weak var collectionView: UICollectionView!
     weak var delegate: PlacePreviewDelegate?
+    
+    var isTourCreated = false {
+        didSet{
+            collectionView.reloadData()
+        }
+    }
 
     var places = Array<PlaceCardModel>(){
         didSet{
@@ -73,6 +79,7 @@ extension PlacesCollectionView: UICollectionViewDataSource{
         let place = self.places[indexPath.row]
         cell.place = place
         cell.delegate = delegate
+        cell.isTourCreated = isTourCreated
         return cell
     }
 }

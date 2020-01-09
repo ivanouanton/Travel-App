@@ -16,5 +16,6 @@ struct PlaceCardModel {
     var price: Int
     var image: UIImage?
     var location: GeoPoint?
+    var placeName: String?
     var description: String
 }

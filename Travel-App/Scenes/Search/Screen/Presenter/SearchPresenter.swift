@@ -72,25 +72,35 @@ extension SearchPresenter: SearchPresenterProtocol{
     
     func createPlacesData(){
         var placesModelData = Array<PlaceCardModel>()
-        let aGroup = DispatchGroup()
+        let placeGroup = DispatchGroup()
         
         for (id,place) in self.places {
             if let imgId = place.image {
-                aGroup.enter()
+                placeGroup.enter()
                 ToursManager.shared.getImage(with: imgId ) { (image, error) in
-                    placesModelData.append(PlaceCardModel(id: id,
-                                                            name: place.name,
-                                                            category: self.categories[place.categoryId]?.title ?? "",
-                                                            price: place.price,
-                                                            image: image,
-                                                            location: place.locationPlace,
-                                                            description: place.description))
-                    aGroup.leave()
+                    var placeModel = PlaceCardModel(id: id,
+                                                    name: place.name,
+                                                    category: self.categories[place.categoryId]?.title ?? "",
+                                                    price: place.price,
+                                                    image: image,
+                                                    location: place.locationPlace,
+                                                    description: place.description)
+                    placeGroup.enter()
+                    PlaceManager.shared.geocodeLocation(with: place.locationPlace,
+                                                        type: .address) { (address, error) in
+                                                            
+                                                            placeModel.placeName = address
+                                                            placesModelData.append(placeModel)
+                                                            placeGroup.leave()
+                    }
+                    
+                    placeGroup.leave()
                 }
+                
             }
         }
         
-        aGroup.notify(queue: DispatchQueue.main){
+        placeGroup.notify(queue: DispatchQueue.main){
             self.placesCard = placesModelData
             self.view.setPlacesCollection(with: placesModelData)
         }
@@ -153,31 +163,6 @@ extension SearchPresenter: SearchPresenterProtocol{
                 self.view.showPlaceView(with: index)
             }
         }
-//        guard let data = places[id] else {return}
-//        var placeImage: UIImage?
-//
-//        let aGroup = DispatchGroup()
-//
-//        if let imageRef = data.image {
-//            aGroup.enter()
-//            if let cachedImage = imagesCache.object(forKey: imageRef.documentID as NSString) {
-//                placeImage = cachedImage
-//                aGroup.leave()
-//            }else{
-//                self.getImage(with: imageRef.parent.collectionID,
-//                              documentID: imageRef.documentID) { (image, error) in
-//                                if let image = image{
-//                                    placeImage = image
-//                                    self.imagesCache.setObject(image, forKey: imageRef.documentID as NSString)
-//                                }
-//                                aGroup.leave()
-//                }
-//            }
-//        }
-//
-//        aGroup.notify(queue: DispatchQueue.main){
-//            self.view.showModal(with: data, image: placeImage, category: self.categories[data.categoryId]?.title ?? "")
-//        }
     }
     
     func fetchUserLocation() {
