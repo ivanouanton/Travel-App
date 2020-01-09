@@ -195,22 +195,40 @@ class PlaceManager {
         }
     }
     
-    func geocodeLocation(with location: GeoPoint, completion: @escaping (_ name: String?, _ error: Error?) -> Void){
+    func geocodeLocation(with location: GeoPoint,
+                         type: GeocodeType = GeocodeType.locality,
+                         completion: @escaping (_ name: String?, _ error: Error?) -> Void){
         NetworkProvider.shared.getMoyaProvider().request(.geocode(latitude: location.latitude, longitude: location.longitude)) { result in
             switch result{
             case .success(let response):
                 if let json : [String:Any] = try? JSONSerialization.jsonObject(with: response.data, options: .allowFragments) as? [String: Any]{
+                    
                     guard let results = json["results"] as? Array<Any>,
                         !results.isEmpty,
-                        let result = results[0] as? [String: Any],
-                        let addressComponents = result["address_components"] as? Array<Any>,
-                        let component = addressComponents[2] as? [String: Any],
-                        let locality = component["short_name"] as? String else {
+                        let result = results[0] as? [String: Any] else {
                             completion(nil, nil)
                             return
                     }
                     
-                    completion(locality, nil)
+                    switch type {
+                    case .address:
+                        guard let addressComponents = result["address_components"] as? Array<Any>,
+                        let component = addressComponents[2] as? [String: Any],
+                        let locality = component["short_name"] as? String else {
+                            completion(nil, nil)
+                            return
+                        }
+                        completion(locality, nil)
+
+                    case .locality:
+                        
+                        guard let address = result["formatted_address"] as? String else {
+                            completion(nil, nil)
+                            return
+                        }
+                        completion(address, nil)
+                    }
+                    
                 }else{
                     completion(nil, nil)
                 }
@@ -220,4 +238,6 @@ class PlaceManager {
             }
         }
     }
+    
+    
 }
