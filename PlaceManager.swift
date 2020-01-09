@@ -211,7 +211,7 @@ class PlaceManager {
                     }
                     
                     switch type {
-                    case .address:
+                    case .locality:
                         guard let addressComponents = result["address_components"] as? Array<Any>,
                         let component = addressComponents[2] as? [String: Any],
                         let locality = component["short_name"] as? String else {
@@ -220,7 +220,7 @@ class PlaceManager {
                         }
                         completion(locality, nil)
 
-                    case .locality:
+                    case .address:
                         
                         guard let address = result["formatted_address"] as? String else {
                             completion(nil, nil)

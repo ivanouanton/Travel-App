@@ -21,6 +21,7 @@ class PlacePreview: UICollectionViewCell {
             guard let place = place else {return}
             self.titleLabel.text = place.name
             self.placeTitle.text = place.category
+            self.userLocationLabel.text = place.placeName ?? ""
             switch place.price {
             case 0:
                 self.placePrice.text = "Free"

@@ -72,25 +72,35 @@ extension SearchPresenter: SearchPresenterProtocol{
     
     func createPlacesData(){
         var placesModelData = Array<PlaceCardModel>()
-        let aGroup = DispatchGroup()
+        let placeGroup = DispatchGroup()
         
         for (id,place) in self.places {
             if let imgId = place.image {
-                aGroup.enter()
+                placeGroup.enter()
                 ToursManager.shared.getImage(with: imgId ) { (image, error) in
-                    placesModelData.append(PlaceCardModel(id: id,
-                                                            name: place.name,
-                                                            category: self.categories[place.categoryId]?.title ?? "",
-                                                            price: place.price,
-                                                            image: image,
-                                                            location: place.locationPlace,
-                                                            description: place.description))
-                    aGroup.leave()
+                    var placeModel = PlaceCardModel(id: id,
+                                                    name: place.name,
+                                                    category: self.categories[place.categoryId]?.title ?? "",
+                                                    price: place.price,
+                                                    image: image,
+                                                    location: place.locationPlace,
+                                                    description: place.description)
+                    placeGroup.enter()
+                    PlaceManager.shared.geocodeLocation(with: place.locationPlace,
+                                                        type: .address) { (address, error) in
+                                                            
+                                                            placeModel.placeName = address
+                                                            placesModelData.append(placeModel)
+                                                            placeGroup.leave()
+                    }
+                    
+                    placeGroup.leave()
                 }
+                
             }
         }
         
-        aGroup.notify(queue: DispatchQueue.main){
+        placeGroup.notify(queue: DispatchQueue.main){
             self.placesCard = placesModelData
             self.view.setPlacesCollection(with: placesModelData)
         }
