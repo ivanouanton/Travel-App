@@ -111,4 +111,12 @@ extension ToursViewController: ToursViewProtocol{
         self.toursTable.reloadData()
     }
     
+    func showLoader(_ isNeededShowing: Bool) {
+        if isNeededShowing {
+            self.addLoader()
+        }else{
+            self.removeLoader()
+        }
+    }
+    
 }

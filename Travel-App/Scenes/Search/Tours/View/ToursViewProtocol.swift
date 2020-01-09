@@ -8,4 +8,5 @@
 
 protocol ToursViewProtocol: class{
     func updateContent(with tours: [Tour])
+    func showLoader(_ isNeededShowing: Bool)
 }

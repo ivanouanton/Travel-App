@@ -22,7 +22,9 @@ class ToursPresenter{
 
 extension ToursPresenter: ToursPresenterProtocol{
     func getTours(){
+        self.view?.showLoader(true)
         ToursManager.shared.getTours(filter ?? [:]) { (tours, error) in
+            self.view?.showLoader(false)
             if let tours = tours{
                 self.view?.updateContent(with: tours)
             }
