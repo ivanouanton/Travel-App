@@ -239,5 +239,13 @@ class PlaceManager {
         }
     }
     
-    
+    func getAudioURL( with reference: DocumentReference,
+                   completion: @escaping (_ image: URL?, _ error: Error?) -> Void)  {
+        
+        let storageReference = Storage.storage().reference(forURL: "gs://trello-2704d.appspot.com/audio_place/" + reference.documentID)
+        
+        storageReference.downloadURL { (hardUrl, error) in
+            completion(hardUrl, error)
+        }
+    }
 }

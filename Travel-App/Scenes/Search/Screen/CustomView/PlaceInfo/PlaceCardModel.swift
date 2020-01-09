@@ -18,4 +18,5 @@ struct PlaceCardModel {
     var location: GeoPoint?
     var placeName: String?
     var description: String
+    var audio: DocumentReference?
 }

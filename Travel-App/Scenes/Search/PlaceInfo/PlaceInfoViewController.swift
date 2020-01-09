@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import Firebase
 
 class PlaceInfoViewController: UIViewController {
 
@@ -22,6 +24,8 @@ class PlaceInfoViewController: UIViewController {
     var category: String = ""
     var image: UIImage = UIImage(named: "preview-target-place")!
     
+    var audioPlayer = AVPlayer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let place = place else {return}
@@ -29,12 +33,30 @@ class PlaceInfoViewController: UIViewController {
         self.descriptionLabel.text = place.description
         self.placeImage.image = place.image
         self.categoryLabel.text = place.category
-        
+
+        guard let audioReference = place.audio else { return }
+        setupAudio(with: audioReference)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         guard let place = place else {return}
         self.navigationItem.title = place.name
+    }
+    
+    @IBAction func playAudio(_ sender: Any) {
+        if self.audioPlayer.timeControlStatus == AVPlayer.TimeControlStatus.playing{
+            self.audioPlayer.pause()
+        }else{
+            self.audioPlayer.play()
+        }
+    }
+    
+    private func setupAudio(with ref: DocumentReference) {
+        PlaceManager.shared.getAudioURL(with: ref) { (hardUrl, error) in
+            if error == nil, let url = hardUrl {
+                self.audioPlayer = AVPlayer(playerItem: AVPlayerItem(url: url))
+            }
+        }
     }
 }
