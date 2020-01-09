@@ -293,11 +293,20 @@ extension SearchViewController: CategoryFilterDelegate{
 
 extension SearchViewController: PlacePreviewDelegate {
     func addPlace(with id: String) {
-        
+        guard var newTour = self.tour else { return }
+        newTour.place.append(id)
+        self.tour = newTour
     }
     
     func removePlace(with id: String) {
-        
+        guard var newTour = self.tour else { return }
+        for (ind, currId) in newTour.place.enumerated() {
+            if currId == id {
+                newTour.place.remove(at: ind)
+                self.tour = newTour
+                return
+            }
+        }
     }
     
     func didSelect(with place: PlaceCardModel) {

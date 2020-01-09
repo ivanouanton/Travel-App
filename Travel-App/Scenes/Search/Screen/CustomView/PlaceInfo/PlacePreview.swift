@@ -151,7 +151,7 @@ class PlacePreview: UICollectionViewCell {
     
     private lazy var addButton: UIButton = {
         let button = UIButton()
-        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("+", for: .normal)
         button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-HeavyCn", size: 30)
         button.setTitleColor(UIColor(named: "white"), for: .normal)
@@ -163,7 +163,7 @@ class PlacePreview: UICollectionViewCell {
     
     private lazy var removeButton: UIButton = {
         let button = UIButton()
-        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("-", for: .normal)
         button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-HeavyCn", size: 30)
         button.setTitleColor(UIColor(named: "white"), for: .normal)
@@ -177,11 +177,18 @@ class PlacePreview: UICollectionViewCell {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
-        stack.distribution = .fillEqually
+        stack.distribution = .fillProportionally
         stack.alignment = .center
         stack.spacing = 5
         stack.addArrangedSubview(self.addButton)
         stack.addArrangedSubview(self.removeButton)
+        
+        NSLayoutConstraint.activate([
+            self.addButton.heightAnchor.constraint(equalToConstant: 44),
+            self.addButton.widthAnchor.constraint(equalToConstant: 44),
+            self.removeButton.heightAnchor.constraint(equalToConstant: 44),
+            self.removeButton.widthAnchor.constraint(equalToConstant: 44),
+        ])
         return stack
     }()
     
@@ -239,7 +246,8 @@ class PlacePreview: UICollectionViewCell {
         self.addSubview(self.infoButton)
         self.addSubview(self.userLocationLabel)
         self.addSubview(self.placeMarks)
-        self.placeImage.addSubview(self.tourSettingsButtons)
+        self.addSubview(self.tourSettingsButtons)
+        
     }
     
     private func setupConstraints(){
