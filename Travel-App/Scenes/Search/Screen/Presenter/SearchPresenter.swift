@@ -78,13 +78,15 @@ extension SearchPresenter: SearchPresenterProtocol{
             if let imgId = place.image {
                 placeGroup.enter()
                 ToursManager.shared.getImage(with: imgId ) { (image, error) in
+                    
                     var placeModel = PlaceCardModel(id: id,
                                                     name: place.name,
                                                     category: self.categories[place.categoryId]?.title ?? "",
                                                     price: place.price,
                                                     image: image,
                                                     location: place.locationPlace,
-                                                    description: place.description)
+                                                    description: place.description,
+                                                    audio: place.audio)
                     placeGroup.enter()
                     PlaceManager.shared.geocodeLocation(with: place.locationPlace,
                                                         type: .address) { (address, error) in

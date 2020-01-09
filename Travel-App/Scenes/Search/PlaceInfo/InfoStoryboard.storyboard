@@ -89,6 +89,9 @@ Brooklyn, NY 11249</string>
                                                         <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="playAudio:" destination="UhC-Oq-jYi" eventType="touchUpInside" id="Na5-r9-YwZ"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-2u-tWP">
                                                 <rect key="frame" x="16" y="370.33333333333331" width="343" height="240.66666666666669"/>

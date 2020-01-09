@@ -239,5 +239,22 @@ class PlaceManager {
         }
     }
     
-    
+    func getAudio( with reference: DocumentReference,
+    completionHandler: @escaping (_ image: UIImage?, _ error: Error?) -> Void)  {
+        
+        let collectionID = reference.parent.collectionID
+        let documentID = reference.documentID
+                
+        let db = Storage.storage().reference()
+        let collectionRef = db.child(collectionID)
+        let imageRef = collectionRef.child(documentID)
+        
+            imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                if let error = error {
+                    completionHandler(nil, error)
+                } else {
+                    
+                }
+            }
+    }
 }
