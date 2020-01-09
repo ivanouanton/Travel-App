@@ -27,4 +27,27 @@ extension UIViewController {
         alertController.addAction(alertAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func addLoader() {
+        let loader = Loader(frame: .zero)
+        loader.tag = 1204
+        
+        loader.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(loader)
+        
+        loader.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        loader.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        loader.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        loader.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
+    }
+    
+    func removeLoader() {
+        for subview in self.view.subviews {
+            if subview.tag == 1204 {
+                subview.removeFromSuperview()
+                break
+            }
+        }
+    }
 }
