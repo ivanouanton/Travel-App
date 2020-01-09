@@ -68,9 +68,6 @@ extension ProfileViewController: ProfileViewProtocol{
     func showRecentPlaces(with places: Array<PlaceCardModel>) {
         self.places = places
         self.profileTableView.reloadData()
-//        let cell = profileTableView.dequeueReusableCell(withIdentifier: RecentPlacesTableViewCell.reuseIdentifier, for: IndexPath(row: 0, section: 1)) as! RecentPlacesTableViewCell
-//        cell.places = places
-
     }
     
     func showUserData(with name: String, information: [(key: String, value: String)]) {
@@ -81,6 +78,14 @@ extension ProfileViewController: ProfileViewProtocol{
     
     func showUserImage(_ image: UIImage) {
         self.userImage.image = image
+    }
+    
+    func showLoader(_ isNeededShowing: Bool) {
+        if isNeededShowing {
+            self.addLoader()
+        }else{
+            self.removeLoader()
+        }
     }
 }
 

@@ -10,7 +10,8 @@ target 'Travel-App' do
   pod 'GooglePlaces'
   pod 'MSPeekCollectionViewDelegateImplementation'
   pod 'Moya'
-  
+  pod 'lottie-ios'
+
   pod 'Firebase/Analytics'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'

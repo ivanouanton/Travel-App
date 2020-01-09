@@ -285,6 +285,7 @@ PODS:
   - gRPC-Core/Interface (1.21.0)
   - GTMSessionFetcher/Core (1.3.0)
   - leveldb-library (1.22)
+  - lottie-ios (3.1.5)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
   - Moya/Core (13.0.1):
@@ -307,6 +308,7 @@ DEPENDENCIES:
   - FirebaseFirestoreSwift
   - GoogleMaps
   - GooglePlaces
+  - lottie-ios
   - Moya
   - MSPeekCollectionViewDelegateImplementation
 
@@ -336,6 +338,7 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - leveldb-library
+    - lottie-ios
     - Moya
     - MSPeekCollectionViewDelegateImplementation
     - nanopb
@@ -366,11 +369,12 @@ SPEC CHECKSUMS:
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   MSPeekCollectionViewDelegateImplementation: 3091e9512b3cd03facdea3c02e57673a4a06246a
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: 8d65956691e241937bf740ee0b833118c1dffc74
+PODFILE CHECKSUM: 668bbc670150d4a4d2aef7bd068ef5bdfab5e8a9
 
 COCOAPODS: 1.7.5

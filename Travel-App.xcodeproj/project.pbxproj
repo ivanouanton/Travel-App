@@ -36,6 +36,9 @@
 		F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */; };
 		F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF72381CFAD00D9DBBD /* SettingsPresenterProtocol.swift */; };
 		F77879F023C79C2C002F2052 /* GeocodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77879EF23C79C2C002F2052 /* GeocodeType.swift */; };
+		F77879F223C7D38E002F2052 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77879F123C7D38E002F2052 /* Loader.swift */; };
+		F77879F523C7D4D2002F2052 /* CentralCircleLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = F77879F423C7D4D2002F2052 /* CentralCircleLoader.json */; };
+		F77879F723C7DA01002F2052 /* circleLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = F77879F623C7DA00002F2052 /* circleLoader.json */; };
 		F77C178E23AACAE1009D2D69 /* Authorisation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F77C178D23AACAE1009D2D69 /* Authorisation.storyboard */; };
 		F77C179023AAD216009D2D69 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C178F23AAD216009D2D69 /* CustomTextField.swift */; };
 		F77C179223AAD3C4009D2D69 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C179123AAD3C4009D2D69 /* UIViewController+Extension.swift */; };
@@ -148,6 +151,9 @@
 		F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		F761DFF72381CFAD00D9DBBD /* SettingsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterProtocol.swift; sourceTree = "<group>"; };
 		F77879EF23C79C2C002F2052 /* GeocodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeType.swift; sourceTree = SOURCE_ROOT; };
+		F77879F123C7D38E002F2052 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Loader.swift; path = "Travel-App/Loader.swift"; sourceTree = SOURCE_ROOT; };
+		F77879F423C7D4D2002F2052 /* CentralCircleLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CentralCircleLoader.json; sourceTree = "<group>"; };
+		F77879F623C7DA00002F2052 /* circleLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = circleLoader.json; sourceTree = "<group>"; };
 		F77C178D23AACAE1009D2D69 /* Authorisation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Authorisation.storyboard; path = "Travel-App/Authorisation.storyboard"; sourceTree = SOURCE_ROOT; };
 		F77C178F23AAD216009D2D69 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		F77C179123AAD3C4009D2D69 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = SOURCE_ROOT; };
@@ -390,6 +396,15 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		F77879F323C7D4B0002F2052 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F77879F423C7D4D2002F2052 /* CentralCircleLoader.json */,
+				F77879F623C7DA00002F2052 /* circleLoader.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		F77C178C23AAC34E009D2D69 /* Authorisation */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +438,7 @@
 		F77F22432392DB6A004610CE /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				F77879F323C7D4B0002F2052 /* Resources */,
 				F7CA366C23926116005F7C57 /* Label.swift */,
 				F77F22442392DB6A004610CE /* Extension+UIViewController.swift */,
 				F77F22452392E816004610CE /* Extension+CALayer.swift */,
@@ -430,6 +446,7 @@
 				F79B3877239C60400032F598 /* NavigationController.swift */,
 				F72B7C1523A6D6AE009155D4 /* UIButton+Extension.swift */,
 				F77C179123AAD3C4009D2D69 /* UIViewController+Extension.swift */,
+				F77879F123C7D38E002F2052 /* Loader.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -799,6 +816,7 @@
 				F70DB819239B169B00D48EC6 /* SettingOptionTableViewCell.xib in Resources */,
 				F72EFE49239EF62C008081E1 /* TourInfoView.xib in Resources */,
 				F7DFCE3623C662B5002A95C7 /* SettingTableViewCell.xib in Resources */,
+				F77879F723C7DA01002F2052 /* circleLoader.json in Resources */,
 				F780CE6823A2FDAD00E8E248 /* RecentPlacesTableViewCell.xib in Resources */,
 				F7CF8D3A239AE39600119B60 /* InterestsTableCell.xib in Resources */,
 				F790825223A83AB700056228 /* OptionFilterTableViewCell.xib in Resources */,
@@ -814,6 +832,7 @@
 				F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
 				F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */,
 				F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
+				F77879F523C7D4D2002F2052 /* CentralCircleLoader.json in Resources */,
 				F7932B672393A65C006E6496 /* InfoStoryboard.storyboard in Resources */,
 				F79FCA2823847ED2009F1693 /* AvenirNextLTPro-Demi.otf in Resources */,
 				F700442923A17C9C00D7E59F /* Profile.storyboard in Resources */,
@@ -969,6 +988,7 @@
 				F7CFD020239BE3A800983631 /* Tour.swift in Sources */,
 				F72B7C1423A6CD39009155D4 /* OptionFilterDelegate.swift in Sources */,
 				F72B7C1223A6CCD9009155D4 /* OptionFilter.swift in Sources */,
+				F77879F223C7D38E002F2052 /* Loader.swift in Sources */,
 				F7CF8D352399A46300119B60 /* SettingOptionCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

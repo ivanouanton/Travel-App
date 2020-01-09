@@ -12,4 +12,5 @@ protocol ProfileViewProtocol: class{
     func showUserImage(_ image: UIImage)
     func showUserData(with name: String, information: [(key: String, value: String)])
     func showRecentPlaces(with places: Array<PlaceCardModel>)
+    func showLoader(_ isNeededShowing: Bool)
 }

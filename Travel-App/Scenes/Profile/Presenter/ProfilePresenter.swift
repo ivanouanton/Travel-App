@@ -18,6 +18,7 @@ class ProfilePresenter{
 
 extension ProfilePresenter: ProfilePresenterProtocol{
     func getUserData() {
+        self.view.showLoader(true)
         let userGroup = DispatchGroup()
         let profileManager = FirebaseProfileManager.shared
         var placesModelData = Array<PlaceCardModel>()
@@ -38,7 +39,10 @@ extension ProfilePresenter: ProfilePresenterProtocol{
                 let information: [(key: String, value: String)] = [("Language", "English"), ("Home address", user.address ?? "")]
                 self.view.showUserData(with: fullName, information: information)
                 
-                guard let places = user.places else {return}
+                guard let places = user.places else {
+                    self.view.showLoader(false)
+                    return
+                }
                 
                 for id in places {
                     userGroup.enter()
@@ -55,6 +59,7 @@ extension ProfilePresenter: ProfilePresenterProtocol{
         }
         
         userGroup.notify(queue: .main) {
+            self.view.showLoader(false)
             self.view.showRecentPlaces(with: placesModelData)
         }
     }

@@ -221,6 +221,14 @@ extension SearchViewController{
 // MARK: - Search View Protocol
 
 extension SearchViewController: SearchViewProtocol{
+    func showLoader(_ isNeededShowing: Bool) {
+        if isNeededShowing {
+            self.addLoader()
+        }else{
+            self.removeLoader()
+        }
+    }
+    
     func showLocality(locality: String) {
         self.navigationItem.title = locality
     }
