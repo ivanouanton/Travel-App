@@ -239,22 +239,13 @@ class PlaceManager {
         }
     }
     
-    func getAudio( with reference: DocumentReference,
-    completionHandler: @escaping (_ image: UIImage?, _ error: Error?) -> Void)  {
+    func getAudioURL( with reference: DocumentReference,
+                   completion: @escaping (_ image: URL?, _ error: Error?) -> Void)  {
         
-        let collectionID = reference.parent.collectionID
-        let documentID = reference.documentID
-                
-        let db = Storage.storage().reference()
-        let collectionRef = db.child(collectionID)
-        let imageRef = collectionRef.child(documentID)
+        let storageReference = Storage.storage().reference(forURL: "gs://trello-2704d.appspot.com/audio_place/" + reference.documentID)
         
-            imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                if let error = error {
-                    completionHandler(nil, error)
-                } else {
-                    
-                }
-            }
+        storageReference.downloadURL { (hardUrl, error) in
+            completion(hardUrl, error)
+        }
     }
 }

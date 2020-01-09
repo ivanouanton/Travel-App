@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-import FirebaseStorage
+import Firebase
 
 class PlaceInfoViewController: UIViewController {
 
@@ -33,16 +33,9 @@ class PlaceInfoViewController: UIViewController {
         self.descriptionLabel.text = place.description
         self.placeImage.image = place.image
         self.categoryLabel.text = place.category
-        
-        guard let audioReference = place.audio else { return }
-        let storageReference = Storage.storage().reference(forURL: "gs://trello-2704d.appspot.com/audio_place/" + audioReference.documentID)
-        
-        storageReference.downloadURL { (hardUrl, error) in
-            if error == nil, let url = hardUrl {
-                self.audioPlayer = AVPlayer(playerItem: AVPlayerItem(url: url))
-            }
-        }
 
+        guard let audioReference = place.audio else { return }
+        setupAudio(with: audioReference)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +49,14 @@ class PlaceInfoViewController: UIViewController {
             self.audioPlayer.pause()
         }else{
             self.audioPlayer.play()
+        }
+    }
+    
+    private func setupAudio(with ref: DocumentReference) {
+        PlaceManager.shared.getAudioURL(with: ref) { (hardUrl, error) in
+            if error == nil, let url = hardUrl {
+                self.audioPlayer = AVPlayer(playerItem: AVPlayerItem(url: url))
+            }
         }
     }
 }
