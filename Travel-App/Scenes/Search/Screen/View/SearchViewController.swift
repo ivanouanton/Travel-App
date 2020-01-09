@@ -294,6 +294,12 @@ extension SearchViewController: CategoryFilterDelegate{
 extension SearchViewController: PlacePreviewDelegate {
     func addPlace(with id: String) {
         guard var newTour = self.tour else { return }
+        for currId in newTour.place {
+            if currId == id {
+                self.showAlert("This point is already on the route", completion: nil)
+                return
+            }
+        }
         newTour.place.append(id)
         self.tour = newTour
     }
@@ -307,6 +313,7 @@ extension SearchViewController: PlacePreviewDelegate {
                 return
             }
         }
+        self.showAlert("The tour doesn't contain this point", completion: nil)
     }
     
     func didSelect(with place: PlaceCardModel) {

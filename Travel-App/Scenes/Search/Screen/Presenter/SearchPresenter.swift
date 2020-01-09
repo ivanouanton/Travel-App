@@ -153,31 +153,6 @@ extension SearchPresenter: SearchPresenterProtocol{
                 self.view.showPlaceView(with: index)
             }
         }
-//        guard let data = places[id] else {return}
-//        var placeImage: UIImage?
-//
-//        let aGroup = DispatchGroup()
-//
-//        if let imageRef = data.image {
-//            aGroup.enter()
-//            if let cachedImage = imagesCache.object(forKey: imageRef.documentID as NSString) {
-//                placeImage = cachedImage
-//                aGroup.leave()
-//            }else{
-//                self.getImage(with: imageRef.parent.collectionID,
-//                              documentID: imageRef.documentID) { (image, error) in
-//                                if let image = image{
-//                                    placeImage = image
-//                                    self.imagesCache.setObject(image, forKey: imageRef.documentID as NSString)
-//                                }
-//                                aGroup.leave()
-//                }
-//            }
-//        }
-//
-//        aGroup.notify(queue: DispatchQueue.main){
-//            self.view.showModal(with: data, image: placeImage, category: self.categories[data.categoryId]?.title ?? "")
-//        }
     }
     
     func fetchUserLocation() {
