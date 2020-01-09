@@ -149,8 +149,35 @@ class PlacePreview: UICollectionViewCell {
         return stack
     }()
     
+    private lazy var addButton: UIButton = {
+        let button = UIButton()
+        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        button.setTitle("+", for: .normal)
+        button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-HeavyCn", size: 30)
+        button.setTitleColor(UIColor(named: "white"), for: .normal)
+        button.layer.cornerRadius = 22
+        button.layer.backgroundColor = UIColor(named: "heavy")?.cgColor
+        button.addTarget(self, action: #selector(didPressedAddPlace), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var tourSettingsButtons: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.distribution = .fill
+        stack.alignment = .center
+        stack.spacing = 5
+        stack.addArrangedSubview(self.addButton)
+        return stack
+    }()
+    
     
     // MARK: - Methods
+    
+    @objc func didPressedAddPlace() {
+        
+    }
     
     @objc func getInfoPlace(){
         guard let place = self.place else { return }
@@ -195,6 +222,7 @@ class PlacePreview: UICollectionViewCell {
         self.addSubview(self.infoButton)
         self.addSubview(self.userLocationLabel)
         self.addSubview(self.placeMarks)
+        self.placeImage.addSubview(self.tourSettingsButtons)
     }
     
     private func setupConstraints(){
@@ -204,6 +232,10 @@ class PlacePreview: UICollectionViewCell {
             self.placeImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             self.placeImage.widthAnchor.constraint(equalToConstant: 120),
             self.placeImage.heightAnchor.constraint(equalToConstant: 128),
+            
+            self.tourSettingsButtons.bottomAnchor.constraint(equalTo: self.placeImage.bottomAnchor, constant: -10),
+            self.tourSettingsButtons.leadingAnchor.constraint(equalTo: self.placeImage.leadingAnchor, constant: 10),
+            self.tourSettingsButtons.centerXAnchor.constraint(equalTo: self.placeImage.centerXAnchor),
 
             self.titleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 24),
             self.titleLabel.leftAnchor.constraint(equalTo: self.placeImage.rightAnchor, constant: 8),
