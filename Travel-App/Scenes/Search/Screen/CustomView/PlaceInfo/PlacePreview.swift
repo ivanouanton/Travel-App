@@ -41,6 +41,12 @@ class PlacePreview: UICollectionViewCell {
         }
     }
     
+    var isTourCreated = false {
+        didSet {
+            self.tourSettingsButtons.isHidden = isTourCreated ? false : true
+        }
+    }
+    
     var image: UIImage? = UIImage(named: "preview-target-place")!{
         didSet{
             guard let newImage = image else {return}
@@ -180,6 +186,7 @@ class PlacePreview: UICollectionViewCell {
         stack.distribution = .fillProportionally
         stack.alignment = .center
         stack.spacing = 5
+        stack.isHidden = true
         stack.addArrangedSubview(self.addButton)
         stack.addArrangedSubview(self.removeButton)
         

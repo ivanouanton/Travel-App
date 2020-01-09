@@ -29,6 +29,7 @@ final class SearchViewController: UIViewController{
             guard let tour = tour else {return}
             self.presenter.getTourRoute(with: tour)
             showTourInfo()
+            self.placesCollection.isTourCreated = true
         }
     }
 
@@ -337,6 +338,8 @@ extension SearchViewController: PlacePreviewDelegate {
     
     func createRoute(with location: GeoPoint) {
         self.presenter.getRoute(with: [location])
+        self.tour = nil
+        self.placesCollection.isTourCreated = false
     }
 }
 
