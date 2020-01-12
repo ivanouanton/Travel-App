@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNextLTPro-Demi.otf">
+            <string>AvenirNextLTPro-Demi</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AgreementViewController" customModule="Travel_App" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WQa-to-KwC">
+                    <rect key="frame" x="16" y="585" width="343" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmN-RC-Pcb">
+                            <rect key="frame" x="0.0" y="0.0" width="163.5" height="44"/>
+                            <color key="backgroundColor" red="0.078431372550000003" green="0.29411764709999999" blue="0.43137254899999999" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
+                            <state key="normal" title="Accept">
+                                <color key="titleColor" name="heavy"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRD-MK-GLQ">
+                            <rect key="frame" x="179.5" y="0.0" width="163.5" height="44"/>
+                            <color key="backgroundColor" name="white"/>
+                            <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
+                            <state key="normal" title="Decline">
+                                <color key="titleColor" name="heavy"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="2pe-Vv-UoP"/>
+                    </constraints>
+                </stackView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vi9-K9-fai">
+                    <rect key="frame" x="16" y="21" width="343" height="532"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdA-ox-yDv">
+                            <rect key="frame" x="20" y="20" width="240" height="900"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="900" id="9NO-YU-sNG"/>
+                                <constraint firstAttribute="width" constant="240" id="kjO-zj-4Cs"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="FdA-ox-yDv" secondAttribute="bottom" constant="20" symbolic="YES" id="LL3-Dd-e3e"/>
+                        <constraint firstItem="FdA-ox-yDv" firstAttribute="leading" secondItem="vi9-K9-fai" secondAttribute="leading" constant="20" symbolic="YES" id="MLW-bQ-c8g"/>
+                        <constraint firstItem="FdA-ox-yDv" firstAttribute="top" secondItem="vi9-K9-fai" secondAttribute="top" constant="20" symbolic="YES" id="Uqz-fI-BoB"/>
+                        <constraint firstAttribute="trailing" secondItem="FdA-ox-yDv" secondAttribute="trailing" constant="20" symbolic="YES" id="mo7-sE-lMr"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vi9-K9-fai" secondAttribute="trailing" constant="16" id="4xA-By-O6m"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WQa-to-KwC" secondAttribute="trailing" constant="16" id="FLi-VL-IdI"/>
+                <constraint firstItem="vi9-K9-fai" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="GIV-QK-ZcY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WQa-to-KwC" secondAttribute="bottom" constant="38" id="PDs-dG-d7h"/>
+                <constraint firstItem="vi9-K9-fai" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="21" id="Xgl-Zw-loC"/>
+                <constraint firstItem="WQa-to-KwC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="d6V-WE-Z3x"/>
+                <constraint firstItem="nRD-MK-GLQ" firstAttribute="top" secondItem="vi9-K9-fai" secondAttribute="bottom" constant="32" id="hCh-tR-iyM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="112.89355322338831"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="heavy">
+            <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -84,6 +84,8 @@
 		F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */; };
 		F79FCA2823847ED2009F1693 /* AvenirNextLTPro-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2423847ED2009F1693 /* AvenirNextLTPro-Demi.otf */; };
 		F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */; };
+		F7ADAA6823CB2156009ECAEE /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6623CB2155009ECAEE /* AgreementViewController.swift */; };
+		F7ADAA6923CB2156009ECAEE /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */; };
 		F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */; };
 		F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */; };
 		F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */; };
@@ -200,6 +202,8 @@
 		F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-HeavyCn.otf"; sourceTree = "<group>"; };
 		F79FCA2423847ED2009F1693 /* AvenirNextLTPro-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Demi.otf"; sourceTree = "<group>"; };
 		F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-UltLtCn.otf"; sourceTree = "<group>"; };
+		F7ADAA6623CB2155009ECAEE /* AgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		F7ADB08B237F3A9700DA4E89 /* Travel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
@@ -508,6 +512,7 @@
 		F798835B2381AEAE00F01F3A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F7ADAA6523CB2130009ECAEE /* Agreement */,
 				F79883592381AE5E00F01F3A /* ViewFactory.swift */,
 				F761DFFB2381D04E00D9DBBD /* Settings */,
 				F79883802381CA1500F01F3A /* Profile */,
@@ -628,6 +633,15 @@
 				F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F7ADAA6523CB2130009ECAEE /* Agreement */ = {
+			isa = PBXGroup;
+			children = (
+				F7ADAA6623CB2155009ECAEE /* AgreementViewController.swift */,
+				F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */,
+			);
+			path = Agreement;
 			sourceTree = "<group>";
 		};
 		F7ADB082237F3A9700DA4E89 = {
@@ -818,6 +832,7 @@
 				F7DFCE3623C662B5002A95C7 /* SettingTableViewCell.xib in Resources */,
 				F77879F723C7DA01002F2052 /* circleLoader.json in Resources */,
 				F780CE6823A2FDAD00E8E248 /* RecentPlacesTableViewCell.xib in Resources */,
+				F7ADAA6923CB2156009ECAEE /* AgreementViewController.xib in Resources */,
 				F7CF8D3A239AE39600119B60 /* InterestsTableCell.xib in Resources */,
 				F790825223A83AB700056228 /* OptionFilterTableViewCell.xib in Resources */,
 				F7CCB5C6238488D7004C4A35 /* Assets.xcassets in Resources */,
@@ -961,6 +976,7 @@
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
 				F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */,
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
+				F7ADAA6823CB2156009ECAEE /* AgreementViewController.swift in Sources */,
 				F77D501323C1F08100E89E67 /* Utilities.swift in Sources */,
 				F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */,
 				F71ACDEB238B41E60092279F /* PlaceData.swift in Sources */,
