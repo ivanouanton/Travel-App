@@ -86,6 +86,7 @@
 		F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */; };
 		F7ADAA6823CB2156009ECAEE /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6623CB2155009ECAEE /* AgreementViewController.swift */; };
 		F7ADAA6923CB2156009ECAEE /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */; };
+		F7ADAA6B23CB681F009ECAEE /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */; };
 		F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */; };
 		F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */; };
 		F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */; };
@@ -204,6 +205,7 @@
 		F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-UltLtCn.otf"; sourceTree = "<group>"; };
 		F7ADAA6623CB2155009ECAEE /* AgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
+		F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSlider.swift; path = "Travel-App/Scenes/CustomSlider.swift"; sourceTree = SOURCE_ROOT; };
 		F7ADB08B237F3A9700DA4E89 /* Travel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
@@ -640,6 +642,7 @@
 			children = (
 				F7ADAA6623CB2155009ECAEE /* AgreementViewController.swift */,
 				F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */,
+				F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */,
 			);
 			path = Agreement;
 			sourceTree = "<group>";
@@ -966,6 +969,7 @@
 				F780CE6723A2FDAD00E8E248 /* RecentPlacesTableViewCell.swift in Sources */,
 				F7CA366D23926116005F7C57 /* Label.swift in Sources */,
 				F7CFD011239BCC5600983631 /* ProfilePresenterProtocol.swift in Sources */,
+				F7ADAA6B23CB681F009ECAEE /* CustomSlider.swift in Sources */,
 				F7CFD01C239BD3BB00983631 /* TourTableViewCell.swift in Sources */,
 				F79B387C239D1E4B0032F598 /* NetworkProvider.swift in Sources */,
 				F780A4CB23C4F4EB00A9A375 /* FirebaseProfileManager.swift in Sources */,
