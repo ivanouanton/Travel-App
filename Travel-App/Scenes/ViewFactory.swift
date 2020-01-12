@@ -57,5 +57,10 @@ class ViewFactory{
         let vc = SplashScreenViewController(nibName: "SplashScreenViewController", bundle: nil)
         return vc
     }
+    
+    static func createAgreementVC() -> AgreementViewController{
+        let vc = AgreementViewController(nibName: "AgreementViewController", bundle: nil)
+        return vc
+    }
 }
 

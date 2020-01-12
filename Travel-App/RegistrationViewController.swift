@@ -58,6 +58,21 @@ class RegistrationViewController: UIViewController {
         }
     }
     
+    @IBAction func didPressedTermsAndConditions(_ sender: Any) {
+        let vc = ViewFactory.createAgreementVC()
+        vc.modalPresentationStyle = .fullScreen
+        
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func didPressedPrivacyStatement(_ sender: Any) {
+        
+        let vc = ViewFactory.createAgreementVC()
+        vc.modalPresentationStyle = .fullScreen
+        
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

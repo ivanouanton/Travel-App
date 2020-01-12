@@ -171,13 +171,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="0a9-3s-sWM">
-                                                <rect key="frame" x="158" y="231" width="59.5" height="42.5"/>
+                                                <rect key="frame" x="158" y="223" width="59.5" height="58.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ow2-TB-8kI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="59.5" height="16"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="59.5" height="32"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fd-MQ-7ta">
-                                                        <rect key="frame" x="0.0" y="28" width="59.5" height="14.5"/>
+                                                        <rect key="frame" x="0.0" y="44" width="59.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -246,13 +246,13 @@
                                                 <rect key="frame" x="16" y="542" width="343" height="63"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok-circle" translatesAutoresizingMaskIntoConstraints="NO" id="bGK-os-90i">
-                                                        <rect key="frame" x="0.0" y="0.0" width="30.5" height="63"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="63"/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="6vJ-sy-xIu">
-                                                        <rect key="frame" x="46.5" y="0.0" width="296.5" height="63"/>
+                                                        <rect key="frame" x="71.5" y="0.0" width="271.5" height="63"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="efc-di-HuT">
-                                                                <rect key="frame" x="0.0" y="0.0" width="296.5" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="271.5" height="31"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ry9-2s-5Nn">
                                                                         <rect key="frame" x="0.0" y="0.0" width="67.5" height="31"/>
@@ -261,16 +261,19 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWF-tJ-jN9">
-                                                                        <rect key="frame" x="74.5" y="0.0" width="222" height="31"/>
+                                                                        <rect key="frame" x="74.5" y="0.0" width="197" height="31"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="16"/>
                                                                         <state key="normal" title="Terms and Conditions">
                                                                             <color key="titleColor" name="pantone"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="didPressedTermsAndConditions:" destination="Ziq-vy-UpZ" eventType="touchUpInside" id="k34-UP-jxW"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="yam-0c-Okz">
-                                                                <rect key="frame" x="0.0" y="32" width="296.5" height="31"/>
+                                                                <rect key="frame" x="0.0" y="32" width="271.5" height="31"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afG-5V-ild">
                                                                         <rect key="frame" x="0.0" y="0.0" width="27" height="31"/>
@@ -279,11 +282,14 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3t9-mg-1tN">
-                                                                        <rect key="frame" x="34" y="0.0" width="262.5" height="31"/>
+                                                                        <rect key="frame" x="34" y="0.0" width="237.5" height="31"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="16"/>
                                                                         <state key="normal" title="Privacy Statement">
                                                                             <color key="titleColor" name="pantone"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="didPressedPrivacyStatement:" destination="Ziq-vy-UpZ" eventType="touchUpInside" id="ySl-7E-Z7c"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -420,6 +426,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4Lt-J6-TkV"/>
+        <segue reference="c4K-s8-yzk"/>
     </inferredMetricsTieBreakers>
 </document>
