@@ -2,20 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>You can select photo</string>
-	<key>NSCameraUsageDescription</key>
-	<string>This app will use camera</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>We are creating route frome your location to your destination</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We are creating route frome your location to your destination</string>
-	<key>NSLocationUsageDescription</key>
-	<string>We are creating route frome your location to your destination</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We are creating route frome your location to your destination</string>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -34,6 +20,18 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>This app will use camera</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We are creating route frome your location to your destination</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We are creating route frome your location to your destination</string>
+	<key>NSLocationUsageDescription</key>
+	<string>We are creating route frome your location to your destination</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We are creating route frome your location to your destination</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>You can select photo</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AvenirNextLTPro-Bold.otf</string>
@@ -59,5 +57,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

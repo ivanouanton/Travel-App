@@ -11,6 +11,7 @@ import UIKit
 class AgreementViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var backgroundView: UIView!
     
     @IBOutlet weak var verticalSlider: CustomSlider!{
         didSet{
@@ -20,6 +21,8 @@ class AgreementViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
 
     }
 

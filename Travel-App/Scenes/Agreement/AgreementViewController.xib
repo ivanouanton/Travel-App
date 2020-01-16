@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AgreementViewController" customModule="Travel_App" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="yXt-jP-ea3" id="kSj-1h-9Zm"/>
                 <outlet property="scrollView" destination="vi9-K9-fai" id="fwi-ns-dBF"/>
                 <outlet property="verticalSlider" destination="Msh-EB-ADW" id="bGE-SE-k7q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -38,7 +39,7 @@
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="15"/>
+                                    <integer key="value" value="5"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </button>
@@ -66,14 +67,40 @@
                         <constraint firstAttribute="height" constant="44" id="2pe-Vv-UoP"/>
                     </constraints>
                 </stackView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vi9-K9-fai">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXt-jP-ea3">
                     <rect key="frame" x="16" y="21" width="343" height="532"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" name="silver"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Msh-EB-ADW" customClass="CustomSlider" customModule="Travel_App" customModuleProvider="target">
+                    <rect key="frame" x="100.5" y="37" width="469" height="501"/>
+                    <color key="minimumTrackTintColor" name="pantone"/>
+                    <color key="maximumTrackTintColor" name="max-slider"/>
+                </slider>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vi9-K9-fai">
+                    <rect key="frame" x="16" y="21" width="298" height="532"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdA-ox-yDv">
-                            <rect key="frame" x="0.0" y="0.0" width="343" height="1346.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="298" height="1346.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oc0-uo-RI2">
-                                    <rect key="frame" x="24" y="24" width="265" height="1298.5"/>
+                                    <rect key="frame" x="24" y="24" width="250" height="1298.5"/>
                                     <mutableString key="text">How did the Iranian admission unfold?
 For three days, Iran had denied reports its missiles had brought down the plane, with one spokesman accusing Western nations of "lying and engaging in psychological warfare".
 But on Saturday morning, a statement read on state TV accepted the plane had been shot down.
@@ -92,15 +119,16 @@ He said a missile operator had acted independently and alone, mistaking the plan
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" name="white"/>
                             <constraints>
                                 <constraint firstItem="oc0-uo-RI2" firstAttribute="leading" secondItem="FdA-ox-yDv" secondAttribute="leading" constant="24" id="NkB-v4-Rjb"/>
                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oc0-uo-RI2" secondAttribute="bottom" constant="24" id="WUB-3G-0ZM"/>
-                                <constraint firstAttribute="trailing" secondItem="oc0-uo-RI2" secondAttribute="trailing" constant="54" id="tpu-ay-qf1"/>
+                                <constraint firstAttribute="trailing" secondItem="oc0-uo-RI2" secondAttribute="trailing" constant="24" id="tpu-ay-qf1"/>
                                 <constraint firstItem="oc0-uo-RI2" firstAttribute="top" secondItem="FdA-ox-yDv" secondAttribute="top" constant="24" id="xf6-fm-lJt"/>
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" name="green"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="FdA-ox-yDv" secondAttribute="bottom" id="LL3-Dd-e3e"/>
                         <constraint firstItem="FdA-ox-yDv" firstAttribute="height" secondItem="vi9-K9-fai" secondAttribute="height" multiplier="0.113722" priority="250" id="M8v-BC-QjN"/>
@@ -109,32 +137,39 @@ He said a missile operator had acted independently and alone, mistaking the plan
                         <constraint firstItem="FdA-ox-yDv" firstAttribute="centerX" secondItem="vi9-K9-fai" secondAttribute="centerX" id="cg9-9c-hTX"/>
                         <constraint firstAttribute="trailing" secondItem="FdA-ox-yDv" secondAttribute="trailing" id="mo7-sE-lMr"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </scrollView>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Msh-EB-ADW" customClass="CustomSlider" customModule="Travel_App" customModuleProvider="target">
-                    <rect key="frame" x="100.5" y="37" width="469" height="501"/>
-                    <color key="minimumTrackTintColor" name="pantone"/>
-                    <color key="maximumTrackTintColor" name="max-slider"/>
-                </slider>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vi9-K9-fai" secondAttribute="trailing" constant="16" id="4xA-By-O6m"/>
+                <constraint firstItem="yXt-jP-ea3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="21" id="2zB-5T-o1H"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vi9-K9-fai" secondAttribute="trailing" constant="61" id="4xA-By-O6m"/>
                 <constraint firstItem="Msh-EB-ADW" firstAttribute="width" secondItem="vi9-K9-fai" secondAttribute="height" multiplier="0.874636" id="5ch-mb-QHq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WQa-to-KwC" secondAttribute="trailing" constant="16" id="FLi-VL-IdI"/>
                 <constraint firstItem="vi9-K9-fai" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="GIV-QK-ZcY"/>
-                <constraint firstItem="Msh-EB-ADW" firstAttribute="centerX" secondItem="vi9-K9-fai" secondAttribute="trailing" constant="-24" id="Jeq-Il-Sby"/>
+                <constraint firstItem="yXt-jP-ea3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="H4x-Vm-IvC"/>
+                <constraint firstItem="Msh-EB-ADW" firstAttribute="centerX" secondItem="yXt-jP-ea3" secondAttribute="trailing" constant="-24" id="Jeq-Il-Sby"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WQa-to-KwC" secondAttribute="bottom" constant="38" id="PDs-dG-d7h"/>
+                <constraint firstItem="WQa-to-KwC" firstAttribute="top" secondItem="yXt-jP-ea3" secondAttribute="bottom" constant="32" id="PLF-Tx-3m7"/>
                 <constraint firstItem="vi9-K9-fai" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="21" id="Xgl-Zw-loC"/>
                 <constraint firstItem="Msh-EB-ADW" firstAttribute="centerY" secondItem="vi9-K9-fai" secondAttribute="centerY" id="bad-mT-HyS"/>
                 <constraint firstItem="WQa-to-KwC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="d6V-WE-Z3x"/>
                 <constraint firstItem="nRD-MK-GLQ" firstAttribute="top" secondItem="vi9-K9-fai" secondAttribute="bottom" constant="32" id="hCh-tR-iyM"/>
                 <constraint firstItem="Msh-EB-ADW" firstAttribute="top" secondItem="vi9-K9-fai" secondAttribute="top" constant="16" id="wOU-Oa-JSA"/>
+                <constraint firstItem="yXt-jP-ea3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="yeX-O7-omz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.40000000000001" y="112.89355322338831"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="green">
+            <color red="0.40000000000000002" green="0.74117647058823533" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="heavy">
             <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -143,6 +178,9 @@ He said a missile operator had acted independently and alone, mistaking the plan
         </namedColor>
         <namedColor name="pantone">
             <color red="0.078431372549019607" green="0.29411764705882354" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="silver">
+            <color red="0.76078431372549016" green="0.75294117647058822" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="white">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
