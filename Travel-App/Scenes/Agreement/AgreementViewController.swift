@@ -22,8 +22,22 @@ class AgreementViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-
     }
+    
+    @IBAction func sliderValueDidChanged(_ sender: UISlider) {
+        
+        let scrollOffSet = CGFloat(sender.value) * (scrollView.contentSize.height - scrollView.frame.height)
+        scrollView.setContentOffset(CGPoint(x: 0, y: scrollOffSet), animated: true)
+    }
+}
 
+extension AgreementViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let sliderValue = scrollView.contentOffset.y/(scrollView.contentSize.height - scrollView.frame.height)
+        print(sliderValue)
+
+        verticalSlider.value = Float(sliderValue)
+    }
 }

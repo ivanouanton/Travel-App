@@ -88,10 +88,13 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Msh-EB-ADW" customClass="CustomSlider" customModule="Travel_App" customModuleProvider="target">
+                <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Msh-EB-ADW" customClass="CustomSlider" customModule="Travel_App" customModuleProvider="target">
                     <rect key="frame" x="100.5" y="37" width="469" height="501"/>
                     <color key="minimumTrackTintColor" name="pantone"/>
                     <color key="maximumTrackTintColor" name="max-slider"/>
+                    <connections>
+                        <action selector="sliderValueDidChanged:" destination="-1" eventType="valueChanged" id="BP7-X2-ghR"/>
+                    </connections>
                 </slider>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vi9-K9-fai">
                     <rect key="frame" x="16" y="21" width="298" height="532"/>
@@ -128,7 +131,7 @@ He said a missile operator had acted independently and alone, mistaking the plan
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" name="green"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="FdA-ox-yDv" secondAttribute="bottom" id="LL3-Dd-e3e"/>
                         <constraint firstItem="FdA-ox-yDv" firstAttribute="height" secondItem="vi9-K9-fai" secondAttribute="height" multiplier="0.113722" priority="250" id="M8v-BC-QjN"/>
@@ -142,6 +145,9 @@ He said a missile operator had acted independently and alone, mistaking the plan
                             <integer key="value" value="8"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="DEe-xf-YTJ"/>
+                    </connections>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -167,9 +173,6 @@ He said a missile operator had acted independently and alone, mistaking the plan
         </view>
     </objects>
     <resources>
-        <namedColor name="green">
-            <color red="0.40000000000000002" green="0.74117647058823533" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="heavy">
             <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
