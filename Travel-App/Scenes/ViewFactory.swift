@@ -58,9 +58,9 @@ class ViewFactory{
         return vc
     }
     
-    static func createAgreementVC() -> AgreementViewController{
+    static func createAgreementVC(with type: AgreementType) -> AgreementViewController{
         let vc = AgreementViewController(nibName: "AgreementViewController", bundle: nil)
-        vc.state = .termsAndConditions
+        vc.state = type
         return vc
     }
 }

@@ -89,6 +89,7 @@
 		F7ADAA6B23CB681F009ECAEE /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */; };
 		F7ADAA6D23D09B81009ECAEE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6C23D09B81009ECAEE /* UIView+Extension.swift */; };
 		F7ADAA6F23D0D866009ECAEE /* AgreementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6E23D0D866009ECAEE /* AgreementType.swift */; };
+		F7ADAA7123D460CE009ECAEE /* AgreementDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA7023D460CD009ECAEE /* AgreementDelegate.swift */; };
 		F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */; };
 		F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */; };
 		F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */; };
@@ -210,6 +211,7 @@
 		F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSlider.swift; path = "Travel-App/Scenes/CustomSlider.swift"; sourceTree = SOURCE_ROOT; };
 		F7ADAA6C23D09B81009ECAEE /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		F7ADAA6E23D0D866009ECAEE /* AgreementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AgreementType.swift; path = "Travel-App/AgreementType.swift"; sourceTree = SOURCE_ROOT; };
+		F7ADAA7023D460CD009ECAEE /* AgreementDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AgreementDelegate.swift; path = "Travel-App/Scenes/AgreementDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		F7ADB08B237F3A9700DA4E89 /* Travel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
@@ -649,6 +651,7 @@
 				F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */,
 				F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */,
 				F7ADAA6E23D0D866009ECAEE /* AgreementType.swift */,
+				F7ADAA7023D460CD009ECAEE /* AgreementDelegate.swift */,
 			);
 			path = Agreement;
 			sourceTree = "<group>";
@@ -987,6 +990,7 @@
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
 				F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */,
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
+				F7ADAA7123D460CE009ECAEE /* AgreementDelegate.swift in Sources */,
 				F7ADAA6823CB2156009ECAEE /* AgreementViewController.swift in Sources */,
 				F77D501323C1F08100E89E67 /* Utilities.swift in Sources */,
 				F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */,

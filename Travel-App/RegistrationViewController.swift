@@ -21,6 +21,26 @@ class RegistrationViewController: UIViewController {
     
     var image: UIImage? = nil
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.setupHideKeyboardOnTap()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+
+        setupAvatar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     @IBAction func didPressedSignUp(_ sender: Any) {
         
         let error = validateFields()
@@ -59,28 +79,24 @@ class RegistrationViewController: UIViewController {
     }
     
     @IBAction func didPressedTermsAndConditions(_ sender: Any) {
-        let vc = ViewFactory.createAgreementVC()
+        let vc = ViewFactory.createAgreementVC(with: .termsAndConditions)
         vc.modalPresentationStyle = .fullScreen
         
-        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func didPressedPrivacyStatement(_ sender: Any) {
         
-        let vc = ViewFactory.createAgreementVC()
+        let vc = ViewFactory.createAgreementVC(with: .privacyStatement)
         vc.modalPresentationStyle = .fullScreen
         
-        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.setupHideKeyboardOnTap()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
-
-        setupAvatar()
+    @IBAction func didPressedSighIn(_ sender: Any) {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
     }
     
     @objc func keyboardWillShow(notification:NSNotification){

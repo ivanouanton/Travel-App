@@ -20,16 +20,30 @@ class AgreementViewController: UIViewController {
         }
     }
     
+    weak var delegate: AgreementDelegate?
+    
     var state: AgreementType?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textLabel.attributedText = state?.getAttributedString()
+        title = state?.getTitle()
+        navigationItem.hidesBackButton = true
+        navigationController?.navigationBar.barTintColor = UIColor(named: "heavy")
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "white")!]
     }
     
     @IBAction func sliderValueDidChanged(_ sender: UISlider) {
         let scrollOffSet = CGFloat(sender.value) * (scrollView.contentSize.height - scrollView.frame.height)
         scrollView.setContentOffset(CGPoint(x: 0, y: scrollOffSet), animated: true)
+    }
+    @IBAction func didPressedAccept(_ sender: Any) {
+        delegate?.agreementAccept(state!, accept: true)
+        navigationController?.popViewController(animated: true)
+    }
+    @IBAction func didPressedDeciline(_ sender: Any) {
+        delegate?.agreementAccept(state!, accept: false)
+        navigationController?.popViewController(animated: true)
     }
 }
 

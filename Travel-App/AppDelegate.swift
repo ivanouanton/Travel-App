@@ -30,7 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             isLoginIn == true{
             self.window?.rootViewController = AppTabBarController()
         }else {
-            self.window?.rootViewController = ViewFactory.createAuthVC()
+            let navigationController = UINavigationController()
+            let rootViewController = ViewFactory.createAuthVC()
+            navigationController.setViewControllers([rootViewController], animated: false)
+            self.window?.rootViewController = navigationController
         }
         
         self.window?.makeKeyAndVisible()

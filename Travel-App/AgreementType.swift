@@ -36,6 +36,15 @@ enum AgreementType{
 
 
 extension AgreementType{
+    func getTitle() -> String{
+        switch self {
+        case .termsAndConditions:
+            return "Terms and Conditions"
+        case .privacyStatement:
+            return "Privacy Statement"
+        }
+    }
+    
     func getAttributedString() -> NSAttributedString{
         switch self {
         case .termsAndConditions:

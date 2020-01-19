@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rbi-zK-SqI">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -26,13 +26,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="urbs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpb-uf-nO0">
-                                <rect key="frame" x="135.5" y="54" width="49" height="33"/>
+                                <rect key="frame" x="135.5" y="98" width="49" height="33"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NfU-DU-l0x" customClass="CustomTextField" customModule="Travel_App" customModuleProvider="target">
-                                <rect key="frame" x="16" y="288" width="288" height="30"/>
+                                <rect key="frame" x="16" y="332" width="288" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="AuU-eJ-TI8"/>
                                 </constraints>
@@ -40,7 +40,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="arq-fe-eXi" customClass="CustomTextField" customModule="Travel_App" customModuleProvider="target">
-                                <rect key="frame" x="16" y="334" width="288" height="30"/>
+                                <rect key="frame" x="16" y="378" width="288" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="tad-mi-Soe"/>
                                 </constraints>
@@ -48,12 +48,12 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hea-iF-AlK">
-                                <rect key="frame" x="179" y="336" width="125" height="26"/>
+                                <rect key="frame" x="179" y="380" width="125" height="26"/>
                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="12"/>
                                 <state key="normal" title="Forgot your password?"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ULl-yR-DgX">
-                                <rect key="frame" x="16" y="396" width="288" height="44"/>
+                                <rect key="frame" x="16" y="440" width="288" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PP-A1-tDS">
                                         <rect key="frame" x="0.0" y="0.0" width="136" height="44"/>
@@ -68,6 +68,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
+                                            <action selector="didPressedSighIn:" destination="WOL-2A-eY6" eventType="touchUpInside" id="4u5-cW-Tfx"/>
                                             <action selector="didPressedSignIn:" destination="SOa-4C-IwB" eventType="touchUpInside" id="qfT-OK-b9y"/>
                                         </connections>
                                     </button>
@@ -99,7 +100,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="Ziq-vy-UpZ" kind="presentation" modalPresentationStyle="fullScreen" id="4Lt-J6-TkV"/>
+                                            <segue destination="Ziq-vy-UpZ" kind="push" id="4Lt-J6-TkV"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -108,7 +109,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to Your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DO-Sl-F4C">
-                                <rect key="frame" x="25.5" y="199" width="269.5" height="33"/>
+                                <rect key="frame" x="25.5" y="243" width="269.5" height="33"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -141,8 +142,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMF-Yt-cd9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="WOL-2A-eY6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3571.875" y="119.36619718309859"/>
+            <point key="canvasLocation" x="4569.375" y="119.36619718309859"/>
         </scene>
         <!--Registration View Controller-->
         <scene sceneID="mKy-WN-hVR">
@@ -153,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yRL-Fd-bmn">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="656"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OzL-5V-tge">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="706"/>
@@ -319,7 +321,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <segue destination="SOa-4C-IwB" kind="presentation" identifier="signIn" modalPresentationStyle="fullScreen" id="c4K-s8-yzk"/>
+                                                            <action selector="didPressedSighIn:" destination="Ziq-vy-UpZ" eventType="touchUpInside" id="9ph-g0-AV7"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuq-JW-2IG">
@@ -406,7 +408,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MtM-Pw-4ky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4596" y="106"/>
+            <point key="canvasLocation" x="5592.1875" y="105.63380281690141"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="B2I-F1-znp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rbi-zK-SqI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YTj-Bj-pEL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SOa-4C-IwB" kind="relationship" relationship="rootViewController" id="SFe-UP-69e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U9l-Dy-eXR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3571.875" y="119.36619718309859"/>
         </scene>
     </scenes>
     <resources>
@@ -425,7 +445,4 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="c4K-s8-yzk"/>
-    </inferredMetricsTieBreakers>
 </document>

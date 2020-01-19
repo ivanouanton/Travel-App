@@ -43,6 +43,9 @@
                                     <integer key="value" value="5"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didPressedAccept:" destination="-1" eventType="touchUpInside" id="gFd-gi-R6v"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRD-MK-GLQ">
                             <rect key="frame" x="179.5" y="0.0" width="163.5" height="44"/>
@@ -62,6 +65,9 @@
                                     <real key="value" value="5"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didPressedDeciline:" destination="-1" eventType="touchUpInside" id="hkh-lZ-Yb8"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
