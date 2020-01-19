@@ -77,7 +77,7 @@ class RegistrationViewController: UIViewController {
                                     
             self.showAlert(message) {
                 self.removeLoader()
-                self.performSegue(withIdentifier: "signIn", sender: self)
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
