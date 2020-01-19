@@ -18,8 +18,32 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var emailField: CustomTextField!
     @IBOutlet weak var passwordField: CustomTextField!
     @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var agreementStateImage: UIImageView!
     
+    private var termsAndConditions: Bool = false
+    private var privacyStatement: Bool = false
+
     var image: UIImage? = nil
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.setupHideKeyboardOnTap()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+
+        setupAvatar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
     
     @IBAction func didPressedSignUp(_ sender: Any) {
         
@@ -53,19 +77,32 @@ class RegistrationViewController: UIViewController {
                                     
             self.showAlert(message) {
                 self.removeLoader()
-                self.performSegue(withIdentifier: "signIn", sender: self)
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func didPressedTermsAndConditions(_ sender: Any) {
+        let vc = ViewFactory.createAgreementVC(with: .termsAndConditions)
+        vc.modalPresentationStyle = .fullScreen
+        vc.delegate = self
         
-        self.setupHideKeyboardOnTap()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
-
-        setupAvatar()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func didPressedPrivacyStatement(_ sender: Any) {
+        
+        let vc = ViewFactory.createAgreementVC(with: .privacyStatement)
+        vc.modalPresentationStyle = .fullScreen
+        vc.delegate = self
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func didPressedSighIn(_ sender: Any) {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
     }
     
     @objc func keyboardWillShow(notification:NSNotification){
@@ -115,6 +152,10 @@ class RegistrationViewController: UIViewController {
             return "Please make sure your password is at least 8 characters, contains a special character and a number."
         }
         
+        if !self.termsAndConditions || !self.privacyStatement {
+            return "Check agreements!"
+        }
+        
         return nil
     }
 }
@@ -143,5 +184,18 @@ extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigat
         }
         
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension RegistrationViewController: AgreementDelegate {
+    func agreementAccept(_ state: AgreementType, accept: Bool) {
+        switch state {
+        case .termsAndConditions:
+            self.termsAndConditions = accept
+        case .privacyStatement:
+            self.privacyStatement = accept
+        }
+        
+        self.agreementStateImage.image = (self.termsAndConditions && self.privacyStatement) ? UIImage(named: "successful") : UIImage(named: "ok-circle")
     }
 }

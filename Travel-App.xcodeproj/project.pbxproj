@@ -84,6 +84,12 @@
 		F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */; };
 		F79FCA2823847ED2009F1693 /* AvenirNextLTPro-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2423847ED2009F1693 /* AvenirNextLTPro-Demi.otf */; };
 		F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */; };
+		F7ADAA6823CB2156009ECAEE /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6623CB2155009ECAEE /* AgreementViewController.swift */; };
+		F7ADAA6923CB2156009ECAEE /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */; };
+		F7ADAA6B23CB681F009ECAEE /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */; };
+		F7ADAA6D23D09B81009ECAEE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6C23D09B81009ECAEE /* UIView+Extension.swift */; };
+		F7ADAA6F23D0D866009ECAEE /* AgreementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6E23D0D866009ECAEE /* AgreementType.swift */; };
+		F7ADAA7123D460CE009ECAEE /* AgreementDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA7023D460CD009ECAEE /* AgreementDelegate.swift */; };
 		F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */; };
 		F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */; };
 		F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */; };
@@ -200,6 +206,12 @@
 		F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-HeavyCn.otf"; sourceTree = "<group>"; };
 		F79FCA2423847ED2009F1693 /* AvenirNextLTPro-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Demi.otf"; sourceTree = "<group>"; };
 		F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-UltLtCn.otf"; sourceTree = "<group>"; };
+		F7ADAA6623CB2155009ECAEE /* AgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
+		F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
+		F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSlider.swift; path = "Travel-App/Scenes/CustomSlider.swift"; sourceTree = SOURCE_ROOT; };
+		F7ADAA6C23D09B81009ECAEE /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		F7ADAA6E23D0D866009ECAEE /* AgreementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AgreementType.swift; path = "Travel-App/AgreementType.swift"; sourceTree = SOURCE_ROOT; };
+		F7ADAA7023D460CD009ECAEE /* AgreementDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AgreementDelegate.swift; path = "Travel-App/Scenes/AgreementDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		F7ADB08B237F3A9700DA4E89 /* Travel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
@@ -447,6 +459,7 @@
 				F72B7C1523A6D6AE009155D4 /* UIButton+Extension.swift */,
 				F77C179123AAD3C4009D2D69 /* UIViewController+Extension.swift */,
 				F77879F123C7D38E002F2052 /* Loader.swift */,
+				F7ADAA6C23D09B81009ECAEE /* UIView+Extension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -515,6 +528,7 @@
 				F79883662381AF9600F01F3A /* Search */,
 				F77C178C23AAC34E009D2D69 /* Authorisation */,
 				F77D501A23C3D1CC00E89E67 /* Splash */,
+				F7ADAA6523CB2130009ECAEE /* Agreement */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -628,6 +642,18 @@
 				F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F7ADAA6523CB2130009ECAEE /* Agreement */ = {
+			isa = PBXGroup;
+			children = (
+				F7ADAA6623CB2155009ECAEE /* AgreementViewController.swift */,
+				F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */,
+				F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */,
+				F7ADAA6E23D0D866009ECAEE /* AgreementType.swift */,
+				F7ADAA7023D460CD009ECAEE /* AgreementDelegate.swift */,
+			);
+			path = Agreement;
 			sourceTree = "<group>";
 		};
 		F7ADB082237F3A9700DA4E89 = {
@@ -818,6 +844,7 @@
 				F7DFCE3623C662B5002A95C7 /* SettingTableViewCell.xib in Resources */,
 				F77879F723C7DA01002F2052 /* circleLoader.json in Resources */,
 				F780CE6823A2FDAD00E8E248 /* RecentPlacesTableViewCell.xib in Resources */,
+				F7ADAA6923CB2156009ECAEE /* AgreementViewController.xib in Resources */,
 				F7CF8D3A239AE39600119B60 /* InterestsTableCell.xib in Resources */,
 				F790825223A83AB700056228 /* OptionFilterTableViewCell.xib in Resources */,
 				F7CCB5C6238488D7004C4A35 /* Assets.xcassets in Resources */,
@@ -944,6 +971,7 @@
 				F79B3873239C13630032F598 /* ToursManager.swift in Sources */,
 				F77D501823C3D1BE00E89E67 /* SplashScreenViewController.swift in Sources */,
 				F7EF691F239BC1230004EF4E /* ToursPresenter.swift in Sources */,
+				F7ADAA6F23D0D866009ECAEE /* AgreementType.swift in Sources */,
 				F780CE6323A2F91200E8E248 /* ProfileOptionViewCell.swift in Sources */,
 				F77F22462392E816004610CE /* Extension+CALayer.swift in Sources */,
 				F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */,
@@ -951,6 +979,7 @@
 				F780CE6723A2FDAD00E8E248 /* RecentPlacesTableViewCell.swift in Sources */,
 				F7CA366D23926116005F7C57 /* Label.swift in Sources */,
 				F7CFD011239BCC5600983631 /* ProfilePresenterProtocol.swift in Sources */,
+				F7ADAA6B23CB681F009ECAEE /* CustomSlider.swift in Sources */,
 				F7CFD01C239BD3BB00983631 /* TourTableViewCell.swift in Sources */,
 				F79B387C239D1E4B0032F598 /* NetworkProvider.swift in Sources */,
 				F780A4CB23C4F4EB00A9A375 /* FirebaseProfileManager.swift in Sources */,
@@ -961,9 +990,12 @@
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
 				F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */,
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
+				F7ADAA7123D460CE009ECAEE /* AgreementDelegate.swift in Sources */,
+				F7ADAA6823CB2156009ECAEE /* AgreementViewController.swift in Sources */,
 				F77D501323C1F08100E89E67 /* Utilities.swift in Sources */,
 				F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */,
 				F71ACDEB238B41E60092279F /* PlaceData.swift in Sources */,
+				F7ADAA6D23D09B81009ECAEE /* UIView+Extension.swift in Sources */,
 				F7EF6918239BA4AA0004EF4E /* PreferenceOptionDelegate.swift in Sources */,
 				F7EF691A239BBE930004EF4E /* ToursViewController.swift in Sources */,
 				F7CFD017239BCD6600983631 /* ProfilePresenter.swift in Sources */,

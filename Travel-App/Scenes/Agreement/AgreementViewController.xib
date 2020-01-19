@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNextLTPro-Demi.otf">
+            <string>AvenirNextLTPro-Demi</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AgreementViewController" customModule="Travel_App" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="yXt-jP-ea3" id="kSj-1h-9Zm"/>
+                <outlet property="scrollView" destination="vi9-K9-fai" id="fwi-ns-dBF"/>
+                <outlet property="textLabel" destination="oc0-uo-RI2" id="diq-Ph-Oj3"/>
+                <outlet property="verticalSlider" destination="Msh-EB-ADW" id="bGE-SE-k7q"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WQa-to-KwC">
+                    <rect key="frame" x="16" y="585" width="343" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmN-RC-Pcb">
+                            <rect key="frame" x="0.0" y="0.0" width="163.5" height="44"/>
+                            <color key="backgroundColor" red="0.078431372550000003" green="0.29411764709999999" blue="0.43137254899999999" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
+                            <state key="normal" title="Accept">
+                                <color key="titleColor" name="heavy"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didPressedAccept:" destination="-1" eventType="touchUpInside" id="gFd-gi-R6v"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRD-MK-GLQ">
+                            <rect key="frame" x="179.5" y="0.0" width="163.5" height="44"/>
+                            <color key="backgroundColor" name="white"/>
+                            <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
+                            <state key="normal" title="Decline">
+                                <color key="titleColor" name="heavy"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didPressedDeciline:" destination="-1" eventType="touchUpInside" id="hkh-lZ-Yb8"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="2pe-Vv-UoP"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXt-jP-ea3">
+                    <rect key="frame" x="16" y="21" width="343" height="532"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" name="silver"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Msh-EB-ADW" customClass="CustomSlider" customModule="Travel_App" customModuleProvider="target">
+                    <rect key="frame" x="100.5" y="37" width="469" height="501"/>
+                    <color key="minimumTrackTintColor" name="pantone"/>
+                    <color key="maximumTrackTintColor" name="max-slider"/>
+                    <connections>
+                        <action selector="sliderValueDidChanged:" destination="-1" eventType="valueChanged" id="BP7-X2-ghR"/>
+                    </connections>
+                </slider>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vi9-K9-fai">
+                    <rect key="frame" x="16" y="21" width="298" height="532"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdA-ox-yDv">
+                            <rect key="frame" x="0.0" y="0.0" width="298" height="1346.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oc0-uo-RI2">
+                                    <rect key="frame" x="24" y="24" width="250" height="1298.5"/>
+                                    <mutableString key="text">How did the Iranian admission unfold?
+For three days, Iran had denied reports its missiles had brought down the plane, with one spokesman accusing Western nations of "lying and engaging in psychological warfare".
+But on Saturday morning, a statement read on state TV accepted the plane had been shot down.
+Brig-Gen Amir Ali Hajizadeh, the Revolutionary Guards' aerospace commander, explained what happened.
+He said a missile operator had acted independently and alone, mistaking the plane for a "cruise missile" as there had been reports that such missiles had been fired at Iran.How did the Iranian admission unfold?
+For three days, Iran had denied reports its missiles had brought down the plane, with one spokesman accusing Western nations of "lying and engaging in psychological warfare".
+But on Saturday morning, a statement read on state TV accepted the plane had been shot down.
+Brig-Gen Amir Ali Hajizadeh, the Revolutionary Guards' aerospace commander, explained what happened.
+He said a missile operator had acted independently and alone, mistaking the plane for a "cruise missile" as there had been reports that such missiles had been fired at Iran.How did the Iranian admission unfold?
+For three days, Iran had denied reports its missiles had brought down the plane, with one spokesman accusing Western nations of "lying and engaging in psychological warfare".
+But on Saturday morning, a statement read on state TV accepted the plane had been shot down.
+Brig-Gen Amir Ali Hajizadeh, the Revolutionary Guards' aerospace commander, explained what happened.
+He said a missile operator had acted independently and alone, mistaking the plane for a "cruise missile" as there had been reports that such missiles had been fired at Iran.</mutableString>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="white"/>
+                            <constraints>
+                                <constraint firstItem="oc0-uo-RI2" firstAttribute="leading" secondItem="FdA-ox-yDv" secondAttribute="leading" constant="24" id="NkB-v4-Rjb"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="oc0-uo-RI2" secondAttribute="bottom" constant="24" id="WUB-3G-0ZM"/>
+                                <constraint firstAttribute="trailing" secondItem="oc0-uo-RI2" secondAttribute="trailing" constant="24" id="tpu-ay-qf1"/>
+                                <constraint firstItem="oc0-uo-RI2" firstAttribute="top" secondItem="FdA-ox-yDv" secondAttribute="top" constant="24" id="xf6-fm-lJt"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="FdA-ox-yDv" secondAttribute="bottom" id="LL3-Dd-e3e"/>
+                        <constraint firstItem="FdA-ox-yDv" firstAttribute="height" secondItem="vi9-K9-fai" secondAttribute="height" multiplier="0.113722" priority="250" id="M8v-BC-QjN"/>
+                        <constraint firstItem="FdA-ox-yDv" firstAttribute="leading" secondItem="vi9-K9-fai" secondAttribute="leading" id="MLW-bQ-c8g"/>
+                        <constraint firstItem="FdA-ox-yDv" firstAttribute="top" secondItem="vi9-K9-fai" secondAttribute="top" id="Uqz-fI-BoB"/>
+                        <constraint firstItem="FdA-ox-yDv" firstAttribute="centerX" secondItem="vi9-K9-fai" secondAttribute="centerX" id="cg9-9c-hTX"/>
+                        <constraint firstAttribute="trailing" secondItem="FdA-ox-yDv" secondAttribute="trailing" id="mo7-sE-lMr"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="DEe-xf-YTJ"/>
+                    </connections>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="yXt-jP-ea3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="21" id="2zB-5T-o1H"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vi9-K9-fai" secondAttribute="trailing" constant="61" id="4xA-By-O6m"/>
+                <constraint firstItem="Msh-EB-ADW" firstAttribute="width" secondItem="vi9-K9-fai" secondAttribute="height" multiplier="0.874636" id="5ch-mb-QHq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WQa-to-KwC" secondAttribute="trailing" constant="16" id="FLi-VL-IdI"/>
+                <constraint firstItem="vi9-K9-fai" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="GIV-QK-ZcY"/>
+                <constraint firstItem="yXt-jP-ea3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="H4x-Vm-IvC"/>
+                <constraint firstItem="Msh-EB-ADW" firstAttribute="centerX" secondItem="yXt-jP-ea3" secondAttribute="trailing" constant="-24" id="Jeq-Il-Sby"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WQa-to-KwC" secondAttribute="bottom" constant="38" id="PDs-dG-d7h"/>
+                <constraint firstItem="WQa-to-KwC" firstAttribute="top" secondItem="yXt-jP-ea3" secondAttribute="bottom" constant="32" id="PLF-Tx-3m7"/>
+                <constraint firstItem="vi9-K9-fai" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="21" id="Xgl-Zw-loC"/>
+                <constraint firstItem="Msh-EB-ADW" firstAttribute="centerY" secondItem="vi9-K9-fai" secondAttribute="centerY" id="bad-mT-HyS"/>
+                <constraint firstItem="WQa-to-KwC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="d6V-WE-Z3x"/>
+                <constraint firstItem="nRD-MK-GLQ" firstAttribute="top" secondItem="vi9-K9-fai" secondAttribute="bottom" constant="32" id="hCh-tR-iyM"/>
+                <constraint firstItem="Msh-EB-ADW" firstAttribute="top" secondItem="vi9-K9-fai" secondAttribute="top" constant="16" id="wOU-Oa-JSA"/>
+                <constraint firstItem="yXt-jP-ea3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="yeX-O7-omz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="112.89355322338831"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="heavy">
+            <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="max-slider">
+            <color red="0.83921568627450982" green="0.8784313725490196" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pantone">
+            <color red="0.078431372549019607" green="0.29411764705882354" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="silver">
+            <color red="0.76078431372549016" green="0.75294117647058822" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
