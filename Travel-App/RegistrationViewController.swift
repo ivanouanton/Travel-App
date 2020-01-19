@@ -152,6 +152,10 @@ class RegistrationViewController: UIViewController {
             return "Please make sure your password is at least 8 characters, contains a special character and a number."
         }
         
+        if !self.termsAndConditions || !self.privacyStatement {
+            return "Check agreements!"
+        }
+        
         return nil
     }
 }
