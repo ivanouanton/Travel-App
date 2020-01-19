@@ -88,6 +88,7 @@
 		F7ADAA6923CB2156009ECAEE /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */; };
 		F7ADAA6B23CB681F009ECAEE /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */; };
 		F7ADAA6D23D09B81009ECAEE /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6C23D09B81009ECAEE /* UIView+Extension.swift */; };
+		F7ADAA6F23D0D866009ECAEE /* AgreementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6E23D0D866009ECAEE /* AgreementType.swift */; };
 		F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */; };
 		F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */; };
 		F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */; };
@@ -208,6 +209,7 @@
 		F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSlider.swift; path = "Travel-App/Scenes/CustomSlider.swift"; sourceTree = SOURCE_ROOT; };
 		F7ADAA6C23D09B81009ECAEE /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = SOURCE_ROOT; };
+		F7ADAA6E23D0D866009ECAEE /* AgreementType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AgreementType.swift; path = "Travel-App/AgreementType.swift"; sourceTree = SOURCE_ROOT; };
 		F7ADB08B237F3A9700DA4E89 /* Travel-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
@@ -646,6 +648,7 @@
 				F7ADAA6623CB2155009ECAEE /* AgreementViewController.swift */,
 				F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */,
 				F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */,
+				F7ADAA6E23D0D866009ECAEE /* AgreementType.swift */,
 			);
 			path = Agreement;
 			sourceTree = "<group>";
@@ -965,6 +968,7 @@
 				F79B3873239C13630032F598 /* ToursManager.swift in Sources */,
 				F77D501823C3D1BE00E89E67 /* SplashScreenViewController.swift in Sources */,
 				F7EF691F239BC1230004EF4E /* ToursPresenter.swift in Sources */,
+				F7ADAA6F23D0D866009ECAEE /* AgreementType.swift in Sources */,
 				F780CE6323A2F91200E8E248 /* ProfileOptionViewCell.swift in Sources */,
 				F77F22462392E816004610CE /* Extension+CALayer.swift in Sources */,
 				F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */,

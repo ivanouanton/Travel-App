@@ -60,6 +60,7 @@ class ViewFactory{
     
     static func createAgreementVC() -> AgreementViewController{
         let vc = AgreementViewController(nibName: "AgreementViewController", bundle: nil)
+        vc.state = .termsAndConditions
         return vc
     }
 }

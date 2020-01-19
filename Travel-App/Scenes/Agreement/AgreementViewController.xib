@@ -18,6 +18,7 @@
             <connections>
                 <outlet property="backgroundView" destination="yXt-jP-ea3" id="kSj-1h-9Zm"/>
                 <outlet property="scrollView" destination="vi9-K9-fai" id="fwi-ns-dBF"/>
+                <outlet property="textLabel" destination="oc0-uo-RI2" id="diq-Ph-Oj3"/>
                 <outlet property="verticalSlider" destination="Msh-EB-ADW" id="bGE-SE-k7q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

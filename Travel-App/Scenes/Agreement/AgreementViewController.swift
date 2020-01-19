@@ -12,20 +12,22 @@ class AgreementViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var backgroundView: UIView!
-    
+    @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var verticalSlider: CustomSlider!{
         didSet{
             verticalSlider.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/2))
             verticalSlider.setThumbImage(UIImage(named: "thimb"), for: .normal)
         }
     }
+    
+    var state: AgreementType?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        textLabel.attributedText = state?.getAttributedString()
     }
     
     @IBAction func sliderValueDidChanged(_ sender: UISlider) {
-        
         let scrollOffSet = CGFloat(sender.value) * (scrollView.contentSize.height - scrollView.frame.height)
         scrollView.setContentOffset(CGPoint(x: 0, y: scrollOffSet), animated: true)
     }
@@ -34,9 +36,7 @@ class AgreementViewController: UIViewController {
 extension AgreementViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
         let sliderValue = scrollView.contentOffset.y/(scrollView.contentSize.height - scrollView.frame.height)
-        print(sliderValue)
 
         verticalSlider.value = Float(sliderValue)
     }
