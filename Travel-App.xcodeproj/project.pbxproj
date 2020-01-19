@@ -70,10 +70,11 @@
 		F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */; };
 		F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883602381AF1900F01F3A /* SearchPresenter.swift */; };
 		F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883622381AF5000F01F3A /* SearchPresenterProtocol.swift */; };
-		F79883682381B8F000F01F3A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883672381B8F000F01F3A /* HomeViewController.swift */; };
 		F798836A2381C4FA00F01F3A /* HomeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883692381C4FA00F01F3A /* HomeViewProtocol.swift */; };
 		F79883742381C6CB00F01F3A /* HomePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883722381C6CB00F01F3A /* HomePresenterProtocol.swift */; };
 		F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883732381C6CB00F01F3A /* HomePresenter.swift */; };
+		F799F5E123D4CD7500106B7E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F799F5DF23D4CD7500106B7E /* HomeViewController.swift */; };
+		F799F5E223D4CD7500106B7E /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F799F5E023D4CD7500106B7E /* HomeViewController.xib */; };
 		F79B3873239C13630032F598 /* ToursManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79B3872239C13620032F598 /* ToursManager.swift */; };
 		F79B3878239C60400032F598 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79B3877239C60400032F598 /* NavigationController.swift */; };
 		F79B387A239C6A3C0032F598 /* TourHederView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79B3879239C6A3C0032F598 /* TourHederView.swift */; };
@@ -192,10 +193,11 @@
 		F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewProtocol.swift; sourceTree = "<group>"; };
 		F79883602381AF1900F01F3A /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		F79883622381AF5000F01F3A /* SearchPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterProtocol.swift; sourceTree = "<group>"; };
-		F79883672381B8F000F01F3A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F79883692381C4FA00F01F3A /* HomeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewProtocol.swift; sourceTree = "<group>"; };
 		F79883722381C6CB00F01F3A /* HomePresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenterProtocol.swift; sourceTree = "<group>"; };
 		F79883732381C6CB00F01F3A /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		F799F5DF23D4CD7500106B7E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F799F5E023D4CD7500106B7E /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		F79B3872239C13620032F598 /* ToursManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursManager.swift; sourceTree = "<group>"; };
 		F79B3877239C60400032F598 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		F79B3879239C6A3C0032F598 /* TourHederView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourHederView.swift; sourceTree = "<group>"; };
@@ -575,8 +577,9 @@
 		F79883702381C5FA00F01F3A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F79883672381B8F000F01F3A /* HomeViewController.swift */,
 				F79883692381C4FA00F01F3A /* HomeViewProtocol.swift */,
+				F799F5DF23D4CD7500106B7E /* HomeViewController.swift */,
+				F799F5E023D4CD7500106B7E /* HomeViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -858,6 +861,7 @@
 				F77D501923C3D1BE00E89E67 /* SplashScreenViewController.xib in Resources */,
 				F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
 				F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */,
+				F799F5E223D4CD7500106B7E /* HomeViewController.xib in Resources */,
 				F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
 				F77879F523C7D4D2002F2052 /* CentralCircleLoader.json in Resources */,
 				F7932B672393A65C006E6496 /* InfoStoryboard.storyboard in Resources */,
@@ -964,7 +968,6 @@
 				F77C179223AAD3C4009D2D69 /* UIViewController+Extension.swift in Sources */,
 				F7570AA3238AEAA200621E4F /* Location.swift in Sources */,
 				F7EF691D239BC0CA0004EF4E /* ToursViewProtocol.swift in Sources */,
-				F79883682381B8F000F01F3A /* HomeViewController.swift in Sources */,
 				F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */,
 				F7B45FFF2389103F005CBEE4 /* PreferenceBoardViewController.swift in Sources */,
 				F7CFD013239BCC8800983631 /* ProfileViewProtocol.swift in Sources */,
@@ -986,6 +989,7 @@
 				F79B3878239C60400032F598 /* NavigationController.swift in Sources */,
 				F761DFF22381CF7400D9DBBD /* SettingsViewController.swift in Sources */,
 				F79B3880239D22370032F598 /* PlaceManager.swift in Sources */,
+				F799F5E123D4CD7500106B7E /* HomeViewController.swift in Sources */,
 				F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */,
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
 				F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */,

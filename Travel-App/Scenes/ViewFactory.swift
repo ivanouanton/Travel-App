@@ -18,7 +18,7 @@ class ViewFactory{
     }
     
     static func createHomeVC() -> HomeViewController{
-        let vc = HomeViewController()
+        let vc = HomeViewController(nibName: "HomeViewController", bundle: nil)
         let presenter = HomePresenter(view: vc)
         vc.presenter = presenter
         return vc

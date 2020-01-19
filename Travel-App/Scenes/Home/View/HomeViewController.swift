@@ -2,31 +2,20 @@
 //  HomeViewController.swift
 //  Travel-App
 //
-//  Created by Антон Иванов on 11/17/19.
-//  Copyright © 2019 companyName. All rights reserved.
+//  Created by Антон Иванов on 1/19/20.
+//  Copyright © 2020 companyName. All rights reserved.
 //
 
 import UIKit
 
-final class HomeViewController: UIViewController{
+class HomeViewController: UIViewController {
     var presenter: HomePresenterProtocol!
-    
-    override func loadView() {
-        super.loadView()
-        
-        self.setupUI()
-        self.setupConstraints()
-    }
-}
 
-extension HomeViewController{
-    func setupUI(){
-        self.view.backgroundColor = .white
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
     }
-    
-    func setupConstraints(){
-        
-    }
+
 }
 
 extension HomeViewController: HomeViewProtocol{
