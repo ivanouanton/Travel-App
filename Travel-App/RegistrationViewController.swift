@@ -18,7 +18,11 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var emailField: CustomTextField!
     @IBOutlet weak var passwordField: CustomTextField!
     @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var agreementStateImage: UIImageView!
     
+    private var termsAndConditions: Bool = false
+    private var privacyStatement: Bool = false
+
     var image: UIImage? = nil
     
     override func viewDidLoad() {
@@ -81,6 +85,7 @@ class RegistrationViewController: UIViewController {
     @IBAction func didPressedTermsAndConditions(_ sender: Any) {
         let vc = ViewFactory.createAgreementVC(with: .termsAndConditions)
         vc.modalPresentationStyle = .fullScreen
+        vc.delegate = self
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -89,6 +94,7 @@ class RegistrationViewController: UIViewController {
         
         let vc = ViewFactory.createAgreementVC(with: .privacyStatement)
         vc.modalPresentationStyle = .fullScreen
+        vc.delegate = self
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -174,5 +180,18 @@ extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigat
         }
         
         picker.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension RegistrationViewController: AgreementDelegate {
+    func agreementAccept(_ state: AgreementType, accept: Bool) {
+        switch state {
+        case .termsAndConditions:
+            self.termsAndConditions = accept
+        case .privacyStatement:
+            self.privacyStatement = accept
+        }
+        
+        self.agreementStateImage.image = (self.termsAndConditions && self.privacyStatement) ? UIImage(named: "successful") : UIImage(named: "ok-circle")
     }
 }

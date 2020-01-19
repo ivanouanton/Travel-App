@@ -397,6 +397,7 @@
                     <navigationItem key="navigationItem" id="k9g-sT-7Nd"/>
                     <size key="freeformSize" width="375" height="700"/>
                     <connections>
+                        <outlet property="agreementStateImage" destination="bGK-os-90i" id="4ye-uN-Fd1"/>
                         <outlet property="avatarImage" destination="qKV-h1-DiC" id="1B8-y7-RB9"/>
                         <outlet property="emailField" destination="2sk-Gu-Lnx" id="Dfa-en-YeN"/>
                         <outlet property="homeAddressField" destination="e6f-vV-K8M" id="1qn-m0-OmI"/>
