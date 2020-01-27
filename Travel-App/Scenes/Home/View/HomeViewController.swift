@@ -15,11 +15,12 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var places = ["Zhodino", "Minsk", "London", "Bremen", "Berlin", "Minsk", "London", "Bremen", "Berlin"]
+    var placesOld = ["Zhodino", "Minsk", "London", "Bremen", "Berlin", "Minsk", "London", "Bremen", "Berlin"]
+    var places = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        placesOld = places
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,5 +58,30 @@ extension HomeViewController: UITableViewDataSource{
 }
 
 extension HomeViewController: UITextFieldDelegate{
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        searchTextField.canResignFirstResponder
+        return true
+    }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard !searchTextField.text!.isEmpty  else {
+            places  = placesOld
+            return true
+        }
+        
+        places = placesOld.filter({ $0.lowercased().contains(textField.text!.lowercased())
+        })
+        tableView.reloadData()
+        return true
+    }
+    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        guard !searchText.isEmpty  else { currentUserArray = users; return }
+//
+//        currentUserArray = users.filter({ user -> Bool in
+//            return user.name!.lowercased().contains(searchText.lowercased())
+//        })
+//        usersDisplayTableView.reloadData()
+//
+//    }
 }
