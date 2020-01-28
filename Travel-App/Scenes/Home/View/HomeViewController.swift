@@ -13,15 +13,21 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var searchTextField: UITextField!
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: SelfSizedTableView!
     
     var places = [PlaceData]()
     var searchingPlaces = [PlaceData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.maxHeight = 228
+        
         self.places = PlaceManager.shared.places
         searchingPlaces = places
+        
+        let optionCell = UINib(nibName: PlaceTableViewCell.nibName, bundle: nil)
+        tableView.register(optionCell, forCellReuseIdentifier: PlaceTableViewCell.reuseIdentifier)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,13 +51,16 @@ extension HomeViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        }
-        cell?.textLabel?.text = searchingPlaces[indexPath.row].name
+//        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+//        if cell == nil {
+//            cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
+//        }
         
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: PlaceTableViewCell.reuseIdentifier, for: indexPath) as! PlaceTableViewCell
+        
+//        cell?.textLabel?.text = searchingPlaces[indexPath.row].name
+        
+        return cell
     }
 }
 

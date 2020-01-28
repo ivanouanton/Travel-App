@@ -49,12 +49,9 @@
                         <outlet property="delegate" destination="-1" id="jYD-Wb-urt"/>
                     </connections>
                 </textField>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wxz-sQ-Z6a">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="228" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="67" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wxz-sQ-Z6a" customClass="SelfSizedTableView" customModule="Travel_App" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="246" width="414" height="228"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="228" id="doK-wQ-lgT"/>
-                    </constraints>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="jZA-TA-8e9"/>
                     </connections>

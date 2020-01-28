@@ -25,6 +25,9 @@
 		F72EFE42239EF16D008081E1 /* TourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72EFE41239EF16D008081E1 /* TourInfoViewController.swift */; };
 		F72EFE44239EF618008081E1 /* TourInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72EFE43239EF618008081E1 /* TourInfoView.swift */; };
 		F72EFE49239EF62C008081E1 /* TourInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72EFE45239EF62B008081E1 /* TourInfoView.xib */; };
+		F73E166C23E0CC6D0001AB56 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E166A23E0CC6D0001AB56 /* PlaceTableViewCell.swift */; };
+		F73E166D23E0CC6D0001AB56 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73E166B23E0CC6D0001AB56 /* PlaceTableViewCell.xib */; };
+		F73E166F23E0CFE70001AB56 /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E166E23E0CFE70001AB56 /* SelfSizedTableView.swift */; };
 		F745760E238B480C00C5A1DE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F745760D238B480C00C5A1DE /* Category.swift */; };
 		F7570AA0238AE8F300621E4F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570A9F238AE8F300621E4F /* Configuration.swift */; };
 		F7570AA3238AEAA200621E4F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570AA2238AEAA200621E4F /* Location.swift */; };
@@ -147,6 +150,9 @@
 		F72EFE41239EF16D008081E1 /* TourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourInfoViewController.swift; sourceTree = "<group>"; };
 		F72EFE43239EF618008081E1 /* TourInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourInfoView.swift; sourceTree = "<group>"; };
 		F72EFE45239EF62B008081E1 /* TourInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TourInfoView.xib; sourceTree = "<group>"; };
+		F73E166A23E0CC6D0001AB56 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
+		F73E166B23E0CC6D0001AB56 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
+		F73E166E23E0CFE70001AB56 /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
 		F745760D238B480C00C5A1DE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F7570A9F238AE8F300621E4F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = "Travel-App/Scenes/Search/Locations/Configuration/Configuration.swift"; sourceTree = SOURCE_ROOT; };
 		F7570AA2238AEAA200621E4F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -580,6 +586,9 @@
 				F79883692381C4FA00F01F3A /* HomeViewProtocol.swift */,
 				F799F5DF23D4CD7500106B7E /* HomeViewController.swift */,
 				F799F5E023D4CD7500106B7E /* HomeViewController.xib */,
+				F73E166A23E0CC6D0001AB56 /* PlaceTableViewCell.swift */,
+				F73E166B23E0CC6D0001AB56 /* PlaceTableViewCell.xib */,
+				F73E166E23E0CFE70001AB56 /* SelfSizedTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -863,6 +872,7 @@
 				F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */,
 				F799F5E223D4CD7500106B7E /* HomeViewController.xib in Resources */,
 				F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
+				F73E166D23E0CC6D0001AB56 /* PlaceTableViewCell.xib in Resources */,
 				F77879F523C7D4D2002F2052 /* CentralCircleLoader.json in Resources */,
 				F7932B672393A65C006E6496 /* InfoStoryboard.storyboard in Resources */,
 				F79FCA2823847ED2009F1693 /* AvenirNextLTPro-Demi.otf in Resources */,
@@ -946,6 +956,7 @@
 				F7EF6921239BC1310004EF4E /* ToursPresenterProtocol.swift in Sources */,
 				F7CF8D312396FF2100119B60 /* InterestsCollectionViewCell.swift in Sources */,
 				F7DFCE3523C662B5002A95C7 /* SettingTableViewCell.swift in Sources */,
+				F73E166F23E0CFE70001AB56 /* SelfSizedTableView.swift in Sources */,
 				F72EFE42239EF16D008081E1 /* TourInfoViewController.swift in Sources */,
 				F705253423B4105300E05528 /* OptionFilterSelection.swift in Sources */,
 				F7ADB091237F3A9700DA4E89 /* AppTabBarController.swift in Sources */,
@@ -966,6 +977,7 @@
 				F7570AA0238AE8F300621E4F /* Configuration.swift in Sources */,
 				F72EFE44239EF618008081E1 /* TourInfoView.swift in Sources */,
 				F77C179223AAD3C4009D2D69 /* UIViewController+Extension.swift in Sources */,
+				F73E166C23E0CC6D0001AB56 /* PlaceTableViewCell.swift in Sources */,
 				F7570AA3238AEAA200621E4F /* Location.swift in Sources */,
 				F7EF691D239BC0CA0004EF4E /* ToursViewProtocol.swift in Sources */,
 				F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */,
@@ -1174,7 +1186,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Company-name.Travel-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Anton-Ivanou.Travel-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1198,7 +1210,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Company-name.Travel-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Anton-Ivanou.Travel-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
