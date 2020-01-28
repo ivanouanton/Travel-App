@@ -20,7 +20,12 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        placesOld = places
+        
+        let x = "strstrstr"
+        
+        let y = x.hasPrefix("str")
+        
+        places = placesOld
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,20 +73,31 @@ extension HomeViewController: UITextFieldDelegate{
             places  = placesOld
             return true
         }
+        let substring = searchTextField.text!
         
-        places = placesOld.filter({ $0.lowercased().contains(textField.text!.lowercased())
-        })
-        tableView.reloadData()
+        self.places = self.placesOld.filter { $0.contains(substring) }
+        self.tableView.reloadData()
         return true
     }
     
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        guard !searchText.isEmpty  else { currentUserArray = users; return }
-//
-//        currentUserArray = users.filter({ user -> Bool in
-//            return user.name!.lowercased().contains(searchText.lowercased())
-//        })
-//        usersDisplayTableView.reloadData()
-//
-//    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+//        guard !searchTextField.text!.isEmpty  else {
+//            places  = placesOld
+//            return true
+//        }
+        
+//        var substring = searchTextField.text!
+//        substring += string
+        
+        let substring = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
+        
+        print(substring)
+
+        
+        self.places = self.placesOld.filter { $0.contains(substring) }
+        self.tableView.reloadData()
+        
+        return true
+    }
 }
