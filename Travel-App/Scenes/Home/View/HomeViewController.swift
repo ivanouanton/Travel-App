@@ -15,17 +15,13 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var placesOld = ["Zhodino", "Minsk", "London", "Bremen", "Berlin", "Minsk", "London", "Bremen", "Berlin"]
-    var places = [String]()
+    var places = [PlaceData]()
+    var searchingPlaces = [PlaceData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let x = "strstrstr"
-        
-        let y = x.hasPrefix("str")
-        
-        places = placesOld
+        self.places = PlaceManager.shared.places
+        searchingPlaces = places
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +33,6 @@ class HomeViewController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
-
 }
 
 extension HomeViewController: HomeViewProtocol{
@@ -46,7 +41,7 @@ extension HomeViewController: HomeViewProtocol{
 
 extension HomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        places.count
+        searchingPlaces.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,48 +49,33 @@ extension HomeViewController: UITableViewDataSource{
         if cell == nil {
             cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
         }
-        cell?.textLabel?.text = places[indexPath.row]
+        cell?.textLabel?.text = searchingPlaces[indexPath.row].name
         
         return cell!
     }
-    
-    
 }
 
 extension HomeViewController: UITextFieldDelegate{
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        searchTextField.canResignFirstResponder
-        return true
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.tableView.isHidden = false
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard !searchTextField.text!.isEmpty  else {
-            places  = placesOld
-            return true
-        }
-        let substring = searchTextField.text!
-        
-        self.places = self.placesOld.filter { $0.contains(substring) }
-        self.tableView.reloadData()
-        return true
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.tableView.isHidden = true
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-//        guard !searchTextField.text!.isEmpty  else {
-//            places  = placesOld
-//            return true
-//        }
-        
-//        var substring = searchTextField.text!
-//        substring += string
-        
         let substring = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
         
-        print(substring)
-
+        guard !substring.isEmpty  else {
+            searchingPlaces  = places
+            self.tableView.reloadData()
+            return true
+        }
         
-        self.places = self.placesOld.filter { $0.contains(substring) }
+        self.searchingPlaces = self.places.filter { $0.name.lowercased().contains(substring.lowercased()) }
         self.tableView.reloadData()
         
         return true

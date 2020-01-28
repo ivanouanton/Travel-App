@@ -17,8 +17,19 @@ class PlaceManager {
 
     private let placesImageCache = NSCache<NSString, UIImage>()
     private let categoryImagesCache = NSCache<NSString, UIImage>()
+    
+    var places = [PlaceData]()
 
-    private init() {}
+    private init() {
+        self.getPlaces(with: nil) { (places, error) in
+            guard let places = places else { return }
+            self.places = places.map({ (arg0) -> PlaceData in
+                
+                let (_, value) = arg0
+                return value
+            })
+        }
+    }
     
     func getCategoryImg(with id: String) -> UIImage?{
         let cachedImage = self.categoryImagesCache.object(forKey: id as NSString)
