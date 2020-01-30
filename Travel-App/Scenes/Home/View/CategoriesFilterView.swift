@@ -8,12 +8,18 @@
 
 import UIKit
 
+protocol CategoryFilterViewDelegate: class {
+    func didSelect(_ category: PlaceCategory)
+}
+
 class CategoriesFilterView: UIView {
     let kCONTENT_XIB_NAME = "CategoriesFilterView"
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    weak var delegate: CategoryFilterViewDelegate?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -52,9 +58,9 @@ extension CategoriesFilterView: UICollectionViewDataSource, UICollectionViewDele
         return cell
     }
 
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.delegate?.didSelectItemAt(indexPath.row, tableCell: self.cellIndex)
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.delegate?.didSelect(PlaceCategory.categories[indexPath.row])
+    }
 }
 
 extension UIView

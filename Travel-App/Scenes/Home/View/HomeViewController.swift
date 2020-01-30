@@ -15,12 +15,15 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: SelfSizedTableView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var closeSearchingButton: UIButton!
+    @IBOutlet weak var categoryFilterView: CategoriesFilterView!
     
     var places = [PlaceData]()
     var searchingPlaces = [PlaceData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        categoryFilterView.delegate = self
         
         setupSearchBar()
                 
@@ -82,6 +85,12 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeViewProtocol{
     
+}
+
+extension HomeViewController: CategoryFilterViewDelegate {
+    func didSelect(_ category: PlaceCategory) {
+        print(category.rawValue)
+    }
 }
 
 extension HomeViewController: UITableViewDataSource{
