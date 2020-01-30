@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: SelfSizedTableView!
+    @IBOutlet weak var textView: UITextView!
     
     var places = [PlaceData]()
     var searchingPlaces = [PlaceData]()
