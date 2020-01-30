@@ -10,6 +10,7 @@
 		3A3A3814239A74B9001FE150 /* CategoryPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A3813239A74B9001FE150 /* CategoryPreference.swift */; };
 		3A3D2E64238EE4B500DD9876 /* PlaceDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */; };
 		3A4EE37623E2C38500673BB4 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37523E2C38500673BB4 /* UITextField+Extension.swift */; };
+		3A4EE37823E2CF5C00673BB4 /* PlaceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37723E2CF5C00673BB4 /* PlaceCategory.swift */; };
 		CAC2AFC9CE146BFE50DF962A /* Pods_Travel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */; };
 		F700442923A17C9C00D7E59F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F700442823A17C9C00D7E59F /* Profile.storyboard */; };
 		F700442B23A194C300D7E59F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700442A23A194C300D7E59F /* AuthViewController.swift */; };
@@ -134,6 +135,7 @@
 		3A3A3813239A74B9001FE150 /* CategoryPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPreference.swift; sourceTree = "<group>"; };
 		3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDataHolder.swift; sourceTree = "<group>"; };
 		3A4EE37523E2C38500673BB4 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		3A4EE37723E2CF5C00673BB4 /* PlaceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCategory.swift; sourceTree = "<group>"; };
 		666AAB4DC0E5FE91DDA1E761 /* Pods-Travel-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.release.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.release.xcconfig"; sourceTree = "<group>"; };
 		C61D44D03DA574807B86294F /* Pods-Travel-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.debug.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.debug.xcconfig"; sourceTree = "<group>"; };
 		F700442823A17C9C00D7E59F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = "Travel-App/Profile.storyboard"; sourceTree = SOURCE_ROOT; };
@@ -754,6 +756,7 @@
 				3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */,
 				F7CFD01F239BE3A800983631 /* Tour.swift */,
 				F780A4CC23C4F5C200A9A375 /* UserProfile.swift */,
+				3A4EE37723E2CF5C00673BB4 /* PlaceCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1012,6 +1015,7 @@
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
 				F7ADAA7123D460CE009ECAEE /* AgreementDelegate.swift in Sources */,
 				F7ADAA6823CB2156009ECAEE /* AgreementViewController.swift in Sources */,
+				3A4EE37823E2CF5C00673BB4 /* PlaceCategory.swift in Sources */,
 				F77D501323C1F08100E89E67 /* Utilities.swift in Sources */,
 				F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */,
 				F71ACDEB238B41E60092279F /* PlaceData.swift in Sources */,

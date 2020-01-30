@@ -14,8 +14,9 @@ class PlaceTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryBgView: UIView!
     @IBOutlet weak var placeName: UILabel!
     
-    func setupImage(with category: PlaceCategory) {
-        
+    func setupCategoryView(with category: PlaceCategory) {
+        categoryBgView.backgroundColor = category.getColor()
+        categoryImage.image = category.getImage()
     }
     
     class var reuseIdentifier: String {
