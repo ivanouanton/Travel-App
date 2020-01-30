@@ -113,8 +113,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nvc = tabBarController?.viewControllers?[0] as? UINavigationController
         let vc = nvc?.viewControllers[0] as? SearchViewController
-        let id = searchingPlaces[indexPath.row].id
-        vc?.presenter.showModalView(with: searchingPlaces[indexPath.row].id!)
+        let id = searchingPlaces[indexPath.row].id!
+        vc?.presenter.showModalView(with: id)
+        let location = searchingPlaces[indexPath.row].locationPlace
+        vc?.didChangeMyLocation(Location(latitude: location.latitude,
+        longitude: location.longitude))
+        
         tabBarController?.selectedIndex = 0
     }
 }
