@@ -32,6 +32,7 @@
 		F73E166C23E0CC6D0001AB56 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E166A23E0CC6D0001AB56 /* PlaceTableViewCell.swift */; };
 		F73E166D23E0CC6D0001AB56 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73E166B23E0CC6D0001AB56 /* PlaceTableViewCell.xib */; };
 		F73E166F23E0CFE70001AB56 /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E166E23E0CFE70001AB56 /* SelfSizedTableView.swift */; };
+		F73E167123E355860001AB56 /* AttributedStringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E167023E355860001AB56 /* AttributedStringHelper.swift */; };
 		F745760E238B480C00C5A1DE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F745760D238B480C00C5A1DE /* Category.swift */; };
 		F7570AA0238AE8F300621E4F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570A9F238AE8F300621E4F /* Configuration.swift */; };
 		F7570AA3238AEAA200621E4F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570AA2238AEAA200621E4F /* Location.swift */; };
@@ -161,6 +162,7 @@
 		F73E166A23E0CC6D0001AB56 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		F73E166B23E0CC6D0001AB56 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
 		F73E166E23E0CFE70001AB56 /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
+		F73E167023E355860001AB56 /* AttributedStringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AttributedStringHelper.swift; path = "Travel-App/Scenes/AttributedStringHelper.swift"; sourceTree = SOURCE_ROOT; };
 		F745760D238B480C00C5A1DE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F7570A9F238AE8F300621E4F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = "Travel-App/Scenes/Search/Locations/Configuration/Configuration.swift"; sourceTree = SOURCE_ROOT; };
 		F7570AA2238AEAA200621E4F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -585,6 +587,7 @@
 			children = (
 				F79883732381C6CB00F01F3A /* HomePresenter.swift */,
 				F79883722381C6CB00F01F3A /* HomePresenterProtocol.swift */,
+				F73E167023E355860001AB56 /* AttributedStringHelper.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -1054,6 +1057,7 @@
 				F72B7C1223A6CCD9009155D4 /* OptionFilter.swift in Sources */,
 				F77879F223C7D38E002F2052 /* Loader.swift in Sources */,
 				F7CF8D352399A46300119B60 /* SettingOptionCollectionViewCell.swift in Sources */,
+				F73E167123E355860001AB56 /* AttributedStringHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

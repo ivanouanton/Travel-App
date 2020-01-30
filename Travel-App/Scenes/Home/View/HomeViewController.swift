@@ -32,6 +32,8 @@ class HomeViewController: UIViewController {
         
         let optionCell = UINib(nibName: PlaceTableViewCell.nibName, bundle: nil)
         tableView.register(optionCell, forCellReuseIdentifier: PlaceTableViewCell.reuseIdentifier)
+        
+        textView.attributedText = presenter.getAttributedDescription()
     }
     
     override func viewWillAppear(_ animated: Bool) {

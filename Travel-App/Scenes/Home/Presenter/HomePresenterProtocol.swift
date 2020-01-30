@@ -6,6 +6,9 @@
 //  Copyright © 2019 companyName. All rights reserved.
 //
 
+import Foundation
+
 protocol HomePresenterProtocol: class {
     init(view: HomeViewProtocol)
+    func getAttributedDescription() -> NSMutableAttributedString
 }
