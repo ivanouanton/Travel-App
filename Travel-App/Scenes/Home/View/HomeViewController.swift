@@ -89,7 +89,6 @@ extension HomeViewController: HomeViewProtocol{
 
 extension HomeViewController: CategoryFilterViewDelegate {
     func didSelect(_ category: PlaceCategory) {
-        print(category.rawValue)
         let nvc = tabBarController?.viewControllers?[0] as? UINavigationController
         let vc = nvc?.viewControllers[0] as? SearchViewController
         vc?.presenter.filterPlaces(with: category.rawValue)
@@ -97,7 +96,7 @@ extension HomeViewController: CategoryFilterViewDelegate {
     }
 }
 
-extension HomeViewController: UITableViewDataSource{
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         searchingPlaces.count
     }
@@ -109,6 +108,14 @@ extension HomeViewController: UITableViewDataSource{
         cell.placeName?.text = searchingPlaces[indexPath.row].name
         cell.setupCategoryView(with: PlaceCategory(searchingPlaces[indexPath.row].categoryId)!)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nvc = tabBarController?.viewControllers?[0] as? UINavigationController
+        let vc = nvc?.viewControllers[0] as? SearchViewController
+        let id = searchingPlaces[indexPath.row].id
+        vc?.presenter.showModalView(with: searchingPlaces[indexPath.row].id!)
+        tabBarController?.selectedIndex = 0
     }
 }
 

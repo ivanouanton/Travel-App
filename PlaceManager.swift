@@ -25,7 +25,8 @@ class PlaceManager {
             guard let places = places else { return }
             self.places = places.map({ (arg0) -> PlaceData in
                 
-                let (_, value) = arg0
+                var (key, value) = arg0
+                    value.id = key
                 return value
             })
         }

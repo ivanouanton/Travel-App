@@ -235,6 +235,7 @@ extension SearchViewController: SearchViewProtocol{
     }
     
     func showPlaceView(with index: Int) {
+        showModalView()
         self.placesCollection.scrollTo(itemIndex: index)
     }
     
