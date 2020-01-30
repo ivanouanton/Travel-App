@@ -32,6 +32,13 @@ class InterestsCollectionViewCell: UICollectionViewCell {
         self.mainBackColor = color
         self.contentView.backgroundColor = isSelected ? self.mainBackColor : self.mainBackColor?.withAlphaComponent(0.4)
     }
+    
+    func configure(with category: PlaceCategory) {
+        self.title.text = category.getName()
+        self.imageView.image = category.getImage()
+        self.mainBackColor = category.getColor()
+        self.contentView.backgroundColor = isSelected ? self.mainBackColor : self.mainBackColor?.withAlphaComponent(0.4)
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

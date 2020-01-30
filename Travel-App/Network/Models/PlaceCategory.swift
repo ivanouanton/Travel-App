@@ -71,4 +71,24 @@ extension PlaceCategory {
         
         return UIColor(named: colorName)!
     }
+    
+    func getName() -> String {
+        
+        switch self {
+        case .parks:
+            return "Piazzas & Parks"
+        case .culturalsites:
+            return "Cultural Sites"
+        case .museums:
+            return "Museum & Galleries"
+        case .shopping:
+            return "Shopping"
+        case .cityviews:
+            return "City Views"
+        case .restaurants:
+            return "Restaurants & Cafes"
+        case .churches:
+            return "Churches"
+        }
+    }
 }
