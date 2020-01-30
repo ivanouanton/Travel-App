@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: SelfSizedTableView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var closeSearchingButton: UIButton!
     
     var places = [PlaceData]()
     var searchingPlaces = [PlaceData]()
@@ -68,6 +69,15 @@ class HomeViewController: UIViewController {
             searchBar.searchTextField.backgroundColor = .clear
         }
     }
+    
+    @IBAction func closeSearching(_ sender: Any) {
+        tableView.isHidden = true
+        closeSearchingButton.isHidden = true
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+        searchingPlaces = places
+        tableView.reloadData()
+    }
 }
 
 extension HomeViewController: HomeViewProtocol{
@@ -103,10 +113,7 @@ extension HomeViewController: UITextFieldDelegate, UISearchBarDelegate{
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        self.tableView.isHidden = false
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-//        self.tableView.isHidden = true
+        tableView.isHidden = false
+        closeSearchingButton.isHidden = false
     }
 }
