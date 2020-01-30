@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class HomeViewController: UIViewController {
     var presenter: HomePresenterProtocol!
     
-    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var tableView: SelfSizedTableView!
     
@@ -20,6 +21,10 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupSearchBar()
+        
+        IQKeyboardManager.shared.enableAutoToolbar = true
         
         tableView.maxHeight = 228
         
@@ -38,6 +43,29 @@ class HomeViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    //MARK: - Setup UI
+    
+    private func setupSearchBar() {
+        searchBar.barTintColor = UIColor.white
+        searchBar.setBackgroundImage(UIImage.init(), for: UIBarPosition.any, barMetrics: UIBarMetrics.default)
+
+        let searchTextField = searchBar.value(forKey: "searchField") as? UITextField
+        searchTextField?.leftView?.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        searchTextField?.font = UIFont(name: "AvenirNextLTPro-Demi", size: 16)
+        searchTextField?.textColor = UIColor(named: "heavy")
+        searchTextField?.doneAccessory = true
+        
+        let attributes = [
+            NSAttributedString.Key.font : UIFont(name: "AvenirNextLTPro-Regular", size: 16)!
+        ]
+
+        searchTextField?.attributedPlaceholder = NSAttributedString(string: "Search", attributes:attributes)
+        
+        if #available(iOS 13, *) {
+            searchBar.searchTextField.backgroundColor = .clear
+        }
     }
 }
 
@@ -64,29 +92,24 @@ extension HomeViewController: UITableViewDataSource{
     }
 }
 
-extension HomeViewController: UITextFieldDelegate{
+extension HomeViewController: UITextFieldDelegate, UISearchBarDelegate{
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard !searchText.isEmpty  else {
+            searchingPlaces  = places
+            self.tableView.reloadData()
+            return
+        }
+        
+        self.searchingPlaces = self.places.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+        self.tableView.reloadData()
+    }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.tableView.isHidden = false
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         self.tableView.isHidden = true
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        let substring = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
-        
-        guard !substring.isEmpty  else {
-            searchingPlaces  = places
-            self.tableView.reloadData()
-            return true
-        }
-        
-        self.searchingPlaces = self.places.filter { $0.name.lowercased().contains(substring.lowercased()) }
-        self.tableView.reloadData()
-        
-        return true
     }
 }
