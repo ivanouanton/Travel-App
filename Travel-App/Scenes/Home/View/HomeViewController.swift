@@ -22,8 +22,8 @@ class HomeViewController: UIViewController {
         
         setupSearchBar()
                 
-        let maxHeightTable = UIScreen.main.bounds.size.height - tableView.frame.origin.y //- (tabBarController?.tabBar.frame.size.height ?? 0)
-        
+        let maxHeightTable = UIScreen.main.bounds.size.height - tableView.frame.origin.y
+                
         tableView.maxHeight = maxHeightTable
 
         self.places = PlaceManager.shared.places

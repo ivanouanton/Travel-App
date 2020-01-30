@@ -20,6 +20,8 @@ enum PlaceCategory: String {
     init?(_ category: String){
         self.init(rawValue: category)
     }
+    
+    static let categories: [PlaceCategory] = [.parks, .culturalsites, .museums, .shopping, .cityviews, .restaurants, .churches]
 }
 
 extension PlaceCategory {

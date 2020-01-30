@@ -47,6 +47,13 @@
                         <outlet property="delegate" destination="-1" id="ZeK-Ug-IQB"/>
                     </connections>
                 </searchBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-bx-Vvp" customClass="CategoriesFilterView" customModule="Travel_App" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="282" width="414" height="82"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="82" id="tVS-Mz-0Ua"/>
+                    </constraints>
+                </view>
                 <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="228" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxz-sQ-Z6a" customClass="SelfSizedTableView" customModule="Travel_App" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="259" width="414" height="228"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -59,10 +66,13 @@
             <constraints>
                 <constraint firstItem="wxz-sQ-Z6a" firstAttribute="top" secondItem="Ukj-qD-TP7" secondAttribute="bottom" constant="1" id="0QH-85-MEd"/>
                 <constraint firstItem="HGi-mn-ivG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="61" id="1ik-7V-Zr1"/>
+                <constraint firstItem="0VD-bx-Vvp" firstAttribute="top" secondItem="Ukj-qD-TP7" secondAttribute="bottom" constant="24" id="CuR-8p-vaP"/>
                 <constraint firstItem="wxz-sQ-Z6a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DDW-rT-ex9"/>
                 <constraint firstItem="Ukj-qD-TP7" firstAttribute="top" secondItem="HGi-mn-ivG" secondAttribute="bottom" constant="17" id="Dyx-KK-ZCf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ukj-qD-TP7" secondAttribute="trailing" id="Z0q-p2-4Mw"/>
+                <constraint firstItem="0VD-bx-Vvp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cQH-ha-ujm"/>
                 <constraint firstItem="Ukj-qD-TP7" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iKf-Lo-KPU"/>
+                <constraint firstItem="0VD-bx-Vvp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="mw9-P4-Nbq"/>
                 <constraint firstItem="wxz-sQ-Z6a" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="oUt-qj-7OT"/>
                 <constraint firstItem="HGi-mn-ivG" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="xDT-5L-rqe"/>
             </constraints>
