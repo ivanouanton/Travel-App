@@ -142,6 +142,7 @@ extension SearchPresenter: SearchPresenterProtocol{
         })
     }
     
+    //TODO remove this method
     func filterPlaces(with index: Int) {
         if index == 0{
             self.showAllMarkers()
@@ -152,6 +153,23 @@ extension SearchPresenter: SearchPresenterProtocol{
         for (id, place) in self.places {
             let cachedImage = PlaceManager.shared.getCategoryImg(with: place.categoryId)
             if place.categoryId == categoriesId[index] {
+                self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: true)
+            }else{
+                self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: false)
+            }
+        }
+    }
+    
+    func filterPlaces(with catId: String) {
+        if catId == "all"{
+            self.showAllMarkers()
+            return
+        }
+        self.view.clearMarkers()
+        
+        for (id, place) in self.places {
+            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.categoryId)
+            if place.categoryId == catId {
                 self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: true)
             }else{
                 self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: false)
