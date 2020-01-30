@@ -7,13 +7,11 @@
 //
 
 import UIKit
-import IQKeyboardManagerSwift
 
 class HomeViewController: UIViewController {
     var presenter: HomePresenterProtocol!
     
     @IBOutlet weak var searchBar: UISearchBar!
-    
     @IBOutlet weak var tableView: SelfSizedTableView!
     
     var places = [PlaceData]()
@@ -23,11 +21,11 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setupSearchBar()
+                
+        let maxHeightTable = UIScreen.main.bounds.size.height - tableView.frame.origin.y //- (tabBarController?.tabBar.frame.size.height ?? 0)
         
-        IQKeyboardManager.shared.enableAutoToolbar = true
-        
-        tableView.maxHeight = 228
-        
+        tableView.maxHeight = maxHeightTable
+
         self.places = PlaceManager.shared.places
         searchingPlaces = places
         
@@ -79,15 +77,11 @@ extension HomeViewController: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-//        if cell == nil {
-//            cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-//        }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: PlaceTableViewCell.reuseIdentifier, for: indexPath) as! PlaceTableViewCell
         
-//        cell?.textLabel?.text = searchingPlaces[indexPath.row].name
-        
+        cell.placeName?.text = searchingPlaces[indexPath.row].name
+        print(searchingPlaces[indexPath.row].categoryId)
         return cell
     }
 }
@@ -110,6 +104,6 @@ extension HomeViewController: UITextFieldDelegate, UISearchBarDelegate{
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        self.tableView.isHidden = true
+//        self.tableView.isHidden = true
     }
 }

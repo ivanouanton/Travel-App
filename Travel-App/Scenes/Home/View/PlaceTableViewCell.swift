@@ -10,6 +10,14 @@ import UIKit
 
 class PlaceTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var categoryImage: UIImageView!
+    @IBOutlet weak var categoryBgView: UIView!
+    @IBOutlet weak var placeName: UILabel!
+    
+    func setupImage(with category: PlaceCategory) {
+        
+    }
+    
     class var reuseIdentifier: String {
         return "PlaceTableViewCell"
     }
@@ -19,7 +27,7 @@ class PlaceTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
