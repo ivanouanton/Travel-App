@@ -111,7 +111,7 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oc0-uo-RI2">
                                     <rect key="frame" x="24" y="24" width="250" height="1298.5"/>
-                                    <mutableString key="text">How did the Iranian admission unfold?
+                                    <string key="text">How did the Iranian admission unfold?
 For three days, Iran had denied reports its missiles had brought down the plane, with one spokesman accusing Western nations of "lying and engaging in psychological warfare".
 But on Saturday morning, a statement read on state TV accepted the plane had been shot down.
 Brig-Gen Amir Ali Hajizadeh, the Revolutionary Guards' aerospace commander, explained what happened.
@@ -123,7 +123,7 @@ He said a missile operator had acted independently and alone, mistaking the plan
 For three days, Iran had denied reports its missiles had brought down the plane, with one spokesman accusing Western nations of "lying and engaging in psychological warfare".
 But on Saturday morning, a statement read on state TV accepted the plane had been shot down.
 Brig-Gen Amir Ali Hajizadeh, the Revolutionary Guards' aerospace commander, explained what happened.
-He said a missile operator had acted independently and alone, mistaking the plane for a "cruise missile" as there had been reports that such missiles had been fired at Iran.</mutableString>
+He said a missile operator had acted independently and alone, mistaking the plane for a "cruise missile" as there had been reports that such missiles had been fired at Iran.</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>

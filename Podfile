@@ -11,6 +11,7 @@ target 'Travel-App' do
   pod 'MSPeekCollectionViewDelegateImplementation'
   pod 'Moya'
   pod 'lottie-ios'
+  pod 'IQKeyboardManagerSwift'
 
   pod 'Firebase/Analytics'
   pod 'Firebase/Core'

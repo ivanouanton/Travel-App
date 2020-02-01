@@ -98,12 +98,13 @@ final class SearchViewController: UIViewController{
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         self.presenter.viewDidLoad()
+        self.presenter.fetchUserLocation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.presenter.fetchUserLocation()
+        
     }
 }
 
@@ -234,6 +235,7 @@ extension SearchViewController: SearchViewProtocol{
     }
     
     func showPlaceView(with index: Int) {
+        showModalView()
         self.placesCollection.scrollTo(itemIndex: index)
     }
     
