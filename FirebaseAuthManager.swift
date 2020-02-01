@@ -47,13 +47,12 @@ class FirebaseAuthManager {
         }
     }
     
-    func setUserData(name: String, surname: String, email: String, address: String, completionBlock: @escaping (_ success: Bool) -> Void) {
+    func setUserData(name: String, surname: String, email: String,completionBlock: @escaping (_ success: Bool) -> Void) {
         
         let db = Firestore.firestore()
         db.collection("users").addDocument(data: ["name":name,
                                                   "surname":surname,
                                                   "email":email,
-                                                  "address":address,
                                                   "uid":self.uid ?? ""]) { (error) in
                                                     if let _ = error {
                                                         completionBlock(false)
