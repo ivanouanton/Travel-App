@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rbi-zK-SqI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rbi-zK-SqI">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -114,20 +114,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltY-Yy-Nyi" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="16" y="518" width="288" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="TDo-33-qKE"/>
+                                </constraints>
+                                <state key="normal" title="Sign in with facebook"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="arq-fe-eXi" firstAttribute="top" secondItem="NfU-DU-l0x" secondAttribute="bottom" constant="16" id="0AS-zp-LJv"/>
                             <constraint firstItem="7DO-Sl-F4C" firstAttribute="centerX" secondItem="ZDR-Zb-BBL" secondAttribute="centerX" id="0kV-SI-pre"/>
                             <constraint firstItem="ULl-yR-DgX" firstAttribute="top" secondItem="arq-fe-eXi" secondAttribute="bottom" constant="32" id="2Bk-gJ-ZPB"/>
+                            <constraint firstItem="ltY-Yy-Nyi" firstAttribute="trailing" secondItem="ULl-yR-DgX" secondAttribute="trailing" id="4M7-js-guu"/>
                             <constraint firstItem="Rpb-uf-nO0" firstAttribute="centerX" secondItem="ZDR-Zb-BBL" secondAttribute="centerX" id="5lq-KQ-Z15"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="arq-fe-eXi" secondAttribute="trailing" constant="16" id="8eZ-on-txy"/>
                             <constraint firstItem="7DO-Sl-F4C" firstAttribute="top" secondItem="Rpb-uf-nO0" secondAttribute="bottom" constant="112" id="Dcy-wM-Qkg"/>
                             <constraint firstItem="NfU-DU-l0x" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="Dnt-TO-J3g"/>
+                            <constraint firstItem="ltY-Yy-Nyi" firstAttribute="top" secondItem="ULl-yR-DgX" secondAttribute="bottom" constant="34" id="IcU-IC-hdG"/>
                             <constraint firstItem="hea-iF-AlK" firstAttribute="centerY" secondItem="arq-fe-eXi" secondAttribute="centerY" id="J6P-MQ-r0m"/>
                             <constraint firstItem="ULl-yR-DgX" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="Kvq-fZ-Bti"/>
                             <constraint firstItem="arq-fe-eXi" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="TOk-hK-2Ok"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="NfU-DU-l0x" secondAttribute="trailing" constant="16" id="WCJ-KK-lXz"/>
+                            <constraint firstItem="ltY-Yy-Nyi" firstAttribute="leading" secondItem="ULl-yR-DgX" secondAttribute="leading" id="YMK-Lc-zrd"/>
                             <constraint firstItem="NfU-DU-l0x" firstAttribute="top" secondItem="7DO-Sl-F4C" secondAttribute="bottom" constant="56" id="geZ-fz-qvJ"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="hea-iF-AlK" secondAttribute="trailing" constant="16" id="sPr-nw-QRC"/>
                             <constraint firstItem="Rpb-uf-nO0" firstAttribute="top" secondItem="ZDR-Zb-BBL" secondAttribute="top" constant="54" id="vGg-HN-nOE"/>
@@ -138,6 +148,7 @@
                     <navigationItem key="navigationItem" id="iWs-7M-zPe"/>
                     <connections>
                         <outlet property="emailTextField" destination="NfU-DU-l0x" id="VL5-BU-lCd"/>
+                        <outlet property="fbLoginButton" destination="ltY-Yy-Nyi" id="031-im-Kqx"/>
                         <outlet property="passwordTextField" destination="arq-fe-eXi" id="pLB-B0-FLc"/>
                     </connections>
                 </viewController>

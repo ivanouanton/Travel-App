@@ -6,20 +6,29 @@ target 'Travel-App' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'GoogleMaps'
-  pod 'GooglePlaces'
-  pod 'MSPeekCollectionViewDelegateImplementation'
-  pod 'Moya'
-  pod 'lottie-ios'
-  pod 'IQKeyboardManagerSwift'
-
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Core'
-  pod 'Firebase/Firestore'
-  pod 'FirebaseFirestoreSwift'
-  pod 'Firebase/Storage'
-  pod 'Firebase/Auth'
-  
 # Pods for Travel-App
+  
+ pod 'GoogleMaps'
+ pod 'GooglePlaces'
+ pod 'MSPeekCollectionViewDelegateImplementation'
+ pod 'Moya'
+ pod 'lottie-ios'
+ pod 'IQKeyboardManagerSwift'
+
+ pod 'Firebase/Analytics'
+ pod 'Firebase/Core'
+ pod 'Firebase/Firestore'
+ pod 'FirebaseFirestoreSwift'
+ pod 'Firebase/Storage'
+ pod 'Firebase/Auth'
+ 
+ pod 'FacebookCore'
+ pod 'FacebookLogin'
+ pod 'FacebookShare'
+ 
+ # Pods for Facebook
+ pod 'Bolts'
+ pod 'FBSDKCoreKit'
+ pod 'FBSDKLoginKit'
 
 end
