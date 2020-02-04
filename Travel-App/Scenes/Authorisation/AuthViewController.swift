@@ -125,7 +125,7 @@ extension AuthViewController: LoginButtonDelegate {
                     self.present(alertController, animated: true, completion: nil)
                     return
                 }
-                
+                self.fetchUserData()
                 let vc = AppTabBarController()
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)
@@ -133,6 +133,28 @@ extension AuthViewController: LoginButtonDelegate {
                })
         
            }
+    
+    private func fetchUserData() {
+        
+        let graphRequest = GraphRequest(graphPath: "me", parameters: ["fields":"id, email, name, picture.width(480).height(480)"])
+        graphRequest.start(completionHandler: { (connection, result, error) in
+            if error != nil {
+                print("Error",error!.localizedDescription)
+            }
+            else{
+                let field = result! as? [String:Any]
+                let name = field!["name"] as? String
+                if let imageURL = ((field!["picture"] as? [String: Any])?["data"] as? [String: Any])?["url"] as? String {
+                    print(imageURL)
+                    let url = URL(string: imageURL)
+                    let data = NSData(contentsOf: url!)
+                    let image = UIImage(data: data! as Data)
+
+                }
+            }
+        })
     }
+    
+}
 
 
