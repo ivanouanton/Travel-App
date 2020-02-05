@@ -26,13 +26,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="urbs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpb-uf-nO0">
-                                <rect key="frame" x="135.5" y="98" width="49" height="33"/>
+                                <rect key="frame" x="135.5" y="88" width="49" height="25"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NfU-DU-l0x" customClass="CustomTextField" customModule="Travel_App" customModuleProvider="target">
-                                <rect key="frame" x="16" y="332" width="288" height="30"/>
+                                <rect key="frame" x="16" y="304" width="288" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="AuU-eJ-TI8"/>
                                 </constraints>
@@ -40,7 +40,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="arq-fe-eXi" customClass="CustomTextField" customModule="Travel_App" customModuleProvider="target">
-                                <rect key="frame" x="16" y="378" width="288" height="30"/>
+                                <rect key="frame" x="16" y="350" width="288" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="tad-mi-Soe"/>
                                 </constraints>
@@ -48,12 +48,12 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hea-iF-AlK">
-                                <rect key="frame" x="179" y="380" width="125" height="26"/>
+                                <rect key="frame" x="179" y="352" width="125" height="26"/>
                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="12"/>
                                 <state key="normal" title="Forgot your password?"/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ULl-yR-DgX">
-                                <rect key="frame" x="16" y="440" width="288" height="44"/>
+                                <rect key="frame" x="16" y="412" width="288" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PP-A1-tDS">
                                         <rect key="frame" x="0.0" y="0.0" width="136" height="44"/>
@@ -108,45 +108,62 @@
                                     <constraint firstAttribute="height" constant="44" id="nfg-84-3Sq"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to Your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DO-Sl-F4C">
-                                <rect key="frame" x="25.5" y="243" width="269.5" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Sign in to Your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DO-Sl-F4C">
+                                <rect key="frame" x="25.5" y="215" width="269.5" height="33"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltY-Yy-Nyi" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="16" y="518" width="288" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="TDo-33-qKE"/>
-                                </constraints>
-                                <state key="normal" title="Sign in with facebook"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eiJ-qE-CpC">
+                                <rect key="frame" x="16" y="480" width="288" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uJ-4p-zOF">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="a2h-0B-Ub0"/>
+                                        </constraints>
+                                        <state key="normal" title="Sich in with google"/>
+                                        <connections>
+                                            <action selector="pressedGoogleSignIn:" destination="SOa-4C-IwB" eventType="touchUpInside" id="exO-IO-Tdh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltY-Yy-Nyi" customClass="FBSDKLoginButton">
+                                        <rect key="frame" x="0.0" y="32" width="288" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="TDo-33-qKE"/>
+                                        </constraints>
+                                        <state key="normal" title="Sign in with facebook"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="arq-fe-eXi" firstAttribute="top" secondItem="NfU-DU-l0x" secondAttribute="bottom" constant="16" id="0AS-zp-LJv"/>
                             <constraint firstItem="7DO-Sl-F4C" firstAttribute="centerX" secondItem="ZDR-Zb-BBL" secondAttribute="centerX" id="0kV-SI-pre"/>
                             <constraint firstItem="ULl-yR-DgX" firstAttribute="top" secondItem="arq-fe-eXi" secondAttribute="bottom" constant="32" id="2Bk-gJ-ZPB"/>
-                            <constraint firstItem="ltY-Yy-Nyi" firstAttribute="trailing" secondItem="ULl-yR-DgX" secondAttribute="trailing" id="4M7-js-guu"/>
                             <constraint firstItem="Rpb-uf-nO0" firstAttribute="centerX" secondItem="ZDR-Zb-BBL" secondAttribute="centerX" id="5lq-KQ-Z15"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="arq-fe-eXi" secondAttribute="trailing" constant="16" id="8eZ-on-txy"/>
-                            <constraint firstItem="7DO-Sl-F4C" firstAttribute="top" secondItem="Rpb-uf-nO0" secondAttribute="bottom" constant="112" id="Dcy-wM-Qkg"/>
+                            <constraint firstItem="ZDR-Zb-BBL" firstAttribute="bottom" secondItem="eiJ-qE-CpC" secondAttribute="bottom" constant="24" id="DQk-8j-KoZ"/>
+                            <constraint firstItem="7DO-Sl-F4C" firstAttribute="top" secondItem="Rpb-uf-nO0" secondAttribute="bottom" constant="102" id="Dcy-wM-Qkg"/>
                             <constraint firstItem="NfU-DU-l0x" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="Dnt-TO-J3g"/>
-                            <constraint firstItem="ltY-Yy-Nyi" firstAttribute="top" secondItem="ULl-yR-DgX" secondAttribute="bottom" constant="34" id="IcU-IC-hdG"/>
+                            <constraint firstItem="ltY-Yy-Nyi" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="EZW-Qv-7Ch"/>
                             <constraint firstItem="hea-iF-AlK" firstAttribute="centerY" secondItem="arq-fe-eXi" secondAttribute="centerY" id="J6P-MQ-r0m"/>
                             <constraint firstItem="ULl-yR-DgX" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="Kvq-fZ-Bti"/>
                             <constraint firstItem="arq-fe-eXi" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="TOk-hK-2Ok"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="NfU-DU-l0x" secondAttribute="trailing" constant="16" id="WCJ-KK-lXz"/>
-                            <constraint firstItem="ltY-Yy-Nyi" firstAttribute="leading" secondItem="ULl-yR-DgX" secondAttribute="leading" id="YMK-Lc-zrd"/>
                             <constraint firstItem="NfU-DU-l0x" firstAttribute="top" secondItem="7DO-Sl-F4C" secondAttribute="bottom" constant="56" id="geZ-fz-qvJ"/>
+                            <constraint firstItem="eiJ-qE-CpC" firstAttribute="centerX" secondItem="ZDR-Zb-BBL" secondAttribute="centerX" id="h5u-7z-DcQ"/>
+                            <constraint firstItem="eiJ-qE-CpC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ULl-yR-DgX" secondAttribute="bottom" constant="24" id="mHQ-7Z-o7Z"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="hea-iF-AlK" secondAttribute="trailing" constant="16" id="sPr-nw-QRC"/>
-                            <constraint firstItem="Rpb-uf-nO0" firstAttribute="top" secondItem="ZDR-Zb-BBL" secondAttribute="top" constant="54" id="vGg-HN-nOE"/>
+                            <constraint firstItem="Rpb-uf-nO0" firstAttribute="top" secondItem="ZDR-Zb-BBL" secondAttribute="top" constant="44" id="vGg-HN-nOE"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="ULl-yR-DgX" secondAttribute="trailing" constant="16" id="w70-cP-hn4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZDR-Zb-BBL"/>
                     </view>
                     <navigationItem key="navigationItem" id="iWs-7M-zPe"/>
                     <connections>
+                        <outlet property="GoogleLoginButton" destination="9uJ-4p-zOF" id="xNv-Fh-F0M"/>
                         <outlet property="emailTextField" destination="NfU-DU-l0x" id="VL5-BU-lCd"/>
                         <outlet property="fbLoginButton" destination="ltY-Yy-Nyi" id="031-im-Kqx"/>
                         <outlet property="passwordTextField" destination="arq-fe-eXi" id="pLB-B0-FLc"/>

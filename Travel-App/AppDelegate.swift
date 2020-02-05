@@ -13,6 +13,7 @@ import Firebase
 import FirebaseFirestore
 import IQKeyboardManagerSwift
 import FBSDKCoreKit
+import GoogleSignIn
 
 @UIApplicationMain
     class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,7 @@ import FBSDKCoreKit
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         ApplicationDelegate.shared.application(application,didFinishLaunchingWithOptions: launchOptions)
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         
         IQKeyboardManager.shared.enable = true
 
@@ -56,7 +58,10 @@ import FBSDKCoreKit
     
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-        return ApplicationDelegate.shared.application(application, open: url, options: options)
+//        return ApplicationDelegate.shared.application(application, open: url, options: options)
+        let handled = GIDSignIn.sharedInstance().handle(url)
+        return handled
     }
+
 }
 

@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		3A3A3814239A74B9001FE150 /* CategoryPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A3813239A74B9001FE150 /* CategoryPreference.swift */; };
 		3A3D2E64238EE4B500DD9876 /* PlaceDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */; };
+		3A4927AC23EAA86500BFAC3F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A4927AB23EAA86500BFAC3F /* Alamofire.framework */; };
 		3A4EE37623E2C38500673BB4 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37523E2C38500673BB4 /* UITextField+Extension.swift */; };
 		3A4EE37823E2CF5C00673BB4 /* PlaceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37723E2CF5C00673BB4 /* PlaceCategory.swift */; };
 		3A4EE37A23E2E58B00673BB4 /* CategoriesFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37923E2E58B00673BB4 /* CategoriesFilterView.swift */; };
 		3A4EE37C23E2E5D000673BB4 /* CategoriesFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4EE37B23E2E5CF00673BB4 /* CategoriesFilterView.xib */; };
-		CAC2AFC9CE146BFE50DF962A /* Pods_Travel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */; };
+		C3A207AE39E39340A00F56D8 /* Pods_Travel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E507758549695FA6B41A2D7 /* Pods_Travel_App.framework */; };
 		F700442923A17C9C00D7E59F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F700442823A17C9C00D7E59F /* Profile.storyboard */; };
 		F700442B23A194C300D7E59F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700442A23A194C300D7E59F /* AuthViewController.swift */; };
 		F704B3F823B7F4B00090DD6F /* PlacesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F704B3F723B7F4B00090DD6F /* PlacesCollectionView.swift */; };
@@ -134,15 +135,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travel_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E507758549695FA6B41A2D7 /* Pods_Travel_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travel_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3A3813239A74B9001FE150 /* CategoryPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPreference.swift; sourceTree = "<group>"; };
 		3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDataHolder.swift; sourceTree = "<group>"; };
+		3A4927A023EA9EAA00BFAC3F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Alamofire.framework; path = Alamofire/Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A4927AB23EAA86500BFAC3F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4EE37523E2C38500673BB4 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		3A4EE37723E2CF5C00673BB4 /* PlaceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCategory.swift; sourceTree = "<group>"; };
 		3A4EE37923E2E58B00673BB4 /* CategoriesFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFilterView.swift; sourceTree = "<group>"; };
 		3A4EE37B23E2E5CF00673BB4 /* CategoriesFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesFilterView.xib; sourceTree = "<group>"; };
-		666AAB4DC0E5FE91DDA1E761 /* Pods-Travel-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.release.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.release.xcconfig"; sourceTree = "<group>"; };
-		C61D44D03DA574807B86294F /* Pods-Travel-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.debug.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.debug.xcconfig"; sourceTree = "<group>"; };
+		988C04F3319F4E8CC083AC50 /* Pods-Travel-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.debug.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.debug.xcconfig"; sourceTree = "<group>"; };
+		F6FF75EE3FD2EAAB7DD0C9A0 /* Pods-Travel-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.release.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.release.xcconfig"; sourceTree = "<group>"; };
 		F700442823A17C9C00D7E59F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = "Travel-App/Profile.storyboard"; sourceTree = SOURCE_ROOT; };
 		F700442A23A194C300D7E59F /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		F704B3F723B7F4B00090DD6F /* PlacesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesCollectionView.swift; sourceTree = "<group>"; };
@@ -270,7 +273,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAC2AFC9CE146BFE50DF962A /* Pods_Travel_App.framework in Frameworks */,
+				3A4927AC23EAA86500BFAC3F /* Alamofire.framework in Frameworks */,
+				C3A207AE39E39340A00F56D8 /* Pods_Travel_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +284,8 @@
 		024B4328CA0316027ACCF43C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C61D44D03DA574807B86294F /* Pods-Travel-App.debug.xcconfig */,
-				666AAB4DC0E5FE91DDA1E761 /* Pods-Travel-App.release.xcconfig */,
+				988C04F3319F4E8CC083AC50 /* Pods-Travel-App.debug.xcconfig */,
+				F6FF75EE3FD2EAAB7DD0C9A0 /* Pods-Travel-App.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -289,7 +293,9 @@
 		C2D17BFE28A13407CD023D67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */,
+				3A4927AB23EAA86500BFAC3F /* Alamofire.framework */,
+				3A4927A023EA9EAA00BFAC3F /* Alamofire.framework */,
+				2E507758549695FA6B41A2D7 /* Pods_Travel_App.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -811,12 +817,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7ADB09D237F3A9E00DA4E89 /* Build configuration list for PBXNativeTarget "Travel-App" */;
 			buildPhases = (
-				E5B197197B7A56C2CC531A0B /* [CP] Check Pods Manifest.lock */,
+				16ACA37153821189B05F3DCE /* [CP] Check Pods Manifest.lock */,
 				F7ADB087237F3A9700DA4E89 /* Sources */,
 				F7ADB088237F3A9700DA4E89 /* Frameworks */,
 				F7ADB089237F3A9700DA4E89 /* Resources */,
-				A142FAFBC91AFE2469910C78 /* [CP] Copy Pods Resources */,
-				E34BFE180396EC625AF4AD5B /* [CP] Embed Pods Frameworks */,
+				2826CFF061F3B3CE1F21C499 /* [CP] Embed Pods Frameworks */,
+				6D0509EAE86709AA7AD4A30F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -902,41 +908,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A142FAFBC91AFE2469910C78 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E34BFE180396EC625AF4AD5B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5B197197B7A56C2CC531A0B /* [CP] Check Pods Manifest.lock */ = {
+		16ACA37153821189B05F3DCE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -956,6 +928,40 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2826CFF061F3B3CE1F21C499 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D0509EAE86709AA7AD4A30F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1193,7 +1199,7 @@
 		};
 		F7ADB09E237F3A9E00DA4E89 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C61D44D03DA574807B86294F /* Pods-Travel-App.debug.xcconfig */;
+			baseConfigurationReference = 988C04F3319F4E8CC083AC50 /* Pods-Travel-App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1217,7 +1223,7 @@
 		};
 		F7ADB09F237F3A9E00DA4E89 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 666AAB4DC0E5FE91DDA1E761 /* Pods-Travel-App.release.xcconfig */;
+			baseConfigurationReference = F6FF75EE3FD2EAAB7DD0C9A0 /* Pods-Travel-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

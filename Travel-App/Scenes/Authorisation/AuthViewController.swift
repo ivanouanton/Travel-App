@@ -7,25 +7,32 @@
 //
 
 import UIKit
+
+import Firebase
+
+import FacebookLogin
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-import FacebookLogin
-import Firebase
-import FBSDKCoreKit
+
+import GoogleSignIn
 
 class AuthViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var fbLoginButton: FBLoginButton!
-
+    @IBOutlet weak var GoogleLoginButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.fbLoginButton.permissions = ["public_profile", "email"]
         self.fbLoginButton.delegate = self
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +45,10 @@ class AuthViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
+    @IBAction func pressedGoogleSignIn(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
     @IBAction func facebookLogin(_ sender: Any) {
         let fbLoginManager = LoginManager()
         fbLoginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
@@ -155,6 +166,28 @@ extension AuthViewController: LoginButtonDelegate {
         })
     }
     
+}
+
+extension AuthViewController: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        guard let auth = user.authentication else { return }
+        let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+        Auth.auth().signIn(with: credentials) { (authResult, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("Login Successful.")
+                //This is where you should add the functionality of successful login
+                //i.e. dismissing this view or push the home view controller etc
+            }
+        }
+    }
+            
 }
 
 
