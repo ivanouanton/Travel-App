@@ -100,4 +100,16 @@ class FirebaseAuthManager {
             }
         }
     }
+    
+    func saveProfileImage(_ imageURL: URL?, completion: @escaping (_ success: Bool) -> Void) {
+        guard let imageURL = imageURL else { return }
+        
+        do {
+            let data = try Data(contentsOf: imageURL)
+            self.saveProfileImage(UIImage(data: data)) { succes in }
+        }
+        catch{
+//            print(error.localizedDescription)
+        }
+    }
 }
