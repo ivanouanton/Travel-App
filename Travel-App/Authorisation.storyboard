@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rbi-zK-SqI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rbi-zK-SqI">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,8 +25,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="urbs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpb-uf-nO0">
-                                <rect key="frame" x="135.5" y="98" width="49" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="urbs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpb-uf-nO0">
+                                <rect key="frame" x="135.5" y="98" width="49" height="33"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -108,13 +108,13 @@
                                     <constraint firstAttribute="height" constant="44" id="nfg-84-3Sq"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" text="Sign in to Your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DO-Sl-F4C">
-                                <rect key="frame" x="25.5" y="180" width="269.5" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Sign in to Your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DO-Sl-F4C">
+                                <rect key="frame" x="25.5" y="213" width="269.5" height="19"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bj1-5C-4cP">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="bj1-5C-4cP">
                                 <rect key="frame" x="16" y="464" width="288" height="80"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GcO-0B-7b2" customClass="GIDSignInButton">
@@ -124,14 +124,19 @@
                                             <constraint firstAttribute="height" constant="40" id="eyR-5n-Fjs"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltY-Yy-Nyi" customClass="FBSDKLoginButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltY-Yy-Nyi" customClass="FacebookButton" customModule="Travel_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="40" width="288" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Gc2-Ms-JNJ"/>
                                         </constraints>
+                                        <inset key="contentEdgeInsets" minX="2" minY="0.0" maxX="2" maxY="0.0"/>
                                         <state key="normal" title="Sign in with facebook"/>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="ltY-Yy-Nyi" firstAttribute="centerX" secondItem="bj1-5C-4cP" secondAttribute="centerX" id="OBV-By-kEJ"/>
+                                    <constraint firstItem="ltY-Yy-Nyi" firstAttribute="leading" secondItem="bj1-5C-4cP" secondAttribute="leading" constant="2" id="lUt-jr-FhE"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -142,8 +147,8 @@
                             <constraint firstItem="Rpb-uf-nO0" firstAttribute="centerX" secondItem="ZDR-Zb-BBL" secondAttribute="centerX" id="5lq-KQ-Z15"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="arq-fe-eXi" secondAttribute="trailing" constant="16" id="8eZ-on-txy"/>
                             <constraint firstItem="bj1-5C-4cP" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="ASD-3k-znj"/>
-                            <constraint firstItem="bj1-5C-4cP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ULl-yR-DgX" secondAttribute="bottom" constant="24" id="DYV-7G-dIf"/>
-                            <constraint firstItem="7DO-Sl-F4C" firstAttribute="top" secondItem="Rpb-uf-nO0" secondAttribute="bottom" constant="82" id="Dcy-wM-Qkg"/>
+                            <constraint firstItem="bj1-5C-4cP" firstAttribute="top" secondItem="ULl-yR-DgX" secondAttribute="bottom" constant="24" id="DYV-7G-dIf"/>
+                            <constraint firstItem="7DO-Sl-F4C" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Rpb-uf-nO0" secondAttribute="bottom" constant="82" id="Dcy-wM-Qkg"/>
                             <constraint firstItem="NfU-DU-l0x" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="Dnt-TO-J3g"/>
                             <constraint firstItem="hea-iF-AlK" firstAttribute="centerY" secondItem="arq-fe-eXi" secondAttribute="centerY" id="J6P-MQ-r0m"/>
                             <constraint firstItem="ULl-yR-DgX" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="Kvq-fZ-Bti"/>
