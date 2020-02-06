@@ -30,5 +30,8 @@ target 'Travel-App' do
  pod 'Bolts'
  pod 'FBSDKCoreKit'
  pod 'FBSDKLoginKit'
+ 
+ # Pods for Facebook
+ pod 'GoogleSignIn'
 
 end

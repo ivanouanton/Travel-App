@@ -13,6 +13,7 @@ import FBSDKLoginKit
 import FacebookLogin
 import Firebase
 import FBSDKCoreKit
+import GoogleSignIn
 
 class AuthViewController: UIViewController {
 
@@ -20,12 +21,14 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var fbLoginButton: FBLoginButton!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.fbLoginButton.permissions = ["public_profile", "email"]
         self.fbLoginButton.delegate = self
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -153,6 +156,23 @@ extension AuthViewController: LoginButtonDelegate {
                 }
             }
         })
+    }
+    
+}
+
+extension AuthViewController: GIDSignInDelegate {
+
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        // ...
+        if let error = error {
+          // ...
+          return
+        }
+
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                          accessToken: authentication.accessToken)
+        // ...
     }
     
 }
