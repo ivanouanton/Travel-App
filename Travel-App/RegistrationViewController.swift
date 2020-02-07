@@ -14,7 +14,6 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var nameField: CustomTextField!
     @IBOutlet weak var surnameField: CustomTextField!
-    @IBOutlet weak var homeAddressField: CustomTextField!
     @IBOutlet weak var emailField: CustomTextField!
     @IBOutlet weak var passwordField: CustomTextField!
     @IBOutlet weak var avatarImage: UIImageView!
@@ -27,10 +26,6 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.setupHideKeyboardOnTap()
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
 
         setupAvatar()
     }
@@ -65,9 +60,8 @@ class RegistrationViewController: UIViewController {
             if success {
                 let surname = self.surnameField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
                 let email = self.emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-                let address = self.homeAddressField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
 
-                signUpManager.setUserData(name: name!, surname: surname!, email: email!, address: address! ) { success in }
+                signUpManager.setUserData(name: name!, surname: surname!, email: email!) { success in }
                 signUpManager.saveProfileImage(self.image) { success in }
                 
                 message = "User was sucessfully created."
@@ -105,23 +99,6 @@ class RegistrationViewController: UIViewController {
         }
     }
     
-    @objc func keyboardWillShow(notification:NSNotification){
-
-        let userInfo = notification.userInfo!
-        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
-        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-
-        var contentInset: UIEdgeInsets = self.scrollView.contentInset
-        contentInset.bottom = keyboardFrame.size.height + 20
-        scrollView.contentInset = contentInset
-    }
-
-    @objc func keyboardWillHide(notification:NSNotification){
-
-        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
-        scrollView.contentInset = contentInset
-    }
-    
     func setupAvatar() {
         avatarImage.clipsToBounds = true
         avatarImage.isUserInteractionEnabled = true
@@ -140,7 +117,6 @@ class RegistrationViewController: UIViewController {
     func validateFields() -> String? {
         if nameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             surnameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-            homeAddressField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             emailField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
             passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
             return "Please fill in all fields"
@@ -157,22 +133,6 @@ class RegistrationViewController: UIViewController {
         }
         
         return nil
-    }
-}
-
-import UIKit
-extension UIViewController {
-    /// Call this once to dismiss open keyboards by tapping anywhere in the view controller
-    func setupHideKeyboardOnTap() {
-        self.view.addGestureRecognizer(self.endEditingRecognizer())
-        self.navigationController?.navigationBar.addGestureRecognizer(self.endEditingRecognizer())
-    }
-
-    /// Dismisses the keyboard from self.view
-    private func endEditingRecognizer() -> UIGestureRecognizer {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(self.view.endEditing(_:)))
-        tap.cancelsTouchesInView = false
-        return tap
     }
 }
 

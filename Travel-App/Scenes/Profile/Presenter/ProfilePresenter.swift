@@ -25,10 +25,6 @@ extension ProfilePresenter: ProfilePresenterProtocol{
 
         userGroup.enter()
         profileManager.getAuthUserData { (user, image, error) in
-            guard error == nil else {
-                print(error!.localizedDescription)
-                return
-            }
             
             if let image = image {
                 self.view.showUserImage(image)
@@ -53,6 +49,12 @@ extension ProfilePresenter: ProfilePresenterProtocol{
                         userGroup.leave()
                     }
                 }
+            }
+            
+            guard error == nil else {
+                print(error!.localizedDescription)
+                self.view.showLoader(false)
+                return
             }
             
             userGroup.leave()
