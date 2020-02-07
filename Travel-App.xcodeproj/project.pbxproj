@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3A3A3814239A74B9001FE150 /* CategoryPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A3813239A74B9001FE150 /* CategoryPreference.swift */; };
 		3A3D2E64238EE4B500DD9876 /* PlaceDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */; };
+		3A3E631423ED352400BE2F34 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E631323ED352400BE2F34 /* AudioPlayerView.swift */; };
+		3A3E631623ED359800BE2F34 /* AudioPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3E631523ED359800BE2F34 /* AudioPlayerView.xib */; };
 		3A4EE37623E2C38500673BB4 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37523E2C38500673BB4 /* UITextField+Extension.swift */; };
 		3A4EE37823E2CF5C00673BB4 /* PlaceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37723E2CF5C00673BB4 /* PlaceCategory.swift */; };
 		3A4EE37A23E2E58B00673BB4 /* CategoriesFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37923E2E58B00673BB4 /* CategoriesFilterView.swift */; };
@@ -138,6 +140,8 @@
 		02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travel_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3A3813239A74B9001FE150 /* CategoryPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPreference.swift; sourceTree = "<group>"; };
 		3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDataHolder.swift; sourceTree = "<group>"; };
+		3A3E631323ED352400BE2F34 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
+		3A3E631523ED359800BE2F34 /* AudioPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioPlayerView.xib; sourceTree = "<group>"; };
 		3A4EE37523E2C38500673BB4 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		3A4EE37723E2CF5C00673BB4 /* PlaceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCategory.swift; sourceTree = "<group>"; };
 		3A4EE37923E2E58B00673BB4 /* CategoriesFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFilterView.swift; sourceTree = "<group>"; };
@@ -504,6 +508,8 @@
 			children = (
 				F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */,
 				F7932B682393A687006E6496 /* PlaceInfoViewController.swift */,
+				3A3E631323ED352400BE2F34 /* AudioPlayerView.swift */,
+				3A3E631523ED359800BE2F34 /* AudioPlayerView.xib */,
 			);
 			path = PlaceInfo;
 			sourceTree = "<group>";
@@ -886,6 +892,7 @@
 				F780CE6C23A315F200E8E248 /* RecentPlaceCollectionViewCell.xib in Resources */,
 				F77C178E23AACAE1009D2D69 /* Authorisation.storyboard in Resources */,
 				F7C7A1AC238B369A00C33FE4 /* GoogleService-Info.plist in Resources */,
+				3A3E631623ED359800BE2F34 /* AudioPlayerView.xib in Resources */,
 				F77D501923C3D1BE00E89E67 /* SplashScreenViewController.xib in Resources */,
 				F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
 				F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */,
@@ -1017,6 +1024,7 @@
 				3A4EE37623E2C38500673BB4 /* UITextField+Extension.swift in Sources */,
 				F7ADAA6B23CB681F009ECAEE /* CustomSlider.swift in Sources */,
 				F7CFD01C239BD3BB00983631 /* TourTableViewCell.swift in Sources */,
+				3A3E631423ED352400BE2F34 /* AudioPlayerView.swift in Sources */,
 				F79B387C239D1E4B0032F598 /* NetworkProvider.swift in Sources */,
 				F780A4CB23C4F4EB00A9A375 /* FirebaseProfileManager.swift in Sources */,
 				F79B3878239C60400032F598 /* NavigationController.swift in Sources */,
