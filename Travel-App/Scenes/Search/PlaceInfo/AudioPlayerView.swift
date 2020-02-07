@@ -27,5 +27,6 @@ class AudioPlayerView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        //contentView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
     }
 }

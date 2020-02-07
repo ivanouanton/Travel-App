@@ -20,6 +20,7 @@ class PlaceInfoViewController: UIViewController {
     @IBOutlet weak var subTitleDescriptionLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    @IBOutlet weak var audioPlayerView: AudioPlayerView!
     var place: PlaceCardModel?
     var category: String = ""
     var image: UIImage = UIImage(named: "preview-target-place")!
@@ -36,12 +37,18 @@ class PlaceInfoViewController: UIViewController {
 
         guard let audioReference = place.audio else { return }
         setupAudio(with: audioReference)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         guard let place = place else {return}
         self.navigationItem.title = place.name
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        placeImage.addBlur()
     }
     
     @IBAction func playAudio(_ sender: Any) {
@@ -58,5 +65,20 @@ class PlaceInfoViewController: UIViewController {
                 self.audioPlayer = AVPlayer(playerItem: AVPlayerItem(url: url))
             }
         }
+    }
+}
+
+extension UIImageView  {
+    func addBlur(_ alpha: CGFloat = 0.3) {
+        // create effect
+        let effect = UIBlurEffect(style: .dark)
+        let effectView = UIVisualEffectView(effect: effect)
+
+        // set boundry and alpha
+        effectView.frame = self.bounds
+        effectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        effectView.alpha = alpha
+
+        self.addSubview(effectView)
     }
 }
