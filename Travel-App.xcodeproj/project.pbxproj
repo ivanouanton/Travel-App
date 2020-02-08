@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3A3A3814239A74B9001FE150 /* CategoryPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A3813239A74B9001FE150 /* CategoryPreference.swift */; };
 		3A3D2E64238EE4B500DD9876 /* PlaceDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */; };
+		3A3E631423ED352400BE2F34 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E631323ED352400BE2F34 /* AudioPlayerView.swift */; };
+		3A3E631623ED359800BE2F34 /* AudioPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3E631523ED359800BE2F34 /* AudioPlayerView.xib */; };
 		3A4EE37623E2C38500673BB4 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37523E2C38500673BB4 /* UITextField+Extension.swift */; };
 		3A4EE37823E2CF5C00673BB4 /* PlaceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37723E2CF5C00673BB4 /* PlaceCategory.swift */; };
 		3A4EE37A23E2E58B00673BB4 /* CategoriesFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37923E2E58B00673BB4 /* CategoriesFilterView.swift */; };
@@ -43,6 +45,7 @@
 		F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */; };
 		F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */; };
 		F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F761DFF72381CFAD00D9DBBD /* SettingsPresenterProtocol.swift */; };
+		F76BF7F323EC808A00F92C27 /* FacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76BF7F223EC808A00F92C27 /* FacebookButton.swift */; };
 		F77879F023C79C2C002F2052 /* GeocodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77879EF23C79C2C002F2052 /* GeocodeType.swift */; };
 		F77879F223C7D38E002F2052 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77879F123C7D38E002F2052 /* Loader.swift */; };
 		F77879F523C7D4D2002F2052 /* CentralCircleLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = F77879F423C7D4D2002F2052 /* CentralCircleLoader.json */; };
@@ -93,6 +96,10 @@
 		F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */; };
 		F79FCA2823847ED2009F1693 /* AvenirNextLTPro-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2423847ED2009F1693 /* AvenirNextLTPro-Demi.otf */; };
 		F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */; };
+		F7AC996623EE005A0046E2B3 /* SpringboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC996523EE005A0046E2B3 /* SpringboardData.swift */; };
+		F7AC996823EE00DB0046E2B3 /* TPGAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC996723EE00DA0046E2B3 /* TPGAudioPlayer.swift */; };
+		F7AC996A23EE01880046E2B3 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC996923EE01880046E2B3 /* Notifications.swift */; };
+		F7AC996F23EE08640046E2B3 /* user1.png in Resources */ = {isa = PBXBuildFile; fileRef = F7AC996E23EE08630046E2B3 /* user1.png */; };
 		F7ADAA6823CB2156009ECAEE /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6623CB2155009ECAEE /* AgreementViewController.swift */; };
 		F7ADAA6923CB2156009ECAEE /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */; };
 		F7ADAA6B23CB681F009ECAEE /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */; };
@@ -126,6 +133,7 @@
 		F7DFCE3523C662B5002A95C7 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DFCE3323C662B5002A95C7 /* SettingTableViewCell.swift */; };
 		F7DFCE3623C662B5002A95C7 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7DFCE3423C662B5002A95C7 /* SettingTableViewCell.xib */; };
 		F7E9DDE2238344CB000DE6F4 /* PlacePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */; };
+		F7EF61C123EE20780063FFB7 /* Invisible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7EF61BF23EE20780063FFB7 /* Invisible.mp3 */; };
 		F7EF6918239BA4AA0004EF4E /* PreferenceOptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF6917239BA4AA0004EF4E /* PreferenceOptionDelegate.swift */; };
 		F7EF691A239BBE930004EF4E /* ToursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF6919239BBE930004EF4E /* ToursViewController.swift */; };
 		F7EF691D239BC0CA0004EF4E /* ToursViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF691C239BC0CA0004EF4E /* ToursViewProtocol.swift */; };
@@ -133,10 +141,22 @@
 		F7EF6921239BC1310004EF4E /* ToursPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF6920239BC1310004EF4E /* ToursPresenterProtocol.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F7AC996123EDFFD10046E2B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7AC995D23EDFFD10046E2B3 /* iOSAudioPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C807E9571C3FA0D8003D9E5B;
+			remoteInfo = iOSAudioPlayer;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travel_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3A3813239A74B9001FE150 /* CategoryPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPreference.swift; sourceTree = "<group>"; };
 		3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDataHolder.swift; sourceTree = "<group>"; };
+		3A3E631323ED352400BE2F34 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
+		3A3E631523ED359800BE2F34 /* AudioPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioPlayerView.xib; sourceTree = "<group>"; };
 		3A4EE37523E2C38500673BB4 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		3A4EE37723E2CF5C00673BB4 /* PlaceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCategory.swift; sourceTree = "<group>"; };
 		3A4EE37923E2E58B00673BB4 /* CategoriesFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFilterView.swift; sourceTree = "<group>"; };
@@ -173,6 +193,7 @@
 		F761DFF32381CF8500D9DBBD /* SettingsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewProtocol.swift; sourceTree = "<group>"; };
 		F761DFF52381CF9200D9DBBD /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		F761DFF72381CFAD00D9DBBD /* SettingsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenterProtocol.swift; sourceTree = "<group>"; };
+		F76BF7F223EC808A00F92C27 /* FacebookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FacebookButton.swift; path = "Travel-App/FacebookButton.swift"; sourceTree = SOURCE_ROOT; };
 		F77879EF23C79C2C002F2052 /* GeocodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodeType.swift; sourceTree = SOURCE_ROOT; };
 		F77879F123C7D38E002F2052 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Loader.swift; path = "Travel-App/Loader.swift"; sourceTree = SOURCE_ROOT; };
 		F77879F423C7D4D2002F2052 /* CentralCircleLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CentralCircleLoader.json; sourceTree = "<group>"; };
@@ -224,6 +245,11 @@
 		F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-HeavyCn.otf"; sourceTree = "<group>"; };
 		F79FCA2423847ED2009F1693 /* AvenirNextLTPro-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Demi.otf"; sourceTree = "<group>"; };
 		F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-UltLtCn.otf"; sourceTree = "<group>"; };
+		F7AC995D23EDFFD10046E2B3 /* iOSAudioPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSAudioPlayer.xcodeproj; path = "../../Downloads/ios-audio-player-master-2/Framework/iOSAudioPlayer/iOSAudioPlayer.xcodeproj"; sourceTree = "<group>"; };
+		F7AC996523EE005A0046E2B3 /* SpringboardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringboardData.swift; sourceTree = "<group>"; };
+		F7AC996723EE00DA0046E2B3 /* TPGAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPGAudioPlayer.swift; sourceTree = "<group>"; };
+		F7AC996923EE01880046E2B3 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		F7AC996E23EE08630046E2B3 /* user1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user1.png; sourceTree = "<group>"; };
 		F7ADAA6623CB2155009ECAEE /* AgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSlider.swift; path = "Travel-App/Scenes/CustomSlider.swift"; sourceTree = SOURCE_ROOT; };
@@ -258,6 +284,7 @@
 		F7DFCE3323C662B5002A95C7 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingTableViewCell.swift; path = "Travel-App/Scenes/Settings/SettingTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		F7DFCE3423C662B5002A95C7 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingTableViewCell.xib; path = "Travel-App/Scenes/Settings/SettingTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
 		F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePreview.swift; sourceTree = "<group>"; };
+		F7EF61BF23EE20780063FFB7 /* Invisible.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Invisible.mp3; sourceTree = "<group>"; };
 		F7EF6917239BA4AA0004EF4E /* PreferenceOptionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceOptionDelegate.swift; sourceTree = "<group>"; };
 		F7EF6919239BBE930004EF4E /* ToursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToursViewController.swift; path = "Travel-App/Scenes/Search/Tours/View/ToursViewController.swift"; sourceTree = SOURCE_ROOT; };
 		F7EF691C239BC0CA0004EF4E /* ToursViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursViewProtocol.swift; sourceTree = "<group>"; };
@@ -289,6 +316,7 @@
 		C2D17BFE28A13407CD023D67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7AC995D23EDFFD10046E2B3 /* iOSAudioPlayer.xcodeproj */,
 				02A41805EC993E5CF28FA43C /* Pods_Travel_App.framework */,
 			);
 			name = Frameworks;
@@ -442,6 +470,7 @@
 				F77C178D23AACAE1009D2D69 /* Authorisation.storyboard */,
 				F77C178F23AAD216009D2D69 /* CustomTextField.swift */,
 				F77D500D23C139D000E89E67 /* RegistrationViewController.swift */,
+				F76BF7F223EC808A00F92C27 /* FacebookButton.swift */,
 			);
 			path = Authorisation;
 			sourceTree = "<group>";
@@ -501,6 +530,11 @@
 			children = (
 				F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */,
 				F7932B682393A687006E6496 /* PlaceInfoViewController.swift */,
+				3A3E631323ED352400BE2F34 /* AudioPlayerView.swift */,
+				3A3E631523ED359800BE2F34 /* AudioPlayerView.xib */,
+				F7AC996523EE005A0046E2B3 /* SpringboardData.swift */,
+				F7AC996723EE00DA0046E2B3 /* TPGAudioPlayer.swift */,
+				F7AC996923EE01880046E2B3 /* Notifications.swift */,
 			);
 			path = PlaceInfo;
 			sourceTree = "<group>";
@@ -670,6 +704,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F7AC995E23EDFFD10046E2B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7AC996223EDFFD10046E2B3 /* iOSAudioPlayer.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F7ADAA6523CB2130009ECAEE /* Agreement */ = {
 			isa = PBXGroup;
 			children = (
@@ -707,6 +749,8 @@
 				F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */,
 				F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */,
 				F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */,
+				F7AC996E23EE08630046E2B3 /* user1.png */,
+				F7EF61BF23EE20780063FFB7 /* Invisible.mp3 */,
 				F71ACDE9238B41B60092279F /* Network */,
 				F79B3874239C136B0032F598 /* Storage */,
 				F798835B2381AEAE00F01F3A /* Scenes */,
@@ -854,12 +898,28 @@
 			mainGroup = F7ADB082237F3A9700DA4E89;
 			productRefGroup = F7ADB08C237F3A9700DA4E89 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F7AC995E23EDFFD10046E2B3 /* Products */;
+					ProjectRef = F7AC995D23EDFFD10046E2B3 /* iOSAudioPlayer.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F7ADB08A237F3A9700DA4E89 /* Travel-App */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F7AC996223EDFFD10046E2B3 /* iOSAudioPlayer.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = iOSAudioPlayer.framework;
+			remoteRef = F7AC996123EDFFD10046E2B3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F7ADB089237F3A9700DA4E89 /* Resources */ = {
@@ -878,11 +938,13 @@
 				F704B3FA23B7F7340090DD6F /* PlacesCollectionView.xib in Resources */,
 				F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */,
 				F7CF8D362399A46300119B60 /* SettingOptionCollectionViewCell.xib in Resources */,
+				F7AC996F23EE08640046E2B3 /* user1.png in Resources */,
 				3A4EE37C23E2E5D000673BB4 /* CategoriesFilterView.xib in Resources */,
 				F780CE6423A2F91200E8E248 /* ProfileOptionViewCell.xib in Resources */,
 				F780CE6C23A315F200E8E248 /* RecentPlaceCollectionViewCell.xib in Resources */,
 				F77C178E23AACAE1009D2D69 /* Authorisation.storyboard in Resources */,
 				F7C7A1AC238B369A00C33FE4 /* GoogleService-Info.plist in Resources */,
+				3A3E631623ED359800BE2F34 /* AudioPlayerView.xib in Resources */,
 				F77D501923C3D1BE00E89E67 /* SplashScreenViewController.xib in Resources */,
 				F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
 				F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */,
@@ -893,6 +955,7 @@
 				F7932B672393A65C006E6496 /* InfoStoryboard.storyboard in Resources */,
 				F79FCA2823847ED2009F1693 /* AvenirNextLTPro-Demi.otf in Resources */,
 				F700442923A17C9C00D7E59F /* Profile.storyboard in Resources */,
+				F7EF61C123EE20780063FFB7 /* Invisible.mp3 in Resources */,
 				F7CFD01D239BD3BB00983631 /* TourTableViewCell.xib in Resources */,
 				F7CF8D322396FF2100119B60 /* InterestsCollectionViewCell.xib in Resources */,
 				F79FCA2123847D4E009F1693 /* AvenirNextLTPro-Bold.otf in Resources */,
@@ -987,6 +1050,7 @@
 				F75EAD3A2392FED80001C457 /* CategoryFilterDelegate.swift in Sources */,
 				F7932B652393A0E4006E6496 /* PlacePreviewDelegate.swift in Sources */,
 				F790825123A83AB700056228 /* OptionFilterTableViewCell.swift in Sources */,
+				F7AC996A23EE01880046E2B3 /* Notifications.swift in Sources */,
 				F700442B23A194C300D7E59F /* AuthViewController.swift in Sources */,
 				F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */,
 				F7CA366923925DC9005F7C57 /* CategoryFilterCell.swift in Sources */,
@@ -1001,9 +1065,12 @@
 				F7CFD013239BCC8800983631 /* ProfileViewProtocol.swift in Sources */,
 				F79B3873239C13630032F598 /* ToursManager.swift in Sources */,
 				F77D501823C3D1BE00E89E67 /* SplashScreenViewController.swift in Sources */,
+				F7AC996823EE00DB0046E2B3 /* TPGAudioPlayer.swift in Sources */,
 				F7EF691F239BC1230004EF4E /* ToursPresenter.swift in Sources */,
+				F7AC996623EE005A0046E2B3 /* SpringboardData.swift in Sources */,
 				F7ADAA6F23D0D866009ECAEE /* AgreementType.swift in Sources */,
 				F780CE6323A2F91200E8E248 /* ProfileOptionViewCell.swift in Sources */,
+				F76BF7F323EC808A00F92C27 /* FacebookButton.swift in Sources */,
 				F77F22462392E816004610CE /* Extension+CALayer.swift in Sources */,
 				F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */,
 				F7CFD015239BCCD600983631 /* ProfileViewController.swift in Sources */,
@@ -1013,6 +1080,7 @@
 				3A4EE37623E2C38500673BB4 /* UITextField+Extension.swift in Sources */,
 				F7ADAA6B23CB681F009ECAEE /* CustomSlider.swift in Sources */,
 				F7CFD01C239BD3BB00983631 /* TourTableViewCell.swift in Sources */,
+				3A3E631423ED352400BE2F34 /* AudioPlayerView.swift in Sources */,
 				F79B387C239D1E4B0032F598 /* NetworkProvider.swift in Sources */,
 				F780A4CB23C4F4EB00A9A375 /* FirebaseProfileManager.swift in Sources */,
 				F79B3878239C60400032F598 /* NavigationController.swift in Sources */,

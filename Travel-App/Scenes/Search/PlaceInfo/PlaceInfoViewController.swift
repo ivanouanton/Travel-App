@@ -20,12 +20,12 @@ class PlaceInfoViewController: UIViewController {
     @IBOutlet weak var subTitleDescriptionLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    @IBOutlet weak var audioPlayerView: AudioPlayerView!
+    
     var place: PlaceCardModel?
     var category: String = ""
     var image: UIImage = UIImage(named: "preview-target-place")!
-    
-    var audioPlayer = AVPlayer()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let place = place else {return}
@@ -35,7 +35,9 @@ class PlaceInfoViewController: UIViewController {
         self.categoryLabel.text = place.category
 
         guard let audioReference = place.audio else { return }
-        setupAudio(with: audioReference)
+        audioPlayerView.setupAudio(with: audioReference)
+        placeImage.addBlur()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,19 +46,28 @@ class PlaceInfoViewController: UIViewController {
         self.navigationItem.title = place.name
     }
     
-    @IBAction func playAudio(_ sender: Any) {
-        if self.audioPlayer.timeControlStatus == AVPlayer.TimeControlStatus.playing{
-            self.audioPlayer.pause()
-        }else{
-            self.audioPlayer.play()
-        }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        audioPlayerView.stopPlaing()
     }
     
-    private func setupAudio(with ref: DocumentReference) {
-        PlaceManager.shared.getAudioURL(with: ref) { (hardUrl, error) in
-            if error == nil, let url = hardUrl {
-                self.audioPlayer = AVPlayer(playerItem: AVPlayerItem(url: url))
-            }
-        }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+    }
+}
+
+extension UIImageView  {
+    func addBlur(_ alpha: CGFloat = 0.5) {
+        // create effect
+        let effect = UIBlurEffect(style: .dark)
+        let effectView = UIVisualEffectView(effect: effect)
+
+        // set boundry and alpha
+        effectView.frame = self.bounds
+        effectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        effectView.alpha = alpha
+
+        self.addSubview(effectView)
     }
 }

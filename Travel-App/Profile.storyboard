@@ -30,7 +30,7 @@
                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="17"/>
                                 <state key="normal" title="Edit"/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oval" translatesAutoresizingMaskIntoConstraints="NO" id="UQm-8P-e9d">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="UQm-8P-e9d">
                                 <rect key="frame" x="271" y="104" width="88" height="88"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="LYM-S7-Z8E"/>
@@ -224,7 +224,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="oval" width="88" height="88"/>
+        <image name="user" width="85.333335876464844" height="85.333335876464844"/>
         <namedColor name="heavy">
             <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
