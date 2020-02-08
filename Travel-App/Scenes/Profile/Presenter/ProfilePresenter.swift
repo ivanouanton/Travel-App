@@ -32,7 +32,7 @@ extension ProfilePresenter: ProfilePresenterProtocol{
             
             if let user = user {
                 let fullName = user.name + " " + user.surname
-                let information: [(key: String, value: String)] = [("Language", "English"), ("Home address", user.address ?? "")]
+                let information: [(key: String, value: String)] = [("Language", "English"), ("Rome address", user.address ?? "")]
                 self.view.showUserData(with: fullName, information: information)
                 
                 guard let places = user.places else {

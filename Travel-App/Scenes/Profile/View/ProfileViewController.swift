@@ -21,7 +21,7 @@ final class ProfileViewController: UIViewController{
     @IBOutlet weak var profileTableView: UITableView!
     
     private var tableSection = ["Information", "Recent places"]
-    private var information: [(key: String, value: String)] = [("Language", "English"), ("Home address", "352 Thiel Motorway Suite 421")]
+    private var information: [(key: String, value: String)] = [("Language", "English"), ("Кщьу address", "352 Thiel Motorway Suite 421")]
     private var places = Array<PlaceCardModel>()
     
     
