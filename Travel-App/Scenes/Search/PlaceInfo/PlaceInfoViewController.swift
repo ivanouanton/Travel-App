@@ -21,6 +21,7 @@ class PlaceInfoViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var audioPlayerView: AudioPlayerView!
+    
     var place: PlaceCardModel?
     var category: String = ""
     var image: UIImage = UIImage(named: "preview-target-place")!
@@ -36,14 +37,24 @@ class PlaceInfoViewController: UIViewController {
         self.categoryLabel.text = place.category
 
         guard let audioReference = place.audio else { return }
-        setupAudio(with: audioReference)
+        audioPlayerView.setupAudio(with: audioReference)
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        NotificationCenter.default.removeObserver( self )
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         guard let place = place else {return}
         self.navigationItem.title = place.name
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(audioPlayerView.episodeLoadedNotification(_:)), name: .mediaLoadProgress, object: nil)
+
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -58,14 +69,14 @@ class PlaceInfoViewController: UIViewController {
             self.audioPlayer.play()
         }
     }
-    
-    private func setupAudio(with ref: DocumentReference) {
-        PlaceManager.shared.getAudioURL(with: ref) { (hardUrl, error) in
-            if error == nil, let url = hardUrl {
-                self.audioPlayer = AVPlayer(playerItem: AVPlayerItem(url: url))
-            }
-        }
-    }
+//
+//    private func setupAudio(with ref: DocumentReference) {
+//        PlaceManager.shared.getAudioURL(with: ref) { (hardUrl, error) in
+//            if error == nil, let url = hardUrl {
+//                self.audioPlayer = AVPlayer(playerItem: AVPlayerItem(url: url))
+//            }
+//        }
+//    }
 }
 
 extension UIImageView  {

@@ -49,20 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-    
-//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-//        if error != nil {
-//            print("Success")
-//        } else {
-//            print("Error")
-//        }
-//    }
-    
-//    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-//        let handled = GIDSignIn.sharedInstance().handle(url)
-//        return handled
-//    }
-//    
+      
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return ApplicationDelegate.shared.application(application,
                                                          open: url,
@@ -74,5 +61,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
         return ApplicationDelegate.shared.application(application, open: url, options: options)
     }
+    
+    override func remoteControlReceived(with event: UIEvent?) {
+           guard let eventSubtype = event?.subtype else {
+               return
+           }
+           
+           switch eventSubtype {
+               
+           case .remoteControlPlay:
+               TPGAudioPlayer.sharedInstance().isPlaying = true
+           case .remoteControlPause:
+               TPGAudioPlayer.sharedInstance().isPlaying = false
+           case .remoteControlNextTrack:
+               TPGAudioPlayer.sharedInstance().skipDirection(skipDirection: SkipDirection.forward, timeInterval: kTestTimeInterval, offset: TPGAudioPlayer.sharedInstance().currentTimeInSeconds)
+           case .remoteControlPreviousTrack:
+               TPGAudioPlayer.sharedInstance().skipDirection(skipDirection: SkipDirection.backward, timeInterval: kTestTimeInterval, offset: TPGAudioPlayer.sharedInstance().currentTimeInSeconds)
+               
+           default: break
+           }
+       }
 }
 
