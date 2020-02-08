@@ -67,8 +67,8 @@ class AudioPlayerView: UIView {
             }
         }
         
-        rewindButton.alpha = 0
-        fastforwardButton.alpha = 0
+//        rewindButton.alpha = 0
+//        fastforwardButton.alpha = 0
     }
     
     // MARK: Notifications

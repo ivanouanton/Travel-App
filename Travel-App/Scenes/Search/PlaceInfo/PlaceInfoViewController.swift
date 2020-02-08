@@ -36,6 +36,7 @@ class PlaceInfoViewController: UIViewController {
 
         guard let audioReference = place.audio else { return }
         audioPlayerView.setupAudio(with: audioReference)
+        placeImage.addBlur()
         
     }
     
@@ -52,12 +53,12 @@ class PlaceInfoViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        placeImage.addBlur()
+        
     }
 }
 
 extension UIImageView  {
-    func addBlur(_ alpha: CGFloat = 0.3) {
+    func addBlur(_ alpha: CGFloat = 0.5) {
         // create effect
         let effect = UIBlurEffect(style: .dark)
         let effectView = UIVisualEffectView(effect: effect)
