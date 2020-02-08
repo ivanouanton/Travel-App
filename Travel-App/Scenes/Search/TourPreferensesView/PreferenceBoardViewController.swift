@@ -27,7 +27,7 @@ class PreferenceBoardViewController: UIViewController {
     
     var preferences = [Int:Int]()
     
-    var sectionTitles = ["Interests", "Duration", "Price", "Transport"]
+    var sectionTitles = ["Interests", "Duration", "Price"]
     
     private lazy var settingTable: UITableView = {
         let table = UITableView.init(frame: .zero, style: UITableView.Style.grouped)
@@ -100,7 +100,8 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
             cell.delegate = self
             cell.cellIndex = indexPath.section
             return cell
-        }else if indexPath.section != 0{
+        }else
+            if indexPath.section != 0{
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingOptionTableViewCell.reuseIdentifier, for: indexPath) as! SettingOptionTableViewCell
             let key: String = self.sectionTitles[indexPath.section]
             cell.titles = settingsData[key] as! [String]
