@@ -41,19 +41,19 @@
                                                 <rect key="frame" x="16" y="8" width="343" height="154"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants &amp; Cafes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoA-2Q-Cb6">
-                                                <rect key="frame" x="15.999999999999993" y="202" width="126.33333333333331" height="14"/>
+                                                <rect key="frame" x="16" y="202" width="128.33333333333334" height="16.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="14"/>
                                                 <color key="textColor" name="onyx"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.1 (358) ££" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95v-sw-T5O">
-                                                <rect key="frame" x="16" y="224" width="76" height="14"/>
+                                                <rect key="frame" x="16" y="226.33333333333334" width="73.666666666666671" height="16.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="14"/>
                                                 <color key="textColor" name="silver"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQZ-PF-ROW">
-                                                <rect key="frame" x="16" y="256" width="150" height="28"/>
+                                                <rect key="frame" x="16" y="260.66666666666669" width="150" height="32.666666666666686"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="nMu-Jp-dOE"/>
                                                 </constraints>
@@ -64,34 +64,13 @@ Brooklyn, NY 11249</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Diego Vacation Rental" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBM-lD-6ES">
-                                                <rect key="frame" x="16" y="337" width="171" height="14"/>
+                                                <rect key="frame" x="16" y="349" width="166.33333333333334" height="16.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
                                                 <color key="textColor" name="silver"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myh-tt-CbA">
-                                                <rect key="frame" x="134" y="635" width="125" height="36"/>
-                                                <color key="backgroundColor" red="0.078431372549019607" green="0.29411764705882354" blue="0.43137254901960786" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="125" id="s4y-eI-yeN"/>
-                                                    <constraint firstAttribute="height" constant="36" id="waO-Kf-UC9"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
-                                                <inset key="imageEdgeInsets" minX="110" minY="0.0" maxX="30" maxY="0.0"/>
-                                                <state key="normal" title="Play Audio" image="play-icon">
-                                                    <color key="titleColor" name="pantone"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="playAudio:" destination="UhC-Oq-jYi" eventType="touchUpInside" id="Na5-r9-YwZ"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-2u-tWP">
-                                                <rect key="frame" x="16" y="362" width="343" height="240.66666666666663"/>
+                                                <rect key="frame" x="16" y="376.33333333333331" width="343" height="240.66666666666669"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">Stu Unger is one of the biggest superstars to have immerged from the professional poker world. Besides being a true poker genius and a three time World Series of Poker champion, Stu Unger had a fascinating life story. It was not surprising that after his death Stu was the subject of a biography and a biopic. Stu Unger lived the life of a rock star including the quick rise to fame, the drugs, the comeback and the unavoidable death at an early age. Here you can read about the life story of the legendary poker player Stu Unger.</string>
@@ -105,7 +84,7 @@ Brooklyn, NY 11249</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choosing The Right Boutique Hotel For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-2D-9VV">
-                                                <rect key="frame" x="16" y="311" width="343" height="16"/>
+                                                <rect key="frame" x="16" y="320.33333333333331" width="343" height="18.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="16"/>
                                                 <color key="textColor" name="heavy"/>
                                                 <nil key="highlightedColor"/>
@@ -176,16 +155,12 @@ Brooklyn, NY 11249</string>
         </scene>
     </scenes>
     <resources>
-        <image name="play-icon" width="13" height="14"/>
         <image name="starbucks" width="246.66667175292969" height="186.66667175292969"/>
         <namedColor name="heavy">
             <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="onyx">
             <color red="0.21176470588235294" green="0.21568627450980393" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="pantone">
-            <color red="0.078431372549019607" green="0.29411764705882354" blue="0.43137254901960786" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="silver">
             <color red="0.76078431372549016" green="0.75294117647058822" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -10,11 +10,6 @@ import UIKit
 import AVFoundation
 import Firebase
 
-
-let kTestLink = "http://traffic.libsyn.com/innovationengine/Disruptive_Innovation_in_Media__Entertainment.mp3"
-let kTestImage = "user1"
-let kTestTimeInterval = 20.0
-
 class AudioPlayerView: UIView {
 
     @IBOutlet var contentView: UIView!
@@ -98,11 +93,11 @@ class AudioPlayerView: UIView {
     }
 
     @IBAction func rewindButtonPressed(_ sender: AnyObject) {
-        TPGAudioPlayer.sharedInstance().skipDirection(skipDirection: SkipDirection.backward, timeInterval: kTestTimeInterval, offset: TPGAudioPlayer.sharedInstance().currentTimeInSeconds)
+//        TPGAudioPlayer.sharedInstance().skipDirection(skipDirection: SkipDirection.backward, timeInterval: kTestTimeInterval, offset: TPGAudioPlayer.sharedInstance().currentTimeInSeconds)
     }
 
     @IBAction func fastforwardButtonPressed(_ sender: AnyObject) {
-        TPGAudioPlayer.sharedInstance().skipDirection(skipDirection: SkipDirection.forward, timeInterval: kTestTimeInterval, offset: TPGAudioPlayer.sharedInstance().currentTimeInSeconds)
+//        TPGAudioPlayer.sharedInstance().skipDirection(skipDirection: SkipDirection.forward, timeInterval: kTestTimeInterval, offset: TPGAudioPlayer.sharedInstance().currentTimeInSeconds)
     }
 
     @IBAction func sliderValueChanged(_ sender: UISlider) {
@@ -113,6 +108,13 @@ class AudioPlayerView: UIView {
         player.seek(to: newTime, completionHandler: { (finished) -> Void in
            
         })
+    }
+    
+    func stopPlaing() {
+        if self.player.timeControlStatus == AVPlayer.TimeControlStatus.playing{
+            self.player.pause()
+            updatePlayButton()
+        }
     }
 
     func updatePlayButton() {
@@ -170,7 +172,6 @@ class AudioPlayerView: UIView {
 
             totalTimeLabel.text = timeLabelString( Int (seconds) )
         }
-        
     }
 
     func showLoadingIndicator() {

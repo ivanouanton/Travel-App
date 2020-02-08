@@ -93,13 +93,11 @@ extension SearchPresenter: SearchPresenterProtocol{
                                                             
                                                             placeModel.placeName = address
                                                             placesModelData.append(placeModel)
-
                                                             placeGroup.leave()
                     }
                     
                     placeGroup.leave()
                 }
-                
             }
         }
         

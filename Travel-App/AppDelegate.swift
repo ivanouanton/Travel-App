@@ -61,25 +61,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
         return ApplicationDelegate.shared.application(application, open: url, options: options)
     }
-    
-    override func remoteControlReceived(with event: UIEvent?) {
-           guard let eventSubtype = event?.subtype else {
-               return
-           }
-           
-           switch eventSubtype {
-               
-           case .remoteControlPlay:
-               TPGAudioPlayer.sharedInstance().isPlaying = true
-           case .remoteControlPause:
-               TPGAudioPlayer.sharedInstance().isPlaying = false
-           case .remoteControlNextTrack:
-               TPGAudioPlayer.sharedInstance().skipDirection(skipDirection: SkipDirection.forward, timeInterval: kTestTimeInterval, offset: TPGAudioPlayer.sharedInstance().currentTimeInSeconds)
-           case .remoteControlPreviousTrack:
-               TPGAudioPlayer.sharedInstance().skipDirection(skipDirection: SkipDirection.backward, timeInterval: kTestTimeInterval, offset: TPGAudioPlayer.sharedInstance().currentTimeInSeconds)
-               
-           default: break
-           }
-       }
 }
 
