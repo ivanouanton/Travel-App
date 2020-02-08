@@ -26,6 +26,7 @@ class InterestsTableCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.registerNib()
+        collectionView.allowsMultipleSelection = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

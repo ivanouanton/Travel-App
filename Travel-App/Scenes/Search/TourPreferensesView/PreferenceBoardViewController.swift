@@ -32,8 +32,10 @@ class PreferenceBoardViewController: UIViewController {
     private lazy var settingTable: UITableView = {
         let table = UITableView.init(frame: .zero, style: UITableView.Style.grouped)
         table.translatesAutoresizingMaskIntoConstraints = false
-        let interestCell = UINib(nibName: "InterestsTableCell", bundle: nil)
-        table.register(interestCell, forCellReuseIdentifier: "InterestsTableCell")
+//        let interestCell = UINib(nibName: "InterestsTableCell", bundle: nil)
+//        table.register(interestCell, forCellReuseIdentifier: "InterestsTableCell")
+        let interestCell = UINib(nibName: "CategoryFilterViewCell", bundle: nil)
+        table.register(interestCell, forCellReuseIdentifier: "CategoryFilterViewCell")
         let settingsCell = UINib(nibName: SettingOptionTableViewCell.nibName, bundle: nil)
         table.register(settingsCell, forCellReuseIdentifier: SettingOptionTableViewCell.reuseIdentifier)
         table.backgroundColor = UIColor(named: "white")
@@ -109,10 +111,9 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
             cell.cellIndex = indexPath.section
             return cell
         }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "InterestsTableCell", for: indexPath) as! InterestsTableCell
-            cell.categories = settingsData["Interests"] as! [CategoryPreference]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryFilterViewCell", for: indexPath) as! CategoryFilterViewCell
             cell.delegate = self
-            cell.cellIndex = indexPath.section
+//                cell.cellIndex = indexPath.section
             return cell
         }
     }

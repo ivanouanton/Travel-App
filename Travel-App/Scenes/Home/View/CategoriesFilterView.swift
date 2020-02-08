@@ -39,6 +39,7 @@ class CategoriesFilterView: UIView {
     private func initCollectionView() {
         let nib = UINib(nibName: InterestsCollectionViewCell.nibName, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: InterestsCollectionViewCell.reuseIdentifier)
+        collectionView.allowsMultipleSelection = true
         collectionView.dataSource = self
         collectionView.delegate = self
     }
