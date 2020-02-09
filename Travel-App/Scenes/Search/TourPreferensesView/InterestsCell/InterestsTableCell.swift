@@ -26,6 +26,7 @@ class InterestsTableCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         self.registerNib()
+        collectionView.allowsMultipleSelection = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -55,6 +56,6 @@ extension InterestsTableCell: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.didSelectItemAt(indexPath.row, tableCell: self.cellIndex)
+//        self.delegate?.didSelectItemAt(indexPath.row, tableCell: self.cellIndex)
     }
 }

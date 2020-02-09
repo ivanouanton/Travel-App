@@ -29,4 +29,15 @@ struct Tour{
         self.price = dictionary["price"] as! Int
         self.image = nil
     }
+    
+    init(_ places: [PlaceData]) {
+        self.description = "Custom tour"
+        self.duration = "Duration of tour"
+        self.imageRef = nil
+        self.name = "Custom tour"
+        self.place = places.map{$0.id!}
+        self.transport = []
+        self.price = 1
+        self.image = nil
+    }
 }

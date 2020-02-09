@@ -88,6 +88,10 @@ extension HomeViewController: HomeViewProtocol{
 }
 
 extension HomeViewController: CategoryFilterViewDelegate {
+    func didDeselect(_ category: PlaceCategory) {
+        
+    }
+    
     func didSelect(_ category: PlaceCategory) {
         let nvc = tabBarController?.viewControllers?[0] as? UINavigationController
         let vc = nvc?.viewControllers[0] as? SearchViewController

@@ -31,6 +31,9 @@
 		F72EFE42239EF16D008081E1 /* TourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72EFE41239EF16D008081E1 /* TourInfoViewController.swift */; };
 		F72EFE44239EF618008081E1 /* TourInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72EFE43239EF618008081E1 /* TourInfoView.swift */; };
 		F72EFE49239EF62C008081E1 /* TourInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72EFE45239EF62B008081E1 /* TourInfoView.xib */; };
+		F735911223F00D9200204703 /* PreferenceBoardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735911123F00D9200204703 /* PreferenceBoardPresenter.swift */; };
+		F735911523F00DDA00204703 /* PreferenceBoardPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735911423F00DDA00204703 /* PreferenceBoardPresenterProtocol.swift */; };
+		F735911723F00EF100204703 /* PreferenceBoardViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735911623F00EF100204703 /* PreferenceBoardViewProtocol.swift */; };
 		F73E166C23E0CC6D0001AB56 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E166A23E0CC6D0001AB56 /* PlaceTableViewCell.swift */; };
 		F73E166D23E0CC6D0001AB56 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73E166B23E0CC6D0001AB56 /* PlaceTableViewCell.xib */; };
 		F73E166F23E0CFE70001AB56 /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E166E23E0CFE70001AB56 /* SelfSizedTableView.swift */; };
@@ -76,6 +79,8 @@
 		F7932B652393A0E4006E6496 /* PlacePreviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B642393A0E4006E6496 /* PlacePreviewDelegate.swift */; };
 		F7932B672393A65C006E6496 /* InfoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */; };
 		F7932B692393A687006E6496 /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B682393A687006E6496 /* PlaceInfoViewController.swift */; };
+		F79754E923EF489C00306220 /* CategoryFilterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79754E723EF489C00306220 /* CategoryFilterViewCell.swift */; };
+		F79754EA23EF489C00306220 /* CategoryFilterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F79754E823EF489C00306220 /* CategoryFilterViewCell.xib */; };
 		F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883592381AE5E00F01F3A /* ViewFactory.swift */; };
 		F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835C2381AEF800F01F3A /* SearchViewController.swift */; };
 		F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */; };
@@ -99,7 +104,6 @@
 		F7AC996623EE005A0046E2B3 /* SpringboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC996523EE005A0046E2B3 /* SpringboardData.swift */; };
 		F7AC996823EE00DB0046E2B3 /* TPGAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC996723EE00DA0046E2B3 /* TPGAudioPlayer.swift */; };
 		F7AC996A23EE01880046E2B3 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC996923EE01880046E2B3 /* Notifications.swift */; };
-		F7AC996F23EE08640046E2B3 /* user1.png in Resources */ = {isa = PBXBuildFile; fileRef = F7AC996E23EE08630046E2B3 /* user1.png */; };
 		F7ADAA6823CB2156009ECAEE /* AgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6623CB2155009ECAEE /* AgreementViewController.swift */; };
 		F7ADAA6923CB2156009ECAEE /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */; };
 		F7ADAA6B23CB681F009ECAEE /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */; };
@@ -133,7 +137,6 @@
 		F7DFCE3523C662B5002A95C7 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7DFCE3323C662B5002A95C7 /* SettingTableViewCell.swift */; };
 		F7DFCE3623C662B5002A95C7 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7DFCE3423C662B5002A95C7 /* SettingTableViewCell.xib */; };
 		F7E9DDE2238344CB000DE6F4 /* PlacePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */; };
-		F7EF61C123EE20780063FFB7 /* Invisible.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F7EF61BF23EE20780063FFB7 /* Invisible.mp3 */; };
 		F7EF6918239BA4AA0004EF4E /* PreferenceOptionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF6917239BA4AA0004EF4E /* PreferenceOptionDelegate.swift */; };
 		F7EF691A239BBE930004EF4E /* ToursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF6919239BBE930004EF4E /* ToursViewController.swift */; };
 		F7EF691D239BC0CA0004EF4E /* ToursViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EF691C239BC0CA0004EF4E /* ToursViewProtocol.swift */; };
@@ -179,6 +182,9 @@
 		F72EFE41239EF16D008081E1 /* TourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourInfoViewController.swift; sourceTree = "<group>"; };
 		F72EFE43239EF618008081E1 /* TourInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourInfoView.swift; sourceTree = "<group>"; };
 		F72EFE45239EF62B008081E1 /* TourInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TourInfoView.xib; sourceTree = "<group>"; };
+		F735911123F00D9200204703 /* PreferenceBoardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBoardPresenter.swift; sourceTree = "<group>"; };
+		F735911423F00DDA00204703 /* PreferenceBoardPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBoardPresenterProtocol.swift; sourceTree = "<group>"; };
+		F735911623F00EF100204703 /* PreferenceBoardViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBoardViewProtocol.swift; sourceTree = "<group>"; };
 		F73E166A23E0CC6D0001AB56 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		F73E166B23E0CC6D0001AB56 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
 		F73E166E23E0CFE70001AB56 /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
@@ -225,6 +231,8 @@
 		F7932B642393A0E4006E6496 /* PlacePreviewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlacePreviewDelegate.swift; path = "Travel-App/Scenes/Search/Screen/CustomView/PlaceInfo/PlacePreviewDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = InfoStoryboard.storyboard; path = "Travel-App/Scenes/Search/PlaceInfo/InfoStoryboard.storyboard"; sourceTree = SOURCE_ROOT; };
 		F7932B682393A687006E6496 /* PlaceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoViewController.swift; sourceTree = "<group>"; };
+		F79754E723EF489C00306220 /* CategoryFilterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterViewCell.swift; sourceTree = "<group>"; };
+		F79754E823EF489C00306220 /* CategoryFilterViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryFilterViewCell.xib; sourceTree = "<group>"; };
 		F79883592381AE5E00F01F3A /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		F798835C2381AEF800F01F3A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewProtocol.swift; sourceTree = "<group>"; };
@@ -249,7 +257,6 @@
 		F7AC996523EE005A0046E2B3 /* SpringboardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringboardData.swift; sourceTree = "<group>"; };
 		F7AC996723EE00DA0046E2B3 /* TPGAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPGAudioPlayer.swift; sourceTree = "<group>"; };
 		F7AC996923EE01880046E2B3 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		F7AC996E23EE08630046E2B3 /* user1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user1.png; sourceTree = "<group>"; };
 		F7ADAA6623CB2155009ECAEE /* AgreementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgreementViewController.swift; sourceTree = "<group>"; };
 		F7ADAA6723CB2156009ECAEE /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomSlider.swift; path = "Travel-App/Scenes/CustomSlider.swift"; sourceTree = SOURCE_ROOT; };
@@ -284,7 +291,6 @@
 		F7DFCE3323C662B5002A95C7 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingTableViewCell.swift; path = "Travel-App/Scenes/Settings/SettingTableViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		F7DFCE3423C662B5002A95C7 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SettingTableViewCell.xib; path = "Travel-App/Scenes/Settings/SettingTableViewCell.xib"; sourceTree = SOURCE_ROOT; };
 		F7E9DDE1238344CB000DE6F4 /* PlacePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacePreview.swift; sourceTree = "<group>"; };
-		F7EF61BF23EE20780063FFB7 /* Invisible.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Invisible.mp3; sourceTree = "<group>"; };
 		F7EF6917239BA4AA0004EF4E /* PreferenceOptionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceOptionDelegate.swift; sourceTree = "<group>"; };
 		F7EF6919239BBE930004EF4E /* ToursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToursViewController.swift; path = "Travel-App/Scenes/Search/Tours/View/ToursViewController.swift"; sourceTree = SOURCE_ROOT; };
 		F7EF691C239BC0CA0004EF4E /* ToursViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToursViewProtocol.swift; sourceTree = "<group>"; };
@@ -342,6 +348,8 @@
 				F7CF8D2F2396FF2100119B60 /* InterestsCollectionViewCell.swift */,
 				F7CF8D302396FF2100119B60 /* InterestsCollectionViewCell.xib */,
 				3A3A3813239A74B9001FE150 /* CategoryPreference.swift */,
+				F79754E723EF489C00306220 /* CategoryFilterViewCell.swift */,
+				F79754E823EF489C00306220 /* CategoryFilterViewCell.xib */,
 			);
 			path = InterestsCell;
 			sourceTree = "<group>";
@@ -403,9 +411,12 @@
 			isa = PBXGroup;
 			children = (
 				F7B45FFE2389103F005CBEE4 /* PreferenceBoardViewController.swift */,
+				F735911623F00EF100204703 /* PreferenceBoardViewProtocol.swift */,
 				F7EF6917239BA4AA0004EF4E /* PreferenceOptionDelegate.swift */,
 				F70DB815239B149A00D48EC6 /* InterestsCell */,
 				F70DB81A239B235F00D48EC6 /* SettingOptionsCell */,
+				F735911123F00D9200204703 /* PreferenceBoardPresenter.swift */,
+				F735911423F00DDA00204703 /* PreferenceBoardPresenterProtocol.swift */,
 			);
 			path = TourPreferensesView;
 			sourceTree = "<group>";
@@ -749,8 +760,6 @@
 				F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */,
 				F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */,
 				F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */,
-				F7AC996E23EE08630046E2B3 /* user1.png */,
-				F7EF61BF23EE20780063FFB7 /* Invisible.mp3 */,
 				F71ACDE9238B41B60092279F /* Network */,
 				F79B3874239C136B0032F598 /* Storage */,
 				F798835B2381AEAE00F01F3A /* Scenes */,
@@ -936,9 +945,9 @@
 				F790825223A83AB700056228 /* OptionFilterTableViewCell.xib in Resources */,
 				F7CCB5C6238488D7004C4A35 /* Assets.xcassets in Resources */,
 				F704B3FA23B7F7340090DD6F /* PlacesCollectionView.xib in Resources */,
+				F79754EA23EF489C00306220 /* CategoryFilterViewCell.xib in Resources */,
 				F7ADB099237F3A9E00DA4E89 /* LaunchScreen.storyboard in Resources */,
 				F7CF8D362399A46300119B60 /* SettingOptionCollectionViewCell.xib in Resources */,
-				F7AC996F23EE08640046E2B3 /* user1.png in Resources */,
 				3A4EE37C23E2E5D000673BB4 /* CategoriesFilterView.xib in Resources */,
 				F780CE6423A2F91200E8E248 /* ProfileOptionViewCell.xib in Resources */,
 				F780CE6C23A315F200E8E248 /* RecentPlaceCollectionViewCell.xib in Resources */,
@@ -955,7 +964,6 @@
 				F7932B672393A65C006E6496 /* InfoStoryboard.storyboard in Resources */,
 				F79FCA2823847ED2009F1693 /* AvenirNextLTPro-Demi.otf in Resources */,
 				F700442923A17C9C00D7E59F /* Profile.storyboard in Resources */,
-				F7EF61C123EE20780063FFB7 /* Invisible.mp3 in Resources */,
 				F7CFD01D239BD3BB00983631 /* TourTableViewCell.xib in Resources */,
 				F7CF8D322396FF2100119B60 /* InterestsCollectionViewCell.xib in Resources */,
 				F79FCA2123847D4E009F1693 /* AvenirNextLTPro-Bold.otf in Resources */,
@@ -1085,6 +1093,7 @@
 				F780A4CB23C4F4EB00A9A375 /* FirebaseProfileManager.swift in Sources */,
 				F79B3878239C60400032F598 /* NavigationController.swift in Sources */,
 				F761DFF22381CF7400D9DBBD /* SettingsViewController.swift in Sources */,
+				F79754E923EF489C00306220 /* CategoryFilterViewCell.swift in Sources */,
 				F79B3880239D22370032F598 /* PlaceManager.swift in Sources */,
 				F799F5E123D4CD7500106B7E /* HomeViewController.swift in Sources */,
 				F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */,
@@ -1093,7 +1102,9 @@
 				F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */,
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
 				F7ADAA7123D460CE009ECAEE /* AgreementDelegate.swift in Sources */,
+				F735911523F00DDA00204703 /* PreferenceBoardPresenterProtocol.swift in Sources */,
 				F7ADAA6823CB2156009ECAEE /* AgreementViewController.swift in Sources */,
+				F735911723F00EF100204703 /* PreferenceBoardViewProtocol.swift in Sources */,
 				3A4EE37823E2CF5C00673BB4 /* PlaceCategory.swift in Sources */,
 				F77D501323C1F08100E89E67 /* Utilities.swift in Sources */,
 				F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */,
@@ -1123,6 +1134,7 @@
 				F7CFD020239BE3A800983631 /* Tour.swift in Sources */,
 				F72B7C1423A6CD39009155D4 /* OptionFilterDelegate.swift in Sources */,
 				F72B7C1223A6CCD9009155D4 /* OptionFilter.swift in Sources */,
+				F735911223F00D9200204703 /* PreferenceBoardPresenter.swift in Sources */,
 				F77879F223C7D38E002F2052 /* Loader.swift in Sources */,
 				F7CF8D352399A46300119B60 /* SettingOptionCollectionViewCell.swift in Sources */,
 				F73E167123E355860001AB56 /* AttributedStringHelper.swift in Sources */,

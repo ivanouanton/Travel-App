@@ -63,5 +63,12 @@ class ViewFactory{
         vc.state = type
         return vc
     }
+    
+    static func createSettingsTourVC() -> PreferenceBoardViewController {
+        let vc = PreferenceBoardViewController()
+        let presenter = PreferenceBoardPresenter(view: vc)
+        vc.presenter = presenter
+        return vc
+    }
 }
 
