@@ -21,7 +21,7 @@ class PreferenceBoardViewController: UIViewController {
     var preferences = [Int:[Int]]()
     var selectedCategories = [PlaceCategory]()
     var selectedPrices = [Int]()
-    var selectedDurations = [Int]()
+    var selectedDurations = [0]
 
     var sectionTitles = ["Interests", "Duration", "Price"]
     
@@ -158,7 +158,7 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
     @objc func dosmth(){
 //        let vc = ViewFactory.createToursVC(with: self.preferences)
 //        self.navigationController?.pushViewController(vc, animated: true)
-        presenter.createCustomTour(with: selectedCategories, options: selectedPrices)
+        presenter.createCustomTour(with: selectedCategories, prices: selectedPrices, durations: selectedDurations)
     }
 }
 

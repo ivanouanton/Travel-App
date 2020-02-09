@@ -189,6 +189,7 @@ extension SearchPresenter: SearchPresenterProtocol{
         self.locationManager.fetchLocation { (location, error) in
             if let location = location{
                 self.userLocation = GeoPoint(latitude: location.latitude, longitude: location.longitude)
+                PlaceManager.shared.userLocation = self.userLocation
                 self.view.didChangeMyLocation(location)
                 PlaceManager.shared.geocodeLocation(with: self.userLocation) { (locality, error) in
                     guard let locality = locality else {return}

@@ -14,6 +14,9 @@ import GoogleMaps
 
 class PlaceManager {
     static let shared = PlaceManager()
+    
+    var userLocation = GeoPoint(latitude: Defaults.location.latitude,
+                                longitude: Defaults.location.longitude)
 
     private let placesImageCache = NSCache<NSString, UIImage>()
     private let categoryImagesCache = NSCache<NSString, UIImage>()
