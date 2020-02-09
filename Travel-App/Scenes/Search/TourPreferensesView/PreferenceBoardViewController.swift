@@ -11,29 +11,19 @@ import UIKit
 class PreferenceBoardViewController: UIViewController {
     
     var settingsData = [
-        "Interests": [
-            CategoryPreference(title: "Anders", icon: UIImage(named: "landmark")!),
-            CategoryPreference(title: "Kristian", icon: UIImage(named: "trees")!),
-            CategoryPreference(title: "Sofia", icon: UIImage(named: "landmark")!),
-            CategoryPreference(title: "John", icon: UIImage(named: "trees")!),
-            CategoryPreference(title: "Jenny", icon: UIImage(named: "landmark")!),
-            CategoryPreference(title: "Lina", icon: UIImage(named: "trees")!)
-        ],
         "Duration": ["A Few Hours", "Half Day",  "Full Day"],
         "Price": ["free", "€", "€€"],
         "Transport": [UIImage(named: "walk")!, UIImage(named: "bus")!, UIImage(named: "subway")!]
     ]
     
-    
     var preferences = [Int:Int]()
+    var selectedCategories = [PlaceCategory]()
     
     var sectionTitles = ["Interests", "Duration", "Price"]
     
     private lazy var settingTable: UITableView = {
         let table = UITableView.init(frame: .zero, style: UITableView.Style.grouped)
         table.translatesAutoresizingMaskIntoConstraints = false
-//        let interestCell = UINib(nibName: "InterestsTableCell", bundle: nil)
-//        table.register(interestCell, forCellReuseIdentifier: "InterestsTableCell")
         let interestCell = UINib(nibName: "CategoryFilterViewCell", bundle: nil)
         table.register(interestCell, forCellReuseIdentifier: "CategoryFilterViewCell")
         let settingsCell = UINib(nibName: SettingOptionTableViewCell.nibName, bundle: nil)
@@ -158,6 +148,10 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
 }
 
 extension PreferenceBoardViewController: PreferenceOptionDelegate{
+    func didSelectCategories(_ categories: [PlaceCategory]) {
+        selectedCategories = categories
+    }
+    
     func didSelectItemAt(_ index: Int, tableCell: Int?) {
         guard let tableCellIndex = tableCell else { return }
         self.preferences[tableCellIndex] = index

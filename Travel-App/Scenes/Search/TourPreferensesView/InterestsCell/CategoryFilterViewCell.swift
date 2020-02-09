@@ -13,6 +13,7 @@ class CategoryFilterViewCell: UITableViewCell {
     @IBOutlet weak var categoryFilter: CategoriesFilterView!
     
     weak var delegate: PreferenceOptionDelegate?
+    private var categories = [PlaceCategory]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +30,13 @@ class CategoryFilterViewCell: UITableViewCell {
 }
 
 extension CategoryFilterViewCell: CategoryFilterViewDelegate {
+    func didDeselect(_ category: PlaceCategory) {
+        categories.removeAll { $0 == category }
+        delegate?.didSelectCategories(categories)
+    }
+    
     func didSelect(_ category: PlaceCategory) {
-        
+        categories.append(category)
+        delegate?.didSelectCategories(categories)
     }
 }

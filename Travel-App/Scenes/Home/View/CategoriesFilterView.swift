@@ -10,6 +10,7 @@ import UIKit
 
 protocol CategoryFilterViewDelegate: class {
     func didSelect(_ category: PlaceCategory)
+    func didDeselect(_ category: PlaceCategory)
 }
 
 class CategoriesFilterView: UIView {
@@ -61,6 +62,10 @@ extension CategoriesFilterView: UICollectionViewDataSource, UICollectionViewDele
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.delegate?.didSelect(PlaceCategory.categories[indexPath.row])
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        self.delegate?.didDeselect(PlaceCategory.categories[indexPath.row])
     }
 }
 

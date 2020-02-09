@@ -41,6 +41,7 @@ class SettingOptionTableViewCell: UITableViewCell {
     private func registerNib() {
         let nib = UINib(nibName: SettingOptionCollectionViewCell.nibName, bundle: nil)
         collectionView?.register(nib, forCellWithReuseIdentifier: SettingOptionCollectionViewCell.reuseIdentifier)
+        collectionView.allowsMultipleSelection = true
     }
 }
 
