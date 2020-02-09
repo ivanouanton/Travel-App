@@ -16,7 +16,7 @@ class PreferenceBoardViewController: UIViewController {
         "Transport": [UIImage(named: "walk")!, UIImage(named: "bus")!, UIImage(named: "subway")!]
     ]
     
-    var preferences = [Int:Int]()
+    var preferences = [Int:[Int]]()
     var selectedCategories = [PlaceCategory]()
     
     var sectionTitles = ["Interests", "Duration", "Price"]
@@ -103,7 +103,6 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryFilterViewCell", for: indexPath) as! CategoryFilterViewCell
             cell.delegate = self
-//                cell.cellIndex = indexPath.section
             return cell
         }
     }
@@ -142,19 +141,22 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     @objc func dosmth(){
-        let vc = ViewFactory.createToursVC(with: self.preferences)
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = ViewFactory.createToursVC(with: self.preferences)
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+        print(preferences)
+        print(selectedCategories)
     }
 }
 
 extension PreferenceBoardViewController: PreferenceOptionDelegate{
-    func didSelectCategories(_ categories: [PlaceCategory]) {
-        selectedCategories = categories
+    func didSelectItemsAt(_ items: [Int], tableCell: Int?) {
+        guard let tableCellIndex = tableCell else { return }
+        self.preferences[tableCellIndex] = items
     }
     
-    func didSelectItemAt(_ index: Int, tableCell: Int?) {
-        guard let tableCellIndex = tableCell else { return }
-        self.preferences[tableCellIndex] = index
+    func didSelectCategories(_ categories: [PlaceCategory]) {
+        selectedCategories = categories
     }
 }
 

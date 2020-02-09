@@ -7,6 +7,6 @@
 //
 
 protocol PreferenceOptionDelegate: class{
-    func didSelectItemAt(_ index: Int, tableCell: Int?)
+    func didSelectItemsAt(_ items: [Int], tableCell: Int?)
     func didSelectCategories(_ categories: [PlaceCategory])
 }
