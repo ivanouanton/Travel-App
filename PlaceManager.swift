@@ -17,6 +17,7 @@ class PlaceManager {
 
     private let placesImageCache = NSCache<NSString, UIImage>()
     private let categoryImagesCache = NSCache<NSString, UIImage>()
+    private let duration = ["A Few Hours", "Half Day",  "Full Day"]
     
     var places = [PlaceData]()
 
@@ -258,6 +259,37 @@ class PlaceManager {
         
         storageReference.downloadURL { (hardUrl, error) in
             completion(hardUrl, error)
+        }
+    }
+    
+    func getFilteredPlaces(with categories: [PlaceCategory],
+                           prices: [Int],
+                           completionHandler: @escaping (_ tours: [PlaceData]?, _ error: Error?) -> Void) {
+            
+        let db = Firestore.firestore()
+        let docRef = db.collection("Place")
+        var query = docRef.order(by: "name")
+        
+        if !categories.isEmpty {
+            query = query.whereField("category", in: categories.compactMap { $0.rawValue })
+        }
+        
+        if !prices.isEmpty {
+            query = query.whereField("price", in: prices)
+        }
+
+        query.getDocuments() { (querySnapshot, error) in
+            if let response = querySnapshot {
+                var places = [PlaceData]()
+                for document in response.documents {
+                    let place = PlaceData(document.data())
+                    places.append(place)
+                }
+                completionHandler(places, nil)
+            } else {
+                completionHandler(nil, error)
+            }
+            
         }
     }
 }

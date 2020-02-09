@@ -8,15 +8,18 @@
 
 
 class PreferenceBoardPresenter: PreferenceBoardPresenterProtocol {
-    
+ 
     weak var view: PreferenceBoardViewProtocol!
 
     required init(view: PreferenceBoardViewProtocol) {
         self.view = view
     }
     
-    func createCustomTour(with categories: [PlaceCategory], options: [Int : [Int]]) {
-        print("Hello")
+    func createCustomTour(with categories: [PlaceCategory], options: [Int]) {
+        PlaceManager.shared.getFilteredPlaces(with: categories, prices: options) { (places, error) in
+            
+            print(places?.count)
+        }
         
     }
 }

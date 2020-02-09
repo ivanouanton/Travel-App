@@ -20,7 +20,9 @@ class PreferenceBoardViewController: UIViewController {
     
     var preferences = [Int:[Int]]()
     var selectedCategories = [PlaceCategory]()
-    
+    var selectedPrices = [Int]()
+    var selectedDurations = [Int]()
+
     var sectionTitles = ["Interests", "Duration", "Price"]
     
     private lazy var settingTable: UITableView = {
@@ -87,25 +89,36 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 3{
+        
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryFilterViewCell", for: indexPath) as! CategoryFilterViewCell
+            cell.delegate = self
+            return cell
+        case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingOptionTableViewCell.reuseIdentifier, for: indexPath) as! SettingOptionTableViewCell
             let key: String = self.sectionTitles[indexPath.section]
-            cell.images = settingsData[key] as! [UIImage]
+            cell.titles = settingsData[key] as! [String]
             cell.delegate = self
             cell.cellIndex = indexPath.section
+            cell.allowsMultipleSelection = false
             return cell
-        }else
-            if indexPath.section != 0{
+        case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingOptionTableViewCell.reuseIdentifier, for: indexPath) as! SettingOptionTableViewCell
             let key: String = self.sectionTitles[indexPath.section]
             cell.titles = settingsData[key] as! [String]
             cell.delegate = self
             cell.cellIndex = indexPath.section
             return cell
-        }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryFilterViewCell", for: indexPath) as! CategoryFilterViewCell
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: SettingOptionTableViewCell.reuseIdentifier, for: indexPath) as! SettingOptionTableViewCell
+            let key: String = self.sectionTitles[indexPath.section]
+            cell.images = settingsData[key] as! [UIImage]
             cell.delegate = self
+            cell.cellIndex = indexPath.section
             return cell
+        default:
+            return UITableViewCell()
         }
     }
     
@@ -145,17 +158,20 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
     @objc func dosmth(){
 //        let vc = ViewFactory.createToursVC(with: self.preferences)
 //        self.navigationController?.pushViewController(vc, animated: true)
-        
-        print(preferences)
-        print(selectedCategories)
-        presenter.createCustomTour(with: selectedCategories, options: preferences)
+        presenter.createCustomTour(with: selectedCategories, options: selectedPrices)
     }
 }
 
 extension PreferenceBoardViewController: PreferenceOptionDelegate{
     func didSelectItemsAt(_ items: [Int], tableCell: Int?) {
+        
         guard let tableCellIndex = tableCell else { return }
-        self.preferences[tableCellIndex] = items
+        
+        if tableCellIndex == 1 {
+            selectedDurations = items
+        } else if tableCellIndex == 2 {
+            selectedPrices = items
+        }
     }
     
     func didSelectCategories(_ categories: [PlaceCategory]) {

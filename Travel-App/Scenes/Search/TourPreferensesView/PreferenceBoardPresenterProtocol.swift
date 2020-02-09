@@ -10,6 +10,5 @@ import Foundation
 
 protocol PreferenceBoardPresenterProtocol: class {
     init(view: PreferenceBoardViewProtocol)
-    func createCustomTour(with categories: [PlaceCategory], options: [Int:[Int]])
-    
+    func createCustomTour(with categories: [PlaceCategory], options: [Int])
 }

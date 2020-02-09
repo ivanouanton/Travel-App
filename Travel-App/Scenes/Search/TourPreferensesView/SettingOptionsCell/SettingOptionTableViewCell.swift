@@ -26,6 +26,12 @@ class SettingOptionTableViewCell: UITableViewCell {
         return "SettingOptionTableViewCell"
     }
     
+    var allowsMultipleSelection: Bool = true {
+        didSet {
+            collectionView.allowsMultipleSelection = allowsMultipleSelection
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -43,7 +49,7 @@ class SettingOptionTableViewCell: UITableViewCell {
     private func registerNib() {
         let nib = UINib(nibName: SettingOptionCollectionViewCell.nibName, bundle: nil)
         collectionView?.register(nib, forCellWithReuseIdentifier: SettingOptionCollectionViewCell.reuseIdentifier)
-        collectionView.allowsMultipleSelection = true
+        collectionView.allowsMultipleSelection = allowsMultipleSelection
     }
 }
 
