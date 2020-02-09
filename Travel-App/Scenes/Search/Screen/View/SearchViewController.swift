@@ -164,7 +164,7 @@ extension SearchViewController{
     // MARK: - Methods
         
     @objc func setupPreferences(){
-        self.navigationController?.pushViewController(PreferenceBoardViewController(), animated: true)
+        self.navigationController?.pushViewController(ViewFactory.createSettingsTourVC(), animated: true)
     }
     
     private func showModalDescription(with id: String) {

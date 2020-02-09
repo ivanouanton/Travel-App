@@ -31,6 +31,9 @@
 		F72EFE42239EF16D008081E1 /* TourInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72EFE41239EF16D008081E1 /* TourInfoViewController.swift */; };
 		F72EFE44239EF618008081E1 /* TourInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72EFE43239EF618008081E1 /* TourInfoView.swift */; };
 		F72EFE49239EF62C008081E1 /* TourInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72EFE45239EF62B008081E1 /* TourInfoView.xib */; };
+		F735911223F00D9200204703 /* PreferenceBoardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735911123F00D9200204703 /* PreferenceBoardPresenter.swift */; };
+		F735911523F00DDA00204703 /* PreferenceBoardPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735911423F00DDA00204703 /* PreferenceBoardPresenterProtocol.swift */; };
+		F735911723F00EF100204703 /* PreferenceBoardViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F735911623F00EF100204703 /* PreferenceBoardViewProtocol.swift */; };
 		F73E166C23E0CC6D0001AB56 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E166A23E0CC6D0001AB56 /* PlaceTableViewCell.swift */; };
 		F73E166D23E0CC6D0001AB56 /* PlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73E166B23E0CC6D0001AB56 /* PlaceTableViewCell.xib */; };
 		F73E166F23E0CFE70001AB56 /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E166E23E0CFE70001AB56 /* SelfSizedTableView.swift */; };
@@ -179,6 +182,9 @@
 		F72EFE41239EF16D008081E1 /* TourInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourInfoViewController.swift; sourceTree = "<group>"; };
 		F72EFE43239EF618008081E1 /* TourInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TourInfoView.swift; sourceTree = "<group>"; };
 		F72EFE45239EF62B008081E1 /* TourInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TourInfoView.xib; sourceTree = "<group>"; };
+		F735911123F00D9200204703 /* PreferenceBoardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBoardPresenter.swift; sourceTree = "<group>"; };
+		F735911423F00DDA00204703 /* PreferenceBoardPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBoardPresenterProtocol.swift; sourceTree = "<group>"; };
+		F735911623F00EF100204703 /* PreferenceBoardViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceBoardViewProtocol.swift; sourceTree = "<group>"; };
 		F73E166A23E0CC6D0001AB56 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		F73E166B23E0CC6D0001AB56 /* PlaceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceTableViewCell.xib; sourceTree = "<group>"; };
 		F73E166E23E0CFE70001AB56 /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
@@ -405,9 +411,12 @@
 			isa = PBXGroup;
 			children = (
 				F7B45FFE2389103F005CBEE4 /* PreferenceBoardViewController.swift */,
+				F735911623F00EF100204703 /* PreferenceBoardViewProtocol.swift */,
 				F7EF6917239BA4AA0004EF4E /* PreferenceOptionDelegate.swift */,
 				F70DB815239B149A00D48EC6 /* InterestsCell */,
 				F70DB81A239B235F00D48EC6 /* SettingOptionsCell */,
+				F735911123F00D9200204703 /* PreferenceBoardPresenter.swift */,
+				F735911423F00DDA00204703 /* PreferenceBoardPresenterProtocol.swift */,
 			);
 			path = TourPreferensesView;
 			sourceTree = "<group>";
@@ -1093,7 +1102,9 @@
 				F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */,
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
 				F7ADAA7123D460CE009ECAEE /* AgreementDelegate.swift in Sources */,
+				F735911523F00DDA00204703 /* PreferenceBoardPresenterProtocol.swift in Sources */,
 				F7ADAA6823CB2156009ECAEE /* AgreementViewController.swift in Sources */,
+				F735911723F00EF100204703 /* PreferenceBoardViewProtocol.swift in Sources */,
 				3A4EE37823E2CF5C00673BB4 /* PlaceCategory.swift in Sources */,
 				F77D501323C1F08100E89E67 /* Utilities.swift in Sources */,
 				F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */,
@@ -1123,6 +1134,7 @@
 				F7CFD020239BE3A800983631 /* Tour.swift in Sources */,
 				F72B7C1423A6CD39009155D4 /* OptionFilterDelegate.swift in Sources */,
 				F72B7C1223A6CCD9009155D4 /* OptionFilter.swift in Sources */,
+				F735911223F00D9200204703 /* PreferenceBoardPresenter.swift in Sources */,
 				F77879F223C7D38E002F2052 /* Loader.swift in Sources */,
 				F7CF8D352399A46300119B60 /* SettingOptionCollectionViewCell.swift in Sources */,
 				F73E167123E355860001AB56 /* AttributedStringHelper.swift in Sources */,

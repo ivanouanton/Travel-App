@@ -10,6 +10,8 @@ import UIKit
 
 class PreferenceBoardViewController: UIViewController {
     
+    var presenter: PreferenceBoardPresenterProtocol!
+    
     var settingsData = [
         "Duration": ["A Few Hours", "Half Day",  "Full Day"],
         "Price": ["free", "€", "€€"],
@@ -146,6 +148,7 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
         
         print(preferences)
         print(selectedCategories)
+        presenter.createCustomTour(with: selectedCategories, options: preferences)
     }
 }
 
@@ -160,3 +163,6 @@ extension PreferenceBoardViewController: PreferenceOptionDelegate{
     }
 }
 
+extension PreferenceBoardViewController: PreferenceBoardViewProtocol{
+
+}
