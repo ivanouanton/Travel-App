@@ -285,7 +285,8 @@ class PlaceManager {
             if let response = querySnapshot {
                 var places = [PlaceData]()
                 for document in response.documents {
-                    let place = PlaceData(document.data())
+                    var place = PlaceData(document.data())
+                    place.id = document.documentID
                     places.append(place)
                 }
                 completionHandler(places, nil)

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol PreferenceBoardViewProtocol: class {
-    
+    func showCustomTour(_ tour: Tour)
 }

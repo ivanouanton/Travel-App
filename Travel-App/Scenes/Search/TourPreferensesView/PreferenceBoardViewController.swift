@@ -180,5 +180,12 @@ extension PreferenceBoardViewController: PreferenceOptionDelegate{
 }
 
 extension PreferenceBoardViewController: PreferenceBoardViewProtocol{
-
+    func showCustomTour(_ tour: Tour) {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        let vc = viewControllers[viewControllers.count - 2] as? SearchViewController
+        vc?.tour = tour
+        
+        guard let viewController = vc else {return}
+        self.navigationController!.popToViewController(viewController, animated: true)
+    }
 }

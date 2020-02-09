@@ -62,6 +62,9 @@ class PreferenceBoardPresenter: PreferenceBoardPresenterProtocol {
                 durationPlaces = sortPlaces
             }
             
+            let customTour = Tour(durationPlaces)
+            self.view.showCustomTour(customTour)
+            
             
         }
         
