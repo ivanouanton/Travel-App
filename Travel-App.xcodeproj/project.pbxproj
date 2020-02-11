@@ -16,6 +16,8 @@
 		3A4EE37823E2CF5C00673BB4 /* PlaceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37723E2CF5C00673BB4 /* PlaceCategory.swift */; };
 		3A4EE37A23E2E58B00673BB4 /* CategoriesFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37923E2E58B00673BB4 /* CategoriesFilterView.swift */; };
 		3A4EE37C23E2E5D000673BB4 /* CategoriesFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A4EE37B23E2E5CF00673BB4 /* CategoriesFilterView.xib */; };
+		3A55496B23F2D60B00323956 /* emailModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A55496923F2D60B00323956 /* emailModalView.swift */; };
+		3A55496C23F2D60B00323956 /* emailModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A55496A23F2D60B00323956 /* emailModalView.xib */; };
 		F700442923A17C9C00D7E59F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F700442823A17C9C00D7E59F /* Profile.storyboard */; };
 		F700442B23A194C300D7E59F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700442A23A194C300D7E59F /* AuthViewController.swift */; };
 		F704B3F823B7F4B00090DD6F /* PlacesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F704B3F723B7F4B00090DD6F /* PlacesCollectionView.swift */; };
@@ -164,6 +166,8 @@
 		3A4EE37723E2CF5C00673BB4 /* PlaceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCategory.swift; sourceTree = "<group>"; };
 		3A4EE37923E2E58B00673BB4 /* CategoriesFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFilterView.swift; sourceTree = "<group>"; };
 		3A4EE37B23E2E5CF00673BB4 /* CategoriesFilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesFilterView.xib; sourceTree = "<group>"; };
+		3A55496923F2D60B00323956 /* emailModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = emailModalView.swift; sourceTree = "<group>"; };
+		3A55496A23F2D60B00323956 /* emailModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = emailModalView.xib; sourceTree = "<group>"; };
 		3CCBF9ADA3EC86FC713D01DA /* Pods-Travel-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.debug.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.debug.xcconfig"; sourceTree = "<group>"; };
 		F00031C6B9A4EF8BE8D81578 /* Pods-Travel-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.release.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.release.xcconfig"; sourceTree = "<group>"; };
 		F700442823A17C9C00D7E59F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = "Travel-App/Profile.storyboard"; sourceTree = SOURCE_ROOT; };
@@ -317,6 +321,15 @@
 				F00031C6B9A4EF8BE8D81578 /* Pods-Travel-App.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		3A55496D23F2D62B00323956 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				3A55496923F2D60B00323956 /* emailModalView.swift */,
+				3A55496A23F2D60B00323956 /* emailModalView.xib */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		C2D17BFE28A13407CD023D67 /* Frameworks */ = {
@@ -593,6 +606,7 @@
 				F77C178C23AAC34E009D2D69 /* Authorisation */,
 				F77D501A23C3D1CC00E89E67 /* Splash */,
 				F7ADAA6523CB2130009ECAEE /* Agreement */,
+				3A55496D23F2D62B00323956 /* CustomViews */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -954,6 +968,7 @@
 				F77C178E23AACAE1009D2D69 /* Authorisation.storyboard in Resources */,
 				F7C7A1AC238B369A00C33FE4 /* GoogleService-Info.plist in Resources */,
 				3A3E631623ED359800BE2F34 /* AudioPlayerView.xib in Resources */,
+				3A55496C23F2D60B00323956 /* emailModalView.xib in Resources */,
 				F77D501923C3D1BE00E89E67 /* SplashScreenViewController.xib in Resources */,
 				F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */,
 				F79FCA2623847ED2009F1693 /* AvenirNextLTPro-Regular.otf in Resources */,
@@ -1101,6 +1116,7 @@
 				3A4EE37A23E2E58B00673BB4 /* CategoriesFilterView.swift in Sources */,
 				F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */,
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
+				3A55496B23F2D60B00323956 /* emailModalView.swift in Sources */,
 				F7ADAA7123D460CE009ECAEE /* AgreementDelegate.swift in Sources */,
 				F735911523F00DDA00204703 /* PreferenceBoardPresenterProtocol.swift in Sources */,
 				F7ADAA6823CB2156009ECAEE /* AgreementViewController.swift in Sources */,

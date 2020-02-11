@@ -97,6 +97,13 @@ class AuthViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func forgotPassword(_ sender: Any) {
+        let myViewController = emailModalView(nibName: "emailModalView", bundle: nil)
+        myViewController.modalPresentationStyle = .overCurrentContext
+        
+        self.present(myViewController, animated: false, completion: nil)
+    }
 }
 
 extension AuthViewController: LoginButtonDelegate {
