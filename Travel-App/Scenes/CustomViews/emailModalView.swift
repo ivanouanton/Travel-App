@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class emailModalView: UIViewController {
 
+    @IBOutlet weak var eMailTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
 
@@ -20,14 +22,16 @@ class emailModalView: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
+    @IBAction func changePasswordPressed(_ sender: Any) {
+        guard let email = eMailTextField.text, email != "" else { return }
+        
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                
+            }
+        }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
 }
