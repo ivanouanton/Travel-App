@@ -9,9 +9,14 @@
 import UIKit
 import FirebaseAuth
 
+protocol EmailModalViewDelegate: class {
+    func showSuccessfulState()
+}
+
 class emailModalView: UIViewController {
 
     @IBOutlet weak var eMailTextField: UITextField!
+    weak var delegate: EmailModalViewDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +33,10 @@ class emailModalView: UIViewController {
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if let error = error {
                 print(error.localizedDescription)
+                self.showAlert(error.localizedDescription, completion: nil)
             } else {
+                self.dismiss(animated: false, completion: nil)
+                self.delegate?.showSuccessfulState()
                 
             }
         }

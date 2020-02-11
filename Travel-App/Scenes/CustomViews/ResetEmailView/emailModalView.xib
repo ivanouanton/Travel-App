@@ -29,7 +29,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itz-Uo-PGR">
-                    <rect key="frame" x="16" y="315" width="382" height="276"/>
+                    <rect key="frame" x="16" y="312" width="382" height="282.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AVC-dW-eso">
                             <rect key="frame" x="338" y="24" width="20" height="20"/>
@@ -43,27 +43,27 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot your password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9e7-41-cUa">
-                            <rect key="frame" x="63.5" y="68" width="255" height="24"/>
+                            <rect key="frame" x="66.5" y="68" width="249" height="28"/>
                             <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="24"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email adress" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XdA-NX-VkX">
-                            <rect key="frame" x="16" y="147" width="350" height="44"/>
+                            <rect key="frame" x="16" y="153.5" width="350" height="44"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="44" id="Rhw-sl-caC"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" textContentType="email"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your email to reset password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsX-tD-dU0">
-                            <rect key="frame" x="80.5" y="116" width="221" height="14"/>
+                            <rect key="frame" x="82" y="120" width="218" height="16.5"/>
                             <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="14"/>
                             <color key="textColor" name="silver"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJx-6A-h0X">
-                            <rect key="frame" x="202" y="208" width="164" height="44"/>
+                            <rect key="frame" x="202" y="214.5" width="164" height="44"/>
                             <color key="backgroundColor" name="max-slider"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="164" id="IKq-er-owf"/>

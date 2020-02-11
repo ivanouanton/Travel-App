@@ -19,6 +19,9 @@ class SuccessfulChangePassView: UIViewController {
     }
 
 
+    @IBAction func okPressed(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

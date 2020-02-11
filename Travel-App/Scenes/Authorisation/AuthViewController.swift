@@ -101,6 +101,7 @@ class AuthViewController: UIViewController {
     @IBAction func forgotPassword(_ sender: Any) {
         let myViewController = emailModalView(nibName: "emailModalView", bundle: nil)
         myViewController.modalPresentationStyle = .overCurrentContext
+        myViewController.delegate = self
         
         self.present(myViewController, animated: false, completion: nil)
     }
@@ -220,6 +221,14 @@ extension AuthViewController: GIDSignInDelegate {
          self.present(vc, animated: true, completion: nil)
         })
         
+    }
+}
+
+extension AuthViewController: EmailModalViewDelegate {
+    func showSuccessfulState() {
+        let myViewController = SuccessfulChangePassView(nibName: "SuccessfulChangePassView", bundle: nil)
+        myViewController.modalPresentationStyle = .overCurrentContext
+        self.present(myViewController, animated: false, completion: nil)
     }
 }
 
