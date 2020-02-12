@@ -19,7 +19,7 @@ class FirebaseAuthManager {
     
     var uid: String?
     
-    func createUser(name: String, email: String, password: String, completionBlock: @escaping (_ success: Bool) -> Void) {
+    func createUser(name: String, email: String, password: String, completionBlock: @escaping (_ success: Bool, _ error: Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) {(authResult, error) in
             if let user = authResult?.user {
                 self.uid = user.uid
@@ -40,9 +40,9 @@ class FirebaseAuthManager {
                     }
                     print(error.localizedDescription)
                 }
-                completionBlock(true)
+                completionBlock(true, nil)
             } else {
-                completionBlock(false)
+                completionBlock(false, error)
             }
         }
     }

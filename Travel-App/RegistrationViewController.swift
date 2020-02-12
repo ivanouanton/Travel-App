@@ -56,7 +56,7 @@ class RegistrationViewController: UIViewController {
         let signUpManager = FirebaseAuthManager.shared
         signUpManager.createUser(name: name!,
                                  email: emailField.text!,
-                                 password: passwordField.text!) { [weak self] (success) in
+                                 password: passwordField.text!) { [weak self] (success, error) in
             guard let `self` = self else { return }
             var message: String = ""
             if success {
@@ -65,16 +65,25 @@ class RegistrationViewController: UIViewController {
 
                 signUpManager.setUserData(name: name!, surname: surname!, email: email!) { success in }
                 signUpManager.saveProfileImage(self.image) { success in }
-                
-                message = "User was sucessfully created."
-            } else {
-                message = "There was an error."
-            }
-                                    
-            self.showAlert(message) {
+                                
+                let myViewController = SuccessfulChangePassView(nibName: "SuccessfulChangePassView", bundle: nil)
+                myViewController.modalPresentationStyle = .overCurrentContext
+                myViewController.message = """
+                Verification link
+                sent to your email address
+                """
                 self.removeLoader()
-                self.navigationController?.popViewController(animated: true)
-            }
+                myViewController.completion = {
+                    self.navigationController?.popViewController(animated: true)
+                }
+                self.present(myViewController, animated: false, completion: nil)
+                
+            } else {
+                message = error?.localizedDescription ?? "There was an error."
+                self.showAlert(message) {
+                    self.removeLoader()
+                }
+            } 
         }
     }
     

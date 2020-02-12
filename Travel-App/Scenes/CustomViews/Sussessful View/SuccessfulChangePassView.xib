@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuccessfulChangePassView" customModule="Travel_App" customModuleProvider="target">
             <connections>
+                <outlet property="messageLabel" destination="qW7-cH-mmP" id="EuV-5W-8bU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

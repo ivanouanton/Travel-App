@@ -11,9 +11,15 @@ import UIKit
 class SuccessfulChangePassView: UIViewController {
 
     
+    @IBOutlet weak var messageLabel: UILabel!
+    var message: String?
+    var completion: (()->())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let messageText = message {
+            messageLabel.text = messageText
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -21,6 +27,7 @@ class SuccessfulChangePassView: UIViewController {
 
     @IBAction func okPressed(_ sender: Any) {
         self.dismiss(animated: false, completion: nil)
+        completion?()
     }
     /*
     // MARK: - Navigation
