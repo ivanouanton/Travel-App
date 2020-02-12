@@ -267,8 +267,15 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2Hh-Je-O9F">
                                                 <rect key="frame" x="16" y="465" width="343" height="57"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok-circle" translatesAutoresizingMaskIntoConstraints="NO" id="bGK-os-90i">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4y-Og-Q3j">
                                                         <rect key="frame" x="0.0" y="0.0" width="29.5" height="57"/>
+                                                        <state key="normal" image="ok-circle"/>
+                                                        <connections>
+                                                            <action selector="didPressedAccesptPrivacy:" destination="Ziq-vy-UpZ" eventType="touchUpInside" id="1yc-yl-A4l"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok-circle" translatesAutoresizingMaskIntoConstraints="NO" id="bGK-os-90i">
+                                                        <rect key="frame" x="37.5" y="0.0" width="0.0" height="57"/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="6vJ-sy-xIu">
                                                         <rect key="frame" x="45.5" y="0.0" width="297.5" height="57"/>
@@ -424,6 +431,7 @@
                         <outlet property="avatarImage" destination="qKV-h1-DiC" id="1B8-y7-RB9"/>
                         <outlet property="emailField" destination="2sk-Gu-Lnx" id="Dfa-en-YeN"/>
                         <outlet property="nameField" destination="MVI-NF-rHE" id="y3W-v6-EKt"/>
+                        <outlet property="okButton" destination="h4y-Og-Q3j" id="H5O-ib-U84"/>
                         <outlet property="passwordField" destination="JVF-Dk-tYR" id="cRU-u2-Wvl"/>
                         <outlet property="scrollView" destination="yRL-Fd-bmn" id="zR3-Bl-ML8"/>
                         <outlet property="surnameField" destination="lsK-DY-6eY" id="aZi-6g-0fd"/>

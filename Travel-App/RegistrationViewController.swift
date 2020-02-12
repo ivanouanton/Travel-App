@@ -18,9 +18,11 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var passwordField: CustomTextField!
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var agreementStateImage: UIImageView!
+    @IBOutlet weak var okButton: UIButton!
     
     private var termsAndConditions: Bool = false
     private var privacyStatement: Bool = false
+    private var acceptTerms: Bool = false
 
     var image: UIImage? = nil
     
@@ -73,6 +75,18 @@ class RegistrationViewController: UIViewController {
                 self.removeLoader()
                 self.navigationController?.popViewController(animated: true)
             }
+        }
+    }
+    
+    @IBAction func didPressedAccesptPrivacy(_ sender: Any) {
+        acceptTerms = !acceptTerms
+        termsAndConditions = acceptTerms
+        privacyStatement = acceptTerms
+        
+        if acceptTerms {
+            okButton.setImage(UIImage(named: "successful"), for: .normal)
+        } else {
+            okButton.setImage(UIImage(named: "ok-circle"), for: .normal)
         }
     }
     
@@ -155,7 +169,7 @@ extension RegistrationViewController: AgreementDelegate {
         case .privacyStatement:
             self.privacyStatement = accept
         }
-        
-        self.agreementStateImage.image = (self.termsAndConditions && self.privacyStatement) ? UIImage(named: "successful") : UIImage(named: "ok-circle")
+        acceptTerms = self.termsAndConditions && self.privacyStatement
+        self.okButton.imageView?.image = acceptTerms ? UIImage(named: "successful") : UIImage(named: "ok-circle")
     }
 }
