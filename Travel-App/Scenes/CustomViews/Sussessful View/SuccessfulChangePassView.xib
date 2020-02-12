@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,10 +25,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qL1-8J-nZN">
-                    <rect key="frame" x="16" y="326" width="382" height="254"/>
+                    <rect key="frame" x="16" y="322" width="382" height="262"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qW7-cH-mmP">
-                            <rect key="frame" x="16" y="40" width="350" height="48"/>
+                            <rect key="frame" x="16" y="40" width="350" height="56"/>
                             <string key="text">Password change link
 has been sent to your email!</string>
                             <fontDescription key="fontDescription" name="AvenirNextLTPro-Bold" family="Avenir Next LT Pro" pointSize="24"/>
@@ -36,14 +36,14 @@ has been sent to your email!</string>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="successful-icon" translatesAutoresizingMaskIntoConstraints="NO" id="UJf-uB-Ed1">
-                            <rect key="frame" x="166" y="112" width="50" height="50"/>
+                            <rect key="frame" x="166" y="120" width="50" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="35w-lL-PMD"/>
                                 <constraint firstAttribute="width" secondItem="UJf-uB-Ed1" secondAttribute="height" multiplier="1:1" id="xgT-x4-BSd"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nus-IF-NHi">
-                            <rect key="frame" x="83" y="186" width="216" height="44"/>
+                            <rect key="frame" x="83" y="194" width="216" height="44"/>
                             <color key="backgroundColor" name="max-slider"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="216" id="Vr4-do-wyB"/>

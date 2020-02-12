@@ -125,7 +125,7 @@ class RegistrationViewController: UIViewController {
         guard let cleanedPassword = passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return "" }
         
         if Utilities.isPasswordValid(cleanedPassword) == false {
-            return "Please make sure your password is at least 8 characters, contains a special character and a number."
+            return "Please make sure your password is at least 8 characters"
         }
         
         if !self.termsAndConditions || !self.privacyStatement {
