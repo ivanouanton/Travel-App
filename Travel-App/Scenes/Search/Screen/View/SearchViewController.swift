@@ -335,15 +335,16 @@ extension SearchViewController: PlacePreviewDelegate {
     
     func getInfoPlace(with data: PlaceCardModel, image: UIImage?, category: String) {
         
-        let storyboard = UIStoryboard(name: "InfoStoryboard", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "InfoPlaceViewController") as? PlaceInfoViewController
-        controller?.place = data
+//        let storyboard = UIStoryboard(name: "InfoStoryboard", bundle: nil)
+//        let controller = storyboard.instantiateViewController(withIdentifier: "InfoPlaceViewController") as? PlaceInfoViewController
+        let controller = ViewFactory.createPlaceInfoVC()
+        controller.place = data
         if let image = image{
-            controller?.image = image
+            controller.image = image
         }
-        controller?.category = category
+        controller.category = category
         
-        self.navigationController?.pushViewController(controller!, animated: true)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func createRoute(with location: GeoPoint) {

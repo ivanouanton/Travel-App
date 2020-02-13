@@ -23,6 +23,8 @@ class PlaceInfoViewController: UIViewController {
     @IBOutlet weak var audioPlayerView: AudioPlayerView!
     @IBOutlet weak var beenButton: UIButton!
     
+    var presenter: PlaceInfoPresenterProtocol?
+    
     var place: PlaceCardModel?
     var category: String = ""
     var image: UIImage = UIImage(named: "preview-target-place")!
@@ -38,7 +40,7 @@ class PlaceInfoViewController: UIViewController {
         guard let audioReference = place.audio else { return }
         audioPlayerView.setupAudio(with: audioReference)
         placeImage.addBlur()
-        
+        presenter?.checkVisit(place)
     }
     
     override func viewWillAppear(_ animated: Bool) {
