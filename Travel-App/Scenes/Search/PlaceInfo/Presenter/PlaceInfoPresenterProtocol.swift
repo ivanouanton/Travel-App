@@ -11,4 +11,5 @@ import Foundation
 protocol PlaceInfoPresenterProtocol: class {
     init(view: PlaceInfoViewProtocol)
     func checkVisit(_ place: PlaceCardModel)
+    func didPressedIsVisited()
 }

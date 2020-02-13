@@ -10,4 +10,5 @@ import Foundation
 
 protocol PlaceInfoViewProtocol: class {
     func setBeenStatus(with value: Bool)
+    func showDefaultAlert(with message: String)
 }

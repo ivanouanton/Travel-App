@@ -16,6 +16,23 @@ class FirebaseProfileManager {
 
     private init() {}
     
+    private var userDocumentId: String = ""
+    
+    
+    func updateUserPlaces(_ places: [String], _ completion: @escaping (_ success: Bool, _ error: Error?) -> Void){
+        
+        let db = Firestore.firestore()
+        db.collection("users").document(userDocumentId).updateData(["places" : places]) { (error) in
+            if let error = error {
+                print("Error updating document: \(error.localizedDescription)")
+                completion(false, error)
+            } else {
+                print("Document successfully updated")
+                completion(true, error)
+            }
+        }
+    }
+    
     func getAuthUserData(_ completion: @escaping (_ user: UserProfile?, _ image: UIImage?, _ error: Error?) -> Void){
         
         let db = Firestore.firestore()
@@ -29,7 +46,6 @@ class FirebaseProfileManager {
         let docRef = db.collection("users")
         let query = docRef.whereField("uid", isEqualTo: uid)
         
-        
         query.getDocuments() { (querySnapshot, err) in
             if let err = err {
                 completion(nil, nil, err)
@@ -40,7 +56,7 @@ class FirebaseProfileManager {
                     completion(nil, nil, nil)
                     return
                 }
-                
+                self.userDocumentId = userData.documentID
                 let user = UserProfile(userData.data())
                 
                 // MARK: Getting image profile

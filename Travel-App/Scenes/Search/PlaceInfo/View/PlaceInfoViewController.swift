@@ -56,7 +56,7 @@ class PlaceInfoViewController: UIViewController {
 
     
     @IBAction func didPressedBeenThere(_ sender: Any) {
-        
+        presenter?.didPressedIsVisited()
     }
 }
 
@@ -76,6 +76,10 @@ extension UIImageView  {
 }
 
 extension PlaceInfoViewController: PlaceInfoViewProtocol {
+    func showDefaultAlert(with message: String) {
+        self.showAlert(message, completion: nil)
+    }
+    
     func setBeenStatus(with value: Bool) {
         self.beenButton.imageView?.image = value ? UIImage(named: "successful") : UIImage(named: "ok-circle")
     }
