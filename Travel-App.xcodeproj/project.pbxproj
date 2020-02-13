@@ -12,6 +12,9 @@
 		3A3D2E64238EE4B500DD9876 /* PlaceDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */; };
 		3A3E631423ED352400BE2F34 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E631323ED352400BE2F34 /* AudioPlayerView.swift */; };
 		3A3E631623ED359800BE2F34 /* AudioPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A3E631523ED359800BE2F34 /* AudioPlayerView.xib */; };
+		3A4C303723F523D200E2DA8B /* PlaceInfoViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C303623F523D200E2DA8B /* PlaceInfoViewProtocol.swift */; };
+		3A4C303923F523EA00E2DA8B /* PlaceInfoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C303823F523EA00E2DA8B /* PlaceInfoPresenter.swift */; };
+		3A4C303B23F523F500E2DA8B /* PlaceInfoPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4C303A23F523F500E2DA8B /* PlaceInfoPresenterProtocol.swift */; };
 		3A4EE37623E2C38500673BB4 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37523E2C38500673BB4 /* UITextField+Extension.swift */; };
 		3A4EE37823E2CF5C00673BB4 /* PlaceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37723E2CF5C00673BB4 /* PlaceCategory.swift */; };
 		3A4EE37A23E2E58B00673BB4 /* CategoriesFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4EE37923E2E58B00673BB4 /* CategoriesFilterView.swift */; };
@@ -164,6 +167,9 @@
 		3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDataHolder.swift; sourceTree = "<group>"; };
 		3A3E631323ED352400BE2F34 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
 		3A3E631523ED359800BE2F34 /* AudioPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioPlayerView.xib; sourceTree = "<group>"; };
+		3A4C303623F523D200E2DA8B /* PlaceInfoViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoViewProtocol.swift; sourceTree = "<group>"; };
+		3A4C303823F523EA00E2DA8B /* PlaceInfoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoPresenter.swift; sourceTree = "<group>"; };
+		3A4C303A23F523F500E2DA8B /* PlaceInfoPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoPresenterProtocol.swift; sourceTree = "<group>"; };
 		3A4EE37523E2C38500673BB4 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		3A4EE37723E2CF5C00673BB4 /* PlaceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCategory.swift; sourceTree = "<group>"; };
 		3A4EE37923E2E58B00673BB4 /* CategoriesFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFilterView.swift; sourceTree = "<group>"; };
@@ -237,7 +243,7 @@
 		F790824F23A83AB700056228 /* OptionFilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionFilterTableViewCell.swift; sourceTree = "<group>"; };
 		F790825023A83AB700056228 /* OptionFilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionFilterTableViewCell.xib; sourceTree = "<group>"; };
 		F7932B642393A0E4006E6496 /* PlacePreviewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlacePreviewDelegate.swift; path = "Travel-App/Scenes/Search/Screen/CustomView/PlaceInfo/PlacePreviewDelegate.swift"; sourceTree = SOURCE_ROOT; };
-		F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = InfoStoryboard.storyboard; path = "Travel-App/Scenes/Search/PlaceInfo/InfoStoryboard.storyboard"; sourceTree = SOURCE_ROOT; };
+		F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = InfoStoryboard.storyboard; path = "Travel-App/Scenes/Search/PlaceInfo/View/InfoStoryboard.storyboard"; sourceTree = SOURCE_ROOT; };
 		F7932B682393A687006E6496 /* PlaceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoViewController.swift; sourceTree = "<group>"; };
 		F79754E723EF489C00306220 /* CategoryFilterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterViewCell.swift; sourceTree = "<group>"; };
 		F79754E823EF489C00306220 /* CategoryFilterViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryFilterViewCell.xib; sourceTree = "<group>"; };
@@ -325,6 +331,37 @@
 				F00031C6B9A4EF8BE8D81578 /* Pods-Travel-App.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		3A4C303523F5237200E2DA8B /* Audio player */ = {
+			isa = PBXGroup;
+			children = (
+				3A3E631323ED352400BE2F34 /* AudioPlayerView.swift */,
+				3A3E631523ED359800BE2F34 /* AudioPlayerView.xib */,
+				F7AC996523EE005A0046E2B3 /* SpringboardData.swift */,
+				F7AC996723EE00DA0046E2B3 /* TPGAudioPlayer.swift */,
+				F7AC996923EE01880046E2B3 /* Notifications.swift */,
+			);
+			path = "Audio player";
+			sourceTree = "<group>";
+		};
+		3A4C303C23F5240900E2DA8B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3A4C303823F523EA00E2DA8B /* PlaceInfoPresenter.swift */,
+				3A4C303A23F523F500E2DA8B /* PlaceInfoPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3A4C303D23F5241800E2DA8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */,
+				F7932B682393A687006E6496 /* PlaceInfoViewController.swift */,
+				3A4C303623F523D200E2DA8B /* PlaceInfoViewProtocol.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		3A55496D23F2D62B00323956 /* CustomViews */ = {
@@ -574,13 +611,9 @@
 		F7932B6A23943956006E6496 /* PlaceInfo */ = {
 			isa = PBXGroup;
 			children = (
-				F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */,
-				F7932B682393A687006E6496 /* PlaceInfoViewController.swift */,
-				3A3E631323ED352400BE2F34 /* AudioPlayerView.swift */,
-				3A3E631523ED359800BE2F34 /* AudioPlayerView.xib */,
-				F7AC996523EE005A0046E2B3 /* SpringboardData.swift */,
-				F7AC996723EE00DA0046E2B3 /* TPGAudioPlayer.swift */,
-				F7AC996923EE01880046E2B3 /* Notifications.swift */,
+				3A4C303D23F5241800E2DA8B /* View */,
+				3A4C303523F5237200E2DA8B /* Audio player */,
+				3A4C303C23F5240900E2DA8B /* Presenter */,
 			);
 			path = PlaceInfo;
 			sourceTree = "<group>";
@@ -1092,6 +1125,7 @@
 				F77D501523C3D0C800E89E67 /* UserDefaultsManager.swift in Sources */,
 				F780A4C723C3DFF600A9A375 /* AuthStatus.swift in Sources */,
 				F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */,
+				3A4C303923F523EA00E2DA8B /* PlaceInfoPresenter.swift in Sources */,
 				F780CE6B23A315F100E8E248 /* RecentPlaceCollectionViewCell.swift in Sources */,
 				F75EAD3A2392FED80001C457 /* CategoryFilterDelegate.swift in Sources */,
 				F7932B652393A0E4006E6496 /* PlacePreviewDelegate.swift in Sources */,
@@ -1106,6 +1140,7 @@
 				F73E166C23E0CC6D0001AB56 /* PlaceTableViewCell.swift in Sources */,
 				F7570AA3238AEAA200621E4F /* Location.swift in Sources */,
 				F7EF691D239BC0CA0004EF4E /* ToursViewProtocol.swift in Sources */,
+				3A4C303723F523D200E2DA8B /* PlaceInfoViewProtocol.swift in Sources */,
 				F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */,
 				3A55497223F2DF9400323956 /* SuccessfulChangePassView.swift in Sources */,
 				F7B45FFF2389103F005CBEE4 /* PreferenceBoardViewController.swift in Sources */,
@@ -1140,6 +1175,7 @@
 				3A4EE37A23E2E58B00673BB4 /* CategoriesFilterView.swift in Sources */,
 				F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */,
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
+				3A4C303B23F523F500E2DA8B /* PlaceInfoPresenterProtocol.swift in Sources */,
 				3A55496B23F2D60B00323956 /* emailModalView.swift in Sources */,
 				F7ADAA7123D460CE009ECAEE /* AgreementDelegate.swift in Sources */,
 				F735911523F00DDA00204703 /* PreferenceBoardPresenterProtocol.swift in Sources */,

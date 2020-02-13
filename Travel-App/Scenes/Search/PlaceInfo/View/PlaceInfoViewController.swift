@@ -72,3 +72,9 @@ extension UIImageView  {
         self.addSubview(effectView)
     }
 }
+
+extension PlaceInfoViewController: PlaceInfoViewProtocol {
+    func setBeenStatus(with value: Bool) {
+        self.beenButton.imageView?.image = value ? UIImage(named: "successful") : UIImage(named: "ok-circle")
+    }
+}
