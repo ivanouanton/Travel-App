@@ -21,6 +21,7 @@ class PlaceInfoViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var audioPlayerView: AudioPlayerView!
+    @IBOutlet weak var beenButton: UIButton!
     
     var place: PlaceCardModel?
     var category: String = ""
@@ -50,9 +51,9 @@ class PlaceInfoViewController: UIViewController {
         super.viewWillDisappear(animated)
         audioPlayerView.stopPlaing()
     }
+
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    @IBAction func didPressedBeenThere(_ sender: Any) {
         
     }
 }
