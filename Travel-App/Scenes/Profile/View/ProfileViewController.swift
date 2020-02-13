@@ -46,6 +46,7 @@ final class ProfileViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
+        presenter.checkRecentPlaces()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -86,6 +87,10 @@ extension ProfileViewController: ProfileViewProtocol{
         }else{
             self.removeLoader()
         }
+    }
+    
+    func showDefaultAlert(with message: String) {
+        self.showAlert(message, completion: nil)
     }
 }
 

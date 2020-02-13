@@ -17,10 +17,11 @@ class FirebaseProfileManager {
     private init() {}
     
     private var userDocumentId: String = ""
+    var placesId = [String]()
     
     
     func updateUserPlaces(_ places: [String], _ completion: @escaping (_ success: Bool, _ error: Error?) -> Void){
-        
+        placesId = places
         let db = Firestore.firestore()
         db.collection("users").document(userDocumentId).updateData(["places" : places]) { (error) in
             if let error = error {

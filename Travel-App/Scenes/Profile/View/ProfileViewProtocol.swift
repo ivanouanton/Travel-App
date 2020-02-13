@@ -13,4 +13,5 @@ protocol ProfileViewProtocol: class{
     func showUserData(with name: String, information: [(key: String, value: String)])
     func showRecentPlaces(with places: Array<PlaceCardModel>)
     func showLoader(_ isNeededShowing: Bool)
+    func showDefaultAlert(with message: String)
 }

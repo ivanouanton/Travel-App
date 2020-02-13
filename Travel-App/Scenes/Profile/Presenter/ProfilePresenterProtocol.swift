@@ -9,4 +9,5 @@
 protocol ProfilePresenterProtocol: class {
     init(view: ProfileViewProtocol)
     func getUserData()
+    func checkRecentPlaces()
 }

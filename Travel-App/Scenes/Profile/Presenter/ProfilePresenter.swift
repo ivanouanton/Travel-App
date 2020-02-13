@@ -65,5 +65,25 @@ extension ProfilePresenter: ProfilePresenterProtocol{
             self.view.showRecentPlaces(with: placesModelData)
         }
     }
+    
+    func checkRecentPlaces() {
+        let places = FirebaseProfileManager.shared.placesId
+        var placesModelData = Array<PlaceCardModel>()
+        let userGroup = DispatchGroup()
+        
+        for id in places {
+            userGroup.enter()
+            PlaceManager.shared.getPlaceCardModel(with: id) { (placeData, error) in
+                userGroup.leave()
+                if let place = placeData {
+                    placesModelData.append(place)
+                }
+            }
+        }
+        
+        userGroup.notify(queue: .main) {
+            self.view.showRecentPlaces(with: placesModelData)
+        }
+    }
 }
 
