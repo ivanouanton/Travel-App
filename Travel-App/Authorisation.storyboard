@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rbi-zK-SqI">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -41,8 +41,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hea-iF-AlK">
-                                <rect key="frame" x="178" y="333" width="126" height="24"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hea-iF-AlK">
+                                <rect key="frame" x="178" y="362" width="126" height="24"/>
                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="12"/>
                                 <state key="normal" title="Forgot your password?"/>
                                 <connections>
@@ -132,7 +132,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ltY-Yy-Nyi" firstAttribute="centerX" secondItem="bj1-5C-4cP" secondAttribute="centerX" id="OBV-By-kEJ"/>
-                                    <constraint firstItem="ltY-Yy-Nyi" firstAttribute="leading" secondItem="bj1-5C-4cP" secondAttribute="leading" constant="2" id="lUt-jr-FhE"/>
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ligo-title" translatesAutoresizingMaskIntoConstraints="NO" id="z0x-dL-4rS">
@@ -146,13 +145,12 @@
                         <constraints>
                             <constraint firstItem="arq-fe-eXi" firstAttribute="top" secondItem="NfU-DU-l0x" secondAttribute="bottom" constant="16" id="0AS-zp-LJv"/>
                             <constraint firstItem="7DO-Sl-F4C" firstAttribute="centerX" secondItem="ZDR-Zb-BBL" secondAttribute="centerX" id="0kV-SI-pre"/>
-                            <constraint firstItem="ULl-yR-DgX" firstAttribute="top" secondItem="arq-fe-eXi" secondAttribute="bottom" constant="32" id="2Bk-gJ-ZPB"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="arq-fe-eXi" secondAttribute="trailing" constant="16" id="8eZ-on-txy"/>
                             <constraint firstItem="5gi-kL-Uxb" firstAttribute="centerX" secondItem="ZDR-Zb-BBL" secondAttribute="centerX" id="AHa-KH-Qz4"/>
                             <constraint firstItem="bj1-5C-4cP" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="ASD-3k-znj"/>
+                            <constraint firstItem="hea-iF-AlK" firstAttribute="top" secondItem="arq-fe-eXi" secondAttribute="bottom" constant="8" id="BqG-ql-ded"/>
                             <constraint firstItem="bj1-5C-4cP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ULl-yR-DgX" secondAttribute="bottom" constant="24" id="DYV-7G-dIf"/>
                             <constraint firstItem="NfU-DU-l0x" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="Dnt-TO-J3g"/>
-                            <constraint firstItem="hea-iF-AlK" firstAttribute="centerY" secondItem="arq-fe-eXi" secondAttribute="centerY" id="J6P-MQ-r0m"/>
                             <constraint firstItem="ULl-yR-DgX" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="Kvq-fZ-Bti"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="bottom" secondItem="bj1-5C-4cP" secondAttribute="bottom" constant="24" id="P4M-mU-IZL"/>
                             <constraint firstItem="5gi-kL-Uxb" firstAttribute="top" secondItem="ZDR-Zb-BBL" secondAttribute="top" constant="24" id="R1b-t3-Wn3"/>
@@ -160,10 +158,11 @@
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="NfU-DU-l0x" secondAttribute="trailing" constant="16" id="WCJ-KK-lXz"/>
                             <constraint firstItem="bj1-5C-4cP" firstAttribute="centerX" secondItem="ZDR-Zb-BBL" secondAttribute="centerX" id="Wl8-YM-Lzs"/>
                             <constraint firstItem="z0x-dL-4rS" firstAttribute="centerX" secondItem="ZDR-Zb-BBL" secondAttribute="centerX" id="gNg-ag-zfu"/>
-                            <constraint firstItem="NfU-DU-l0x" firstAttribute="top" secondItem="7DO-Sl-F4C" secondAttribute="bottom" constant="56" id="geZ-fz-qvJ"/>
+                            <constraint firstItem="NfU-DU-l0x" firstAttribute="top" secondItem="7DO-Sl-F4C" secondAttribute="bottom" constant="36" id="geZ-fz-qvJ"/>
                             <constraint firstItem="z0x-dL-4rS" firstAttribute="top" secondItem="5gi-kL-Uxb" secondAttribute="bottom" constant="16" id="lTh-Qe-KvT"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="hea-iF-AlK" secondAttribute="trailing" constant="16" id="sPr-nw-QRC"/>
                             <constraint firstItem="7DO-Sl-F4C" firstAttribute="top" secondItem="z0x-dL-4rS" secondAttribute="bottom" constant="88" id="uwL-bQ-gUo"/>
+                            <constraint firstItem="ULl-yR-DgX" firstAttribute="top" secondItem="hea-iF-AlK" secondAttribute="bottom" constant="16" id="vzO-0y-x4q"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="ULl-yR-DgX" secondAttribute="trailing" constant="16" id="w70-cP-hn4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ZDR-Zb-BBL"/>
@@ -378,8 +377,8 @@
                                                     <constraint firstAttribute="height" constant="44" id="MT9-NR-LwW"/>
                                                 </constraints>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="RLB-yo-SFe">
-                                                <rect key="frame" x="67" y="41" width="240" height="56"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="RLB-yo-SFe">
+                                                <rect key="frame" x="118" y="44" width="139" height="40"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -447,7 +446,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rbi-zK-SqI" customClass="NavigationController" customModule="Travel_App" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YTj-Bj-pEL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
