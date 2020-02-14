@@ -276,10 +276,10 @@ class PlaceManager {
         if !categories.isEmpty {
             query = query.whereField("category", in: categories.compactMap { $0.rawValue })
         }
-        
-        if !prices.isEmpty {
-            query = query.whereField("price", in: prices)
-        }
+//
+//        if !prices.isEmpty {
+//            query = query.whereField("price", in: prices)
+//        }
 
         query.getDocuments() { (querySnapshot, error) in
             if let response = querySnapshot {
@@ -289,7 +289,13 @@ class PlaceManager {
                     place.id = document.documentID
                     places.append(place)
                 }
-                completionHandler(places, nil)
+                if prices.isEmpty {
+                    completionHandler(places, nil)
+                } else {
+                    let filteredPlaces = places.filter { prices.contains($0.price) }
+                    completionHandler(filteredPlaces, nil)
+                }
+                
             } else {
                 completionHandler(nil, error)
             }
