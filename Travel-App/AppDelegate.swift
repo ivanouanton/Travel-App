@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             isLoginIn == true{
             self.window?.rootViewController = AppTabBarController()
         }else {
-            let navigationController = UINavigationController()
+            let navigationController = MyNavigationController()
             let rootViewController = ViewFactory.createAuthVC()
             navigationController.setViewControllers([rootViewController], animated: false)
             self.window?.rootViewController = navigationController

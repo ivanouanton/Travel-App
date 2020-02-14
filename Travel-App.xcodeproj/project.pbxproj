@@ -85,6 +85,7 @@
 		F7842A4023B8C3CC009F692A /* PlaceCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7842A3F23B8C3CC009F692A /* PlaceCardModel.swift */; };
 		F790825123A83AB700056228 /* OptionFilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790824F23A83AB700056228 /* OptionFilterTableViewCell.swift */; };
 		F790825223A83AB700056228 /* OptionFilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F790825023A83AB700056228 /* OptionFilterTableViewCell.xib */; };
+		F7915C9F23F73737002672D7 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7915C9E23F73737002672D7 /* MyNavigationController.swift */; };
 		F7932B652393A0E4006E6496 /* PlacePreviewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B642393A0E4006E6496 /* PlacePreviewDelegate.swift */; };
 		F7932B672393A65C006E6496 /* InfoStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */; };
 		F7932B692393A687006E6496 /* PlaceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7932B682393A687006E6496 /* PlaceInfoViewController.swift */; };
@@ -246,6 +247,7 @@
 		F7842A3F23B8C3CC009F692A /* PlaceCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCardModel.swift; sourceTree = "<group>"; };
 		F790824F23A83AB700056228 /* OptionFilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionFilterTableViewCell.swift; sourceTree = "<group>"; };
 		F790825023A83AB700056228 /* OptionFilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionFilterTableViewCell.xib; sourceTree = "<group>"; };
+		F7915C9E23F73737002672D7 /* MyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MyNavigationController.swift; path = "Travel-App/MyNavigationController.swift"; sourceTree = SOURCE_ROOT; };
 		F7932B642393A0E4006E6496 /* PlacePreviewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlacePreviewDelegate.swift; path = "Travel-App/Scenes/Search/Screen/CustomView/PlaceInfo/PlacePreviewDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		F7932B662393A65C006E6496 /* InfoStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = InfoStoryboard.storyboard; path = "Travel-App/Scenes/Search/PlaceInfo/View/InfoStoryboard.storyboard"; sourceTree = SOURCE_ROOT; };
 		F7932B682393A687006E6496 /* PlaceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoViewController.swift; sourceTree = "<group>"; };
@@ -806,6 +808,7 @@
 				F7ADAA6A23CB681F009ECAEE /* CustomSlider.swift */,
 				F7ADAA6E23D0D866009ECAEE /* AgreementType.swift */,
 				F7ADAA7023D460CD009ECAEE /* AgreementDelegate.swift */,
+				F7915C9E23F73737002672D7 /* MyNavigationController.swift */,
 			);
 			path = Agreement;
 			sourceTree = "<group>";
@@ -1146,6 +1149,7 @@
 				F73E166C23E0CC6D0001AB56 /* PlaceTableViewCell.swift in Sources */,
 				F7570AA3238AEAA200621E4F /* Location.swift in Sources */,
 				F7EF691D239BC0CA0004EF4E /* ToursViewProtocol.swift in Sources */,
+				F7915C9F23F73737002672D7 /* MyNavigationController.swift in Sources */,
 				3A4C303723F523D200E2DA8B /* PlaceInfoViewProtocol.swift in Sources */,
 				F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */,
 				3A55497223F2DF9400323956 /* SuccessfulChangePassView.swift in Sources */,
