@@ -59,6 +59,22 @@ extension SearchPresenter: SearchPresenterProtocol{
             self.categories = categories
             self.getPlaces(with: nil)
         }
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reviewPlaces),
+                                               name: Notification.Name.didChangeVisitedState,
+                                               object: nil)
+    }
+    
+    @objc func reviewPlaces() {
+        var placesModelData = Array<PlaceCardModel>()
+        for place in self.placesCard {
+            var newPlace = place
+            newPlace.isVisited = FirebaseProfileManager.shared.placesId.contains(place.id)
+            placesModelData.append(newPlace)
+        }
+        placesCard = placesModelData
+        self.view.setPlacesCollection(with: placesModelData)
     }
     
     func getPlaces(with option: OptionFilterSelection?) {

@@ -24,6 +24,7 @@
 		3A55496C23F2D60B00323956 /* emailModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A55496A23F2D60B00323956 /* emailModalView.xib */; };
 		3A55497223F2DF9400323956 /* SuccessfulChangePassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A55497023F2DF9400323956 /* SuccessfulChangePassView.swift */; };
 		3A55497323F2DF9400323956 /* SuccessfulChangePassView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A55497123F2DF9400323956 /* SuccessfulChangePassView.xib */; };
+		3ABC3EB723F6C0810060EE61 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABC3EB623F6C0810060EE61 /* Notification+Extension.swift */; };
 		F700442923A17C9C00D7E59F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F700442823A17C9C00D7E59F /* Profile.storyboard */; };
 		F700442B23A194C300D7E59F /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F700442A23A194C300D7E59F /* AuthViewController.swift */; };
 		F704B3F823B7F4B00090DD6F /* PlacesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F704B3F723B7F4B00090DD6F /* PlacesCollectionView.swift */; };
@@ -180,6 +181,7 @@
 		3A55496A23F2D60B00323956 /* emailModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = emailModalView.xib; sourceTree = "<group>"; };
 		3A55497023F2DF9400323956 /* SuccessfulChangePassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SuccessfulChangePassView.swift; path = "Travel-App/Scenes/CustomViews/Sussessful View/SuccessfulChangePassView.swift"; sourceTree = SOURCE_ROOT; };
 		3A55497123F2DF9400323956 /* SuccessfulChangePassView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SuccessfulChangePassView.xib; path = "Travel-App/Scenes/CustomViews/Sussessful View/SuccessfulChangePassView.xib"; sourceTree = SOURCE_ROOT; };
+		3ABC3EB623F6C0810060EE61 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		3CCBF9ADA3EC86FC713D01DA /* Pods-Travel-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.debug.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.debug.xcconfig"; sourceTree = "<group>"; };
 		F00031C6B9A4EF8BE8D81578 /* Pods-Travel-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.release.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.release.xcconfig"; sourceTree = "<group>"; };
 		F700442823A17C9C00D7E59F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = "Travel-App/Profile.storyboard"; sourceTree = SOURCE_ROOT; };
@@ -594,6 +596,7 @@
 				F77879F123C7D38E002F2052 /* Loader.swift */,
 				F7ADAA6C23D09B81009ECAEE /* UIView+Extension.swift */,
 				3A23585023F6733C00105111 /* UIImageView+Extension.swift */,
+				3ABC3EB623F6C0810060EE61 /* Notification+Extension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1146,6 +1149,7 @@
 				3A4C303723F523D200E2DA8B /* PlaceInfoViewProtocol.swift in Sources */,
 				F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */,
 				3A55497223F2DF9400323956 /* SuccessfulChangePassView.swift in Sources */,
+				3ABC3EB723F6C0810060EE61 /* Notification+Extension.swift in Sources */,
 				F7B45FFF2389103F005CBEE4 /* PreferenceBoardViewController.swift in Sources */,
 				F7CFD013239BCC8800983631 /* ProfileViewProtocol.swift in Sources */,
 				F79B3873239C13630032F598 /* ToursManager.swift in Sources */,

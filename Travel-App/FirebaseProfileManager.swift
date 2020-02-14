@@ -17,7 +17,11 @@ class FirebaseProfileManager {
     private init() {}
     
     private var userDocumentId: String = ""
-    var placesId = [String]()
+    var placesId = [String]() {
+        didSet {
+            NotificationCenter.default.post(Notification(name: .didChangeVisitedState))
+        }
+    }
     
     
     func updateUserPlaces(_ places: [String], _ completion: @escaping (_ success: Bool, _ error: Error?) -> Void){
