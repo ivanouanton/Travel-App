@@ -180,6 +180,10 @@ extension PreferenceBoardViewController: PreferenceOptionDelegate{
 }
 
 extension PreferenceBoardViewController: PreferenceBoardViewProtocol{
+    func showErrorAlert(with message: String) {
+        self.showAlert(message, completion: nil)
+    }
+    
     func showCustomTour(_ tour: Tour) {
         let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
         let vc = viewControllers[viewControllers.count - 2] as? SearchViewController
