@@ -19,4 +19,5 @@ struct PlaceCardModel {
     var placeName: String?
     var description: String
     var audio: DocumentReference?
+    var isVisited: Bool = false
 }

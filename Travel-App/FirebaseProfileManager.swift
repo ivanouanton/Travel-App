@@ -59,7 +59,8 @@ class FirebaseProfileManager {
                 }
                 self.userDocumentId = userData.documentID
                 let user = UserProfile(userData.data())
-                
+                self.placesId = user.places ?? []
+
                 // MARK: Getting image profile
                 
                 let storageRef = Storage.storage().reference(forURL: "gs://trello-2704d.appspot.com")

@@ -33,6 +33,11 @@ class PlacePreview: UICollectionViewCell {
                 break
             }
             self.image = place.image
+            if place.isVisited {
+                self.placeImage.addBlur(0.6)
+                self.visitedIndicator.isHidden = false
+                self.visitedLabel.isHidden = false
+            }
         }
     }
     
@@ -64,6 +69,27 @@ class PlacePreview: UICollectionViewCell {
         image.clipsToBounds = true
         image.layer.cornerRadius = 5
         return image
+    }()
+    
+    private lazy var visitedIndicator: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "successful")
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        image.isHidden = true
+        return image
+    }()
+    
+    private lazy var visitedLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "I've been there!"
+        label.textAlignment = .center
+        label.font = UIFont(name: "AvenirNextLTPro-Demi", size: 14.0)
+        label.textColor = .white
+        label.isHidden = true
+        return label
     }()
     
     private lazy var titleLabel: UILabel = {
@@ -228,10 +254,14 @@ class PlacePreview: UICollectionViewCell {
         self.setupUI()
         self.setupConstraints()
     }
-    
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        print(visitedLabel.frame)
     }
     
     private func setupUI(){
@@ -255,7 +285,9 @@ class PlacePreview: UICollectionViewCell {
         self.addSubview(self.userLocationLabel)
         self.addSubview(self.placeMarks)
         self.addSubview(self.tourSettingsButtons)
-        
+        self.addSubview(self.visitedIndicator)
+        self.addSubview(self.visitedLabel)
+
     }
     
     private func setupConstraints(){
@@ -290,6 +322,13 @@ class PlacePreview: UICollectionViewCell {
             self.userLocationLabel.bottomAnchor.constraint(equalTo: self.infoButton.topAnchor, constant: -8),
             self.userLocationLabel.leftAnchor.constraint(equalTo: self.placeImage.rightAnchor, constant: 8),
             self.userLocationLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
+            
+            self.visitedIndicator.centerYAnchor.constraint(equalTo: self.placeImage.centerYAnchor, constant: -16),
+            self.visitedIndicator.centerXAnchor.constraint(equalTo: self.placeImage.centerXAnchor),
+            
+            self.visitedLabel.topAnchor.constraint(equalTo: self.visitedIndicator.bottomAnchor, constant: 8),
+            self.visitedLabel.centerXAnchor.constraint(equalTo: self.visitedIndicator.centerXAnchor),
+
             ])
     }
 }
