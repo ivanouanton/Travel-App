@@ -21,7 +21,7 @@ class RecentPlacesTableViewCell: UITableViewCell {
         UIImage(named: "images-4"),
     ]
     
-    var places = Array<PlaceCardModel>() {
+    var places = Array<Place>() {
         didSet {
             self.recentPlacesCollection.reloadData()
         }

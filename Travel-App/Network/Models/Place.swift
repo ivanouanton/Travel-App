@@ -12,21 +12,24 @@ import Firebase
 struct Place{
     var id: String?
     let name: String
-    let categoryId: String
-    let description: String
+    let category: PlaceCategory
+    let description: String?
     let audio: DocumentReference?
     let image: DocumentReference?
     let locationPlace: GeoPoint
+    let address: String?
     let price: Int
+    var isVisited: Bool = false
     
     init(_ dictionary: [String: Any]){
         self.id = nil
         self.name = dictionary["name"] as! String
-        self.categoryId = dictionary["category"] as! String
-        self.description = dictionary["description"] as! String
+        self.category = PlaceCategory( dictionary["category"] as! String)!
+        self.description = dictionary["description"] as? String
         self.audio = dictionary["audio"] as? DocumentReference
         self.image = dictionary["image"] as? DocumentReference
         self.locationPlace = dictionary["location"] as! GeoPoint
+        self.address = dictionary["address"] as? String
         self.price = dictionary["price"] as! Int
     }
 }

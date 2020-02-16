@@ -22,7 +22,7 @@ final class ProfileViewController: UIViewController{
     
     private var tableSection = ["Information", "Recent places"]
     private var information: [(key: String, value: String)] = [("Language", "English"), ("Кщьу address", "352 Thiel Motorway Suite 421")]
-    private var places = Array<PlaceCardModel>()
+    private var places = Array<Place>()
     
     
     // MARK: - Life Cycle
@@ -66,7 +66,7 @@ extension ProfileViewController{
 }
 
 extension ProfileViewController: ProfileViewProtocol{
-    func showRecentPlaces(with places: Array<PlaceCardModel>) {
+    func showRecentPlaces(with places: Array<Place>) {
         self.places = places
         self.profileTableView.reloadData()
     }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PlacePreview: UICollectionViewCell {
     
@@ -16,12 +17,37 @@ class PlacePreview: UICollectionViewCell {
         return "placePreview"
     }
     
-    var place: PlaceCardModel? {
+//    var place: PlaceCardModel? {
+//        didSet{
+//            guard let place = place else {return}
+//            self.titleLabel.text = place.name
+//            self.placeTitle.text = place.category
+//            self.userLocationLabel.text = place.placeName ?? ""
+//            switch place.price {
+//            case 0:
+//                self.placePrice.text = "Free"
+//            case 1:
+//                self.placePrice.text = "€"
+//            case 2:
+//                self.placePrice.text = "€€"
+//            default:
+//                break
+//            }
+//            self.image = place.image
+//            if place.isVisited {
+//                self.placeImage.addBlur(0.6)
+//                self.visitedIndicator.isHidden = false
+//                self.visitedLabel.isHidden = false
+//            }
+//        }
+//    }
+    
+    var place: Place? {
         didSet{
             guard let place = place else {return}
             self.titleLabel.text = place.name
-            self.placeTitle.text = place.category
-            self.userLocationLabel.text = place.placeName ?? ""
+            self.placeTitle.text = place.category.getName()
+            self.userLocationLabel.text = place.address ?? "no address"
             switch place.price {
             case 0:
                 self.placePrice.text = "Free"
@@ -32,7 +58,16 @@ class PlacePreview: UICollectionViewCell {
             default:
                 break
             }
-            self.image = place.image
+
+            // TODO - need refactor
+            if let ref = place.image {
+                ToursManager.shared.getImage(with: ref) { (image, error) in
+                    if let image = image {
+                        self.image = image
+                    }
+                }
+            }
+
             if place.isVisited {
                 self.placeImage.addBlur(0.6)
                 self.visitedIndicator.isHidden = false
@@ -230,11 +265,11 @@ class PlacePreview: UICollectionViewCell {
     // MARK: - Methods
     
     @objc func didPressedAddPlace() {
-        self.delegate?.addPlace(with: self.place!.id)
+        self.delegate?.addPlace(with: self.place!.id!)
     }
     
     @objc func didPressedRemovePlaceButton() {
-        self.delegate?.removePlace(with: self.place!.id)
+        self.delegate?.removePlace(with: self.place!.id!)
     }
     
     @objc func getInfoPlace(){
@@ -243,7 +278,7 @@ class PlacePreview: UICollectionViewCell {
     }
     
     @objc func createRoute(){
-        guard let loacation = self.place?.location else {return}
+        guard let loacation = self.place?.locationPlace else {return}
         self.delegate?.createRoute(with: loacation)
     }
     
@@ -262,6 +297,12 @@ class PlacePreview: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         print(visitedLabel.frame)
+    }
+    
+    override func prepareForReuse() {
+        self.visitedIndicator.isHidden = true
+        self.visitedLabel.isHidden = true
+        self.placeImage.subviews.forEach({ $0.removeFromSuperview() })
     }
     
     private func setupUI(){

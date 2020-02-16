@@ -98,7 +98,7 @@ final class SearchViewController: UIViewController{
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         self.presenter.viewDidLoad()
-        self.presenter.fetchUserLocation()
+//        self.presenter.fetchUserLocation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -222,6 +222,7 @@ extension SearchViewController{
 // MARK: - Search View Protocol
 
 extension SearchViewController: SearchViewProtocol{
+    
     func showLoader(_ isNeededShowing: Bool) {
         if isNeededShowing {
             self.addLoader()
@@ -240,6 +241,10 @@ extension SearchViewController: SearchViewProtocol{
     }
     
     func setPlacesCollection(with places: [PlaceCardModel]) {
+//        self.placesCollection.places = places
+    }
+    
+    func showPreviewPlaces(with places: [Place]) {
         self.placesCollection.places = places
     }
     
@@ -303,6 +308,11 @@ extension SearchViewController: CategoryFilterDelegate{
 // MARK: - Place Preview Delegate
 
 extension SearchViewController: PlacePreviewDelegate {
+    func didSelect(with place: Place) {
+        self.didChangeMyLocation(Location(latitude: place.locationPlace.latitude,
+                                          longitude: place.locationPlace.longitude))
+    }
+    
     func addPlace(with id: String) {
         guard var newTour = self.tour else { return }
         for currId in newTour.place {
@@ -333,16 +343,16 @@ extension SearchViewController: PlacePreviewDelegate {
                                           longitude: location.longitude))
     }
     
-    func getInfoPlace(with data: PlaceCardModel, image: UIImage?, category: String) {
+    func getInfoPlace(with data: Place, image: UIImage?, category: String) {
         
 //        let storyboard = UIStoryboard(name: "InfoStoryboard", bundle: nil)
 //        let controller = storyboard.instantiateViewController(withIdentifier: "InfoPlaceViewController") as? PlaceInfoViewController
         let controller = ViewFactory.createPlaceInfoVC()
         controller.place = data
-        if let image = image{
-            controller.image = image
-        }
-        controller.category = category
+//        if let image = image{
+//            controller.image = image
+//        }
+//        controller.category = category
         
         self.navigationController?.pushViewController(controller, animated: true)
     }

@@ -14,7 +14,13 @@ class SearchPresenter{
     
     var userLocation = GeoPoint(latitude: Defaults.location.latitude,
                             longitude: Defaults.location.longitude)
-    var places = [String:Place]()
+//    var places = [String:Place]()
+    var places = [Place]() {
+        didSet {
+            self.view.showPreviewPlaces(with: places)
+        }
+    }
+
     var placesCard = [PlaceCardModel]()
     var categories = [String:Category](){
         didSet{
@@ -44,9 +50,9 @@ class SearchPresenter{
     
     private func showAllMarkers(){
         self.view.clearMarkers()
-        for (id, place) in self.places {
-            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.categoryId)
-            self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: true)
+        for place in self.places {
+            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.category.rawValue)
+            self.view.addMarker(place.id!, place: place, markerImg: cachedImage, isActive: true)
         }
     }
 }
@@ -67,62 +73,63 @@ extension SearchPresenter: SearchPresenterProtocol{
     }
     
     @objc func reviewPlaces() {
-        var placesModelData = Array<PlaceCardModel>()
-        for place in self.placesCard {
+        var placesModelData = Array<Place>()
+        for place in self.places {
             var newPlace = place
-            newPlace.isVisited = FirebaseProfileManager.shared.placesId.contains(place.id)
+            newPlace.isVisited = FirebaseProfileManager.shared.placesId.contains(place.id!)
             placesModelData.append(newPlace)
         }
-        placesCard = placesModelData
-        self.view.setPlacesCollection(with: placesModelData)
+        places = placesModelData
     }
     
     func getPlaces(with option: OptionFilterSelection?) {
         FirebaseProfileManager.shared.getAuthUserData { (user, image, error) in
             PlaceManager.shared.getPlaces(with: option) { (places, error) in
-                self.places = places ?? [:]
+                self.places = places ?? []
+                self.reviewPlaces()
                 self.showAllMarkers()
-                self.createPlacesData()
+//                self.createPlacesData()
+                self.view.showPreviewPlaces(with: self.places)
             }
         }
     }
     
-    func createPlacesData(){
-        var placesModelData = Array<PlaceCardModel>()
-        let placeGroup = DispatchGroup()
-        
-        for (id,place) in self.places {
-            if let imgId = place.image {
-                placeGroup.enter()
-                ToursManager.shared.getImage(with: imgId ) { (image, error) in
-                    var placeModel = PlaceCardModel(id: id,
-                                                    name: place.name,
-                                                    category: self.categories[place.categoryId]?.title ?? "",
-                                                    price: place.price,
-                                                    image: image,
-                                                    location: place.locationPlace,
-                                                    description: place.description,
-                                                    audio: place.audio,
-                                                    isVisited: FirebaseProfileManager.shared.placesId.contains(id))
-                    placeGroup.enter()
-                    PlaceManager.shared.geocodeLocation(with: place.locationPlace,
-                                                        type: .address) { (address, error) in
-                                                            
-                                                            placeModel.placeName = address
-                                                            placesModelData.append(placeModel)
-                                                            placeGroup.leave()
-                    }
-                    
-                    placeGroup.leave()
-                }
-            }
-        }
-        
-        placeGroup.notify(queue: DispatchQueue.main){
-            self.placesCard = placesModelData
-            self.view.setPlacesCollection(with: placesModelData)
-        }
-    }
+//    func createPlacesData(){
+//        var placesModelData = Array<PlaceCardModel>()
+//        let placeGroup = DispatchGroup()
+//
+//        for (id,place) in self.places {
+//            if let imgId = place.image {
+//                placeGroup.enter()
+//                ToursManager.shared.getImage(with: imgId ) { (image, error) in
+//                    var placeModel = PlaceCardModel(id: id,
+//                                                    name: place.name,
+//                                                    category: self.categories[place.category]?.title ?? "",
+//                                                    price: place.price,
+//                                                    image: image,
+//                                                    location: place.locationPlace,
+//                                                    description: place.description,
+//                                                    audio: place.audio,
+//                                                    isVisited: FirebaseProfileManager.shared.placesId.contains(id))
+//                    placeGroup.enter()
+//                    PlaceManager.shared.geocodeLocation(with: place.locationPlace,
+//                                                        type: .address) { (address, error) in
+//
+//                                                            placeModel.placeName = address
+//                                                            placesModelData.append(placeModel)
+//                                                            placeGroup.leave()
+//                    }
+//
+//                    placeGroup.leave()
+//                }
+//            }
+//        }
+//
+//        placeGroup.notify(queue: DispatchQueue.main){
+//            self.placesCard = placesModelData
+//            self.view.setPlacesCollection(with: placesModelData)
+//        }
+//    }
     
     func getTourRoute(with tour: Tour) {
         let placesId = tour.place
@@ -165,12 +172,12 @@ extension SearchPresenter: SearchPresenterProtocol{
         }
         self.view.clearMarkers()
         
-        for (id, place) in self.places {
-            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.categoryId)
-            if place.categoryId == categoriesId[index] {
-                self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: true)
+        for (place) in self.places {
+            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.category.rawValue)
+            if place.category.rawValue == categoriesId[index] {
+                self.view.addMarker(place.id!, place: place, markerImg: cachedImage, isActive: true)
             }else{
-                self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: false)
+                self.view.addMarker(place.id!, place: place, markerImg: cachedImage, isActive: false)
             }
         }
     }
@@ -182,12 +189,12 @@ extension SearchPresenter: SearchPresenterProtocol{
         }
         self.view.clearMarkers()
         
-        for (id, place) in self.places {
-            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.categoryId)
-            if place.categoryId == catId {
-                self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: true)
+        for (place) in self.places {
+            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.category.rawValue)
+            if place.category.rawValue == catId {
+                self.view.addMarker(place.id!, place: place, markerImg: cachedImage, isActive: true)
             }else{
-                self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: false)
+                self.view.addMarker(place.id!, place: place, markerImg: cachedImage, isActive: false)
             }
         }
     }

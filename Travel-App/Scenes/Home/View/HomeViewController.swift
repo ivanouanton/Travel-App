@@ -110,7 +110,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: PlaceTableViewCell.reuseIdentifier, for: indexPath) as! PlaceTableViewCell
         
         cell.placeName?.text = searchingPlaces[indexPath.row].name
-        cell.setupCategoryView(with: PlaceCategory(searchingPlaces[indexPath.row].categoryId)!)
+        cell.setupCategoryView(with: PlaceCategory(searchingPlaces[indexPath.row].category.rawValue)!)
         return cell
     }
     

@@ -19,13 +19,13 @@ class PlaceInfoPresenter: PlaceInfoPresenterProtocol {
        self.view = view
    }
     
-    func checkVisit(_ place: PlaceCardModel) {
+    func checkVisit(_ place: Place) {
         FirebaseProfileManager.shared.getAuthUserData { (user, image, error) in
             
             self.places = user?.places ?? []
             self.id = place.id
             
-            if self.places.contains(place.id) {
+            if self.places.contains(place.id!) {
                 self.isVisited = true
                 self.view.setBeenStatus(with: true)
             } else {

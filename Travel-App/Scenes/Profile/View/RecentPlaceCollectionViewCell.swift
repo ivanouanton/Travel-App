@@ -15,12 +15,21 @@ class RecentPlaceCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
-    var place: PlaceCardModel? {
+    var place: Place? {
         didSet {
             guard let place = place else {return}
-            placeImage.image = place.image
+            
+            // TODO - need refactor
+            if let ref = place.image {
+                ToursManager.shared.getImage(with: ref) { (image, error) in
+                    if let image = image {
+                        self.placeImage.image = image
+                    }
+                }
+            }
+            
             titlePlaceLabel.text = place.name
-            categoryLabel.text = place.category
+            categoryLabel.text = place.category.getName()
             switch place.price {
             case 0:
                 self.priceLabel.text = "Free"

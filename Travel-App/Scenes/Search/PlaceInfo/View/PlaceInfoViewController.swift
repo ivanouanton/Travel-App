@@ -25,20 +25,37 @@ class PlaceInfoViewController: UIViewController {
     
     var presenter: PlaceInfoPresenterProtocol?
     
-    var place: PlaceCardModel?
+    var place: Place?
     var category: String = ""
     var image: UIImage = UIImage(named: "preview-target-place")!
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         guard let place = place else {return}
         self.titleDescriptionLabel.text = place.name
         self.descriptionLabel.text = place.description
-        self.placeImage.image = place.image
-        self.categoryLabel.text = place.category
+        self.addressLabel.text = place.address ?? "no address"
+        
+        // TODO - need refactor
+        if let ref = place.image {
+            ToursManager.shared.getImage(with: ref) { (image, error) in
+                if let image = image {
+                    self.placeImage.image = image
+                } else {
+                    self.placeImage.image = self.image
+                }
+            }
+        }
+        
+        self.categoryLabel.text = place.category.getName()
 
-        guard let audioReference = place.audio else { return }
-        audioPlayerView.setupAudio(with: audioReference)
+        if let audioReference = place.audio {
+            audioPlayerView.setupAudio(with: audioReference)
+        } else {
+            audioPlayerView.isHidden = true
+        }
+        
         placeImage.addBlur()
         presenter?.checkVisit(place)
     }
