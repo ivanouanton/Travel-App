@@ -265,7 +265,7 @@ extension SearchViewController: SearchViewProtocol{
         self.polyline?.map = self.mapView
     }
 
-    func addMarker(_ id: String, place: PlaceData, markerImg: UIImage?, isActive: Bool) {
+    func addMarker(_ id: String, place: Place, markerImg: UIImage?, isActive: Bool) {
         let position = CLLocationCoordinate2D(latitude: place.locationPlace.latitude,
                                               longitude: place.locationPlace.longitude)
         let marker = GMSMarker(position: position)

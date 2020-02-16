@@ -30,7 +30,7 @@ struct Tour{
         self.image = nil
     }
     
-    init(_ places: [PlaceData]) {
+    init(_ places: [Place]) {
         self.description = "Custom tour"
         self.duration = "Duration of tour"
         self.imageRef = nil

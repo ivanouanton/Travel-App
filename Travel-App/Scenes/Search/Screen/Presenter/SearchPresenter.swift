@@ -14,7 +14,7 @@ class SearchPresenter{
     
     var userLocation = GeoPoint(latitude: Defaults.location.latitude,
                             longitude: Defaults.location.longitude)
-    var places = [String:PlaceData]()
+    var places = [String:Place]()
     var placesCard = [PlaceCardModel]()
     var categories = [String:Category](){
         didSet{

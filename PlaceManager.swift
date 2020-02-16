@@ -22,12 +22,12 @@ class PlaceManager {
     private let categoryImagesCache = NSCache<NSString, UIImage>()
     private let duration = ["A Few Hours", "Half Day",  "Full Day"]
     
-    var places = [PlaceData]()
+    var places = [Place]()
 
     private init() {
         self.getPlaces(with: nil) { (places, error) in
             guard let places = places else { return }
-            self.places = places.map({ (arg0) -> PlaceData in
+            self.places = places.map({ (arg0) -> Place in
                 
                 var (key, value) = arg0
                     value.id = key
@@ -81,7 +81,7 @@ class PlaceManager {
         }
     }
     
-    func getPlace(with id: String, completion: @escaping (_ place: PlaceData?, _ error: Error?) -> Void){
+    func getPlace(with id: String, completion: @escaping (_ place: Place?, _ error: Error?) -> Void){
         let db = Firestore.firestore()
         
         let docRef = db.collection("Place").document(id)
@@ -89,7 +89,7 @@ class PlaceManager {
             
             if let place = document.flatMap({
               $0.data().flatMap({ (data) in
-                return PlaceData(data)
+                return Place(data)
               })
             }) {
                 completion(place, nil)
@@ -112,7 +112,7 @@ class PlaceManager {
             error = err
             if let data = document?.data() {
                 
-                let place = PlaceData(data)
+                let place = Place(data)
                 if let imgId = place.image {
                     
                     cardGroup.enter()
@@ -138,9 +138,9 @@ class PlaceManager {
     
     
     
-    func getPlaces(with option: OptionFilterSelection? , completion: @escaping (_ places: [String:PlaceData]?, _ error: Error?) -> Void){
+    func getPlaces(with option: OptionFilterSelection? , completion: @escaping (_ places: [String:Place]?, _ error: Error?) -> Void){
         let db = Firestore.firestore()
-        var places = [String:PlaceData]()
+        var places = [String:Place]()
 
         let docRef = db.collection("Place")
         var query = docRef.order(by: "name")
@@ -163,7 +163,7 @@ class PlaceManager {
             } else {
                 print(querySnapshot!.documents.count)
                 for document in querySnapshot!.documents {
-                    let data = PlaceData(document.data())
+                    let data = Place(document.data())
 
                     places[document.documentID] = data
                 }
@@ -267,7 +267,7 @@ class PlaceManager {
     
     func getFilteredPlaces(with categories: [PlaceCategory],
                            prices: [Int],
-                           completionHandler: @escaping (_ tours: [PlaceData]?, _ error: Error?) -> Void) {
+                           completionHandler: @escaping (_ tours: [Place]?, _ error: Error?) -> Void) {
             
         let db = Firestore.firestore()
         let docRef = db.collection("Place")
@@ -283,9 +283,9 @@ class PlaceManager {
 
         query.getDocuments() { (querySnapshot, error) in
             if let response = querySnapshot {
-                var places = [PlaceData]()
+                var places = [Place]()
                 for document in response.documents {
-                    var place = PlaceData(document.data())
+                    var place = Place(document.data())
                     place.id = document.documentID
                     places.append(place)
                 }

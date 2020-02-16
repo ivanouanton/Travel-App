@@ -9,8 +9,8 @@
 import Foundation
 
 class PlaceDataHolder: NSObject {
-    let thing: PlaceData
-    init(thing: PlaceData) {
+    let thing: Place
+    init(thing: Place) {
         self.thing = thing
     }
 }

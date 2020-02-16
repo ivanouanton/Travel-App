@@ -11,7 +11,7 @@ import UIKit
 
 protocol SearchViewProtocol: class{
     func didChangeMyLocation(_ location: Location)
-    func addMarker(_ id: String, place: PlaceData, markerImg: UIImage?, isActive: Bool)
+    func addMarker(_ id: String, place: Place, markerImg: UIImage?, isActive: Bool)
     func setFilter(with categories: [String])
     func clearMarkers()
     func drawPath(with routes: String?)

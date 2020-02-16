@@ -17,8 +17,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var closeSearchingButton: UIButton!
     @IBOutlet weak var categoryFilterView: CategoriesFilterView!
     
-    var places = [PlaceData]()
-    var searchingPlaces = [PlaceData]()
+    var places = [Place]()
+    var searchingPlaces = [Place]()
 
     override func viewDidLoad() {
         super.viewDidLoad()

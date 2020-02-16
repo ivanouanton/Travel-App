@@ -46,7 +46,7 @@ class PreferenceBoardPresenter: PreferenceBoardPresenterProtocol {
 //                //Measuring my distance to my buddy's (in km)
 //                print(myLocation.distance(from: myBuddysLocation) / 1000)
 //            }
-            var durationPlaces = [PlaceData]()
+            var durationPlaces = [Place]()
             switch durations[0] {
             case 0:
                 durationPlaces = Array(sortPlaces.prefix(5))
@@ -63,9 +63,9 @@ class PreferenceBoardPresenter: PreferenceBoardPresenterProtocol {
         }
     }
     
-    func sortPlaces(_ places: [PlaceData], from myLocation: CLLocation) -> [PlaceData] {
+    func sortPlaces(_ places: [Place], from myLocation: CLLocation) -> [Place] {
         if places.isEmpty {
-            return [PlaceData]()
+            return [Place]()
         }
         
         let sortPlaces = places.sorted { (place1, place2) -> Bool in

@@ -33,7 +33,7 @@
 		F705253423B4105300E05528 /* OptionFilterSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F705253323B4105300E05528 /* OptionFilterSelection.swift */; };
 		F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70DB816239B169B00D48EC6 /* SettingOptionTableViewCell.swift */; };
 		F70DB819239B169B00D48EC6 /* SettingOptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70DB817239B169B00D48EC6 /* SettingOptionTableViewCell.xib */; };
-		F71ACDEB238B41E60092279F /* PlaceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71ACDEA238B41E60092279F /* PlaceData.swift */; };
+		F71ACDEB238B41E60092279F /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71ACDEA238B41E60092279F /* Place.swift */; };
 		F72B7C1223A6CCD9009155D4 /* OptionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72B7C1123A6CCD9009155D4 /* OptionFilter.swift */; };
 		F72B7C1423A6CD39009155D4 /* OptionFilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72B7C1323A6CD39009155D4 /* OptionFilterDelegate.swift */; };
 		F72B7C1623A6D6AE009155D4 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72B7C1523A6D6AE009155D4 /* UIButton+Extension.swift */; };
@@ -194,7 +194,7 @@
 		F70DB813239AFB7500D48EC6 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppButton.swift; path = "Travel-App/Utility/AppButton.swift"; sourceTree = SOURCE_ROOT; };
 		F70DB816239B169B00D48EC6 /* SettingOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionTableViewCell.swift; sourceTree = "<group>"; };
 		F70DB817239B169B00D48EC6 /* SettingOptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingOptionTableViewCell.xib; sourceTree = "<group>"; };
-		F71ACDEA238B41E60092279F /* PlaceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceData.swift; sourceTree = "<group>"; };
+		F71ACDEA238B41E60092279F /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		F72B7C1123A6CCD9009155D4 /* OptionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OptionFilter.swift; path = "Travel-App/Scenes/Search/Screen/CustomView/OptionFilter/OptionFilter.swift"; sourceTree = SOURCE_ROOT; };
 		F72B7C1323A6CD39009155D4 /* OptionFilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionFilterDelegate.swift; sourceTree = "<group>"; };
 		F72B7C1523A6D6AE009155D4 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = SOURCE_ROOT; };
@@ -891,7 +891,7 @@
 		F7E180E0238DD68B00406EFC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F71ACDEA238B41E60092279F /* PlaceData.swift */,
+				F71ACDEA238B41E60092279F /* Place.swift */,
 				F745760D238B480C00C5A1DE /* Category.swift */,
 				3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */,
 				F7CFD01F239BE3A800983631 /* Tour.swift */,
@@ -1196,7 +1196,7 @@
 				3A4EE37823E2CF5C00673BB4 /* PlaceCategory.swift in Sources */,
 				F77D501323C1F08100E89E67 /* Utilities.swift in Sources */,
 				F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */,
-				F71ACDEB238B41E60092279F /* PlaceData.swift in Sources */,
+				F71ACDEB238B41E60092279F /* Place.swift in Sources */,
 				F7ADAA6D23D09B81009ECAEE /* UIView+Extension.swift in Sources */,
 				F7EF6918239BA4AA0004EF4E /* PreferenceOptionDelegate.swift in Sources */,
 				F7EF691A239BBE930004EF4E /* ToursViewController.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-struct PlaceData{
+struct Place{
     var id: String?
     let name: String
     let categoryId: String
