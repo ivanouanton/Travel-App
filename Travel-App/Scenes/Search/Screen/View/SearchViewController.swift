@@ -100,12 +100,6 @@ final class SearchViewController: UIViewController{
         self.presenter.viewDidLoad()
 //        self.presenter.fetchUserLocation()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        
-    }
 }
 
 extension SearchViewController{
@@ -344,15 +338,9 @@ extension SearchViewController: PlacePreviewDelegate {
     }
     
     func getInfoPlace(with data: Place, image: UIImage?, category: String) {
-        
-//        let storyboard = UIStoryboard(name: "InfoStoryboard", bundle: nil)
-//        let controller = storyboard.instantiateViewController(withIdentifier: "InfoPlaceViewController") as? PlaceInfoViewController
+    
         let controller = ViewFactory.createPlaceInfoVC()
         controller.place = data
-//        if let image = image{
-//            controller.image = image
-//        }
-//        controller.category = category
         
         self.navigationController?.pushViewController(controller, animated: true)
     }
