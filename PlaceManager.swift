@@ -150,7 +150,9 @@ class PlaceManager {
         case .price(let price):
             query = query.whereField("price", isEqualTo: price)
         case .visited:
-            break
+            let filteredPlaces = self.places.filter { FirebaseProfileManager.shared.placesId.contains($0.id!)}
+            completion(filteredPlaces, nil)
+            return
         case .mustVisit:
             query = query.whereField("isMustVisit", isEqualTo: true)
         case .none:

@@ -19,5 +19,4 @@ protocol SearchPresenterProtocol: class {
     func getTourRoute(with tour: Tour)
     func getPlaces(with option: OptionFilterSelection?)
     func viewDidLoad()
-//    func createPlacesData()
 }
