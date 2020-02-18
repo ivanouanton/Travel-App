@@ -98,7 +98,7 @@ final class SearchViewController: UIViewController{
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         self.presenter.viewDidLoad()
-//        self.presenter.fetchUserLocation()
+        self.presenter.fetchUserLocation()
     }
 }
 
@@ -251,6 +251,10 @@ extension SearchViewController: SearchViewProtocol{
     }
     
     func setFilter(with categories: [String]) {
+//        self.categoryView.categories = categories
+    }
+    
+    func setFilter(with categories: [PlaceCategory]) {
         self.categoryView.categories = categories
     }
     
@@ -294,8 +298,8 @@ extension SearchViewController: GMSMapViewDelegate {
 // MARK: - Category Filter Delegate
 
 extension SearchViewController: CategoryFilterDelegate{
-    func categoryFilter(didSelectedItemAt index: Int) {
-        self.presenter.filterPlaces(with: index)
+    func didSelectItem(with category: PlaceCategory?) {
+        self.presenter.filter(with: category)
     }
 }
 

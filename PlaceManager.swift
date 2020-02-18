@@ -29,20 +29,6 @@ class PlaceManager {
             guard let places = places else { return }
             self.places = places
         }
-//        self.getPlaces(with: nil) { (places, error) in
-//            guard let places = places else { return }
-//            self.places = places.map({ (arg0) -> Place in
-//
-//                var (key, value) = arg0
-//                    value.id = key
-//                return value
-//            })
-//        }
-    }
-    
-    func getCategoryImg(with id: String) -> UIImage?{
-        let cachedImage = self.categoryImagesCache.object(forKey: id as NSString)
-        return cachedImage
     }
     
     func getRoute(with positions: [GeoPoint],
@@ -175,45 +161,6 @@ class PlaceManager {
         }
     }
 
-    func getCategories(completion: @escaping (_ categories: [String:Category]?, _ categoriesId: [String]?, _ error: Error?) -> Void){
-        let db = Firestore.firestore()
-        let aGroup = DispatchGroup()
-        var categories = [String:Category]()
-        var categoriesId = ["All"]
-
-        
-        let categoryDocRef = db.collection("Category")
-        aGroup.enter()
-        categoryDocRef.getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let data = Category(document.data())
-                    categories[document.documentID] = data
-                    
-                    categoriesId.append(document.documentID)
-                    
-                    if let _ = self.categoryImagesCache.object(forKey: data.img.documentID as NSString) {
-                    }else{
-                        aGroup.enter()
-                        ToursManager.shared.getImage(with: data.img) { (image, error) in
-                            if let image = image{
-                                self.categoryImagesCache.setObject(image, forKey: document.documentID as NSString)
-                            }
-                            aGroup.leave()
-                        }
-                    }
-                }
-            }
-            aGroup.leave()
-        }
-        
-        aGroup.notify(queue: DispatchQueue.main){
-            completion(categories, categoriesId, nil)
-        }
-    }
-    
     func geocodeLocation(with location: GeoPoint,
                          type: GeocodeType = GeocodeType.locality,
                          completion: @escaping (_ name: String?, _ error: Error?) -> Void){

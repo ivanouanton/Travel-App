@@ -95,7 +95,7 @@ extension HomeViewController: CategoryFilterViewDelegate {
     func didSelect(_ category: PlaceCategory) {
         let nvc = tabBarController?.viewControllers?[0] as? UINavigationController
         let vc = nvc?.viewControllers[0] as? SearchViewController
-        vc?.presenter.filterPlaces(with: category.rawValue)
+        vc?.presenter.filter(with: category)
         tabBarController?.selectedIndex = 0
     }
 }

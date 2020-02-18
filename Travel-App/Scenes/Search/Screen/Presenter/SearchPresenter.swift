@@ -14,7 +14,7 @@ class SearchPresenter{
     
     var userLocation = GeoPoint(latitude: Defaults.location.latitude,
                             longitude: Defaults.location.longitude)
-//    var places = [String:Place]()
+    
     var places = [Place]() {
         didSet {
             self.view.showPreviewPlaces(with: places)
@@ -22,23 +22,6 @@ class SearchPresenter{
     }
 
     var placesCard = [PlaceCardModel]()
-    var categories = [String:Category](){
-        didSet{
-            var categoriesNames = ["All"]
-            for (_, val) in categories {
-                categoriesNames.append(val.title)
-            }
-            self.view.setFilter(with: categoriesNames)
-        }
-    }
-    
-    private var categoriesName = ["All"]
-    private var categoriesId = ["All"]
-
-    private let imagesCache = NSCache<NSString, UIImage>()
-    private let categoriesCache = NSCache<NSString, NSString>()
-    private let categoryImagesCache = NSCache<NSString, UIImage>()
-
 
     weak var view: SearchViewProtocol!
     let locationManager: LocationManager
@@ -51,21 +34,20 @@ class SearchPresenter{
     private func showAllMarkers(){
         self.view.clearMarkers()
         for place in self.places {
-            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.category.rawValue)
-            self.view.addMarker(place.id!, place: place, markerImg: cachedImage, isActive: true)
+            self.view.addMarker(place.id!,
+                                place: place,
+                                markerImg: place.category.getMarker(),
+                                isActive: true)
         }
     }
 }
 
 extension SearchPresenter: SearchPresenterProtocol{
+    
     func viewDidLoad() {
-        PlaceManager.shared.getCategories { (categories, categoriesId, error) in
-            guard let categories = categories, let categoriesId = categoriesId else { return }
-            self.categoriesId = categoriesId
-            self.categories = categories
-            self.getPlaces(with: nil)
-        }
         
+        self.getPlaces(with: nil)
+        self.view.setFilter(with: PlaceCategory.categories)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(reviewPlaces),
                                                name: Notification.Name.didChangeVisitedState,
@@ -88,48 +70,10 @@ extension SearchPresenter: SearchPresenterProtocol{
                 self.places = places ?? []
                 self.reviewPlaces()
                 self.showAllMarkers()
-//                self.createPlacesData()
                 self.view.showPreviewPlaces(with: self.places)
             }
         }
     }
-    
-//    func createPlacesData(){
-//        var placesModelData = Array<PlaceCardModel>()
-//        let placeGroup = DispatchGroup()
-//
-//        for (id,place) in self.places {
-//            if let imgId = place.image {
-//                placeGroup.enter()
-//                ToursManager.shared.getImage(with: imgId ) { (image, error) in
-//                    var placeModel = PlaceCardModel(id: id,
-//                                                    name: place.name,
-//                                                    category: self.categories[place.category]?.title ?? "",
-//                                                    price: place.price,
-//                                                    image: image,
-//                                                    location: place.locationPlace,
-//                                                    description: place.description,
-//                                                    audio: place.audio,
-//                                                    isVisited: FirebaseProfileManager.shared.placesId.contains(id))
-//                    placeGroup.enter()
-//                    PlaceManager.shared.geocodeLocation(with: place.locationPlace,
-//                                                        type: .address) { (address, error) in
-//
-//                                                            placeModel.placeName = address
-//                                                            placesModelData.append(placeModel)
-//                                                            placeGroup.leave()
-//                    }
-//
-//                    placeGroup.leave()
-//                }
-//            }
-//        }
-//
-//        placeGroup.notify(queue: DispatchQueue.main){
-//            self.placesCard = placesModelData
-//            self.view.setPlacesCollection(with: placesModelData)
-//        }
-//    }
     
     func getTourRoute(with tour: Tour) {
         let placesId = tour.place
@@ -164,38 +108,17 @@ extension SearchPresenter: SearchPresenterProtocol{
         })
     }
     
-    //TODO remove this method
-    func filterPlaces(with index: Int) {
-        if index == 0{
+    func filter(with category: PlaceCategory?) {
+        guard let category = category else {
             self.showAllMarkers()
             return
         }
-        self.view.clearMarkers()
         
-        for (place) in self.places {
-            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.category.rawValue)
-            if place.category.rawValue == categoriesId[index] {
-                self.view.addMarker(place.id!, place: place, markerImg: cachedImage, isActive: true)
-            }else{
-                self.view.addMarker(place.id!, place: place, markerImg: cachedImage, isActive: false)
-            }
-        }
-    }
-    
-    func filterPlaces(with catId: String) {
-        if catId == "all"{
-            self.showAllMarkers()
-            return
-        }
         self.view.clearMarkers()
-        
-        for (place) in self.places {
-            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.category.rawValue)
-            if place.category.rawValue == catId {
-                self.view.addMarker(place.id!, place: place, markerImg: cachedImage, isActive: true)
-            }else{
-                self.view.addMarker(place.id!, place: place, markerImg: cachedImage, isActive: false)
-            }
+        self.places.forEach { (place) in
+            let needShow = place.category == category
+            print(needShow)
+            self.view.addMarker(place.id!, place: place, markerImg: place.category.getMarker(), isActive: needShow)
         }
     }
     
@@ -223,24 +146,6 @@ extension SearchPresenter: SearchPresenterProtocol{
             }
         }
     }
-     
-    private func getImage(with collectionID: String,
-                          documentID: String,
-                          completionHandler: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
-                
-        let db = Storage.storage().reference()
-        let collectionRef = db.child(collectionID)
-        let imageRef = collectionRef.child(documentID)
-        
-            imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                if let error = error {
-                    completionHandler(nil, error)
-                } else {
-                    let image = UIImage(data: data!)
-                    completionHandler(image, nil)
-                }
-            }
-        }
-    }
+}
     
 

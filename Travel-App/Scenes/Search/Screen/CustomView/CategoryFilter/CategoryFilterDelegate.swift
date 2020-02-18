@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CategoryFilterDelegate {
-    func categoryFilter(didSelectedItemAt index: Int)
+    func didSelectItem(with category: PlaceCategory?)
 }
