@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,7 +28,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WQa-to-KwC">
+                <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WQa-to-KwC">
                     <rect key="frame" x="16" y="585" width="343" height="44"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KmN-RC-Pcb">
@@ -96,7 +96,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Msh-EB-ADW" customClass="CustomSlider" customModule="Travel_App" customModuleProvider="target">
-                    <rect key="frame" x="100.5" y="37" width="469" height="501"/>
+                    <rect key="frame" x="64.5" y="37" width="541" height="583"/>
                     <color key="minimumTrackTintColor" name="pantone"/>
                     <color key="maximumTrackTintColor" name="max-slider"/>
                     <connections>
@@ -104,7 +104,7 @@
                     </connections>
                 </slider>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vi9-K9-fai">
-                    <rect key="frame" x="16" y="21" width="298" height="532"/>
+                    <rect key="frame" x="16" y="21" width="298" height="614"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdA-ox-yDv">
                             <rect key="frame" x="0.0" y="0.0" width="298" height="1346.5"/>
@@ -167,13 +167,13 @@ He said a missile operator had acted independently and alone, mistaking the plan
                 <constraint firstItem="yXt-jP-ea3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="H4x-Vm-IvC"/>
                 <constraint firstItem="Msh-EB-ADW" firstAttribute="centerX" secondItem="yXt-jP-ea3" secondAttribute="trailing" constant="-24" id="Jeq-Il-Sby"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WQa-to-KwC" secondAttribute="bottom" constant="38" id="PDs-dG-d7h"/>
-                <constraint firstItem="WQa-to-KwC" firstAttribute="top" secondItem="yXt-jP-ea3" secondAttribute="bottom" constant="32" id="PLF-Tx-3m7"/>
                 <constraint firstItem="vi9-K9-fai" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="21" id="Xgl-Zw-loC"/>
                 <constraint firstItem="Msh-EB-ADW" firstAttribute="centerY" secondItem="vi9-K9-fai" secondAttribute="centerY" id="bad-mT-HyS"/>
                 <constraint firstItem="WQa-to-KwC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="d6V-WE-Z3x"/>
-                <constraint firstItem="nRD-MK-GLQ" firstAttribute="top" secondItem="vi9-K9-fai" secondAttribute="bottom" constant="32" id="hCh-tR-iyM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vi9-K9-fai" secondAttribute="bottom" constant="32" id="thd-A4-pxj"/>
                 <constraint firstItem="Msh-EB-ADW" firstAttribute="top" secondItem="vi9-K9-fai" secondAttribute="top" constant="16" id="wOU-Oa-JSA"/>
                 <constraint firstItem="yXt-jP-ea3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="yeX-O7-omz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="yXt-jP-ea3" secondAttribute="bottom" constant="32" id="yv0-7r-XA3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.40000000000001" y="112.89355322338831"/>

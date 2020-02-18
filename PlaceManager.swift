@@ -14,27 +14,21 @@ import GoogleMaps
 
 class PlaceManager {
     static let shared = PlaceManager()
+    
+    var userLocation = GeoPoint(latitude: Defaults.location.latitude,
+                                longitude: Defaults.location.longitude)
 
     private let placesImageCache = NSCache<NSString, UIImage>()
     private let categoryImagesCache = NSCache<NSString, UIImage>()
+    private let duration = ["A Few Hours", "Half Day",  "Full Day"]
     
-    var places = [PlaceData]()
+    var places = [Place]()
 
     private init() {
         self.getPlaces(with: nil) { (places, error) in
             guard let places = places else { return }
-            self.places = places.map({ (arg0) -> PlaceData in
-                
-                var (key, value) = arg0
-                    value.id = key
-                return value
-            })
+            self.places = places
         }
-    }
-    
-    func getCategoryImg(with id: String) -> UIImage?{
-        let cachedImage = self.categoryImagesCache.object(forKey: id as NSString)
-        return cachedImage
     }
     
     func getRoute(with positions: [GeoPoint],
@@ -77,17 +71,14 @@ class PlaceManager {
         }
     }
     
-    func getPlace(with id: String, completion: @escaping (_ place: PlaceData?, _ error: Error?) -> Void){
+    func getPlace(with id: String, completion: @escaping (_ place: Place?, _ error: Error?) -> Void){
         let db = Firestore.firestore()
         
-        let docRef = db.collection("Place").document(id)
+        let docRef = db.collection("Places").document(id)
         docRef.getDocument { (document, err) in
-            
-            if let place = document.flatMap({
-              $0.data().flatMap({ (data) in
-                return PlaceData(data)
-              })
-            }) {
+            if let data = document?.data() {
+                var place = Place(data)
+                place.id = document?.documentID
                 completion(place, nil)
             } else {
                 completion(nil, err)
@@ -101,25 +92,25 @@ class PlaceManager {
         var error: Error? = nil
         let cardGroup = DispatchGroup()
         
-        let docRef = db.collection("Place").document(id)
+        let docRef = db.collection("Places").document(id)
         
         cardGroup.enter()
         docRef.getDocument { (document, err) in
             error = err
             if let data = document?.data() {
                 
-                let place = PlaceData(data)
+                let place = Place(data)
                 if let imgId = place.image {
                     
                     cardGroup.enter()
                     ToursManager.shared.getImage(with: imgId ) { (image, error) in
                         placeData = PlaceCardModel(id: id,
                                                        name: place.name,
-                                                       category: place.categoryId,
+                                                       category: place.category.rawValue,
                                                        price: place.price,
                                                        image: image,
                                                        location: place.locationPlace,
-                                                       description: place.description)
+                                                       description: place.description ?? "")
                         cardGroup.leave()
                     }
                 }
@@ -134,18 +125,20 @@ class PlaceManager {
     
     
     
-    func getPlaces(with option: OptionFilterSelection? , completion: @escaping (_ places: [String:PlaceData]?, _ error: Error?) -> Void){
+    func getPlaces(with option: OptionFilterSelection? , completion: @escaping (_ places: [Place]?, _ error: Error?) -> Void){
         let db = Firestore.firestore()
-        var places = [String:PlaceData]()
+        var places = [Place]()
 
-        let docRef = db.collection("Place")
+        let docRef = db.collection("Places")
         var query = docRef.order(by: "name")
         
         switch option {
         case .price(let price):
             query = query.whereField("price", isEqualTo: price)
         case .visited:
-            break
+            let filteredPlaces = self.places.filter { FirebaseProfileManager.shared.placesId.contains($0.id!)}
+            completion(filteredPlaces, nil)
+            return
         case .mustVisit:
             query = query.whereField("isMustVisit", isEqualTo: true)
         case .none:
@@ -159,54 +152,15 @@ class PlaceManager {
             } else {
                 print(querySnapshot!.documents.count)
                 for document in querySnapshot!.documents {
-                    let data = PlaceData(document.data())
-
-                    places[document.documentID] = data
+                    var data = Place(document.data())
+                    data.id = document.documentID
+                    places.append(data)
                 }
             }
             completion(places, nil)
         }
     }
 
-    func getCategories(completion: @escaping (_ categories: [String:Category]?, _ categoriesId: [String]?, _ error: Error?) -> Void){
-        let db = Firestore.firestore()
-        let aGroup = DispatchGroup()
-        var categories = [String:Category]()
-        var categoriesId = ["All"]
-
-        
-        let categoryDocRef = db.collection("Category")
-        aGroup.enter()
-        categoryDocRef.getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let data = Category(document.data())
-                    categories[document.documentID] = data
-                    
-                    categoriesId.append(document.documentID)
-                    
-                    if let _ = self.categoryImagesCache.object(forKey: data.img.documentID as NSString) {
-                    }else{
-                        aGroup.enter()
-                        ToursManager.shared.getImage(with: data.img) { (image, error) in
-                            if let image = image{
-                                self.categoryImagesCache.setObject(image, forKey: document.documentID as NSString)
-                            }
-                            aGroup.leave()
-                        }
-                    }
-                }
-            }
-            aGroup.leave()
-        }
-        
-        aGroup.notify(queue: DispatchQueue.main){
-            completion(categories, categoriesId, nil)
-        }
-    }
-    
     func geocodeLocation(with location: GeoPoint,
                          type: GeocodeType = GeocodeType.locality,
                          completion: @escaping (_ name: String?, _ error: Error?) -> Void){
@@ -258,6 +212,44 @@ class PlaceManager {
         
         storageReference.downloadURL { (hardUrl, error) in
             completion(hardUrl, error)
+        }
+    }
+    
+    func getFilteredPlaces(with categories: [PlaceCategory],
+                           prices: [Int],
+                           completionHandler: @escaping (_ tours: [Place]?, _ error: Error?) -> Void) {
+            
+        let db = Firestore.firestore()
+        let docRef = db.collection("Places")
+        var query = docRef.order(by: "name")
+        
+        if !categories.isEmpty {
+            query = query.whereField("category", in: categories.compactMap { $0.rawValue })
+        }
+//
+//        if !prices.isEmpty {
+//            query = query.whereField("price", in: prices)
+//        }
+
+        query.getDocuments() { (querySnapshot, error) in
+            if let response = querySnapshot {
+                var places = [Place]()
+                for document in response.documents {
+                    var place = Place(document.data())
+                    place.id = document.documentID
+                    places.append(place)
+                }
+                if prices.isEmpty {
+                    completionHandler(places, nil)
+                } else {
+                    let filteredPlaces = places.filter { prices.contains($0.price) }
+                    completionHandler(filteredPlaces, nil)
+                }
+                
+            } else {
+                completionHandler(nil, error)
+            }
+            
         }
     }
 }

@@ -14,6 +14,7 @@ target 'Travel-App' do
  pod 'Moya'
  pod 'lottie-ios'
  pod 'IQKeyboardManagerSwift'
+ pod 'Kingfisher'
 
  pod 'Firebase/Analytics'
  pod 'Firebase/Core'

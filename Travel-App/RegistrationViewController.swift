@@ -18,9 +18,11 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var passwordField: CustomTextField!
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var agreementStateImage: UIImageView!
+    @IBOutlet weak var okButton: UIButton!
     
     private var termsAndConditions: Bool = false
     private var privacyStatement: Bool = false
+    private var acceptTerms: Bool = false
 
     var image: UIImage? = nil
     
@@ -54,7 +56,7 @@ class RegistrationViewController: UIViewController {
         let signUpManager = FirebaseAuthManager.shared
         signUpManager.createUser(name: name!,
                                  email: emailField.text!,
-                                 password: passwordField.text!) { [weak self] (success) in
+                                 password: passwordField.text!) { [weak self] (success, error) in
             guard let `self` = self else { return }
             var message: String = ""
             if success {
@@ -63,16 +65,37 @@ class RegistrationViewController: UIViewController {
 
                 signUpManager.setUserData(name: name!, surname: surname!, email: email!) { success in }
                 signUpManager.saveProfileImage(self.image) { success in }
-                
-                message = "User was sucessfully created."
-            } else {
-                message = "There was an error."
-            }
-                                    
-            self.showAlert(message) {
+                                
+                let myViewController = SuccessfulChangePassView(nibName: "SuccessfulChangePassView", bundle: nil)
+                myViewController.modalPresentationStyle = .overCurrentContext
+                myViewController.message = """
+                Verification link
+                sent to your email address
+                """
                 self.removeLoader()
-                self.navigationController?.popViewController(animated: true)
-            }
+                myViewController.completion = {
+                    self.navigationController?.popViewController(animated: true)
+                }
+                self.present(myViewController, animated: false, completion: nil)
+                
+            } else {
+                message = error?.localizedDescription ?? "There was an error."
+                self.showAlert(message) {
+                    self.removeLoader()
+                }
+            } 
+        }
+    }
+    
+    @IBAction func didPressedAccesptPrivacy(_ sender: Any) {
+        acceptTerms = !acceptTerms
+        termsAndConditions = acceptTerms
+        privacyStatement = acceptTerms
+        
+        if acceptTerms {
+            okButton.setImage(UIImage(named: "successful"), for: .normal)
+        } else {
+            okButton.setImage(UIImage(named: "ok-circle"), for: .normal)
         }
     }
     
@@ -125,7 +148,7 @@ class RegistrationViewController: UIViewController {
         guard let cleanedPassword = passwordField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return "" }
         
         if Utilities.isPasswordValid(cleanedPassword) == false {
-            return "Please make sure your password is at least 8 characters, contains a special character and a number."
+            return "Please make sure your password is at least 8 characters"
         }
         
         if !self.termsAndConditions || !self.privacyStatement {
@@ -155,7 +178,7 @@ extension RegistrationViewController: AgreementDelegate {
         case .privacyStatement:
             self.privacyStatement = accept
         }
-        
-        self.agreementStateImage.image = (self.termsAndConditions && self.privacyStatement) ? UIImage(named: "successful") : UIImage(named: "ok-circle")
+        acceptTerms = self.termsAndConditions && self.privacyStatement
+        self.okButton.imageView?.image = acceptTerms ? UIImage(named: "successful") : UIImage(named: "ok-circle")
     }
 }

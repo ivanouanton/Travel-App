@@ -17,8 +17,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var closeSearchingButton: UIButton!
     @IBOutlet weak var categoryFilterView: CategoriesFilterView!
     
-    var places = [PlaceData]()
-    var searchingPlaces = [PlaceData]()
+    var places = [Place]()
+    var searchingPlaces = [Place]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,10 +88,14 @@ extension HomeViewController: HomeViewProtocol{
 }
 
 extension HomeViewController: CategoryFilterViewDelegate {
+    func didDeselect(_ category: PlaceCategory) {
+        
+    }
+    
     func didSelect(_ category: PlaceCategory) {
         let nvc = tabBarController?.viewControllers?[0] as? UINavigationController
         let vc = nvc?.viewControllers[0] as? SearchViewController
-        vc?.presenter.filterPlaces(with: category.rawValue)
+        vc?.presenter.filter(with: category)
         tabBarController?.selectedIndex = 0
     }
 }
@@ -106,7 +110,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: PlaceTableViewCell.reuseIdentifier, for: indexPath) as! PlaceTableViewCell
         
         cell.placeName?.text = searchingPlaces[indexPath.row].name
-        cell.setupCategoryView(with: PlaceCategory(searchingPlaces[indexPath.row].categoryId)!)
+        cell.setupCategoryView(with: PlaceCategory(searchingPlaces[indexPath.row].category.rawValue)!)
         return cell
     }
     

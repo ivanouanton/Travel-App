@@ -21,7 +21,7 @@ extension ProfilePresenter: ProfilePresenterProtocol{
         self.view.showLoader(true)
         let userGroup = DispatchGroup()
         let profileManager = FirebaseProfileManager.shared
-        var placesModelData = Array<PlaceCardModel>()
+        var placesModelData = Array<Place>()
 
         userGroup.enter()
         profileManager.getAuthUserData { (user, image, error) in
@@ -42,7 +42,7 @@ extension ProfilePresenter: ProfilePresenterProtocol{
                 
                 for id in places {
                     userGroup.enter()
-                    PlaceManager.shared.getPlaceCardModel(with: id) { (placeData, error) in
+                    PlaceManager.shared.getPlace(with: id) { (placeData, error) in
                         if let place = placeData {
                             placesModelData.append(place)
                         }
@@ -62,6 +62,26 @@ extension ProfilePresenter: ProfilePresenterProtocol{
         
         userGroup.notify(queue: .main) {
             self.view.showLoader(false)
+            self.view.showRecentPlaces(with: placesModelData)
+        }
+    }
+    
+    func checkRecentPlaces() {
+        let places = FirebaseProfileManager.shared.placesId
+        var placesModelData = Array<Place>()
+        let userGroup = DispatchGroup()
+        
+        for id in places {
+            userGroup.enter()
+            PlaceManager.shared.getPlace(with: id) { (placeData, error) in
+                userGroup.leave()
+                if let place = placeData {
+                    placesModelData.append(place)
+                }
+            }
+        }
+        
+        userGroup.notify(queue: .main) {
             self.view.showRecentPlaces(with: placesModelData)
         }
     }

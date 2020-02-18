@@ -13,11 +13,9 @@ protocol SearchPresenterProtocol: class {
     
     func fetchUserLocation()
     func showModalView(with id: String)
-    func filterPlaces(with index: Int)
-    func filterPlaces(with id: String)
+    func filter(with category: PlaceCategory?)
     func getRoute(with locations: [GeoPoint])
     func getTourRoute(with tour: Tour)
     func getPlaces(with option: OptionFilterSelection?)
     func viewDidLoad()
-    func createPlacesData()
 }

@@ -17,11 +17,19 @@ class SettingOptionTableViewCell: UITableViewCell {
     var titles = [String]()
     var images = [UIImage]()
     
+    private var selectedItems = [Int]()
+    
     class var reuseIdentifier: String {
         return "settingTableCell"
     }
     class var nibName: String {
         return "SettingOptionTableViewCell"
+    }
+    
+    var allowsMultipleSelection: Bool = true {
+        didSet {
+            collectionView.allowsMultipleSelection = allowsMultipleSelection
+        }
     }
     
     override func awakeFromNib() {
@@ -41,6 +49,7 @@ class SettingOptionTableViewCell: UITableViewCell {
     private func registerNib() {
         let nib = UINib(nibName: SettingOptionCollectionViewCell.nibName, bundle: nil)
         collectionView?.register(nib, forCellWithReuseIdentifier: SettingOptionCollectionViewCell.reuseIdentifier)
+        collectionView.allowsMultipleSelection = allowsMultipleSelection
     }
 }
 
@@ -58,7 +67,7 @@ extension SettingOptionTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: SettingOptionCollectionViewCell.reuseIdentifier,
-                                                                 for: indexPath) as! SettingOptionCollectionViewCell
+                                                           for: indexPath) as! SettingOptionCollectionViewCell
         if self.titles.count != 0{
             cell.configureCell(text: titles[indexPath.row], actImage: nil, defImage: nil)
         }else if self.images.count != 0{
@@ -70,7 +79,13 @@ extension SettingOptionTableViewCell: UICollectionViewDataSource {
 
 extension SettingOptionTableViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate?.didSelectItemAt(indexPath.row, tableCell: self.cellIndex)
+        selectedItems.append(indexPath.row)
+        delegate?.didSelectItemsAt(selectedItems, tableCell: cellIndex)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        selectedItems.removeAll { $0 == indexPath.row }
+        delegate?.didSelectItemsAt(selectedItems, tableCell: cellIndex)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

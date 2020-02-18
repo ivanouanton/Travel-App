@@ -11,6 +11,7 @@ import UIKit
 protocol ProfileViewProtocol: class{
     func showUserImage(_ image: UIImage)
     func showUserData(with name: String, information: [(key: String, value: String)])
-    func showRecentPlaces(with places: Array<PlaceCardModel>)
+    func showRecentPlaces(with places: Array<Place>)
     func showLoader(_ isNeededShowing: Bool)
+    func showDefaultAlert(with message: String)
 }

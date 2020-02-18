@@ -10,30 +10,26 @@ import UIKit
 
 class PreferenceBoardViewController: UIViewController {
     
+    var presenter: PreferenceBoardPresenterProtocol!
+    
     var settingsData = [
-        "Interests": [
-            CategoryPreference(title: "Anders", icon: UIImage(named: "landmark")!),
-            CategoryPreference(title: "Kristian", icon: UIImage(named: "trees")!),
-            CategoryPreference(title: "Sofia", icon: UIImage(named: "landmark")!),
-            CategoryPreference(title: "John", icon: UIImage(named: "trees")!),
-            CategoryPreference(title: "Jenny", icon: UIImage(named: "landmark")!),
-            CategoryPreference(title: "Lina", icon: UIImage(named: "trees")!)
-        ],
         "Duration": ["A Few Hours", "Half Day",  "Full Day"],
         "Price": ["free", "€", "€€"],
         "Transport": [UIImage(named: "walk")!, UIImage(named: "bus")!, UIImage(named: "subway")!]
     ]
     
-    
-    var preferences = [Int:Int]()
-    
+    var preferences = [Int:[Int]]()
+    var selectedCategories = [PlaceCategory]()
+    var selectedPrices = [Int]()
+    var selectedDurations = [0]
+
     var sectionTitles = ["Interests", "Duration", "Price"]
     
     private lazy var settingTable: UITableView = {
         let table = UITableView.init(frame: .zero, style: UITableView.Style.grouped)
         table.translatesAutoresizingMaskIntoConstraints = false
-        let interestCell = UINib(nibName: "InterestsTableCell", bundle: nil)
-        table.register(interestCell, forCellReuseIdentifier: "InterestsTableCell")
+        let interestCell = UINib(nibName: "CategoryFilterViewCell", bundle: nil)
+        table.register(interestCell, forCellReuseIdentifier: "CategoryFilterViewCell")
         let settingsCell = UINib(nibName: SettingOptionTableViewCell.nibName, bundle: nil)
         table.register(settingsCell, forCellReuseIdentifier: SettingOptionTableViewCell.reuseIdentifier)
         table.backgroundColor = UIColor(named: "white")
@@ -93,27 +89,36 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 3{
+        
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryFilterViewCell", for: indexPath) as! CategoryFilterViewCell
+            cell.delegate = self
+            return cell
+        case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingOptionTableViewCell.reuseIdentifier, for: indexPath) as! SettingOptionTableViewCell
             let key: String = self.sectionTitles[indexPath.section]
-            cell.images = settingsData[key] as! [UIImage]
+            cell.titles = settingsData[key] as! [String]
             cell.delegate = self
             cell.cellIndex = indexPath.section
+            cell.allowsMultipleSelection = false
             return cell
-        }else
-            if indexPath.section != 0{
+        case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: SettingOptionTableViewCell.reuseIdentifier, for: indexPath) as! SettingOptionTableViewCell
             let key: String = self.sectionTitles[indexPath.section]
             cell.titles = settingsData[key] as! [String]
             cell.delegate = self
             cell.cellIndex = indexPath.section
             return cell
-        }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "InterestsTableCell", for: indexPath) as! InterestsTableCell
-            cell.categories = settingsData["Interests"] as! [CategoryPreference]
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: SettingOptionTableViewCell.reuseIdentifier, for: indexPath) as! SettingOptionTableViewCell
+            let key: String = self.sectionTitles[indexPath.section]
+            cell.images = settingsData[key] as! [UIImage]
             cell.delegate = self
             cell.cellIndex = indexPath.section
             return cell
+        default:
+            return UITableViewCell()
         }
     }
     
@@ -151,15 +156,40 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     @objc func dosmth(){
-        let vc = ViewFactory.createToursVC(with: self.preferences)
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = ViewFactory.createToursVC(with: self.preferences)
+//        self.navigationController?.pushViewController(vc, animated: true)
+        presenter.createCustomTour(with: selectedCategories, prices: selectedPrices, durations: selectedDurations)
     }
 }
 
 extension PreferenceBoardViewController: PreferenceOptionDelegate{
-    func didSelectItemAt(_ index: Int, tableCell: Int?) {
+    func didSelectItemsAt(_ items: [Int], tableCell: Int?) {
+        
         guard let tableCellIndex = tableCell else { return }
-        self.preferences[tableCellIndex] = index
+        
+        if tableCellIndex == 1 {
+            selectedDurations = items
+        } else if tableCellIndex == 2 {
+            selectedPrices = items
+        }
+    }
+    
+    func didSelectCategories(_ categories: [PlaceCategory]) {
+        selectedCategories = categories
     }
 }
 
+extension PreferenceBoardViewController: PreferenceBoardViewProtocol{
+    func showErrorAlert(with message: String) {
+        self.showAlert(message, completion: nil)
+    }
+    
+    func showCustomTour(_ tour: Tour) {
+        let viewControllers: [UIViewController] = self.navigationController!.viewControllers as [UIViewController]
+        let vc = viewControllers[viewControllers.count - 2] as? SearchViewController
+        vc?.tour = tour
+        
+        guard let viewController = vc else {return}
+        self.navigationController!.popToViewController(viewController, animated: true)
+    }
+}

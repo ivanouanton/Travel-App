@@ -49,6 +49,30 @@ extension PlaceCategory {
         return UIImage(named: imageName)!
     }
     
+    func getMarker() -> UIImage {
+        
+        let imageName: String
+        
+        switch self {
+        case .parks:
+            imageName = "PiazzasAndParks"
+        case .culturalsites:
+            imageName = "CulturalSites"
+        case .museums:
+            imageName = "MuseumandGalleryes"
+        case .shopping:
+            imageName = "Shopping"
+        case .cityviews:
+            imageName = "CityViews"
+        case .restaurants:
+            imageName = "RestaurentsNadCafes"
+        case .churches:
+            imageName = "Churches"
+        }
+        
+        return UIImage(named: imageName)!
+    }
+    
     func getColor() -> UIColor {
         let colorName: String
         
@@ -90,5 +114,12 @@ extension PlaceCategory {
         case .churches:
             return "Churches"
         }
+    }
+}
+
+extension PlaceCategory: Equatable {
+    
+    static func == (lhs: PlaceCategory, rhs: PlaceCategory) -> Bool {
+        return lhs.rawValue == rhs.rawValue
     }
 }

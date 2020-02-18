@@ -28,7 +28,8 @@ class AgreementViewController: UIViewController {
         super.viewDidLoad()
         textLabel.attributedText = state?.getAttributedString()
         title = state?.getTitle()
-        navigationItem.hidesBackButton = true
+        //        navigationItem.hidesBackButton = true
+
         navigationController?.navigationBar.barTintColor = UIColor(named: "heavy")
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(named: "white")!]
     }

@@ -108,4 +108,23 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 54
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            switch indexPath.row {
+            case 2:
+                let vc = ViewFactory.createAgreementVC(with: .termsAndConditions)
+                vc.modalPresentationStyle = .fullScreen
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            case 3:
+                let vc = ViewFactory.createAgreementVC(with: .privacyStatement)
+                vc.modalPresentationStyle = .fullScreen
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            default: break
+            }
+        }
+        
+    }
 }

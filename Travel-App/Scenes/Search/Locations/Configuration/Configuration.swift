@@ -10,7 +10,7 @@ import Foundation
 
 enum Defaults {
 
-    static let location = Location(latitude: 53.478797, longitude: -2.241419)
+    static let location = Location(latitude: 41.903728, longitude: 12.493304)
     static let kMapStyle = """
     [
       {

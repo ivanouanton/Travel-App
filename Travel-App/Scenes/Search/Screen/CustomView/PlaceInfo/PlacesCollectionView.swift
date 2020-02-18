@@ -19,7 +19,13 @@ class PlacesCollectionView: UIView {
         }
     }
 
-    var places = Array<PlaceCardModel>(){
+//    var places = Array<PlaceCardModel>(){
+//        didSet{
+//            self.collectionView.reloadData()
+//        }
+//    }
+    
+    var places = Array<Place>(){
         didSet{
             self.collectionView.reloadData()
         }

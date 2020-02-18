@@ -22,7 +22,7 @@ final class ProfileViewController: UIViewController{
     
     private var tableSection = ["Information", "Recent places"]
     private var information: [(key: String, value: String)] = [("Language", "English"), ("Кщьу address", "352 Thiel Motorway Suite 421")]
-    private var places = Array<PlaceCardModel>()
+    private var places = Array<Place>()
     
     
     // MARK: - Life Cycle
@@ -46,6 +46,7 @@ final class ProfileViewController: UIViewController{
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
+        presenter.checkRecentPlaces()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -65,7 +66,7 @@ extension ProfileViewController{
 }
 
 extension ProfileViewController: ProfileViewProtocol{
-    func showRecentPlaces(with places: Array<PlaceCardModel>) {
+    func showRecentPlaces(with places: Array<Place>) {
         self.places = places
         self.profileTableView.reloadData()
     }
@@ -86,6 +87,10 @@ extension ProfileViewController: ProfileViewProtocol{
         }else{
             self.removeLoader()
         }
+    }
+    
+    func showDefaultAlert(with message: String) {
+        self.showAlert(message, completion: nil)
     }
 }
 

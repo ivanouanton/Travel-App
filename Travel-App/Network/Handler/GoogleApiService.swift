@@ -9,7 +9,7 @@
 import Moya
 
 enum GoogleApiService{
-    case getRout(origin: String, destination: String, mode: String = "driving", points: String = "")
+    case getRout(origin: String, destination: String, mode: String = "walking", points: String = "")
     case geocode(latitude: Double, longitude: Double)
 }
 

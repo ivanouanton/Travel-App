@@ -100,12 +100,6 @@ final class SearchViewController: UIViewController{
         self.presenter.viewDidLoad()
         self.presenter.fetchUserLocation()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        
-    }
 }
 
 extension SearchViewController{
@@ -164,7 +158,7 @@ extension SearchViewController{
     // MARK: - Methods
         
     @objc func setupPreferences(){
-        self.navigationController?.pushViewController(PreferenceBoardViewController(), animated: true)
+        self.navigationController?.pushViewController(ViewFactory.createSettingsTourVC(), animated: true)
     }
     
     private func showModalDescription(with id: String) {
@@ -222,6 +216,7 @@ extension SearchViewController{
 // MARK: - Search View Protocol
 
 extension SearchViewController: SearchViewProtocol{
+    
     func showLoader(_ isNeededShowing: Bool) {
         if isNeededShowing {
             self.addLoader()
@@ -240,6 +235,10 @@ extension SearchViewController: SearchViewProtocol{
     }
     
     func setPlacesCollection(with places: [PlaceCardModel]) {
+//        self.placesCollection.places = places
+    }
+    
+    func showPreviewPlaces(with places: [Place]) {
         self.placesCollection.places = places
     }
     
@@ -252,6 +251,10 @@ extension SearchViewController: SearchViewProtocol{
     }
     
     func setFilter(with categories: [String]) {
+//        self.categoryView.categories = categories
+    }
+    
+    func setFilter(with categories: [PlaceCategory]) {
         self.categoryView.categories = categories
     }
     
@@ -265,7 +268,7 @@ extension SearchViewController: SearchViewProtocol{
         self.polyline?.map = self.mapView
     }
 
-    func addMarker(_ id: String, place: PlaceData, markerImg: UIImage?, isActive: Bool) {
+    func addMarker(_ id: String, place: Place, markerImg: UIImage?, isActive: Bool) {
         let position = CLLocationCoordinate2D(latitude: place.locationPlace.latitude,
                                               longitude: place.locationPlace.longitude)
         let marker = GMSMarker(position: position)
@@ -295,14 +298,19 @@ extension SearchViewController: GMSMapViewDelegate {
 // MARK: - Category Filter Delegate
 
 extension SearchViewController: CategoryFilterDelegate{
-    func categoryFilter(didSelectedItemAt index: Int) {
-        self.presenter.filterPlaces(with: index)
+    func didSelectItem(with category: PlaceCategory?) {
+        self.presenter.filter(with: category)
     }
 }
 
 // MARK: - Place Preview Delegate
 
 extension SearchViewController: PlacePreviewDelegate {
+    func didSelect(with place: Place) {
+        self.didChangeMyLocation(Location(latitude: place.locationPlace.latitude,
+                                          longitude: place.locationPlace.longitude))
+    }
+    
     func addPlace(with id: String) {
         guard var newTour = self.tour else { return }
         for currId in newTour.place {
@@ -333,17 +341,12 @@ extension SearchViewController: PlacePreviewDelegate {
                                           longitude: location.longitude))
     }
     
-    func getInfoPlace(with data: PlaceCardModel, image: UIImage?, category: String) {
+    func getInfoPlace(with data: Place, image: UIImage?, category: String) {
+    
+        let controller = ViewFactory.createPlaceInfoVC()
+        controller.place = data
         
-        let storyboard = UIStoryboard(name: "InfoStoryboard", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "InfoPlaceViewController") as? PlaceInfoViewController
-        controller?.place = data
-        if let image = image{
-            controller?.image = image
-        }
-        controller?.category = category
-        
-        self.navigationController?.pushViewController(controller!, animated: true)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func createRoute(with location: GeoPoint) {

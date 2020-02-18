@@ -14,25 +14,14 @@ class SearchPresenter{
     
     var userLocation = GeoPoint(latitude: Defaults.location.latitude,
                             longitude: Defaults.location.longitude)
-    var places = [String:PlaceData]()
-    var placesCard = [PlaceCardModel]()
-    var categories = [String:Category](){
-        didSet{
-            var categoriesNames = ["All"]
-            for (_, val) in categories {
-                categoriesNames.append(val.title)
-            }
-            self.view.setFilter(with: categoriesNames)
+    
+    var places = [Place]() {
+        didSet {
+            self.view.showPreviewPlaces(with: places)
         }
     }
-    
-    private var categoriesName = ["All"]
-    private var categoriesId = ["All"]
 
-    private let imagesCache = NSCache<NSString, UIImage>()
-    private let categoriesCache = NSCache<NSString, NSString>()
-    private let categoryImagesCache = NSCache<NSString, UIImage>()
-
+    var placesCard = [PlaceCardModel]()
 
     weak var view: SearchViewProtocol!
     let locationManager: LocationManager
@@ -44,66 +33,45 @@ class SearchPresenter{
     
     private func showAllMarkers(){
         self.view.clearMarkers()
-        for (id, place) in self.places {
-            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.categoryId)
-            self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: true)
+        for place in self.places {
+            self.view.addMarker(place.id!,
+                                place: place,
+                                markerImg: place.category.getMarker(),
+                                isActive: true)
         }
     }
 }
 
 extension SearchPresenter: SearchPresenterProtocol{
+    
     func viewDidLoad() {
-        PlaceManager.shared.getCategories { (categories, categoriesId, error) in
-            guard let categories = categories, let categoriesId = categoriesId else { return }
-            self.categoriesId = categoriesId
-            self.categories = categories
-            self.getPlaces(with: nil)
+        
+        self.getPlaces(with: nil)
+        self.view.setFilter(with: PlaceCategory.categories)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reviewPlaces),
+                                               name: Notification.Name.didChangeVisitedState,
+                                               object: nil)
+    }
+    
+    @objc func reviewPlaces() {
+        var placesModelData = Array<Place>()
+        for place in self.places {
+            var newPlace = place
+            newPlace.isVisited = FirebaseProfileManager.shared.placesId.contains(place.id!)
+            placesModelData.append(newPlace)
         }
+        places = placesModelData
     }
     
     func getPlaces(with option: OptionFilterSelection?) {
-        
-        PlaceManager.shared.getPlaces(with: option) { (places, error) in
-            self.places = places ?? [:]
-            self.showAllMarkers()
-            self.createPlacesData()
-        }
-    }
-    
-    func createPlacesData(){
-        var placesModelData = Array<PlaceCardModel>()
-        let placeGroup = DispatchGroup()
-        
-        for (id,place) in self.places {
-            if let imgId = place.image {
-                placeGroup.enter()
-                ToursManager.shared.getImage(with: imgId ) { (image, error) in
-                    
-                    var placeModel = PlaceCardModel(id: id,
-                                                    name: place.name,
-                                                    category: self.categories[place.categoryId]?.title ?? "",
-                                                    price: place.price,
-                                                    image: image,
-                                                    location: place.locationPlace,
-                                                    description: place.description,
-                                                    audio: place.audio)
-                    placeGroup.enter()
-                    PlaceManager.shared.geocodeLocation(with: place.locationPlace,
-                                                        type: .address) { (address, error) in
-                                                            
-                                                            placeModel.placeName = address
-                                                            placesModelData.append(placeModel)
-                                                            placeGroup.leave()
-                    }
-                    
-                    placeGroup.leave()
-                }
+        FirebaseProfileManager.shared.getAuthUserData { (user, image, error) in
+            PlaceManager.shared.getPlaces(with: option) { (places, error) in
+                self.places = places ?? []
+                self.reviewPlaces()
+                self.showAllMarkers()
+                self.view.showPreviewPlaces(with: self.places)
             }
-        }
-        
-        placeGroup.notify(queue: DispatchQueue.main){
-            self.placesCard = placesModelData
-            self.view.setPlacesCollection(with: placesModelData)
         }
     }
     
@@ -140,38 +108,17 @@ extension SearchPresenter: SearchPresenterProtocol{
         })
     }
     
-    //TODO remove this method
-    func filterPlaces(with index: Int) {
-        if index == 0{
+    func filter(with category: PlaceCategory?) {
+        guard let category = category else {
             self.showAllMarkers()
             return
         }
-        self.view.clearMarkers()
         
-        for (id, place) in self.places {
-            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.categoryId)
-            if place.categoryId == categoriesId[index] {
-                self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: true)
-            }else{
-                self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: false)
-            }
-        }
-    }
-    
-    func filterPlaces(with catId: String) {
-        if catId == "all"{
-            self.showAllMarkers()
-            return
-        }
         self.view.clearMarkers()
-        
-        for (id, place) in self.places {
-            let cachedImage = PlaceManager.shared.getCategoryImg(with: place.categoryId)
-            if place.categoryId == catId {
-                self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: true)
-            }else{
-                self.view.addMarker(id, place: place, markerImg: cachedImage, isActive: false)
-            }
+        self.places.forEach { (place) in
+            let needShow = place.category == category
+            print(needShow)
+            self.view.addMarker(place.id!, place: place, markerImg: place.category.getMarker(), isActive: needShow)
         }
     }
     
@@ -189,6 +136,7 @@ extension SearchPresenter: SearchPresenterProtocol{
         self.locationManager.fetchLocation { (location, error) in
             if let location = location{
                 self.userLocation = GeoPoint(latitude: location.latitude, longitude: location.longitude)
+                PlaceManager.shared.userLocation = self.userLocation
                 self.view.didChangeMyLocation(location)
                 PlaceManager.shared.geocodeLocation(with: self.userLocation) { (locality, error) in
                     guard let locality = locality else {return}
@@ -198,24 +146,6 @@ extension SearchPresenter: SearchPresenterProtocol{
             }
         }
     }
-     
-    private func getImage(with collectionID: String,
-                          documentID: String,
-                          completionHandler: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
-                
-        let db = Storage.storage().reference()
-        let collectionRef = db.child(collectionID)
-        let imageRef = collectionRef.child(documentID)
-        
-            imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                if let error = error {
-                    completionHandler(nil, error)
-                } else {
-                    let image = UIImage(data: data!)
-                    completionHandler(image, nil)
-                }
-            }
-        }
-    }
+}
     
 

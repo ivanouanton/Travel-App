@@ -10,6 +10,17 @@ import UIKit
 
 class ViewFactory{
     
+    static func createPlaceInfoVC() -> PlaceInfoViewController {
+        let storyboard = UIStoryboard(name: "InfoStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "InfoPlaceViewController") as? PlaceInfoViewController
+        
+        guard let newVC = vc else { return PlaceInfoViewController() }
+        
+        let presenter = PlaceInfoPresenter(view: newVC)
+        newVC.presenter = presenter
+        return newVC
+    }
+    
     static func createSearchVC() -> SearchViewController{
         let vc = SearchViewController()
         let presenter = SearchPresenter(view: vc)
@@ -61,6 +72,13 @@ class ViewFactory{
     static func createAgreementVC(with type: AgreementType) -> AgreementViewController{
         let vc = AgreementViewController(nibName: "AgreementViewController", bundle: nil)
         vc.state = type
+        return vc
+    }
+    
+    static func createSettingsTourVC() -> PreferenceBoardViewController {
+        let vc = PreferenceBoardViewController()
+        let presenter = PreferenceBoardPresenter(view: vc)
+        vc.presenter = presenter
         return vc
     }
 }

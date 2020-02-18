@@ -59,8 +59,8 @@
                                     <action selector="getAuthScreen:" destination="NGq-4Y-fXm" eventType="touchUpInside" id="xD0-pL-gbd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emma Blair" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wb-wA-Ink">
-                                <rect key="frame" x="16" y="126" width="169.33333333333334" height="44"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emma Blair" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wb-wA-Ink">
+                                <rect key="frame" x="16" y="126" width="245" height="44"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="32"/>
                                 <color key="textColor" name="heavy"/>
                                 <nil key="highlightedColor"/>
@@ -88,6 +88,7 @@
                             <constraint firstItem="i4d-Gy-MAk" firstAttribute="top" secondItem="d5u-7q-A6p" secondAttribute="top" constant="10" id="BrO-Oo-Ems"/>
                             <constraint firstItem="d5u-7q-A6p" firstAttribute="bottom" secondItem="CYK-cq-OHv" secondAttribute="bottom" id="Ho1-De-ScB"/>
                             <constraint firstItem="5Wb-wA-Ink" firstAttribute="leading" secondItem="d5u-7q-A6p" secondAttribute="leading" constant="16" id="Qlk-xT-Avl"/>
+                            <constraint firstItem="UQm-8P-e9d" firstAttribute="leading" secondItem="5Wb-wA-Ink" secondAttribute="trailing" constant="10" id="Xt7-eb-bxI"/>
                             <constraint firstItem="d5u-7q-A6p" firstAttribute="trailing" secondItem="wtF-7k-Ask" secondAttribute="trailing" id="YrX-D3-1Aq"/>
                             <constraint firstItem="5Wb-wA-Ink" firstAttribute="centerY" secondItem="UQm-8P-e9d" secondAttribute="centerY" id="Z5B-cb-r0Q"/>
                             <constraint firstItem="d5u-7q-A6p" firstAttribute="trailing" secondItem="3EE-Mv-FUw" secondAttribute="trailing" constant="16" id="g51-Vh-cQw"/>
