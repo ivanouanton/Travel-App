@@ -65,12 +65,14 @@ extension SearchPresenter: SearchPresenterProtocol{
     }
     
     func getPlaces(with option: OptionFilterSelection?) {
+        self.view.showLoader(true)
         FirebaseProfileManager.shared.getAuthUserData { (user, image, error) in
             PlaceManager.shared.getPlaces(with: option) { (places, error) in
                 self.places = places ?? []
                 self.reviewPlaces()
                 self.showAllMarkers()
                 self.view.showPreviewPlaces(with: self.places)
+                self.view.showLoader(false)
             }
         }
     }
@@ -132,7 +134,6 @@ extension SearchPresenter: SearchPresenterProtocol{
     }
     
     func fetchUserLocation() {
-        self.view.showLoader(true)
         self.locationManager.fetchLocation { (location, error) in
             if let location = location{
                 self.userLocation = GeoPoint(latitude: location.latitude, longitude: location.longitude)
@@ -141,7 +142,6 @@ extension SearchPresenter: SearchPresenterProtocol{
                 PlaceManager.shared.geocodeLocation(with: self.userLocation) { (locality, error) in
                     guard let locality = locality else {return}
                     self.view.showLocality(locality: locality)
-                    self.view.showLoader(false)
                 }
             }
         }

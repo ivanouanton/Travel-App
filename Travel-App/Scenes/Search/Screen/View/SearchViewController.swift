@@ -99,6 +99,12 @@ final class SearchViewController: UIViewController{
         
         self.presenter.viewDidLoad()
         self.presenter.fetchUserLocation()
+        self.title = "Rome"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
 }
 
