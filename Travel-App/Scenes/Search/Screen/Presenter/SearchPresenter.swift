@@ -126,7 +126,7 @@ extension SearchPresenter: SearchPresenterProtocol{
     
     func showModalView(with id: String) {
         
-        for (index, place) in self.placesCard.enumerated() {
+        for (index, place) in self.places.enumerated() {
             if place.id == id {
                 self.view.showPlaceView(with: index)
             }
