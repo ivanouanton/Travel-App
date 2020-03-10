@@ -79,12 +79,19 @@ class OptionFilter: UIView {
         button.setTitle("Must visit", for: .normal)
         button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-Demi", size: 14)
         button.setTitleColor(UIColor(named: "pantone"), for: .normal)
-        button.layer.cornerRadius = 5
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor(named: "silver")?.cgColor
-        button.setBackgroundColor(color: UIColor(named: "white")!, forState: .normal)
         button.addTarget(self, action: #selector(selectedMustVisitFilter), for: .touchUpInside)
         return button
+    }()
+    
+    private lazy var mustVisitStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.distribution = .fillProportionally
+        stack.addBorderView()
+        stack.addArrangedSubview(self.mustVisitFilterButton)
+        stack.addArrangedSubview(self.removeFilterButton)
+        return stack
     }()
     
     private lazy var filterButtons: UIStackView = {
@@ -92,11 +99,10 @@ class OptionFilter: UIView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
         stack.distribution = .fillEqually
-        stack.alignment = .fill
-        stack.spacing = 20
+        stack.spacing = 15
         stack.addArrangedSubview(self.priceFilterButton)
         stack.addArrangedSubview(self.visitedFilterButton)
-        stack.addArrangedSubview(self.mustVisitFilterButton)
+        stack.addArrangedSubview(self.mustVisitStackView)
         return stack
     }()
         
@@ -117,6 +123,14 @@ class OptionFilter: UIView {
         table.dataSource = self
         table.delegate = self
         return table
+    }()
+    
+    private lazy var removeFilterButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "close"), for: .normal)
+        button.isHidden = true
+//        button.addTarget(self, action: #selector(selectedMustVisitFilter), for: .touchUpInside)
+        return button
     }()
     
     // MARK: - Methods
@@ -154,12 +168,12 @@ class OptionFilter: UIView {
             self.filterView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.filterView.heightAnchor.constraint(equalToConstant: 92),
             
-            self.filterButtons.leftAnchor.constraint(equalTo: self.filterView.leftAnchor, constant: 24),
+            self.filterButtons.leftAnchor.constraint(equalTo: self.filterView.leftAnchor, constant: 12),
             self.filterButtons.topAnchor.constraint(equalTo: self.filterView.topAnchor, constant: 24),
             self.filterButtons.centerXAnchor.constraint(equalTo: self.filterView.centerXAnchor),
             self.filterButtons.centerXAnchor.constraint(equalTo: self.filterView.centerXAnchor),
             self.filterButtons.heightAnchor.constraint(equalToConstant: 44),
-            ])
+        ])
     }
     
     func removeFilterView(){
@@ -190,9 +204,7 @@ class OptionFilter: UIView {
     }
     
     private func setupUI(){
-        
         self.addSubview(self.filterButton)
-
     }
     
     private func setupConstraints(){
@@ -257,5 +269,17 @@ extension OptionFilter: UITableViewDelegate, UITableViewDataSource {
         self.priceFilterButton.titleLabel?.text = self.price[indexPath.row]
         self.delegate?.didPressedFilterButton(with: self.filterView.frame.height+self.filterButton.frame.height)
         self.delegate?.didSelected(with: .price(indexPath.row))
+    }
+}
+
+private extension UIStackView {
+    func addBorderView() {
+        let subView = UIView(frame: bounds)
+        subView.layer.cornerRadius = 5
+        subView.layer.borderWidth = 1
+        subView.layer.borderColor = UIColor(named: "silver")?.cgColor
+        subView.backgroundColor = .clear
+        subView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        insertSubview(subView, at: 0)
     }
 }
