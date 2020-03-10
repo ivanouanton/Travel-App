@@ -364,6 +364,10 @@ extension SearchViewController: PlacePreviewDelegate {
 // MARK: - OptionFilter Delegate
 
 extension SearchViewController: OptionFilterDelegate{
+    func didDeselect(with option: OptionFilterSelection) {
+        self.presenter.deselect(with: option)
+    }
+    
     func didSelected(with option: OptionFilterSelection) {
         self.presenter.getPlaces(with: option)
     }

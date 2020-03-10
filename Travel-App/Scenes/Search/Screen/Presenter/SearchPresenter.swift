@@ -43,7 +43,7 @@ class SearchPresenter{
 }
 
 extension SearchPresenter: SearchPresenterProtocol{
-    
+
     func viewDidLoad() {
         
         self.getPlaces(with: nil)
@@ -75,6 +75,10 @@ extension SearchPresenter: SearchPresenterProtocol{
                 self.view.showLoader(false)
             }
         }
+    }
+    
+    func deselect(with: OptionFilterSelection) {
+        self.getPlaces(with: nil)
     }
     
     func getTourRoute(with tour: Tour) {
