@@ -101,7 +101,7 @@ class OptionFilter: UIView {
         stack.distribution = .fillProportionally
         stack.addBorderView()
         stack.addArrangedSubview(self.visitedFilterButton)
-        stack.addArrangedSubview(self.removeMustVisitFilterButton)
+        stack.addArrangedSubview(self.removeVisitedFilterButton)
         return stack
     }()
     
@@ -176,24 +176,45 @@ class OptionFilter: UIView {
     @objc func removeFilter(sender: UIButton){
         self.delegate?.didPressedFilterButton(with: 247)
         delegate?.didDeselect(with: OptionFilterSelection.mustVisit)
+        
+        let buttons = [visitedFilterButton, mustVisitFilterButton, priceFilterButton]
+        let removeButtons = [removePriceFilterButton, removeMustVisitFilterButton, removeVisitedFilterButton]
+        
+        buttons.forEach { (button) in
+            button.isUserInteractionEnabled = true
+            button.setTitleColor(UIColor(named: "pantone"), for: .normal)
+        }
+        
+        removeButtons.forEach { (button) in
+            button.isHidden = true
+        }
     }
     
     @objc func selectedPriceFilter(){
         self.delegate?.didPressedFilterButton(with: 247)
         self.filterButton.setTitle("Filter by: Price", for: .normal)
         self.addfiterTable()
+        priceFilterButton.isUserInteractionEnabled = false
+        priceFilterButton.setTitleColor(UIColor(named: "silver"), for: .normal)
+        removePriceFilterButton.isHidden = false
     }
     
     @objc func selectedVisetedFilter(){
         self.delegate?.didPressedFilterButton(with: 190)
         self.filterButton.setTitle("Filter by: Visited", for: .normal)
          self.delegate?.didSelected(with: .visited)
+        visitedFilterButton.isUserInteractionEnabled = false
+        visitedFilterButton.setTitleColor(UIColor(named: "silver"), for: .normal)
+        removeVisitedFilterButton.isHidden = false
     }
     
     @objc func selectedMustVisitFilter(){
         self.delegate?.didPressedFilterButton(with: 190)
         self.filterButton.setTitle("Filter by: Must visit", for: .normal)
         self.delegate?.didSelected(with: .mustVisit)
+        mustVisitFilterButton.isUserInteractionEnabled = false
+        mustVisitFilterButton.setTitleColor(UIColor(named: "silver"), for: .normal)
+        removeMustVisitFilterButton.isHidden = false
     }
     
     @objc func showFilter(){
