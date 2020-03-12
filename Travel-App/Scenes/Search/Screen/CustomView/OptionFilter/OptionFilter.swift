@@ -47,16 +47,14 @@ class OptionFilter: UIView {
         return view
     }()
     
+    // MARK: - Filter buttons
+    
     private lazy var priceFilterButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Price", for: .normal)
         button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-Demi", size: 14)
         button.setTitleColor(UIColor(named: "pantone"), for: .normal)
-        button.layer.cornerRadius = 5
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor(named: "silver")?.cgColor
-        button.setBackgroundColor(color: UIColor(named: "white")!, forState: .normal)
         button.addTarget(self, action: #selector(selectedPriceFilter), for: .touchUpInside)
         return button
     }()
@@ -66,10 +64,6 @@ class OptionFilter: UIView {
         button.setTitle("Visited", for: .normal)
         button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-Demi", size: 14)
         button.setTitleColor(UIColor(named: "pantone"), for: .normal)
-        button.layer.cornerRadius = 5
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor(named: "silver")?.cgColor
-        button.setBackgroundColor(color: UIColor(named: "white")!, forState: .normal)
         button.addTarget(self, action: #selector(selectedVisetedFilter), for: .touchUpInside)
         return button
     }()
@@ -83,6 +77,30 @@ class OptionFilter: UIView {
         return button
     }()
     
+    private var removeMustVisitFilterButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "close"), for: .normal)
+        button.isHidden = true
+        button.addTarget(self, action: #selector(removeFilter), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var removeVisitedFilterButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "close"), for: .normal)
+        button.isHidden = true
+        button.addTarget(self, action: #selector(removeFilter), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var removePriceFilterButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "close"), for: .normal)
+        button.isHidden = true
+        button.addTarget(self, action: #selector(removeFilter), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var mustVisitStackView: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -90,7 +108,7 @@ class OptionFilter: UIView {
         stack.distribution = .fillProportionally
         stack.addBorderView()
         stack.addArrangedSubview(self.mustVisitFilterButton)
-        stack.addArrangedSubview(self.removeVisitedFilterButton)
+        stack.addArrangedSubview(self.removeMustVisitFilterButton)
         return stack
     }()
     
@@ -146,34 +164,10 @@ class OptionFilter: UIView {
         table.delegate = self
         return table
     }()
-    
-    private lazy var removeMustVisitFilterButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "close"), for: .normal)
-        button.isHidden = true
-        button.addTarget(self, action: #selector(removeFilter), for: .touchUpInside)
-        return button
-    }()
-    
-    private lazy var removeVisitedFilterButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "close"), for: .normal)
-        button.isHidden = true
-        button.addTarget(self, action: #selector(removeFilter), for: .touchUpInside)
-        return button
-    }()
-    
-    private lazy var removePriceFilterButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(named: "close"), for: .normal)
-        button.isHidden = true
-        button.addTarget(self, action: #selector(removeFilter), for: .touchUpInside)
-        return button
-    }()
-    
+
     // MARK: - Methods
     
-    @objc func removeFilter(sender: UIButton){
+    @objc func removeFilter(){
         self.delegate?.didPressedFilterButton(with: 247)
         delegate?.didDeselect(with: OptionFilterSelection.mustVisit)
         
@@ -191,30 +185,33 @@ class OptionFilter: UIView {
     }
     
     @objc func selectedPriceFilter(){
+        removeFilter()
         self.delegate?.didPressedFilterButton(with: 247)
         self.filterButton.setTitle("Filter by: Price", for: .normal)
         self.addfiterTable()
+        removePriceFilterButton.isHidden = false
         priceFilterButton.isUserInteractionEnabled = false
         priceFilterButton.setTitleColor(UIColor(named: "silver"), for: .normal)
-        removePriceFilterButton.isHidden = false
     }
     
     @objc func selectedVisetedFilter(){
+        removeFilter()
         self.delegate?.didPressedFilterButton(with: 190)
         self.filterButton.setTitle("Filter by: Visited", for: .normal)
          self.delegate?.didSelected(with: .visited)
+        removeVisitedFilterButton.isHidden = false
         visitedFilterButton.isUserInteractionEnabled = false
         visitedFilterButton.setTitleColor(UIColor(named: "silver"), for: .normal)
-        removeVisitedFilterButton.isHidden = false
     }
     
     @objc func selectedMustVisitFilter(){
+        removeFilter()
         self.delegate?.didPressedFilterButton(with: 190)
         self.filterButton.setTitle("Filter by: Must visit", for: .normal)
         self.delegate?.didSelected(with: .mustVisit)
+        removeMustVisitFilterButton.isHidden = false
         mustVisitFilterButton.isUserInteractionEnabled = false
         mustVisitFilterButton.setTitleColor(UIColor(named: "silver"), for: .normal)
-        removeMustVisitFilterButton.isHidden = false
     }
     
     @objc func showFilter(){
