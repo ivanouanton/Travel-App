@@ -101,6 +101,8 @@ final class SearchViewController: UIViewController{
         button.shadowRadius = 3.0
         button.shadowOpacity = 0.4
         
+        button.isHidden = true
+        
         button.addTarget(self, action: #selector(returnToTour), for: .touchUpInside)
         return button
     }()
@@ -191,7 +193,12 @@ extension SearchViewController{
     // MARK: - Methods
     
     @objc func returnToTour() {
-        
+        UIView.animate(withDuration: 0.25) {
+            self.tourViewBottom.isActive = true
+            self.tourViewTop.isActive = false
+            self.backToTourButton.isHidden = true
+            self.view.layoutIfNeeded()
+        }
     }
         
     @objc func setupPreferences(){
@@ -223,6 +230,7 @@ extension SearchViewController{
         UIView.animate(withDuration: 0.25) {
             self.tourViewBottom.isActive = false
             self.tourViewTop.isActive = true
+            self.backToTourButton.isHidden = false
             self.view.layoutIfNeeded()
         }
     }
