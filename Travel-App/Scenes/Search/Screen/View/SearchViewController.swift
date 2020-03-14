@@ -107,6 +107,19 @@ final class SearchViewController: UIViewController{
         return button
     }()
     
+    private lazy var removeBtn: UIBarButtonItem = {
+        let btn1 = UIButton()
+        btn1.setImage(UIImage(named: "close"), for: .normal)
+        btn1.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        btn1.addTarget(self, action: #selector(removeRoute), for: .touchUpInside)
+        return UIBarButtonItem(customView: btn1)
+    }()
+    
+//    let removeBtn = UIBarButtonItem(image: UIImage(named: "close"), style: .plain, target: self, action:#selector(removeRoute))
+    
+    
+
+    
     // MARK: - Life Cycle
     
     override func loadView() {
@@ -191,6 +204,13 @@ extension SearchViewController{
     }
     
     // MARK: - Methods
+    
+    @objc func removeRoute() {
+        self.polyline?.map = nil
+        self.hideTourView()
+        self.backToTourButton.isHidden = true
+        self.navigationItem.rightBarButtonItem  = nil
+    }
     
     @objc func returnToTour() {
         UIView.animate(withDuration: 0.25) {
@@ -304,6 +324,7 @@ extension SearchViewController: SearchViewProtocol{
     }
     
     func drawPath(with routes: String?) {
+        self.navigationItem.rightBarButtonItem  = removeBtn
         
         let path = GMSPath.init(fromEncodedPath: routes ?? "")
         self.polyline?.map = nil
