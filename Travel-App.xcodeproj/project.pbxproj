@@ -72,6 +72,7 @@
 		F77D501823C3D1BE00E89E67 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77D501623C3D1BE00E89E67 /* SplashScreenViewController.swift */; };
 		F77D501923C3D1BE00E89E67 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D501723C3D1BE00E89E67 /* SplashScreenViewController.xib */; };
 		F77F22462392E816004610CE /* Extension+CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77F22452392E816004610CE /* Extension+CALayer.swift */; };
+		F77FD48A241D5A75009E94C3 /* ButtonWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77FD489241D5A75009E94C3 /* ButtonWithImage.swift */; };
 		F780A4C523C3DBB300A9A375 /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780A4C423C3DBB300A9A375 /* SplashScreenPresenter.swift */; };
 		F780A4C723C3DFF600A9A375 /* AuthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780A4C623C3DFF600A9A375 /* AuthStatus.swift */; };
 		F780A4CB23C4F4EB00A9A375 /* FirebaseProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780A4CA23C4F4EB00A9A375 /* FirebaseProfileManager.swift */; };
@@ -234,6 +235,7 @@
 		F77D501723C3D1BE00E89E67 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SplashScreenViewController.xib; path = "Travel-App/Scenes/Splash/SplashScreenViewController.xib"; sourceTree = SOURCE_ROOT; };
 		F77F22442392DB6A004610CE /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		F77F22452392E816004610CE /* Extension+CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension+CALayer.swift"; path = "Travel-App/Utility/Extension+CALayer.swift"; sourceTree = SOURCE_ROOT; };
+		F77FD489241D5A75009E94C3 /* ButtonWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ButtonWithImage.swift; path = "Travel-App/ButtonWithImage.swift"; sourceTree = SOURCE_ROOT; };
 		F780A4C423C3DBB300A9A375 /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
 		F780A4C623C3DFF600A9A375 /* AuthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStatus.swift; sourceTree = SOURCE_ROOT; };
 		F780A4CA23C4F4EB00A9A375 /* FirebaseProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseProfileManager.swift; path = "Travel-App/FirebaseProfileManager.swift"; sourceTree = SOURCE_ROOT; };
@@ -375,6 +377,7 @@
 			children = (
 				3A55496F23F2DF3200323956 /* ResetEmailView */,
 				3A55497423F2DF9D00323956 /* Sussessful View */,
+				F77FD489241D5A75009E94C3 /* ButtonWithImage.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -1192,6 +1195,7 @@
 				F7ADAA7123D460CE009ECAEE /* AgreementDelegate.swift in Sources */,
 				F735911523F00DDA00204703 /* PreferenceBoardPresenterProtocol.swift in Sources */,
 				F7ADAA6823CB2156009ECAEE /* AgreementViewController.swift in Sources */,
+				F77FD48A241D5A75009E94C3 /* ButtonWithImage.swift in Sources */,
 				F735911723F00EF100204703 /* PreferenceBoardViewProtocol.swift in Sources */,
 				3A4EE37823E2CF5C00673BB4 /* PlaceCategory.swift in Sources */,
 				F77D501323C1F08100E89E67 /* Utilities.swift in Sources */,
