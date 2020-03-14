@@ -26,7 +26,10 @@ final class SearchViewController: UIViewController{
     
     var tour: Tour? {
         didSet{
-            guard let tour = tour else {return}
+            guard let tour = tour else {
+                self.placesCollection.isTourCreated = false
+                return
+            }
             self.presenter.getTourRoute(with: tour)
             showTourInfo()
             self.placesCollection.isTourCreated = true
@@ -153,9 +156,9 @@ extension SearchViewController{
         self.view.addSubview(self.mapView)
         self.view.addSubview(self.createTourButton)
         self.view.addSubview(self.filterView)
+        self.view.addSubview(self.backToTourButton)
         self.view.addSubview(self.placesCollection)
         self.view.addSubview(self.tourInfoView)
-        self.view.addSubview(self.backToTourButton)
     }
     
     func setupConstraints(){
@@ -206,6 +209,7 @@ extension SearchViewController{
     // MARK: - Methods
     
     @objc func removeRoute() {
+        self.tour = nil
         self.polyline?.map = nil
         self.hideTourView()
         self.backToTourButton.isHidden = true
