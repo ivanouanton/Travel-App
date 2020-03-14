@@ -11,4 +11,5 @@ import UIKit
 protocol OptionFilterDelegate: class {
     func didPressedFilterButton(with activeFilterHeight: CGFloat)
     func didSelected(with option: OptionFilterSelection)
+    func didDeselect(with option: OptionFilterSelection)
 }

@@ -33,10 +33,7 @@ class CategoryFilter: UIView {
         collection.backgroundColor = .clear
         collection.delegate = self
         collection.dataSource = self
-        collection.contentInset = UIEdgeInsets(top: 0,
-                                               left: 10,
-                                               bottom: 0,
-                                               right: 0)
+        collection.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         collection.showsHorizontalScrollIndicator = false
         collection.allowsMultipleSelection = false
 

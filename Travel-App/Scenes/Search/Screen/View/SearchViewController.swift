@@ -98,7 +98,7 @@ final class SearchViewController: UIViewController{
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         self.presenter.viewDidLoad()
-        self.presenter.fetchUserLocation()
+//        self.presenter.fetchUserLocation()
         self.title = "Rome"
     }
     
@@ -364,6 +364,10 @@ extension SearchViewController: PlacePreviewDelegate {
 // MARK: - OptionFilter Delegate
 
 extension SearchViewController: OptionFilterDelegate{
+    func didDeselect(with option: OptionFilterSelection) {
+        self.presenter.deselect(with: option)
+    }
+    
     func didSelected(with option: OptionFilterSelection) {
         self.presenter.getPlaces(with: option)
     }
