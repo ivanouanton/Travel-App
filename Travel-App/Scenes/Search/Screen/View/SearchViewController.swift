@@ -84,6 +84,20 @@ final class SearchViewController: UIViewController{
         return view
     }()
     
+    private lazy var backToTourButton: ButtonWithImage = {
+        let button = ButtonWithImage()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 22
+        button.backgroundColor = UIColor(named: "white")
+        button.setTitle("Show tour detail", for: .normal)
+        button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-Regular", size: 16)
+        button.contentHorizontalAlignment = .left
+        button.setTitleColor(UIColor(named: "silver"), for: .normal)
+        button.setImage(UIImage(named: "cell-action-icon"), for: .normal)
+        button.addTarget(self, action: #selector(returnToTour), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - Life Cycle
     
     override func loadView() {
@@ -119,6 +133,7 @@ extension SearchViewController{
         self.view.addSubview(self.filterView)
         self.view.addSubview(self.placesCollection)
         self.view.addSubview(self.tourInfoView)
+        self.view.addSubview(self.backToTourButton)
     }
     
     func setupConstraints(){
@@ -156,11 +171,21 @@ extension SearchViewController{
             self.tourViewTop,
             
             self.createTourButton.topAnchor.constraint(equalTo: self.categoryView.bottomAnchor, constant: 72),
-            self.createTourButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16)
+            self.createTourButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
+            
+            self.backToTourButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            self.backToTourButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 55),
+            self.backToTourButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.backToTourButton.heightAnchor.constraint(equalToConstant: 44)
+            
             ])
     }
     
     // MARK: - Methods
+    
+    @objc func returnToTour() {
+        
+    }
         
     @objc func setupPreferences(){
         self.navigationController?.pushViewController(ViewFactory.createSettingsTourVC(), animated: true)
