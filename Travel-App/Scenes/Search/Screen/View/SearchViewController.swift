@@ -87,13 +87,20 @@ final class SearchViewController: UIViewController{
     private lazy var backToTourButton: ButtonWithImage = {
         let button = ButtonWithImage()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 22
-        button.backgroundColor = UIColor(named: "white")
+        button.setBackgroundColor(color: UIColor(named: "white")!, forState: .normal)
+        button.setBackgroundColor(color: UIColor(named: "white")!.withAlphaComponent(0.9), forState: .highlighted)
         button.setTitle("Show tour detail", for: .normal)
         button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-Regular", size: 16)
         button.contentHorizontalAlignment = .left
         button.setTitleColor(UIColor(named: "silver"), for: .normal)
         button.setImage(UIImage(named: "cell-action-icon"), for: .normal)
+        
+        button.layer.cornerRadius = 22
+        button.shadowColor = UIColor.black
+        button.shadowOffset = CGSize(width: 0, height: 0)
+        button.shadowRadius = 3.0
+        button.shadowOpacity = 0.4
+        
         button.addTarget(self, action: #selector(returnToTour), for: .touchUpInside)
         return button
     }()
