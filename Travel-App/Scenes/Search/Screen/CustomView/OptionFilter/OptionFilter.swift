@@ -31,7 +31,7 @@ class OptionFilter: UIView {
     private lazy var filterButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Places filter", for: .normal)
+        button.setTitle("Filter places", for: .normal)
         button.titleLabel?.font = UIFont(name: "AvenirNextLTPro-Demi", size: 14)
         button.setTitleColor(UIColor(named: "white"), for: .normal)
         button.setBackgroundColor(color: UIColor(named: "pantone")!, forState: .normal)
@@ -190,7 +190,6 @@ class OptionFilter: UIView {
         self.filterButton.setTitle("Filter by: Price", for: .normal)
         self.addfiterTable()
         removePriceFilterButton.isHidden = false
-        priceFilterButton.isUserInteractionEnabled = false
         priceFilterButton.setTitleColor(UIColor(named: "silver"), for: .normal)
     }
     
