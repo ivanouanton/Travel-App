@@ -24,6 +24,8 @@ final class SearchViewController: UIViewController{
     
     private var polyline: GMSPolyline?
     
+    private var markers = [GMSMarker]()
+    
     var tour: Tour? {
         didSet{
             guard let tour = tour else {
@@ -118,11 +120,6 @@ final class SearchViewController: UIViewController{
         return UIBarButtonItem(customView: btn1)
     }()
     
-//    let removeBtn = UIBarButtonItem(image: UIImage(named: "close"), style: .plain, target: self, action:#selector(removeRoute))
-    
-    
-
-    
     // MARK: - Life Cycle
     
     override func loadView() {
@@ -143,6 +140,26 @@ final class SearchViewController: UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    // MARK: - Private methods
+    
+    private func setDefaultSizeForMarkers() {
+        markers.forEach { $0.icon = $0.icon!.scaledToSize(newSize: CGSize(width: 50.0, height: 50.0)) }// = self.imageWithImage(image: $0.icon!, scaledToSize: CGSize(width: 50.0, height: 50.0)) }
+    }
+    
+    private func select(markerId: String) {
+        self.setDefaultSizeForMarkers()
+        guard let marker = markers.first(where: {$0.title == markerId}) else { return }
+        marker.icon = self.imageWithImage(image: marker.icon!, scaledToSize: CGSize(width: 80.0, height: 80.0))
+    }
+    
+    private func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
+        image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return newImage
     }
 }
 
@@ -316,6 +333,7 @@ extension SearchViewController: SearchViewProtocol{
     }
     
     func clearMarkers() {
+        markers.removeAll()
         mapView.clear()
     }
     
@@ -342,10 +360,13 @@ extension SearchViewController: SearchViewProtocol{
         let position = CLLocationCoordinate2D(latitude: place.locationPlace.latitude,
                                               longitude: place.locationPlace.longitude)
         let marker = GMSMarker(position: position)
-        marker.icon = markerImg
+        if let img: UIImage = markerImg {
+            marker.icon = img.scaledToSize(newSize: CGSize(width: 50.0, height: 50.0))
+        }
         marker.opacity = isActive ? 1 : 0.2
         marker.map = mapView
         marker.title = id
+        markers.append(marker)
     }
     
     func didChangeMyLocation(_ location: Location) {
@@ -358,8 +379,8 @@ extension SearchViewController: SearchViewProtocol{
 // MARK: - GMSMap Delegate
 
 extension SearchViewController: GMSMapViewDelegate {
-    
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        self.select(markerId: marker.title ?? "")
         self.showModalDescription(with: marker.title ?? "")
         return true
     }
@@ -379,6 +400,8 @@ extension SearchViewController: PlacePreviewDelegate {
     func didSelect(with place: Place) {
         self.didChangeMyLocation(Location(latitude: place.locationPlace.latitude,
                                           longitude: place.locationPlace.longitude))
+        
+        self.select(markerId: place.id ?? "")
     }
     
     func addPlace(with id: String) {
