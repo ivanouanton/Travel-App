@@ -145,21 +145,14 @@ final class SearchViewController: UIViewController{
     // MARK: - Private methods
     
     private func setDefaultSizeForMarkers() {
-        markers.forEach { $0.icon = $0.icon!.scaledToSize(newSize: CGSize(width: 50.0, height: 50.0)) }// = self.imageWithImage(image: $0.icon!, scaledToSize: CGSize(width: 50.0, height: 50.0)) }
+        markers.forEach { $0.icon = $0.icon!.scaledToSize(newSize: CGSize(width: 50.0, height: 50.0)) }
     }
     
     private func select(markerId: String) {
         self.setDefaultSizeForMarkers()
+        
         guard let marker = markers.first(where: {$0.title == markerId}) else { return }
-        marker.icon = self.imageWithImage(image: marker.icon!, scaledToSize: CGSize(width: 80.0, height: 80.0))
-    }
-    
-    private func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
-        image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
-        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return newImage
+        marker.icon = marker.icon?.scaledToSize(newSize: CGSize(width: 80.0, height: 80.0))
     }
 }
 
@@ -432,6 +425,7 @@ extension SearchViewController: PlacePreviewDelegate {
         guard let location = place.location else { return }
         self.didChangeMyLocation(Location(latitude: location.latitude,
                                           longitude: location.longitude))
+        self.select(markerId: place.id)
     }
     
     func getInfoPlace(with data: Place, image: UIImage?, category: String) {
