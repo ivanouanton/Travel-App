@@ -78,7 +78,6 @@ extension CategoryFilter: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) as! CategoryFilterCell
         cell.title = indexPath.item == 0 ? "All" : self.categories[indexPath.item - 1].getName()
-//        cell.title = self.categories[indexPath.item].getName()
         cell.configureCell()
         return cell
     }
