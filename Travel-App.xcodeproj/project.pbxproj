@@ -31,6 +31,7 @@
 		F704B3FA23B7F7340090DD6F /* PlacesCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F704B3F923B7F7340090DD6F /* PlacesCollectionView.xib */; };
 		F704B3FC23B889AF0090DD6F /* CarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F704B3FB23B889AF0090DD6F /* CarouselFlowLayout.swift */; };
 		F705253423B4105300E05528 /* OptionFilterSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F705253323B4105300E05528 /* OptionFilterSelection.swift */; };
+		F707D3A82422685D00D62727 /* UIImage+Extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F707D3A72422685D00D62727 /* UIImage+Extesion.swift */; };
 		F70DB818239B169B00D48EC6 /* SettingOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70DB816239B169B00D48EC6 /* SettingOptionTableViewCell.swift */; };
 		F70DB819239B169B00D48EC6 /* SettingOptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70DB817239B169B00D48EC6 /* SettingOptionTableViewCell.xib */; };
 		F71ACDEB238B41E60092279F /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71ACDEA238B41E60092279F /* Place.swift */; };
@@ -192,6 +193,7 @@
 		F704B3F923B7F7340090DD6F /* PlacesCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesCollectionView.xib; sourceTree = "<group>"; };
 		F704B3FB23B889AF0090DD6F /* CarouselFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselFlowLayout.swift; sourceTree = "<group>"; };
 		F705253323B4105300E05528 /* OptionFilterSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OptionFilterSelection.swift; path = "Travel-App/Scenes/Search/Screen/CustomView/OptionFilter/OptionFilterSelection.swift"; sourceTree = SOURCE_ROOT; };
+		F707D3A72422685D00D62727 /* UIImage+Extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extesion.swift"; sourceTree = "<group>"; };
 		F70DB813239AFB7500D48EC6 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppButton.swift; path = "Travel-App/Utility/AppButton.swift"; sourceTree = SOURCE_ROOT; };
 		F70DB816239B169B00D48EC6 /* SettingOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionTableViewCell.swift; sourceTree = "<group>"; };
 		F70DB817239B169B00D48EC6 /* SettingOptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingOptionTableViewCell.xib; sourceTree = "<group>"; };
@@ -602,6 +604,7 @@
 				F7ADAA6C23D09B81009ECAEE /* UIView+Extension.swift */,
 				3A23585023F6733C00105111 /* UIImageView+Extension.swift */,
 				3ABC3EB623F6C0810060EE61 /* Notification+Extension.swift */,
+				F707D3A72422685D00D62727 /* UIImage+Extesion.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -1147,6 +1150,7 @@
 				F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */,
 				F7CA366923925DC9005F7C57 /* CategoryFilterCell.swift in Sources */,
 				F7570AA0238AE8F300621E4F /* Configuration.swift in Sources */,
+				F707D3A82422685D00D62727 /* UIImage+Extesion.swift in Sources */,
 				F72EFE44239EF618008081E1 /* TourInfoView.swift in Sources */,
 				F77C179223AAD3C4009D2D69 /* UIViewController+Extension.swift in Sources */,
 				F73E166C23E0CC6D0001AB56 /* PlaceTableViewCell.swift in Sources */,
