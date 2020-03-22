@@ -113,6 +113,8 @@
 		F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */; };
 		F79FCA2823847ED2009F1693 /* AvenirNextLTPro-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2423847ED2009F1693 /* AvenirNextLTPro-Demi.otf */; };
 		F79FCA2923847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf in Resources */ = {isa = PBXBuildFile; fileRef = F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */; };
+		F7A94AF72427C787001918BF /* MarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A94AF62427C787001918BF /* MarkerView.swift */; };
+		F7A94AF92427C79F001918BF /* MarkerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A94AF82427C79F001918BF /* MarkerView.xib */; };
 		F7AC996623EE005A0046E2B3 /* SpringboardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC996523EE005A0046E2B3 /* SpringboardData.swift */; };
 		F7AC996823EE00DB0046E2B3 /* TPGAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC996723EE00DA0046E2B3 /* TPGAudioPlayer.swift */; };
 		F7AC996A23EE01880046E2B3 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC996923EE01880046E2B3 /* Notifications.swift */; };
@@ -277,6 +279,8 @@
 		F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-HeavyCn.otf"; sourceTree = "<group>"; };
 		F79FCA2423847ED2009F1693 /* AvenirNextLTPro-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Demi.otf"; sourceTree = "<group>"; };
 		F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-UltLtCn.otf"; sourceTree = "<group>"; };
+		F7A94AF62427C787001918BF /* MarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MarkerView.swift; path = "Travel-App/Scenes/Search/Screen/CustomView/MarkerView.swift"; sourceTree = SOURCE_ROOT; };
+		F7A94AF82427C79F001918BF /* MarkerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarkerView.xib; sourceTree = "<group>"; };
 		F7AC995D23EDFFD10046E2B3 /* iOSAudioPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSAudioPlayer.xcodeproj; path = "../../Downloads/ios-audio-player-master-2/Framework/iOSAudioPlayer/iOSAudioPlayer.xcodeproj"; sourceTree = "<group>"; };
 		F7AC996523EE005A0046E2B3 /* SpringboardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringboardData.swift; sourceTree = "<group>"; };
 		F7AC996723EE00DA0046E2B3 /* TPGAudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPGAudioPlayer.swift; sourceTree = "<group>"; };
@@ -656,6 +660,7 @@
 		F7958CCD238B0CD8007688F8 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				F7A94AF42427C75D001918BF /* Marker View */,
 				F72B7C0F23A6636C009155D4 /* CategoryFilter */,
 				F72B7C0E23A66307009155D4 /* PlaceInfo */,
 				F72B7C1023A66A00009155D4 /* TourInfo */,
@@ -796,6 +801,15 @@
 				F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F7A94AF42427C75D001918BF /* Marker View */ = {
+			isa = PBXGroup;
+			children = (
+				F7A94AF62427C787001918BF /* MarkerView.swift */,
+				F7A94AF82427C79F001918BF /* MarkerView.xib */,
+			);
+			path = "Marker View";
 			sourceTree = "<group>";
 		};
 		F7AC995E23EDFFD10046E2B3 /* Products */ = {
@@ -1021,6 +1035,7 @@
 			files = (
 				F70DB819239B169B00D48EC6 /* SettingOptionTableViewCell.xib in Resources */,
 				F72EFE49239EF62C008081E1 /* TourInfoView.xib in Resources */,
+				F7A94AF92427C79F001918BF /* MarkerView.xib in Resources */,
 				F7DFCE3623C662B5002A95C7 /* SettingTableViewCell.xib in Resources */,
 				3A55497323F2DF9400323956 /* SuccessfulChangePassView.xib in Resources */,
 				F77879F723C7DA01002F2052 /* circleLoader.json in Resources */,
@@ -1127,6 +1142,7 @@
 				F7C7A1AA238B30CD00C33FE4 /* GoogleApiService.swift in Sources */,
 				F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */,
 				F7EF6921239BC1310004EF4E /* ToursPresenterProtocol.swift in Sources */,
+				F7A94AF72427C787001918BF /* MarkerView.swift in Sources */,
 				F7CF8D312396FF2100119B60 /* InterestsCollectionViewCell.swift in Sources */,
 				F7DFCE3523C662B5002A95C7 /* SettingTableViewCell.swift in Sources */,
 				F73E166F23E0CFE70001AB56 /* SelfSizedTableView.swift in Sources */,

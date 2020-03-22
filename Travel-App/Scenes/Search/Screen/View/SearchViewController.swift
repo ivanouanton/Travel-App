@@ -145,14 +145,15 @@ final class SearchViewController: UIViewController{
     // MARK: - Private methods
     
     private func setDefaultSizeForMarkers() {
-        markers.forEach { $0.icon = $0.icon!.scaledToSize(newSize: CGSize(width: 50.0, height: 50.0)) }
+        markers.forEach { ($0.iconView as! MarkerView).state = .default }
     }
     
     private func select(markerId: String) {
         self.setDefaultSizeForMarkers()
         
         guard let marker = markers.first(where: {$0.title == markerId}) else { return }
-        marker.icon = marker.icon?.scaledToSize(newSize: CGSize(width: 80.0, height: 80.0))
+        let iconView = marker.iconView as! MarkerView
+        iconView.state = .selected
     }
 }
 
@@ -289,6 +290,7 @@ extension SearchViewController{
         }
         
         self.navigationItem.leftBarButtonItem = nil
+        setDefaultSizeForMarkers()
     }
 }
 
@@ -349,16 +351,17 @@ extension SearchViewController: SearchViewProtocol{
         self.polyline?.map = self.mapView
     }
 
-    func addMarker(_ id: String, place: Place, markerImg: UIImage?, isActive: Bool) {
+    func addMarker(_ id: String, place: Place, isActive: Bool) {
         let position = CLLocationCoordinate2D(latitude: place.locationPlace.latitude,
                                               longitude: place.locationPlace.longitude)
         let marker = GMSMarker(position: position)
-        if let img: UIImage = markerImg {
-            marker.icon = img.scaledToSize(newSize: CGSize(width: 50.0, height: 50.0))
-        }
+
         marker.opacity = isActive ? 1 : 0.2
         marker.map = mapView
         marker.title = id
+        let view = MarkerView()
+        view.category = place.category
+        marker.iconView = view
         markers.append(marker)
     }
     

@@ -36,7 +36,6 @@ class SearchPresenter{
         for place in self.places {
             self.view.addMarker(place.id!,
                                 place: place,
-                                markerImg: place.category.getMarker(),
                                 isActive: true)
         }
     }
@@ -123,8 +122,7 @@ extension SearchPresenter: SearchPresenterProtocol{
         self.view.clearMarkers()
         self.places.forEach { (place) in
             let needShow = place.category == category
-            print(needShow)
-            self.view.addMarker(place.id!, place: place, markerImg: place.category.getMarker(), isActive: needShow)
+            self.view.addMarker(place.id!, place: place, isActive: needShow)
         }
     }
     
