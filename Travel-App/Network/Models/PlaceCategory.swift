@@ -31,19 +31,19 @@ extension PlaceCategory {
         
         switch self {
         case .parks:
-            imageName = "landmark"
+            imageName = "parks-ctg"
         case .culturalsites:
             imageName = "landmark"
         case .museums:
-            imageName = "landmark"
+            imageName = "museum-ctg"
         case .shopping:
-            imageName = "landmark"
+            imageName = "shops-ctg"
         case .cityviews:
-            imageName = "landmark"
+            imageName = "cityviews-ctg"
         case .restaurants:
-            imageName = "landmark"
+            imageName = "restaurants-cafes-ctg"
         case .churches:
-            imageName = "landmark"
+            imageName = "churches-ctg"
         }
         
         return UIImage(named: imageName)!
