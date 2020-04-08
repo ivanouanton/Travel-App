@@ -169,7 +169,7 @@ class OptionFilter: UIView {
     
     @objc func removeFilter(){
         self.delegate?.didPressedFilterButton(with: 247)
-        delegate?.didDeselect(with: OptionFilterSelection.mustVisit)
+//        delegate?.didDeselect(with: OptionFilterSelection.mustVisit)
         
         let buttons = [visitedFilterButton, mustVisitFilterButton, priceFilterButton]
         let removeButtons = [removePriceFilterButton, removeMustVisitFilterButton, removeVisitedFilterButton]
