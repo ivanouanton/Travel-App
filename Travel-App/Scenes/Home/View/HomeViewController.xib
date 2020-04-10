@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Travel_App" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="TravelApp" customModuleProvider="target">
             <connections>
                 <outlet property="categoryFilterView" destination="0VD-bx-Vvp" id="biw-gF-Cbz"/>
                 <outlet property="closeSearchingButton" destination="Cz3-YR-gWf" id="jki-EP-zkt"/>
@@ -25,10 +25,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="HGi-mn-ivG">
-                    <rect key="frame" x="68" y="105" width="278" height="80"/>
+                    <rect key="frame" x="-493" y="105" width="1400" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="lfn-gl-tS0"/>
+                    </constraints>
                 </imageView>
                 <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ukj-qD-TP7">
-                    <rect key="frame" x="0.0" y="202" width="414" height="56"/>
+                    <rect key="frame" x="0.0" y="162" width="414" height="56"/>
                     <color key="backgroundColor" name="white"/>
                     <color key="barTintColor" name="white"/>
                     <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
@@ -50,22 +53,22 @@
                         <outlet property="delegate" destination="-1" id="ZeK-Ug-IQB"/>
                     </connections>
                 </searchBar>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-bx-Vvp" customClass="CategoriesFilterView" customModule="Travel_App" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="282" width="414" height="82"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-bx-Vvp" customClass="CategoriesFilterView" customModule="TravelApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="242" width="414" height="82"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="82" id="tVS-Mz-0Ua"/>
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="95T-ev-HXj">
-                    <rect key="frame" x="16" y="388" width="382" height="474"/>
+                    <rect key="frame" x="16" y="348" width="382" height="514"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="228" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxz-sQ-Z6a" customClass="SelfSizedTableView" customModule="Travel_App" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="259" width="414" height="228"/>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="228" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxz-sQ-Z6a" customClass="SelfSizedTableView" customModule="TravelApp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="219" width="414" height="228"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="jZA-TA-8e9"/>
@@ -73,7 +76,7 @@
                     </connections>
                 </tableView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cz3-YR-gWf">
-                    <rect key="frame" x="16" y="158" width="30" height="28"/>
+                    <rect key="frame" x="16" y="118" width="30" height="28"/>
                     <state key="normal" image="close">
                         <color key="titleColor" name="heavy"/>
                         <color key="titleShadowColor" name="heavy"/>
@@ -109,7 +112,7 @@
     </objects>
     <resources>
         <image name="close" width="15" height="14"/>
-        <image name="logo" width="139" height="40"/>
+        <image name="logo" width="700" height="208"/>
         <namedColor name="heavy">
             <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

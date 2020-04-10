@@ -278,7 +278,7 @@ extension SearchViewController{
         }
         
         let closeBarButtonItem = UIBarButtonItem(image: UIImage(named: "close"), style: .plain, target: self, action:#selector(hideModalDescription))
-        closeBarButtonItem.tintColor = UIColor(named: "silver")
+//        closeBarButtonItem.tintColor = UIColor(named: "silver")
         self.navigationItem.leftBarButtonItem  = closeBarButtonItem
     }
     
