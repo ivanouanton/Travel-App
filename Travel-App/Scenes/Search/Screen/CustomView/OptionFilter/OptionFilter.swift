@@ -168,9 +168,13 @@ class OptionFilter: UIView {
     // MARK: - Methods
     
     @objc func removeFilter(){
-        self.delegate?.didPressedFilterButton(with: 247)
-//        delegate?.didDeselect(with: OptionFilterSelection.mustVisit)
-        
+        delegate?.didDeselect(with: OptionFilterSelection.mustVisit)
+        self.filterButton.setTitle("Filter places", for: .normal)
+
+        setDefaultState()
+    }
+    
+    func setDefaultState() {
         let buttons = [visitedFilterButton, mustVisitFilterButton, priceFilterButton]
         let removeButtons = [removePriceFilterButton, removeMustVisitFilterButton, removeVisitedFilterButton]
         
@@ -185,7 +189,7 @@ class OptionFilter: UIView {
     }
     
     @objc func selectedPriceFilter(){
-        removeFilter()
+        setDefaultState()
         self.delegate?.didPressedFilterButton(with: 247)
         self.filterButton.setTitle("Filter by: Price", for: .normal)
         self.addfiterTable()
@@ -194,7 +198,7 @@ class OptionFilter: UIView {
     }
     
     @objc func selectedVisetedFilter(){
-        removeFilter()
+        setDefaultState()
         self.delegate?.didPressedFilterButton(with: 190)
         self.filterButton.setTitle("Filter by: Visited", for: .normal)
          self.delegate?.didSelected(with: .visited)
@@ -204,7 +208,7 @@ class OptionFilter: UIView {
     }
     
     @objc func selectedMustVisitFilter(){
-        removeFilter()
+        setDefaultState()
         self.delegate?.didPressedFilterButton(with: 190)
         self.filterButton.setTitle("Filter by: Must visit", for: .normal)
         self.delegate?.didSelected(with: .mustVisit)

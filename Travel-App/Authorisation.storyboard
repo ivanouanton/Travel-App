@@ -20,21 +20,21 @@
         <!--Auth View Controller-->
         <scene sceneID="3IH-xq-YdH">
             <objects>
-                <viewController storyboardIdentifier="AuthViewController" id="SOa-4C-IwB" customClass="AuthViewController" customModule="Travel_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AuthViewController" id="SOa-4C-IwB" customClass="AuthViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i54-A7-ew3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NfU-DU-l0x" customClass="CustomTextField" customModule="Travel_App" customModuleProvider="target">
-                                <rect key="frame" x="16" y="284" width="288" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NfU-DU-l0x" customClass="CustomTextField" customModule="TravelApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="317" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="AuU-eJ-TI8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="arq-fe-eXi" customClass="CustomTextField" customModule="Travel_App" customModuleProvider="target">
-                                <rect key="frame" x="16" y="330" width="288" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="arq-fe-eXi" customClass="CustomTextField" customModule="TravelApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="363" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="tad-mi-Soe"/>
                                 </constraints>
@@ -50,10 +50,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ULl-yR-DgX">
-                                <rect key="frame" x="16" y="392" width="288" height="44"/>
+                                <rect key="frame" x="16" y="441" width="343" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PP-A1-tDS">
-                                        <rect key="frame" x="0.0" y="0.0" width="136" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="163.5" height="44"/>
                                         <color key="backgroundColor" red="0.078431372550000003" green="0.29411764709999999" blue="0.43137254899999999" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
                                         <state key="normal" title="Sign In">
@@ -70,7 +70,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSc-pc-3d0">
-                                        <rect key="frame" x="152" y="0.0" width="136" height="44"/>
+                                        <rect key="frame" x="179.5" y="0.0" width="163.5" height="44"/>
                                         <color key="backgroundColor" name="white"/>
                                         <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
                                         <state key="normal" title="Sign Up">
@@ -106,23 +106,23 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Sign in to Your Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DO-Sl-F4C">
-                                <rect key="frame" x="25.5" y="228" width="269.5" height="0.0"/>
+                                <rect key="frame" x="53" y="248" width="269.5" height="33"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="bj1-5C-4cP">
-                                <rect key="frame" x="16" y="460" width="288" height="84"/>
+                                <rect key="frame" x="16" y="559" width="343" height="84"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GcO-0B-7b2" customClass="GIDSignInButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="eyR-5n-Fjs"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltY-Yy-Nyi" customClass="FacebookButton" customModule="Travel_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44" width="288" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltY-Yy-Nyi" customClass="FacebookButton" customModule="TravelApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44" width="343" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Gc2-Ms-JNJ"/>
                                         </constraints>
@@ -134,11 +134,11 @@
                                     <constraint firstItem="ltY-Yy-Nyi" firstAttribute="centerX" secondItem="bj1-5C-4cP" secondAttribute="centerX" id="OBV-By-kEJ"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="ligo-title" translatesAutoresizingMaskIntoConstraints="NO" id="z0x-dL-4rS">
-                                <rect key="frame" x="116" y="96" width="88" height="29"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ligo-title" translatesAutoresizingMaskIntoConstraints="NO" id="z0x-dL-4rS">
+                                <rect key="frame" x="143.5" y="125" width="88" height="35"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="image-logo" translatesAutoresizingMaskIntoConstraints="NO" id="5gi-kL-Uxb">
-                                <rect key="frame" x="141.5" y="44" width="37" height="31"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-logo" translatesAutoresizingMaskIntoConstraints="NO" id="5gi-kL-Uxb">
+                                <rect key="frame" x="169" y="68" width="37" height="41"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -182,7 +182,7 @@
         <!--Registration View Controller-->
         <scene sceneID="mKy-WN-hVR">
             <objects>
-                <viewController id="Ziq-vy-UpZ" customClass="RegistrationViewController" customModule="Travel_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ziq-vy-UpZ" customClass="RegistrationViewController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yBt-gZ-J4v">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,22 +191,22 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="656"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OzL-5V-tge">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="669"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chA-SB-x3f">
-                                                <rect key="frame" x="81" y="158" width="212" height="33"/>
+                                                <rect key="frame" x="81" y="118" width="212" height="33"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="0a9-3s-sWM">
-                                                <rect key="frame" x="158" y="230" width="59.5" height="58.5"/>
+                                                <rect key="frame" x="158" y="198" width="59.5" height="42.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Ow2-TB-8kI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="59.5" height="32"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="59.5" height="16"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fd-MQ-7ta">
-                                                        <rect key="frame" x="0.0" y="44" width="59.5" height="14.5"/>
+                                                        <rect key="frame" x="0.0" y="28" width="59.5" height="14.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -214,7 +214,7 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qKV-h1-DiC">
-                                                <rect key="frame" x="143.5" y="215" width="88" height="88"/>
+                                                <rect key="frame" x="143.5" y="175" width="88" height="88"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="88" id="A7c-SZ-eLf"/>
@@ -227,9 +227,9 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Hck-p3-bwl">
-                                                <rect key="frame" x="16" y="319" width="343" height="162"/>
+                                                <rect key="frame" x="16" y="279" width="343" height="162"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MVI-NF-rHE" customClass="CustomTextField" customModule="Travel_App" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MVI-NF-rHE" customClass="CustomTextField" customModule="TravelApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="I31-Ed-S5I"/>
@@ -237,7 +237,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lsK-DY-6eY" customClass="CustomTextField" customModule="Travel_App" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Surname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lsK-DY-6eY" customClass="CustomTextField" customModule="TravelApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="44" width="343" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="UlS-aP-Omf"/>
@@ -245,7 +245,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2sk-Gu-Lnx" customClass="CustomTextField" customModule="Travel_App" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2sk-Gu-Lnx" customClass="CustomTextField" customModule="TravelApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="88" width="343" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="1Ob-zH-cZo"/>
@@ -253,7 +253,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JVF-Dk-tYR" customClass="CustomTextField" customModule="Travel_App" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JVF-Dk-tYR" customClass="CustomTextField" customModule="TravelApp" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="132" width="343" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="76x-pz-TaP"/>
@@ -264,32 +264,32 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2Hh-Je-O9F">
-                                                <rect key="frame" x="16" y="505" width="343" height="63"/>
+                                                <rect key="frame" x="16" y="465" width="343" height="57"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4y-Og-Q3j">
-                                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="63"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="29.5" height="57"/>
                                                         <state key="normal" image="ok-circle"/>
                                                         <connections>
                                                             <action selector="didPressedAccesptPrivacy:" destination="Ziq-vy-UpZ" eventType="touchUpInside" id="1yc-yl-A4l"/>
                                                         </connections>
                                                     </button>
                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ok-circle" translatesAutoresizingMaskIntoConstraints="NO" id="bGK-os-90i">
-                                                        <rect key="frame" x="63.5" y="0.0" width="0.0" height="63"/>
+                                                        <rect key="frame" x="37.5" y="0.0" width="0.0" height="57"/>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="6vJ-sy-xIu">
-                                                        <rect key="frame" x="71.5" y="0.0" width="271.5" height="63"/>
+                                                        <rect key="frame" x="45.5" y="0.0" width="297.5" height="57"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="efc-di-HuT">
-                                                                <rect key="frame" x="0.0" y="0.0" width="271.5" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="297.5" height="28"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ry9-2s-5Nn">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="67.5" height="31"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="69.5" height="28"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="16"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWF-tJ-jN9">
-                                                                        <rect key="frame" x="74.5" y="0.0" width="197" height="31"/>
+                                                                        <rect key="frame" x="76.5" y="0.0" width="221" height="28"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="16"/>
                                                                         <state key="normal" title="Terms and Conditions">
                                                                             <color key="titleColor" name="pantone"/>
@@ -301,16 +301,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="yam-0c-Okz">
-                                                                <rect key="frame" x="0.0" y="32" width="271.5" height="31"/>
+                                                                <rect key="frame" x="0.0" y="29" width="297.5" height="28"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afG-5V-ild">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="27" height="31"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="28.5" height="28"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="16"/>
                                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3t9-mg-1tN">
-                                                                        <rect key="frame" x="34" y="0.0" width="237.5" height="31"/>
+                                                                        <rect key="frame" x="35.5" y="0.0" width="262" height="28"/>
                                                                         <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="16"/>
                                                                         <state key="normal" title="Privacy Statement">
                                                                             <color key="titleColor" name="pantone"/>
@@ -326,7 +326,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="D4h-HB-HSU">
-                                                <rect key="frame" x="16" y="592" width="343" height="44"/>
+                                                <rect key="frame" x="16" y="546" width="343" height="44"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3f-EU-6mx">
                                                         <rect key="frame" x="0.0" y="0.0" width="163.5" height="44"/>
@@ -378,7 +378,10 @@
                                                 </constraints>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="RLB-yo-SFe">
-                                                <rect key="frame" x="48.5" y="44" width="278" height="80"/>
+                                                <rect key="frame" x="-162.5" y="44" width="700" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="Nti-XX-1HD"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -443,7 +446,7 @@
         <!--Navigation Controller-->
         <scene sceneID="B2I-F1-znp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rbi-zK-SqI" customClass="NavigationController" customModule="Travel_App" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rbi-zK-SqI" customClass="NavigationController" customModule="TravelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YTj-Bj-pEL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -463,7 +466,7 @@
         <image name="add-icon" width="16" height="16"/>
         <image name="image-logo" width="37" height="41"/>
         <image name="ligo-title" width="88" height="35"/>
-        <image name="logo" width="139" height="40"/>
+        <image name="logo" width="700" height="208"/>
         <image name="ok-circle" width="24" height="24"/>
         <namedColor name="heavy">
             <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
