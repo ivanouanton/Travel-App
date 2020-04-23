@@ -22,17 +22,26 @@ class PlaceInfoViewController: UIViewController {
     
     @IBOutlet weak var audioPlayerView: AudioPlayerView!
     @IBOutlet weak var beenButton: UIButton!
+    @IBOutlet weak var beenLAbel: UILabel!
+    
+    @IBOutlet weak var introductionLabel: UILabel!
+    
+    @IBOutlet weak var titleVertSpacing: NSLayoutConstraint!
     
     var presenter: PlaceInfoPresenterProtocol?
     
     var place: Place?
     var category: String = ""
-    var image: UIImage = UIImage(named: "preview-target-place")!
+    var image: UIImage = UIImage(named: "City-Introduction")!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let place = place else {return}
+        guard let place = place else {
+            setupDefaultPage()
+            return
+        }
+        
         self.titleDescriptionLabel.text = place.name
         self.descriptionLabel.text = place.description
         self.addressLabel.text = place.address ?? "no address"
@@ -56,7 +65,7 @@ class PlaceInfoViewController: UIViewController {
             audioPlayerView.isHidden = true
         }
         
-        placeImage.addBlur()
+//        placeImage.addBlur()
         presenter?.checkVisit(place)
     }
     
@@ -71,9 +80,21 @@ class PlaceInfoViewController: UIViewController {
         audioPlayerView.stopPlaing()
     }
 
-    
     @IBAction func didPressedBeenThere(_ sender: Any) {
         presenter?.didPressedIsVisited()
+    }
+    
+    func setupDefaultPage() {
+        audioPlayerView.isHidden = true
+        beenLAbel.isHidden = true
+        beenButton.isHidden = true
+        introductionLabel.isHidden = false
+        addressLabel.isHidden = true
+        priceLabel.isHidden = true
+        categoryLabel.isHidden = true
+        titleVertSpacing.constant = -30
+        title = "Rome"
+        
     }
 }
 

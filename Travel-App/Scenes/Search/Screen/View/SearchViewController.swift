@@ -151,11 +151,6 @@ final class SearchViewController: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-//    
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        print(cityInfoButton.frame)
-//    }
     
     // MARK: - Private methods
     
@@ -262,7 +257,9 @@ extension SearchViewController{
     }
     
     @objc func showCityInfo(){
-        self.navigationController?.pushViewController(ViewFactory.createSettingsTourVC(), animated: true)
+        let controller = ViewFactory.createPlaceInfoVC()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     private func showModalDescription(with id: String) {
