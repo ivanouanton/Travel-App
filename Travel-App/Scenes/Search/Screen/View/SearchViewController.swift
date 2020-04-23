@@ -73,6 +73,16 @@ final class SearchViewController: UIViewController{
         return button
     }()
     
+    private lazy var cityInfoButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor(named: "pantone")
+        button.layer.cornerRadius = 3
+        button.setImage(UIImage(named: "binoculars"), for: .normal)
+        button.addTarget(self, action: #selector(showCityInfo), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var tourInfoView: TourInfoView = {
         let allViewsInXibArray = Bundle.main.loadNibNamed("TourInfoView", owner: self, options: nil)
         let view = allViewsInXibArray?.first as! TourInfoView
@@ -141,6 +151,11 @@ final class SearchViewController: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
+//    
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        print(cityInfoButton.frame)
+//    }
     
     // MARK: - Private methods
     
@@ -166,6 +181,7 @@ extension SearchViewController{
         self.view.addSubview(self.categoryView)
         self.view.addSubview(self.mapView)
         self.view.addSubview(self.createTourButton)
+        self.view.addSubview(self.cityInfoButton)
         self.view.addSubview(self.filterView)
         self.view.addSubview(self.backToTourButton)
         self.view.addSubview(self.placesCollection)
@@ -206,6 +222,11 @@ extension SearchViewController{
             self.tourInfoView.heightAnchor.constraint(equalToConstant: 188),
             self.tourViewTop,
             
+            self.cityInfoButton.topAnchor.constraint(equalTo: self.categoryView.bottomAnchor, constant: 72),
+            self.cityInfoButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
+            self.cityInfoButton.heightAnchor.constraint(equalToConstant: 42),
+            self.cityInfoButton.widthAnchor.constraint(equalToConstant: 63),
+            
             self.createTourButton.topAnchor.constraint(equalTo: self.categoryView.bottomAnchor, constant: 72),
             self.createTourButton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
             
@@ -237,6 +258,10 @@ extension SearchViewController{
     }
         
     @objc func setupPreferences(){
+        self.navigationController?.pushViewController(ViewFactory.createSettingsTourVC(), animated: true)
+    }
+    
+    @objc func showCityInfo(){
         self.navigationController?.pushViewController(ViewFactory.createSettingsTourVC(), animated: true)
     }
     
