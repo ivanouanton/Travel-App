@@ -14,7 +14,7 @@ class PreferenceBoardViewController: UIViewController {
     
     var settingsData = [
         "Duration": ["A Few Hours", "Half Day",  "Full Day"],
-        "Price": ["free", "€", "€€"],
+        "Price": ["Free", "€", "€€"],
         "Transport": [UIImage(named: "walk")!, UIImage(named: "bus")!, UIImage(named: "subway")!]
     ]
     
