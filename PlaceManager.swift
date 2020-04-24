@@ -103,7 +103,7 @@ class PlaceManager {
                 if let imgId = place.image {
                     
                     cardGroup.enter()
-                    ToursManager.shared.getImage(with: imgId ) { (image, error) in
+                    TAImageClient.getImage(with: imgId ) { (image, error) in
                         placeData = PlaceCardModel(id: id,
                                                        name: place.name,
                                                        category: place.category.rawValue,

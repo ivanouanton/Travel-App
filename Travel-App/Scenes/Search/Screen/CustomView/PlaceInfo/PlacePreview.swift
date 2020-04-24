@@ -61,7 +61,7 @@ class PlacePreview: UICollectionViewCell {
 
             // TODO - need refactor
             if let ref = place.image {
-                ToursManager.shared.getImage(with: ref) { (image, error) in
+                TAImageClient.getImage(with: ref) { (image, error) in
                     if let image = image {
                         self.image = image
                     }
