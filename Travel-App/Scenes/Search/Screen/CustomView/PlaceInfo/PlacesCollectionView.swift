@@ -18,12 +18,6 @@ class PlacesCollectionView: UIView {
             collectionView.reloadData()
         }
     }
-
-//    var places = Array<PlaceCardModel>(){
-//        didSet{
-//            self.collectionView.reloadData()
-//        }
-//    }
     
     var places = Array<Place>(){
         didSet{
@@ -86,14 +80,13 @@ extension PlacesCollectionView: UICollectionViewDataSource{
         cell.place = place
         cell.delegate = delegate
         cell.isTourCreated = isTourCreated
+        cell.image = place.loadImage
+        
         return cell
     }
 }
 
 extension PlacesCollectionView: UICollectionViewDelegate {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: frame.width - 40, height: frame.height)
-//    }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let layout = self.collectionView.collectionViewLayout as! UPCarouselFlowLayout
@@ -101,5 +94,4 @@ extension PlacesCollectionView: UICollectionViewDelegate {
         let offset = (layout.scrollDirection == .horizontal) ? scrollView.contentOffset.x : scrollView.contentOffset.y
         currentPage = Int(floor((offset - pageSide / 2) / pageSide) + 1)
     }
-    
 }

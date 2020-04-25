@@ -26,18 +26,18 @@ class TAImageClient {
     static func downloadImage(reference: DocumentReference, completion: @escaping (_ image: Data?, _ error: Error? ) -> Void) {
         let collectionID = reference.parent.collectionID
         let documentID = reference.documentID
-                
+        
         let db = Storage.storage().reference()
         let collectionRef = db.child(collectionID)
         let imageRef = collectionRef.child(documentID)
         
-            imageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                if let error = error {
-                    completion(nil, error)
-                } else {
-                    completion(data, nil)
-                }
+        imageRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+            if let error = error {
+                completion(nil, error)
+            } else {
+                completion(data, nil)
             }
+        }
     }
     
     static func getImage(with reference: DocumentReference,
@@ -49,6 +49,7 @@ class TAImageClient {
             TAImageClient.downloadImage(reference: reference) { data, error in
                 if let error = error {
                     completion(nil, error)
+                    return
                     
                 } else if let data = data, let image = UIImage(data: data) {
                     imageCache.setObject(image, forKey: reference.documentID as NSString)

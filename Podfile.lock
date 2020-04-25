@@ -376,7 +376,7 @@ DEPENDENCIES:
   - MSPeekCollectionViewDelegateImplementation
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - abseil
     - Alamofire
     - AppAuth
@@ -466,6 +466,6 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
 
-PODFILE CHECKSUM: ade4981b625529a0c1966003084183dbcfea49dd
+PODFILE CHECKSUM: 8ad156bd2af3f91074095e5b8b66588bff83100c
 
 COCOAPODS: 1.9.1

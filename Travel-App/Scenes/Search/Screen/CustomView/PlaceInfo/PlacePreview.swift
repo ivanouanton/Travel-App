@@ -17,31 +17,6 @@ class PlacePreview: UICollectionViewCell {
         return "placePreview"
     }
     
-//    var place: PlaceCardModel? {
-//        didSet{
-//            guard let place = place else {return}
-//            self.titleLabel.text = place.name
-//            self.placeTitle.text = place.category
-//            self.userLocationLabel.text = place.placeName ?? ""
-//            switch place.price {
-//            case 0:
-//                self.placePrice.text = "Free"
-//            case 1:
-//                self.placePrice.text = "€"
-//            case 2:
-//                self.placePrice.text = "€€"
-//            default:
-//                break
-//            }
-//            self.image = place.image
-//            if place.isVisited {
-//                self.placeImage.addBlur(0.6)
-//                self.visitedIndicator.isHidden = false
-//                self.visitedLabel.isHidden = false
-//            }
-//        }
-//    }
-    
     var place: Place? {
         didSet{
             guard let place = place else {return}
@@ -57,15 +32,6 @@ class PlacePreview: UICollectionViewCell {
                 self.placePrice.text = "€€"
             default:
                 break
-            }
-
-            // TODO - need refactor
-            if let ref = place.image {
-                TAImageClient.getImage(with: ref) { (image, error) in
-                    if let image = image {
-                        self.image = image
-                    }
-                }
             }
 
             if place.isVisited {
@@ -294,15 +260,11 @@ class PlacePreview: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        print(visitedLabel.frame)
-    }
-    
     override func prepareForReuse() {
         self.visitedIndicator.isHidden = true
         self.visitedLabel.isHidden = true
         self.placeImage.subviews.forEach({ $0.removeFromSuperview() })
+        self.placeImage.image = nil
     }
     
     private func setupUI(){

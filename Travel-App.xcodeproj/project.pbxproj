@@ -1418,7 +1418,7 @@
 				MARKETING_VERSION = 0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wvonbehr.TravelApp;
 				PRODUCT_NAME = TravelApp;
-				PROVISIONING_PROFILE_SPECIFIER = "Urbs Travel App Dev Anton Ivanou";
+				PROVISIONING_PROFILE_SPECIFIER = "Trave App iOS Development";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1444,7 +1444,7 @@
 				MARKETING_VERSION = 0.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wvonbehr.TravelApp;
 				PRODUCT_NAME = TravelApp;
-				PROVISIONING_PROFILE_SPECIFIER = "Urbs Travel App Dev Anton Ivanou";
+				PROVISIONING_PROFILE_SPECIFIER = "Trave App iOS Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
