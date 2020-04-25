@@ -25,6 +25,8 @@ class PreferenceBoardViewController: UIViewController {
 
     var sectionTitles = ["Interests", "Duration", "Price"]
     
+    let button = AppButton()
+    
     private lazy var settingTable: UITableView = {
         let table = UITableView.init(frame: .zero, style: UITableView.Style.grouped)
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -131,7 +133,7 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
         view.backgroundColor = .white
         
         if section == self.sectionTitles.count - 1{
-            let button = AppButton()
+            
             view.addSubview(button)
             button.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
@@ -158,6 +160,7 @@ extension PreferenceBoardViewController: UITableViewDataSource, UITableViewDeleg
     @objc func dosmth(){
 //        let vc = ViewFactory.createToursVC(with: self.preferences)
 //        self.navigationController?.pushViewController(vc, animated: true)
+        button.isEnabled = false
         presenter.createCustomTour(with: selectedCategories, prices: selectedPrices, durations: selectedDurations)
     }
 }
