@@ -12,15 +12,6 @@ class RecentPlacesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var recentPlacesCollection: UICollectionView!
     
-    var images = [
-        UIImage(named: "preview-target-place"),
-        UIImage(named: "starbucks"),
-        UIImage(named: "images"),
-        UIImage(named: "images-2"),
-        UIImage(named: "images-3"),
-        UIImage(named: "images-4"),
-    ]
-    
     var places = Array<Place>() {
         didSet {
             self.recentPlacesCollection.reloadData()
@@ -62,7 +53,16 @@ extension RecentPlacesTableViewCell: UICollectionViewDataSource, UICollectionVie
 
         let cell = self.recentPlacesCollection.dequeueReusableCell(withReuseIdentifier: RecentPlaceCollectionViewCell.reuseIdentifier,
                                                                  for: indexPath) as! RecentPlaceCollectionViewCell
-        cell.place = places[indexPath.item]
+        let place = places[indexPath.item]
+        cell.place = place
+        if let ref = place.image {
+            TAImageClient.getImage(with: ref) { (image, error) in
+                if let image = image {
+                    cell.placeImage.image = image
+                }
+            }
+        }
+        
         return cell
     }
 }
