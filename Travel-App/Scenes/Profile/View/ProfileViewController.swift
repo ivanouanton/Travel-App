@@ -23,7 +23,7 @@ final class ProfileViewController: UIViewController{
     private var tableSection = ["Information", "Recent places"]
     private var information: [(key: String, value: String)] = [("Language", "English"), ("Кщьу address", "352 Thiel Motorway Suite 421")]
     private var places = Array<Place>()
-    
+    private var loaderIsActive: Bool = false
     
     // MARK: - Life Cycle
     override func loadView() {
@@ -52,6 +52,11 @@ final class ProfileViewController: UIViewController{
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
         super.viewWillDisappear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loaderIsActive ? self.playLouder() : self.removeLoader()
     }
 }
 
@@ -82,6 +87,7 @@ extension ProfileViewController: ProfileViewProtocol{
     }
     
     func showLoader(_ isNeededShowing: Bool) {
+        self.loaderIsActive = isNeededShowing
         if isNeededShowing {
             self.addLoader()
         }else{
