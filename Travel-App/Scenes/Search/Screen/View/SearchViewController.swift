@@ -26,6 +26,8 @@ final class SearchViewController: UIViewController{
     
     private var markers = [GMSMarker]()
     
+    private var loaderIsActive: Bool = false
+    
     var tour: Tour? {
         didSet{
             guard let tour = tour else {
@@ -150,6 +152,7 @@ final class SearchViewController: UIViewController{
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.loaderIsActive ? self.playLouder() : self.removeLoader()
     }
     
     // MARK: - Private methods
@@ -321,6 +324,7 @@ extension SearchViewController{
 extension SearchViewController: SearchViewProtocol{
     
     func showLoader(_ isNeededShowing: Bool) {
+        self.loaderIsActive = isNeededShowing
         if isNeededShowing {
             self.addLoader()
         }else{

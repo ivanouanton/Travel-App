@@ -38,4 +38,7 @@ class Loader: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func play() {
+        self.animationView.play()
+    }
 }

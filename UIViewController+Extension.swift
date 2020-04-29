@@ -50,4 +50,14 @@ extension UIViewController {
             }
         }
     }
+    
+    func playLouder() {
+        for subview in self.view.subviews {
+            if subview.tag == 1204 {
+                guard let louder = subview as? Loader else { return }
+                louder.play()
+                break
+            }
+        }
+    }
 }
