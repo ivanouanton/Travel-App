@@ -33,6 +33,13 @@ class PlacePreview: UICollectionViewCell {
             default:
                 break
             }
+            
+            guard let _ = self.image else {
+                self.activityIndicator.startAnimating()
+                return
+            }
+            
+            self.activityIndicator.stopAnimating()
 
             if place.isVisited {
                 self.placeImage.addBlur(0.6)
@@ -54,7 +61,7 @@ class PlacePreview: UICollectionViewCell {
         }
     }
     
-    var image: UIImage? = UIImage(named: "preview-target-place")!{
+    var image: UIImage?{
         didSet{
             guard let newImage = image else {return}
             self.placeImage.image = newImage
@@ -65,11 +72,19 @@ class PlacePreview: UICollectionViewCell {
         let image = UIImageView()
         image.image = UIImage(named: "preview-target-place")
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.backgroundColor = .red
+        image.backgroundColor = .lightGray
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.layer.cornerRadius = 5
         return image
+    }()
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityView = UIActivityIndicatorView()
+        activityView.color = .white
+        activityView.hidesWhenStopped = true
+        activityView.translatesAutoresizingMaskIntoConstraints = false
+        return activityView
     }()
     
     private lazy var visitedIndicator: UIImageView = {
@@ -290,7 +305,7 @@ class PlacePreview: UICollectionViewCell {
         self.addSubview(self.tourSettingsButtons)
         self.addSubview(self.visitedIndicator)
         self.addSubview(self.visitedLabel)
-
+        self.addSubview(self.activityIndicator)
     }
     
     private func setupConstraints(){
@@ -331,6 +346,9 @@ class PlacePreview: UICollectionViewCell {
             
             self.visitedLabel.topAnchor.constraint(equalTo: self.visitedIndicator.bottomAnchor, constant: 8),
             self.visitedLabel.centerXAnchor.constraint(equalTo: self.visitedIndicator.centerXAnchor),
+            
+            self.activityIndicator.centerXAnchor.constraint(equalTo: self.placeImage.centerXAnchor),
+            self.activityIndicator.centerYAnchor.constraint(equalTo: self.placeImage.centerYAnchor),
 
             ])
     }
