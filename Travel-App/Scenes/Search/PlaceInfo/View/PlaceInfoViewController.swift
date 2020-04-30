@@ -28,6 +28,8 @@ class PlaceInfoViewController: UIViewController {
     
     @IBOutlet weak var titleVertSpacing: NSLayoutConstraint!
     
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
     var presenter: PlaceInfoPresenterProtocol?
     
     var place: Place?
@@ -36,6 +38,10 @@ class PlaceInfoViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.activityIndicatorView.hidesWhenStopped = true
+        self.activityIndicatorView.startAnimating()
+        placeImage.addBlur(0.75)
         
         guard let place = place else {
             setupDefaultPage()
@@ -54,6 +60,8 @@ class PlaceInfoViewController: UIViewController {
                 } else {
                     self.placeImage.image = self.image
                 }
+                self.activityIndicatorView.stopAnimating()
+                self.placeImage.removeBlur()
             }
         }
         

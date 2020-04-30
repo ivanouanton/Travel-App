@@ -18,7 +18,17 @@ extension UIImageView  {
         effectView.frame = self.bounds
         effectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         effectView.alpha = alpha
-
+        effectView.tag = 1205
+        
         self.addSubview(effectView)
+    }
+    
+    func removeBlur() {
+        for subview in self.subviews {
+            if subview.tag == 1205 {
+                subview.removeFromSuperview()
+                break
+            }
+        }
     }
 }
