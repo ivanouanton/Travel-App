@@ -20,7 +20,8 @@ class PlaceInfoPresenter: PlaceInfoPresenterProtocol {
    }
     
     func checkVisit(_ place: Place) {
-        FirebaseProfileManager.shared.getAuthUserData { (user, image, error) in
+        FirebaseProfileManager.shared.getAuthUserData { [weak self] (user, image, error) in
+            guard let self = self else {return}
             
             self.places = user?.places ?? []
             self.id = place.id

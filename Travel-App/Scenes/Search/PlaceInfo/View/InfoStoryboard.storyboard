@@ -113,7 +113,7 @@ Brooklyn, NY 11249</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="yBy-xK-yU9">
-                                                <rect key="frame" x="197" y="93" width="20" height="20"/>
+                                                <rect key="frame" x="188.66666666666666" y="85" width="37" height="37"/>
                                                 <color key="color" name="white"/>
                                             </activityIndicatorView>
                                         </subviews>

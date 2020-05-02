@@ -1407,7 +1407,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 582C82KJTU;
 				INFOPLIST_FILE = "Travel-App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1415,7 +1415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.6;
+				MARKETING_VERSION = 0.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wvonbehr.TravelApp;
 				PRODUCT_NAME = TravelApp;
 				PROVISIONING_PROFILE_SPECIFIER = "Trave App iOS Development";
@@ -1433,7 +1433,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 582C82KJTU;
 				INFOPLIST_FILE = "Travel-App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1441,7 +1441,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.6;
+				MARKETING_VERSION = 0.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wvonbehr.TravelApp;
 				PRODUCT_NAME = TravelApp;
 				PROVISIONING_PROFILE_SPECIFIER = "Urbs Travel App AppStore Anton Ivanou";

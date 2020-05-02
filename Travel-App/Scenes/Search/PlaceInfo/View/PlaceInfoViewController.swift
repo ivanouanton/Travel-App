@@ -93,6 +93,8 @@ class PlaceInfoViewController: UIViewController {
     }
     
     func setupDefaultPage() {
+        self.placeImage.removeBlur()
+        self.activityIndicatorView.stopAnimating()
         audioPlayerView.isHidden = true
         beenLAbel.isHidden = true
         beenButton.isHidden = true
