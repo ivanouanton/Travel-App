@@ -71,9 +71,38 @@ extension SearchPresenter: SearchPresenterProtocol{
                 self.reviewPlaces()
                 self.showAllMarkers()
                 self.view.showPreviewPlaces(with: self.places)
+                self.downloadAllImages()
                 self.view.showLoader(false)
             }
         }
+    }
+    
+    func downloadAllImages() {
+        
+        let concurrentTasks = 10
+        
+        let queue = DispatchQueue(label: "queuename", attributes: .concurrent)
+        let sema = DispatchSemaphore(value: concurrentTasks)
+        
+            for (ind, place) in self.places.enumerated() {
+                if let ref = place.image {
+                    queue.async {
+                        TAImageClient.getImage(with: ref) { [weak self] (image, error) in
+                            defer{ sema.signal() }
+                            
+                            guard let self = self else { return }
+                            guard let image = image else {
+                                print(error?.localizedDescription ?? "Error")
+                                return
+                            }
+                            self.places[ind].loadImage = image
+                            self.view.showPreviewPlaces(with: self.places)
+                        }
+                        sema.wait()
+                    }
+                }
+                
+            }
     }
     
     func deselect(with: OptionFilterSelection) {

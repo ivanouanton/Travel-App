@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import UIKit
 
 struct Place{
     var id: String?
@@ -20,6 +21,7 @@ struct Place{
     let address: String?
     let price: Int
     var isVisited: Bool = false
+    var loadImage: UIImage?
     
     init(_ dictionary: [String: Any]){
         self.id = nil

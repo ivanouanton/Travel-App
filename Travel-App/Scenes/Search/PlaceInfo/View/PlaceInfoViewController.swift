@@ -22,29 +22,46 @@ class PlaceInfoViewController: UIViewController {
     
     @IBOutlet weak var audioPlayerView: AudioPlayerView!
     @IBOutlet weak var beenButton: UIButton!
+    @IBOutlet weak var beenLAbel: UILabel!
+    
+    @IBOutlet weak var introductionLabel: UILabel!
+    
+    @IBOutlet weak var titleVertSpacing: NSLayoutConstraint!
+    
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     var presenter: PlaceInfoPresenterProtocol?
     
     var place: Place?
     var category: String = ""
-    var image: UIImage = UIImage(named: "preview-target-place")!
+    var image: UIImage = UIImage(named: "City-Introduction")!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let place = place else {return}
+        self.activityIndicatorView.hidesWhenStopped = true
+        self.activityIndicatorView.startAnimating()
+        placeImage.addBlur(0.75)
+        
+        guard let place = place else {
+            setupDefaultPage()
+            return
+        }
+        
         self.titleDescriptionLabel.text = place.name
         self.descriptionLabel.text = place.description
         self.addressLabel.text = place.address ?? "no address"
         
         // TODO - need refactor
         if let ref = place.image {
-            ToursManager.shared.getImage(with: ref) { (image, error) in
+            TAImageClient.getImage(with: ref) { (image, error) in
                 if let image = image {
                     self.placeImage.image = image
                 } else {
                     self.placeImage.image = self.image
                 }
+                self.activityIndicatorView.stopAnimating()
+                self.placeImage.removeBlur()
             }
         }
         
@@ -56,7 +73,7 @@ class PlaceInfoViewController: UIViewController {
             audioPlayerView.isHidden = true
         }
         
-        placeImage.addBlur()
+//        placeImage.addBlur()
         presenter?.checkVisit(place)
     }
     
@@ -71,9 +88,22 @@ class PlaceInfoViewController: UIViewController {
         audioPlayerView.stopPlaing()
     }
 
-    
     @IBAction func didPressedBeenThere(_ sender: Any) {
         presenter?.didPressedIsVisited()
+    }
+    
+    func setupDefaultPage() {
+        self.placeImage.removeBlur()
+        self.activityIndicatorView.stopAnimating()
+        audioPlayerView.isHidden = true
+        beenLAbel.isHidden = true
+        beenButton.isHidden = true
+        introductionLabel.isHidden = false
+        addressLabel.isHidden = true
+        priceLabel.isHidden = true
+        categoryLabel.isHidden = true
+        titleVertSpacing.constant = -30
+        title = "Rome"
     }
 }
 

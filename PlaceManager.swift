@@ -74,7 +74,7 @@ class PlaceManager {
     func getPlace(with id: String, completion: @escaping (_ place: Place?, _ error: Error?) -> Void){
         let db = Firestore.firestore()
         
-        let docRef = db.collection("Places").document(id)
+        let docRef = db.collection("places").document(id)
         docRef.getDocument { (document, err) in
             if let data = document?.data() {
                 var place = Place(data)
@@ -92,7 +92,7 @@ class PlaceManager {
         var error: Error? = nil
         let cardGroup = DispatchGroup()
         
-        let docRef = db.collection("Places").document(id)
+        let docRef = db.collection("places").document(id)
         
         cardGroup.enter()
         docRef.getDocument { (document, err) in
@@ -103,7 +103,7 @@ class PlaceManager {
                 if let imgId = place.image {
                     
                     cardGroup.enter()
-                    ToursManager.shared.getImage(with: imgId ) { (image, error) in
+                    TAImageClient.getImage(with: imgId ) { (image, error) in
                         placeData = PlaceCardModel(id: id,
                                                        name: place.name,
                                                        category: place.category.rawValue,
@@ -129,7 +129,7 @@ class PlaceManager {
         let db = Firestore.firestore()
         var places = [Place]()
 
-        let docRef = db.collection("Places")
+        let docRef = db.collection("places")
         var query = docRef.order(by: "name")
         
         switch option {
@@ -220,7 +220,7 @@ class PlaceManager {
                            completionHandler: @escaping (_ tours: [Place]?, _ error: Error?) -> Void) {
             
         let db = Firestore.firestore()
-        let docRef = db.collection("Places")
+        let docRef = db.collection("places")
         var query = docRef.order(by: "name")
         
         if !categories.isEmpty {

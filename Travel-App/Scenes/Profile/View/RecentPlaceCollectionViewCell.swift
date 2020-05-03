@@ -20,13 +20,13 @@ class RecentPlaceCollectionViewCell: UICollectionViewCell {
             guard let place = place else {return}
             
             // TODO - need refactor
-            if let ref = place.image {
-                ToursManager.shared.getImage(with: ref) { (image, error) in
-                    if let image = image {
-                        self.placeImage.image = image
-                    }
-                }
-            }
+//            if let ref = place.image {
+//                TAImageClient.getImage(with: ref) { (image, error) in
+//                    if let image = image {
+//                        self.placeImage.image = image
+//                    }
+//                }
+//            }
             
             titlePlaceLabel.text = place.name
             categoryLabel.text = place.category.getName()
@@ -57,7 +57,7 @@ class RecentPlaceCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-//        self.placeImage.image = nil
+        self.placeImage.image = nil
     }
 
     override func awakeFromNib() {

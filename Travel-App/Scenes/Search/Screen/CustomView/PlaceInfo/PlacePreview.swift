@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class PlacePreview: UICollectionViewCell {
     
@@ -16,31 +15,6 @@ class PlacePreview: UICollectionViewCell {
     class var reuseIdentifier: String {
         return "placePreview"
     }
-    
-//    var place: PlaceCardModel? {
-//        didSet{
-//            guard let place = place else {return}
-//            self.titleLabel.text = place.name
-//            self.placeTitle.text = place.category
-//            self.userLocationLabel.text = place.placeName ?? ""
-//            switch place.price {
-//            case 0:
-//                self.placePrice.text = "Free"
-//            case 1:
-//                self.placePrice.text = "€"
-//            case 2:
-//                self.placePrice.text = "€€"
-//            default:
-//                break
-//            }
-//            self.image = place.image
-//            if place.isVisited {
-//                self.placeImage.addBlur(0.6)
-//                self.visitedIndicator.isHidden = false
-//                self.visitedLabel.isHidden = false
-//            }
-//        }
-//    }
     
     var place: Place? {
         didSet{
@@ -58,15 +32,13 @@ class PlacePreview: UICollectionViewCell {
             default:
                 break
             }
-
-            // TODO - need refactor
-            if let ref = place.image {
-                ToursManager.shared.getImage(with: ref) { (image, error) in
-                    if let image = image {
-                        self.image = image
-                    }
-                }
+            
+            guard let _ = self.image else {
+                self.activityIndicator.startAnimating()
+                return
             }
+            
+            self.activityIndicator.stopAnimating()
 
             if place.isVisited {
                 self.placeImage.addBlur(0.6)
@@ -88,7 +60,7 @@ class PlacePreview: UICollectionViewCell {
         }
     }
     
-    var image: UIImage? = UIImage(named: "preview-target-place")!{
+    var image: UIImage?{
         didSet{
             guard let newImage = image else {return}
             self.placeImage.image = newImage
@@ -99,11 +71,19 @@ class PlacePreview: UICollectionViewCell {
         let image = UIImageView()
         image.image = UIImage(named: "preview-target-place")
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.backgroundColor = .red
+        image.backgroundColor = .lightGray
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.layer.cornerRadius = 5
         return image
+    }()
+    
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let activityView = UIActivityIndicatorView()
+        activityView.color = .white
+        activityView.hidesWhenStopped = true
+        activityView.translatesAutoresizingMaskIntoConstraints = false
+        return activityView
     }()
     
     private lazy var visitedIndicator: UIImageView = {
@@ -294,15 +274,11 @@ class PlacePreview: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        print(visitedLabel.frame)
-    }
-    
     override func prepareForReuse() {
         self.visitedIndicator.isHidden = true
         self.visitedLabel.isHidden = true
         self.placeImage.subviews.forEach({ $0.removeFromSuperview() })
+        self.placeImage.image = nil
     }
     
     private func setupUI(){
@@ -328,7 +304,7 @@ class PlacePreview: UICollectionViewCell {
         self.addSubview(self.tourSettingsButtons)
         self.addSubview(self.visitedIndicator)
         self.addSubview(self.visitedLabel)
-
+        self.addSubview(self.activityIndicator)
     }
     
     private func setupConstraints(){
@@ -369,6 +345,9 @@ class PlacePreview: UICollectionViewCell {
             
             self.visitedLabel.topAnchor.constraint(equalTo: self.visitedIndicator.bottomAnchor, constant: 8),
             self.visitedLabel.centerXAnchor.constraint(equalTo: self.visitedIndicator.centerXAnchor),
+            
+            self.activityIndicator.centerXAnchor.constraint(equalTo: self.placeImage.centerXAnchor),
+            self.activityIndicator.centerYAnchor.constraint(equalTo: self.placeImage.centerYAnchor),
 
             ])
     }

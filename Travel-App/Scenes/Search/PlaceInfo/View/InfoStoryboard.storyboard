@@ -3,7 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,7 +31,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VvZ-hM-Bhr">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starbucks" translatesAutoresizingMaskIntoConstraints="NO" id="bjQ-kM-VKo">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="City-Introduction" translatesAutoresizingMaskIntoConstraints="NO" id="bjQ-kM-VKo">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="207"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="bjQ-kM-VKo" secondAttribute="height" multiplier="2:1" id="T1n-Hg-9Kt"/>
@@ -106,6 +106,16 @@ Brooklyn, NY 11249</string>
                                                 <color key="textColor" name="onyx"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An introduction to Rome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5c-Fi-SoR">
+                                                <rect key="frame" x="16" y="239" width="185.66666666666666" height="20"/>
+                                                <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="17"/>
+                                                <color key="textColor" name="heavy"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="yBy-xK-yU9">
+                                                <rect key="frame" x="188.66666666666666" y="85" width="37" height="37"/>
+                                                <color key="color" name="white"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -114,12 +124,15 @@ Brooklyn, NY 11249</string>
                                             <constraint firstItem="DoA-2Q-Cb6" firstAttribute="top" secondItem="bjQ-kM-VKo" secondAttribute="bottom" constant="32" id="4dm-Fw-QR7"/>
                                             <constraint firstItem="AQZ-PF-ROW" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="6Gb-pA-Hfk"/>
                                             <constraint firstItem="pCj-dj-pvf" firstAttribute="centerY" secondItem="DoA-2Q-Cb6" secondAttribute="centerY" id="8Pa-3V-UVY"/>
+                                            <constraint firstItem="yBy-xK-yU9" firstAttribute="centerY" secondItem="NsC-Qb-BlL" secondAttribute="centerY" id="8xj-BD-6rW"/>
                                             <constraint firstItem="ntW-oG-r34" firstAttribute="centerY" secondItem="pCj-dj-pvf" secondAttribute="centerY" id="EdW-BZ-aeB"/>
                                             <constraint firstItem="NsC-Qb-BlL" firstAttribute="top" secondItem="bjQ-kM-VKo" secondAttribute="top" constant="8" id="EsE-7G-iyS"/>
                                             <constraint firstAttribute="trailing" secondItem="ntW-oG-r34" secondAttribute="trailing" constant="19" id="H15-H8-jrU"/>
                                             <constraint firstItem="FcV-2u-tWP" firstAttribute="centerX" secondItem="VvZ-hM-Bhr" secondAttribute="centerX" id="Jfl-gS-mAm"/>
                                             <constraint firstItem="gxn-2D-9VV" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="KVH-O9-fRj"/>
                                             <constraint firstItem="bjQ-kM-VKo" firstAttribute="top" secondItem="VvZ-hM-Bhr" secondAttribute="top" id="Mux-06-hn9"/>
+                                            <constraint firstItem="n5c-Fi-SoR" firstAttribute="top" secondItem="bjQ-kM-VKo" secondAttribute="bottom" constant="32" id="NSN-fi-avn"/>
+                                            <constraint firstItem="n5c-Fi-SoR" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="P4p-pe-Arf"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FcV-2u-tWP" secondAttribute="bottom" constant="24" id="PNX-Oh-iM5"/>
                                             <constraint firstItem="ntW-oG-r34" firstAttribute="leading" secondItem="pCj-dj-pvf" secondAttribute="trailing" constant="16" id="Sdk-I1-5aG"/>
                                             <constraint firstItem="gxn-2D-9VV" firstAttribute="top" secondItem="AQZ-PF-ROW" secondAttribute="bottom" constant="27" id="XNS-w0-pqZ"/>
@@ -127,6 +140,7 @@ Brooklyn, NY 11249</string>
                                             <constraint firstAttribute="trailing" secondItem="bjQ-kM-VKo" secondAttribute="trailing" id="c5z-OJ-gKm"/>
                                             <constraint firstItem="95v-sw-T5O" firstAttribute="top" secondItem="DoA-2Q-Cb6" secondAttribute="bottom" constant="8" id="df4-XK-DgW"/>
                                             <constraint firstItem="NsC-Qb-BlL" firstAttribute="centerY" secondItem="bjQ-kM-VKo" secondAttribute="centerY" id="gT0-DM-3yg"/>
+                                            <constraint firstItem="yBy-xK-yU9" firstAttribute="centerX" secondItem="NsC-Qb-BlL" secondAttribute="centerX" id="gaN-04-TZ3"/>
                                             <constraint firstAttribute="trailing" secondItem="NsC-Qb-BlL" secondAttribute="trailing" constant="16" id="hT1-2o-fLw"/>
                                             <constraint firstItem="95v-sw-T5O" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="hbo-Sb-YVZ"/>
                                             <constraint firstItem="hBM-lD-6ES" firstAttribute="top" secondItem="gxn-2D-9VV" secondAttribute="bottom" constant="10" id="iPy-1a-R5x"/>
@@ -162,25 +176,29 @@ Brooklyn, NY 11249</string>
                         <viewLayoutGuide key="safeArea" id="Iv9-W0-pU7"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="yBy-xK-yU9" id="tTE-U8-erh"/>
                         <outlet property="addressLabel" destination="AQZ-PF-ROW" id="xpx-Nh-Wwt"/>
                         <outlet property="audioPlayerView" destination="NsC-Qb-BlL" id="Ebv-au-NCm"/>
                         <outlet property="beenButton" destination="ntW-oG-r34" id="Ab9-aT-zyF"/>
+                        <outlet property="beenLAbel" destination="pCj-dj-pvf" id="8Zh-LN-tUq"/>
                         <outlet property="categoryLabel" destination="DoA-2Q-Cb6" id="AsJ-ch-hUw"/>
                         <outlet property="descriptionLabel" destination="FcV-2u-tWP" id="SZH-ET-rss"/>
+                        <outlet property="introductionLabel" destination="n5c-Fi-SoR" id="Pjd-OA-j6Z"/>
                         <outlet property="placeImage" destination="bjQ-kM-VKo" id="Fag-Wf-HAQ"/>
                         <outlet property="priceLabel" destination="95v-sw-T5O" id="Ht0-d4-8JM"/>
                         <outlet property="subTitleDescriptionLabel" destination="hBM-lD-6ES" id="Qhc-4w-akP"/>
                         <outlet property="titleDescriptionLabel" destination="gxn-2D-9VV" id="Gdb-i6-pQN"/>
+                        <outlet property="titleVertSpacing" destination="XNS-w0-pqZ" id="9xD-TY-HCh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CbG-rv-hSO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-66.400000000000006" y="64.285714285714292"/>
+            <point key="canvasLocation" x="-66.666666666666671" y="64.285714285714278"/>
         </scene>
     </scenes>
     <resources>
+        <image name="City-Introduction" width="1847" height="1213.6666259765625"/>
         <image name="ok-circle" width="24" height="24"/>
-        <image name="starbucks" width="246.66667175292969" height="186.66667175292969"/>
         <namedColor name="heavy">
             <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
