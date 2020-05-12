@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AvenirNextLTPro-Demi.otf">
-            <string>AvenirNextLTPro-Demi</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -21,35 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="earth" translatesAutoresizingMaskIntoConstraints="NO" id="Ynh-p7-NyD">
-                                <rect key="frame" x="164.5" y="303" width="85" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="zGx-pL-FF4">
+                                <rect key="frame" x="-24.5" y="365.5" width="463" height="125"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="c2I-vO-qqv"/>
-                                    <constraint firstAttribute="width" constant="85" id="wkS-Xb-iLB"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph1-Zw-NIg">
-                                <rect key="frame" x="159.5" y="487.5" width="95" height="17"/>
-                                <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-white" translatesAutoresizingMaskIntoConstraints="NO" id="ohL-Gc-aWm">
-                                <rect key="frame" x="146.5" y="520.5" width="121" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="1vg-xh-88l"/>
-                                    <constraint firstAttribute="width" constant="121" id="n55-Fj-cI8"/>
+                                    <constraint firstAttribute="height" constant="125" id="RE4-XG-JMp"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745098039217" green="0.26666666666666666" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ynh-p7-NyD" firstAttribute="centerY" secondItem="R7r-Gv-0gZ" secondAttribute="centerY" constant="-100" id="AZi-cG-vmm"/>
-                            <constraint firstItem="Ynh-p7-NyD" firstAttribute="centerX" secondItem="R7r-Gv-0gZ" secondAttribute="centerX" id="FH8-BP-Pxy"/>
-                            <constraint firstItem="ph1-Zw-NIg" firstAttribute="top" secondItem="Ynh-p7-NyD" secondAttribute="bottom" constant="84.5" id="MeD-Uj-ecf"/>
-                            <constraint firstItem="ohL-Gc-aWm" firstAttribute="top" secondItem="ph1-Zw-NIg" secondAttribute="bottom" constant="16" id="ch2-lV-G8H"/>
-                            <constraint firstItem="ohL-Gc-aWm" firstAttribute="centerX" secondItem="R7r-Gv-0gZ" secondAttribute="centerX" id="ygz-Pa-1pe"/>
-                            <constraint firstItem="ph1-Zw-NIg" firstAttribute="centerX" secondItem="R7r-Gv-0gZ" secondAttribute="centerX" id="zex-Jt-0Ds"/>
+                            <constraint firstItem="zGx-pL-FF4" firstAttribute="centerY" secondItem="R7r-Gv-0gZ" secondAttribute="centerY" constant="-25" id="4Un-hW-tsk"/>
+                            <constraint firstItem="zGx-pL-FF4" firstAttribute="centerX" secondItem="R7r-Gv-0gZ" secondAttribute="centerX" id="Scy-yQ-XR8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="R7r-Gv-0gZ"/>
                     </view>
@@ -60,7 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="earth" width="85" height="95"/>
-        <image name="logo-white" width="121" height="48"/>
+        <image name="launchLogo" width="463" height="522.5"/>
     </resources>
 </document>

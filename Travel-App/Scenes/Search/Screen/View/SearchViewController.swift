@@ -146,7 +146,7 @@ final class SearchViewController: UIViewController{
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         self.presenter.viewDidLoad()
-//        self.presenter.fetchUserLocation()
+        self.presenter.fetchUserLocation()
         self.title = "Rome"
     }
     
