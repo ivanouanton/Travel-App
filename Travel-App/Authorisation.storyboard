@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rbi-zK-SqI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rbi-zK-SqI">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -134,11 +134,12 @@
                                     <constraint firstItem="ltY-Yy-Nyi" firstAttribute="centerX" secondItem="bj1-5C-4cP" secondAttribute="centerX" id="OBV-By-kEJ"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ligo-title" translatesAutoresizingMaskIntoConstraints="NO" id="z0x-dL-4rS">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="z0x-dL-4rS">
                                 <rect key="frame" x="143.5" y="125" width="88" height="35"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-logo" translatesAutoresizingMaskIntoConstraints="NO" id="5gi-kL-Uxb">
-                                <rect key="frame" x="169" y="68" width="37" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="z0x-dL-4rS" secondAttribute="height" multiplier="7:2" id="6th-gy-xKH"/>
+                                    <constraint firstAttribute="height" constant="50" id="hAh-73-Qah"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -146,20 +147,18 @@
                             <constraint firstItem="arq-fe-eXi" firstAttribute="top" secondItem="NfU-DU-l0x" secondAttribute="bottom" constant="16" id="0AS-zp-LJv"/>
                             <constraint firstItem="7DO-Sl-F4C" firstAttribute="centerX" secondItem="ZDR-Zb-BBL" secondAttribute="centerX" id="0kV-SI-pre"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="arq-fe-eXi" secondAttribute="trailing" constant="16" id="8eZ-on-txy"/>
-                            <constraint firstItem="5gi-kL-Uxb" firstAttribute="centerX" secondItem="ZDR-Zb-BBL" secondAttribute="centerX" id="AHa-KH-Qz4"/>
                             <constraint firstItem="bj1-5C-4cP" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="ASD-3k-znj"/>
                             <constraint firstItem="hea-iF-AlK" firstAttribute="top" secondItem="arq-fe-eXi" secondAttribute="bottom" constant="8" id="BqG-ql-ded"/>
                             <constraint firstItem="bj1-5C-4cP" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ULl-yR-DgX" secondAttribute="bottom" constant="24" id="DYV-7G-dIf"/>
                             <constraint firstItem="NfU-DU-l0x" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="Dnt-TO-J3g"/>
                             <constraint firstItem="ULl-yR-DgX" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="Kvq-fZ-Bti"/>
+                            <constraint firstItem="z0x-dL-4rS" firstAttribute="top" secondItem="ZDR-Zb-BBL" secondAttribute="top" constant="61" id="N1T-SG-jsF"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="bottom" secondItem="bj1-5C-4cP" secondAttribute="bottom" constant="24" id="P4M-mU-IZL"/>
-                            <constraint firstItem="5gi-kL-Uxb" firstAttribute="top" secondItem="ZDR-Zb-BBL" secondAttribute="top" constant="24" id="R1b-t3-Wn3"/>
                             <constraint firstItem="arq-fe-eXi" firstAttribute="leading" secondItem="ZDR-Zb-BBL" secondAttribute="leading" constant="16" id="TOk-hK-2Ok"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="NfU-DU-l0x" secondAttribute="trailing" constant="16" id="WCJ-KK-lXz"/>
                             <constraint firstItem="bj1-5C-4cP" firstAttribute="centerX" secondItem="ZDR-Zb-BBL" secondAttribute="centerX" id="Wl8-YM-Lzs"/>
                             <constraint firstItem="z0x-dL-4rS" firstAttribute="centerX" secondItem="ZDR-Zb-BBL" secondAttribute="centerX" id="gNg-ag-zfu"/>
                             <constraint firstItem="NfU-DU-l0x" firstAttribute="top" secondItem="7DO-Sl-F4C" secondAttribute="bottom" constant="36" id="geZ-fz-qvJ"/>
-                            <constraint firstItem="z0x-dL-4rS" firstAttribute="top" secondItem="5gi-kL-Uxb" secondAttribute="bottom" constant="16" id="lTh-Qe-KvT"/>
                             <constraint firstItem="ZDR-Zb-BBL" firstAttribute="trailing" secondItem="hea-iF-AlK" secondAttribute="trailing" constant="16" id="sPr-nw-QRC"/>
                             <constraint firstItem="7DO-Sl-F4C" firstAttribute="top" secondItem="z0x-dL-4rS" secondAttribute="bottom" constant="88" id="uwL-bQ-gUo"/>
                             <constraint firstItem="ULl-yR-DgX" firstAttribute="top" secondItem="hea-iF-AlK" secondAttribute="bottom" constant="16" id="vzO-0y-x4q"/>
@@ -377,10 +376,11 @@
                                                     <constraint firstAttribute="height" constant="44" id="MT9-NR-LwW"/>
                                                 </constraints>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="RLB-yo-SFe">
-                                                <rect key="frame" x="-162.5" y="44" width="700" height="40"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="RLB-yo-SFe">
+                                                <rect key="frame" x="40" y="44" width="319" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="Nti-XX-1HD"/>
+                                                    <constraint firstAttribute="height" constant="50" id="Nti-XX-1HD"/>
+                                                    <constraint firstAttribute="width" secondItem="RLB-yo-SFe" secondAttribute="height" multiplier="7:2" id="kFf-Gb-lQr"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -441,7 +441,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MtM-Pw-4ky" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5592.1875" y="105.63380281690141"/>
+            <point key="canvasLocation" x="5591.1999999999998" y="105.24737631184409"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B2I-F1-znp">
@@ -464,9 +464,7 @@
     </scenes>
     <resources>
         <image name="add-icon" width="16" height="16"/>
-        <image name="image-logo" width="37" height="41"/>
-        <image name="ligo-title" width="88" height="35"/>
-        <image name="logo" width="700" height="208"/>
+        <image name="logo-blue" width="558" height="232"/>
         <image name="ok-circle" width="24" height="24"/>
         <namedColor name="heavy">
             <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,12 +24,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="HGi-mn-ivG">
-                    <rect key="frame" x="-493" y="105" width="1400" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="lfn-gl-tS0"/>
-                    </constraints>
-                </imageView>
                 <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ukj-qD-TP7">
                     <rect key="frame" x="0.0" y="162" width="414" height="56"/>
                     <color key="backgroundColor" name="white"/>
@@ -76,7 +70,7 @@
                     </connections>
                 </tableView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cz3-YR-gWf">
-                    <rect key="frame" x="16" y="118" width="30" height="28"/>
+                    <rect key="frame" x="16" y="124" width="15" height="22"/>
                     <state key="normal" image="close">
                         <color key="titleColor" name="heavy"/>
                         <color key="titleShadowColor" name="heavy"/>
@@ -85,6 +79,13 @@
                         <action selector="closeSearching:" destination="-1" eventType="touchUpInside" id="nrk-HF-AOI"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="HGi-mn-ivG">
+                    <rect key="frame" x="151" y="106" width="140" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="HGi-mn-ivG" secondAttribute="height" multiplier="7:2" id="Jql-ow-rGK"/>
+                        <constraint firstAttribute="height" constant="50" id="lfn-gl-tS0"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" name="white"/>
             <constraints>
@@ -104,7 +105,7 @@
                 <constraint firstItem="Ukj-qD-TP7" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="iKf-Lo-KPU"/>
                 <constraint firstItem="0VD-bx-Vvp" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="mw9-P4-Nbq"/>
                 <constraint firstItem="wxz-sQ-Z6a" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="oUt-qj-7OT"/>
-                <constraint firstItem="HGi-mn-ivG" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="xDT-5L-rqe"/>
+                <constraint firstItem="HGi-mn-ivG" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="yUv-PF-Wd5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>
@@ -112,7 +113,7 @@
     </objects>
     <resources>
         <image name="close" width="15" height="14"/>
-        <image name="logo" width="700" height="208"/>
+        <image name="logo-blue" width="558" height="232"/>
         <namedColor name="heavy">
             <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
