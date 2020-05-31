@@ -31,7 +31,7 @@ class SearchPresenter{
         self.locationManager = LocationManager()
     }
     
-    private func showAllMarkers(){
+    func showAllMarkers(){
         self.view.clearMarkers()
         for place in self.places {
             self.view.addMarker(place.id!,

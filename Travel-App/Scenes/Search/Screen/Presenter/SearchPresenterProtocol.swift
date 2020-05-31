@@ -19,4 +19,5 @@ protocol SearchPresenterProtocol: class {
     func getPlaces(with option: OptionFilterSelection?)
     func viewDidLoad()
     func deselect(with: OptionFilterSelection)
+    func showAllMarkers()
 }

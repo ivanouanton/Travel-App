@@ -232,7 +232,6 @@ extension SearchViewController{
             self.backToTourButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 55),
             self.backToTourButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.backToTourButton.heightAnchor.constraint(equalToConstant: 44)
-            
             ])
     }
     
@@ -244,6 +243,7 @@ extension SearchViewController{
         self.hideTourView()
         self.backToTourButton.isHidden = true
         self.navigationItem.rightBarButtonItem  = nil
+        self.presenter.showAllMarkers()
     }
     
     @objc func returnToTour() {
