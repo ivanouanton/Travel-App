@@ -12,12 +12,10 @@ import UIKit
 protocol SearchViewProtocol: class{
     func didChangeMyLocation(_ location: Location)
     func addMarker(_ id: String, place: Place, isActive: Bool)
-    func setFilter(with categories: [String])
     func setFilter(with categories: [PlaceCategory])
     func clearMarkers()
     func drawPath(with routes: String?)
     func setupTourInfo(with places: [String], title: String)
-    func setPlacesCollection(with places: [PlaceCardModel])
     func showPreviewPlaces(with places: [Place])
     func showPlaceView(with index: Int)
     func showLocality(locality: String)

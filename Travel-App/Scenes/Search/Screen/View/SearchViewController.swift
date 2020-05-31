@@ -341,10 +341,6 @@ extension SearchViewController: SearchViewProtocol{
         self.placesCollection.scrollTo(itemIndex: index)
     }
     
-    func setPlacesCollection(with places: [PlaceCardModel]) {
-//        self.placesCollection.places = places
-    }
-    
     func showPreviewPlaces(with places: [Place]) {
         self.placesCollection.places = places
     }
@@ -356,10 +352,6 @@ extension SearchViewController: SearchViewProtocol{
     func clearMarkers() {
         markers.removeAll()
         mapView.clear()
-    }
-    
-    func setFilter(with categories: [String]) {
-//        self.categoryView.categories = categories
     }
     
     func setFilter(with categories: [PlaceCategory]) {
@@ -382,7 +374,7 @@ extension SearchViewController: SearchViewProtocol{
                                               longitude: place.locationPlace.longitude)
         let marker = GMSMarker(position: position)
 
-        marker.opacity = isActive ? 1 : 0.2
+        marker.opacity = isActive ? 1 : 0.3
         marker.map = mapView
         marker.title = id
         let view = MarkerView()

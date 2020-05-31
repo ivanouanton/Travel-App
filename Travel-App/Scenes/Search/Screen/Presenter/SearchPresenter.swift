@@ -115,6 +115,12 @@ extension SearchPresenter: SearchPresenterProtocol{
         var placeNames = [String]()
         let aGroup = DispatchGroup()
         
+        self.view.clearMarkers()
+        self.places.forEach { (place) in
+            let needShow = placesId.contains(place.id ?? "")
+            self.view.addMarker(place.id!, place: place, isActive: needShow)
+        }
+        
         for placeId in placesId{
             aGroup.enter()
             PlaceManager.shared.getPlace(with: placeId) { (place, error) in
