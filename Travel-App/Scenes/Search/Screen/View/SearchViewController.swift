@@ -13,7 +13,8 @@ import Alamofire
 
 final class SearchViewController: UIViewController{
     var presenter: SearchPresenterProtocol!
-    
+    weak var delegate: SearchViewControllerDelegate?
+
     private var placePreviewBottom: NSLayoutConstraint!
     private var placePreviewTop: NSLayoutConstraint!
     
@@ -148,6 +149,7 @@ final class SearchViewController: UIViewController{
         self.presenter.viewDidLoad()
         self.presenter.fetchUserLocation()
         self.title = "Rome"
+        delegate?.appDidLoadFirstTime()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -261,7 +263,6 @@ extension SearchViewController{
     
     @objc func showCityInfo(){
         let controller = ViewFactory.createPlaceInfoVC()
-        
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

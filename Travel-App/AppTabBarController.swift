@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import SwiftyOnboard
 
 class AppTabBarController: UITabBarController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,7 +22,9 @@ class AppTabBarController: UITabBarController {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor:
             UIColor(named: "smokyTopaz")!], for: .selected)
         
-        let search = NavigationController(rootViewController: ViewFactory.createSearchVC())
+        let searchVC = ViewFactory.createSearchVC()
+        searchVC.delegate = self
+        let search = NavigationController(rootViewController: searchVC)
         search.tabBarItem = UITabBarItem(title: "Search",
                                          image: UIImage(named: "map-location-def")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal),
                                          selectedImage: UIImage(named: "map-location")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal))
@@ -47,3 +50,17 @@ class AppTabBarController: UITabBarController {
     }
 }
 
+extension AppTabBarController: SearchViewControllerDelegate {
+    
+    func appDidLoadFirstTime() {
+        
+        if let isShowedOnBoard =  UserDefaultsService.shared.getData(for: .isOnBoardShowed) as? Bool,
+            isShowedOnBoard == true{
+            return
+        }else {
+            let vc = ViewFactory.createOnBoardVC()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
+}

@@ -18,6 +18,7 @@ class UserDefaultsService {
     enum UserDefaultsField: String{
         case uid = "com.TravelApp.uid"
         case isLoggedIn = "com.TravelApp.isLoggedIn"
+        case isOnBoardShowed = "com.TravelApp.isOnBoardShowed"
     }
     
     func saveData<T>(_ data: T, keyValue: UserDefaultsField){
