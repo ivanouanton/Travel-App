@@ -24,6 +24,8 @@
 		3A55496C23F2D60B00323956 /* emailModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A55496A23F2D60B00323956 /* emailModalView.xib */; };
 		3A55497223F2DF9400323956 /* SuccessfulChangePassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A55497023F2DF9400323956 /* SuccessfulChangePassView.swift */; };
 		3A55497323F2DF9400323956 /* SuccessfulChangePassView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A55497123F2DF9400323956 /* SuccessfulChangePassView.xib */; };
+		3A5CBB6724A5E2EF007D3897 /* ConfigLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5CBB6624A5E2EF007D3897 /* ConfigLoader.swift */; };
+		3A5CBB6B24A5FD08007D3897 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A994A8624A4DD7300294C44 /* Config.plist */; };
 		3A6E70C22452BCEF001D21CA /* TAImageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6E70C12452BCEF001D21CA /* TAImageClient.swift */; };
 		3A712E3D2451D4BA0040B542 /* CityIntoductionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A712E3C2451D4B90040B542 /* CityIntoductionVC.swift */; };
 		3ABC3EB723F6C0810060EE61 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABC3EB623F6C0810060EE61 /* Notification+Extension.swift */; };
@@ -195,10 +197,16 @@
 		3A55496A23F2D60B00323956 /* emailModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = emailModalView.xib; sourceTree = "<group>"; };
 		3A55497023F2DF9400323956 /* SuccessfulChangePassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SuccessfulChangePassView.swift; path = "Travel-App/Scenes/CustomViews/Sussessful View/SuccessfulChangePassView.swift"; sourceTree = SOURCE_ROOT; };
 		3A55497123F2DF9400323956 /* SuccessfulChangePassView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SuccessfulChangePassView.xib; path = "Travel-App/Scenes/CustomViews/Sussessful View/SuccessfulChangePassView.xib"; sourceTree = SOURCE_ROOT; };
+		3A5CBB6624A5E2EF007D3897 /* ConfigLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigLoader.swift; sourceTree = "<group>"; };
 		3A6E70C12452BCEF001D21CA /* TAImageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAImageClient.swift; sourceTree = "<group>"; };
 		3A712E3C2451D4B90040B542 /* CityIntoductionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityIntoductionVC.swift; sourceTree = "<group>"; };
+		3A994A8524A4DD5300294C44 /* Dev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dev.xcconfig; sourceTree = "<group>"; };
+		3A994A8624A4DD7300294C44 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		3A994A8924A4DDAC00294C44 /* Prod.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Prod.xcconfig; sourceTree = "<group>"; };
+		3A994A8A24A4DDBD00294C44 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		3ABC3EB623F6C0810060EE61 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		3CCBF9ADA3EC86FC713D01DA /* Pods-Travel-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.debug.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.debug.xcconfig"; sourceTree = "<group>"; };
+		792486346A9A14BF60B98818 /* Pods-Travel-App.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.dev.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.dev.xcconfig"; sourceTree = "<group>"; };
 		F00031C6B9A4EF8BE8D81578 /* Pods-Travel-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Travel-App.release.xcconfig"; path = "Target Support Files/Pods-Travel-App/Pods-Travel-App.release.xcconfig"; sourceTree = "<group>"; };
 		F700442823A17C9C00D7E59F /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = "Travel-App/Profile.storyboard"; sourceTree = SOURCE_ROOT; };
 		F700442A23A194C300D7E59F /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -361,6 +369,7 @@
 			children = (
 				3CCBF9ADA3EC86FC713D01DA /* Pods-Travel-App.debug.xcconfig */,
 				F00031C6B9A4EF8BE8D81578 /* Pods-Travel-App.release.xcconfig */,
+				792486346A9A14BF60B98818 /* Pods-Travel-App.dev.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -430,6 +439,36 @@
 				3A712E3C2451D4B90040B542 /* CityIntoductionVC.swift */,
 			);
 			path = CityInfo;
+			sourceTree = "<group>";
+		};
+		3A994A8424A4DCBE00294C44 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F79FCA2023847D4E009F1693 /* AvenirNextLTPro-Bold.otf */,
+				F79FCA2423847ED2009F1693 /* AvenirNextLTPro-Demi.otf */,
+				F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */,
+				F79FCA2223847ED2009F1693 /* AvenirNextLTPro-Regular.otf */,
+				F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3A994A8824A4DD7F00294C44 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				3A994A8524A4DD5300294C44 /* Dev.xcconfig */,
+				3A994A8624A4DD7300294C44 /* Config.plist */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		3A994A8C24A4DDC700294C44 /* Prod */ = {
+			isa = PBXGroup;
+			children = (
+				3A994A8924A4DDAC00294C44 /* Prod.xcconfig */,
+				3A994A8A24A4DDBD00294C44 /* Config.plist */,
+			);
+			path = Prod;
 			sourceTree = "<group>";
 		};
 		C2D17BFE28A13407CD023D67 /* Frameworks */ = {
@@ -648,6 +687,7 @@
 				3A23585023F6733C00105111 /* UIImageView+Extension.swift */,
 				3ABC3EB623F6C0810060EE61 /* Notification+Extension.swift */,
 				F707D3A72422685D00D62727 /* UIImage+Extesion.swift */,
+				3A5CBB6624A5E2EF007D3897 /* ConfigLoader.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -837,11 +877,13 @@
 		F79FCA1E23846F69009F1693 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F79FCA2023847D4E009F1693 /* AvenirNextLTPro-Bold.otf */,
-				F79FCA2423847ED2009F1693 /* AvenirNextLTPro-Demi.otf */,
-				F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */,
-				F79FCA2223847ED2009F1693 /* AvenirNextLTPro-Regular.otf */,
-				F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */,
+				F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */,
+				F7ADB09A237F3A9E00DA4E89 /* Info.plist */,
+				F7C7A1AB238B369A00C33FE4 /* GoogleService-Info.plist */,
+				3A994A8424A4DCBE00294C44 /* Fonts */,
+				F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */,
+				3A994A8824A4DD7F00294C44 /* Dev */,
+				3A994A8C24A4DDC700294C44 /* Prod */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -900,15 +942,11 @@
 				F77D500F23C1F04F00E89E67 /* Helpers */,
 				F7ADB08E237F3A9700DA4E89 /* AppDelegate.swift */,
 				F7ADB090237F3A9700DA4E89 /* AppTabBarController.swift */,
-				F7ADB095237F3A9E00DA4E89 /* Assets.xcassets */,
+				F79FCA1E23846F69009F1693 /* Resources */,
 				F71ACDE9238B41B60092279F /* Network */,
 				F79B3874239C136B0032F598 /* Storage */,
 				F798835B2381AEAE00F01F3A /* Scenes */,
 				F77F22432392DB6A004610CE /* Utility */,
-				F7ADB097237F3A9E00DA4E89 /* LaunchScreen.storyboard */,
-				F7ADB09A237F3A9E00DA4E89 /* Info.plist */,
-				F7C7A1AB238B369A00C33FE4 /* GoogleService-Info.plist */,
-				F79FCA1E23846F69009F1693 /* Resources */,
 			);
 			path = "Travel-App";
 			sourceTree = "<group>";
@@ -1006,6 +1044,7 @@
 			buildConfigurationList = F7ADB09D237F3A9E00DA4E89 /* Build configuration list for PBXNativeTarget "Travel-App" */;
 			buildPhases = (
 				7D04CF056E5D7EF43D680871 /* [CP] Check Pods Manifest.lock */,
+				3A5CBB6524A5DF26007D3897 /* Copy Config */,
 				F7ADB087237F3A9700DA4E89 /* Sources */,
 				F7ADB088237F3A9700DA4E89 /* Frameworks */,
 				F7ADB089237F3A9700DA4E89 /* Resources */,
@@ -1107,6 +1146,7 @@
 				F799F5E223D4CD7500106B7E /* HomeViewController.xib in Resources */,
 				F79FCA2723847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf in Resources */,
 				F73E166D23E0CC6D0001AB56 /* PlaceTableViewCell.xib in Resources */,
+				3A5CBB6B24A5FD08007D3897 /* Config.plist in Resources */,
 				F77879F523C7D4D2002F2052 /* CentralCircleLoader.json in Resources */,
 				F7932B672393A65C006E6496 /* InfoStoryboard.storyboard in Resources */,
 				F79FCA2823847ED2009F1693 /* AvenirNextLTPro-Demi.otf in Resources */,
@@ -1136,6 +1176,25 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Travel-App/Pods-Travel-App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		3A5CBB6524A5DF26007D3897 /* Copy Config */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Config";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Travel-App/Generated/Config/Config.plist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -fp \"${SRCROOT}/Travel-App/Resources/${XCC_CONFIG_PATH}\" \"${SRCROOT}/Travel-App/Generated/Config/Config.plist\"\n\n";
 		};
 		7D04CF056E5D7EF43D680871 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1293,6 +1352,7 @@
 				F77879F023C79C2C002F2052 /* GeocodeType.swift in Sources */,
 				F79883742381C6CB00F01F3A /* HomePresenterProtocol.swift in Sources */,
 				3A3A3814239A74B9001FE150 /* CategoryPreference.swift in Sources */,
+				3A5CBB6724A5E2EF007D3897 /* ConfigLoader.swift in Sources */,
 				F77D500C23C102DE00E89E67 /* FirebaseAuthManager.swift in Sources */,
 				F79883752381C6CB00F01F3A /* HomePresenter.swift in Sources */,
 				F7CFD020239BE3A800983631 /* Tour.swift in Sources */,
@@ -1319,8 +1379,97 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3A994A8124A4DA5B00294C44 /* Dev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A994A8524A4DD5300294C44 /* Dev.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Dev;
+		};
+		3A994A8224A4DA5B00294C44 /* Dev */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 792486346A9A14BF60B98818 /* Pods-Travel-App.dev.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 14;
+				DEVELOPMENT_TEAM = 582C82KJTU;
+				INFOPLIST_FILE = "Travel-App/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.7;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wvonbehr.TravelApp;
+				PRODUCT_NAME = TravelApp;
+				PROVISIONING_PROFILE_SPECIFIER = "Urbs Travel App Developer Anton Ivanou";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Dev;
+		};
 		F7ADB09B237F3A9E00DA4E89 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A994A8924A4DDAC00294C44 /* Prod.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1382,6 +1531,7 @@
 		};
 		F7ADB09C237F3A9E00DA4E89 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A994A8924A4DDAC00294C44 /* Prod.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1445,7 +1595,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 582C82KJTU;
-				INFOPLIST_FILE = "Travel-App/Info.plist";
+				INFOPLIST_FILE = "Travel-App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1471,7 +1621,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 582C82KJTU;
-				INFOPLIST_FILE = "Travel-App/Info.plist";
+				INFOPLIST_FILE = "Travel-App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1493,6 +1643,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F7ADB09B237F3A9E00DA4E89 /* Debug */,
+				3A994A8124A4DA5B00294C44 /* Dev */,
 				F7ADB09C237F3A9E00DA4E89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1502,6 +1653,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F7ADB09E237F3A9E00DA4E89 /* Debug */,
+				3A994A8224A4DA5B00294C44 /* Dev */,
 				F7ADB09F237F3A9E00DA4E89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

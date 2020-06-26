@@ -1,0 +1,13 @@
+//
+//  Prod.xcconfig
+//  Travel-App
+//
+//  Created by Anton Ivanov on 6/25/20.
+//  Copyright © 2020 companyName. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+XCC_BUNDLE_NAME = TravelApp
+XCC_CONFIG_PATH = Prod/Config.plist

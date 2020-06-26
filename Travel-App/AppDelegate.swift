@@ -6,6 +6,7 @@
 //  Copyright © 2019 companyName. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import GoogleMaps
 import GooglePlaces
