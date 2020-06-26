@@ -8,3 +8,6 @@
 
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
+
+XCC_BUNDLE_NAME = TravelApp
+XCC_CONFIG_PATH = Prod/Config.plist
