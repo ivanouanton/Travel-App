@@ -13,8 +13,8 @@ class PreferenceBoardViewController: UIViewController {
     var presenter: PreferenceBoardPresenterProtocol!
     
     var settingsData = [
-        "Duration": ["A Few Hours", "Half Day",  "Full Day"],
-        "Price": ["Free", "€", "€€"],
+        "Duration (select one)": ["A Few Hours", "Half Day",  "Full Day"],
+        "Price (select any)": ["Free", "€", "€€"],
         "Transport": [UIImage(named: "walk")!, UIImage(named: "bus")!, UIImage(named: "subway")!]
     ]
     
@@ -23,7 +23,7 @@ class PreferenceBoardViewController: UIViewController {
     var selectedPrices = [Int]()
     var selectedDurations = [0]
 
-    var sectionTitles = ["Interests", "Duration", "Price"]
+    var sectionTitles = ["Interests (select any)", "Duration (select one)", "Price (select any)"]
     
     let button = AppButton()
     

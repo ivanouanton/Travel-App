@@ -31,7 +31,7 @@ class SearchPresenter{
         self.locationManager = LocationManager()
     }
     
-    private func showAllMarkers(){
+    func showAllMarkers(){
         self.view.clearMarkers()
         for place in self.places {
             self.view.addMarker(place.id!,
@@ -114,6 +114,12 @@ extension SearchPresenter: SearchPresenterProtocol{
         var places = [GeoPoint]()
         var placeNames = [String]()
         let aGroup = DispatchGroup()
+        
+        self.view.clearMarkers()
+        self.places.forEach { (place) in
+            let needShow = placesId.contains(place.id ?? "")
+            self.view.addMarker(place.id!, place: place, isActive: needShow)
+        }
         
         for placeId in placesId{
             aGroup.enter()

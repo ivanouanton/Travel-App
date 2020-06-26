@@ -13,7 +13,8 @@ import Alamofire
 
 final class SearchViewController: UIViewController{
     var presenter: SearchPresenterProtocol!
-    
+    weak var delegate: SearchViewControllerDelegate?
+
     private var placePreviewBottom: NSLayoutConstraint!
     private var placePreviewTop: NSLayoutConstraint!
     
@@ -148,6 +149,7 @@ final class SearchViewController: UIViewController{
         self.presenter.viewDidLoad()
         self.presenter.fetchUserLocation()
         self.title = "Rome"
+        delegate?.appDidLoadFirstTime()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -232,7 +234,6 @@ extension SearchViewController{
             self.backToTourButton.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 55),
             self.backToTourButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.backToTourButton.heightAnchor.constraint(equalToConstant: 44)
-            
             ])
     }
     
@@ -244,6 +245,7 @@ extension SearchViewController{
         self.hideTourView()
         self.backToTourButton.isHidden = true
         self.navigationItem.rightBarButtonItem  = nil
+        self.presenter.showAllMarkers()
     }
     
     @objc func returnToTour() {
@@ -261,7 +263,6 @@ extension SearchViewController{
     
     @objc func showCityInfo(){
         let controller = ViewFactory.createPlaceInfoVC()
-        
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
@@ -341,10 +342,6 @@ extension SearchViewController: SearchViewProtocol{
         self.placesCollection.scrollTo(itemIndex: index)
     }
     
-    func setPlacesCollection(with places: [PlaceCardModel]) {
-//        self.placesCollection.places = places
-    }
-    
     func showPreviewPlaces(with places: [Place]) {
         self.placesCollection.places = places
     }
@@ -356,10 +353,6 @@ extension SearchViewController: SearchViewProtocol{
     func clearMarkers() {
         markers.removeAll()
         mapView.clear()
-    }
-    
-    func setFilter(with categories: [String]) {
-//        self.categoryView.categories = categories
     }
     
     func setFilter(with categories: [PlaceCategory]) {
@@ -382,7 +375,7 @@ extension SearchViewController: SearchViewProtocol{
                                               longitude: place.locationPlace.longitude)
         let marker = GMSMarker(position: position)
 
-        marker.opacity = isActive ? 1 : 0.2
+        marker.opacity = isActive ? 1 : 0.3
         marker.map = mapView
         marker.title = id
         let view = MarkerView()

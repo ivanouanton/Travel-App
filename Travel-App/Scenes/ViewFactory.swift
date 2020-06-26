@@ -35,6 +35,11 @@ class ViewFactory{
         return vc
     }
     
+    static func createOnBoardVC() -> StoryboardExampleViewController{
+        let vc = StoryboardExampleViewController(nibName: "Onboarding", bundle: nil)
+        return vc
+    }
+    
     static func createProfileVC() -> ProfileViewController{
         let storyboard = UIStoryboard(name: "Profile", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController

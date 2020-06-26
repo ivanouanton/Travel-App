@@ -33,5 +33,7 @@ target 'Travel-App' do
  
  # Pods for Facebook
  pod 'GoogleSignIn'
+ 
+ pod 'SwiftyOnboard'
 
 end

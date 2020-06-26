@@ -53,6 +53,13 @@
 		F73E166F23E0CFE70001AB56 /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E166E23E0CFE70001AB56 /* SelfSizedTableView.swift */; };
 		F73E167123E355860001AB56 /* AttributedStringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73E167023E355860001AB56 /* AttributedStringHelper.swift */; };
 		F745760E238B480C00C5A1DE /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F745760D238B480C00C5A1DE /* Category.swift */; };
+		F748B41F2483A27F0004CB9C /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B41A2483A27F0004CB9C /* CustomOverlay.swift */; };
+		F748B4202483A27F0004CB9C /* CustomOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = F748B41B2483A27F0004CB9C /* CustomOverlay.xib */; };
+		F748B4212483A27F0004CB9C /* CustomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B41C2483A27F0004CB9C /* CustomPage.swift */; };
+		F748B4222483A27F0004CB9C /* CustomPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = F748B41D2483A27F0004CB9C /* CustomPage.xib */; };
+		F748B4232483A27F0004CB9C /* StoryboardExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B41E2483A27F0004CB9C /* StoryboardExample.swift */; };
+		F748B4252483A47E0004CB9C /* Onboarding.xib in Resources */ = {isa = PBXBuildFile; fileRef = F748B4242483A47E0004CB9C /* Onboarding.xib */; };
+		F748B4272483D88C0004CB9C /* SearchViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F748B4262483D88C0004CB9C /* SearchViewControllerDelegate.swift */; };
 		F7570AA0238AE8F300621E4F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570A9F238AE8F300621E4F /* Configuration.swift */; };
 		F7570AA3238AEAA200621E4F /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570AA2238AEAA200621E4F /* Location.swift */; };
 		F7570AA8238AEC9C00621E4F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7570AA7238AEC9C00621E4F /* LocationService.swift */; };
@@ -226,6 +233,13 @@
 		F73E166E23E0CFE70001AB56 /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
 		F73E167023E355860001AB56 /* AttributedStringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AttributedStringHelper.swift; path = "Travel-App/Scenes/AttributedStringHelper.swift"; sourceTree = SOURCE_ROOT; };
 		F745760D238B480C00C5A1DE /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		F748B41A2483A27F0004CB9C /* CustomOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlay.swift; sourceTree = "<group>"; };
+		F748B41B2483A27F0004CB9C /* CustomOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlay.xib; sourceTree = "<group>"; };
+		F748B41C2483A27F0004CB9C /* CustomPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPage.swift; sourceTree = "<group>"; };
+		F748B41D2483A27F0004CB9C /* CustomPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPage.xib; sourceTree = "<group>"; };
+		F748B41E2483A27F0004CB9C /* StoryboardExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardExample.swift; sourceTree = "<group>"; };
+		F748B4242483A47E0004CB9C /* Onboarding.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Onboarding.xib; sourceTree = "<group>"; };
+		F748B4262483D88C0004CB9C /* SearchViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerDelegate.swift; sourceTree = "<group>"; };
 		F7570A9F238AE8F300621E4F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = "Travel-App/Scenes/Search/Locations/Configuration/Configuration.swift"; sourceTree = SOURCE_ROOT; };
 		F7570AA2238AEAA200621E4F /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		F7570AA7238AEC9C00621E4F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationService.swift; path = "Travel-App/Scenes/Search/Locations/Protocols/LocationService.swift"; sourceTree = SOURCE_ROOT; };
@@ -545,6 +559,19 @@
 			path = TourInfo;
 			sourceTree = "<group>";
 		};
+		F748B4192483A2640004CB9C /* OnBoardVC */ = {
+			isa = PBXGroup;
+			children = (
+				F748B41A2483A27F0004CB9C /* CustomOverlay.swift */,
+				F748B41B2483A27F0004CB9C /* CustomOverlay.xib */,
+				F748B41C2483A27F0004CB9C /* CustomPage.swift */,
+				F748B41D2483A27F0004CB9C /* CustomPage.xib */,
+				F748B41E2483A27F0004CB9C /* StoryboardExample.swift */,
+				F748B4242483A47E0004CB9C /* Onboarding.xib */,
+			);
+			path = OnBoardVC;
+			sourceTree = "<group>";
+		};
 		F7570A9C238A943D00621E4F /* TourPreferensesView */ = {
 			isa = PBXGroup;
 			children = (
@@ -725,6 +752,7 @@
 		F798835B2381AEAE00F01F3A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F748B4192483A2640004CB9C /* OnBoardVC */,
 				F79883592381AE5E00F01F3A /* ViewFactory.swift */,
 				F79883662381AF9600F01F3A /* Search */,
 				F761DFFB2381D04E00D9DBBD /* Settings */,
@@ -752,6 +780,7 @@
 			children = (
 				F798835C2381AEF800F01F3A /* SearchViewController.swift */,
 				F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */,
+				F748B4262483D88C0004CB9C /* SearchViewControllerDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1086,6 +1115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F748B4222483A27F0004CB9C /* CustomPage.xib in Resources */,
 				F70DB819239B169B00D48EC6 /* SettingOptionTableViewCell.xib in Resources */,
 				F72EFE49239EF62C008081E1 /* TourInfoView.xib in Resources */,
 				F7A94AF92427C79F001918BF /* MarkerView.xib in Resources */,
@@ -1093,6 +1123,7 @@
 				3A55497323F2DF9400323956 /* SuccessfulChangePassView.xib in Resources */,
 				F77879F723C7DA01002F2052 /* circleLoader.json in Resources */,
 				F780CE6823A2FDAD00E8E248 /* RecentPlacesTableViewCell.xib in Resources */,
+				F748B4202483A27F0004CB9C /* CustomOverlay.xib in Resources */,
 				F7ADAA6923CB2156009ECAEE /* AgreementViewController.xib in Resources */,
 				F7CF8D3A239AE39600119B60 /* InterestsTableCell.xib in Resources */,
 				F790825223A83AB700056228 /* OptionFilterTableViewCell.xib in Resources */,
@@ -1106,6 +1137,7 @@
 				F780CE6C23A315F200E8E248 /* RecentPlaceCollectionViewCell.xib in Resources */,
 				F77C178E23AACAE1009D2D69 /* Authorisation.storyboard in Resources */,
 				F7C7A1AC238B369A00C33FE4 /* GoogleService-Info.plist in Resources */,
+				F748B4252483A47E0004CB9C /* Onboarding.xib in Resources */,
 				3A3E631623ED359800BE2F34 /* AudioPlayerView.xib in Resources */,
 				3A55496C23F2D60B00323956 /* emailModalView.xib in Resources */,
 				F77D501923C3D1BE00E89E67 /* SplashScreenViewController.xib in Resources */,
@@ -1253,6 +1285,7 @@
 				3ABC3EB723F6C0810060EE61 /* Notification+Extension.swift in Sources */,
 				F7B45FFF2389103F005CBEE4 /* PreferenceBoardViewController.swift in Sources */,
 				F7CFD013239BCC8800983631 /* ProfileViewProtocol.swift in Sources */,
+				F748B41F2483A27F0004CB9C /* CustomOverlay.swift in Sources */,
 				F79B3873239C13630032F598 /* ToursManager.swift in Sources */,
 				F77D501823C3D1BE00E89E67 /* SplashScreenViewController.swift in Sources */,
 				F7AC996823EE00DB0046E2B3 /* TPGAudioPlayer.swift in Sources */,
@@ -1272,6 +1305,7 @@
 				F7CFD01C239BD3BB00983631 /* TourTableViewCell.swift in Sources */,
 				3A3E631423ED352400BE2F34 /* AudioPlayerView.swift in Sources */,
 				F79B387C239D1E4B0032F598 /* NetworkProvider.swift in Sources */,
+				F748B4272483D88C0004CB9C /* SearchViewControllerDelegate.swift in Sources */,
 				F780A4CB23C4F4EB00A9A375 /* FirebaseProfileManager.swift in Sources */,
 				F79B3878239C60400032F598 /* NavigationController.swift in Sources */,
 				F761DFF22381CF7400D9DBBD /* SettingsViewController.swift in Sources */,
@@ -1286,6 +1320,7 @@
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
 				3A4C303B23F523F500E2DA8B /* PlaceInfoPresenterProtocol.swift in Sources */,
 				3A55496B23F2D60B00323956 /* emailModalView.swift in Sources */,
+				F748B4232483A27F0004CB9C /* StoryboardExample.swift in Sources */,
 				F7ADAA7123D460CE009ECAEE /* AgreementDelegate.swift in Sources */,
 				F735911523F00DDA00204703 /* PreferenceBoardPresenterProtocol.swift in Sources */,
 				F7ADAA6823CB2156009ECAEE /* AgreementViewController.swift in Sources */,
@@ -1298,6 +1333,7 @@
 				F71ACDEB238B41E60092279F /* Place.swift in Sources */,
 				F7ADAA6D23D09B81009ECAEE /* UIView+Extension.swift in Sources */,
 				F7EF6918239BA4AA0004EF4E /* PreferenceOptionDelegate.swift in Sources */,
+				F748B4212483A27F0004CB9C /* CustomPage.swift in Sources */,
 				F7EF691A239BBE930004EF4E /* ToursViewController.swift in Sources */,
 				F7CFD017239BCD6600983631 /* ProfilePresenter.swift in Sources */,
 				F798836A2381C4FA00F01F3A /* HomeViewProtocol.swift in Sources */,
@@ -1557,7 +1593,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 582C82KJTU;
 				INFOPLIST_FILE = "Travel-App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1565,7 +1601,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.7;
+				MARKETING_VERSION = 0.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wvonbehr.TravelApp;
 				PRODUCT_NAME = TravelApp;
 				PROVISIONING_PROFILE_SPECIFIER = "Urbs Travel App Developer Anton Ivanou";
@@ -1583,7 +1619,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 18;
 				DEVELOPMENT_TEAM = 582C82KJTU;
 				INFOPLIST_FILE = "Travel-App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1591,7 +1627,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.7;
+				MARKETING_VERSION = 0.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wvonbehr.TravelApp;
 				PRODUCT_NAME = TravelApp;
 				PROVISIONING_PROFILE_SPECIFIER = "Urbs Travel App AppStore Anton Ivanou";

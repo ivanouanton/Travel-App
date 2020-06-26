@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ukj-qD-TP7">
-                    <rect key="frame" x="0.0" y="162" width="414" height="56"/>
+                    <rect key="frame" x="0.0" y="172" width="414" height="56"/>
                     <color key="backgroundColor" name="white"/>
                     <color key="barTintColor" name="white"/>
                     <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="yes"/>
@@ -48,21 +48,21 @@
                     </connections>
                 </searchBar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0VD-bx-Vvp" customClass="CategoriesFilterView" customModule="TravelApp" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="242" width="414" height="82"/>
+                    <rect key="frame" x="0.0" y="252" width="414" height="82"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="82" id="tVS-Mz-0Ua"/>
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="95T-ev-HXj">
-                    <rect key="frame" x="16" y="348" width="382" height="514"/>
+                    <rect key="frame" x="16" y="358" width="382" height="504"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="228" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxz-sQ-Z6a" customClass="SelfSizedTableView" customModule="TravelApp" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="219" width="414" height="228"/>
+                    <rect key="frame" x="0.0" y="229" width="414" height="228"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="jZA-TA-8e9"/>
@@ -70,7 +70,7 @@
                     </connections>
                 </tableView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cz3-YR-gWf">
-                    <rect key="frame" x="16" y="124" width="15" height="22"/>
+                    <rect key="frame" x="16" y="134" width="15" height="22"/>
                     <state key="normal" image="close">
                         <color key="titleColor" name="heavy"/>
                         <color key="titleShadowColor" name="heavy"/>
@@ -79,7 +79,7 @@
                         <action selector="closeSearching:" destination="-1" eventType="touchUpInside" id="nrk-HF-AOI"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="HGi-mn-ivG">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo-blue" translatesAutoresizingMaskIntoConstraints="NO" id="HGi-mn-ivG">
                     <rect key="frame" x="151" y="106" width="140" height="40"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="HGi-mn-ivG" secondAttribute="height" multiplier="7:2" id="Jql-ow-rGK"/>
