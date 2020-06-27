@@ -60,8 +60,16 @@
                         <color key="textColor" name="onyx"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8t-LN-7M1">
+                        <rect key="frame" x="68" y="0.0" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="s8t-LN-7M1" firstAttribute="leading" secondItem="YPY-VE-QpN" secondAttribute="trailing" constant="16" id="Eba-9p-hNf"/>
+                    <constraint firstItem="s8t-LN-7M1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="J4u-u5-RsE"/>
                     <constraint firstItem="YPY-VE-QpN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="YwI-aJ-a2v"/>
                     <constraint firstAttribute="trailing" secondItem="J2C-2O-30L" secondAttribute="trailing" constant="16" id="ZFe-Ec-MQW"/>
                     <constraint firstItem="J2C-2O-30L" firstAttribute="leading" secondItem="YPY-VE-QpN" secondAttribute="trailing" constant="16" id="cZx-eD-UgE"/>
@@ -74,6 +82,7 @@
             <connections>
                 <outlet property="categoryBgView" destination="YPY-VE-QpN" id="5CW-LK-G4X"/>
                 <outlet property="categoryImage" destination="HDK-u3-pR7" id="8Vr-F6-aPm"/>
+                <outlet property="idTitleLabel" destination="s8t-LN-7M1" id="5wZ-Mn-Aou"/>
                 <outlet property="placeName" destination="J2C-2O-30L" id="jTT-GW-VlQ"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="90.401785714285708"/>

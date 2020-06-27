@@ -105,12 +105,12 @@ class PlaceManager {
                     cardGroup.enter()
                     TAImageClient.getImage(with: imgId ) { (image, error) in
                         placeData = PlaceCardModel(id: id,
-                                                       name: place.name,
-                                                       category: place.category.rawValue,
-                                                       price: place.price,
-                                                       image: image,
-                                                       location: place.locationPlace,
-                                                       description: place.description ?? "")
+                                                   name: place.name,
+                                                   category: place.category.rawValue,
+                                                   price: place.price,
+                                                   image: image,
+                                                   location: place.locationPlace,
+                                                   description: place.description)
                         cardGroup.leave()
                     }
                 }
@@ -152,6 +152,15 @@ class PlaceManager {
             } else {
                 print(querySnapshot!.documents.count)
                 for document in querySnapshot!.documents {
+//                    if document.documentID == "sHqk6mBFH8y4p4Vsc0dP" {
+//                        let jsonStr = (document.data()["description"] as? String) ?? ""
+//                        do {
+//                            let f = try JSONDecoder().decode(RestaurantDescription.self, from: jsonStr.data(using: .utf8)!)
+//                            print(f)
+//                        } catch {
+//                            print(error)
+//                        }
+//                    }
                     var data = Place(document.data())
                     data.id = document.documentID
                     places.append(data)
@@ -226,10 +235,6 @@ class PlaceManager {
         if !categories.isEmpty {
             query = query.whereField("category", in: categories.compactMap { $0.rawValue })
         }
-//
-//        if !prices.isEmpty {
-//            query = query.whereField("price", in: prices)
-//        }
 
         query.getDocuments() { (querySnapshot, error) in
             if let response = querySnapshot {

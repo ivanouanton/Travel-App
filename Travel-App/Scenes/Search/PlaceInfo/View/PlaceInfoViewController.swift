@@ -49,7 +49,7 @@ class PlaceInfoViewController: UIViewController {
         }
         
         self.titleDescriptionLabel.text = place.name
-        self.descriptionLabel.text = place.description
+        self.descriptionLabel.attributedText = place.description
         self.addressLabel.text = place.address ?? "no address"
         
         // TODO - need refactor
