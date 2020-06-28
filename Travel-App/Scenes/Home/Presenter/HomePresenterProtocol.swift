@@ -10,5 +10,7 @@ import Foundation
 
 protocol HomePresenterProtocol: class {
     init(view: HomeViewProtocol)
-    func getAttributedDescription() -> NSMutableAttributedString
+    func getAttributedDescription() -> NSAttributedString
+    func getAttributedMiddleDescription() -> NSAttributedString
+    func getAttributedEndDescription() -> NSAttributedString
 }

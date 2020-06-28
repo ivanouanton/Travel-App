@@ -13,7 +13,9 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: SelfSizedTableView!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var startText: UILabel!
+    @IBOutlet weak var middleText: UILabel!
+    @IBOutlet weak var endText: UILabel!
     @IBOutlet weak var closeSearchingButton: UIButton!
     @IBOutlet weak var categoryFilterView: CategoriesFilterView!
     
@@ -37,7 +39,9 @@ class HomeViewController: UIViewController {
         let optionCell = UINib(nibName: PlaceTableViewCell.nibName, bundle: nil)
         tableView.register(optionCell, forCellReuseIdentifier: PlaceTableViewCell.reuseIdentifier)
         
-        textView.attributedText = presenter.getAttributedDescription()
+        startText.attributedText = presenter.getAttributedDescription()
+        middleText.attributedText = presenter.getAttributedMiddleDescription()
+        endText.attributedText = presenter.getAttributedEndDescription()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,6 +52,16 @@ class HomeViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    @IBAction func bookColosseum(_ sender: Any) {
+        guard let url = URL(string: "https://www.musement.com/uk/rome/priority-access-to-the-colosseum-roman-forum-and-palatine-hill-with-arena-floor-52933/") else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    @IBAction func bookVatican(_ sender: Any) {
+        guard let url = URL(string: "https://www.musement.com/uk/rome/vatican-museums-skip-the-line-tickets-with-optional-saint-peter-s-basilica-166063/") else { return }
+        UIApplication.shared.open(url)
     }
     
     //MARK: - Setup UI
