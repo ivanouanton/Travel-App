@@ -17,6 +17,7 @@ protocol SearchPresenterProtocol: class {
     func getRoute(with locations: [GeoPoint])
     func getTourRoute(with tour: Tour)
     func getPlaces(with option: OptionFilterSelection?)
+    func getIntroduction() -> Place?
     func viewDidLoad()
     func deselect(with: OptionFilterSelection)
     func showAllMarkers()

@@ -107,7 +107,7 @@
 		F79754E923EF489C00306220 /* CategoryFilterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79754E723EF489C00306220 /* CategoryFilterViewCell.swift */; };
 		F79754EA23EF489C00306220 /* CategoryFilterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F79754E823EF489C00306220 /* CategoryFilterViewCell.xib */; };
 		F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883592381AE5E00F01F3A /* ViewFactory.swift */; };
-		F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835C2381AEF800F01F3A /* SearchViewController.swift */; };
+		F798835D2381AEF800F01F3A /*  .swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835C2381AEF800F01F3A /*  .swift */; };
 		F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */; };
 		F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883602381AF1900F01F3A /* SearchPresenter.swift */; };
 		F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883622381AF5000F01F3A /* SearchPresenterProtocol.swift */; };
@@ -290,7 +290,7 @@
 		F79754E723EF489C00306220 /* CategoryFilterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterViewCell.swift; sourceTree = "<group>"; };
 		F79754E823EF489C00306220 /* CategoryFilterViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryFilterViewCell.xib; sourceTree = "<group>"; };
 		F79883592381AE5E00F01F3A /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
-		F798835C2381AEF800F01F3A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F798835C2381AEF800F01F3A /*  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " .swift"; sourceTree = "<group>"; };
 		F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewProtocol.swift; sourceTree = "<group>"; };
 		F79883602381AF1900F01F3A /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		F79883622381AF5000F01F3A /* SearchPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -782,7 +782,7 @@
 		F79883652381AF8B00F01F3A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F798835C2381AEF800F01F3A /* SearchViewController.swift */,
+				F798835C2381AEF800F01F3A /*  .swift */,
 				F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */,
 				F748B4262483D88C0004CB9C /* SearchViewControllerDelegate.swift */,
 			);
@@ -1320,7 +1320,7 @@
 				F79754E923EF489C00306220 /* CategoryFilterViewCell.swift in Sources */,
 				F79B3880239D22370032F598 /* PlaceManager.swift in Sources */,
 				F799F5E123D4CD7500106B7E /* HomeViewController.swift in Sources */,
-				F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */,
+				F798835D2381AEF800F01F3A /*  .swift in Sources */,
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
 				3A4EE37A23E2E58B00673BB4 /* CategoriesFilterView.swift in Sources */,
 				3A23585123F6733C00105111 /* UIImageView+Extension.swift in Sources */,

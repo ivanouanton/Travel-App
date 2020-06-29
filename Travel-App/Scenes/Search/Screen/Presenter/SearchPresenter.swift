@@ -42,9 +42,9 @@ class SearchPresenter{
 }
 
 extension SearchPresenter: SearchPresenterProtocol{
-
+    
     func viewDidLoad() {
-        
+        PlaceManager.shared.getIntroduction()
         self.getPlaces(with: nil)
         self.view.setFilter(with: PlaceCategory.categories)
         NotificationCenter.default.addObserver(self,
@@ -75,6 +75,10 @@ extension SearchPresenter: SearchPresenterProtocol{
                 self.view.showLoader(false)
             }
         }
+    }
+    
+    func getIntroduction() -> Place? {
+        return PlaceManager.shared.introductionPlace
     }
     
     func downloadAllImages() {

@@ -263,6 +263,7 @@ extension SearchViewController{
     
     @objc func showCityInfo(){
         let controller = ViewFactory.createPlaceInfoVC()
+        controller.place = self.presenter.getIntroduction()
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

@@ -23,6 +23,7 @@ class PlaceManager {
     private let duration = ["A Few Hours", "Half Day",  "Full Day"]
     
     var places = [Place]()
+    var introductionPlace: Place?
 
     private init() {
         self.getPlaces(with: nil) { (places, error) in
@@ -150,23 +151,30 @@ class PlaceManager {
                 completion(nil, err)
                 print("Error getting documents: \(err)")
             } else {
-                print(querySnapshot!.documents.count)
                 for document in querySnapshot!.documents {
-//                    if document.documentID == "sHqk6mBFH8y4p4Vsc0dP" {
-//                        let jsonStr = (document.data()["description"] as? String) ?? ""
-//                        do {
-//                            let f = try JSONDecoder().decode(RestaurantDescription.self, from: jsonStr.data(using: .utf8)!)
-//                            print(f)
-//                        } catch {
-//                            print(error)
-//                        }
-//                    }
                     var data = Place(document.data())
                     data.id = document.documentID
                     places.append(data)
                 }
             }
             completion(places, nil)
+        }
+    }
+    
+    func getIntroduction() {
+        let db = Firestore.firestore()
+        
+        let docRef = db.collection("introduction")
+        
+        docRef.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                guard let doc = querySnapshot!.documents.first else { return }
+                var place = Place(doc.data())
+                place.id = doc.documentID
+                self.introductionPlace = place
+            }
         }
     }
 
