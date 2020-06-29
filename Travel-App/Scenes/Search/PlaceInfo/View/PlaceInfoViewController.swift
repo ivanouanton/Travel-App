@@ -23,9 +23,7 @@ class PlaceInfoViewController: UIViewController {
     @IBOutlet weak var audioPlayerView: AudioPlayerView!
     @IBOutlet weak var beenButton: UIButton!
     @IBOutlet weak var beenLAbel: UILabel!
-    
-    @IBOutlet weak var introductionLabel: UILabel!
-    
+        
     @IBOutlet weak var titleVertSpacing: NSLayoutConstraint!
     
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
@@ -43,13 +41,10 @@ class PlaceInfoViewController: UIViewController {
         self.activityIndicatorView.startAnimating()
         placeImage.addBlur(0.75)
         
-        guard let place = place else {
-            setupDefaultPage()
-            return
-        }
+        guard let place = place else { return }
         
         self.titleDescriptionLabel.text = place.name
-        self.descriptionLabel.text = place.description
+        self.descriptionLabel.attributedText = place.description
         self.addressLabel.text = place.address ?? "no address"
         
         // TODO - need refactor
@@ -69,18 +64,22 @@ class PlaceInfoViewController: UIViewController {
 
         if let audioReference = place.audio {
             audioPlayerView.setupAudio(with: audioReference)
+            placeImage.addBlur()
         } else {
             audioPlayerView.isHidden = true
         }
         
-//        placeImage.addBlur()
         presenter?.checkVisit(place)
+        
+        if place.category == .introduction {
+            setupDefaultPage()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         guard let place = place else {return}
-        self.navigationItem.title = place.name
+        self.navigationItem.title = place.category == .introduction ? "Rome" : place.name
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -93,16 +92,13 @@ class PlaceInfoViewController: UIViewController {
     }
     
     func setupDefaultPage() {
-        self.placeImage.removeBlur()
-        self.activityIndicatorView.stopAnimating()
-        audioPlayerView.isHidden = true
+
         beenLAbel.isHidden = true
         beenButton.isHidden = true
-        introductionLabel.isHidden = false
         addressLabel.isHidden = true
         priceLabel.isHidden = true
         categoryLabel.isHidden = true
-        titleVertSpacing.constant = -30
+        titleVertSpacing.constant = -70
         title = "Rome"
     }
 }

@@ -16,6 +16,7 @@ enum PlaceCategory: String {
     case cityviews = "cityviews"
     case restaurants = "restaurants"
     case churches = "churches"
+    case introduction = "introduction"
     
     init?(_ category: String){
         self.init(rawValue: category)
@@ -44,6 +45,8 @@ extension PlaceCategory {
             imageName = "restaurants-cafes-ctg"
         case .churches:
             imageName = "churches-ctg"
+        default:
+            imageName = "churches-ctg"
         }
         
         return UIImage(named: imageName)!
@@ -68,6 +71,8 @@ extension PlaceCategory {
             imageName = "RestaurentsNadCafes"
         case .churches:
             imageName = "Churches"
+        case .introduction:
+            imageName = "Churches"
         }
         
         return UIImage(named: imageName)!
@@ -91,6 +96,8 @@ extension PlaceCategory {
             colorName = "green"
         case .churches:
             colorName = "red"
+        case .introduction:
+            colorName = "red"
         }
         
         return UIColor(named: colorName)!
@@ -112,6 +119,8 @@ extension PlaceCategory {
         case .restaurants:
             return "Restaurants & Cafes"
         case .churches:
+            return "Churches"
+        case .introduction:
             return "Churches"
         }
     }

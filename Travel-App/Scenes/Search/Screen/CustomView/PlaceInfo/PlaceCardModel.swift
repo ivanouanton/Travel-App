@@ -18,7 +18,7 @@ struct PlaceCardModel {
     var imageURL: URL?
     var location: GeoPoint?
     var placeName: String?
-    var description: String
+    var description: NSAttributedString?
     var audio: DocumentReference?
     var isVisited: Bool = false
 }

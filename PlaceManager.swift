@@ -23,6 +23,7 @@ class PlaceManager {
     private let duration = ["A Few Hours", "Half Day",  "Full Day"]
     
     var places = [Place]()
+    var introductionPlace: Place?
 
     private init() {
         self.getPlaces(with: nil) { (places, error) in
@@ -105,12 +106,12 @@ class PlaceManager {
                     cardGroup.enter()
                     TAImageClient.getImage(with: imgId ) { (image, error) in
                         placeData = PlaceCardModel(id: id,
-                                                       name: place.name,
-                                                       category: place.category.rawValue,
-                                                       price: place.price,
-                                                       image: image,
-                                                       location: place.locationPlace,
-                                                       description: place.description ?? "")
+                                                   name: place.name,
+                                                   category: place.category.rawValue,
+                                                   price: place.price,
+                                                   image: image,
+                                                   location: place.locationPlace,
+                                                   description: place.description)
                         cardGroup.leave()
                     }
                 }
@@ -150,7 +151,6 @@ class PlaceManager {
                 completion(nil, err)
                 print("Error getting documents: \(err)")
             } else {
-                print(querySnapshot!.documents.count)
                 for document in querySnapshot!.documents {
                     var data = Place(document.data())
                     data.id = document.documentID
@@ -158,6 +158,23 @@ class PlaceManager {
                 }
             }
             completion(places, nil)
+        }
+    }
+    
+    func getIntroduction() {
+        let db = Firestore.firestore()
+        
+        let docRef = db.collection("introduction")
+        
+        docRef.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                guard let doc = querySnapshot!.documents.first else { return }
+                var place = Place(doc.data())
+                place.id = doc.documentID
+                self.introductionPlace = place
+            }
         }
     }
 
@@ -226,10 +243,6 @@ class PlaceManager {
         if !categories.isEmpty {
             query = query.whereField("category", in: categories.compactMap { $0.rawValue })
         }
-//
-//        if !prices.isEmpty {
-//            query = query.whereField("price", in: prices)
-//        }
 
         query.getDocuments() { (querySnapshot, error) in
             if let response = querySnapshot {

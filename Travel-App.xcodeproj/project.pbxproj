@@ -95,6 +95,8 @@
 		F780CE6823A2FDAD00E8E248 /* RecentPlacesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F780CE6623A2FDAC00E8E248 /* RecentPlacesTableViewCell.xib */; };
 		F780CE6B23A315F100E8E248 /* RecentPlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F780CE6923A315F100E8E248 /* RecentPlaceCollectionViewCell.swift */; };
 		F780CE6C23A315F200E8E248 /* RecentPlaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F780CE6A23A315F100E8E248 /* RecentPlaceCollectionViewCell.xib */; };
+		F781904B24A7A6C900AD60B0 /* RestaurantDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F781904A24A7A6C900AD60B0 /* RestaurantDescription.swift */; };
+		F781904D24A7CDD000AD60B0 /* DescriptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F781904C24A7CDD000AD60B0 /* DescriptionProtocol.swift */; };
 		F7842A4023B8C3CC009F692A /* PlaceCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7842A3F23B8C3CC009F692A /* PlaceCardModel.swift */; };
 		F790825123A83AB700056228 /* OptionFilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790824F23A83AB700056228 /* OptionFilterTableViewCell.swift */; };
 		F790825223A83AB700056228 /* OptionFilterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F790825023A83AB700056228 /* OptionFilterTableViewCell.xib */; };
@@ -105,7 +107,7 @@
 		F79754E923EF489C00306220 /* CategoryFilterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79754E723EF489C00306220 /* CategoryFilterViewCell.swift */; };
 		F79754EA23EF489C00306220 /* CategoryFilterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F79754E823EF489C00306220 /* CategoryFilterViewCell.xib */; };
 		F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883592381AE5E00F01F3A /* ViewFactory.swift */; };
-		F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835C2381AEF800F01F3A /* SearchViewController.swift */; };
+		F798835D2381AEF800F01F3A /*  .swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835C2381AEF800F01F3A /*  .swift */; };
 		F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */; };
 		F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883602381AF1900F01F3A /* SearchPresenter.swift */; };
 		F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883622381AF5000F01F3A /* SearchPresenterProtocol.swift */; };
@@ -276,6 +278,8 @@
 		F780CE6623A2FDAC00E8E248 /* RecentPlacesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecentPlacesTableViewCell.xib; path = View/RecentPlacesTableViewCell.xib; sourceTree = "<group>"; };
 		F780CE6923A315F100E8E248 /* RecentPlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecentPlaceCollectionViewCell.swift; path = View/RecentPlaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		F780CE6A23A315F100E8E248 /* RecentPlaceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = RecentPlaceCollectionViewCell.xib; path = View/RecentPlaceCollectionViewCell.xib; sourceTree = "<group>"; };
+		F781904A24A7A6C900AD60B0 /* RestaurantDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDescription.swift; sourceTree = "<group>"; };
+		F781904C24A7CDD000AD60B0 /* DescriptionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionProtocol.swift; sourceTree = "<group>"; };
 		F7842A3F23B8C3CC009F692A /* PlaceCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCardModel.swift; sourceTree = "<group>"; };
 		F790824F23A83AB700056228 /* OptionFilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionFilterTableViewCell.swift; sourceTree = "<group>"; };
 		F790825023A83AB700056228 /* OptionFilterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionFilterTableViewCell.xib; sourceTree = "<group>"; };
@@ -286,7 +290,7 @@
 		F79754E723EF489C00306220 /* CategoryFilterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterViewCell.swift; sourceTree = "<group>"; };
 		F79754E823EF489C00306220 /* CategoryFilterViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryFilterViewCell.xib; sourceTree = "<group>"; };
 		F79883592381AE5E00F01F3A /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
-		F798835C2381AEF800F01F3A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F798835C2381AEF800F01F3A /*  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " .swift"; sourceTree = "<group>"; };
 		F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewProtocol.swift; sourceTree = "<group>"; };
 		F79883602381AF1900F01F3A /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		F79883622381AF5000F01F3A /* SearchPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -778,7 +782,7 @@
 		F79883652381AF8B00F01F3A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F798835C2381AEF800F01F3A /* SearchViewController.swift */,
+				F798835C2381AEF800F01F3A /*  .swift */,
 				F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */,
 				F748B4262483D88C0004CB9C /* SearchViewControllerDelegate.swift */,
 			);
@@ -998,6 +1002,8 @@
 				F7CFD01F239BE3A800983631 /* Tour.swift */,
 				F780A4CC23C4F5C200A9A375 /* UserProfile.swift */,
 				3A4EE37723E2CF5C00673BB4 /* PlaceCategory.swift */,
+				F781904A24A7A6C900AD60B0 /* RestaurantDescription.swift */,
+				F781904C24A7CDD000AD60B0 /* DescriptionProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1267,6 +1273,7 @@
 				F75EAD3A2392FED80001C457 /* CategoryFilterDelegate.swift in Sources */,
 				F7932B652393A0E4006E6496 /* PlacePreviewDelegate.swift in Sources */,
 				F790825123A83AB700056228 /* OptionFilterTableViewCell.swift in Sources */,
+				F781904B24A7A6C900AD60B0 /* RestaurantDescription.swift in Sources */,
 				F7AC996A23EE01880046E2B3 /* Notifications.swift in Sources */,
 				F700442B23A194C300D7E59F /* AuthViewController.swift in Sources */,
 				F761DFF62381CF9200D9DBBD /* SettingsPresenter.swift in Sources */,
@@ -1281,6 +1288,7 @@
 				F7915C9F23F73737002672D7 /* MyNavigationController.swift in Sources */,
 				3A4C303723F523D200E2DA8B /* PlaceInfoViewProtocol.swift in Sources */,
 				F761DFF42381CF8500D9DBBD /* SettingsViewProtocol.swift in Sources */,
+				F781904D24A7CDD000AD60B0 /* DescriptionProtocol.swift in Sources */,
 				3A55497223F2DF9400323956 /* SuccessfulChangePassView.swift in Sources */,
 				3ABC3EB723F6C0810060EE61 /* Notification+Extension.swift in Sources */,
 				F7B45FFF2389103F005CBEE4 /* PreferenceBoardViewController.swift in Sources */,
@@ -1312,7 +1320,7 @@
 				F79754E923EF489C00306220 /* CategoryFilterViewCell.swift in Sources */,
 				F79B3880239D22370032F598 /* PlaceManager.swift in Sources */,
 				F799F5E123D4CD7500106B7E /* HomeViewController.swift in Sources */,
-				F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */,
+				F798835D2381AEF800F01F3A /*  .swift in Sources */,
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
 				3A4EE37A23E2E58B00673BB4 /* CategoriesFilterView.swift in Sources */,
 				3A23585123F6733C00105111 /* UIImageView+Extension.swift in Sources */,
@@ -1449,7 +1457,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = 582C82KJTU;
 				INFOPLIST_FILE = "Travel-App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1461,6 +1469,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wvonbehr.TravelApp;
 				PRODUCT_NAME = TravelApp;
 				PROVISIONING_PROFILE_SPECIFIER = "Urbs Travel App Developer Anton Ivanou";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1593,7 +1602,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = 582C82KJTU;
 				INFOPLIST_FILE = "Travel-App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1605,6 +1614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wvonbehr.TravelApp;
 				PRODUCT_NAME = TravelApp;
 				PROVISIONING_PROFILE_SPECIFIER = "Urbs Travel App Developer Anton Ivanou";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1619,7 +1629,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 18;
+				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_TEAM = 582C82KJTU;
 				INFOPLIST_FILE = "Travel-App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1631,6 +1641,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wvonbehr.TravelApp;
 				PRODUCT_NAME = TravelApp;
 				PROVISIONING_PROFILE_SPECIFIER = "Urbs Travel App AppStore Anton Ivanou";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

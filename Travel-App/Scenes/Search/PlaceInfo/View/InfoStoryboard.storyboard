@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -41,19 +41,19 @@
                                                 <rect key="frame" x="16" y="8" width="382" height="191"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurants &amp; Cafes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoA-2Q-Cb6">
-                                                <rect key="frame" x="15.999999999999993" y="239" width="126.33333333333331" height="14"/>
+                                                <rect key="frame" x="16" y="239" width="128.33333333333334" height="16.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="14"/>
                                                 <color key="textColor" name="onyx"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.1 (358) ££" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95v-sw-T5O">
-                                                <rect key="frame" x="16" y="261" width="76" height="14"/>
+                                                <rect key="frame" x="16" y="263.33333333333331" width="73.666666666666671" height="16.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Regular" family="Avenir Next LT Pro" pointSize="14"/>
                                                 <color key="textColor" name="silver"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQZ-PF-ROW">
-                                                <rect key="frame" x="16" y="293" width="150" height="28"/>
+                                                <rect key="frame" x="16" y="297.66666666666669" width="150" height="32.666666666666686"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="nMu-Jp-dOE"/>
                                                 </constraints>
@@ -63,14 +63,8 @@ Brooklyn, NY 11249</string>
                                                 <color key="textColor" name="silver"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Diego Vacation Rental" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBM-lD-6ES">
-                                                <rect key="frame" x="16" y="374" width="171" height="14"/>
-                                                <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
-                                                <color key="textColor" name="silver"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-2u-tWP">
-                                                <rect key="frame" x="16" y="399" width="382" height="218.33333333333337"/>
+                                                <rect key="frame" x="16" y="376" width="382" height="218.33333333333337"/>
                                                 <attributedString key="attributedText">
                                                     <fragment>
                                                         <string key="content">Stu Unger is one of the biggest superstars to have immerged from the professional poker world. Besides being a true poker genius and a three time World Series of Poker champion, Stu Unger had a fascinating life story. It was not surprising that after his death Stu was the subject of a biography and a biopic. Stu Unger lived the life of a rock star including the quick rise to fame, the drugs, the comeback and the unavoidable death at an early age. Here you can read about the life story of the legendary poker player Stu Unger.</string>
@@ -84,13 +78,13 @@ Brooklyn, NY 11249</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choosing The Right Boutique Hotel For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-2D-9VV">
-                                                <rect key="frame" x="16" y="348" width="382" height="16"/>
+                                                <rect key="frame" x="16" y="357.33333333333331" width="382" height="18.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="16"/>
                                                 <color key="textColor" name="heavy"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntW-oG-r34">
-                                                <rect key="frame" x="371" y="234" width="24" height="24"/>
+                                                <rect key="frame" x="371" y="235.33333333333334" width="24" height="24.000000000000028"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ntW-oG-r34" secondAttribute="height" multiplier="1:1" id="AZz-c5-ljF"/>
                                                     <constraint firstAttribute="height" constant="24" id="tHg-Xo-1cG"/>
@@ -101,15 +95,9 @@ Brooklyn, NY 11249</string>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I’ve been there!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCj-dj-pvf">
-                                                <rect key="frame" x="253" y="239" width="102" height="14"/>
+                                                <rect key="frame" x="258.66666666666669" y="239" width="96.333333333333314" height="16.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="14"/>
                                                 <color key="textColor" name="onyx"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An introduction to Rome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5c-Fi-SoR">
-                                                <rect key="frame" x="16" y="239" width="192.66666666666666" height="17"/>
-                                                <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="17"/>
-                                                <color key="textColor" name="heavy"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="yBy-xK-yU9">
@@ -131,9 +119,8 @@ Brooklyn, NY 11249</string>
                                             <constraint firstItem="FcV-2u-tWP" firstAttribute="centerX" secondItem="VvZ-hM-Bhr" secondAttribute="centerX" id="Jfl-gS-mAm"/>
                                             <constraint firstItem="gxn-2D-9VV" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="KVH-O9-fRj"/>
                                             <constraint firstItem="bjQ-kM-VKo" firstAttribute="top" secondItem="VvZ-hM-Bhr" secondAttribute="top" id="Mux-06-hn9"/>
-                                            <constraint firstItem="n5c-Fi-SoR" firstAttribute="top" secondItem="bjQ-kM-VKo" secondAttribute="bottom" constant="32" id="NSN-fi-avn"/>
-                                            <constraint firstItem="n5c-Fi-SoR" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="P4p-pe-Arf"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FcV-2u-tWP" secondAttribute="bottom" constant="24" id="PNX-Oh-iM5"/>
+                                            <constraint firstItem="FcV-2u-tWP" firstAttribute="top" secondItem="gxn-2D-9VV" secondAttribute="bottom" id="SHW-y1-F5j"/>
                                             <constraint firstItem="ntW-oG-r34" firstAttribute="leading" secondItem="pCj-dj-pvf" secondAttribute="trailing" constant="16" id="Sdk-I1-5aG"/>
                                             <constraint firstItem="gxn-2D-9VV" firstAttribute="top" secondItem="AQZ-PF-ROW" secondAttribute="bottom" constant="27" id="XNS-w0-pqZ"/>
                                             <constraint firstItem="bjQ-kM-VKo" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" id="aLZ-eG-dNV"/>
@@ -143,10 +130,7 @@ Brooklyn, NY 11249</string>
                                             <constraint firstItem="yBy-xK-yU9" firstAttribute="centerX" secondItem="NsC-Qb-BlL" secondAttribute="centerX" id="gaN-04-TZ3"/>
                                             <constraint firstAttribute="trailing" secondItem="NsC-Qb-BlL" secondAttribute="trailing" constant="16" id="hT1-2o-fLw"/>
                                             <constraint firstItem="95v-sw-T5O" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="hbo-Sb-YVZ"/>
-                                            <constraint firstItem="hBM-lD-6ES" firstAttribute="top" secondItem="gxn-2D-9VV" secondAttribute="bottom" constant="10" id="iPy-1a-R5x"/>
                                             <constraint firstItem="FcV-2u-tWP" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="kse-nq-BxF"/>
-                                            <constraint firstItem="FcV-2u-tWP" firstAttribute="top" secondItem="hBM-lD-6ES" secondAttribute="bottom" constant="11" id="p2G-fv-lLH"/>
-                                            <constraint firstItem="hBM-lD-6ES" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="rip-Kf-2Ti"/>
                                             <constraint firstItem="DoA-2Q-Cb6" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="urs-uk-8HH"/>
                                             <constraint firstItem="gxn-2D-9VV" firstAttribute="centerX" secondItem="VvZ-hM-Bhr" secondAttribute="centerX" id="vLa-Zp-QWq"/>
                                             <constraint firstItem="NsC-Qb-BlL" firstAttribute="centerX" secondItem="VvZ-hM-Bhr" secondAttribute="centerX" id="vvq-ee-R5L"/>
@@ -183,10 +167,8 @@ Brooklyn, NY 11249</string>
                         <outlet property="beenLAbel" destination="pCj-dj-pvf" id="8Zh-LN-tUq"/>
                         <outlet property="categoryLabel" destination="DoA-2Q-Cb6" id="AsJ-ch-hUw"/>
                         <outlet property="descriptionLabel" destination="FcV-2u-tWP" id="SZH-ET-rss"/>
-                        <outlet property="introductionLabel" destination="n5c-Fi-SoR" id="Pjd-OA-j6Z"/>
                         <outlet property="placeImage" destination="bjQ-kM-VKo" id="Fag-Wf-HAQ"/>
                         <outlet property="priceLabel" destination="95v-sw-T5O" id="Ht0-d4-8JM"/>
-                        <outlet property="subTitleDescriptionLabel" destination="hBM-lD-6ES" id="Qhc-4w-akP"/>
                         <outlet property="titleDescriptionLabel" destination="gxn-2D-9VV" id="Gdb-i6-pQN"/>
                         <outlet property="titleVertSpacing" destination="XNS-w0-pqZ" id="9xD-TY-HCh"/>
                     </connections>

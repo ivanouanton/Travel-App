@@ -13,6 +13,7 @@ class PlaceTableViewCell: UITableViewCell {
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryBgView: UIView!
     @IBOutlet weak var placeName: UILabel!
+    @IBOutlet weak var idTitleLabel: UILabel!
     
     func setupCategoryView(with category: PlaceCategory) {
         categoryBgView.backgroundColor = category.getColor()
