@@ -36,6 +36,11 @@ class AudioPlayerView: UIView {
         commonInit()
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        contentView.isUserInteractionEnabled = false
+    }
+    
     func commonInit(){
         Bundle.main.loadNibNamed("AudioPlayerView", owner: self, options: nil)
         addSubview(contentView)
@@ -43,7 +48,6 @@ class AudioPlayerView: UIView {
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
         hideLoadingIndicator()
-        
     }
     
     func setupAudio(with ref: DocumentReference) {
@@ -60,6 +64,7 @@ class AudioPlayerView: UIView {
                     self.player = AVPlayer(playerItem: AVPlayerItem(url: url))
 
                     self.setupSlider()
+                    self.contentView.isUserInteractionEnabled = true
 
                 } catch let error {
                     print(error.localizedDescription)
