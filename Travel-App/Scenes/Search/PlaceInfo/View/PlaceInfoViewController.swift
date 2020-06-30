@@ -62,6 +62,8 @@ class PlaceInfoViewController: UIViewController {
         
         self.categoryLabel.text = place.category.getName()
 
+        self.audioPlayerView.delegate = self
+        
         if let audioReference = place.audio {
             audioPlayerView.setupAudio(with: audioReference)
             placeImage.addBlur()
@@ -110,5 +112,18 @@ extension PlaceInfoViewController: PlaceInfoViewProtocol {
     
     func setBeenStatus(with value: Bool) {
         self.beenButton.imageView?.image = value ? UIImage(named: "successful") : UIImage(named: "ok-circle")
+    }
+}
+
+extension PlaceInfoViewController: AudioPlayerDelegate {
+    
+    func playerDidFinished() {
+        guard let place = self.place else { return }
+        if !place.isVisited {
+            self.presenter?.didPressedIsVisited()
+            self.place?.isVisited = true
+        }
+        
+        PlaceManager.shared.getPlaces(with: nil) { (_, _) in }
     }
 }

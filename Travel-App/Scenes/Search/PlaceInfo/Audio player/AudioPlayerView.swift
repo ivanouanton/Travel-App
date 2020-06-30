@@ -23,6 +23,8 @@ class AudioPlayerView: UIView {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
+    var delegate: AudioPlayerDelegate?
+    
     var player = AVPlayer()
     var sliderTimer: Timer?
 
@@ -44,13 +46,27 @@ class AudioPlayerView: UIView {
     func commonInit(){
         Bundle.main.loadNibNamed("AudioPlayerView", owner: self, options: nil)
         addSubview(contentView)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying),
+                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
         hideLoadingIndicator()
     }
     
+    @objc func playerDidFinishPlaying(note: NSNotification) {
+        self.delegate?.playerDidFinished()
+        
+        let newTime = CMTimeMakeWithSeconds(Float64(0), preferredTimescale: 100)
+        player.seek(to: newTime, completionHandler: { (finished) -> Void in })
+        self.player.pause()
+        self.updatePlayButton()
+        self.progressSlider.value = 0.0
+    }
+    
     func setupAudio(with ref: DocumentReference) {
+        self.showLoadingIndicator()
         PlaceManager.shared.getAudioURL(with: ref) { (hardUrl, error) in
             self.hideLoadingIndicator()
 
@@ -111,7 +127,6 @@ class AudioPlayerView: UIView {
         let newTime = CMTimeMakeWithSeconds(Float64(sender.value), preferredTimescale: 100)
         
         player.seek(to: newTime, completionHandler: { (finished) -> Void in
-           
         })
     }
     
@@ -149,12 +164,11 @@ class AudioPlayerView: UIView {
 
         self.setupTotalTimeLabel()
     }
-
+    
     @objc func sliderTimerTriggered() {
         let playerCurrentTime = player.currentTime().seconds
-
+        
         self.progressSlider.value = Float( playerCurrentTime )
-
         self.updateCurrentTimeLabel(Float( playerCurrentTime ))
     }
 

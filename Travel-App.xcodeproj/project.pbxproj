@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		11B784B2C09A53B150857439 /* Pods_Travel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F350D02DA253368C52FABF1 /* Pods_Travel_App.framework */; };
 		3A23585123F6733C00105111 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23585023F6733C00105111 /* UIImageView+Extension.swift */; };
+		3A37232924ABDEF70098E2ED /* AudioPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A37232824ABDEF70098E2ED /* AudioPlayerDelegate.swift */; };
 		3A3A3814239A74B9001FE150 /* CategoryPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A3813239A74B9001FE150 /* CategoryPreference.swift */; };
 		3A3D2E64238EE4B500DD9876 /* PlaceDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */; };
 		3A3E631423ED352400BE2F34 /* AudioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3E631323ED352400BE2F34 /* AudioPlayerView.swift */; };
@@ -184,6 +185,7 @@
 /* Begin PBXFileReference section */
 		0F350D02DA253368C52FABF1 /* Pods_Travel_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travel_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A23585023F6733C00105111 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		3A37232824ABDEF70098E2ED /* AudioPlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerDelegate.swift; sourceTree = "<group>"; };
 		3A3A3813239A74B9001FE150 /* CategoryPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPreference.swift; sourceTree = "<group>"; };
 		3A3D2E63238EE4B500DD9876 /* PlaceDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDataHolder.swift; sourceTree = "<group>"; };
 		3A3E631323ED352400BE2F34 /* AudioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerView.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				F7AC996523EE005A0046E2B3 /* SpringboardData.swift */,
 				F7AC996723EE00DA0046E2B3 /* TPGAudioPlayer.swift */,
 				F7AC996923EE01880046E2B3 /* Notifications.swift */,
+				3A37232824ABDEF70098E2ED /* AudioPlayerDelegate.swift */,
 			);
 			path = "Audio player";
 			sourceTree = "<group>";
@@ -1325,6 +1328,7 @@
 				3A4EE37A23E2E58B00673BB4 /* CategoriesFilterView.swift in Sources */,
 				3A23585123F6733C00105111 /* UIImageView+Extension.swift in Sources */,
 				F7CA366723925B85005F7C57 /* CategoryFilter.swift in Sources */,
+				3A37232924ABDEF70098E2ED /* AudioPlayerDelegate.swift in Sources */,
 				F761DFF82381CFAD00D9DBBD /* SettingsPresenterProtocol.swift in Sources */,
 				3A4C303B23F523F500E2DA8B /* PlaceInfoPresenterProtocol.swift in Sources */,
 				3A55496B23F2D60B00323956 /* emailModalView.swift in Sources */,
