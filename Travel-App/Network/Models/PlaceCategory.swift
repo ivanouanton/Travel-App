@@ -111,7 +111,7 @@ extension PlaceCategory {
         case .culturalsites:
             return "Cultural Sites"
         case .museums:
-            return "Museum & Galleries"
+            return "Museums & Galleries"
         case .shopping:
             return "Shopping"
         case .cityviews:
