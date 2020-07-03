@@ -34,6 +34,7 @@ class HomePresenter: HomePresenterProtocol{
     <li><p class="p3"><span class="s2">Underground Metro (c. €1.50 per journey) – operates between 5.30am and 11.30pm (to 1.30am on Fridays and Saturdays); or</span></p></li>
     <li><p class="p3"><span class="s2">Atac Buses (c. €1.50 per journey) – most of which pass through Stazione Termini, and operate from 5.30am until midnight (limited service throughout the night). Times are difficult to predict, however you can use the Roma Bus app for useful information.</span></p></li>
     </ol>
+    <p class="p4"><br></p>
     <p class="p5"><span class="s3">Tickets & Entry</span></p>
     <p class="p4"><br></p>
     <p class="p2"><span class="s1">Book Colosseum and Forum tickets online</span></p>
