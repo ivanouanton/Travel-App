@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11B784B2C09A53B150857439 /* Pods_Travel_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F350D02DA253368C52FABF1 /* Pods_Travel_App.framework */; };
+		3A06E0F524AE2FDD00FFC45C /* AvenirNextLTPro-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A06E0F424AE2FDD00FFC45C /* AvenirNextLTPro-Italic.otf */; };
 		3A23585123F6733C00105111 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A23585023F6733C00105111 /* UIImageView+Extension.swift */; };
 		3A37232924ABDEF70098E2ED /* AudioPlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A37232824ABDEF70098E2ED /* AudioPlayerDelegate.swift */; };
 		3A3A3814239A74B9001FE150 /* CategoryPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A3813239A74B9001FE150 /* CategoryPreference.swift */; };
@@ -108,7 +109,7 @@
 		F79754E923EF489C00306220 /* CategoryFilterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79754E723EF489C00306220 /* CategoryFilterViewCell.swift */; };
 		F79754EA23EF489C00306220 /* CategoryFilterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F79754E823EF489C00306220 /* CategoryFilterViewCell.xib */; };
 		F798835A2381AE5E00F01F3A /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883592381AE5E00F01F3A /* ViewFactory.swift */; };
-		F798835D2381AEF800F01F3A /*  .swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835C2381AEF800F01F3A /*  .swift */; };
+		F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835C2381AEF800F01F3A /* SearchViewController.swift */; };
 		F798835F2381AF0E00F01F3A /* SearchViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */; };
 		F79883612381AF1900F01F3A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883602381AF1900F01F3A /* SearchPresenter.swift */; };
 		F79883632381AF5000F01F3A /* SearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79883622381AF5000F01F3A /* SearchPresenterProtocol.swift */; };
@@ -184,6 +185,7 @@
 
 /* Begin PBXFileReference section */
 		0F350D02DA253368C52FABF1 /* Pods_Travel_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Travel_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A06E0F424AE2FDD00FFC45C /* AvenirNextLTPro-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirNextLTPro-Italic.otf"; sourceTree = "<group>"; };
 		3A23585023F6733C00105111 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		3A37232824ABDEF70098E2ED /* AudioPlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerDelegate.swift; sourceTree = "<group>"; };
 		3A3A3813239A74B9001FE150 /* CategoryPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPreference.swift; sourceTree = "<group>"; };
@@ -292,7 +294,7 @@
 		F79754E723EF489C00306220 /* CategoryFilterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterViewCell.swift; sourceTree = "<group>"; };
 		F79754E823EF489C00306220 /* CategoryFilterViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryFilterViewCell.xib; sourceTree = "<group>"; };
 		F79883592381AE5E00F01F3A /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
-		F798835C2381AEF800F01F3A /*  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " .swift"; sourceTree = "<group>"; };
+		F798835C2381AEF800F01F3A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewProtocol.swift; sourceTree = "<group>"; };
 		F79883602381AF1900F01F3A /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		F79883622381AF5000F01F3A /* SearchPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				F79FCA2323847ED2009F1693 /* AvenirNextLTPro-HeavyCn.otf */,
 				F79FCA2223847ED2009F1693 /* AvenirNextLTPro-Regular.otf */,
 				F79FCA2523847ED2009F1693 /* AvenirNextLTPro-UltLtCn.otf */,
+				3A06E0F424AE2FDD00FFC45C /* AvenirNextLTPro-Italic.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -785,7 +788,7 @@
 		F79883652381AF8B00F01F3A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F798835C2381AEF800F01F3A /*  .swift */,
+				F798835C2381AEF800F01F3A /* SearchViewController.swift */,
 				F798835E2381AF0E00F01F3A /* SearchViewProtocol.swift */,
 				F748B4262483D88C0004CB9C /* SearchViewControllerDelegate.swift */,
 			);
@@ -1125,6 +1128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F748B4222483A27F0004CB9C /* CustomPage.xib in Resources */,
+				3A06E0F524AE2FDD00FFC45C /* AvenirNextLTPro-Italic.otf in Resources */,
 				F70DB819239B169B00D48EC6 /* SettingOptionTableViewCell.xib in Resources */,
 				F72EFE49239EF62C008081E1 /* TourInfoView.xib in Resources */,
 				F7A94AF92427C79F001918BF /* MarkerView.xib in Resources */,
@@ -1323,7 +1327,7 @@
 				F79754E923EF489C00306220 /* CategoryFilterViewCell.swift in Sources */,
 				F79B3880239D22370032F598 /* PlaceManager.swift in Sources */,
 				F799F5E123D4CD7500106B7E /* HomeViewController.swift in Sources */,
-				F798835D2381AEF800F01F3A /*  .swift in Sources */,
+				F798835D2381AEF800F01F3A /* SearchViewController.swift in Sources */,
 				F7ADB08F237F3A9700DA4E89 /* AppDelegate.swift in Sources */,
 				3A4EE37A23E2E58B00673BB4 /* CategoriesFilterView.swift in Sources */,
 				3A23585123F6733C00105111 /* UIImageView+Extension.swift in Sources */,
@@ -1461,7 +1465,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = 582C82KJTU;
 				INFOPLIST_FILE = "Travel-App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1469,7 +1473,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.7;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wvonbehr.TravelApp;
 				PRODUCT_NAME = TravelApp;
 				PROVISIONING_PROFILE_SPECIFIER = "Urbs Travel App Developer Anton Ivanou";
@@ -1606,7 +1610,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = 582C82KJTU;
 				INFOPLIST_FILE = "Travel-App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1614,7 +1618,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.8;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wvonbehr.TravelApp;
 				PRODUCT_NAME = TravelApp;
 				PROVISIONING_PROFILE_SPECIFIER = "Urbs Travel App Developer Anton Ivanou";
@@ -1633,7 +1637,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_TEAM = 582C82KJTU;
 				INFOPLIST_FILE = "Travel-App/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1641,7 +1645,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.8;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wvonbehr.TravelApp;
 				PRODUCT_NAME = TravelApp;
 				PROVISIONING_PROFILE_SPECIFIER = "Urbs Travel App AppStore Anton Ivanou";

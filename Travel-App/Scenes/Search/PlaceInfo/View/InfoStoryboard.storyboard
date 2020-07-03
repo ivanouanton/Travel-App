@@ -12,6 +12,9 @@
         <array key="AvenirNextLTPro-Demi.otf">
             <string>AvenirNextLTPro-Demi</string>
         </array>
+        <array key="AvenirNextLTPro-Italic.otf">
+            <string>AvenirNextLTPro-CnIt</string>
+        </array>
         <array key="AvenirNextLTPro-Regular.otf">
             <string>AvenirNextLTPro-Regular</string>
         </array>
@@ -63,21 +66,14 @@ Brooklyn, NY 11249</string>
                                                 <color key="textColor" name="silver"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-2u-tWP">
-                                                <rect key="frame" x="16" y="376" width="382" height="218.33333333333337"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment>
-                                                        <string key="content">Stu Unger is one of the biggest superstars to have immerged from the professional poker world. Besides being a true poker genius and a three time World Series of Poker champion, Stu Unger had a fascinating life story. It was not surprising that after his death Stu was the subject of a biography and a biopic. Stu Unger lived the life of a rock star including the quick rise to fame, the drugs, the comeback and the unavoidable death at an early age. Here you can read about the life story of the legendary poker player Stu Unger.</string>
-                                                        <attributes>
-                                                            <color key="NSColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                            <font key="NSFont" size="14" name="AvenirNext-Regular"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="3" tighteningFactorForTruncation="0.0"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcV-2u-tWP">
+                                                <rect key="frame" x="16" y="357.33333333333331" width="382" height="163.33333333333331"/>
+                                                <string key="text">Stu Unger is one of the biggest superstars to have immerged from the professional poker world. Besides being a true poker genius and a three time World Series of Poker champion, Stu Unger had a fascinating life story. It was not surprising that after his death Stu was the subject of a biography and a biopic. Stu Unger lived the life of a rock star including the quick rise to fame, the drugs, the comeback and the unavoidable death at an early age. Here you can read about the life story of the legendary poker player Stu Unger.</string>
+                                                <fontDescription key="fontDescription" name="AvenirNextLTPro-CnIt" family="Avenir Next LT Pro" pointSize="14"/>
+                                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choosing The Right Boutique Hotel For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-2D-9VV">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choosing The Right Boutique Hotel For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-2D-9VV">
                                                 <rect key="frame" x="16" y="357.33333333333331" width="382" height="18.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="16"/>
                                                 <color key="textColor" name="heavy"/>
@@ -120,7 +116,7 @@ Brooklyn, NY 11249</string>
                                             <constraint firstItem="gxn-2D-9VV" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="KVH-O9-fRj"/>
                                             <constraint firstItem="bjQ-kM-VKo" firstAttribute="top" secondItem="VvZ-hM-Bhr" secondAttribute="top" id="Mux-06-hn9"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FcV-2u-tWP" secondAttribute="bottom" constant="24" id="PNX-Oh-iM5"/>
-                                            <constraint firstItem="FcV-2u-tWP" firstAttribute="top" secondItem="gxn-2D-9VV" secondAttribute="bottom" id="SHW-y1-F5j"/>
+                                            <constraint firstItem="FcV-2u-tWP" firstAttribute="top" secondItem="AQZ-PF-ROW" secondAttribute="bottom" constant="27" id="Sbe-gc-aPc"/>
                                             <constraint firstItem="ntW-oG-r34" firstAttribute="leading" secondItem="pCj-dj-pvf" secondAttribute="trailing" constant="16" id="Sdk-I1-5aG"/>
                                             <constraint firstItem="gxn-2D-9VV" firstAttribute="top" secondItem="AQZ-PF-ROW" secondAttribute="bottom" constant="27" id="XNS-w0-pqZ"/>
                                             <constraint firstItem="bjQ-kM-VKo" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" id="aLZ-eG-dNV"/>

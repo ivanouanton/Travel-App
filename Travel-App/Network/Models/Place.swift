@@ -14,7 +14,7 @@ struct Place{
     var id: String?
     let name: String
     let category: PlaceCategory
-    let description: NSAttributedString?
+    let description: String?
     let audio: DocumentReference?
     let image: DocumentReference?
     let locationPlace: GeoPoint
@@ -27,10 +27,10 @@ struct Place{
         self.id = nil
         self.name = dictionary["name"] as! String
         self.category = PlaceCategory( dictionary["category"] as! String)!
-        let jsonStr = (dictionary["description"] as? String) ?? ""
-        let description = try? JSONDecoder().decode(RestaurantDescription.self, from: jsonStr.data(using: .utf8)!)
-        self.description = description?.getAttributedString()
-        
+//        let jsonStr = (dictionary["description"] as? String) ?? ""
+//        let description = try? JSONDecoder().decode(RestaurantDescription.self, from: jsonStr.data(using: .utf8)!)
+//        self.description = description?.getAttributedString()
+        self.description = dictionary["description"] as? String
         self.audio = dictionary["audio"] as? DocumentReference
         self.image = dictionary["image"] as? DocumentReference
         self.locationPlace = dictionary["location"] as! GeoPoint

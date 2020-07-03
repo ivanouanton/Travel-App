@@ -33,6 +33,21 @@ class PlaceInfoViewController: UIViewController {
     var place: Place?
     var category: String = ""
     var image: UIImage = UIImage(named: "City-Introduction")!
+    
+    let style = """
+    <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.0px 'Avenir Next LT Pro'; color: #c2c0c1; min-height: 16.8px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Avenir Next LT Pro'; color: #c2c0c1}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Avenir Next LT Pro'; color: #363739}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.0px 'Avenir Next LT Pro'; color: #363739; min-height: 16.8px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 16.0px 'Avenir Next LT Pro'; color: #0F2B44}
+
+    span.s1 {font-family: 'AvenirNextLTPro-Demi'; font-weight: bold; font-style: normal; font-size: 14.00px}
+    span.s2 {font-family: 'AvenirNextLTPro-Regular'; font-weight: normal; line-height: 130%; font-style: normal; font-size: 14.00px}
+    span.s3 {font-family: 'AvenirNextLTPro-Demi'; font-weight: bold; font-style: normal; font-size: 16.00px}
+    span.italic {font-family: 'AvenirNextLTPro-Italic'; font-weight: normal; font-style: normal; font-size: 14.00px}
+    </style>
+    """
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +59,8 @@ class PlaceInfoViewController: UIViewController {
         guard let place = place else { return }
         
         self.titleDescriptionLabel.text = place.name
-        self.descriptionLabel.attributedText = place.description
+        self.setDescription(with: place.description)
+       
         self.addressLabel.text = place.address ?? "no address"
         
         // TODO - need refactor
@@ -93,7 +109,7 @@ class PlaceInfoViewController: UIViewController {
         presenter?.didPressedIsVisited()
     }
     
-    func setupDefaultPage() {
+    private func setupDefaultPage() {
 
         beenLAbel.isHidden = true
         beenButton.isHidden = true
@@ -102,6 +118,31 @@ class PlaceInfoViewController: UIViewController {
         categoryLabel.isHidden = true
         titleVertSpacing.constant = -70
         title = "Rome"
+    }
+    
+    private func setDescription(with html: String?) {
+        self.descriptionLabel.text = "Description will be added soon"
+        guard let html = html else { return }
+        
+        let prettyHtml = html.replacingOccurrences(of: "\\", with: "")
+
+        let htmlWithTitle = prettyHtml.replacingOccurrences(of: "<style type=\"text/css\"> </style>", with: style)
+        let data = Data(htmlWithTitle.utf8)
+        if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+            self.descriptionLabel.attributedText = attributedString
+        }
+    }
+}
+
+extension String {
+    func makeHTMLfriendly() -> String {
+        var finalString = ""
+        for char in self {
+            for scalar in String(char).unicodeScalars {
+                finalString.append("&#\(scalar.value)")
+            }
+        }
+        return finalString
     }
 }
 

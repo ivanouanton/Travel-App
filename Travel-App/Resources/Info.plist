@@ -64,6 +64,7 @@
 	<string>You can select photo</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>AvenirNextLTPro-Italic.otf</string>
 		<string>AvenirNextLTPro-Bold.otf</string>
 		<string>AvenirNextLTPro-Demi.otf</string>
 		<string>AvenirNextLTPro-HeavyCn.otf</string>
