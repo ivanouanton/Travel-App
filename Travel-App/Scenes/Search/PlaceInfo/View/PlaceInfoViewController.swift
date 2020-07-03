@@ -16,8 +16,6 @@ class PlaceInfoViewController: UIViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
-    @IBOutlet weak var titleDescriptionLabel: UILabel!
-    @IBOutlet weak var subTitleDescriptionLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var audioPlayerView: AudioPlayerView!
@@ -58,7 +56,6 @@ class PlaceInfoViewController: UIViewController {
         
         guard let place = place else { return }
         
-        self.titleDescriptionLabel.text = place.name
         self.setDescription(with: place.description)
        
         self.addressLabel.text = place.address ?? "no address"

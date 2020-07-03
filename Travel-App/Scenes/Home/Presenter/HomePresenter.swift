@@ -85,7 +85,7 @@ class HomePresenter: HomePresenterProtocol{
     <p class="p4"><br></p>
     <p class="p2"><span class="s1">Dinner starts late</span></p>
     <p class="p1"><br></p>
-    <p class="p3"><span class="s2">Italians usually meet for an <i class="italic">aperitivo<i> at around 7pm, with dinner beginning at around 8 – 9pm. However, don’t be surprised to see the locals starting their meals even later at the weekends.</span></p>
+    <p class="p3"><span class="s2">Italians usually meet for an <i class="italic">aperitivo</i> at around 7pm, with dinner beginning at around 8 – 9pm. However, don’t be surprised to see the locals starting their meals even later at the weekends.</span></p>
     <p class="p4"><br></p>
     <p class="p2"><span class="s1">Try the local food</span></p>
     <p class="p1"><br></p>

@@ -73,12 +73,6 @@ Brooklyn, NY 11249</string>
                                                 <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choosing The Right Boutique Hotel For You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-2D-9VV">
-                                                <rect key="frame" x="16" y="357.33333333333331" width="382" height="18.666666666666686"/>
-                                                <fontDescription key="fontDescription" name="AvenirNextLTPro-Demi" family="Avenir Next LT Pro" pointSize="16"/>
-                                                <color key="textColor" name="heavy"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntW-oG-r34">
                                                 <rect key="frame" x="371" y="235.33333333333334" width="24" height="24.000000000000028"/>
                                                 <constraints>
@@ -113,12 +107,10 @@ Brooklyn, NY 11249</string>
                                             <constraint firstItem="NsC-Qb-BlL" firstAttribute="top" secondItem="bjQ-kM-VKo" secondAttribute="top" constant="8" id="EsE-7G-iyS"/>
                                             <constraint firstAttribute="trailing" secondItem="ntW-oG-r34" secondAttribute="trailing" constant="19" id="H15-H8-jrU"/>
                                             <constraint firstItem="FcV-2u-tWP" firstAttribute="centerX" secondItem="VvZ-hM-Bhr" secondAttribute="centerX" id="Jfl-gS-mAm"/>
-                                            <constraint firstItem="gxn-2D-9VV" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="KVH-O9-fRj"/>
                                             <constraint firstItem="bjQ-kM-VKo" firstAttribute="top" secondItem="VvZ-hM-Bhr" secondAttribute="top" id="Mux-06-hn9"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="FcV-2u-tWP" secondAttribute="bottom" constant="24" id="PNX-Oh-iM5"/>
                                             <constraint firstItem="FcV-2u-tWP" firstAttribute="top" secondItem="AQZ-PF-ROW" secondAttribute="bottom" constant="27" id="Sbe-gc-aPc"/>
                                             <constraint firstItem="ntW-oG-r34" firstAttribute="leading" secondItem="pCj-dj-pvf" secondAttribute="trailing" constant="16" id="Sdk-I1-5aG"/>
-                                            <constraint firstItem="gxn-2D-9VV" firstAttribute="top" secondItem="AQZ-PF-ROW" secondAttribute="bottom" constant="27" id="XNS-w0-pqZ"/>
                                             <constraint firstItem="bjQ-kM-VKo" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" id="aLZ-eG-dNV"/>
                                             <constraint firstAttribute="trailing" secondItem="bjQ-kM-VKo" secondAttribute="trailing" id="c5z-OJ-gKm"/>
                                             <constraint firstItem="95v-sw-T5O" firstAttribute="top" secondItem="DoA-2Q-Cb6" secondAttribute="bottom" constant="8" id="df4-XK-DgW"/>
@@ -128,7 +120,6 @@ Brooklyn, NY 11249</string>
                                             <constraint firstItem="95v-sw-T5O" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="hbo-Sb-YVZ"/>
                                             <constraint firstItem="FcV-2u-tWP" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="kse-nq-BxF"/>
                                             <constraint firstItem="DoA-2Q-Cb6" firstAttribute="leading" secondItem="VvZ-hM-Bhr" secondAttribute="leading" constant="16" id="urs-uk-8HH"/>
-                                            <constraint firstItem="gxn-2D-9VV" firstAttribute="centerX" secondItem="VvZ-hM-Bhr" secondAttribute="centerX" id="vLa-Zp-QWq"/>
                                             <constraint firstItem="NsC-Qb-BlL" firstAttribute="centerX" secondItem="VvZ-hM-Bhr" secondAttribute="centerX" id="vvq-ee-R5L"/>
                                         </constraints>
                                     </view>
@@ -165,8 +156,7 @@ Brooklyn, NY 11249</string>
                         <outlet property="descriptionLabel" destination="FcV-2u-tWP" id="SZH-ET-rss"/>
                         <outlet property="placeImage" destination="bjQ-kM-VKo" id="Fag-Wf-HAQ"/>
                         <outlet property="priceLabel" destination="95v-sw-T5O" id="Ht0-d4-8JM"/>
-                        <outlet property="titleDescriptionLabel" destination="gxn-2D-9VV" id="Gdb-i6-pQN"/>
-                        <outlet property="titleVertSpacing" destination="XNS-w0-pqZ" id="9xD-TY-HCh"/>
+                        <outlet property="titleVertSpacing" destination="Sbe-gc-aPc" id="HCw-b1-Ppx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CbG-rv-hSO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -177,9 +167,6 @@ Brooklyn, NY 11249</string>
     <resources>
         <image name="City-Introduction" width="1847" height="1213.6666259765625"/>
         <image name="ok-circle" width="24" height="24"/>
-        <namedColor name="heavy">
-            <color red="0.058823529411764705" green="0.16862745098039217" blue="0.26666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="onyx">
             <color red="0.21176470588235294" green="0.21568627450980393" blue="0.22352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

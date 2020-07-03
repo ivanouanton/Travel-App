@@ -68,16 +68,16 @@
                             <rect key="frame" x="0.0" y="-9" width="414" height="564"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cd-zo-2tz" userLabel="ContentView">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="108"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9X-wl-3id">
-                                            <rect key="frame" x="20" y="0.0" width="402" height="94"/>
+                                            <rect key="frame" x="16" y="0.0" width="382" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2sZ-Cw-q5r" userLabel="Book now1">
-                                            <rect key="frame" x="16" y="24" width="99" height="30"/>
+                                            <rect key="frame" x="16" y="8" width="99" height="30"/>
                                             <color key="backgroundColor" red="0.078431372550000003" green="0.29411764709999999" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="9Dd-WD-QFH"/>
@@ -96,13 +96,13 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqd-1H-UcU" userLabel="Label2">
-                                            <rect key="frame" x="16" y="54" width="378" height="0.0"/>
+                                            <rect key="frame" x="16" y="38" width="378" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkp-lZ-tHO">
-                                            <rect key="frame" x="16" y="78" width="99" height="30"/>
+                                            <rect key="frame" x="16" y="46" width="99" height="30"/>
                                             <color key="backgroundColor" red="0.078431372550000003" green="0.29411764709999999" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="9Tn-HV-1NG"/>
@@ -121,7 +121,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xeh-PI-s9i">
-                                            <rect key="frame" x="16" y="108" width="382" height="0.0"/>
+                                            <rect key="frame" x="16" y="76" width="382" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -200,7 +200,7 @@
                 <constraint firstItem="0VD-bx-Vvp" firstAttribute="top" secondItem="Ukj-qD-TP7" secondAttribute="bottom" id="CuR-8p-vaP"/>
                 <constraint firstItem="wxz-sQ-Z6a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DDW-rT-ex9"/>
                 <constraint firstItem="Ukj-qD-TP7" firstAttribute="top" secondItem="HGi-mn-ivG" secondAttribute="bottom" constant="17" id="Dyx-KK-ZCf"/>
-                <constraint firstItem="sRT-ft-hgG" firstAttribute="top" secondItem="0VD-bx-Vvp" secondAttribute="bottom" constant="16" id="OUn-Mj-nDv"/>
+                <constraint firstItem="sRT-ft-hgG" firstAttribute="top" secondItem="0VD-bx-Vvp" secondAttribute="bottom" id="OUn-Mj-nDv"/>
                 <constraint firstItem="Cz3-YR-gWf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="SAK-7k-zg3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ukj-qD-TP7" secondAttribute="trailing" id="Z0q-p2-4Mw"/>
                 <constraint firstItem="Ukj-qD-TP7" firstAttribute="top" secondItem="Cz3-YR-gWf" secondAttribute="bottom" constant="16" id="aor-cv-0Lf"/>
