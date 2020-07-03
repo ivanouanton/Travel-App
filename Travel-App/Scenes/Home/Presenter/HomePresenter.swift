@@ -12,280 +12,187 @@ import UIKit
 class HomePresenter: HomePresenterProtocol{
     weak var view: HomeViewProtocol!
     
-    var jsonStr1 = """
-    [
-      {
-        "header" : "Getting Around",
-        "description" : [
-          {
-            "title" : "Explore the city on foot",
-            "data" : [
-              "Walking is by far the best and most convenient way to see Rome. If you’d rather use public transport, you can take either:",
-              "1.   Underground Metro (c. €1.50 per journey) – operates between 5.30am and 11.30pm (to 1.30am on Fridays and Saturdays); or",
-              "2.   Atac Buses (c. €1.50 per journey) – most of which pass through Stazione Termini, and operate from 5.30am until midnight (limited service throughout the night). Times are difficult to predict, however you can use the Roma Bus app for useful information."
-            ]
-          }
-        ]
-      },
-      {
-        "header" : "Tickets & Entry",
-        "description" : [
-          {
-            "title" : "Book Colosseum and Forum tickets online",
-            "data" : [
-              "Entry to the Colosseum, Palatine and Roman Forum require tickets and, due to their popularity, the queues can be enormous. To avoid wasting time, book online via the button below. If you haven’t booked your ticket in advance, there are some ‘hidden’ ticket offices with significantly shorter lines than the ones you can find in front of the Colosseum’s main entrance. These are located in Largo della Salara Vecchia 5/6 (close to via dei Fori Imperiali), via dei Verbiti (close to the Colosseum) and via San Gregorio."
-            ]
-          }
-        ]
-      }
-    ]
+    var startHTML = """
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+    <html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title></title>
+    <style type="text/css">
+    </style>
+    </head>
+    <body>
+    <p class="p5"><br></p>
+    <p class="p5"><span class="s3">Getting Around</span></p>
+    <p class="p4"><br></p>
+    <p class="p2"><span class="s1">Explore the city on foot</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">Walking is by far the best and most convenient way to see Rome. If you’d rather use public transport, you can take either:</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">1.    Underground Metro (c. €1.50 per journey) – operates between 5.30am and 11.30pm (to 1.30am on Fridays and Saturdays); or</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">2.    Atac Buses (c. €1.50 per journey) – most of which pass through Stazione Termini, and operate from 5.30am until midnight (limited service throughout the night). Times are difficult to predict, however you can use the Roma Bus app for useful information.</span></p>
+    <p class="p5"><br></p>
+    <p class="p5"><span class="s3">Tickets & Entry</span></p>
+    <p class="p4"><br></p>
+    <p class="p2"><span class="s1">Book Colosseum and Forum tickets online</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">Entry to the Colosseum, Palatine and Roman Forum require tickets and, due to their popularity, the queues can be enormous. To avoid wasting time, book online via the button below. If you haven’t booked your ticket in advance, there are some ‘hidden’ ticket offices with significantly shorter lines than the ones you can find in front of the Colosseum’s main entrance. These are located in Largo della Salara Vecchia 5/6 (close to via dei Fori Imperiali), via dei Verbiti (close to the Colosseum) and via San Gregorio.</span></p>
+    </body>
+    </html>
     """
     
-    var jsonStr2 = """
-    {
-      "header" : "Tickets & Entry",
-      "description" : [
-        {
-          "title" : "Book Vatican tickets online",
-          "data" : [
-            "Queues for the Vatican museums and Sistine Chapel can also be extremely long. However, if you book online you can skip the queue."
-          ]
-        }
-      ]
-    }
+    var middleHTML = """
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+    <html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title></title>
+    <style type="text/css">
+    </style>
+    </head>
+    <body>
+    <p class="p4"><br></p>
+    <p class="p2"><span class="s1">Book Vatican tickets online</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">Queues for the Vatican museums and Sistine Chapel can also be extremely long. However, if you book online you can skip the queue.</span></p>
+    </body>
+    </html>
     """
     
-    var jsonStr31 = """
-    {
-      "header" : "Tickets & Entry",
-      "description" : [
-        {
-          "title" : "Museums closed on Mondays",
-          "data" : [
-            "A number of museums are closed on Mondays (Vatican Museums close on Sunday), so try, if possible to visit them from Tuesday to Friday."
-          ]
-        },
-        {
-          "title" : "Free entry on certain Sundays",
-          "data" : [
-            "Most of Rome’s museums and galleries are free on the first Sunday of each month. Get there early on those days, as long queues form very quickly."
-          ]
-        }
-      ]
-    }
+    var endHTML = """
+    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+    <html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <title></title>
+    <style type="text/css">
+    </style>
+    </head>
+    <body>
+    <p class="p4"><br></p>
+    <p class="p2"><span class="s1">Museums closed on Mondays</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">A number of museums are closed on Mondays (Vatican Museums close on Sunday), so try, if possible to visit them from Tuesday to Friday.</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">Most of Rome’s museums and galleries are free on the first Sunday of each month. Get there early on those days, as long queues form very quickly.</span></p>
+    <p class="p5"><br></p>
+    <p class="p5"><span class="s3">Eating & Drinking</span></p>
+    <p class="p4"><br></p>
+    <p class="p2"><span class="s1">Dinner starts late</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">Italians usually meet for an <i class="italic">aperitivo<i> at around 7pm, with dinner beginning at around 8 – 9pm. However, don’t be surprised to see the locals starting their meals even later at the weekends.</span></p>
+    <p class="p4"><br></p>
+    <p class="p2"><span class="s1">Try the local food</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">Make sure you sample Rome’s most famous local dish, pasta <i class="italic">cacio e pepe</i>, meaning ‘pasta with cheese and pepper’. It’s a simple meal originally devised by early Roman shepherds and you’ll find different variations of it in every trattoria, particularly the Testaccio district. Other local delicacies include fried artichokes (<i class="italic">carciofi alla Romana</i>), deep fried rice croquettes (<i class="italic">supplí</i>), fried cod fish (<i class="italic">filetti di baccalá</i>) and, of course, pizza sold by the slice (<i class="italic">pizza al taglio</i>).</span></p>
+    <p class="p4"><br></p>
+    <p class="p2"><span class="s1">Order the house wine</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">If in doubt, go for the house wine. It’s usually affordable and very good quality.</span></p>
+    <p class="p4"><br></p>
+    <p class="p2"><span class="s1">Experience Roman nightlife</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">Head over to Trastevere in the west of the city, a picturesque district famed for its restaurants and bars. Other popular areas include the Campo de’ Fiori district and San Lorenzo (university area).</span></p>
+    <p class="p4"><br></p>
+    <p class="p2"><span class="s1">Enjoy the free water</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">A number of Rome’s streets have small drinking fountains called <i class="italic">nasoni</i>, or ‘little noses’, due to their curved shape.</span></p>
+    <p class="p5"><br></p>
+    <p class="p5"><span class="s3">Money & Tipping</span></p>
+    <p class="p4"><br></p>
+    <p class="p2"><span class="s1">Carry some cash</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">Although many restaurants now accept card, it’s best to be safe by carrying some cash, particularly as some places don’t like splitting the bill.</span></p>
+    <p class="p4"><br></p>
+    <p class="p2"><span class="s1">Tipping is optional</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">A service charge (<i class="italic">or coperto</i>) is generally included in the bill.</span></p>
+    <p class="p4"><br></p>
+    <p class="p2"><span class="s1">Order coffee at the bar</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">This way you’ll avoid paying an expensive service charge. You’ll also be like the locals, who won’t linger around drinking theirs.</span></p>
+    <p class="p5"><br></p>
+    <p class="p5"><span class="s3">Attire</span></p>
+    <p class="p4"><br></p>
+    <p class="p2"><span class="s1">Dress modestly in churches</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">If you’re planning on visiting any of the city’s 900 or so churches, make sure your shoulders are covered and bottoms extend to the knees or beyond.</span></p>
+    <p class="p4"><br></p>
+    <p class="p2"><span class="s1">Wear comfortable shoes</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2">Rome’s winding streets are as uneven as they are historic.</span></p>
+    <p class="p5"><br></p>
+    <p class="p5"><span class="s3">Useful Words & Phrases</span></p>
+    <p class="p4"><br></p>
+    <p class="p3"><span class="s2"><i class="italic">Ciao</i> – Hi and Bye</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2"><i class="italic">Per favour </i>– Please</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2"><i class="italic">Grazie </i>– Thank you</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2"><i class="italic">Mi scusi, quanto costa? </i>– Excuse me, how much does it cost?</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2"><i class="italic">Posso pagare con la carta? </i>– Can I pay with a card?</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2"><i class="italic">Posso prenotare un tavolo per due? </i>– Can I book a table for two?</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2"><i class="italic">Possiamo ordinare? </i>– Can we order?</span></p>
+    <p class="p1"><br></p>
+    <p class="p3"><span class="s2"><i class="italic">Possiamo avere il conto, per favore? </i>– Can we please have the bill?</span></p>
+    </body>
+    </html>
     """
     
-    var jsonStr32 = """
-    [
-      {
-        "header" : "Eating & Drinking",
-        "description" : [
-          {
-            "title" : "Dinner starts late",
-            "data" : [
-              "Italians usually meet for an aperitivo at around 7pm, with dinner beginning at around 8 – 9pm. However, don’t be surprised to see the locals starting their meals even later at the weekends."
-            ]
-          },
-          {
-            "title" : "Try the local food",
-            "data" : [
-              "Make sure you sample Rome’s most famous local dish, pasta cacio e pepe, meaning ‘pasta with cheese and pepper’. It’s a simple meal originally devised by early Roman shepherds and you’ll find different variations of it in every trattoria, particularly the Testaccio district. Other local delicacies include fried artichokes (carciofi alla Romana), deep fried rice croquettes (supplí), fried cod fish (filetti di baccalá) and, of course, pizza sold by the slice (pizza al taglio)."
-            ]
-          },
-          {
-            "title" : "Order the house wine",
-            "data" : [
-              "If in doubt, go for the house wine. It’s usually affordable and very good quality."
-            ]
-          },
-          {
-            "title" : "Experience Roman nightlife",
-            "data" : [
-              "Head over to Trastevere in the west of the city, a picturesque district famed for its restaurants and bars. Other popular areas include the Campo de’ Fiori district and San Lorenzo (university area)."
-            ]
-          },
-          {
-            "title" : "Enjoy the free water",
-            "data" : [
-              "A number of Rome’s streets have small drinking fountains called nasoni, or ‘little noses’, due to their curved shape."
-            ]
-          }
-        ]
-      },
-      {
-        "header" : "Money & Tipping",
-        "description" : [
-          {
-            "title" : "Carry some cash",
-            "data" : [
-              "Although many restaurants now accept card, it’s best to be safe by carrying some cash, particularly as some places don’t like splitting the bill."
-            ]
-          },
-          {
-            "title" : "Tipping is optional",
-            "data" : [
-              "A service charge (or coperto) is generally included in the bill."
-            ]
-          },
-          {
-            "title" : "Order coffee at the bar",
-            "data" : [
-              "This way you’ll avoid paying an expensive service charge. You’ll also be like the locals, who won’t linger around drinking theirs."
-            ]
-          }
-        ]
-      },
-      {
-        "header" : "Attire",
-        "description" : [
-          {
-            "title" : "Dress modestly in churches",
-            "data" : [
-              "If you’re planning on visiting any of the city’s 900 or so churches, make sure your shoulders are covered and bottoms extend to the knees or beyond."
-            ]
-          },
-          {
-            "title" : "Wear comfortable shoes",
-            "data" : [
-              "Rome’s winding streets are as uneven as they are historic."
-            ]
-          }
-        ]
-      }
-    ]
+    let style = """
+    <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 7.0px 'Avenir Next LT Pro'; color: #c2c0c1; min-height: 16.8px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Avenir Next LT Pro'; color: #c2c0c1}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Avenir Next LT Pro'; color: #363739}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.0px 'Avenir Next LT Pro'; color: #363739; min-height: 16.8px}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px 'Avenir Next LT Pro'; color: #0F2B44}
+
+    span.s1 {font-family: 'AvenirNextLTPro-Demi'; font-weight: bold; font-style: normal; font-size: 14.00px}
+    span.s2 {font-family: 'AvenirNextLTPro-Regular'; font-weight: normal; line-height: 130%; font-style: normal; font-size: 14.00px}
+    span.s3 {font-family: 'AvenirNextLTPro-Demi'; font-weight: bold; font-style: normal; font-size: 16.00px}
+    span.italic {font-family: 'AvenirNextLTPro-Italic'; font-weight: normal; font-style: normal; font-size: 14.00px}
+    </style>
     """
-    
-    var jsonStr33 = """
-    {
-      "header" : "Useful Words & Phrases",
-      "description" : [
-        {
-          "title" : "",
-          "data" : [
-            "Ciao – Hi and Bye",
-            "Per favour – Please",
-            "Grazie – Thank you",
-            "Mi scusi, quanto costa? – Excuse me, how much does it cost?",
-            "Posso pagare con la carta? – Can I pay with a card?",
-            "Posso prenotare un tavolo per due? – Can I book a table for two?",
-            "Possiamo ordinare? – Can we order?",
-            "Possiamo avere il conto, per favore? – Can we please have the bill?"
-          ]
-        }
-      ]
-    }
-    """
-    
-    
     
     required init(view: HomeViewProtocol) {
         self.view = view
     }
     
-    func getAttributedString() -> NSAttributedString {
-        
-        let chapters = try? JSONDecoder().decode([RestaurantDescription].self, from: jsonStr1.data(using: .utf8)!)
-        guard let chpts = chapters else {return NSAttributedString()}
-        
-        let attrStr = NSMutableAttributedString(string: "")
-        for val in chpts {
-            let titleText = NSMutableAttributedString(
-                string: "\n\n" + val.header,
-                attributes: [
-                    .font: UIFont(name: "AvenirNextLTPro-Demi", size: 16)!,
-                    .foregroundColor: UIColor(named: "heavy")!])
-            
-            attrStr.append(titleText)
-            attrStr.append(self.getSubTitleAttrString(with: val))
+    private func getDescription(with html: String) -> NSAttributedString{
+                
+        let prettyHtml = html.replacingOccurrences(of: "\\", with: "")
+
+        let htmlWithTitle = prettyHtml.replacingOccurrences(of: "<style type=\"text/css\">\n</style>", with: style)
+        let data = Data(htmlWithTitle.utf8)
+        if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+            return attributedString
         }
         
-        return attrStr
+        return NSAttributedString(string: "Description will be added soon")
     }
     
-    private func getSubTitleAttrString(with data: RestaurantDescription) -> NSAttributedString {
-        let attrStr = NSMutableAttributedString(string: "")
-        for val in data.description {
-            let titleText = NSMutableAttributedString(
-                string: "\n\n" + val.title,
-                attributes: [
-                    .font: UIFont(name: "AvenirNextLTPro-Demi", size: 14)!,
-                    .foregroundColor: UIColor(named: "silver")!])
-            
-            attrStr.append(titleText)
-            
-            let paragraphStyle = NSMutableParagraphStyle()
-            paragraphStyle.lineSpacing = 3
-            
-            for paragraph in val.data {
-                let descriptionText = NSMutableAttributedString(
-                    string: "\n\n" + paragraph,
-                    attributes: [
-                        .font: UIFont(name: "AvenirNextLTPro-Regular", size: 14)!,
-                        .foregroundColor: UIColor(named: "onyx")!,
-                        .paragraphStyle:paragraphStyle ])
-                
-                attrStr.append(descriptionText)
-            }
-        }
+    func getAttributedString() -> NSAttributedString {
         
-        return attrStr
+        return getDescription(with: startHTML)
     }
     
     func getAttributedMiddleDescription() -> NSAttributedString {
-        let chapter = try? JSONDecoder().decode(RestaurantDescription.self, from: jsonStr2.data(using: .utf8)!)
-        guard let chpt = chapter else {return NSAttributedString()}
         
-        let attrStr = NSMutableAttributedString(string: "")
-        attrStr.append(self.getSubTitleAttrString(with: chpt))
-        
-        return attrStr
+        return getDescription(with: middleHTML)
     }
     
     func getAttributedEndDescription() -> NSAttributedString {
-        let chapter = try? JSONDecoder().decode(RestaurantDescription.self, from: jsonStr31.data(using: .utf8)!)
-        guard let chpt = chapter else {return NSAttributedString()}
-        
-        let attrStr = NSMutableAttributedString(string: "")
-        attrStr.append(self.getSubTitleAttrString(with: chpt))
-        
-        let chapters = try? JSONDecoder().decode([RestaurantDescription].self, from: jsonStr32.data(using: .utf8)!)
-        guard let chpts = chapters else {return NSAttributedString()}
-        
-        for val in chpts {
-            let titleText = NSMutableAttributedString(
-                string: "\n\n" + val.header,
-                attributes: [
-                    .font: UIFont(name: "AvenirNextLTPro-Demi", size: 16)!,
-                    .foregroundColor: UIColor(named: "heavy")!])
-            
-            attrStr.append(titleText)
-            attrStr.append(self.getSubTitleAttrString(with: val))
-        }
-        
-        attrStr.append(NSMutableAttributedString(string: "\n\n"))
-        
-        let bulleteList = try? JSONDecoder().decode(RestaurantDescription.self, from: jsonStr33.data(using: .utf8)!)
-        guard let bullets = bulleteList else {return NSAttributedString()}
-        
-        let titleText = NSMutableAttributedString(
-            string: bullets.header + "\n\n",
-            attributes: [
-                .font: UIFont(name: "AvenirNextLTPro-Demi", size: 16)!,
-                .foregroundColor: UIColor(named: "heavy")!])
-        
-        attrStr.append(titleText)
-        
-        attrStr.append(AttributedStringHelper.bulletedList(
-            strings: bullets.description.first!.data,
-            textColor: UIColor(named: "onyx")!,
-            font: UIFont(name: "AvenirNextLTPro-Regular", size: 14)!,
-            bulletColor: UIColor(named: "heavy")!,
-            bulletSize: 10))
-        
-        return attrStr
+        return getDescription(with: endHTML)
     }
 
-    
     func getAttributedDescription() -> NSAttributedString {
         
         return getAttributedString()
