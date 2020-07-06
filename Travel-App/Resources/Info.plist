@@ -53,13 +53,13 @@
 	<key>NSCameraUsageDescription</key>
 	<string>This app will use camera</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>We are creating route frome your location to your destination</string>
+	<string>If you are not in Rome, select `Don't Allow`</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>We are creating route frome your location to your destination</string>
+	<string>If you are not in Rome, select `Don't Allow`</string>
 	<key>NSLocationUsageDescription</key>
-	<string>We are creating route frome your location to your destination</string>
+	<string>If you are not in Rome, select `Don't Allow`</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We are creating route frome your location to your destination</string>
+	<string>If you are not in Rome, select `Don't Allow`</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>You can select photo</string>
 	<key>UIAppFonts</key>
