@@ -43,7 +43,7 @@ class TAImageClient {
     static func getImage(with reference: DocumentReference,
                   completion: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
         
-        if let cachedImage = imageCache.object(forKey: reference.documentID as NSString) {
+        if let cachedImage = imageCache.object(forKey: reference.documentID as NSString) as? UIImage {
             completion(cachedImage, nil)
         } else {
             TAImageClient.downloadImage(reference: reference) { data, error in
